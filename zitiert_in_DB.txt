@@ -1,0 +1,461 @@
+CREATE
+LAST	P31	Q3331189
+LAST	Den	"book published in 1926"
+LAST	P1104	280
+LAST	P2093	"Ernst Sprockhoff"	P1545	"1"
+LAST	P577	+1926-00-00T00:00:00Z/9
+LAST	P212	"978-3-11-138577-8"
+LAST	Lmul	"Die Kulturen der jüngeren Steinzeit in der Mark Brandenburg"
+LAST	Lde	"Die Kulturen der jüngeren Steinzeit in der Mark Brandenburg"
+LAST	P1476	de:"Die Kulturen der jüngeren Steinzeit in der Mark Brandenburg"
+LAST	P407	Q188
+LAST	P675	"XaryCQAAQBAJ"
+CREATE
+LAST	P31	Q1980247
+LAST	Den	"book section from 'Contacts, Boundaries & Innovation. Exploring developed Neolithic societies in central Europe and beyond' published in 2019"
+LAST	P953	"https://www.academia.edu/38693058/The_Brze%C5%9B%C4%87_Kujawski_culture._The_north-easternmost_Early_Chalcolithic_communities_in_Europe"
+LAST	P304	"59-90"
+LAST	P1104	32
+LAST	P2093	"Lech Czerniak"	P1545	"1"
+LAST	P2093	"Joanna Pyzel"	P1545	"2"
+LAST	P577	+2019-00-00T00:00:00Z/9
+LAST	Lmul	"The Brześć Kujawski culture. The north-easternmost Early Chalcolithic communities in Europe"
+LAST	Len	"The Brześć Kujawski culture. The north-easternmost Early Chalcolithic communities in Europe"
+LAST	P1476	und:"The Brześć Kujawski culture. The north-easternmost Early Chalcolithic communities in Europe"
+CREATE
+LAST	P31	Q1980247
+LAST	Den	"book section from 'Mitteleuropa im 5. Jahrtausend vor Christus. Beiträge zur Internationalen Konferenz in Münster 2010' published in 2012"
+LAST	P304	"509-537"
+LAST	P1104	29
+LAST	P2093	"Jonas Beran"	P1545	"1"
+LAST	P577	+2012-00-00T00:00:00Z/9
+LAST	Lmul	"Spitzhauen, Schöningen und Swifterband - Überlegungen zu Endmesolithikum und beginnendem Jungneolithikum im Norddeutschen Binnenland"
+LAST	Lde	"Spitzhauen, Schöningen und Swifterband - Überlegungen zu Endmesolithikum und beginnendem Jungneolithikum im Norddeutschen Binnenland"
+LAST	P1476	de:"Spitzhauen, Schöningen und Swifterband - Überlegungen zu Endmesolithikum und beginnendem Jungneolithikum im Norddeutschen Binnenland"
+LAST	P407	Q188
+CREATE
+LAST	P31	Q1980247
+LAST	Den	"book section from 'Archäologie in Berlin und Brandenburg 2013' published in 2015"
+LAST	P304	"52-55"
+LAST	P1104	4
+LAST	P2093	"Ralf Lehmphul"	P1545	"1"
+LAST	P577	+2015-00-00T00:00:00Z/9
+LAST	Lmul	"Durch Getreidekörner datiert. Inventare der Rössener und Britzer Kultur in Selchow, Lkr. Dahme-Spreewald"
+LAST	Len	"Durch Getreidekörner datiert. Inventare der Rössener und Britzer Kultur in Selchow, Lkr. Dahme-Spreewald"
+LAST	P1476	und:"Durch Getreidekörner datiert. Inventare der Rössener und Britzer Kultur in Selchow, Lkr. Dahme-Spreewald"
+CREATE
+LAST	P31	Q1980247
+LAST	Den	"book section from 'Einsichten. Archäologische Beiträge für den Süden des Landes Brandenburg 2010/2011' published in 2013"
+LAST	P304	"84-129"
+LAST	P1104	46
+LAST	P2093	"Günter Wetzel"	P1545	"1"
+LAST	P577	+2013-00-00T00:00:00Z/9
+LAST	Lmul	"Die Brześć Kujawski-Gruppe in Brandenburg und der Lausitz. Zur Frage einer Guhrauer Gruppe"
+LAST	Len	"Die Brześć Kujawski-Gruppe in Brandenburg und der Lausitz. Zur Frage einer Guhrauer Gruppe"
+LAST	P1476	und:"Die Brześć Kujawski-Gruppe in Brandenburg und der Lausitz. Zur Frage einer Guhrauer Gruppe"
+CREATE
+LAST	P31	Q1980247
+LAST	Den	"book section from 'Archäoprognose Brandenburg II' published in 2007"
+LAST	P304	"9-110"
+LAST	P1104	102
+LAST	P2093	"Gisela Eberhardt"	P1545	"1"
+LAST	P577	+2007-00-00T00:00:00Z/9
+LAST	Lmul	"Jungsteinzeitliche Funde vom Nuthe-Oberlauf bei Jüterbog, Lkr, Teltow-Fläming. Zur Neolithisierung einer brandenburgischen Kleinregion"
+LAST	Len	"Jungsteinzeitliche Funde vom Nuthe-Oberlauf bei Jüterbog, Lkr, Teltow-Fläming. Zur Neolithisierung einer brandenburgischen Kleinregion"
+LAST	P1476	und:"Jungsteinzeitliche Funde vom Nuthe-Oberlauf bei Jüterbog, Lkr, Teltow-Fläming. Zur Neolithisierung einer brandenburgischen Kleinregion"
+CREATE
+LAST	P31	Q1266946
+LAST	Den	"thesis published in 1966"
+LAST	P2093	"Hansdieter Berlekamp"	P1545	"1"
+LAST	P577	+1966-00-00T00:00:00Z/9
+LAST	Lmul	"Die Einflüsse des donauländischen Kulturkreises der jüngeren Steinzeit auf das Odermündungsgebiet"
+LAST	Len	"Die Einflüsse des donauländischen Kulturkreises der jüngeren Steinzeit auf das Odermündungsgebiet"
+LAST	P1476	und:"Die Einflüsse des donauländischen Kulturkreises der jüngeren Steinzeit auf das Odermündungsgebiet"
+CREATE
+LAST	P31	Q1980247
+LAST	Den	"book section from 'Neolithische Kreisgrabenanlagen in Europa. Internationale Arbeitstagung vom 7. Bis 9. Mai 2004 in Goseck' published in 2011"
+LAST	P953	"https://www.academia.edu/7332479/Die_Nordperipherie_-_mittelneolithische_Kreisgrabenanlagen_in_Brandenburg"
+LAST	P304	"145-161"
+LAST	P1104	17
+LAST	P2093	"Michael Meyer"	P1545	"1"
+LAST	P577	+2011-00-00T00:00:00Z/9
+LAST	Lmul	"Die Nordperipherie - mittelneolithische Kreisgrabenanlagen in Brandenburg"
+LAST	Lde	"Die Nordperipherie - mittelneolithische Kreisgrabenanlagen in Brandenburg"
+LAST	P1476	de:"Die Nordperipherie - mittelneolithische Kreisgrabenanlagen in Brandenburg"
+LAST	P407	Q188
+CREATE
+LAST	P31	Q3331189
+LAST	Den	"book published in 1944"
+LAST	P2093	"Karl Heinz Marschalleck"	P1545	"1"
+LAST	P577	+1944-00-00T00:00:00Z/9
+LAST	Lmul	"Die Urgeschichte des Kreises Luckau (Niederlausitz)"
+LAST	Len	"Die Urgeschichte des Kreises Luckau (Niederlausitz)"
+LAST	P1476	und:"Die Urgeschichte des Kreises Luckau (Niederlausitz)"
+CREATE
+LAST	P31	Q3331189
+LAST	Den	"book published in 1976"
+LAST	P2093	"Dieter Kaufmann"	P1545	"1"
+LAST	P577	+1976-00-00T00:00:00Z/9
+LAST	Lmul	"Wirtschaft und Kultur der Stichbandkeramiker im Saalegebiet"
+LAST	Len	"Wirtschaft und Kultur der Stichbandkeramiker im Saalegebiet"
+LAST	P1476	und:"Wirtschaft und Kultur der Stichbandkeramiker im Saalegebiet"
+CREATE
+LAST	P31	Q13442814
+LAST	Den	"journal article from 'Ausgrabungen und Funde' published in 1973"
+LAST	P478	"18"
+LAST	P304	"117-120"
+LAST	P1104	4
+LAST	P2093	"Günter Wetzel"	P1545	"1"
+LAST	P577	+1973-00-00T00:00:00Z/9
+LAST	Lmul	"Ein Becher der Stichreihenkeramik von Prettin, Kr. Jessen"
+LAST	Len	"Ein Becher der Stichreihenkeramik von Prettin, Kr. Jessen"
+LAST	P1476	und:"Ein Becher der Stichreihenkeramik von Prettin, Kr. Jessen"
+CREATE
+LAST	P31	Q3331189
+LAST	Den	"book published in 1993"
+LAST	P2093	"Eberhard Kirsch"	P1545	"1"
+LAST	P577	+1993-00-00T00:00:00Z/9
+LAST	Lmul	"Funde des Mittelneolithikums im Land Brandenburg"
+LAST	Len	"Funde des Mittelneolithikums im Land Brandenburg"
+LAST	P1476	und:"Funde des Mittelneolithikums im Land Brandenburg"
+CREATE
+LAST	P31	Q13442814
+LAST	Den	"journal article from 'Märkische Heimat' published in 1960"
+LAST	P478	"4"
+LAST	P304	"28-33"
+LAST	P1104	6
+LAST	P2093	"Bernhard Gramsch"	P1545	"1"
+LAST	P577	+1960-00-00T00:00:00Z/9
+LAST	Lmul	"Ein neuer Fund von Rössener Keramik in der Uckermark"
+LAST	Len	"Ein neuer Fund von Rössener Keramik in der Uckermark"
+LAST	P1476	und:"Ein neuer Fund von Rössener Keramik in der Uckermark"
+CREATE
+LAST	P31	Q13442814
+LAST	Den	"journal article from 'Veröffentlichungen des Museums für Ur- und Frühgeschichte Potsdam' published in 1988"
+LAST	P478	"22"
+LAST	P304	"27-33"
+LAST	P1104	7
+LAST	P2093	"Günter Wetzel"	P1545	"1"
+LAST	P577	+1988-00-00T00:00:00Z/9
+LAST	Lmul	"Neue frühneolithische Funde aus dem Bezirk Cottbus"
+LAST	Len	"Neue frühneolithische Funde aus dem Bezirk Cottbus"
+LAST	P1476	und:"Neue frühneolithische Funde aus dem Bezirk Cottbus"
+CREATE
+LAST	P31	Q1980247
+LAST	Den	"book section from 'Grenzen und Grenzräume? Beispiele aus Neolithikum und Bronzezeit.' published in 2011"
+LAST	P478	"2"
+LAST	P304	"155-174"
+LAST	P1104	20
+LAST	P2093	"Jonas Beran"	P1545	"1"
+LAST	P577	+2011-00-00T00:00:00Z/9
+LAST	Lmul	"Kulturkreise und Regionalgruppen in Mittel- und Ostdeutschland vom 5. bis zum 1. Jahrtausend v. Chr."
+LAST	Len	"Kulturkreise und Regionalgruppen in Mittel- und Ostdeutschland vom 5. bis zum 1. Jahrtausend v. Chr."
+LAST	P1476	und:"Kulturkreise und Regionalgruppen in Mittel- und Ostdeutschland vom 5. bis zum 1. Jahrtausend v. Chr."
+CREATE
+LAST	P31	Q1980247
+LAST	Den	"book section from 'Schnitt durch die Jahrtausende. Die Ausgrabungen auf der Trasse der EUGAL in Brandenburg' published in 2020"
+LAST	P478	"34"
+LAST	P304	"37-42"
+LAST	P1104	6
+LAST	P2093	"Joachim Stark"	P1545	"1"
+LAST	P577	+2020-00-00T00:00:00Z/9
+LAST	Lmul	"Vom Steinkreis des 5. Jahrtausends v. Chr. zur eisenzeitlichen Siedlung von Meichow, Lkr. Uckermark – Meichow 8"
+LAST	Len	"Vom Steinkreis des 5. Jahrtausends v. Chr. zur eisenzeitlichen Siedlung von Meichow, Lkr. Uckermark – Meichow 8"
+LAST	P1476	und:"Vom Steinkreis des 5. Jahrtausends v. Chr. zur eisenzeitlichen Siedlung von Meichow, Lkr. Uckermark – Meichow 8"
+CREATE
+LAST	P31	Q3331189
+LAST	Den	"book published in 2019"
+LAST	P953	"https://doi.org/10.33547/ODA-SAH.08.Lud"
+LAST	P577	+2019-00-00T00:00:00Z/9
+LAST	P212	"978-83-952339-5-1"
+LAST	Lmul	"Ludwinowo. Osada neolityczna na Kujawach / Ludwinowo. Neolithic settlement in Kuyavia"
+LAST	Len	"Ludwinowo. Osada neolityczna na Kujawach / Ludwinowo. Neolithic settlement in Kuyavia"
+LAST	P1476	und:"Ludwinowo. Osada neolityczna na Kujawach / Ludwinowo. Neolithic settlement in Kuyavia"
+CREATE
+LAST	P31	Q3331189
+LAST	Den	"book published in 1980"
+LAST	P1104	202
+LAST	P2093	"Lech Czerniak"	P1545	"1"
+LAST	P577	+1980-00-00T00:00:00Z/9
+LAST	Lmul	"Rozwój społeczeństw kultury późnej ceramiki wstȩgowej na kujawach"
+LAST	Len	"Rozwój społeczeństw kultury późnej ceramiki wstȩgowej na kujawach"
+LAST	P1476	und:"Rozwój społeczeństw kultury późnej ceramiki wstȩgowej na kujawach"
+CREATE
+LAST	P31	Q13442814
+LAST	Den	"journal article from 'Journal of Field Archaeology' published in 2016"
+LAST	P356	"10.1080/00934690.2016.1215723"
+LAST	P953	"https://doi.org/10.1080/00934690.2016.1215723"
+LAST	P478	"41"
+LAST	P433	"5"
+LAST	P304	"618-640"
+LAST	P1104	23
+LAST	P2093	"Lech Czerniak"	P1545	"1"
+LAST	P2093	"Arkadiusz Marciniak"	P1545	"2"
+LAST	P2093	"Christopher Bronk Ramsey"	P1545	"3"
+LAST	P2093	"Elaine Dunbar"	P1545	"4"
+LAST	P2093	"Tomasz Goslar"	P1545	"5"
+LAST	P2093	"Alistair Barclay"	P1545	"6"
+LAST	P2093	"Alex Bayliss"	P1545	"7"
+LAST	P2093	"Alasdair Whittle"	P1545	"8"
+LAST	P577	+2016-09-02T00:00:00Z/11
+LAST	Lmul	"House time: Neolithic settlement development at Racot during the 5th millennium CAL B.C. in the Polish lowlands"
+LAST	Len	"House time: Neolithic settlement development at Racot during the 5th millennium CAL B.C. in the Polish lowlands"
+LAST	P1476	und:"House time: Neolithic settlement development at Racot during the 5th millennium CAL B.C. in the Polish lowlands"
+CREATE
+LAST	P31	Q49848
+LAST	Den	"document published in 2003"
+LAST	P2093	"Eberhard Völker"	P1545	"1"
+LAST	P577	+2003-00-00T00:00:00Z/9
+LAST	Lmul	"Abschlussbericht zur archäologischen Hauptuntersuchung im Bereich des Bodendenkmals Seelow 2 Im Zuge der B1n - OU Seelow. Aktivitätsnummer GV 2001:186/9g"
+LAST	Lde	"Abschlussbericht zur archäologischen Hauptuntersuchung im Bereich des Bodendenkmals Seelow 2 Im Zuge der B1n - OU Seelow. Aktivitätsnummer GV 2001:186/9g"
+LAST	P1476	de:"Abschlussbericht zur archäologischen Hauptuntersuchung im Bereich des Bodendenkmals Seelow 2 Im Zuge der B1n - OU Seelow. Aktivitätsnummer GV 2001:186/9g"
+LAST	P407	Q188
+CREATE
+LAST	P31	Q49848
+LAST	Den	"document published in 2013"
+LAST	P2093	"Ralf Lehmphul"	P1545	"1"
+LAST	P577	+2013-00-00T00:00:00Z/9
+LAST	Lmul	"Grabungsbericht Selchow 7 -- Titeländern"
+LAST	Lde	"Grabungsbericht Selchow 7 -- Titeländern"
+LAST	P1476	de:"Grabungsbericht Selchow 7 -- Titeländern"
+LAST	P407	Q188
+CREATE
+LAST	P31	Q3331189
+LAST	Den	"book published in 1993"
+LAST	P1104	223
+LAST	P2093	"Anna Kulczycka-Leciejewiczowa"	P1545	"1"
+LAST	P577	+1993-00-00T00:00:00Z/9
+LAST	P212	"978-83-85463-20-7"
+LAST	Lmul	"Osadnictwo neolityczne w Polsce południowo-zachodniej: próba zarysu organizacji przestrzennej"
+LAST	Len	"Osadnictwo neolityczne w Polsce południowo-zachodniej: próba zarysu organizacji przestrzennej"
+LAST	P1476	und:"Osadnictwo neolityczne w Polsce południowo-zachodniej: próba zarysu organizacji przestrzennej"
+CREATE
+LAST	P31	Q1980247
+LAST	Den	"book section from 'The Lengyel, Polgár and related cultures in the Middle/Late Neolithic in Central Europe' published in 2007"
+LAST	P304	"233-248"
+LAST	P1104	16
+LAST	P2093	"Lech Czerniak"	P1545	"1"
+LAST	P577	+2007-00-00T00:00:00Z/9
+LAST	Lmul	"The North-East Frontier  of thePost-LBK Cultures"
+LAST	Len	"The North-East Frontier  of thePost-LBK Cultures"
+LAST	P1476	und:"The North-East Frontier  of thePost-LBK Cultures"
+CREATE
+LAST	P31	Q13442814
+LAST	Den	"journal article from 'Fontes Archaeologici Posnanienses' published in 1952"
+LAST	P478	"3"
+LAST	P304	"1-84"
+LAST	P1104	84
+LAST	P2093	"Łucja Smoczyńska"	P1545	"1"
+LAST	P577	+1952-00-00T00:00:00Z/9
+LAST	Lmul	"Kultura ceramiki wstęgowej w Wielkopolsce"
+LAST	Len	"Kultura ceramiki wstęgowej w Wielkopolsce"
+LAST	P1476	und:"Kultura ceramiki wstęgowej w Wielkopolsce"
+CREATE
+LAST	P31	Q13442814
+LAST	Den	"journal article from 'Offa' published in 1956"
+LAST	P478	"15"
+LAST	P304	"25-30"
+LAST	P1104	6
+LAST	P2093	"Klaus Raddatz"	P1545	"1"
+LAST	P577	+1956-00-00T00:00:00Z/9
+LAST	Lmul	"Ein Gefäß der Rössener Kultur aus der Uckermark"
+LAST	Len	"Ein Gefäß der Rössener Kultur aus der Uckermark"
+LAST	P1476	und:"Ein Gefäß der Rössener Kultur aus der Uckermark"
+CREATE
+LAST	P31	Q3331189
+LAST	Den	"book published in 1937"
+LAST	P2093	"Carl Umbreit"	P1545	"1"
+LAST	P577	+1937-00-00T00:00:00Z/9
+LAST	Lmul	"Neue Forschungen zur ostdeutschen Steinzeit und frühen Bronzezeit"
+LAST	Len	"Neue Forschungen zur ostdeutschen Steinzeit und frühen Bronzezeit"
+LAST	P1476	und:"Neue Forschungen zur ostdeutschen Steinzeit und frühen Bronzezeit"
+CREATE
+LAST	P31	Q3331189
+LAST	Den	"book published in 2023"
+LAST	P478	"38"
+LAST	P2093	"Günter Wetzel"	P1545	"1"
+LAST	P2093	"Jonas Beran"	P1545	"2"
+LAST	P577	+2023-00-00T00:00:00Z/9
+LAST	P212	"978-3-947219-01-8"
+LAST	Lmul	"Friesack 4, Lkr. Havelland – die endmesolithische, neolithische und metallzeitliche Keramik und die Friesack-Boberger Gruppe/Kultur. Mit Beiträgen von B. Gramsch und N. Benecke"
+LAST	Lde	"Friesack 4, Lkr. Havelland – die endmesolithische, neolithische und metallzeitliche Keramik und die Friesack-Boberger Gruppe/Kultur. Mit Beiträgen von B. Gramsch und N. Benecke"
+LAST	P1476	de:"Friesack 4, Lkr. Havelland – die endmesolithische, neolithische und metallzeitliche Keramik und die Friesack-Boberger Gruppe/Kultur. Mit Beiträgen von B. Gramsch und N. Benecke"
+LAST	P407	Q188
+LAST	P675	"nBEG0AEACAAJ"
+CREATE
+LAST	P31	Q13442814
+LAST	Den	"journal article from 'Blätter der Deutschen Vorgeschichte' published in 1930"
+LAST	P478	"7"
+LAST	P304	"18-52"
+LAST	P1104	35
+LAST	P2093	"Bolko von Richthofen"	P1545	"1"
+LAST	P577	+1930-00-00T00:00:00Z/9
+LAST	Lmul	"Zur bandkeramischen Besiedlung im Bereich der unteren Weichsel und Oder"
+LAST	Len	"Zur bandkeramischen Besiedlung im Bereich der unteren Weichsel und Oder"
+LAST	P1476	und:"Zur bandkeramischen Besiedlung im Bereich der unteren Weichsel und Oder"
+CREATE
+LAST	P31	Q13442814
+LAST	Den	"journal article from 'Zeitschrift für Ethnologie' published in 1885"
+LAST	P478	"17"
+LAST	P304	"149-151"
+LAST	P1104	3
+LAST	P2093	"H. Jentsch"	P1545	"1"
+LAST	P577	+1885-00-00T00:00:00Z/9
+LAST	Lmul	"Ein verziertes Beigefäss und slavische Leichenurnen von Wirchenblatt, Kr. Guben, Verhandlungen der Berliner Gesellschaft für Anthropologie, Ethnologie und Urgeschichte, Sitzung vom 18. April 1885"
+LAST	Len	"Ein verziertes Beigefäss und slavische Leichenurnen von Wirchenblatt, Kr. Guben, Verhandlungen der Berliner Gesellschaft für Anthropologie, Ethnologie und Urgeschichte, Sitzung vom 18. April 1885"
+LAST	P1476	und:"Ein verziertes Beigefäss und slavische Leichenurnen von Wirchenblatt, Kr. Guben, Verhandlungen der Berliner Gesellschaft für Anthropologie, Ethnologie und Urgeschichte, Sitzung vom 18. April 1885"
+CREATE
+LAST	P31	Q13442814
+LAST	Den	"journal article from 'Gesellschaft für Heimat- geschichte im Kulturbund der DDR. Mitteilungen des Bezirksausschusses für Ur- und Frühgeschichte' published in 1981"
+LAST	P478	"28"
+LAST	P304	"8-27"
+LAST	P1104	20
+LAST	P2093	"Klaus-Dieter Gralow"	P1545	"1"
+LAST	P577	+1981-00-00T00:00:00Z/9
+LAST	Lmul	"Zur bandkeramischen Besiedlung des Uecker-Randow-Raums"
+LAST	Len	"Zur bandkeramischen Besiedlung des Uecker-Randow-Raums"
+LAST	P1476	und:"Zur bandkeramischen Besiedlung des Uecker-Randow-Raums"
+CREATE
+LAST	P31	Q1980247
+LAST	Den	"book section from 'Krzemień jurajski w Pradziejach. Materiały z konferencji w Krakowie 28-30 września 2017' published in 2023"
+LAST	P304	"213-228"
+LAST	P1104	16
+LAST	P2093	"Marcin Dziewanowski"	P1545	"1"
+LAST	P577	+2023-00-00T00:00:00Z/9
+LAST	Lmul	"Krzemień jurajski na Pomorzu Zachodnim. Prypadek wióra z jamy kultury rösseńskiej w Mierzynie, pow. policki"
+LAST	Len	"Krzemień jurajski na Pomorzu Zachodnim. Prypadek wióra z jamy kultury rösseńskiej w Mierzynie, pow. policki"
+LAST	P1476	und:"Krzemień jurajski na Pomorzu Zachodnim. Prypadek wióra z jamy kultury rösseńskiej w Mierzynie, pow. policki"
+CREATE
+LAST	P31	Q13442814
+LAST	Den	"journal article from 'Gdańskie Studia Archaeologiczne' published in 2015"
+LAST	P478	"5"
+LAST	P304	"9-39"
+LAST	P1104	31
+LAST	P2093	"Marcin Dziewanowski"	P1545	"1"
+LAST	P577	+2015-00-00T00:00:00Z/9
+LAST	Lmul	"Obiekty kultur postlinearnych z wpływami kultury Rössen na Wzniesieniach Szczecińskich w świetle odkryć z lat 1995–2014"
+LAST	Len	"Obiekty kultur postlinearnych z wpływami kultury Rössen na Wzniesieniach Szczecińskich w świetle odkryć z lat 1995–2014"
+LAST	P1476	und:"Obiekty kultur postlinearnych z wpływami kultury Rössen na Wzniesieniach Szczecińskich w świetle odkryć z lat 1995–2014"
+CREATE
+LAST	P31	Q13442814
+LAST	Den	"journal article from 'Archeologia środkowego nadodrza' published in 2013"
+LAST	P478	"10"
+LAST	P304	"9-27"
+LAST	P1104	19
+LAST	P2093	"Mirosław Ciesielski"	P1545	"1"
+LAST	P2093	"Krzystof Gorzyca"	P1545	"2"
+LAST	P577	+2013-00-00T00:00:00Z/9
+LAST	Lmul	"Osada ludności późnej fazy kultury ceramiki wstęgowej kłutej z elementami kultury lendzielskiej w Międzyrzeczu, stan. 11, Woj. Lubuskie"
+LAST	Lpl	"Osada ludności późnej fazy kultury ceramiki wstęgowej kłutej z elementami kultury lendzielskiej w Międzyrzeczu, stan. 11, Woj. Lubuskie"
+LAST	P1476	pl:"Osada ludności późnej fazy kultury ceramiki wstęgowej kłutej z elementami kultury lendzielskiej w Międzyrzeczu, stan. 11, Woj. Lubuskie"
+LAST	P407	Q809
+CREATE
+LAST	P31	Q3331189
+LAST	Den	"book published in 1939"
+LAST	P2093	"Gertrud Dorka"	P1545	"1"
+LAST	P577	+1939-00-00T00:00:00Z/9
+LAST	Lmul	"Urgeschichte des Weizacker-Kreises Pyritz"
+LAST	Lde	"Urgeschichte des Weizacker-Kreises Pyritz"
+LAST	P1476	de:"Urgeschichte des Weizacker-Kreises Pyritz"
+LAST	P407	Q188
+CREATE
+LAST	P31	Q3331189
+LAST	Den	"book published in 2008"
+LAST	P2093	"Ryszard Grygiel"	P1545	"1"
+LAST	P577	+2008-00-00T00:00:00Z/9
+LAST	Lmul	"Neolit i początki epoki brązu w rejonie Brześcia Kujawskiego i Osłonek.  The Neolithic and Early Bronze Age in the Brześć Kujawski and Osłonki Region."
+LAST	Len	"Neolit i początki epoki brązu w rejonie Brześcia Kujawskiego i Osłonek.  The Neolithic and Early Bronze Age in the Brześć Kujawski and Osłonki Region."
+LAST	P1476	und:"Neolit i początki epoki brązu w rejonie Brześcia Kujawskiego i Osłonek.  The Neolithic and Early Bronze Age in the Brześć Kujawski and Osłonki Region."
+CREATE
+LAST	P31	Q13442814
+LAST	Den	"journal article from 'Arch. Berlin u. Brandenburg' published in 1997"
+LAST	P478	"1995-1996"
+LAST	P304	"56-58"
+LAST	P1104	3
+LAST	P2093	"Wolfgang Schmiederer"	P1545	"1"
+LAST	P577	+1997-00-00T00:00:00Z/9
+LAST	Lmul	"Ein Pferdchen in Ton geritzt. Ausgrabungen auf einem mehrperiodischen Fundplatz bei Groß Kienitz, Landkreis Teltow-Fläming"
+LAST	Len	"Ein Pferdchen in Ton geritzt. Ausgrabungen auf einem mehrperiodischen Fundplatz bei Groß Kienitz, Landkreis Teltow-Fläming"
+LAST	P1476	und:"Ein Pferdchen in Ton geritzt. Ausgrabungen auf einem mehrperiodischen Fundplatz bei Groß Kienitz, Landkreis Teltow-Fläming"
+CREATE
+LAST	P31	Q13442814
+LAST	Den	"journal article from 'Erwerbungs- und Forschungsbericht: Urgeschichte, Volkskunde, landesgeschichtl. Denkmäler und Stadtkultur, kirchl. Kunst' published in 1939"
+LAST	P304	"11-68"
+LAST	P1104	58
+LAST	P2093	"Otto Kunkel"	P1545	"1"
+LAST	P577	+1939-00-00T00:00:00Z/9
+LAST	Lmul	"Urgeschichte, zugleich Bericht des Vertrauensmannes für die kultugeschichtlichen Bodenaltertümer in Pommern"
+LAST	Len	"Urgeschichte, zugleich Bericht des Vertrauensmannes für die kultugeschichtlichen Bodenaltertümer in Pommern"
+LAST	P1476	und:"Urgeschichte, zugleich Bericht des Vertrauensmannes für die kultugeschichtlichen Bodenaltertümer in Pommern"
+CREATE
+LAST	P31	Q13442814
+LAST	Den	"journal article from 'Prace i Materiały Muzeum Archeologicznego i Etnograficznego w Łodzi. Seria Archeologiczna' published in 2004"
+LAST	P478	"42 (2002-2003)"
+LAST	P304	"79-107"
+LAST	P1104	29
+LAST	P2093	"Małgorzata Rybicka"	P1545	"1"
+LAST	P2093	"Jacek Wysocki"	P1545	"2"
+LAST	P577	+2004-00-00T00:00:00Z/9
+LAST	Lmul	"Materiały kultury późnej ceramiki wstęgowej z Równiny Dolnej, st. III, gm. Korsze, woj. warmińsko-mazurskie: (wyniki badań w 2001 roku)"
+LAST	Len	"Materiały kultury późnej ceramiki wstęgowej z Równiny Dolnej, st. III, gm. Korsze, woj. warmińsko-mazurskie: (wyniki badań w 2001 roku)"
+LAST	P1476	und:"Materiały kultury późnej ceramiki wstęgowej z Równiny Dolnej, st. III, gm. Korsze, woj. warmińsko-mazurskie: (wyniki badań w 2001 roku)"
+CREATE
+LAST	P31	Q1980247
+LAST	Den	"book section from 'VIR BIMARIS Od kujawskiego matecznika do stepów nadczarnomorskich. Studia z dziejów międzymorza bałtycko-pontyjskiego ofiarowane Profesorowi Aleksandrowi Kośko [From Kujawy Cradle to Black Sea Steppes. Studies on the Prehistory of the Baltic-Pontic Between-the-Seas. In Recognition of Professor Aleksander Kośko]' published in 2019"
+LAST	P304	"243-258"
+LAST	P1104	16
+LAST	P2093	"Marcin Dziewanowski"	P1545	"1"
+LAST	P577	+2019-00-00T00:00:00Z/9
+LAST	Lmul	"Niesformalizowany projekt badań mikroregionalnych na Dolnym Nad- odrzu w latach 2013 – 2017"
+LAST	Len	"Niesformalizowany projekt badań mikroregionalnych na Dolnym Nad- odrzu w latach 2013 – 2017"
+LAST	P1476	und:"Niesformalizowany projekt badań mikroregionalnych na Dolnym Nad- odrzu w latach 2013 – 2017"
+CREATE
+LAST	P31	Q3331189
+LAST	Den	"book published in 2016"
+LAST	P478	"9"
+LAST	P2093	"Harald Stäuble"	P1545	"1"
+LAST	P2093	"Ulrich Veit"	P1545	"2"
+LAST	P577	+2016-00-00T00:00:00Z/9
+LAST	P212	"978-3-936394-22-1"
+LAST	Lmul	"Der bandkeramische Siedlungsplatz Eythra in Sachsen: Studien zur Chronologie und Siedlungsentwicklung"
+LAST	Len	"Der bandkeramische Siedlungsplatz Eythra in Sachsen: Studien zur Chronologie und Siedlungsentwicklung"
+LAST	P1476	und:"Der bandkeramische Siedlungsplatz Eythra in Sachsen: Studien zur Chronologie und Siedlungsentwicklung"
+CREATE
+LAST	P31	Q1980247
+LAST	Den	"book section from 'Monumentalising life in the Neolithic: narratives of change and continuity' published in 2020"
+LAST	P304	"263-271"
+LAST	P1104	9
+LAST	P2093	"Lech Czerniak"	P1545	"1"
+LAST	P2093	"Agnieszka Matuszewska"	P1545	"2"
+LAST	P2093	"Marcin Dziewanowski"	P1545	"3"
+LAST	P2093	"Łukasz Pospieszny"	P1545	"4"
+LAST	P2093	"Michał Jakubczak"	P1545	"5"
+LAST	P2093	"Michał Szubski"	P1545	"6"
+LAST	P577	+2020-00-00T00:00:00Z/9
+LAST	Lmul	"The Neolithic roundel and its social context on the furthest reaches of the Danubian World"
+LAST	Len	"The Neolithic roundel and its social context on the furthest reaches of the Danubian World"
+LAST	P1476	und:"The Neolithic roundel and its social context on the furthest reaches of the Danubian World"
+CREATE
+LAST	P31	Q13442814
+LAST	Den	"journal article from 'Open Archaeology' published in 2016"
+LAST	P356	"10.1515/opar-2016-0007"
+LAST	P953	"https://www.degruyter.com/document/doi/10.1515/opar-2016-0007/html"
+LAST	P478	"2"
+LAST	P433	"1"
+LAST	P2093	"Lech Czerniak"	P1545	"1"
+LAST	P2093	"Joanna Pyzel"	P1545	"2"
+LAST	P577	+2016-09-12T00:00:00Z/11
+LAST	Lmul	"Being at Home in the Early Chalcolithic. The Longhouse Phenomenon in the Brześć Kujawski Culture in the Polish Lowlands"
+LAST	Len	"Being at Home in the Early Chalcolithic. The Longhouse Phenomenon in the Brześć Kujawski Culture in the Polish Lowlands"
+LAST	P1476	und:"Being at Home in the Early Chalcolithic. The Longhouse Phenomenon in the Brześć Kujawski Culture in the Polish Lowlands"
+CREATE
+LAST	P31	Q13442814
+LAST	Den	"journal article from 'Bodendenkmalpflege in Mecklenburg' published in 1986"
+LAST	P478	"1985"
+LAST	P304	"311-364"
+LAST	P1104	54
+LAST	P2093	"Ulrich Schoknecht"	P1545	"1"
+LAST	P577	+1986-00-00T00:00:00Z/9
+LAST	Lmul	"Kurze Fundberichte 1984 Bezirk Neubrandenburg"
+LAST	Len	"Kurze Fundberichte 1984 Bezirk Neubrandenburg"
+LAST	P1476	und:"Kurze Fundberichte 1984 Bezirk Neubrandenburg"
