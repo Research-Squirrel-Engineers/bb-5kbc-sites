@@ -59,6 +59,7 @@ BUNDESLAND_OVERRIDES: dict[str, dict] = {
     "śląskie": {
         "qid": "Q54181",
         "geonames": "3337497",
+        "osm_relation": "224462",
         "label": "śląskie",
         "source": "override",
     },
@@ -310,32 +311,37 @@ def qid_from_uri(uri: str) -> str:
 
 
 def build_index(rows: list[dict]) -> dict[str, dict]:
-    """Lowercase-keyed index. Prefers GeoNames, then rdfs:label."""
+    """
+    Lowercase-keyed index.
+    All rows sharing the same label key are merged so that external IDs
+    (GeoNames, TGN, IDAI, OSM relation) are collected from every row —
+    not just the first one encountered.
+    rdfs:label takes precedence over skos:altLabel for the display label.
+    """
     index: dict[str, dict] = {}
     for row in rows:
         key = row["label"].strip().lower()
-        existing = index.get(key)
-        is_better = (
-            existing is None
-            or ("geonames" in row and "geonames" not in existing)
-            or (
-                row.get("labelType") == "rdfs:label"
-                and existing.get("source") != "rdfs:label"
-            )
-        )
-        if is_better:
+        if key not in index:
             index[key] = {
                 "qid": qid_from_uri(row["item"]),
                 "label": row["label"].strip(),
-                "geonames": row.get("geonames"),
-                "tgn": row.get("tgn"),
-                "idai": row.get("idai"),
-                "osm_relation": row.get("osm_relation"),
+                "geonames": None,
+                "tgn": None,
+                "idai": None,
+                "osm_relation": None,
                 "source": row.get("labelType", "unknown"),
-                # P131 chain: direct parent + one level up (-> Bundesland)
                 "p131": qid_from_uri(row["p131"]) if "p131" in row else None,
                 "p131up": qid_from_uri(row["p131up"]) if "p131up" in row else None,
             }
+        entry = index[key]
+        # Merge external IDs — keep first non-None value found
+        for field in ("geonames", "tgn", "idai", "osm_relation"):
+            if entry[field] is None and row.get(field):
+                entry[field] = row[field]
+        # Prefer rdfs:label as display label
+        if row.get("labelType") == "rdfs:label":
+            entry["source"] = "rdfs:label"
+            entry["label"] = row["label"].strip()
     return index
 
 
@@ -346,7 +352,7 @@ def build_index(rows: list[dict]) -> dict[str, dict]:
 
 def fetch_country_index() -> dict[str, dict]:
     query = """
-SELECT DISTINCT ?item ?label ?labelType ?geonames WHERE {
+SELECT DISTINCT ?item ?label ?labelType ?geonames ?tgn ?idai ?osm_relation WHERE {
   VALUES ?class { wd:Q6256 wd:Q3024240 wd:Q179164 }
   ?item wdt:P31 ?class .
   { ?item rdfs:label ?label . FILTER(LANG(?label)="de") BIND("rdfs:label" AS ?labelType) }
@@ -365,7 +371,7 @@ SELECT DISTINCT ?item ?label ?labelType ?geonames WHERE {
 
 def fetch_bundesland_index() -> dict[str, dict]:
     query = """
-SELECT DISTINCT ?item ?label ?labelType ?geonames WHERE {
+SELECT DISTINCT ?item ?label ?labelType ?geonames ?tgn ?idai ?osm_relation WHERE {
   VALUES ?class { wd:Q1221156 wd:Q150093 }
   ?item wdt:P31 ?class .
   { ?item rdfs:label ?label . FILTER(LANG(?label) IN ("de","pl")) BIND("rdfs:label" AS ?labelType) }
@@ -391,7 +397,7 @@ def fetch_kreis_index_for_bundesland(bl_qid: str, bl_name: str) -> dict[str, dic
     FILTER(STRLEN > 3) excludes KFZ short codes.
     """
     query = f"""
-SELECT DISTINCT ?item ?label ?labelType ?geonames WHERE {{
+SELECT DISTINCT ?item ?label ?labelType ?geonames ?tgn ?idai ?osm_relation WHERE {{
   ?item wdt:P131 wd:{bl_qid} .
   # Exclude items that have an end date (P582) - more precise than P576
   # P576 (dissolved) can exist on current items as admin reorganisation date
@@ -408,6 +414,9 @@ SELECT DISTINCT ?item ?label ?labelType ?geonames WHERE {{
     BIND("skos:altLabel" AS ?labelType)
   }}
   OPTIONAL {{ ?item wdt:P1566 ?geonames . }}
+  OPTIONAL {{ ?item wdt:P1667 ?tgn . }}
+  OPTIONAL {{ ?item wdt:P8217 ?idai . }}
+  OPTIONAL {{ ?item wdt:P402  ?osm_relation . }}
 }}
 """
     print(f"  [{bl_name} / {bl_qid}]  querying Wikidata...", flush=True)
@@ -418,32 +427,37 @@ SELECT DISTINCT ?item ?label ?labelType ?geonames WHERE {{
 
 
 def build_index(rows: list[dict]) -> dict[str, dict]:
-    """Lowercase-keyed index. Prefers GeoNames, then rdfs:label."""
+    """
+    Lowercase-keyed index.
+    All rows sharing the same label key are merged so that external IDs
+    (GeoNames, TGN, IDAI, OSM relation) are collected from every row —
+    not just the first one encountered.
+    rdfs:label takes precedence over skos:altLabel for the display label.
+    """
     index: dict[str, dict] = {}
     for row in rows:
         key = row["label"].strip().lower()
-        existing = index.get(key)
-        is_better = (
-            existing is None
-            or ("geonames" in row and "geonames" not in existing)
-            or (
-                row.get("labelType") == "rdfs:label"
-                and existing.get("source") != "rdfs:label"
-            )
-        )
-        if is_better:
+        if key not in index:
             index[key] = {
                 "qid": qid_from_uri(row["item"]),
                 "label": row["label"].strip(),
-                "geonames": row.get("geonames"),
-                "tgn": row.get("tgn"),
-                "idai": row.get("idai"),
-                "osm_relation": row.get("osm_relation"),
+                "geonames": None,
+                "tgn": None,
+                "idai": None,
+                "osm_relation": None,
                 "source": row.get("labelType", "unknown"),
-                # P131 chain: direct parent + one level up (-> Bundesland)
                 "p131": qid_from_uri(row["p131"]) if "p131" in row else None,
                 "p131up": qid_from_uri(row["p131up"]) if "p131up" in row else None,
             }
+        entry = index[key]
+        # Merge external IDs — keep first non-None value found
+        for field in ("geonames", "tgn", "idai", "osm_relation"):
+            if entry[field] is None and row.get(field):
+                entry[field] = row[field]
+        # Prefer rdfs:label as display label
+        if row.get("labelType") == "rdfs:label":
+            entry["source"] = "rdfs:label"
+            entry["label"] = row["label"].strip()
     return index
 
 
@@ -454,7 +468,7 @@ def build_index(rows: list[dict]) -> dict[str, dict]:
 
 def fetch_country_index() -> dict[str, dict]:
     query = """
-SELECT DISTINCT ?item ?label ?labelType ?geonames WHERE {
+SELECT DISTINCT ?item ?label ?labelType ?geonames ?tgn ?idai ?osm_relation WHERE {
   VALUES ?class { wd:Q6256 wd:Q3024240 wd:Q179164 }
   ?item wdt:P31 ?class .
   { ?item rdfs:label ?label . FILTER(LANG(?label)="de") BIND("rdfs:label" AS ?labelType) }
@@ -473,7 +487,7 @@ SELECT DISTINCT ?item ?label ?labelType ?geonames WHERE {
 
 def fetch_bundesland_index() -> dict[str, dict]:
     query = """
-SELECT DISTINCT ?item ?label ?labelType ?geonames WHERE {
+SELECT DISTINCT ?item ?label ?labelType ?geonames ?tgn ?idai ?osm_relation WHERE {
   VALUES ?class { wd:Q1221156 wd:Q150093 }
   ?item wdt:P31 ?class .
   { ?item rdfs:label ?label . FILTER(LANG(?label) IN ("de","pl")) BIND("rdfs:label" AS ?labelType) }
@@ -506,7 +520,7 @@ def fetch_kreis_index_global() -> dict[str, dict]:
 
     def _fetch(classes: str, langs: str, label: str) -> list[dict]:
         query = f"""
-SELECT DISTINCT ?item ?label ?labelType ?geonames ?p131 ?p131up WHERE {{
+SELECT DISTINCT ?item ?label ?labelType ?geonames ?tgn ?idai ?osm_relation ?p131 ?p131up WHERE {{
   VALUES ?class {{ {classes} }}
   ?item wdt:P31 ?class .
   MINUS {{ ?item wdt:P576 [] }}
@@ -524,6 +538,9 @@ SELECT DISTINCT ?item ?label ?labelType ?geonames ?p131 ?p131up WHERE {{
     BIND("skos:altLabel" AS ?labelType)
   }}
   OPTIONAL {{ ?item wdt:P1566 ?geonames . }}
+  OPTIONAL {{ ?item wdt:P1667 ?tgn . }}
+  OPTIONAL {{ ?item wdt:P8217 ?idai . }}
+  OPTIONAL {{ ?item wdt:P402  ?osm_relation . }}
 }}"""
         print(f"  Fetching {label}...", flush=True)
         rows = sparql_query(query)
@@ -699,9 +716,9 @@ def process_level(
                 1.0,
                 f"Direct override | '{raw}' -> QID={override['qid']}"
                 + (f" | [{note}]" if note else ""),
-                None,
-                None,
-                None,
+                override.get("tgn"),
+                override.get("idai"),
+                override.get("osm_relation"),
             )
         else:
             result = fuzzy_lookup(normalised, index, normalisation_note=note)
@@ -774,9 +791,9 @@ def process_kreis(df: pd.DataFrame) -> tuple[dict[str, MatchResult], list[dict]]
                     1.0,
                     f"Direct override | '{raw}' -> QID={override['qid']}"
                     + (f" | [{note}]" if note else ""),
-                    None,
-                    None,
-                    None,
+                    override.get("tgn"),
+                    override.get("idai"),
+                    override.get("osm_relation"),
                 )
             else:
                 result = fuzzy_lookup(
@@ -924,16 +941,68 @@ def main() -> None:
     ).to_csv(rep, sep=OUTPUT_SEP, index=False, quoting=csv.QUOTE_ALL, encoding="utf-8")
     print(f"[2/2] Report CSV:  {rep}")
 
-    print(f"\nRows: {len(df)}")
-    for level, cache in [
-        ("LAND", land_cache),
-        ("BUNDESLAND", bl_cache),
-        ("KREIS", kreis_cache),
-    ]:
-        m = sum(1 for v in cache.values() if v[0] is not None)
-        print(
-            f"  {level:12s} unique={len(cache):3d}  matched={m}  no_match={len(cache)-m}"
+    # Build a lookup: raw value -> LAND for country-aware breakdown
+    def _land_for(col: str, raw: str) -> str:
+        rows = df[df[col] == raw]["LAND"].dropna()
+        return rows.iloc[0] if len(rows) else "?"
+
+    def _count(cache, idx):
+        return sum(1 for v in cache.values() if len(v) > idx and v[idx] is not None)
+
+    def _count_by_land(cache, col, idx, land_val):
+        total = 0
+        for raw, v in cache.items():
+            if len(v) > idx and v[idx] is not None:
+                if _land_for(col, raw) == land_val:
+                    total += 1
+        return total
+
+    def _matched_by_land(cache, col, land_val):
+        return sum(
+            1
+            for raw, v in cache.items()
+            if v[0] is not None and _land_for(col, raw) == land_val
         )
+
+    print(f"\nRows: {len(df)}\n")
+    header = f"  {'level':<12s}  {'scope':<6s}  {'unique':>6s}  {'matched':>7s}  {'no_match':>8s}  {'GeoNames':>9s}  {'TGN':>6s}  {'IDAI':>6s}  {'OSM':>6s}"
+    print(header)
+    print("  " + "-" * (len(header) - 2))
+    for level, cache, col in [
+        ("LAND", land_cache, "LAND"),
+        ("BUNDESLAND", bl_cache, "BUNDESLAND"),
+        ("KREIS", kreis_cache, "KREIS"),
+    ]:
+        for scope in ["DE", "PL", "total"]:
+            if scope == "total":
+                n = len(cache)
+                matched = _count(cache, 0)
+                geo = _count(cache, 1)
+                tgn = _count(cache, 5)
+                idai = _count(cache, 6)
+                osm = _count(cache, 7)
+            else:
+                land_val = "Deutschland" if scope == "DE" else "Polen"
+                subset = {
+                    k: v for k, v in cache.items() if _land_for(col, k) == land_val
+                }
+                if not subset:
+                    continue
+                n = len(subset)
+                matched = sum(1 for v in subset.values() if v[0] is not None)
+                geo = sum(1 for v in subset.values() if v[1] is not None)
+                tgn = sum(1 for v in subset.values() if len(v) > 5 and v[5] is not None)
+                idai = sum(
+                    1 for v in subset.values() if len(v) > 6 and v[6] is not None
+                )
+                osm = sum(1 for v in subset.values() if len(v) > 7 and v[7] is not None)
+            no_match = n - matched
+            lbl = level if scope == "DE" else ""
+            print(
+                f"  {lbl:<12s}  {scope:<6s}  {n:>6d}  {matched:>7d}  {no_match:>8d}  {geo:>9d}  {tgn:>6d}  {idai:>6d}  {osm:>6d}"
+            )
+            if scope == "total":
+                print()
 
 
 if __name__ == "__main__":
