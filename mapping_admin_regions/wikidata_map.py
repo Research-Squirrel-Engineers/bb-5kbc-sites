@@ -279,9 +279,12 @@ MatchResult = tuple[
     Optional[str],  # matched label
     Optional[float],  # score 0.0-1.0
     str,  # reason
+    Optional[str],  # tgn (Getty TGN P1667)
+    Optional[str],  # idai (iDAI.gazetteer P8217)
+    Optional[str],  # osm_relation (P402)
 ]
 
-NO_MATCH: MatchResult = (None, None, None, None, "Not processed")
+NO_MATCH: MatchResult = (None, None, None, None, "Not processed", None, None, None)
 
 
 def sparql_query(query: str) -> list[dict]:
@@ -325,6 +328,9 @@ def build_index(rows: list[dict]) -> dict[str, dict]:
                 "qid": qid_from_uri(row["item"]),
                 "label": row["label"].strip(),
                 "geonames": row.get("geonames"),
+                "tgn": row.get("tgn"),
+                "idai": row.get("idai"),
+                "osm_relation": row.get("osm_relation"),
                 "source": row.get("labelType", "unknown"),
                 # P131 chain: direct parent + one level up (-> Bundesland)
                 "p131": qid_from_uri(row["p131"]) if "p131" in row else None,
@@ -347,6 +353,9 @@ SELECT DISTINCT ?item ?label ?labelType ?geonames WHERE {
   UNION
   { ?item skos:altLabel ?label . FILTER(LANG(?label)="de") BIND("skos:altLabel" AS ?labelType) }
   OPTIONAL { ?item wdt:P1566 ?geonames . }
+  OPTIONAL { ?item wdt:P1667 ?tgn . }
+  OPTIONAL { ?item wdt:P8217 ?idai . }
+  OPTIONAL { ?item wdt:P402  ?osm_relation . }
 }"""
     print("Fetching country index...", flush=True)
     rows = sparql_query(query)
@@ -363,6 +372,9 @@ SELECT DISTINCT ?item ?label ?labelType ?geonames WHERE {
   UNION
   { ?item skos:altLabel ?label . FILTER(LANG(?label) IN ("de","pl")) BIND("skos:altLabel" AS ?labelType) }
   OPTIONAL { ?item wdt:P1566 ?geonames . }
+  OPTIONAL { ?item wdt:P1667 ?tgn . }
+  OPTIONAL { ?item wdt:P8217 ?idai . }
+  OPTIONAL { ?item wdt:P402  ?osm_relation . }
 }"""
     print("Fetching Bundesland/Voivodeship index...", flush=True)
     rows = sparql_query(query)
@@ -424,6 +436,9 @@ def build_index(rows: list[dict]) -> dict[str, dict]:
                 "qid": qid_from_uri(row["item"]),
                 "label": row["label"].strip(),
                 "geonames": row.get("geonames"),
+                "tgn": row.get("tgn"),
+                "idai": row.get("idai"),
+                "osm_relation": row.get("osm_relation"),
                 "source": row.get("labelType", "unknown"),
                 # P131 chain: direct parent + one level up (-> Bundesland)
                 "p131": qid_from_uri(row["p131"]) if "p131" in row else None,
@@ -446,6 +461,9 @@ SELECT DISTINCT ?item ?label ?labelType ?geonames WHERE {
   UNION
   { ?item skos:altLabel ?label . FILTER(LANG(?label)="de") BIND("skos:altLabel" AS ?labelType) }
   OPTIONAL { ?item wdt:P1566 ?geonames . }
+  OPTIONAL { ?item wdt:P1667 ?tgn . }
+  OPTIONAL { ?item wdt:P8217 ?idai . }
+  OPTIONAL { ?item wdt:P402  ?osm_relation . }
 }"""
     print("Fetching country index...", flush=True)
     rows = sparql_query(query)
@@ -462,6 +480,9 @@ SELECT DISTINCT ?item ?label ?labelType ?geonames WHERE {
   UNION
   { ?item skos:altLabel ?label . FILTER(LANG(?label) IN ("de","pl")) BIND("skos:altLabel" AS ?labelType) }
   OPTIONAL { ?item wdt:P1566 ?geonames . }
+  OPTIONAL { ?item wdt:P1667 ?tgn . }
+  OPTIONAL { ?item wdt:P8217 ?idai . }
+  OPTIONAL { ?item wdt:P402  ?osm_relation . }
 }"""
     print("Fetching Bundesland/Voivodeship index...", flush=True)
     rows = sparql_query(query)
@@ -605,7 +626,7 @@ def fuzzy_lookup(
         query_str, list(candidates.keys()), scorer=fuzz.token_sort_ratio
     )
     if result is None:
-        return None, None, None, None, "No candidates in index"
+        return None, None, None, None, "No candidates in index", None, None, None
 
     best_key, raw_score, _ = result
     score = round(raw_score / 100, 4)
@@ -619,6 +640,9 @@ def fuzzy_lookup(
             score,
             f"Best candidate '{entry['label']}' scored {score:.2f}, "
             f"below threshold {threshold}",
+            None,
+            None,
+            None,
         )
 
     match_type = (
@@ -632,7 +656,16 @@ def fuzzy_lookup(
     if normalisation_note:
         parts.append(f"[normalised: {normalisation_note}]")
 
-    return entry["qid"], entry.get("geonames"), entry["label"], score, " | ".join(parts)
+    return (
+        entry["qid"],
+        entry.get("geonames"),
+        entry["label"],
+        score,
+        " | ".join(parts),
+        entry.get("tgn"),
+        entry.get("idai"),
+        entry.get("osm_relation"),
+    )
 
 
 # ---------------------------------------------------------------------------
@@ -666,12 +699,15 @@ def process_level(
                 1.0,
                 f"Direct override | '{raw}' -> QID={override['qid']}"
                 + (f" | [{note}]" if note else ""),
+                None,
+                None,
+                None,
             )
         else:
             result = fuzzy_lookup(normalised, index, normalisation_note=note)
 
         cache[raw] = result
-        qid, geonames, matched_label, score, _ = result
+        qid, geonames, matched_label, score, *_ = result
         status = "OK" if qid else "NO MATCH"
         score_str = f"{score:.2f}" if score is not None else "n/a"
         print(
@@ -689,6 +725,9 @@ def process_level(
             "matchLabel": v[2],
             "matchScore": v[3],
             "matchReason": v[4],
+            "TGN": v[5],
+            "IDAI": v[6],
+            "OSM_Relation": v[7],
         }
         for raw, v in cache.items()
     ]
@@ -735,6 +774,9 @@ def process_kreis(df: pd.DataFrame) -> tuple[dict[str, MatchResult], list[dict]]
                     1.0,
                     f"Direct override | '{raw}' -> QID={override['qid']}"
                     + (f" | [{note}]" if note else ""),
+                    None,
+                    None,
+                    None,
                 )
             else:
                 result = fuzzy_lookup(
@@ -745,7 +787,7 @@ def process_kreis(df: pd.DataFrame) -> tuple[dict[str, MatchResult], list[dict]]
                 )
 
             cache[raw] = result
-            qid, geonames, matched_label, score, _ = result
+            qid, geonames, matched_label, score, *_ = result
             status = "OK" if qid else "NO MATCH"
             score_str = f"{score:.2f}" if score is not None else "n/a"
             print(
@@ -763,6 +805,9 @@ def process_kreis(df: pd.DataFrame) -> tuple[dict[str, MatchResult], list[dict]]
                 None,
                 None,
                 "Skipped: no BUNDESLAND_QID available for scoping",
+                None,
+                None,
+                None,
             )
 
     report_rows = [
@@ -774,6 +819,9 @@ def process_kreis(df: pd.DataFrame) -> tuple[dict[str, MatchResult], list[dict]]
             "matchLabel": v[2],
             "matchScore": v[3],
             "matchReason": v[4],
+            "TGN": v[5],
+            "IDAI": v[6],
+            "OSM_Relation": v[7],
         }
         for raw, v in cache.items()
     ]
@@ -804,7 +852,16 @@ def main() -> None:
     land_cache, land_report = process_level(df, "LAND", country_index)
     all_report.extend(land_report)
     for i, s in enumerate(
-        ["QID", "GeoNames", "matchLabel", "matchScore", "matchReason"]
+        [
+            "QID",
+            "GeoNames",
+            "matchLabel",
+            "matchScore",
+            "matchReason",
+            "TGN",
+            "IDAI",
+            "OSM_Relation",
+        ]
     ):
         df[f"LAND_{s}"] = df["LAND"].map(lambda x, i=i: land_cache.get(x, NO_MATCH)[i])
 
@@ -815,7 +872,16 @@ def main() -> None:
     )
     all_report.extend(bl_report)
     for i, s in enumerate(
-        ["QID", "GeoNames", "matchLabel", "matchScore", "matchReason"]
+        [
+            "QID",
+            "GeoNames",
+            "matchLabel",
+            "matchScore",
+            "matchReason",
+            "TGN",
+            "IDAI",
+            "OSM_Relation",
+        ]
     ):
         df[f"BUNDESLAND_{s}"] = df["BUNDESLAND"].map(
             lambda x, i=i: bl_cache.get(x, NO_MATCH)[i]
@@ -825,7 +891,16 @@ def main() -> None:
     kreis_cache, kreis_report = process_kreis(df)
     all_report.extend(kreis_report)
     for i, s in enumerate(
-        ["QID", "GeoNames", "matchLabel", "matchScore", "matchReason"]
+        [
+            "QID",
+            "GeoNames",
+            "matchLabel",
+            "matchScore",
+            "matchReason",
+            "TGN",
+            "IDAI",
+            "OSM_Relation",
+        ]
     ):
         df[f"KREIS_{s}"] = df["KREIS"].map(
             lambda x, i=i: kreis_cache.get(x, NO_MATCH)[i]
@@ -833,7 +908,14 @@ def main() -> None:
 
     # -- Write outputs -------------------------------------------------------
     out = HERE / OUTPUT_FILE
-    df.to_csv(out, sep=OUTPUT_SEP, index=False, quoting=csv.QUOTE_ALL, encoding="utf-8")
+    df.to_csv(
+        out,
+        sep=OUTPUT_SEP,
+        index=False,
+        quoting=csv.QUOTE_ALL,
+        encoding="utf-8",
+        na_rep="",
+    )
     print(f"\n[1/2] Mapped CSV:  {out}")
 
     rep = HERE / REPORT_FILE
