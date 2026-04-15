@@ -30,6 +30,8 @@
 | `bb5kbc:Entdeckung` | `http://w3id.org/bb5kbc/site_{FID}_discovery` | `http://w3id.org/bb5kbc/site_1_discovery` |
 | `bb5kbc:KulturelleZuordnung` | `http://w3id.org/bb5kbc/site_{FID}_culture` | `http://w3id.org/bb5kbc/site_1_culture` |
 
+> `bb5kbc:Entdeckung` und `bb5kbc:KulturelleZuordnung` sind FID-basiert weil sie immer an genau einer Fundstelle hängen — auch wenn der Entdeckungstext oder die Kulturgruppe bei mehreren Fundstellen gleich ist, ist die *Zuordnung* jeweils eine eigene Instanz.
+
 ### Hash-basiert (dedupliziert, URI = MD5 des Originalwerts, 8 Zeichen)
 
 | Entität | URI-Muster | Beispiel |

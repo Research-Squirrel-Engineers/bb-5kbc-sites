@@ -43,8 +43,8 @@ URI patterns (FID-based, one per Fundstelle):
   site_{FID}           → bb5kbc:Fundstelle
   site_{FID}_activity  → bb5kbc:GeoreferenzierungsAktivitaet
   site_{FID}_geom      → sf:Point
-  site_{FID}_discovery → bb5kbc:Entdeckung
-  site_{FID}_culture   → bb5kbc:KulturelleZuordnung
+  site_{FID}_discovery → bb5kbc:Entdeckung       (FID-based: one per Fundstelle)
+  site_{FID}_culture   → bb5kbc:KulturelleZuordnung (FID-based: one per Fundstelle)
 URI patterns (hash-based, MD5(label_utf8)[:8], deduplicated):
   gemeinde_{hash}        → bb5kbc:Gemeinde
   kreis_{hash}           → bb5kbc:Kreis
