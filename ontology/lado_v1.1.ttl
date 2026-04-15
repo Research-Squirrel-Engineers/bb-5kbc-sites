@@ -1,0 +1,1949 @@
+@prefix : <http://archaeology.link/ontology#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix sf: <http://www.opengis.net/ont/sf#> .
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix aaao: <https://ontology.swissartresearch.net/aaao/> .
+@prefix arno: <http://archaeonatural.cloud/ont/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix lado: <http://archaeology.link/ontology#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vocab: <http://academic-meta-tool.xyz/vocab#> .
+@prefix samian: <http://data.archaeology.link/data/samian/> .
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix ontology: <http://archaeology.link/ontology#> .
+@prefix pleiades: <https://pleiades.stoa.org/places/vocab#> .
+@prefix wikidata: <http://www.wikidata.org/entity/> .
+@prefix geosparql: <http://www.opengis.net/ont/geosparql#> .
+@base <http://archaeology.link/ontology#> .
+
+<http://archaeology.link/ontology#> rdf:type owl:Ontology ;
+                                     dc:contributor "Florian Thiery, Allard Mees" ;
+                                     dc:creator "Florian Thiery, Allard Mees" ;
+                                     dc:description "This ontology contains classes to describe data of the LEIZA."@en ;
+                                     dc:publisher "Leibniz-Zentrum für Archäologie (LEIZA)" ;
+                                     dc:rights "CC BY 4.0" ;
+                                     dc:subject "archaeology; samian ware;" ;
+                                     dct:modified "2025-05-20" ;
+                                     rdfs:comment "This ontology contains classes to describe data of the LEIZA."@en ;
+                                     rdfs:label "Linked Archaeological Data Ontology"@en ;
+                                     owl:versionInfo 1.1 .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://academic-meta-tool.xyz/vocab#placeholder
+vocab:placeholder rdf:type owl:AnnotationProperty .
+
+
+###  http://archaeology.link/ontology#hasLocation
+ontology:hasLocation rdf:type owl:AnnotationProperty ;
+                     rdfs:range ontology:Location .
+
+
+###  http://archaeology.link/ontology#hasType
+ontology:hasType rdf:type owl:AnnotationProperty ;
+                 rdfs:range crm:E55_Type .
+
+
+###  http://archaeology.link/ontology#isActorStatus
+ontology:isActorStatus rdf:type owl:AnnotationProperty .
+
+
+###  http://archaeology.link/ontology#isActorType
+ontology:isActorType rdf:type owl:AnnotationProperty .
+
+
+###  http://archaeology.link/ontology#version
+ontology:version rdf:type owl:AnnotationProperty ;
+                 rdfs:label "version number" .
+
+
+###  http://purl.org/dc/elements/1.1/contributor
+dc:contributor rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/creator
+dc:creator rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/description
+dc:description rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/identifier
+dc:identifier rdf:type owl:AnnotationProperty ;
+              rdfs:comment "Recommended best practice is to identify the resource by means of a string conforming to a formal identification system."@en ;
+              rdfs:label "Identifier"@en .
+
+
+###  http://purl.org/dc/elements/1.1/publisher
+dc:publisher rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/rights
+dc:rights rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/subject
+dc:subject rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/contributor
+dct:contributor rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/creator
+dct:creator rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/license
+dct:license rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/modified
+dct:modified rdf:type owl:AnnotationProperty ;
+             rdfs:label "modified" .
+
+
+###  http://purl.org/dc/terms/source
+dct:source rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/type
+dct:type rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/1999/02/22-rdf-syntax-ns#type
+rdf:type rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2000/01/rdf-schema#label
+rdfs:label rdfs:comment "A human-readable name for the subject."@en ;
+           rdfs:label "label"@en .
+
+
+###  http://www.w3.org/2004/02/skos/core#altLabel
+skos:altLabel rdf:type owl:AnnotationProperty ;
+              rdfs:label "alternative label"@en .
+
+
+###  http://www.w3.org/2004/02/skos/core#description
+skos:description rdf:type owl:AnnotationProperty ;
+                 rdfs:label "definition"@en .
+
+
+###  http://www.w3.org/2004/02/skos/core#note
+skos:note rdf:type owl:AnnotationProperty ;
+          rdfs:comment "note"@en ;
+          rdfs:subPropertyOf skos:scopeNote .
+
+
+###  http://www.w3.org/2004/02/skos/core#prefLabel
+skos:prefLabel rdf:type owl:AnnotationProperty ;
+               rdfs:label "preferred label"@en .
+
+
+###  http://www.w3.org/2004/02/skos/core#scopeNote
+skos:scopeNote rdf:type owl:AnnotationProperty ;
+               rdfs:label "scope note"@en .
+
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://purl.org/dc/dcmitype/Image
+dcmitype:Image rdf:type rdfs:Datatype ;
+               rdfs:comment "Examples include images and photographs of physical objects, paintings, prints, drawings, other images and graphics, animations and moving pictures, film, diagrams, maps, musical notation. Note that Image may include both electronic and physical representations."@en ;
+               rdfs:label "Image"@en .
+
+
+###  http://www.w3.org/2000/01/rdf-schema#Resource
+rdfs:Resource rdf:type rdfs:Datatype .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://archaeology.link/ontology#PlaceOfInterest
+ontology:PlaceOfInterest rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf geosparql:hasGeometry ;
+                         rdfs:comment "c.f. https://www.ogc.org/standards/geosparql, 1.0, OGC GeoSPARQL - A Geographic Query Language for RDF Data, 11-052r4, Annex B, B.1"@en ;
+                         rdfs:label "place of interest"@en .
+
+
+###  http://archaeology.link/ontology#SYP1_hasFeature
+ontology:SYP1_hasFeature rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf crm:P56_bears_feature ;
+                         rdfs:domain ontology:SYE1_InformationCarrier ;
+                         rdfs:range ontology:SYE2_Feature ;
+                         rdfs:label "SYP1 has feature"@en .
+
+
+###  http://archaeology.link/ontology#SYP2_influenced
+ontology:SYP2_influenced rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf crm:P15i_influenced ;
+                         rdfs:domain crm:E1_CRM_Entity ;
+                         rdfs:range crm:E1_CRM_Entity ;
+                         rdfs:label "SYP2 influenced"@en .
+
+
+###  http://archaeology.link/ontology#SYP3_influencedBy
+ontology:SYP3_influencedBy rdf:type owl:ObjectProperty ;
+                           rdfs:subPropertyOf crm:P15_was_influenced_by ;
+                           rdfs:domain ontology:SYE2_Feature ;
+                           rdfs:range ontology:SYE5_Observation ;
+                           rdfs:label "SYP3 influenced by"@en .
+
+
+###  http://archaeology.link/ontology#arachneEntityID
+ontology:arachneEntityID rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf skos:exactMatch ;
+                         rdfs:label "DAI Arachne ID"@en .
+
+
+###  http://archaeology.link/ontology#arachneModelID
+ontology:arachneModelID rdf:type owl:ObjectProperty ;
+                        rdfs:subPropertyOf skos:exactMatch ;
+                        rdfs:label "DAI Arachne Model ID"@en .
+
+
+###  http://archaeology.link/ontology#carries
+ontology:carries rdf:type owl:ObjectProperty ;
+                 rdfs:domain ontology:InformationCarrier ;
+                 rdfs:range ontology:Inscription ;
+                 rdfs:label "carries"@en ,
+                            "trägt"@de .
+
+
+###  http://archaeology.link/ontology#centroid
+ontology:centroid rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf ontology:hasPointGeometry ;
+                  rdfs:domain geosparql:Geometry ;
+                  rdfs:range owl:Thing ;
+                  rdfs:label "has centroid"@en ,
+                             "hat Zentrum"@de .
+
+
+###  http://archaeology.link/ontology#clusteredArea
+ontology:clusteredArea rdf:type owl:ObjectProperty ;
+                       rdfs:subPropertyOf ontology:hasExactGeometry ;
+                       rdfs:domain geosparql:Geometry ;
+                       rdfs:range owl:Thing ;
+                       rdfs:label "has clustered area"@en ,
+                                  "hat geclusterte Fläche"@de .
+
+
+###  http://archaeology.link/ontology#clusteredAs
+ontology:clusteredAs rdf:type owl:ObjectProperty ;
+                     rdfs:domain ontology:Location ;
+                     rdfs:range ontology:KilnRegion ;
+                     rdfs:label "clustered as"@en ,
+                                "geclustert als"@de .
+
+
+###  http://archaeology.link/ontology#createdBy
+ontology:createdBy rdf:type owl:ObjectProperty ;
+                   rdfs:label "created by"@en .
+
+
+###  http://archaeology.link/ontology#derivedFrom
+ontology:derivedFrom rdf:type owl:ObjectProperty ;
+                     rdfs:label "derived from"@en .
+
+
+###  http://archaeology.link/ontology#disclosedAt
+ontology:disclosedAt rdf:type owl:ObjectProperty ;
+                     rdfs:domain ontology:InformationCarrier ;
+                     rdfs:range ontology:Place ;
+                     rdfs:label "disclosed at"@en ,
+                                "offenbart bei"@de .
+
+
+###  http://archaeology.link/ontology#exactMatch
+ontology:exactMatch rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf <http://www.wikidata.org/prop/direct/P2888> ;
+                    rdf:type owl:SymmetricProperty ,
+                             owl:TransitiveProperty ;
+                    rdfs:domain owl:Thing ;
+                    rdfs:range owl:Thing ;
+                    rdfs:label "exact match"@en ,
+                               "exakte Übereinstimmung"@de .
+
+
+###  http://archaeology.link/ontology#generalisedAs
+ontology:generalisedAs rdf:type owl:ObjectProperty ;
+                       rdfs:subPropertyOf ontology:hasBroaderItem ;
+                       rdfs:domain ontology:Potform ;
+                       rdfs:range ontology:GenericPotform ;
+                       rdfs:label "generalised as"@en ,
+                                  "generalisiert als"@de .
+
+
+###  http://archaeology.link/ontology#hasAMT
+ontology:hasAMT rdf:type owl:ObjectProperty ;
+                rdfs:domain owl:Thing ;
+                rdfs:range owl:Thing ;
+                rdfs:label "has AMT node"@en ,
+                           "hat AMT Knoten"@de .
+
+
+###  http://archaeology.link/ontology#hasBroaderItem
+ontology:hasBroaderItem rdf:type owl:ObjectProperty ;
+                        rdfs:subPropertyOf skos:broader ;
+                        rdfs:label "has broader item"@en .
+
+
+###  http://archaeology.link/ontology#hasEntity
+ontology:hasEntity rdf:type owl:ObjectProperty ;
+                   rdfs:domain ontology:Actor ;
+                   rdfs:range ontology:ActorEntity ;
+                   rdfs:label "has entity"@en ,
+                              "hat Entität"@de .
+
+
+###  http://archaeology.link/ontology#hasExactGeometry
+ontology:hasExactGeometry rdf:type owl:ObjectProperty ;
+                          rdfs:subPropertyOf geosparql:hasGeometry ;
+                          rdfs:domain geosparql:Geometry ;
+                          rdfs:range owl:Thing ;
+                          rdfs:comment "c.f. https://www.ogc.org/standards/geosparql, 1.0, OGC GeoSPARQL - A Geographic Query Language for RDF Data, 11-052r4, Annex B, B.1"@en ;
+                          rdfs:label "has exact geometry"@en .
+
+
+###  http://archaeology.link/ontology#hasImage
+ontology:hasImage rdf:type owl:ObjectProperty ;
+                  rdfs:domain ontology:Potform .
+
+
+###  http://archaeology.link/ontology#hasKilnsite
+ontology:hasKilnsite rdf:type owl:ObjectProperty ;
+                     owl:inverseOf ontology:isKilnsiteOf ;
+                     rdfs:domain ontology:InformationCarrier ;
+                     rdfs:range ontology:Location .
+
+
+###  http://archaeology.link/ontology#hasLocation
+ontology:hasLocation rdf:type owl:ObjectProperty ;
+                     rdfs:domain ontology:Place .
+
+
+###  http://archaeology.link/ontology#hasMemberItem
+ontology:hasMemberItem rdf:type owl:ObjectProperty ;
+                       rdfs:subPropertyOf skos:member ;
+                       owl:inverseOf skos:member ;
+                       rdfs:label "has member item"@en .
+
+
+###  http://archaeology.link/ontology#hasNarrowerItem
+ontology:hasNarrowerItem rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf skos:narrower ;
+                         rdfs:label "has narrower item"@en .
+
+
+###  http://archaeology.link/ontology#hasPointGeometry
+ontology:hasPointGeometry rdf:type owl:ObjectProperty ;
+                          rdfs:subPropertyOf geosparql:hasGeometry ;
+                          rdfs:domain geosparql:Geometry ;
+                          rdfs:range owl:Thing ;
+                          rdfs:comment "c.f. https://www.ogc.org/standards/geosparql, 1.0, OGC GeoSPARQL - A Geographic Query Language for RDF Data, 11-052r4, Annex B, B.1"@en ;
+                          rdfs:label "has point geometry"@en .
+
+
+###  http://archaeology.link/ontology#hasPublisher
+ontology:hasPublisher rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf skos:member ;
+                      owl:inverseOf ontology:published ;
+                      rdfs:label "has publisher"@en .
+
+
+###  http://archaeology.link/ontology#hasRelatedItem
+ontology:hasRelatedItem rdf:type owl:ObjectProperty ;
+                        rdfs:subPropertyOf skos:related ;
+                        rdf:type owl:SymmetricProperty ;
+                        rdfs:label "has related item"@en .
+
+
+###  http://archaeology.link/ontology#hasSameFlute
+ontology:hasSameFlute rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf ontology:hasRelatedItem ;
+                      rdf:type owl:SymmetricProperty ;
+                      rdfs:label "has same flute"@en .
+
+
+###  http://archaeology.link/ontology#hasSameFootring
+ontology:hasSameFootring rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf ontology:hasRelatedItem ;
+                         rdf:type owl:SymmetricProperty ;
+                         rdfs:label "has same footring"@en .
+
+
+###  http://archaeology.link/ontology#hasSameGroove
+ontology:hasSameGroove rdf:type owl:ObjectProperty ;
+                       rdfs:subPropertyOf ontology:hasRelatedItem ;
+                       rdf:type owl:SymmetricProperty ;
+                       rdfs:label "has same groove"@en .
+
+
+###  http://archaeology.link/ontology#hasSameRim
+ontology:hasSameRim rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf ontology:hasRelatedItem ;
+                    rdf:type owl:SymmetricProperty ;
+                    rdfs:label "has same rim"@en .
+
+
+###  http://archaeology.link/ontology#hasSameRoulette
+ontology:hasSameRoulette rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf ontology:hasRelatedItem ;
+                         rdf:type owl:SymmetricProperty ;
+                         rdfs:label "has same roulette"@en .
+
+
+###  http://archaeology.link/ontology#hasSameWall
+ontology:hasSameWall rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf ontology:hasRelatedItem ;
+                     rdf:type owl:SymmetricProperty ;
+                     rdfs:label "has same wall"@en .
+
+
+###  http://archaeology.link/ontology#hasStatus
+ontology:hasStatus rdf:type owl:ObjectProperty ;
+                   rdfs:domain ontology:ActorEntity ;
+                   rdfs:range ontology:ActorEntity ;
+                   rdfs:label "has status"@en ,
+                              "hat Status"@de .
+
+
+###  http://archaeology.link/ontology#hasType
+ontology:hasType rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf ontology:hasBroaderItem ;
+                 rdfs:domain owl:Thing .
+
+
+###  http://archaeology.link/ontology#hasWorker
+ontology:hasWorker rdf:type owl:ObjectProperty ;
+                   owl:inverseOf ontology:worksAtPlace ;
+                   rdfs:domain ontology:Location ;
+                   rdfs:range ontology:ActorEntity .
+
+
+###  http://archaeology.link/ontology#interactsWith
+ontology:interactsWith rdf:type owl:ObjectProperty ;
+                       rdfs:domain ontology:ActorEntity ;
+                       rdfs:range ontology:ActorEntity ;
+                       rdfs:label "interacts with"@en ,
+                                  "interagiert mit"@de .
+
+
+###  http://archaeology.link/ontology#isAbout
+ontology:isAbout rdf:type owl:ObjectProperty ;
+                 rdfs:domain ontology:Inscription ;
+                 rdfs:range ontology:Actor ;
+                 rdfs:label "is about"@en ,
+                            "ist über"@de .
+
+
+###  http://archaeology.link/ontology#isKilnsiteOf
+ontology:isKilnsiteOf rdf:type owl:ObjectProperty ;
+                      rdfs:domain ontology:Location ;
+                      rdfs:range ontology:InformationCarrier .
+
+
+###  http://archaeology.link/ontology#isMemeberOf
+ontology:isMemeberOf rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf owl:topObjectProperty ;
+                     rdfs:label "is member item of"@en .
+
+
+###  http://archaeology.link/ontology#locatedAt
+ontology:locatedAt rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf ontology:hasPointGeometry ;
+                   rdfs:domain geosparql:Geometry ;
+                   rdfs:range owl:Thing ;
+                   rdfs:label "is located hat"@en ,
+                              "ist verortet in"@de .
+
+
+###  http://archaeology.link/ontology#partiallyCoincidentWith
+ontology:partiallyCoincidentWith rdf:type owl:ObjectProperty ;
+                                 rdfs:subPropertyOf <http://www.wikidata.org/prop/direct/P1382> ;
+                                 owl:inverseOf ontology:partiallyNotCoincidentWith ;
+                                 rdfs:label "partially coincident with"@en .
+
+
+###  http://archaeology.link/ontology#partiallyNotCoincidentWith
+ontology:partiallyNotCoincidentWith rdf:type owl:ObjectProperty ;
+                                    rdfs:subPropertyOf <http://www.wikidata.org/prop/direct/P1382> ;
+                                    rdfs:label "partially not coincident with"@en .
+
+
+###  http://archaeology.link/ontology#published
+ontology:published rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf skos:member ;
+                   rdfs:label "published"@en .
+
+
+###  http://archaeology.link/ontology#representedBy
+ontology:representedBy rdf:type owl:ObjectProperty ;
+                       rdfs:domain ontology:InformationCarrier ;
+                       rdfs:range ontology:Potform .
+
+
+###  http://archaeology.link/ontology#selectedArea
+ontology:selectedArea rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf ontology:hasPointGeometry ;
+                      rdfs:label "selected area"@en .
+
+
+###  http://archaeology.link/ontology#wasMadeBy
+ontology:wasMadeBy rdf:type owl:ObjectProperty ;
+                   rdfs:domain ontology:Inscription ;
+                   rdfs:range ontology:InscriptionMakingType ;
+                   rdfs:label "was made by"@en ,
+                              "wurde angefertigt durch"@de .
+
+
+###  http://archaeology.link/ontology#worksAtPlace
+ontology:worksAtPlace rdf:type owl:ObjectProperty ;
+                      rdfs:domain ontology:ActorEntity ;
+                      rdfs:range ontology:Location .
+
+
+###  http://creativecommons.org/ns#attributionURL
+cc:attributionURL rdf:type owl:ObjectProperty ;
+                  rdfs:label "attribution URL"@en .
+
+
+###  http://creativecommons.org/ns#license
+cc:license rdf:type owl:ObjectProperty ;
+           rdfs:label "license"@en .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/P15_was_influenced_by
+crm:P15_was_influenced_by rdf:type owl:ObjectProperty ;
+                          rdfs:domain crm:E5_Event ;
+                          rdfs:range crm:E1_CRM_Entity ;
+                          rdfs:label "P15 was influenced by"@en .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/P15i_influenced
+crm:P15i_influenced rdf:type owl:ObjectProperty ;
+                    rdfs:domain crm:E1_CRM_Entity ;
+                    rdfs:range crm:E5_Event ;
+                    rdfs:label "P15i influenced"@en .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/P46_is_composed_of
+crm:P46_is_composed_of rdf:type owl:ObjectProperty ;
+                       rdfs:label "P46 is composed of"@en .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/P56_bears_feature
+crm:P56_bears_feature rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf crm:P46_is_composed_of ;
+                      rdfs:domain crm:E71_Human-Made_Thing ;
+                      rdfs:range crm:E25_Human-Made_Feature ;
+                      rdfs:label "P56 bears feature"@en .
+
+
+###  http://www.opengis.net/ont/geosparql#hasGeometry
+geosparql:hasGeometry rdf:type owl:ObjectProperty ;
+                      rdfs:domain geosparql:SpatialObject ;
+                      rdfs:range owl:Thing ;
+                      rdfs:label "has geometry"@en ,
+                                 "hat Geometrie"@de .
+
+
+###  http://www.w3.org/2002/07/owl#sameAs
+owl:sameAs rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf owl:topObjectProperty ;
+           rdf:type owl:SymmetricProperty ,
+                    owl:TransitiveProperty ;
+           rdfs:domain owl:Thing ;
+           rdfs:range owl:Thing ;
+           dc:description "The property that determines that two given individuals are equal."@en ;
+           rdfs:label "sameAs"@en .
+
+
+###  http://www.w3.org/2004/02/skos/core#broadMatch
+skos:broadMatch rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf skos:broader ,
+                                   skos:mappingRelation ;
+                rdfs:label "has broader match"@en .
+
+
+###  http://www.w3.org/2004/02/skos/core#broader
+skos:broader rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf skos:broaderTransitive ;
+             rdfs:label "has broader"@en .
+
+
+###  http://www.w3.org/2004/02/skos/core#broaderTransitive
+skos:broaderTransitive rdf:type owl:ObjectProperty ;
+                       rdfs:subPropertyOf skos:semanticRelation ;
+                       rdfs:label "has broader transitive"@en .
+
+
+###  http://www.w3.org/2004/02/skos/core#closeMatch
+skos:closeMatch rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf skos:mappingRelation ;
+                rdfs:label "has close match"@en .
+
+
+###  http://www.w3.org/2004/02/skos/core#exactMatch
+skos:exactMatch rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf owl:sameAs ;
+                rdf:type owl:SymmetricProperty ,
+                         owl:TransitiveProperty ;
+                rdfs:domain owl:Thing ;
+                rdfs:range owl:Thing ;
+                rdfs:label "has exact match"@en .
+
+
+###  http://www.w3.org/2004/02/skos/core#hasTopConcept
+skos:hasTopConcept rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf skos:topConceptOf ;
+                   owl:inverseOf skos:topConceptOf ;
+                   rdfs:label "has top concept"@en .
+
+
+###  http://www.w3.org/2004/02/skos/core#inScheme
+skos:inScheme rdf:type owl:ObjectProperty ;
+              rdfs:label "in scheme"@en .
+
+
+###  http://www.w3.org/2004/02/skos/core#mappingRelation
+skos:mappingRelation rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf owl:topObjectProperty ;
+                     rdfs:label "is in mapping relation with"@en .
+
+
+###  http://www.w3.org/2004/02/skos/core#member
+skos:member rdf:type owl:ObjectProperty ;
+            rdfs:label "has member"@en .
+
+
+###  http://www.w3.org/2004/02/skos/core#narrowMatch
+skos:narrowMatch rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf skos:mappingRelation ,
+                                    skos:narrower ;
+                 rdfs:label "has narrower match"@en .
+
+
+###  http://www.w3.org/2004/02/skos/core#narrower
+skos:narrower rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf skos:narrowerTransitive ;
+              rdfs:label "has narrower"@en .
+
+
+###  http://www.w3.org/2004/02/skos/core#narrowerTransitive
+skos:narrowerTransitive rdf:type owl:ObjectProperty ;
+                        rdfs:subPropertyOf skos:semanticRelation ;
+                        rdfs:label "has narrower transitive"@en .
+
+
+###  http://www.w3.org/2004/02/skos/core#related
+skos:related rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf skos:semanticRelation ;
+             rdfs:label "has related"@en .
+
+
+###  http://www.w3.org/2004/02/skos/core#relatedMatch
+skos:relatedMatch rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf skos:related ;
+                  rdfs:label "has related match"@en .
+
+
+###  http://www.w3.org/2004/02/skos/core#semanticRelation
+skos:semanticRelation rdf:type owl:ObjectProperty ;
+                      rdfs:label "is in semantic relation with"@en .
+
+
+###  http://www.w3.org/2004/02/skos/core#topConceptOf
+skos:topConceptOf rdf:type owl:ObjectProperty ;
+                  rdfs:label "top concept of"@en .
+
+
+###  http://www.w3.org/ns/prov#actedOnBehalfOf
+prov:actedOnBehalfOf rdf:type owl:ObjectProperty ;
+                     rdfs:label "acted on behalf of"@en .
+
+
+###  http://www.w3.org/ns/prov#endedAtTime
+prov:endedAtTime rdf:type owl:ObjectProperty .
+
+
+###  http://www.w3.org/ns/prov#startedAtTime
+prov:startedAtTime rdf:type owl:ObjectProperty .
+
+
+###  http://www.w3.org/ns/prov#used
+prov:used rdf:type owl:ObjectProperty ;
+          rdfs:label "used"@en .
+
+
+###  http://www.w3.org/ns/prov#wasAssociatedWith
+prov:wasAssociatedWith rdf:type owl:ObjectProperty ;
+                       rdfs:label "was associated with"@en .
+
+
+###  http://www.w3.org/ns/prov#wasAttributedTo
+prov:wasAttributedTo rdf:type owl:ObjectProperty ;
+                     rdfs:label "was attributed to"@en .
+
+
+###  http://www.w3.org/ns/prov#wasDerivedFrom
+prov:wasDerivedFrom rdf:type owl:ObjectProperty ;
+                    rdfs:label "was derived from"@en .
+
+
+###  http://www.w3.org/ns/prov#wasGeneratedBy
+prov:wasGeneratedBy rdf:type owl:ObjectProperty ;
+                    rdfs:label "was generated by"@en .
+
+
+###  http://www.w3.org/ns/prov#wasInformedBy
+prov:wasInformedBy rdf:type owl:ObjectProperty ;
+                   rdfs:label "was transformed by"@en .
+
+
+###  http://www.wikidata.org/prop/direct/P1382
+<http://www.wikidata.org/prop/direct/P1382> rdf:type owl:ObjectProperty ;
+                                            rdfs:subPropertyOf skos:relatedMatch ;
+                                            rdfs:label "partially coincident with"@en .
+
+
+###  http://www.wikidata.org/prop/direct/P2888
+<http://www.wikidata.org/prop/direct/P2888> rdf:type owl:ObjectProperty ;
+                                            rdfs:subPropertyOf skos:exactMatch ;
+                                            rdf:type owl:SymmetricProperty ,
+                                                     owl:TransitiveProperty ;
+                                            rdfs:domain owl:Thing ;
+                                            rdfs:range owl:Thing ;
+                                            dc:description "(URLs only) used to link two items, indicating a high degree of confidence that the concepts can be used interchangeably"@en ,
+                                                           "verwendet, um zwei Konzepte (Begriffe) zu verbinden, wobei mit großer Sicherheit gilt, dass beide untereinander auswechselbar sind"@de ;
+                                            rdfs:label "exact match"@en ,
+                                                       "exakte Übereinstimmung"@de .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://archaeology.link/ontology#ancientName
+ontology:ancientName rdf:type owl:DatatypeProperty ;
+                     rdfs:domain ontology:Place ;
+                     rdfs:range rdfs:Literal ;
+                     rdfs:label "antiker Ortsname (String)"@de ,
+                                "antiquity sitename (String)"@en .
+
+
+###  http://archaeology.link/ontology#bibliographicCitation
+ontology:bibliographicCitation rdf:type owl:DatatypeProperty ;
+                               rdfs:label "bibliographic citation"@en .
+
+
+###  http://archaeology.link/ontology#cognomen
+ontology:cognomen rdf:type owl:DatatypeProperty ;
+                  rdfs:domain ontology:Actor ;
+                  rdfs:range rdfs:Literal ;
+                  rdfs:label "Cognomen"@de ,
+                             "cognomen"@en .
+
+
+###  http://archaeology.link/ontology#die
+ontology:die rdf:type owl:DatatypeProperty ;
+             rdfs:domain ontology:InscriptionMakingType ;
+             rdfs:range rdfs:Literal ;
+             rdfs:label "Stempel"@de ,
+                        "die"@en .
+
+
+###  http://archaeology.link/ontology#dieposition
+ontology:dieposition rdf:type owl:DatatypeProperty ;
+                     rdfs:domain ontology:Inscription ;
+                     rdfs:range rdfs:Literal ;
+                     rdfs:label "Die Position"@de ,
+                                "die position"@en .
+
+
+###  http://archaeology.link/ontology#gentilicium
+ontology:gentilicium rdf:type owl:DatatypeProperty ;
+                     rdfs:domain ontology:Actor ;
+                     rdfs:range rdfs:Literal ;
+                     rdfs:label "Gentilicium"@de ,
+                                "gentilicium"@en .
+
+
+###  http://archaeology.link/ontology#hasConditionString
+ontology:hasConditionString rdf:type owl:DatatypeProperty ;
+                            rdfs:label "has condition"@en .
+
+
+###  http://archaeology.link/ontology#hasImage
+ontology:hasImage rdf:type owl:DatatypeProperty ;
+                  rdfs:range rdfs:Literal .
+
+
+###  http://archaeology.link/ontology#hasKilnsiteString
+ontology:hasKilnsiteString rdf:type owl:DatatypeProperty ;
+                           rdfs:domain ontology:InformationCarrier ;
+                           rdfs:range rdfs:Literal ;
+                           rdfs:label "has kilnsite"@en ,
+                                      "hat Produktionsort"@de .
+
+
+###  http://archaeology.link/ontology#hasObjectTypeString
+ontology:hasObjectTypeString rdf:type owl:DatatypeProperty ;
+                             rdfs:label "has object type"@en .
+
+
+###  http://archaeology.link/ontology#inventoryNumber
+ontology:inventoryNumber rdf:type owl:DatatypeProperty ;
+                         rdfs:label "inventory number"@en .
+
+
+###  http://archaeology.link/ontology#madeByString
+ontology:madeByString rdf:type owl:DatatypeProperty ;
+                      rdfs:subPropertyOf owl:topDataProperty ;
+                      rdfs:label "made by"@en .
+
+
+###  http://archaeology.link/ontology#madeOfString
+ontology:madeOfString rdf:type owl:DatatypeProperty ;
+                      rdfs:label "made of"@en .
+
+
+###  http://archaeology.link/ontology#name
+ontology:name rdf:type owl:DatatypeProperty ;
+              rdfs:domain ontology:Actor ;
+              rdfs:range rdfs:Literal ;
+              rdfs:label "Name"@de ,
+                         "name"@en .
+
+
+###  http://archaeology.link/ontology#number
+ontology:number rdf:type owl:DatatypeProperty ;
+                rdfs:domain ontology:InformationCarrier ;
+                rdfs:range xsd:int ;
+                rdfs:label "Anzahl"@de ,
+                           "number"@en .
+
+
+###  http://archaeology.link/ontology#pleiadesID
+ontology:pleiadesID rdf:type owl:DatatypeProperty ;
+                    rdfs:domain ontology:Place ;
+                    rdfs:range xsd:int ;
+                    rdfs:label "Pleiades ID"@de ,
+                               "pleiades ID"@en .
+
+
+###  http://archaeology.link/ontology#pottername
+ontology:pottername rdf:type owl:DatatypeProperty ;
+                    rdfs:domain ontology:InscriptionMakingType ;
+                    rdfs:range rdfs:Literal ;
+                    rdfs:label "Töpfername"@de ,
+                               "pottername"@en .
+
+
+###  http://archaeology.link/ontology#praenomen
+ontology:praenomen rdf:type owl:DatatypeProperty ;
+                   rdfs:domain ontology:Actor ;
+                   rdfs:range rdfs:Literal ;
+                   rdfs:label "Praenomen"@de ,
+                              "praenomen"@en .
+
+
+###  http://archaeology.link/ontology#reading
+ontology:reading rdf:type owl:DatatypeProperty ;
+                 rdfs:domain ontology:Inscription ;
+                 rdfs:range rdfs:Literal ;
+                 rdfs:label "Schriftzug"@de ,
+                            "reading"@en .
+
+
+###  http://archaeology.link/ontology#readingDirection
+ontology:readingDirection rdf:type owl:DatatypeProperty ;
+                          rdfs:domain ontology:Inscription ;
+                          rdfs:range rdfs:Literal ;
+                          rdfs:label "Schriftzugrichtung"@de ,
+                                     "reading direction"@en .
+
+
+###  http://archaeology.link/ontology#representedByString
+ontology:representedByString rdf:type owl:DatatypeProperty ;
+                             rdfs:label "represented by (String)"@en ,
+                                        "repäsentiert durch (String)"@de .
+
+
+###  http://archaeology.link/ontology#simpleReading
+ontology:simpleReading rdf:type owl:DatatypeProperty ;
+                       rdfs:domain ontology:Inscription ;
+                       rdfs:range rdfs:Literal ;
+                       rdfs:label "Schriftzug (einfach)"@de ,
+                                  "simple reading"@en .
+
+
+###  http://archaeology.link/ontology#timeinterval
+ontology:timeinterval rdf:type owl:DatatypeProperty ;
+                      rdfs:label "Zeitintervall"@de ,
+                                 "timeinterval"@en .
+
+
+###  http://archaeology.link/ontology#worksAtPlaceString
+ontology:worksAtPlaceString rdf:type owl:DatatypeProperty ;
+                            rdfs:domain ontology:Actor ;
+                            rdfs:range rdfs:Literal ;
+                            rdfs:label "arbeitet in Produktionszentrum (String)"@de ,
+                                       "works at place (String)"@en .
+
+
+###  http://creativecommons.org/ns#attributionName
+cc:attributionName rdf:type owl:DatatypeProperty ;
+                   rdfs:label "attribution name"@en .
+
+
+###  http://www.opengis.net/ont/geosparql#asGeoJSON
+geosparql:asGeoJSON rdf:type owl:DatatypeProperty ;
+                    rdfs:domain geosparql:SpatialObject ;
+                    rdfs:range rdfs:Literal ;
+                    rdfs:label "als GeoJSON"@de ,
+                               "as GeoJSON"@en .
+
+
+###  http://www.opengis.net/ont/geosparql#asWKT
+geosparql:asWKT rdf:type owl:DatatypeProperty ;
+                rdfs:domain geosparql:SpatialObject ;
+                rdfs:range rdfs:Literal ;
+                rdfs:label "als well-known-text"@de ,
+                           "as well-known-text"@en .
+
+
+###  http://www.w3.org/ns/prov#endedAtTime
+prov:endedAtTime rdf:type owl:DatatypeProperty .
+
+
+###  http://www.w3.org/ns/prov#startedAtTime
+prov:startedAtTime rdf:type owl:DatatypeProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://academic-meta-tool.xyz/vocab#Concept
+vocab:Concept rdf:type owl:Class ;
+              rdfs:subClassOf rdfs:Class ;
+              rdfs:comment "A node which is part of a triple with a vague edge." ;
+              rdfs:label "AMT Concept"@en .
+
+
+###  http://academic-meta-tool.xyz/vocab#Role
+vocab:Role rdf:type owl:Class ;
+           rdfs:subClassOf rdf:Property ;
+           rdfs:comment "A vague edge which is part of a triple." ;
+           rdfs:label "AMT Role"@en .
+
+
+###  http://archaeology.link/ontology#AMT_Entity
+ontology:AMT_Entity rdf:type owl:Class ;
+                    rdfs:subClassOf crm:E1_CRM_Entity ;
+                    rdfs:label "AMT Entity"@en .
+
+
+###  http://archaeology.link/ontology#Actor
+ontology:Actor rdf:type owl:Class ;
+               rdfs:subClassOf crm:E39_Actor ;
+               dc:description "Akteure als Konzept."@de ,
+                              "actor as a concept"@en ;
+               rdfs:label "Actor"@en ,
+                          "Akteur"@de .
+
+
+###  http://archaeology.link/ontology#ActorEntity
+ontology:ActorEntity rdf:type owl:Class ;
+                     rdfs:subClassOf ontology:Actor .
+
+
+###  http://archaeology.link/ontology#ChiefPotter
+ontology:ChiefPotter rdf:type owl:Class ;
+                     rdfs:subClassOf ontology:ActorEntity ;
+                     ontology:isActorStatus "true"@en ;
+                     rdfs:label "Cheftöpfer"@de ,
+                                "Chief Potter"@en .
+
+
+###  http://archaeology.link/ontology#CooperationPotter
+ontology:CooperationPotter rdf:type owl:Class ;
+                           rdfs:subClassOf ontology:ActorEntity ;
+                           ontology:isActorStatus "true"^^xsd:boolean ;
+                           rdfs:label "Cooperation Potter"@en ,
+                                      "Kooperationstöpfer"@de .
+
+
+###  http://archaeology.link/ontology#DependentPotter
+ontology:DependentPotter rdf:type owl:Class ;
+                         rdfs:subClassOf ontology:ActorEntity ;
+                         ontology:isActorStatus "true"^^xsd:boolean ;
+                         rdfs:label "Abhängiger Töpfer"@de ,
+                                    "Dependent Potter"@en .
+
+
+###  http://archaeology.link/ontology#Die
+ontology:Die rdf:type owl:Class ;
+             rdfs:subClassOf ontology:Tool ;
+             rdfs:label "Die"@en ,
+                        "Stempel"@de .
+
+
+###  http://archaeology.link/ontology#DieImpression
+ontology:DieImpression rdf:type owl:Class ;
+                       rdfs:subClassOf ontology:Inscription ;
+                       rdfs:label "Die impression"@en ,
+                                  "Stempelabdruck"@de .
+
+
+###  http://archaeology.link/ontology#DiscoverySite
+ontology:DiscoverySite rdf:type owl:Class ;
+                       rdfs:subClassOf ontology:Location ,
+                                       ontology:PlaceType ;
+                       ontology:hasType crm:E55_Type ;
+                       rdfs:label "Discovery Site"@en .
+
+
+###  http://archaeology.link/ontology#Event
+ontology:Event rdf:type owl:Class ;
+               rdfs:subClassOf crm:E5_Event ;
+               dc:description "Event as a Concept"@en ;
+               rdfs:label "Event"@en .
+
+
+###  http://archaeology.link/ontology#Feature
+ontology:Feature rdf:type owl:Class ;
+                 rdfs:subClassOf crm:E25_Human-Made_Feature ;
+                 rdfs:label "Feature"@en .
+
+
+###  http://archaeology.link/ontology#Gaulish
+ontology:Gaulish rdf:type owl:Class ;
+                 rdfs:subClassOf ontology:Tradition ;
+                 rdfs:label "Gallisch"@de ,
+                            "Gaulish Tradition"@en .
+
+
+###  http://archaeology.link/ontology#GenericPotform
+ontology:GenericPotform rdf:type owl:Class ;
+                        rdfs:subClassOf ontology:Terminology_Type ;
+                        rdfs:label "Generic potform"@en ,
+                                   "Generische Form"@de .
+
+
+###  http://archaeology.link/ontology#Graffito
+ontology:Graffito rdf:type owl:Class ;
+                  rdfs:subClassOf ontology:Inscription ;
+                  rdfs:label "Graffito"@de ,
+                             "Graffito"@en .
+
+
+###  http://archaeology.link/ontology#IconographyReference
+ontology:IconographyReference rdf:type owl:Class ;
+                              rdfs:subClassOf ontology:Terminology_Type ;
+                              rdfs:label "Iconography Reference"@en .
+
+
+###  http://archaeology.link/ontology#IndependentPotter
+ontology:IndependentPotter rdf:type owl:Class ;
+                           rdfs:subClassOf ontology:ActorEntity ;
+                           ontology:isActorStatus "true"^^xsd:boolean ;
+                           rdfs:label "Independent Potter"@en ,
+                                      "Unabhängiger Töpfer"@de .
+
+
+###  http://archaeology.link/ontology#InformationCarrier
+ontology:InformationCarrier rdf:type owl:Class ;
+                            rdfs:subClassOf crm:E22_Human-Made_Object ;
+                            rdfs:label "Information Carrier"@en .
+
+
+###  http://archaeology.link/ontology#Inscription
+ontology:Inscription rdf:type owl:Class ;
+                     rdfs:subClassOf ontology:Feature ;
+                     dc:description "In Ton gebrannte Inschrift mit Verweis auf Hersteller(in)."@en ;
+                     rdfs:label "Inschrift"@de ,
+                                "Inscription"@en .
+
+
+###  http://archaeology.link/ontology#InscriptionMakingType
+ontology:InscriptionMakingType rdf:type owl:Class ;
+                               rdfs:subClassOf crm:E22_Human-Made_Object ;
+                               dc:description "Anfertigungsmethode der Inschrift."@de ;
+                               rdfs:label "Inschrift-Anfertigung"@de ,
+                                          "Inscription making type"@en .
+
+
+###  http://archaeology.link/ontology#Italian
+ontology:Italian rdf:type owl:Class ;
+                 rdfs:subClassOf ontology:Tradition ;
+                 rdfs:label "Italian Tradition"@en ,
+                            "Italienisch"@de .
+
+
+###  http://archaeology.link/ontology#KilnFiringPerson
+ontology:KilnFiringPerson rdf:type owl:Class ;
+                          rdfs:subClassOf ontology:ActorEntity ;
+                          ontology:isActorType "true"^^xsd:boolean ;
+                          rdfs:label "Kiln Firing Involved Person"@en ,
+                                     "Ofenbrennvorgangsinvolvierter"@de .
+
+
+###  http://archaeology.link/ontology#KilnRegion
+ontology:KilnRegion rdf:type owl:Class ;
+                    rdfs:subClassOf ontology:Location ;
+                    ontology:hasType crm:E55_Type ;
+                    rdfs:label "Kiln Region"@en .
+
+
+###  http://archaeology.link/ontology#Location
+ontology:Location rdf:type owl:Class ;
+                  rdfs:subClassOf pleiades:Location ;
+                  ontology:hasType crm:E55_Type .
+
+
+###  http://archaeology.link/ontology#MouldMaker
+ontology:MouldMaker rdf:type owl:Class ;
+                    rdfs:subClassOf ontology:ActorEntity ;
+                    ontology:isActorType "true"^^xsd:boolean ;
+                    rdfs:label "Modelhersteller"@de ,
+                               "Mouldmaker"@en .
+
+
+###  http://archaeology.link/ontology#Namespace
+ontology:Namespace rdf:type owl:Class ;
+                   rdfs:subClassOf foaf:Project .
+
+
+###  http://archaeology.link/ontology#PartnerPotter
+ontology:PartnerPotter rdf:type owl:Class ;
+                       rdfs:subClassOf ontology:ActorEntity ;
+                       ontology:isActorStatus "true"^^xsd:boolean ;
+                       rdfs:label "Partner Potter"@en ,
+                                  "Partnertöpfer"@de .
+
+
+###  http://archaeology.link/ontology#Place
+ontology:Place rdf:type owl:Class ;
+               rdfs:subClassOf pleiades:Place ;
+               ontology:hasLocation ontology:Location ;
+               dc:description "place as a concept"@en ;
+               rdfs:label "Place"@en .
+
+
+###  http://archaeology.link/ontology#PlaceType
+ontology:PlaceType rdf:type owl:Class ;
+                   rdfs:subClassOf crm:E55_Type ;
+                   rdfs:label "Place Type"@en .
+
+
+###  http://archaeology.link/ontology#Potform
+ontology:Potform rdf:type owl:Class ;
+                 rdfs:subClassOf ontology:GenericPotform .
+
+
+###  http://archaeology.link/ontology#Potmaker
+ontology:Potmaker rdf:type owl:Class ;
+                  rdfs:subClassOf ontology:ActorEntity ;
+                  ontology:isActorType "true"^^xsd:boolean ;
+                  rdfs:label "Gefäßhersteller"@de ,
+                             "Potmaker"@en .
+
+
+###  http://archaeology.link/ontology#ProductionCentre
+ontology:ProductionCentre rdf:type owl:Class ;
+                          rdfs:subClassOf ontology:KilnRegion ,
+                                          ontology:PlaceType ;
+                          ontology:hasType crm:E55_Type ;
+                          rdfs:label "Production Centre"@en .
+
+
+###  http://archaeology.link/ontology#Publisher
+ontology:Publisher rdf:type owl:Class ;
+                   rdfs:subClassOf foaf:Person ;
+                   rdfs:label "Publisher"@en .
+
+
+###  http://archaeology.link/ontology#RepositoryLocation
+ontology:RepositoryLocation rdf:type owl:Class ;
+                            rdfs:subClassOf ontology:Location ,
+                                            ontology:PlaceType ;
+                            ontology:hasType crm:E55_Type ;
+                            rdfs:label "Aufbewahrungsort"@de ,
+                                       "Repository Location"@en .
+
+
+###  http://archaeology.link/ontology#SYE10_Citation
+ontology:SYE10_Citation rdf:type owl:Class ;
+                        rdfs:subClassOf ontology:SYE11_ObservationType ,
+                                        aaao:ZE19_Naming ;
+                        ontology:hasType ontology:SYE11_ObservationType ;
+                        rdfs:label "SYE10 Citation"@en .
+
+
+###  http://archaeology.link/ontology#SYE11_ObservationType
+ontology:SYE11_ObservationType rdf:type owl:Class ;
+                               rdfs:subClassOf crm:E55_Type ;
+                               rdfs:label "SYE11 Observation Type"@en .
+
+
+###  http://archaeology.link/ontology#SYE1_InformationCarrier
+ontology:SYE1_InformationCarrier rdf:type owl:Class ;
+                                 rdfs:subClassOf ontology:InformationCarrier ;
+                                 rdfs:label "SYE1 Information Carrier"@en .
+
+
+###  http://archaeology.link/ontology#SYE2_Feature
+ontology:SYE2_Feature rdf:type owl:Class ;
+                      rdfs:subClassOf ontology:Feature ;
+                      rdfs:label "SYE2 Feature (Group)"@en .
+
+
+###  http://archaeology.link/ontology#SYE3_Assignment
+ontology:SYE3_Assignment rdf:type owl:Class ;
+                         rdfs:subClassOf aaao:ZE18_Critical_Reading ,
+                                         aaao:ZE19_Naming ;
+                         rdfs:label "SYE3 Assignment"@en .
+
+
+###  http://archaeology.link/ontology#SYE4_Indication
+ontology:SYE4_Indication rdf:type owl:Class ;
+                         rdfs:subClassOf ontology:SYE5_Observation ,
+                                         aaao:ZE18_Critical_Reading ;
+                         rdfs:label "SYE4 Indication"@en .
+
+
+###  http://archaeology.link/ontology#SYE5_Observation
+ontology:SYE5_Observation rdf:type owl:Class ;
+                          rdfs:subClassOf <http://www.cidoc-crm.org/extensions/crmsci/S4_Observation> ;
+                          rdfs:label "SYE5 Observation"@en .
+
+
+###  http://archaeology.link/ontology#SYE6_GeometricComparison
+ontology:SYE6_GeometricComparison rdf:type owl:Class ;
+                                  rdfs:subClassOf ontology:SYE11_ObservationType ,
+                                                  <http://www.ics.forth.gr/isl/CRMdig/D11_Digital_Measurement_Event> ,
+                                                  aaao:ZE13_Speech_Act ,
+                                                  aaao:ZE17_Digital_Reading ;
+                                  ontology:hasType ontology:SYE11_ObservationType ;
+                                  rdfs:label "SYE6 Geometric Comparison"@en .
+
+
+###  http://archaeology.link/ontology#SYE7_QuantitativeAnalysis
+ontology:SYE7_QuantitativeAnalysis rdf:type owl:Class ;
+                                   rdfs:subClassOf ontology:SYE11_ObservationType ,
+                                                   <http://www.ics.forth.gr/isl/CRMdig/D10_Software_Execution> ,
+                                                   aaao:ZE17_Digital_Reading ;
+                                   ontology:hasType ontology:SYE11_ObservationType ;
+                                   rdfs:label "SYE7 Quantitative Analysis"@en .
+
+
+###  http://archaeology.link/ontology#SYE8_VisualItem
+ontology:SYE8_VisualItem rdf:type owl:Class ;
+                         rdfs:subClassOf ontology:SYE11_ObservationType ,
+                                         crm:E36_Visual_Item ;
+                         ontology:hasType ontology:SYE11_ObservationType ;
+                         rdfs:label "SYE8 Visual Item"@en .
+
+
+###  http://archaeology.link/ontology#SYE9_Citation
+ontology:SYE9_Citation rdf:type owl:Class ;
+                       rdfs:subClassOf ontology:SYE11_ObservationType ,
+                                       aaao:ZE4_Classificatory_Status ;
+                       ontology:hasType ontology:SYE11_ObservationType ;
+                       rdfs:label "SYE9 Citation"@en .
+
+
+###  http://archaeology.link/ontology#Service
+ontology:Service rdf:type owl:Class ;
+                 rdfs:subClassOf skos:Collection ;
+                 rdfs:label "Service"@en .
+
+
+###  http://archaeology.link/ontology#Service_Collection
+ontology:Service_Collection rdf:type owl:Class ;
+                            rdfs:subClassOf skos:Collection ;
+                            rdfs:label "Service Collection"@en .
+
+
+###  http://archaeology.link/ontology#SpaceTimeItem
+ontology:SpaceTimeItem rdf:type owl:Class ;
+                       rdfs:subClassOf crm:E92_Spacetime_Volume ;
+                       rdfs:label "Space-Time Concept"@en .
+
+
+###  http://archaeology.link/ontology#Stylus
+ontology:Stylus rdf:type owl:Class ;
+                rdfs:subClassOf ontology:Tool ;
+                rdfs:label "Griffel"@de ,
+                           "Stylus"@en .
+
+
+###  http://archaeology.link/ontology#Terminology_Type
+ontology:Terminology_Type rdf:type owl:Class ;
+                          rdfs:subClassOf crm:E55_Type ;
+                          rdfs:label "Terminology Type"@en .
+
+
+###  http://archaeology.link/ontology#Tool
+ontology:Tool rdf:type owl:Class ;
+              rdfs:subClassOf ontology:InscriptionMakingType ;
+              rdfs:label "Tool"@en ,
+                         "Werkzeug"@de .
+
+
+###  http://archaeology.link/ontology#Tradition
+ontology:Tradition rdf:type owl:Class ;
+                   rdfs:subClassOf ontology:Terminology_Type .
+
+
+###  http://archaeonatural.cloud/ont/Country
+arno:Country rdf:type owl:Class ;
+             rdfs:subClassOf ontology:Place ;
+             rdfs:label "ArnO Country"@en .
+
+
+###  http://archaeonatural.cloud/ont/DiscoverySite
+arno:DiscoverySite rdf:type owl:Class ;
+                   rdfs:subClassOf pleiades:Location ;
+                   rdfs:label "ArnO Discovery Site"@en .
+
+
+###  http://archaeonatural.cloud/ont/Place
+arno:Place rdf:type owl:Class ;
+           rdfs:subClassOf ontology:Place ;
+           rdfs:comment "unspecified location information for the sample, e.g. administrative or topographic region or mountains/rivers/lakes/cities nearby"@en ;
+           rdfs:label "ArnO Place"@en .
+
+
+###  http://archaeonatural.cloud/ont/Site
+arno:Site rdf:type owl:Class ;
+          rdfs:subClassOf pleiades:Location ;
+          rdfs:label "ArnO Site"@en .
+
+
+###  http://archaeonatural.cloud/ont/SpatiotemporalInformation
+arno:SpatiotemporalInformation rdf:type owl:Class ;
+                               rdfs:subClassOf geosparql:SpatialObject ;
+                               rdfs:comment "Information containing of time period and geolocation information, thus forming a point in a 4-dimensional spatiotemporal feature space"@en ;
+                               rdfs:label "ArnO Spatiotemporal Information"@en .
+
+
+###  http://purl.obolibrary.org/obo/BFO_0000001
+<http://purl.obolibrary.org/obo/BFO_0000001> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://schema.org/Thing> ;
+                                             rdfs:label "BFO entity"@en .
+
+
+###  http://schema.org/Thing
+<http://schema.org/Thing> rdf:type owl:Class ;
+                          rdfs:subClassOf prov:Entity ;
+                          rdfs:label "Schema Thing"@en .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/E13_Attribute_Assignment
+crm:E13_Attribute_Assignment rdf:type owl:Class ;
+                             rdfs:subClassOf crm:E7_Activity ;
+                             rdfs:label "E13 Attribute Assignment"@en .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/E16_Measurement
+crm:E16_Measurement rdf:type owl:Class ;
+                    rdfs:subClassOf crm:E13_Attribute_Assignment ;
+                    rdfs:label "E16 Measurement"@en .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity
+crm:E1_CRM_Entity rdf:type owl:Class ;
+                  rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000001> ;
+                  rdfs:comment """This class comprises all things in the universe of discourse of the CIDOC Conceptual Reference Model.
+    It is an abstract concept providing for three general properties:
+    1.	Identification by name or appellation, and in particular by a preferred identifier
+    2.	Classification by type, allowing further refinement of the specific subclass an instance belongs to
+    3.	Attachment of free text for the expression of anything not captured by formal properties
+    With the exception of E59 Primitive Value, all other classes within the CRM are directly or indirectly specialisations of E1 CRM Entity.
+    """ ;
+                  rdfs:label "CRM Entität"@de ,
+                             "CRM Сущность"@ru ,
+                             "CRM实体"@zh ,
+                             "E1 CRM Entity"@en ,
+                             "Entidade CRM"@pt ,
+                             "Entité CRM"@fr ,
+                             "Οντότητα CIDOC CRM"@el .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/E22_Human-Made_Object
+crm:E22_Human-Made_Object rdf:type owl:Class ;
+                          rdfs:subClassOf crm:E24_Physical_Human-Made_Thing ;
+                          rdfs:comment """This class comprises all persistent physical objects of any size that are purposely created by human activity and have physical boundaries that separate them completely in an objective way from other objects.
+The class also includes all aggregates of objects made for functional purposes of whatever kind, independent of physical coherence, such as a set of chessmen.""" ;
+                          rdfs:label "E22 Human-Made Object"@en ,
+                                     "Künstlicher Gegenstand"@de ,
+                                     "Objet fabriqué"@fr ,
+                                     "Objeto Fabricado"@pt ,
+                                     "Ανθρωπογενές Αντικείμενο"@el ,
+                                     "Рукотворный Объект"@ru ,
+                                     "人造物件"@zh .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/E24_Physical_Human-Made_Thing
+crm:E24_Physical_Human-Made_Thing rdf:type owl:Class ;
+                                  rdfs:subClassOf crm:E71_Human-Made_Thing ;
+                                  rdfs:comment """This class comprises all persistent physical items of any size that are purposely created by human activity. This class comprises, besides others, Human-Made objects, such as a sword, and Human-Made features, such as rock art. For example, a “cup and ring” carving on bedrock is regarded as instance of E24 Physical Human-Made Thing.
+Instances of Human-Made thing may be the result of modifying pre-existing physical things, preserving larger parts or most of the original matter and structure, which poses the question if they are new or even Human-Made, the respective interventions of production made on such original material should be obvious and sufficient to regard that the product has a new, distinct identity and intended function and is human-made. Substantial continuity of the previous matter and structure in the new product can be documented by describing the production process also as an instance of E81 Transformation.
+Whereas interventions of conservation and repair are not regarded to produce a new Human-Made thing, the results of preparation of natural history specimens that substantially change their natural or original state should be regarded as physical Human-Made things, including the uncovering of petrified biological features from a solid piece of stone. On the other side, scribbling a museum number on a natural object should not be regarded to make it Human-Made. This notwithstanding, parts, sections, segments, or features of a physical Human-Made thing may continue to be non-Human-Made and preserved during the production process, for example natural pearls used as a part of an eardrop.""" ;
+                                  rdfs:label "Chose matérielle fabriquée"@fr ,
+                                             "Coisa Material Fabricada"@pt ,
+                                             "E24 Physical Human-Made Thing"@en ,
+                                             "Hergestelltes"@de ,
+                                             "Ανθρωπογενές Υλικό Πράγμα"@el ,
+                                             "Физическая Рукотворная Вещь"@ru ,
+                                             "人造实体物"@zh .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/E25_Human-Made_Feature
+crm:E25_Human-Made_Feature rdf:type owl:Class ;
+                           rdfs:subClassOf crm:E24_Physical_Human-Made_Thing ;
+                           rdfs:comment "This class comprises physical features that are purposely created by human activity, such as scratches, artificial caves, artificial water channels, etc. In particular, it includes the information encoding features on mechanical or digital carriers." ;
+                           rdfs:label "Característica Fabricada"@pt ,
+                                      "Caractéristique fabriquée"@fr ,
+                                      "E25 Human-Made Feature"@en ,
+                                      "Hergestelltes Merkmal"@de ,
+                                      "Ανθρωπογενές Μόρφωμα"@el ,
+                                      "Искусственный Признак"@ru ,
+                                      "人造外貌表征"@zh .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/E28_Conceptual_Object
+crm:E28_Conceptual_Object rdf:type owl:Class ;
+                          rdfs:subClassOf crm:E71_Human-Made_Thing ;
+                          rdfs:label "E28 Conceptual Object"@en .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/E2_Temporal_Entity
+crm:E2_Temporal_Entity rdf:type owl:Class ;
+                       rdfs:subClassOf skos:Concept ;
+                       rdfs:label "E2 Temporal Entity" .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/E35_Title
+crm:E35_Title rdf:type owl:Class ;
+              rdfs:subClassOf crm:E41_Appellation ;
+              rdfs:label "E35 Title"@en .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/E36_Visual_Item
+crm:E36_Visual_Item rdf:type owl:Class ;
+                    rdfs:subClassOf crm:E73_Information_Object ;
+                    rdfs:label "E36 Visual Item"@en .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/E39_Actor
+crm:E39_Actor rdf:type owl:Class ;
+              rdfs:subClassOf skos:Concept ;
+              rdfs:comment """This class comprises people, either individually or in groups, who have the potential to perform intentional actions of kinds for which someone may be held responsible.
+        The CRM does not attempt to model the inadvertent actions of such actors. Individual people should be documented as instances of E21 Person, whereas groups should be documented as instances of either E74 Group or its subclass E40 Legal Body.
+        """ ;
+              rdfs:label "Actor"@en ,
+                         "Agent"@fr ,
+                         "Agente"@pt ,
+                         "Akteur"@de ,
+                         "Δράστης"@el ,
+                         "Агент"@ru ,
+                         "角色"@zh .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/E41_Appellation
+crm:E41_Appellation rdf:type owl:Class ;
+                    rdfs:subClassOf crm:E90_Symbolic_Object ;
+                    rdfs:label "E41 Appellation"@en .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/E42_Identifier
+crm:E42_Identifier rdf:type owl:Class ;
+                   rdfs:subClassOf crm:E41_Appellation ;
+                   rdfs:label "E42 Identifier"@en .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/E4_Period
+crm:E4_Period rdf:type owl:Class ;
+              rdfs:subClassOf crm:E2_Temporal_Entity ;
+              ontology:version "7.1.3" ;
+              rdfs:label "E4 Period"@en .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/E53_Place
+crm:E53_Place rdf:type owl:Class ;
+              rdfs:subClassOf pleiades:Place ;
+              rdfs:comment """This class comprises extents in space, in particular on the surface of the earth, in the pure sense of physics: independent from temporal phenomena and matter.
+        The instances of E53 Place are usually determined by reference to the position of “immobile” objects such as buildings, cities, mountains, rivers, or dedicated geodetic marks. A Place can be determined by combining a frame of reference and a location with respect to this frame. It may be identified by one or more instances of E44 Place Appellation.
+         It is sometimes argued that instances of E53 Place are best identified by global coordinates or absolute reference systems. However, relative references are often more relevant in the context of cultural documentation and tend to be more precise. In particular, we are often interested in position in relation to large, mobile objects, such as ships. For example, the Place at which Nelson died is known with reference to a large mobile object – H.M.S Victory. A resolution of this Place in terms of absolute coordinates would require knowledge of the movements of the vessel and the precise time of death, either of which may be revised, and the result would lack historical and cultural relevance.
+        Any object can serve as a frame of reference for E53 Place determination. The model foresees the notion of a \"section\" of an E19 Physical Object as a valid E53 Place determination.""" ;
+              rdfs:label "E53 Place"@en ,
+                         "Lieu"@fr ,
+                         "Local"@pt ,
+                         "Ort"@de ,
+                         "Τόπος"@el ,
+                         "Место"@ru ,
+                         "地点"@zh .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/E55_Type
+crm:E55_Type rdf:type owl:Class ;
+             rdfs:subClassOf skos:Concept ;
+             rdfs:comment """This class comprises concepts denoted by terms from thesauri and controlled vocabularies used to characterize and classify instances of CRM classes. Instances of E55 Type represent concepts  in contrast to instances of E41 Appellation which are used to name instances of CRM classes.
+        E55 Type is the CRM’s interface to domain specific ontologies and thesauri. These can be represented in the CRM as subclasses of E55 Type, forming hierarchies of terms, i.e. instances of E55 Type linked via P127 has broader  term (has narrower term). Such hierarchies may be extended with additional properties.
+        """ ;
+             rdfs:label "E55 Type"@en ,
+                        "Tipo"@pt ,
+                        "Type"@fr ,
+                        "Typus"@de ,
+                        "Τύπος"@el ,
+                        "Тип"@ru ,
+                        "类型"@zh .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/E5_Event
+crm:E5_Event rdf:type owl:Class ;
+             rdfs:subClassOf crm:E4_Period ;
+             rdfs:label "E5 Event"@en .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/E65_Creation
+crm:E65_Creation rdf:type owl:Class ;
+                 rdfs:subClassOf crm:E7_Activity ;
+                 rdfs:label "E65 Creation"@en .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/E70_Thing
+crm:E70_Thing rdf:type owl:Class ;
+              rdfs:subClassOf crm:E77_Persistent_Item ;
+              rdfs:label "E70 Thing"@en .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/E71_Human-Made_Thing
+crm:E71_Human-Made_Thing rdf:type owl:Class ;
+                         rdfs:subClassOf crm:E70_Thing ;
+                         rdfs:label "E71 Human-Made Thing"@en .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/E73_Information_Object
+crm:E73_Information_Object rdf:type owl:Class ;
+                           rdfs:subClassOf crm:E90_Symbolic_Object ;
+                           rdfs:label "E73 Information Object"@en .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/E77_Persistent_Item
+crm:E77_Persistent_Item rdf:type owl:Class ;
+                        rdfs:subClassOf crm:E1_CRM_Entity ;
+                        rdfs:label "E77 Persistent Item"@en .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/E7_Activity
+crm:E7_Activity rdf:type owl:Class ;
+                rdfs:subClassOf prov:Activity ;
+                dc:description """This class comprises actions intentionally carried out by instances of E39 Actor that result in changes of state in the cultural, social, or physical systems documented.
+This notion includes complex, composite, and long-lasting actions such as the building of a settlement or a war, as well as simple, short-lived actions such as the opening of a door."""@en ;
+                rdfs:label "E7 Activity"@en .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/E90_Symbolic_Object
+crm:E90_Symbolic_Object rdf:type owl:Class ;
+                        rdfs:subClassOf crm:E28_Conceptual_Object ;
+                        rdfs:label "E90 Symbolic Object"@en .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/E92_Spacetime_Volume
+crm:E92_Spacetime_Volume rdf:type owl:Class ;
+                         rdfs:subClassOf skos:Concept ;
+                         ontology:version "7.1.3" ;
+                         dc:description "This class comprises 4-dimensional point sets (volumes) in physical spacetime (in contrast to mathematical models of it) regardless of their true geometric forms. They may derive their identity from being the extent of a material phenomenon or from being the interpretation of an expression defining an extent in spacetime. Intersections of instances of E92 Spacetime Volume, E53 Place, and E52 Time-Span are also regarded as instances of E92 Spacetime Volume. An instance of E92 Spacetime Volume is either contiguous or composed of a finite number of contiguous subsets. Its boundaries may be fuzzy due to the properties of the phenomena it derives from or due to the limited precision up to which defining expression can be identified with a real extent in spacetime. The duration of existence of an instance of E92 Spacetime Volume is its projection on time."@en ;
+                         rdfs:label "E92 Spacetime Volume"@en .
+
+
+###  http://www.cidoc-crm.org/extensions/crmsci/S4_Observation
+<http://www.cidoc-crm.org/extensions/crmsci/S4_Observation> rdf:type owl:Class ;
+                                                            rdfs:subClassOf <http://www.ics.forth.gr/isl/CRMinf/I1_Argumentation> ;
+                                                            rdfs:comment "This class comprises the activity of gaining scientific knowledge about particular states of physical reality through empirical evidence, experiments and measurements. We define observation in the sense of natural sciences, as a kind of human activity: at some place and within some time-span, certain physical things and their behavior and interactions are observed by human sensory impression, and often enhanced by tools and measurement devices. Observed situations or dimensions may pertain to properties confined to a single instance of S15 Observable Entity or pertain to constellations of multiple instances and relations between them, in particular distances between them. The output of the internal processes of measurement devices that do not require additional human interaction are in general regarded as part of the observation and not as additional inference. Primary data from measurement devices are regarded in this model to be results of observation and can be interpreted as propositions believed to be true within the (known) tolerances and degree of reliability of the device. Measurements and witnessing of events are special cases of observations. Observations result in a belief that certain propositions held at a time within the time-span of the observation. In this model, the degree of confidence in the observed properties is regarded to be “true” by default, but could be described differently by adding a property P3 has note to an instance of S4 Observation"@en ;
+                                                            rdfs:label "S4 Observation"@en .
+
+
+###  http://www.cidoc-crm.org/extensions/crmtex/TX5_Text_Recognition
+<http://www.cidoc-crm.org/extensions/crmtex/TX5_Text_Recognition> rdf:type owl:Class ;
+                                                                  rdfs:subClassOf crm:E65_Creation ;
+                                                                  rdfs:comment """Scope note:
+This class comprises activities of recognizing physical features on some surface, often an instance of TX4 Writing Field, as an arrangement of a series of identifiable glyphs of some known script, deciphered or not, in an order characteristic for a text.
+For study purposes, the text recognition procedure requires a scientific autoptic examination of the text. An autoptic examination consists of an accurate analysis of the surface and the signs, and prescribes the use of specific tools and procedures for establishing the exact value of each sign on the physical feature. Deterioration of the original medium or “sloppy” writing may render parts of the original text as undecipherable or ambiguous, which may be annotated in the transcript following epigraphic standards; a text recognition typically results in a record of an equivalent sequence of graphemes on another persistent medium in a scholarly established form of representation of the respective graphemes, often called a “transcript”.
+An instance of TX5 Text Recognition may in particular apply even to a single glyph, typically forming part of an instance of TX5 Text Recognition applying to a larger sequence of glyphs containing the former glyph.
+The recognition process may be assisted by mechanical means, imaging technology, or a traditional squeeze for incised glyphs. In case the recognition process is solely based on the latter, the observation concerns only the representations on the latter as present to the researcher in some physical form or projection and should unambiguously be documented as such.
+
+In case the recognized text has not been documented in a transcript, text recognition may constitute an implicit part of an overarching reading process, instance of TX14 Reading, which has resulted in other noteworthy propositions related to the content of the recognized text. On the other side, recognition of single glyphs or contracted parts of texts, as they are characteristic for the use of ligatured scripts, may quite well be implicitly supported by the reader’s comprehension of the text and the creator of the transcript may have chosen not to annotate parts that the reader regarded as unambiguous. Since these cases can often hardly be separated from the shape recognition of the glyphs in isolation, documenting such implicit comprehension as a separate process may not be relevant. It is however regarded as good practice to document explicitly the reading process and associated interpretative reasoning for any non-trivial resolution of ambiguity or gaps in the recognized text that has a bearing on the transcript or further completion of the transcript.
+
+Examples:
+- The autoptic investigation of the South inscription (TX1) on the Arch of Constantine (E22) made by Rodolfo Lanciani between 1893 and 1901.
+
+In First Order Logic:
+- TX5(x) ⇒ S4(x)
+- TX5(x) ⇒ E65(x)"""@en ;
+                                                                  rdfs:label "TX5 Text Recognition"@en .
+
+
+###  http://www.ics.forth.gr/isl/CRMdig/D10_Software_Execution
+<http://www.ics.forth.gr/isl/CRMdig/D10_Software_Execution> rdf:type owl:Class ;
+                                                            rdfs:subClassOf <http://www.ics.forth.gr/isl/CRMdig/D7_Digital_Machine_Event> ;
+                                                            rdfs:comment """This class comprises events by which a digital device runs a software program or a series of  computing 
+	operations on a digital object  as a single task, which is completely determined by its digital input, 
+	the software and the generic properties of the device."""@en ;
+                                                            rdfs:label "D10 Software Execution"@en .
+
+
+###  http://www.ics.forth.gr/isl/CRMdig/D11_Digital_Measurement_Event
+<http://www.ics.forth.gr/isl/CRMdig/D11_Digital_Measurement_Event> rdf:type owl:Class ;
+                                                                   rdfs:subClassOf crm:E16_Measurement ,
+                                                                                   <http://www.ics.forth.gr/isl/CRMdig/D7_Digital_Machine_Event> ;
+                                                                   rdfs:comment """This class comprises actions measuring physical properties using a digital device, 
+	that are determined by a systematic procedure and creates an instance of D9 Data Object, 
+	which is stored on an instance of D13 Digital Information Carrier. 
+	In contrast to instances of D10 Software Execution, environmental factors have an intended influence on the outcome of an instance of D11 Digital Measurement Event. 
+	Measurement devices may include running distinct software, such as the RAW to JPEG conversion in digital cameras. 
+	In this case, the event is regarded as instance of both classes, D10 Software Execution and D11 Digital Measurement Event."""@en ;
+                                                                   rdfs:label "D11 Digital Measurement Event"@en .
+
+
+###  http://www.ics.forth.gr/isl/CRMdig/D14_Software
+<http://www.ics.forth.gr/isl/CRMdig/D14_Software> rdf:type owl:Class ;
+                                                  rdfs:subClassOf <http://www.ics.forth.gr/isl/CRMdig/D1_Digital_Object> ;
+                                                  rdfs:comment """This class comprises software codes,computer programs,procedures, and functions that are
+	used to operate a system of digital objects."""@en ;
+                                                  rdfs:label "D14 Software"@en .
+
+
+###  http://www.ics.forth.gr/isl/CRMdig/D1_Digital_Object
+<http://www.ics.forth.gr/isl/CRMdig/D1_Digital_Object> rdf:type owl:Class ;
+                                                       rdfs:subClassOf crm:E73_Information_Object ;
+                                                       rdfs:comment """This class comprises identifiable immaterial items that can be represented as sets of bit sequences, 
+	such as data sets, e-texts, images, audio or video items, software, etc., and are documented as single units. 
+	Any aggregation of instances of D1 Digital Object into a whole treated as single unit is also regarded as an instance of D1 Digital Object. 
+	This means that for instance, the content of a DVD, an XML file on it, and an element of this file, are regarded as distinct instances of 
+	D1 Digital Object, mutually related by the P106 is composed of (forms part of) property.
+A D1 Digital Object does not depend on a specific physical carrier, and it can exist on one or more carriers simultaneously."""@en ;
+                                                       rdfs:label "D1 Digital Object"@en .
+
+
+###  http://www.ics.forth.gr/isl/CRMdig/D2_Digitization_Process
+<http://www.ics.forth.gr/isl/CRMdig/D2_Digitization_Process> rdf:type owl:Class ;
+                                                             rdfs:subClassOf <http://www.ics.forth.gr/isl/CRMdig/D11_Digital_Measurement_Event> ;
+                                                             rdfs:comment """This class comprises events that result in the creation of instances of D9 Data Object that 
+	represent the appearance and/or form of an instance of E18 Physical Thing such as paper documents, statues, buildings, paintings, etc. 
+	A particular case is the analogue-to-digital conversion of audiovisual material.
+	This class represents the transition from a material thing to an immaterial representation of it. 
+	The characteristic subsequent processing steps on digital objects are regarded as instances of D3 Formal Derivation."""@en ;
+                                                             rdfs:label "D2 Digitization Process"@en .
+
+
+###  http://www.ics.forth.gr/isl/CRMdig/D30_Annotation_Event
+<http://www.ics.forth.gr/isl/CRMdig/D30_Annotation_Event> rdf:type owl:Class ;
+                                                          rdfs:subClassOf crm:E65_Creation ;
+                                                          rdfs:comment "This class comprises events that describe the creation of associations (Annotation Objects) between objects or areas of objects of the Repository, with other objects or regions or persons, places, events. It is the event that creates the Annotation Object."@en ;
+                                                          rdfs:label "D30 Annotation Event"@en .
+
+
+###  http://www.ics.forth.gr/isl/CRMdig/D3_Formal_Derivation
+<http://www.ics.forth.gr/isl/CRMdig/D3_Formal_Derivation> rdf:type owl:Class ;
+                                                          rdfs:subClassOf <http://www.ics.forth.gr/isl/CRMdig/D10_Software_Execution> ;
+                                                          rdfs:comment """This class comprises events that result in the creation of a D1 Digital Object from another one following a deterministic algorithm, 
+	such that the resulting instance of digital object shares representative properties with the original object. 
+	In other words, this class describes the transition from an immaterial object referred to by property L21 used as derivation source (was derivation source for) 
+	to another immaterial object referred to by property L22 created derivative (was derivative created by) preserving the 
+	representation of some things but in a different form. Characteristic examples are colour corrections, contrast changes and resizing of images."""@en ;
+                                                          rdfs:label "D3 Formal Derivation"@en .
+
+
+###  http://www.ics.forth.gr/isl/CRMdig/D7_Digital_Machine_Event
+<http://www.ics.forth.gr/isl/CRMdig/D7_Digital_Machine_Event> rdf:type owl:Class ;
+                                                              rdfs:subClassOf crm:E65_Creation ;
+                                                              rdfs:comment """This class comprises events that happen on physical digital devices following a human activity that intentionally caused its 
+	immediate or delayed initiation and results in the creation of a new instance of D1 Digital Object on behalf of the human actor. 
+	The input of a D7 Digital Machine Event may be parameter settings and/or data to be processed. 
+	Some D7 Digital Machine Events may form part of a wider E65 Creation event. 
+	In this case, all machine output of the partial events is regarded as creation of the overall activity."""@en ;
+                                                              rdfs:label "D7 Digital Machine Event"@en .
+
+
+###  http://www.ics.forth.gr/isl/CRMdig/D9_Data_Object
+<http://www.ics.forth.gr/isl/CRMdig/D9_Data_Object> rdf:type owl:Class ;
+                                                    rdfs:subClassOf <http://www.ics.forth.gr/isl/CRMdig/D1_Digital_Object> ;
+                                                    rdfs:comment "This class comprises instances of D1 Digital Object that are the direct result of a digital  measurement or a formal derivative of it, containing quantitative properties of some physical things or other constellations of matter."@en ;
+                                                    rdfs:label "D9 Data Object"@en .
+
+
+###  http://www.ics.forth.gr/isl/CRMinf/I1_Argumentation
+<http://www.ics.forth.gr/isl/CRMinf/I1_Argumentation> rdf:type owl:Class ;
+                                                      rdfs:subClassOf crm:E13_Attribute_Assignment ;
+                                                      rdfs:comment "This class comprises the activity of making honest inferences or observations. An honest inference or observation is one in which the E39 Actor carrying out the I1 Argumentation justifies and believes that the I6 Belief Value associated with resulting I2 Belief about the I4 Proposition Set is the correct value at the time that the activity was undertaken and that any I3 Inference Logic  or methodology was correctly applied. Only one instance of E39 Actor may carry out an instance of I1 Argumentation, though the E39 Actor may, of course, be an instance of E74 Group."@en ;
+                                                      rdfs:label "I1 Argumentation"@en .
+
+
+###  http://www.opengis.net/ont/geosparql#Feature
+geosparql:Feature rdf:type owl:Class ;
+                  rdfs:subClassOf geosparql:SpatialObject ;
+                  rdfs:comment "A discrete spatial phenomenon in a universe of discourse."@en ;
+                  rdfs:label "GeoSPARQL Feature"@en .
+
+
+###  http://www.opengis.net/ont/geosparql#Geometry
+geosparql:Geometry rdf:type owl:Class ;
+                   rdfs:subClassOf geosparql:SpatialObject ;
+                   rdfs:label "GeoSPARQL Geometry"@en .
+
+
+###  http://www.opengis.net/ont/geosparql#SpatialObject
+geosparql:SpatialObject rdf:type owl:Class ;
+                        rdfs:subClassOf crm:E53_Place ;
+                        rdfs:comment "Anything spatial (being or having a shape, position or an extent)."@en ;
+                        rdfs:label "GeoSPARQL Spatial Object"@en .
+
+
+###  http://www.opengis.net/ont/sf#Geometry
+sf:Geometry rdf:type owl:Class ;
+            rdfs:subClassOf geosparql:Geometry ;
+            rdfs:comment """Geometry is the root class of the hierarchy.
+
+The instantiable subclasses of Geometry are restricted to 0, 1 and 2-dimensional geometric objects that exist in 2, 3 or 4-dimensional coordinate space (R2, R3 or R4). Geometry values in R2 have points with coordinate values for x and y. Geometry values in R3 have points with coordinate values for x, y and z or for x, y and m. Geometry values in R4 have points with coordinate values for x, y, z and m.
+
+The interpretation of the coordinates is subject to the coordinate reference systems associated to the point. All coordinates within a geometry object should be in the same coordinate reference systems. Each coordinate shall be unambiguously associated to a coordinate reference system either directly or through its containing geometry. The z coordinate of a point is typically, but not necessarily, represents altitude or elevation. The m coordinate represents a measurement.
+
+All Geometry classes described in this specification are defined so that instances of Geometry are topologically closed, i.e. all represented geometries include their boundary as point sets. This does not affect their representation, and open versions of the same classes may be used in other circumstances, such as topological representations."""@en ;
+            rdfs:label "SF Geometry"@en .
+
+
+###  http://www.opengis.net/ont/sf#MultiLineString
+sf:MultiLineString rdf:type owl:Class ;
+                   rdfs:subClassOf sf:Geometry ;
+                   rdfs:label "SF Multi Line"@en .
+
+
+###  http://www.opengis.net/ont/sf#MultiPoint
+sf:MultiPoint rdf:type owl:Class ;
+              rdfs:subClassOf sf:Geometry ;
+              rdfs:label "SF Mulit Point"@en .
+
+
+###  http://www.opengis.net/ont/sf#MultiPolygon
+sf:MultiPolygon rdf:type owl:Class ;
+                rdfs:subClassOf sf:Geometry ;
+                rdfs:label "SF Multi Polygon"@en .
+
+
+###  http://www.opengis.net/ont/sf#Point
+sf:Point rdf:type owl:Class ;
+         rdfs:subClassOf sf:Geometry ;
+         rdfs:comment """A Point is a 0-dimensional geometric object and represents a single location in coordinate space. 
+A Point has an x-coordinate value, a y-coordinate value. If called for by the associated Spatial Reference System, it may also have coordinate values for z and m.
+The boundary of a Point is the empty set."""@en ;
+         rdfs:label "SF Point"@en .
+
+
+###  http://www.w3.org/1999/02/22-rdf-syntax-ns#Property
+rdf:Property rdf:type owl:Class ;
+             rdfs:subClassOf ontology:AMT_Entity ;
+             rdfs:label "RDFs Property"@en .
+
+
+###  http://www.w3.org/2000/01/rdf-schema#Class
+rdfs:Class rdf:type owl:Class ;
+           rdfs:subClassOf ontology:AMT_Entity ;
+           rdfs:label "RDFs Class"@en .
+
+
+###  http://www.w3.org/2002/07/owl#Thing
+owl:Thing rdfs:label "OWL Thing"@de ,
+                     "OWL Thing"@en .
+
+
+###  http://www.w3.org/2004/02/skos/core#Collection
+skos:Collection rdf:type owl:Class ;
+                rdfs:subClassOf crm:E1_CRM_Entity ;
+                rdfs:label "SKOS Collection"@en .
+
+
+###  http://www.w3.org/2004/02/skos/core#Concept
+skos:Concept rdf:type owl:Class ;
+             rdfs:subClassOf crm:E1_CRM_Entity ;
+             dc:description """The class skos:Concept is the class of SKOS concepts.
+
+A SKOS concept can be viewed as an idea or notion; a unit of thought. However, what constitutes a unit of thought is subjective, and this definition is meant to be suggestive, rather than restrictive.
+
+The notion of a SKOS concept is useful when describing the conceptual or intellectual structure of a knowledge organization system, and when referring to specific ideas or meanings established within a KOS."""@en ;
+             rdfs:label "Konzept"@de ,
+                        "SKOS Concept"@en .
+
+
+###  http://www.w3.org/2004/02/skos/core#ConceptScheme
+skos:ConceptScheme rdf:type owl:Class ;
+                   rdfs:subClassOf skos:Collection ;
+                   rdfs:label "SKOS Concept Scheme"@en .
+
+
+###  http://www.w3.org/ns/prov#Activity
+prov:Activity rdf:type owl:Class ;
+              rdfs:subClassOf crm:E5_Event ;
+              rdfs:label "Activity"@en .
+
+
+###  http://www.w3.org/ns/prov#Agent
+prov:Agent rdf:type owl:Class ;
+           rdfs:subClassOf ontology:ActorEntity ;
+           rdfs:label "Agent"@en .
+
+
+###  http://www.w3.org/ns/prov#Entity
+prov:Entity rdf:type owl:Class ;
+            rdfs:subClassOf <https://www.w3.org/2000/01/rdf-schema#Resource> ;
+            rdfs:label "PROV-O Entity"@en .
+
+
+###  http://www.w3.org/ns/prov#Organization
+prov:Organization rdf:type owl:Class ;
+                  rdfs:subClassOf foaf:Organization ;
+                  rdfs:label "Organisation"@en .
+
+
+###  http://www.w3.org/ns/prov#Person
+prov:Person rdf:type owl:Class ;
+            rdfs:subClassOf foaf:Person ;
+            rdfs:label "Person"@en .
+
+
+###  http://www.w3.org/ns/prov#SoftwareAgent
+prov:SoftwareAgent rdf:type owl:Class ;
+                   rdfs:subClassOf prov:Agent ;
+                   rdfs:label "Software Agent"@en .
+
+
+###  http://www.wikidata.org/entity/Q3133368
+wikidata:Q3133368 rdf:type owl:Class ;
+                  rdfs:subClassOf crm:E5_Event ;
+                  rdfs:label "Wikidata Repository"@en .
+
+
+###  http://xmlns.com/foaf/0.1/Group
+foaf:Group rdf:type owl:Class ;
+           rdfs:subClassOf prov:Agent ;
+           rdfs:label "Group"@en .
+
+
+###  http://xmlns.com/foaf/0.1/Organization
+foaf:Organization rdf:type owl:Class ;
+                  rdfs:subClassOf prov:Agent ;
+                  rdfs:label "Organization"@en .
+
+
+###  http://xmlns.com/foaf/0.1/Person
+foaf:Person rdf:type owl:Class ;
+            rdfs:subClassOf prov:Agent ;
+            rdfs:label "Person"@en .
+
+
+###  http://xmlns.com/foaf/0.1/Project
+foaf:Project rdf:type owl:Class ;
+             rdfs:subClassOf crm:E5_Event ;
+             rdfs:label "FOAF Project"@en .
+
+
+###  https://ontology.swissartresearch.net/aaao/ZE13_Speech_Act
+aaao:ZE13_Speech_Act rdf:type owl:Class ;
+                     rdfs:subClassOf crm:E13_Attribute_Assignment ;
+                     rdfs:label "ZE13 Speech Act"@en .
+
+
+###  https://ontology.swissartresearch.net/aaao/ZE17_Digital_Reading
+aaao:ZE17_Digital_Reading rdf:type owl:Class ;
+                          rdfs:subClassOf <http://www.cidoc-crm.org/extensions/crmtex/TX5_Text_Recognition> ,
+                                          <http://www.ics.forth.gr/isl/CRMdig/D7_Digital_Machine_Event> ,
+                                          aaao:ZE13_Speech_Act ;
+                          rdfs:comment """An instance of digital reading is a digital processing event guided by a set of instructions or parameters which in turn returns a digital output. The digital output will consist in a set of propositions related to the 'read' input which might include things like classifications, identifications, transformations, comparisons and so on. In the context of semantic data processes, such output might consist in semantically encoded knowledge graph statements, the collection of which may be referred to as an I4 Propositional Set, which can be regarded as the 'conclusion' of the digital reading. As such, Digital reading may be regarded as a computational process guided by a parametrized hypothesis resulting in a new propositional dataset for scientific consideration. The propositional information generated by the digital reading process should be considered as provisional knowledge posited under a hypothesis. Typically propositions generated by the digital reading may become the subject of further scholarly research.
+Instances of this class come to be when a process is initiated to generate new information and finish upon completion of that process or if the process is interrupted and fails to complete."""@en ;
+                          rdfs:label "ZE17 Digital Reading"@en .
+
+
+###  https://ontology.swissartresearch.net/aaao/ZE18_Critical_Reading
+aaao:ZE18_Critical_Reading rdf:type owl:Class ;
+                           rdfs:subClassOf aaao:ZE13_Speech_Act ;
+                           rdfs:label "ZE18 Critical Reading"@en .
+
+
+###  https://ontology.swissartresearch.net/aaao/ZE19_Naming
+aaao:ZE19_Naming rdf:type owl:Class ;
+                 rdfs:subClassOf aaao:ZE13_Speech_Act ;
+                 rdfs:label "ZE19 Naming"@en .
+
+
+###  https://ontology.swissartresearch.net/aaao/ZE4_Classificatory_Status
+aaao:ZE4_Classificatory_Status rdf:type owl:Class ;
+                               rdfs:subClassOf crm:E13_Attribute_Assignment ;
+                               rdfs:comment """An instance of classificatory status is the collective ascription of a type to an object by a community. The substance of the classificatory status is the communal commitment to the classification of the object in question according to the designated type.
+Instances of classificatory status are recognizable through evidence of community members adopting the intentional stance of so-classifying the object in question, as observable from direct witnesses, through the reports of competent observers or through evidence of a declarative act [e.g.: E17 Type Assignment] initiating this status.
+Instances of classificatory status may come to be through a formal process such as a declarative act of classification [E17 Type Assignment], or may have arisen through habit, fiat or be of unknown origin. Instances of classificatory status may end either though a formal process, such as a new declarative act of classification, be officially declassified, or may simply fade out of use, be eliminated by fiat or be of unknown reason."""@en ;
+                               rdfs:label "ZE4 Classificatory Status"@en .
+
+
+###  https://pleiades.stoa.org/places/vocab#Location
+pleiades:Location rdf:type owl:Class ;
+                  rdfs:subClassOf geosparql:SpatialObject ;
+                  rdfs:label "Pleiades Location"@en .
+
+
+###  https://pleiades.stoa.org/places/vocab#Place
+pleiades:Place rdf:type owl:Class ;
+               rdfs:subClassOf skos:Concept ;
+               dc:description "Places are instances of skos:Concept as well as contexts for Locations and Names."@en ;
+               rdfs:label "Pleiades Place"@de ,
+                          "Pleiades Place"@en .
+
+
+###  https://www.w3.org/2000/01/rdf-schema#Resource
+<https://www.w3.org/2000/01/rdf-schema#Resource> rdf:type owl:Class ;
+                                                 rdfs:label "RDFs Resource"@en .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+ontology:hasImage rdfs:label "image"@en ,
+                             "Bild"@de .
+
+
+ontology:hasLocation rdfs:label "hat Standort"@de ,
+                                "has location"@en .
+
+
+ontology:hasType rdfs:label "has type"@en ,
+                            "hat Typ"@de .
+
+
+prov:endedAtTime rdfs:label "ended at time"@en .
+
+
+prov:startedAtTime rdfs:label "started at time"@en .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
