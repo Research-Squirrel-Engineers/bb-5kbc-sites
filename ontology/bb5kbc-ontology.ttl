@@ -39,44 +39,59 @@
     owl:imports <http://archaeology.link/ontology#> ;
     owl:versionInfo "0.2" ;
     rdfs:comment """Data namespace: http://w3id.org/bb5kbc/
-URI patterns:
-  site_{FID}          → bb5kbc:Fundstelle
-  site_{FID}_activity → bb5kbc:GeoreferenzierungsAktivitaet
-  site_{FID}_geom     → sf:Point
-  site_{FID}_discovery→ bb5kbc:Entdeckung
-  site_{FID}_culture  → bb5kbc:KulturelleZuordnung
-  gemeinde_{slug}, kreis_{slug}, bundesland_{slug}, land_{slug},
-  kultur_{slug}, fundstellenart_{slug}, entdeckungsart_{slug},
-  georef_{slug}, pub_{slug}, methode_{slug}, quellentyp_{slug}
-  → deduplicated named nodes from text values"""@en .
+URI patterns (FID-based, one per Fundstelle):
+  site_{FID}           → bb5kbc:Fundstelle
+  site_{FID}_activity  → bb5kbc:GeoreferenzierungsAktivitaet
+  site_{FID}_geom      → sf:Point
+  site_{FID}_discovery → bb5kbc:Entdeckung
+  site_{FID}_culture   → bb5kbc:KulturelleZuordnung
+URI patterns (hash-based, MD5(label_utf8)[:8], deduplicated):
+  gemeinde_{hash}        → bb5kbc:Gemeinde
+  kreis_{hash}           → bb5kbc:Kreis
+  bundesland_{hash}      → bb5kbc:Bundesland
+  land_{hash}            → bb5kbc:Land
+  kultur_{hash}          → bb5kbc:Kulturgruppe (e.g. kultur_cc414e20 ← 'SBK')
+  fundstellenart_{hash}  → bb5kbc:FundstellenartType
+  entdeckungsart_{hash}  → bb5kbc:EntdeckungsartType
+  georef_{hash}          → bb5kbc:GeoReferenz
+  pub_{hash}             → bb5kbc:Publikation
+  methode_{hash}         → fsl:MethodType
+  quellentyp_{hash}      → fsl:SourceType
+External identifiers (TGN + iDAI + OSM) on all 4 administrative levels:
+  bb5kbc:Land, bb5kbc:Bundesland, bb5kbc:Kreis, bb5kbc:Gemeinde
+  → new CSV columns will be added for Bundesland/Kreis/Gemeinde
+Note: entdeckung (fst text) → rdfs:label literal on bb5kbc:Entdeckung (free text, not Named Node)
+      QID_entdeckung          → bb5kbc:EntdeckungsartType Named Node (hash-URI + QID)"""@en .
 
 # --- CLASSES -----------------------------------------------------------------
 
 bb5kbc:Land
     rdf:type owl:Class ;
     rdfs:subClassOf crm:E53_Place ;
-    rdfs:comment """Sovereign state (ISO 3166) as a modern administrative territory with defined
-geometric boundaries. Directly subClassOf crm:E53_Place — not pleiades:Place, which is
-reserved for ancient/uncertain toponyms without definite geometry (Samian-ware use case
-in LADO/ArNO). TGN/iDAI/OSM via bb5kbc:hasExternalIdentifier."""@en ;
+    rdfs:comment """Sovereign state (ISO 3166). URI: land_{MD5(label)[:8]}.
+External identifiers: TGN, iDAI, OSM via bb5kbc:hasExternalIdentifier.
+Only 2 values in dataset: Deutschland, Polen."""@en ;
     rdfs:label "Land"@de , "Country"@en .
 
 bb5kbc:Bundesland
     rdf:type owl:Class ;
     rdfs:subClassOf crm:E53_Place ;
-    rdfs:comment "Federal state or Voivodeship (NUTS-1). Modern administrative territory, directly subClassOf crm:E53_Place."@en ;
+    rdfs:comment """Federal state (Bundesland) or Voivodeship (NUTS-1). URI: bundesland_{MD5(label)[:8]}.
+External identifiers: TGN, iDAI, OSM via bb5kbc:hasExternalIdentifier (new CSV columns)."""@en ;
     rdfs:label "Bundesland / Województwo"@de , "Federal State"@en .
 
 bb5kbc:Kreis
     rdf:type owl:Class ;
     rdfs:subClassOf crm:E53_Place ;
-    rdfs:comment "District (Landkreis / Powiat, NUTS-3 / LAU-1). Modern administrative territory, directly subClassOf crm:E53_Place."@en ;
+    rdfs:comment """District (Landkreis / Powiat, NUTS-3/LAU-1). URI: kreis_{MD5(label)[:8]}.
+External identifiers: TGN, iDAI, OSM via bb5kbc:hasExternalIdentifier (new CSV columns)."""@en ;
     rdfs:label "Kreis / Powiat"@de , "District"@en .
 
 bb5kbc:Gemeinde
     rdf:type owl:Class ;
     rdfs:subClassOf crm:E53_Place ;
-    rdfs:comment "Municipality (Gemeinde / Gmina, LAU-2). Modern administrative territory, directly subClassOf crm:E53_Place."@en ;
+    rdfs:comment """Municipality (Gemeinde / Gmina, LAU-2). URI: gemeinde_{MD5(label)[:8]}.
+External identifiers: TGN, iDAI, OSM via bb5kbc:hasExternalIdentifier (new CSV columns)."""@en ;
     rdfs:label "Gemeinde / Gmina"@de , "Municipality"@en .
 
 bb5kbc:Fundstelle
@@ -114,15 +129,13 @@ bb5kbc:FundstellenartType
 bb5kbc:Entdeckung
     rdf:type owl:Class ;
     rdfs:subClassOf crmsci:S19_Encounter_Event ;
-    rdfs:comment """Discovery/encounter event of the site (entdeckung column).
-Directly subClassOf crmsci:S19_Encounter_Event — designed for the event of
-finding something at a particular place and time (Sophie's README:
-'S19 Begegnung / Encounter Event aus der Archaeo-Erweiterung des CIDOC CRM').
-Typed via crm:P2_has_type → bb5kbc:EntdeckungsartType (crm:E55_Type)."""@en ;
+    rdfs:comment """Discovery/encounter event. URI: site_{FID}_discovery.
+entdeckung column → rdfs:label literal (free text, 15 heterogeneous values
+including proper names like 'Ausgrabung Bersu' — not a Named Node).
+QID_entdeckung → crm:P2_has_type → bb5kbc:EntdeckungsartType (Named Node)."""@en ;
     rdfs:label "Entdeckung"@de , "Discovery / Encounter Event"@en .
 # CRM chain: crm:E1 → crm:E13_Attribute_Assignment
 #            → crmsci:S4_Observation → crmsci:S19_Encounter_Event
-#            → bb5kbc:Entdeckung
 
 bb5kbc:EntdeckungsartType
     rdf:type owl:Class ;
@@ -142,7 +155,11 @@ bb5kbc:KulturelleZuordnung
 bb5kbc:Kulturgruppe
     rdf:type owl:Class ;
     rdfs:subClassOf crm:E4_Period ;
-    rdfs:comment "Cultural group (SBK, TBK, ...). Perio.do URI via bb5kbc:hasExternalIdentifier."@en ;
+    rdfs:comment """Cultural group as a stable Named Node. URI: kultur_{MD5(label)[:8]}.
+10 distinct values in dataset (SBK, SRK, BKK, FBG, Rössen, Rössener, Guhrau,
+Mesolithikum, SBK?, SRK?). Uncertain assignments (SBK?, SRK?) get their own nodes.
+Perio.do URI not yet in dataset — will be added later via bb5kbc:hasExternalIdentifier
+without touching Fundstelle triples."""@en ;
     rdfs:label "Kulturgruppe"@de , "Cultural Group"@en .
 
 bb5kbc:GeoReferenz
@@ -315,8 +332,4 @@ bb5kbc:hatGenauigkeit
     rdfs:comment "Spatial accuracy in metres (genauigkeit_m). SubPropertyOf fsl:precision."@en ;
     rdfs:label "Genauigkeit (m)"@de , "spatial accuracy (m)"@en .
 
-bb5kbc:hatBemerkung
-    rdf:type owl:DatatypeProperty ;
-    rdfs:subPropertyOf crm:P3_has_note ;
-    rdfs:domain bb5kbc:Fundstelle ; rdfs:range xsd:string ;
-    rdfs:label "Bemerkung"@de , "remark"@en .
+
