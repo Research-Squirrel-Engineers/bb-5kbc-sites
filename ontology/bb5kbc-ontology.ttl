@@ -39,29 +39,32 @@
     owl:imports <http://archaeology.link/ontology#> ;
     owl:versionInfo "0.2" ;
     rdfs:comment """Data namespace: http://w3id.org/bb5kbc/
-URI patterns (FID-based, one per Fundstelle):
+URI patterns (FID-based, direct site attributes only):
   site_{FID}           → bb5kbc:Fundstelle
   site_{FID}_activity  → bb5kbc:GeoreferenzierungsAktivitaet
   site_{FID}_geom      → sf:Point
-  site_{FID}_discovery → bb5kbc:Entdeckung       (FID-based: one per Fundstelle)
-  site_{FID}_culture   → bb5kbc:KulturelleZuordnung (FID-based: one per Fundstelle)
 URI patterns (hash-based, MD5(label_utf8)[:8], deduplicated):
   gemeinde_{hash}        → bb5kbc:Gemeinde
   kreis_{hash}           → bb5kbc:Kreis
   bundesland_{hash}      → bb5kbc:Bundesland
   land_{hash}            → bb5kbc:Land
-  kultur_{hash}          → bb5kbc:Kulturgruppe (e.g. kultur_cc414e20 ← 'SBK')
-  fundstellenart_{hash}  → bb5kbc:FundstellenartType
+  kultur_{hash}          → bb5kbc:Kulturgruppe
+  culture_{hash}         → bb5kbc:KulturelleZuordnung
+  entdeckung_{hash}      → bb5kbc:Entdeckung
   entdeckungsart_{hash}  → bb5kbc:EntdeckungsartType
-  georef_{hash}          → bb5kbc:GeoReferenz
+  fundstellenart_{hash}  → bb5kbc:FundstellenartType
   pub_{hash}             → bb5kbc:Publikation
   methode_{hash}         → fsl:MethodType
   quellentyp_{hash}      → fsl:SourceType
-External identifiers (TGN + iDAI + OSM) on all 4 administrative levels:
-  bb5kbc:Land, bb5kbc:Bundesland, bb5kbc:Kreis, bb5kbc:Gemeinde
-  → new CSV columns will be added for Bundesland/Kreis/Gemeinde
-Note: entdeckung (fst text) → rdfs:label literal on bb5kbc:Entdeckung (free text, not Named Node)
-      QID_entdeckung          → bb5kbc:EntdeckungsartType Named Node (hash-URI + QID)"""@en .
+External identifiers (TGN + iDAI + OSM) on all 4 administrative levels.
+CM Literals (on GeoreferenzierungsAktivitaet):
+  quelle_georef    → fsl:hasReference / fsl:activityDesc (P25) : xsd:string
+  QID_quelle_georef→ fsl:hasReference (P31) : Wikidata URI
+  methode          → fsl:method / fsl:methodUsed (P7) → fsl:MethodType Named Node
+  quellen_typ      → fsl:hasSourceType (P6) + fsl:hasSourceTypeDetail (P16) → fsl:SourceType Named Node
+  methodenbeschr   → fsl:activityDesc (P15) : xsd:string
+  genauigkeit_m    → fsl:precision (P23) : xsd:decimal (on bb5kbc:Fundstelle)
+  wgs84_x/y        → geosparql:asWKT on sf:Point (⏳ not yet in dataset)"""@en .
 
 # --- CLASSES -----------------------------------------------------------------
 
@@ -114,10 +117,21 @@ PROV-O: prov:wasGeneratedBy → bb5kbc:GeoreferenzierungsAktivitaet;
 bb5kbc:GeoreferenzierungsAktivitaet
     rdf:type owl:Class ;
     rdfs:subClassOf prov:Activity ;
-    rdfs:comment """Georeferencing activity (FSL Method/Activity pattern). Typed prov:Activity.
-  fsl:hasSource, fsl:hasSourceType, fsl:activityDesc, fsl:certaintyLevel, fsl:hasReference.
-  prov:wasAssociatedWith → foaf:Person;
-  prov:used → bb5kbc:GeoReferenz."""@en ;
+    rdfs:comment """Georeferencing activity (FSL CM pattern). All 10 CM properties:
+  P5  fsl:certaintyLevel     → fsl:CertaintyType (derived from genauigkeit_m:
+                                 <Q23> high <50m, <Q15> medium 50-500m,
+                                 <Q24> low >500m, <Q113> dubious)
+  P6  fsl:hasSourceType      → fsl:SourceType Named Node (quellen_typ)
+  P7  fsl:methodUsed         → fsl:MethodType Named Node (methode)
+  P13 fsl:certaintyDesc      → xsd:string (methodenbeschr)
+  P14 fsl:georeferencingBy   → <https://orcid.org/0000-0003-4696-2101> (fixed)
+      prov:wasAssociatedWith → <https://orcid.org/0000-0003-4696-2101> (fixed)
+  P15 fsl:activityDesc       → xsd:string (methodenbeschr)
+  P16 fsl:hasSourceTypeDetail→ fsl:SourceType Named Node (quellen_typ, detail)
+  P23 fsl:precision          → xsd:decimal on bb5kbc:Fundstelle (genauigkeit_m)
+  P24 fsl:hasLocationType    → <Q80> Findspot (fixed for all bb5kbc:Fundstelle)
+  P25 fsl:hasReference       → xsd:string (quelle_georef)
+  P33 fsl:hasPointType       → <Q126> Representative Point (fixed for all sf:Point)"""@en ;
     rdfs:label "Georeferenzierungs-Aktivität"@de , "Georeferencing Activity"@en .
 
 bb5kbc:FundstellenartType
@@ -162,12 +176,6 @@ Perio.do URI not yet in dataset — will be added later via bb5kbc:hasExternalId
 without touching Fundstelle triples."""@en ;
     rdfs:label "Kulturgruppe"@de , "Cultural Group"@en .
 
-bb5kbc:GeoReferenz
-    rdf:type owl:Class ;
-    rdfs:subClassOf crm:E32_Authority_Document ;
-    rdfs:comment "Source document used for georeferencing (quelle_georef). WD QID via bb5kbc:hasExternalIdentifier."@en ;
-    rdfs:label "Georeferenz-Quelle"@de , "Georeferencing Source"@en .
-
 bb5kbc:Publikation
     rdf:type owl:Class ;
     rdfs:subClassOf crm:E32_Authority_Document ;
@@ -195,6 +203,54 @@ bb5kbc:ExternalIdentifier_Wikidata
 bb5kbc:ExternalIdentifier_PerioDo
     rdf:type owl:NamedIndividual , bb5kbc:externalIdentifierType ;
     rdfs:label "Perio.do"@en ; skos:prefLabel "Perio.do"@en .
+
+# --- NAMED INDIVIDUAL: acting person (fsl:georeferencingBy / P14) ------------
+
+<https://orcid.org/0000-0003-4696-2101>
+    rdf:type owl:NamedIndividual ,
+             foaf:Person ,
+             prov:Agent ;
+    rdfs:label "Sophie C. Schmidt" ;
+    skos:prefLabel "Sophie C. Schmidt" ;
+    skos:exactMatch <https://orcid.org/0000-0003-4696-2101> .
+# Used on every bb5kbc:GeoreferenzierungsAktivitaet:
+#   fsl:georeferencingBy   (P14) → this URI
+#   prov:wasAssociatedWith       → this URI
+
+# --- NAMED INDIVIDUALS: fixed Wikibase items (P24, P33, P5) ------------------
+
+# P24 location type — always Q80 (Findspot) for all bb5kbc:Fundstelle
+<https://fuzzy-sl.wikibase.cloud/entity/Q80>
+    rdf:type owl:NamedIndividual , fsl:LocationType ;
+    rdfs:label "Findspot"@en ;
+    skos:prefLabel "Findspot"@en .
+# Used: bb5kbc:Fundstelle fsl:hasLocationType <Q80>  (P24, fixed for all sites)
+
+# P33 point type — always Q126 (Representative Point) for all sf:Point
+<https://fuzzy-sl.wikibase.cloud/entity/Q126>
+    rdf:type owl:NamedIndividual , fsl:PointType ;
+    rdfs:label "Representative Point"@en ;
+    skos:prefLabel "Representative Point"@en .
+# Used: sf:Point (site_{FID}_geom) fsl:hasPointType <Q126>  (P33, fixed for all geometries)
+
+# P5 certainty level — derived from genauigkeit_m in pipeline
+# Q23 high (< 50m), Q15 medium (50–500m), Q24 low (> 500m), Q113 dubious
+<https://fuzzy-sl.wikibase.cloud/entity/Q23>
+    rdf:type owl:NamedIndividual , fsl:CertaintyType ;
+    rdfs:label "high"@en ; skos:prefLabel "high"@en .
+
+<https://fuzzy-sl.wikibase.cloud/entity/Q15>
+    rdf:type owl:NamedIndividual , fsl:CertaintyType ;
+    rdfs:label "medium"@en ; skos:prefLabel "medium"@en .
+
+<https://fuzzy-sl.wikibase.cloud/entity/Q24>
+    rdf:type owl:NamedIndividual , fsl:CertaintyType ;
+    rdfs:label "low"@en ; skos:prefLabel "low"@en .
+
+<https://fuzzy-sl.wikibase.cloud/entity/Q113>
+    rdf:type owl:NamedIndividual , fsl:CertaintyType ;
+    rdfs:label "dubious"@en ; skos:prefLabel "dubious"@en .
+# Used: bb5kbc:Fundstelle fsl:certaintyLevel <Q23|Q15|Q24|Q113>  (P5, derived from genauigkeit_m)
 
 # --- EXTERNAL IDENTIFIER CLASS + PROPERTIES ----------------------------------
 
@@ -313,16 +369,16 @@ bb5kbc:hatKatalognummer
 
 bb5kbc:hatFID
     rdf:type owl:DatatypeProperty ;
-    rdfs:subPropertyOf crm:P1_is_identified_by ;
+    rdfs:subPropertyOf crm:P1_is_identified_by ,
+                       dc:identifier ;
     rdfs:domain bb5kbc:Fundstelle ;
     rdfs:range xsd:integer ;
     rdfs:comment """Primary identifier (PID) of the Fundstelle in the Schmidt 2026 catalogue (FID column).
-Basis for all derived URIs:
-  Fundstelle:                  http://w3id.org/bb5kbc/site_{FID}
-  GeoreferenzierungsAktivitaet: http://w3id.org/bb5kbc/site_{FID}_activity
-  sf:Point (Geometry):          http://w3id.org/bb5kbc/site_{FID}_geom
-  Entdeckung:                   http://w3id.org/bb5kbc/site_{FID}_discovery
-  KulturelleZuordnung:          http://w3id.org/bb5kbc/site_{FID}_culture"""@en ;
+SubPropertyOf both crm:P1_is_identified_by and dc:identifier — appears as:
+  dc:identifier \"1\"^^xsd:integer  (explicit identifier statement)
+  URI basis: http://w3id.org/bb5kbc/site_{FID}
+             http://w3id.org/bb5kbc/site_{FID}_activity
+             http://w3id.org/bb5kbc/site_{FID}_geom"""@en ;
     rdfs:label "FID"@de , "site PID"@en .
 
 bb5kbc:hatGenauigkeit
