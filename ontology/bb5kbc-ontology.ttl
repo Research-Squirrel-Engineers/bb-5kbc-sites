@@ -64,7 +64,7 @@ CM Literals (on GeoreferenzierungsAktivitaet):
   quellen_typ      → fsl:hasSourceType (P6) + fsl:hasSourceTypeDetail (P16) → fsl:SourceType Named Node
   methodenbeschr   → fsl:activityDesc (P15) : xsd:string
   genauigkeit_m    → fsl:precision (P23) : xsd:decimal (on bb5kbc:Fundstelle)
-  wgs84_x/y        → geosparql:asWKT on sf:Point (⏳ not yet in dataset)"""@en .
+  wgs84_x/y        → geosparql:asWKT on sf:Point (539/540 filled; FID=563 has 0,0 → no geometry)"""@en .
 
 # --- CLASSES -----------------------------------------------------------------
 
@@ -79,22 +79,19 @@ Only 2 values in dataset: Deutschland, Polen."""@en ;
 bb5kbc:Bundesland
     rdf:type owl:Class ;
     rdfs:subClassOf crm:E53_Place ;
-    rdfs:comment """Federal state (Bundesland) or Voivodeship (NUTS-1). URI: bundesland_{MD5(label)[:8]}.
-External identifiers: TGN, iDAI, OSM via bb5kbc:hasExternalIdentifier (new CSV columns)."""@en ;
+    rdfs:comment "Federal state (Bundesland) or Voivodeship (NUTS-1). URI: bundesland_{MD5(label)[:8]}. External identifiers via CSV columns BL_TGN, BL_IDAI, BL_OSM_RELATION."@en ;
     rdfs:label "Bundesland / Województwo"@de , "Federal State"@en .
 
 bb5kbc:Kreis
     rdf:type owl:Class ;
     rdfs:subClassOf crm:E53_Place ;
-    rdfs:comment """District (Landkreis / Powiat, NUTS-3/LAU-1). URI: kreis_{MD5(label)[:8]}.
-External identifiers: TGN, iDAI, OSM via bb5kbc:hasExternalIdentifier (new CSV columns)."""@en ;
+    rdfs:comment "District (Landkreis / Powiat, NUTS-3/LAU-1). URI: kreis_{MD5(label)[:8]}. External identifiers via CSV columns KREIS_TGN, KREIS_IDAI, KREIS_OSM_RELATION."@en ;
     rdfs:label "Kreis / Powiat"@de , "District"@en .
 
 bb5kbc:Gemeinde
     rdf:type owl:Class ;
     rdfs:subClassOf crm:E53_Place ;
-    rdfs:comment """Municipality (Gemeinde / Gmina, LAU-2). URI: gemeinde_{MD5(label)[:8]}.
-External identifiers: TGN, iDAI, OSM via bb5kbc:hasExternalIdentifier (new CSV columns)."""@en ;
+    rdfs:comment "Municipality (Gemeinde / Gmina, LAU-2). URI: gemeinde_{MD5(label)[:8]}. External identifiers via CSV columns GEM_TGN, GEM_IDAI, GEM_OSM_RELATION."@en ;
     rdfs:label "Gemeinde / Gmina"@de , "Municipality"@en .
 
 bb5kbc:Fundstelle
@@ -170,10 +167,10 @@ bb5kbc:Kulturgruppe
     rdf:type owl:Class ;
     rdfs:subClassOf crm:E4_Period ;
     rdfs:comment """Cultural group as a stable Named Node. URI: kultur_{MD5(label)[:8]}.
-10 distinct values in dataset (SBK, SRK, BKK, FBG, Rössen, Rössener, Guhrau,
+10 distinct values (SBK, SRK, BKK, FBG, Rössen, Rössener, Guhrau,
 Mesolithikum, SBK?, SRK?). Uncertain assignments (SBK?, SRK?) get their own nodes.
-Perio.do URI not yet in dataset — will be added later via bb5kbc:hasExternalIdentifier
-without touching Fundstelle triples."""@en ;
+Perio.do URI (perio.do column) will be added via bb5kbc:hasExternalIdentifier
+when available."""@en ;
     rdfs:label "Kulturgruppe"@de , "Cultural Group"@en .
 
 bb5kbc:Publikation

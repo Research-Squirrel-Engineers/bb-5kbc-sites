@@ -37,7 +37,7 @@
 | `bb5kbc:Kreis` | `http://w3id.org/bb5kbc/kreis_{hash}` | `kreis_09060b5f` ← `"Wartburgkreis"` |
 | `bb5kbc:Bundesland` | `http://w3id.org/bb5kbc/bundesland_{hash}` | `bundesland_eec0c902` ← `"Thüringen"` |
 | `bb5kbc:Land` | `http://w3id.org/bb5kbc/land_{hash}` | `land_3c2f8b8c` ← `"Deutschland"` |
-| `bb5kbc:Kulturgruppe` | `http://w3id.org/bb5kbc/kultur_{hash}` | `kultur_cc414e20` ← `"SBK"` |
+| `bb5kbc:Kulturgruppe` | `http://w3id.org/bb5kbc/kultur_{hash}` | `kultur_cc414e20` ← `"SBK"`, `kultur_7a001224` ← `"SBK?"` |
 | `bb5kbc:KulturelleZuordnung` | `http://w3id.org/bb5kbc/culture_{hash}` | `culture_{hash}` ← hash aus kultur-Wert |
 | `bb5kbc:Entdeckung` | `http://w3id.org/bb5kbc/entdeckung_{hash}` | `entdeckung_{hash}` ← hash aus entdeckung-Text |
 | `bb5kbc:EntdeckungsartType` | `http://w3id.org/bb5kbc/entdeckungsart_{hash}` | `entdeckungsart_1f56a08c` ← `"Ausgrabung"` |
@@ -46,24 +46,8 @@
 | `fsl:MethodType` | `http://w3id.org/bb5kbc/methode_{hash}` | `methode_b57e2231` ← `"Übernahme aus externer Datenbank"` |
 | `fsl:SourceType` | `http://w3id.org/bb5kbc/quellentyp_{hash}` | `quellentyp_e6dc730e` ← `"Printpublikation"` |
 
-> **Hash-Funktion:** `MD5(originalwert_utf8)[:8]`
-> **`_activity` und `_geom`** sind die einzigen site-spezifischen Suffixe — sie sind direkte technische Attribute der Georeferenzierung einer konkreten Fundstelle. Alle anderen Entitäten sind eigenständig und werden global dedupliziert.
-
-| Entität | URI-Muster | Beispiel |
-|---|---|---|
-| `bb5kbc:Gemeinde` | `http://w3id.org/bb5kbc/gemeinde_{hash}` | `gemeinde_c672785b` ← `"Behringen"` |
-| `bb5kbc:Kreis` | `http://w3id.org/bb5kbc/kreis_{hash}` | `kreis_09060b5f` ← `"Wartburgkreis"` |
-| `bb5kbc:Bundesland` | `http://w3id.org/bb5kbc/bundesland_{hash}` | `bundesland_eec0c902` ← `"Thüringen"` |
-| `bb5kbc:Land` | `http://w3id.org/bb5kbc/land_{hash}` | `land_3c2f8b8c` ← `"Deutschland"` |
-| `bb5kbc:Kulturgruppe` | `http://w3id.org/bb5kbc/kultur_{hash}` | `kultur_cc414e20` ← `"SBK"`, `kultur_7a001224` ← `"SBK?"` |
-| `bb5kbc:EntdeckungsartType` | `http://w3id.org/bb5kbc/entdeckungsart_{hash}` | `entdeckungsart_1f56a08c` ← `"Ausgrabung"` |
-| `bb5kbc:FundstellenartType` | `http://w3id.org/bb5kbc/fundstellenart_{hash}` | `fundstellenart_1972902b` ← `"Siedlung"` |
-| `bb5kbc:Publikation` | `http://w3id.org/bb5kbc/pub_{hash}` | `pub_c5110572` ← `"Kaufmann 1976"` |
-| `bb5kbc:GeoReferenz` | `http://w3id.org/bb5kbc/georef_{hash}` | `georef_bede18a7` ← `"LfDA Sachsen-Anhalt"` |
-| `fsl:MethodType` | `http://w3id.org/bb5kbc/methode_{hash}` | `methode_b57e2231` ← `"Übernahme aus externer Datenbank"` |
-| `fsl:SourceType` | `http://w3id.org/bb5kbc/quellentyp_{hash}` | `quellentyp_e6dc730e` ← `"Printpublikation"` |
-
-> **Hash-Funktion:** `MD5(originalwert_utf8)[:8]` — kollisionssicher auch bei Unicode-Varianten (z.B. `"Thüringen"` ≠ `"Thuringen"`).
+> **Hash-Funktion:** `MD5(originalwert_utf8)[:8]` — kollisionssicher auch bei Unicode-Varianten.
+> **`_activity` und `_geom`** sind die einzigen site-spezifischen Suffixe. Alle anderen Entitäten werden global dedupliziert.
 
 ---
 
@@ -75,13 +59,22 @@
 | 4 | `fst_id` | `"444"` | 🟨 | `bb5kbc:Fundstelle` ← `bb5kbc:hatFundstellenID` : `xsd:string` | Interne ID, nicht immer eindeutig |
 | 3 | `katalognr` | `"55"` | 🟨 | `bb5kbc:Fundstelle` ← `bb5kbc:hatKatalognummer` : `xsd:string` | 52 leer |
 | 5 | `fst_name` | `"Tüngeda"` | 🟨 | `bb5kbc:Fundstelle` ← `rdfs:label` + `skos:prefLabel` : Literal `@de` | |
-| 6 | `gemeinde` | `"Behringen"` | 🟦🔗 | `bb5kbc:Fundstelle` ← `bb5kbc:inGemeinde` → `bb5kbc:Gemeinde` | + TGN + iDAI + OSM (neue CSV-Spalten) |
-| 7 | `kreis` | `"Wartburgkreis"` | 🟦🔗 | `bb5kbc:Gemeinde` ← `bb5kbc:inKreis` → `bb5kbc:Kreis` | + TGN + iDAI + OSM |
-| 8 | `bundesland` | `"Thüringen"` | 🟦🔗 | `bb5kbc:Kreis` ← `bb5kbc:inBundesland` → `bb5kbc:Bundesland` | + TGN + iDAI + OSM; inkl. Wojewodschaften |
-| 9 | `land` | `"Deutschland"` | 🟦🔗 | `bb5kbc:Bundesland` ← `bb5kbc:inLand` → `bb5kbc:Land` | + TGN + iDAI + OSM |
-| 10 | `LAND_TGN` | `"7000084"` | 🔗 | `bb5kbc:Land` ← `bb5kbc:hasExternalIdentifier` → `bb5kbc:ExternalIdentifier_TGN` | Wird für alle 4 Ebenen ergänzt |
-| 11 | `LAND_IDAI` | `"2044274"` | 🔗 | `bb5kbc:Land` ← `bb5kbc:hasExternalIdentifier` → `bb5kbc:ExternalIdentifier_iDAI` | dto. |
-| 12 | `LAND_OSM_Relation` | `"51477"` | 🔗 | `bb5kbc:Land` ← `bb5kbc:hasExternalIdentifier` → `bb5kbc:ExternalIdentifier_OSM` | dto. |
+| 6 | `gemeinde` | `"Behringen"` | 🟦🔗 | `bb5kbc:Fundstelle` ← `bb5kbc:inGemeinde` → `bb5kbc:Gemeinde` | + TGN + iDAI + OSM |
+| 7 | `GEM_TGN` | *(leer)* | 🔗 ⏳ | `bb5kbc:Gemeinde` ← `bb5kbc:hasExternalIdentifier` → `bb5kbc:ExternalIdentifier_TGN` | neue Spalte |
+| 8 | `GEM_IDAI` | *(leer)* | 🔗 ⏳ | `bb5kbc:Gemeinde` ← `bb5kbc:hasExternalIdentifier` → `bb5kbc:ExternalIdentifier_iDAI` | neue Spalte |
+| 9 | `GEM_OSM_RELATION` | *(leer)* | 🔗 ⏳ | `bb5kbc:Gemeinde` ← `bb5kbc:hasExternalIdentifier` → `bb5kbc:ExternalIdentifier_OSM` | neue Spalte |
+| 10 | `kreis` | `"Wartburgkreis"` | 🟦🔗 | `bb5kbc:Gemeinde` ← `bb5kbc:inKreis` → `bb5kbc:Kreis` | + TGN + iDAI + OSM |
+| 11 | `KREIS_TGN` | *(leer)* | 🔗 ⏳ | `bb5kbc:Kreis` ← `bb5kbc:hasExternalIdentifier` → `bb5kbc:ExternalIdentifier_TGN` | neue Spalte |
+| 12 | `KREIS_IDAI` | *(leer)* | 🔗 ⏳ | `bb5kbc:Kreis` ← `bb5kbc:hasExternalIdentifier` → `bb5kbc:ExternalIdentifier_iDAI` | neue Spalte |
+| 13 | `KREIS_OSM_RELATION` | *(leer)* | 🔗 ⏳ | `bb5kbc:Kreis` ← `bb5kbc:hasExternalIdentifier` → `bb5kbc:ExternalIdentifier_OSM` | neue Spalte |
+| 14 | `bundesland` | `"Thüringen"` | 🟦🔗 | `bb5kbc:Kreis` ← `bb5kbc:inBundesland` → `bb5kbc:Bundesland` | + TGN + iDAI + OSM; inkl. Wojewodschaften |
+| 15 | `BL_TGN` | *(leer)* | 🔗 ⏳ | `bb5kbc:Bundesland` ← `bb5kbc:hasExternalIdentifier` → `bb5kbc:ExternalIdentifier_TGN` | neue Spalte |
+| 16 | `BL_IDAI` | *(leer)* | 🔗 ⏳ | `bb5kbc:Bundesland` ← `bb5kbc:hasExternalIdentifier` → `bb5kbc:ExternalIdentifier_iDAI` | neue Spalte |
+| 17 | `BL_OSM_RELATION` | *(leer)* | 🔗 ⏳ | `bb5kbc:Bundesland` ← `bb5kbc:hasExternalIdentifier` → `bb5kbc:ExternalIdentifier_OSM` | neue Spalte |
+| 18 | `land` | `"Deutschland"` | 🟦🔗 | `bb5kbc:Bundesland` ← `bb5kbc:inLand` → `bb5kbc:Land` | + TGN + iDAI + OSM |
+| 19 | `LAND_TGN` | `"7000084"` | 🔗 | `bb5kbc:Land` ← `bb5kbc:hasExternalIdentifier` → `bb5kbc:ExternalIdentifier_TGN` | |
+| 20 | `LAND_IDAI` | `"2044274"` | 🔗 | `bb5kbc:Land` ← `bb5kbc:hasExternalIdentifier` → `bb5kbc:ExternalIdentifier_iDAI` | |
+| 21 | `LAND_OSM_Relation` | `"51477"` | 🔗 | `bb5kbc:Land` ← `bb5kbc:hasExternalIdentifier` → `bb5kbc:ExternalIdentifier_OSM` | |
 | 13 | `perio.do` | *(leer)* | 🔗 ⏳ | `bb5kbc:Kulturgruppe` ← `bb5kbc:hasExternalIdentifier` → `bb5kbc:ExternalIdentifier_PerioDo` | 0/540 gefüllt |
 | 14 | `kultur` | `"SBK"` | 🟦🔗 | `bb5kbc:KulturelleZuordnung` ← `bb5kbc:hatKulturgruppe` → `bb5kbc:Kulturgruppe` | + Perio.do (⏳); `SBK?`/`SRK?` eigene Nodes |
 | 15 | `entdeckung` | `"Ausgrabung Bersu"` | 🟦🔗 | `bb5kbc:Fundstelle` ← `bb5kbc:wurdeEntdecktDurch` → `bb5kbc:Entdeckung` | `rdfs:label` aus Text + `crm:P2_has_type` → `bb5kbc:EntdeckungsartType` |
@@ -100,7 +93,7 @@
 | — | *(abgeleitet)* | `Q23 / Q15 / Q24 / Q113` | 🟦 | `bb5kbc:Fundstelle` ← `fsl:certaintyLevel` → `fsl:CertaintyType` | `fsl:certaintyLevel` | P5 | Aus `genauigkeit_m`: `<Q23>` high <50m · `<Q15>` medium 50–500m · `<Q24>` low >500m · `<Q113>` dubious |
 | 24 | `quellen_typ` | `"Printpublikation"` | 🟦 | `bb5kbc:GeoreferenzierungsAktivitaet` ← `fsl:hasSourceType` → `fsl:SourceType` | `fsl:hasSourceType` | P6 | Named Node `quellentyp_{hash}`; 4 distinct |
 | 23 | `methode` | `"Übernahme aus externer Datenbank"` | 🟦 | `bb5kbc:GeoreferenzierungsAktivitaet` ← `fsl:methodUsed` → `fsl:MethodType` | `fsl:methodUsed` | P7 | Named Node `methode_{hash}`; 3 distinct |
-| 26+27 | `wgs84_x` + `wgs84_y` | *(leer)* | 🟨 ⏳ | `sf:Point` ← `geosparql:asWKT` : `"POINT(x y)"^^geosparql:wktLiteral` via `fsl:representativeGeometry` + `geosparql:hasGeometry` | `geosparql:hasGeometry` | P4 | 0/540 gefüllt |
+| 26+27 | `wgs84_x` + `wgs84_y` | `"10.58"` + `"51.03"` | 🟨 | `sf:Point` ← `geosparql:asWKT` : `"POINT(10.58 51.03)"^^geosparql:wktLiteral` via `fsl:representativeGeometry` + `geosparql:hasGeometry` | `geosparql:hasGeometry` | P4 | 539/540 gefüllt; FID=563 hat `0,0` → kein `sf:Point`, `fsl:certaintyLevel` → `<Q113>` dubious |
 | 25 | `methodenbeschr` | `"Koordinaten wurden vom LdfA..."` | 🟨 | `bb5kbc:GeoreferenzierungsAktivitaet` ← `fsl:certaintyDesc` : `xsd:string` | `fsl:certaintyDesc` | P13 | Freitext; 22 distinct |
 | — | *(fest)* | `https://orcid.org/0000-0003-4696-2101` | 🟦 | `bb5kbc:GeoreferenzierungsAktivitaet` ← `fsl:georeferencingBy` → `foaf:Person` | `fsl:georeferencingBy` | P14 | Sophie C. Schmidt; auch `prov:wasAssociatedWith` |
 | 25 | `methodenbeschr` | `"Koordinaten wurden vom LdfA..."` | 🟨 | `bb5kbc:GeoreferenzierungsAktivitaet` ← `fsl:activityDesc` : `xsd:string` | `fsl:activityDesc` | P15 | Freitext; 22 distinct |
