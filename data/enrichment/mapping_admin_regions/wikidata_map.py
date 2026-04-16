@@ -835,6 +835,44 @@ def main() -> None:
     all_report.extend(kreis_report)
     _append_columns(df, "KREIS", kreis_cache)
 
+    # --- Reorder columns: FID | level_original + enrichment ... --------------
+    # Each administrative level groups its original column immediately followed
+    # by its enrichment columns (QID, GeoNames, TGN, IDAI, OSM_Relation, then
+    # the match QA columns). GEMEINDE is placed last as it has no enrichment yet.
+    fid_col = "FID catalogue Schmidt 2026"
+    enrich_sfx = [
+        "QID",
+        "GeoNames",
+        "TGN",
+        "IDAI",
+        "OSM_Relation",
+        "matchLabel",
+        "matchScore",
+        "matchReason",
+    ]
+    ordered_cols = (
+        ([fid_col] if fid_col in df.columns else [])
+        + [
+            col
+            for level in ("LAND", "BUNDESLAND", "KREIS")
+            for col in [level] + [f"{level}_{s}" for s in enrich_sfx]
+            if col in df.columns
+        ]
+        + [
+            # GEMEINDE has no enrichment columns yet; add any remaining columns last
+            c
+            for c in df.columns
+            if c
+            not in {fid_col}
+            | {
+                col
+                for level in ("LAND", "BUNDESLAND", "KREIS")
+                for col in [level] + [f"{level}_{s}" for s in enrich_sfx]
+            }
+        ]
+    )
+    df = df[ordered_cols]
+
     # --- Write mapped CSV ----------------------------------------------------
     out = HERE / OUTPUT_FILE
     df.to_csv(
