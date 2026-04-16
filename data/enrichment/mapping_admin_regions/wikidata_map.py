@@ -8,6 +8,7 @@ Administrative levels currently supported:
   LAND       — sovereign state / country
   BUNDESLAND — German federal state or Polish voivodeship
   KREIS      — German Landkreis/kreisfreie Stadt or Polish powiat
+  GEMEINDE   — German municipality/locality or Polish gmina
 
 Matching strategy
 -----------------
@@ -51,6 +52,7 @@ section headers below.
 
 import csv
 import pathlib
+import sys
 import re
 import time
 from typing import Optional
@@ -59,12 +61,44 @@ import pandas as pd
 import requests
 from rapidfuzz import fuzz, process
 
+
+class _TeeLogger:
+    """Mirrors all stdout output to a log file simultaneously.
+
+    Usage (in main):
+        with _TeeLogger(HERE / LOG_FILE) as tee:
+            sys.stdout = tee
+            ...  # all print() calls go to both terminal and file
+            sys.stdout = tee.terminal
+    """
+
+    def __init__(self, path: pathlib.Path) -> None:
+        self.terminal = sys.stdout
+        self.log = open(path, "w", encoding="utf-8")
+
+    def write(self, message: str) -> None:
+        self.terminal.write(message)
+        self.log.write(message)
+
+    def flush(self) -> None:
+        self.terminal.flush()
+        self.log.flush()
+
+    def __enter__(self):
+        return self
+
+    def __exit__(self, *args) -> None:
+        sys.stdout = self.terminal
+        self.log.close()
+
+
 # --- File paths --------------------------------------------------------------
 
 INPUT_FILE = "fst_standortanalysen_ref.csv"  # pipe-delimited input
 OUTPUT_FILE = "fst_standortanalysen_ref_mapped.csv"
 REPORT_FILE = "fst_standortanalysen_ref_report.csv"
 OUTPUT_SEP = ","  # separator for output CSVs
+LOG_FILE = "fst_standortanalysen_ref_run.log"  # full terminal output
 
 HERE = pathlib.Path(__file__).parent  # resolved to notebook dir later
 
@@ -73,7 +107,8 @@ HERE = pathlib.Path(__file__).parent  # resolved to notebook dir later
 SPARQL_ENDPOINT = "https://query.wikidata.org/sparql"
 # Wikidata's fair-use policy requires a descriptive User-Agent string.
 USER_AGENT = "fst_standortanalysen_wikidata_mapper/1.0 (your-email@example.com)"
-SPARQL_TIMEOUT = 45  # seconds; per-Bundesland queries are lightweight
+SPARQL_TIMEOUT = 60  # seconds; index fetch queries (raised from 45 for reliability)
+SPARQL_TIMEOUT_STAGE2 = 90  # seconds; transitive P131+ lookups need more time
 REQUEST_DELAY = 1.0  # seconds between successive SPARQL calls (be polite)
 
 # --- Fuzzy matching thresholds (0.0 – 1.0) -----------------------------------
@@ -202,6 +237,17 @@ KREIS_OVERRIDES: dict[str, dict] = {
         "source": "override",
     },
     # (e) German Kreise with Wikidata altLabels that depressed fuzzy scores
+    # Historical region QIDs corrected to current district QIDs:
+    "elbe-elster": {"qid": "Q6152", "label": "Elbe-Elster", "source": "override"},
+    "barnim": {"qid": "Q6115", "label": "Barnim", "source": "override"},
+    "havelland": {"qid": "Q6139", "label": "Havelland", "source": "override"},
+    "uckermark": {"qid": "Q6109", "label": "Uckermark", "source": "override"},
+    "prignitz": {"qid": "Q6132", "label": "Prignitz", "source": "override"},
+    "burgenlandkreis": {
+        "qid": "Q6102",
+        "label": "Burgenlandkreis",
+        "source": "override",
+    },
     "teltow-fläming": {
         "qid": "Q6146",
         "label": "Landkreis Teltow-Fläming",
@@ -225,6 +271,318 @@ KREIS_STRIP_PREFIXES: list[str] = [
 ]
 # Polish powiats: replace "pow. X" with "Powiat X" to match Wikidata rdfs:labels
 KREIS_POW_REPLACE = re.compile(r"^pow\.\s*", re.IGNORECASE)
+
+# --- GEMEINDE normalisation -------------------------------------------------
+# Empty by default — overrides are added here as problem cases are discovered
+# during the first run (see _report.csv for NO MATCH and low-score entries).
+GEMEINDE_ALIASES: dict[str, str] = {
+    "stadt rathenow": "Rathenow",  # 'Stadt' prefix not in Wikidata label
+    "lutherstadt eilsleben": "Eilsleben",  # 'Lutherstadt' prefix not in Wikidata
+}
+
+GEMEINDE_OVERRIDES: dict[str, dict] = {
+    # All QIDs confirmed by manual Wikidata lookup.
+    #
+    # Source data typos / name variants
+    "gmina raciborz": {
+        "qid": "Q25302",
+        "label": "Gmina Racibórz",
+        "source": "override",
+    },
+    "gmina zlotniki kuj.": {
+        "qid": "Q618437",
+        "label": "Gmina Złotniki Kujawskie",
+        "source": "override",
+    },
+    "waltersdorf bei kö.wusterhausen": {
+        "qid": "Q896028",
+        "label": "Waltersdorf",
+        "source": "override",
+    },
+    # Fuzzy matched wrong item — corrected
+    "geltow": {"qid": "Q1499843", "label": "Geltow", "source": "override"},
+    "reichwalde": {"qid": "Q160235", "label": "Reichwalde", "source": "override"},
+    "deutsch wusterhausen": {
+        "qid": "Q16013",
+        "label": "Königs Wusterhausen",
+        "source": "override",
+    },
+    "petersburg": {"qid": "Q635001", "label": "Petersberg", "source": "override"},
+    "lutherstadt eilsleben": {
+        "qid": "Q484870",
+        "label": "Lutherstadt Eisleben",
+        "source": "override",
+    },
+    "eilsleben": {
+        "qid": "Q484870",
+        "label": "Lutherstadt Eisleben",
+        "source": "override",
+    },
+    "frankfurt": {"qid": "Q4024", "label": "Frankfurt (Oder)", "source": "override"},
+    "frankfurt (oder)": {
+        "qid": "Q445993",
+        "label": "Frankfurt (Oder) city",
+        "source": "override",
+    },
+    "brandenburg-neustadt": {
+        "qid": "Q3931",
+        "label": "Brandenburg an der Havel",
+        "source": "override",
+    },
+    "brandenburg-altstadt": {
+        "qid": "Q3931",
+        "label": "Brandenburg an der Havel",
+        "source": "override",
+    },
+    # Modelling: kreisfreie Städte whose P131 points to Bundesland, not Kreis
+    "weimar": {"qid": "Q3955", "label": "Weimar", "source": "override"},
+    # Stage 2 timeout — confirmed QIDs added as overrides
+    "bornim": {"qid": "Q893995", "label": "Bornim", "source": "override"},
+    "prettin": {"qid": "Q573500", "label": "Prettin", "source": "override"},
+    # City gminas: P131 points to city, not powiat
+    "gmina poznań": {"qid": "Q268", "label": "Poznań", "source": "override"},
+    "gmina wrocław": {"qid": "Q1799", "label": "Wrocław", "source": "override"},
+    # Polish gminas confirmed by manual lookup
+    "gmina ciechocinek": {
+        "qid": "Q985659",
+        "label": "Gmina Ciechocinek",
+        "source": "override",
+    },  # miasto w województwie kujawsko-pomorskim
+    "gmina jawor": {
+        "qid": "Q731805",
+        "label": "Gmina Jawor",
+        "source": "override",
+    },  # miasto i gmina w województwie dolnośląskim
+    "gmina kłodawa": {
+        "qid": "Q1532938",
+        "label": "Gmina Kłodawa",
+        "source": "override",
+    },  # gmina wiejska w województwie lubuskim
+    # B) Low-score matches — confirmed or corrected by manual verification
+    "grünow bei schönermark": {
+        "qid": "Q624125",
+        "label": "Grünow bei Schönermark",
+        "source": "override",
+    },  # confirmed: Gemeinde im Landkreis Uckermark
+    "wulkow bei alt ruppin": {
+        "qid": "Q1295001",
+        "label": "Wulkow bei Alt Ruppin",
+        "source": "override",
+    },  # confirmed: Ortsteil von Neuruppin
+    "grünow bei prenzlau": {
+        "qid": "Q624125",
+        "label": "Grünow bei Prenzlau",
+        "source": "override",
+    },  # confirmed: Gemeinde im Landkreis Uckermark
+    "rathenow-neue schleuse": {
+        "qid": "Q525425",
+        "label": "Rathenow-Neue Schleuse",
+        "source": "override",
+    },  # confirmed: Stadt Rathenow, Landkreis Havelland
+    "ahrensdorf bei ludwigsfelde": {
+        "qid": "Q327744",
+        "label": "Ahrensdorf bei Ludwigsfelde",
+        "source": "override",
+    },  # confirmed: Ortsteil von Ludwigsfelde
+    "döberitz bei premnitz": {
+        "qid": "Q583555",
+        "label": "Döberitz bei Premnitz",
+        "source": "override",
+    },  # ehem. Dorf, heute Dallgow-Döberitz
+    "schönfeld bei prenzlau": {
+        "qid": "Q623861",
+        "label": "Schönfeld bei Prenzlau",
+        "source": "override",
+    },  # confirmed: Gemeinde im Landkreis Uckermark
+    "wusterhausen (dosse)": {
+        "qid": "Q35639864",
+        "label": "Wusterhausen (Dosse)",
+        "source": "override",
+    },  # confirmed: Siedlung in Wusterhausen/Dosse
+    "gmina złotniki kuj.": {
+        "qid": "Q618437",
+        "label": "Gmina Złotniki Kuj.",
+        "source": "override",
+    },  # confirmed: Gmina Złotniki Kujawskie
+    "gmina izbica kuj.": {
+        "qid": "Q2461294",
+        "label": "Gmina Izbica Kuj.",
+        "source": "override",
+    },  # confirmed: Gmina Izbica Kujawska
+    "carmzow": {
+        "qid": "Q622491",
+        "label": "Carmzow",
+        "source": "override",
+    },  # confirmed: Gemeinde im Landkreis Uckermark
+    "fürstenwalde-süd": {
+        "qid": "Q16064",
+        "label": "Fürstenwalde-Süd",
+        "source": "override",
+    },  # confirmed: Stadt Fürstenwalde, Oder-Spree
+    "szczecin": {
+        "qid": "Q848999",
+        "label": "Szczecin",
+        "source": "override",
+    },  # confirmed: Szczecinek, woj. zachodniopomorskie
+    # A) Previously NO MATCH — QIDs confirmed by manual Wikidata lookup
+    "berkholz zu berkholz-meyenburg": {
+        "qid": "Q621916",
+        "label": "Berkholz zu Berkholz-Meyenburg",
+        "source": "override",
+    },  # Ortsteil von Schwedt/Oder
+    "blankensee": {
+        "qid": "Q881612",
+        "label": "Blankensee",
+        "source": "override",
+    },  # Ortschaft im Landkreis Teltow-Fläming
+    "buckow": {
+        "qid": "Q29019815",
+        "label": "Buckow",
+        "source": "override",
+    },  # Ortsteil von Milower Land, Brandenburg
+    "emstal": {
+        "qid": "Q15110344",
+        "label": "Emstal",
+        "source": "override",
+    },  # Ortsteil der Gemeinde Kloster Lehnin, Potsdam-Mittelmark
+    "gartz": {
+        "qid": "Q571998",
+        "label": "Gartz",
+        "source": "override",
+    },  # Stadt im Landkreis Uckermark
+    "grube": {
+        "qid": "Q23759940",
+        "label": "Grube",
+        "source": "override",
+    },  # Ortsteil von Potsdam
+    "herzsprung": {
+        "qid": "Q33198119",
+        "label": "Herzsprung",
+        "source": "override",
+    },  # Ortsteil von Angermünde, Land Brandenburg
+    "kietz": {
+        "qid": "Q532037",
+        "label": "Kietz",
+        "source": "override",
+    },  # Teil von Rhinow, Gemeinde in Deutschland
+    "kleeste": {
+        "qid": "Q636945",
+        "label": "Kleeste",
+        "source": "override",
+    },  # Teil von Berge, Gemeinde im Landkreis Prignitz
+    "knehden": {
+        "qid": "Q519157",
+        "label": "Knehden",
+        "source": "override",
+    },  # Weiler von Templin; OSM: node/1402135222
+    "krampnitz": {
+        "qid": "Q88458729",
+        "label": "Krampnitz",
+        "source": "override",
+    },  # Gemeindeteil der Landeshauptstadt Potsdam
+    "kummersdorf": {
+        "qid": "Q1718490",
+        "label": "Kummersdorf",
+        "source": "override",
+    },  # Ortsteil der Gemeinde Am Mellensee
+    "lanitz-hasseltal": {
+        "qid": "Q701298",
+        "label": "Lanitz-Hasseltal",
+        "source": "override",
+    },  # Gemeinde in Deutschland (Burgenlandkreis)
+    "lohm": {
+        "qid": "Q88216510",
+        "label": "Lohm",
+        "source": "override",
+    },  # Gemeindeteil von Zernitz-Lohm, Ostprignitz-Ruppin
+    "marquardt": {
+        "qid": "Q896887",
+        "label": "Marquardt",
+        "source": "override",
+    },  # Ortsteil von Potsdam
+    "merzdorf": {
+        "qid": "Q160419",
+        "label": "Merzdorf",
+        "source": "override",
+    },  # Wüstung in der Gemeinde Boxberg/O.L.
+    # Neuendorf is ambiguous — appears in TWO Kreise with different QIDs:
+    #   Spree-Neiße:        Ortsteil von Teichland       → Q30039482
+    #   Brandenburg (Havel): Stadtteil von Brandenburg   → Q3931
+    # The override dict cannot distinguish by Kreis; Q30039482 is used as default
+    # (the more specific match). The Brandenburg (Havel) case will map to Q30039482
+    # which is technically wrong — manual post-processing recommended for that row.
+    "neuendorf": {
+        "qid": "Q30039482",
+        "label": "Neuendorf",
+        "source": "override",
+    },  # ⚠ ambiguous: Spree-Neiße=Q30039482 / Brandenburg(Havel)=Q3931
+    "petersdorf": {
+        "qid": "Q623967",
+        "label": "Petersdorf",
+        "source": "override",
+    },  # Teil von Milmersdorf, Uckermark
+    "ribbeck": {
+        "qid": "Q2148516",
+        "label": "Ribbeck",
+        "source": "override",
+    },  # Ortsteil der Stadt Nauen, Havelland
+    "satzkorn": {
+        "qid": "Q131931",
+        "label": "Satzkorn",
+        "source": "override",
+    },  # Ortsteil der Landeshauptstadt Potsdam
+    "schwaneberg": {
+        "qid": "Q62448579",
+        "label": "Schwaneberg",
+        "source": "override",
+    },  # Wohnplatz von Randowtal, Uckermark
+    "schönwalde": {
+        "qid": "Q581715",
+        "label": "Schönwalde",
+        "source": "override",
+    },  # Gemeinde im Land Brandenburg (Havelland)
+    "semlin": {
+        "qid": "Q627161",
+        "label": "Semlin",
+        "source": "override",
+    },  # Ortsteil in Prignitz
+    "woltersdorf": {
+        "qid": "Q139380043",
+        "label": "Woltersdorf",
+        "source": "override",
+    },  # Ortsteil von Potsdam-Mittelmark; neu angelegt Q139380043
+    # Woltersdorf: Q139380043 (neu in Wikidata, vorher nur OSM node/34227791)
+    "zechliner hütte": {
+        "qid": "Q184162",
+        "label": "Zechliner Hütte",
+        "source": "override",
+    },  # Ortsteil der Stadt Rheinsberg, Ostprignitz-Ruppin
+    "zesch": {
+        "qid": "Q196797",
+        "label": "Zesch",
+        "source": "override",
+    },  # Ortsteil der Stadt Zossen, Teltow-Fläming
+    "zollchow": {
+        "qid": "Q61745376",
+        "label": "Zollchow",
+        "source": "override",
+    },  # Ortsteil in Nordwestuckermark
+    "zwenkau": {
+        "qid": "Q10779",
+        "label": "Zwenkau",
+        "source": "override",
+    },  # Stadt im Landkreis Leipzig, Sachsen
+}
+GEMEINDE_STRIP_PREFIXES: list[str] = [
+    r"^stadt\s+",  # 'Stadt Rathenow'  → 'Rathenow'
+    r"^lutherstadt\s+",  # 'Lutherstadt X'   → 'X'
+]
+# Polish gminas: keep 'Gmina' prefix — Wikidata labels include it
+# 'Gmin X' (typo in source) → 'Gmina X'
+GEMEINDE_GMIN_FIX = re.compile(r"^gmin\s+", re.IGNORECASE)
+
+GEMEINDE_FUZZY_THRESHOLD = 0.82  # slightly lower than KREIS; many small
+# localities have variant spellings
 
 
 # =============================================================================
@@ -256,27 +614,68 @@ MatchResult = tuple[
 NO_MATCH: MatchResult = (None, None, None, None, "Not processed", None, None, None)
 
 
-def sparql_query(query: str) -> list[dict]:
+def sparql_query(
+    query: str,
+    timeout: int = SPARQL_TIMEOUT,
+    retries: int = 3,
+    retry_delay: float = 2.0,
+) -> list[dict]:
     """Execute a SPARQL SELECT against the Wikidata endpoint.
 
-    Returns a list of row dicts with string values, one per result binding.
-    Raises requests.HTTPError on non-2xx responses.
+    Retries on transient server errors (502, 503, 429) up to *retries* times
+    with a fixed delay of *retry_delay* seconds (not exponential, to avoid
+    long stalls during bulk runs).
+    Raises requests.HTTPError if all retries are exhausted.
     """
     headers = {
         "Accept": "application/sparql-results+json",
         "User-Agent": USER_AGENT,
     }
-    response = requests.get(
-        SPARQL_ENDPOINT,
-        params={"query": query, "format": "json"},
-        headers=headers,
-        timeout=SPARQL_TIMEOUT,
-    )
-    response.raise_for_status()
-    return [
-        {k: v["value"] for k, v in row.items()}
-        for row in response.json()["results"]["bindings"]
-    ]
+    last_exc: Exception = RuntimeError("No attempts made")
+    for attempt in range(1, retries + 1):
+        try:
+            response = requests.get(
+                SPARQL_ENDPOINT,
+                params={"query": query, "format": "json"},
+                headers=headers,
+                timeout=timeout,
+            )
+            if response.status_code in (429, 502, 503):
+                # Fixed short delay — exponential backoff adds too much latency
+                # over 80+ sequential queries
+                print(
+                    f"    [HTTP {response.status_code}] retrying in {retry_delay:.0f}s "
+                    f"(attempt {attempt}/{retries})...",
+                    flush=True,
+                )
+                time.sleep(retry_delay)
+                continue
+            response.raise_for_status()
+            return [
+                {k: v["value"] for k, v in row.items()}
+                for row in response.json()["results"]["bindings"]
+            ]
+        except requests.exceptions.Timeout as e:
+            last_exc = e
+            if attempt < retries:
+                print(
+                    f"    [Timeout] retrying in {retry_delay:.0f}s "
+                    f"(attempt {attempt}/{retries})...",
+                    flush=True,
+                )
+                time.sleep(retry_delay)
+        except requests.exceptions.RequestException as e:
+            last_exc = e
+            if attempt < retries:
+                print(
+                    f"    [Error: {e}] retrying in {retry_delay:.0f}s "
+                    f"(attempt {attempt}/{retries})...",
+                    flush=True,
+                )
+                time.sleep(retry_delay)
+            else:
+                raise
+    raise last_exc
 
 
 def qid_from_uri(uri: str) -> str:
@@ -732,6 +1131,363 @@ def process_kreis(df: pd.DataFrame) -> tuple[dict[str, MatchResult], list[dict]]
 
 
 # =============================================================================
+# SECTION 5b — GEMEINDE INDEX FETCHERS AND PROCESSOR
+# =============================================================================
+# Two-stage matching strategy for the GEMEINDE level:
+#
+# Stage 1 — Kreis-scoped index (fast, covers directly-linked items):
+#   One SPARQL call per Kreis fetches all items with wdt:P131 pointing
+#   directly to the Kreis QID. Covers Polish gminas (which point directly
+#   to the powiat) and German Gemeinden that are modelled at Kreis level.
+#
+# Stage 2 — Transitive fallback (for Stage 1 no-matches only):
+#   One SPARQL call per unmatched label using wdt:P131+ (one-or-more hops).
+#   Safe because it is scoped to a specific label AND a specific Kreis QID,
+#   so the transitive traversal only explores a shallow local graph.
+#   Covers German Ortsteile and localities nested under a Gemeinde
+#   (e.g. Babekuhl → Putlitz → Prignitz).
+
+
+def normalise_gemeinde(raw: str) -> tuple[str, str, Optional[dict]]:
+    """Normalise a GEMEINDE value before fuzzy matching.
+
+    Handles:
+    * 'Gmin X' typo → 'Gmina X' (Polish source data encoding artefact)
+    * Strip prefixes: 'Stadt X' → 'X', 'Lutherstadt X' → 'X'
+    * Aliases and overrides (see GEMEINDE_ALIASES / GEMEINDE_OVERRIDES)
+    """
+    value = GEMEINDE_GMIN_FIX.sub("Gmina ", raw.strip())
+    return _normalise(
+        value, GEMEINDE_STRIP_PREFIXES, GEMEINDE_ALIASES, GEMEINDE_OVERRIDES
+    )
+
+
+def fetch_gemeinde_index_for_kreis(kreis_qid: str) -> dict[str, dict]:
+    """Stage 1: fetch all current items with P131 pointing directly to *kreis_qid*.
+
+    No class filter — P131 scoping keeps the result set manageable.
+    End-dated items are excluded via MINUS { ?item wdt:P582 [] }.
+    Short labels (≤ 2 chars) are filtered to suppress noise.
+    Labels fetched in German and Polish.
+    """
+    query = f"""
+SELECT DISTINCT ?item ?label ?labelType ?geonames ?tgn ?idai ?osm_relation WHERE {{
+  ?item wdt:P131 wd:{kreis_qid} .
+  MINUS {{ ?item wdt:P582 [] }}
+  {{
+    ?item rdfs:label ?label .
+    FILTER(LANG(?label) IN ("de", "pl"))
+    FILTER(STRLEN(?label) > 2)
+    BIND("rdfs:label" AS ?labelType)
+  }} UNION {{
+    ?item skos:altLabel ?label .
+    FILTER(LANG(?label) IN ("de", "pl"))
+    FILTER(STRLEN(?label) > 3)
+    BIND("skos:altLabel" AS ?labelType)
+  }}
+  OPTIONAL {{ ?item wdt:P1566 ?geonames . }}
+  OPTIONAL {{ ?item wdt:P1667 ?tgn . }}
+  OPTIONAL {{ ?item wdt:P8217 ?idai . }}
+  OPTIONAL {{ ?item wdt:P402  ?osm_relation . }}
+}}
+"""
+    rows = sparql_query(query)
+    time.sleep(REQUEST_DELAY)
+    return build_index(rows)
+
+
+def fetch_gemeinde_transitive(
+    label: str, kreis_qid: str, lang: str = "de"
+) -> Optional[dict]:
+    """Stage 2 fallback: exact label lookup with transitive P131+ scoping.
+
+    Used only for labels that Stage 1 failed to match. The combination of
+    an exact label filter and a Kreis-scoped P131+ traversal is efficient
+    because Wikidata can resolve the label index quickly and the graph
+    traversal is bounded by the Kreis hierarchy.
+
+    Returns a single index-style dict or None if no match is found.
+    """
+    lang_filter = f'LANG(?label) = "{lang}"'
+    query = f"""
+SELECT DISTINCT ?item ?wdLabel ?geonames ?tgn ?idai ?osm_relation WHERE {{
+  ?item wdt:P131+ wd:{kreis_qid} .
+  MINUS {{ ?item wdt:P582 [] }}
+  {{
+    ?item rdfs:label ?label .
+    FILTER({lang_filter})
+    FILTER(LCASE(STR(?label)) = LCASE("{label}"))
+  }} UNION {{
+    ?item skos:altLabel ?label .
+    FILTER({lang_filter})
+    FILTER(LCASE(STR(?label)) = LCASE("{label}"))
+  }}
+  OPTIONAL {{ ?item rdfs:label ?wdLabel . FILTER(LANG(?wdLabel) = "{lang}") }}
+  OPTIONAL {{ ?item wdt:P1566 ?geonames . }}
+  OPTIONAL {{ ?item wdt:P1667 ?tgn . }}
+  OPTIONAL {{ ?item wdt:P8217 ?idai . }}
+  OPTIONAL {{ ?item wdt:P402  ?osm_relation . }}
+}}
+LIMIT 1
+"""
+    try:
+        rows = sparql_query(query, timeout=SPARQL_TIMEOUT_STAGE2)
+    except Exception:
+        # Transitive queries can timeout on large Kreis hierarchies;
+        # treat as no match rather than aborting the whole run.
+        time.sleep(REQUEST_DELAY)
+        return None
+    time.sleep(REQUEST_DELAY)
+    if not rows:
+        return None
+    row = rows[0]
+    # Return the actual Wikidata label alongside the searched label
+    # so the caller can compute a meaningful similarity score
+    wikidata_label = row.get("wdLabel", label)
+    return {
+        "qid": qid_from_uri(row["item"]),
+        "label": wikidata_label,
+        "searched_label": label,
+        "geonames": row.get("geonames"),
+        "tgn": row.get("tgn"),
+        "idai": row.get("idai"),
+        "osm_relation": row.get("osm_relation"),
+        "source": "transitive P131+",
+    }
+
+
+def _gemeinde_label_variants(raw: str) -> list[str]:
+    """Generate search label variants for Stage 2 transitive lookup.
+
+    Tries the full normalised label first, then progressively simpler
+    variants derived from common German naming patterns:
+      "X bei Y"        → also try "X"
+      "X (Y)"          → also try "X"
+      "X zu Y-Z"       → also try "X"
+      "X-Neue Schleuse"→ also try "X"   (compound district suffixes)
+    All variants are deduplicated while preserving order.
+    """
+    variants: list[str] = [raw]
+
+    # "X bei Y" → "X"
+    m = re.match(r"^(.+?)\s+bei\s+.+$", raw, re.IGNORECASE)
+    if m:
+        variants.append(m.group(1).strip())
+
+    # "X (Y)" → "X"
+    m = re.match(r"^(.+?)\s*\([^)]+\)\s*$", raw)
+    if m:
+        variants.append(m.group(1).strip())
+
+    # "X zu Y" → "X"
+    m = re.match(r"^(.+?)\s+zu\s+.+$", raw, re.IGNORECASE)
+    if m:
+        variants.append(m.group(1).strip())
+
+    # "X-Suffix" where suffix is a known district qualifier → "X"
+    m = re.match(
+        r"^(.+?)[-–](Neue Schleuse|Altstadt|Neustadt|Nord|Süd|Ost|West)$",
+        raw,
+        re.IGNORECASE,
+    )
+    if m:
+        variants.append(m.group(1).strip())
+
+    # Deduplicate preserving order
+    seen: set[str] = set()
+    return [v for v in variants if not (v in seen or seen.add(v))]
+
+
+def process_gemeinde(df: pd.DataFrame) -> tuple[dict[str, MatchResult], list[dict]]:
+    """Match GEMEINDE values using a two-stage per-Kreis strategy.
+
+    Stage 1: build a label index for each Kreis (P131 direct) and fuzzy-match.
+    Stage 2: for remaining no-matches, run an exact transitive lookup (P131+).
+
+    The KREIS_QID column (resolved in the KREIS step) is used as the scoping
+    anchor for both stages. Rows without a KREIS_QID are skipped and flagged.
+    """
+    # Build (GEMEINDE, KREIS_QID, LAND) lookup from the dataframe
+    triples = (
+        df[["GEMEINDE", "KREIS_QID", "BUNDESLAND_QID", "LAND", "KREIS"]]
+        .dropna(subset=["KREIS_QID"])
+        .drop_duplicates()
+    )
+    by_kreis = triples.groupby(["KREIS_QID", "KREIS"])
+
+    total = df["GEMEINDE"].nunique()
+    print(
+        f"\nMatching {total} unique GEMEINDE value(s) across "
+        f"{len(by_kreis)} Kreis group(s)...\n"
+    )
+
+    cache: dict[str, MatchResult] = {}
+    stage1_hits = stage2_hits = 0
+
+    for (kreis_qid, kreis_name), grp in by_kreis:
+        gemeinden = grp["GEMEINDE"].dropna().unique().tolist()
+        # Detect whether this is a Polish powiat (for Stage 2 language)
+        is_polish = grp["LAND"].iloc[0] == "Polen"
+        stage2_lang = "pl" if is_polish else "de"
+
+        print(f"  [{kreis_name} / {kreis_qid}]  Stage 1: fetching index...", flush=True)
+        index = fetch_gemeinde_index_for_kreis(kreis_qid)
+        print(f"    {len(index)} index entries.")
+
+        # If the Kreis QID is historical/dissolved it may have no direct P131
+        # children. Widen the search to the Bundesland level as a fallback.
+        if len(index) == 0:
+            bl_qid = (
+                grp["BUNDESLAND_QID"].iloc[0]
+                if "BUNDESLAND_QID" in grp.columns
+                else None
+            )
+            if bl_qid and pd.notna(bl_qid):
+                print(f"    0 entries — widening to Bundesland {bl_qid}...", flush=True)
+                index = fetch_gemeinde_index_for_kreis(bl_qid)
+                print(f"    {len(index)} entries after widening.")
+
+        stage2_queue: list[tuple[str, str, str]] = []  # (raw, normalised, note)
+
+        for raw in gemeinden:
+            if raw in cache:
+                continue
+            normalised, note, override = normalise_gemeinde(raw)
+
+            if override:
+                result: MatchResult = _build_override_result(raw, override, note)
+                cache[raw] = result
+                stage1_hits += 1
+                _print_match(raw, result, "    ")
+                continue
+
+            result = fuzzy_lookup(
+                normalised,
+                index,
+                normalisation_note=note,
+                threshold=GEMEINDE_FUZZY_THRESHOLD,
+            )
+            if result[0] is not None:
+                cache[raw] = result
+                stage1_hits += 1
+                _print_match(raw, result, "    ")
+            else:
+                # Queue for Stage 2
+                stage2_queue.append((raw, normalised, note))
+
+        if stage2_queue:
+            print(
+                f"    Stage 2: {len(stage2_queue)} item(s) not matched — "
+                f"trying transitive P131+ lookup..."
+            )
+            for raw, normalised, note in stage2_queue:
+                if raw in cache:
+                    continue
+                # Try each label variant in order; stop at first hit
+                variants = _gemeinde_label_variants(normalised)
+                entry = None
+                matched_variant = normalised
+                for variant in variants:
+                    entry = fetch_gemeinde_transitive(
+                        variant, kreis_qid, lang=stage2_lang
+                    )
+                    if entry:
+                        matched_variant = variant
+                        break
+                if entry:
+                    # Score reflects how closely the searched variant matches
+                    # the Wikidata label:
+                    #   1.00 — full label matched exactly
+                    #   0.90 — normalised label matched (prefix stripped etc.)
+                    #   0.80 — shortened variant matched ("X" for "X bei Y")
+                    wd_label = entry.get("label", matched_variant)
+                    searched = entry.get("searched_label", matched_variant)
+                    if (
+                        matched_variant == normalised
+                        and searched.lower() == wd_label.lower()
+                    ):
+                        score = 1.00
+                        match_type = "Transitive P131+ exact match"
+                    elif matched_variant == normalised:
+                        score = 0.90
+                        match_type = "Transitive P131+ normalised match"
+                    else:
+                        # Variant was used — less certain
+                        score = round(fuzz.token_sort_ratio(raw, wd_label) / 100, 4)
+                        match_type = "Transitive P131+ variant match"
+                    variant_note = (
+                        f" [variant: '{matched_variant}']"
+                        if matched_variant != normalised
+                        else ""
+                    )
+                    reason = (
+                        f"{match_type} | "
+                        f"'{raw}' -> '{wd_label}'"
+                        + (f" | [normalised: {note}]" if note else "")
+                        + variant_note
+                    )
+                    result = (
+                        entry["qid"],
+                        entry.get("geonames"),
+                        wd_label,
+                        score,
+                        reason,
+                        entry.get("tgn"),
+                        entry.get("idai"),
+                        entry.get("osm_relation"),
+                    )
+                    stage2_hits += 1
+                else:
+                    result = (
+                        None,
+                        None,
+                        None,
+                        None,
+                        f"No match in Stage 1 (fuzzy) or Stage 2 (transitive P131+)",
+                        None,
+                        None,
+                        None,
+                    )
+                cache[raw] = result
+                _print_match(raw, result, "    ")
+
+    # Flag any GEMEINDE rows where KREIS_QID was unavailable
+    for raw in df["GEMEINDE"].dropna().unique():
+        if raw not in cache:
+            cache[raw] = (
+                None,
+                None,
+                None,
+                None,
+                "Skipped: no KREIS_QID available for scoping",
+                None,
+                None,
+                None,
+            )
+
+    total_matched = sum(1 for v in cache.values() if v[0] is not None)
+    print(f"\n  Stage 1 matches: {stage1_hits}")
+    print(f"  Stage 2 matches: {stage2_hits}")
+    print(f"  Total matched:   {total_matched} / {len(cache)}")
+
+    report_rows = [
+        _result_to_report_row("GEMEINDE", raw, v) for raw, v in cache.items()
+    ]
+    return cache, report_rows
+
+
+def _print_match(raw: str, result: MatchResult, indent: str = "  ") -> None:
+    """Print a single match result line to stdout."""
+    qid, geonames, matched_label, score, *_ = result
+    status = "OK" if qid else "NO MATCH"
+    score_str = f"{score:.2f}" if score is not None else "n/a"
+    print(
+        f"{indent}[{status:8s}] {raw!r:40s}  QID={str(qid):12s}  "
+        f"score={score_str}  matched='{matched_label}'"
+    )
+
+
+# =============================================================================
 # SECTION 6 — MAIN PIPELINE
 # =============================================================================
 # Orchestrates the full enrichment run: load CSV → match each level →
@@ -753,6 +1509,7 @@ def _print_summary(
     land_cache: dict,
     bl_cache: dict,
     kreis_cache: dict,
+    gemeinde_cache: dict,
 ) -> None:
     """Print a per-level, per-country coverage table to stdout."""
 
@@ -802,6 +1559,14 @@ def _print_summary(
 
 
 def main() -> None:
+    log_path = HERE / LOG_FILE
+    with _TeeLogger(log_path) as tee:
+        sys.stdout = tee
+        print(f"Run log: {log_path}\n")
+        _run()
+
+
+def _run() -> None:
     # --- Load input ----------------------------------------------------------
     input_path = HERE / INPUT_FILE
     if not input_path.exists():
@@ -835,6 +1600,11 @@ def main() -> None:
     all_report.extend(kreis_report)
     _append_columns(df, "KREIS", kreis_cache)
 
+    # --- GEMEINDE ------------------------------------------------------------
+    gemeinde_cache, gemeinde_report = process_gemeinde(df)
+    all_report.extend(gemeinde_report)
+    _append_columns(df, "GEMEINDE", gemeinde_cache)
+
     # --- Reorder columns: FID | level_original + enrichment ... --------------
     # Each administrative level groups its original column immediately followed
     # by its enrichment columns (QID, GeoNames, TGN, IDAI, OSM_Relation, then
@@ -854,7 +1624,7 @@ def main() -> None:
         ([fid_col] if fid_col in df.columns else [])
         + [
             col
-            for level in ("LAND", "BUNDESLAND", "KREIS")
+            for level in ("LAND", "BUNDESLAND", "KREIS", "GEMEINDE")
             for col in [level] + [f"{level}_{s}" for s in enrich_sfx]
             if col in df.columns
         ]
@@ -893,7 +1663,7 @@ def main() -> None:
     print(f"[2/2] Report CSV:  {rep}")
 
     # --- Coverage summary ----------------------------------------------------
-    _print_summary(df, land_cache, bl_cache, kreis_cache)
+    _print_summary(df, land_cache, bl_cache, kreis_cache, gemeinde_cache)
 
 
 if __name__ == "__main__":
