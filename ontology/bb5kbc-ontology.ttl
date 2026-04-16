@@ -27,6 +27,7 @@
 @prefix crmgeo:   <http://www.cidoc-crm.org/extensions/crmgeo/> .
 @prefix crmsci:   <http://www.cidoc-crm.org/extensions/crmsci/> .
 @prefix xsd:      <http://www.w3.org/2001/XMLSchema#> .
+@prefix time:     <http://www.w3.org/2006/time#> .
 
 <http://5kbc.archaeonatural.cloud/ont/>
     rdf:type owl:Ontology ;
@@ -50,12 +51,15 @@ URI patterns (hash-based, MD5(label_utf8)[:8], deduplicated):
   land_{hash}            → bb5kbc:Land
   kultur_{hash}          → bb5kbc:Kulturgruppe
   culture_{hash}         → bb5kbc:KulturelleZuordnung
+  culture_{hash}_dating  → bb5kbc:Datierung (derived from KulturelleZuordnung hash)
   entdeckung_{hash}      → bb5kbc:Entdeckung
   entdeckungsart_{hash}  → bb5kbc:EntdeckungsartType
   fundstellenart_{hash}  → bb5kbc:FundstellenartType
   pub_{hash}             → bb5kbc:Publikation
   methode_{hash}         → fsl:MethodType
   quellentyp_{hash}      → fsl:SourceType
+  datmethode_{hash}      → bb5kbc:DatierungsMethodeType
+  sherd_{hash}           → bb5kbc:Scherbe (hash from Wikidata QID)
 External identifiers (TGN + iDAI + OSM) on all 4 administrative levels.
 CM Literals (on GeoreferenzierungsAktivitaet):
   quelle_georef    → fsl:hasReference / fsl:activityDesc (P25) : xsd:string
@@ -160,7 +164,7 @@ S19 Begegnung' per Sophie's README. WD QID via bb5kbc:hasExternalIdentifier."""@
 bb5kbc:KulturelleZuordnung
     rdf:type owl:Class ;
     rdfs:subClassOf lado:SpaceTimeItem ;
-    rdfs:comment "Spacetime assignment combining Fundstelle + Kulturgruppe + temporal period. URI: site_{FID}_culture."@en ;
+    rdfs:comment "Spacetime assignment combining Fundstelle + Kulturgruppe + temporal period. URI: culture_{hash}. Has bb5kbc:hatDatierung → bb5kbc:Datierung (URI: culture_{hash}_dating)."@en ;
     rdfs:label "Kulturelle Zuordnung"@de , "Cultural Assignment"@en .
 
 bb5kbc:Kulturgruppe
@@ -231,7 +235,10 @@ bb5kbc:ExternalIdentifier_PerioDo
 # Used: sf:Point (site_{FID}_geom) fsl:hasPointType <Q126>  (P33, fixed for all geometries)
 
 # P5 certainty level — derived from genauigkeit_m in pipeline
-# Q23 high (< 50m), Q15 medium (50–500m), Q24 low (> 500m), Q113 dubious
+# Q23 high  : genauigkeit_m = 0 (exact coordinate)
+# Q15 medium: genauigkeit_m = 50–500m
+# Q24 low   : genauigkeit_m = 800–5000m
+# Q113 dubious: wgs84_x = 0 AND wgs84_y = 0 (coordinate error, e.g. FID=563)
 <https://fuzzy-sl.wikibase.cloud/entity/Q23>
     rdf:type owl:NamedIndividual , fsl:CertaintyType ;
     rdfs:label "high"@en ; skos:prefLabel "high"@en .
@@ -384,5 +391,107 @@ bb5kbc:hatGenauigkeit
     rdfs:domain bb5kbc:Fundstelle ; rdfs:range xsd:decimal ;
     rdfs:comment "Spatial accuracy in metres (genauigkeit_m). SubPropertyOf fsl:precision."@en ;
     rdfs:label "Genauigkeit (m)"@de , "spatial accuracy (m)"@en .
+
+# --- DATING ------------------------------------------------------------------
+
+bb5kbc:Datierung
+    rdf:type owl:Class ;
+    rdfs:subClassOf time:Interval , crm:E52_Time-Span ;
+    rdfs:comment """Dating / time span of a bb5kbc:KulturelleZuordnung.
+URI: culture_{hash}_dating  (derived from parent KulturelleZuordnung hash).
+One per Fundstelle. Dual superclass: time:Interval (for dating_start/end integers
+via time:hasBeginning / time:hasEnd + time:inXSDgYear) and crm:E52_Time-Span
+(for CIDOC CRM compatibility).
+Properties:
+  bb5kbc:datierungStart      xsd:integer  (dating_start, BP or BCE/CE)
+  bb5kbc:datierungEnd        xsd:integer  (dating_end)
+  bb5kbc:datierungMethode    → bb5kbc:DatierungsMethodeType (dating_method QID)
+  bb5kbc:datierungSicherheitStart  xsd:string  (dating_certainty_start)
+  bb5kbc:datierungSicherheitEnd    xsd:string  (dating_certainty_end)
+  bb5kbc:datierungSicherheitRange  xsd:string  (dating_certainty_range, e.g. 'ca.')
+  skos:exactMatch / skos:closeMatch / skos:relatedMatch → Perio.do URI
+    (dating_perio.do + dating_perio.do_match determine which SKOS property)"""@en ;
+    rdfs:label "Datierung"@de , "Dating"@en .
+# CRM chain: crm:E1 → crm:E2_Temporal_Entity → crm:E52_Time-Span → bb5kbc:Datierung
+# OWL Time:  time:TemporalEntity → time:Interval → bb5kbc:Datierung
+
+bb5kbc:DatierungsMethodeType
+    rdf:type owl:Class ;
+    rdfs:subClassOf crm:E55_Type ;
+    rdfs:comment "Dating method type (e.g. C14, Literatur, Typology). URI: datmethode_{hash}. WD QID via bb5kbc:hasExternalIdentifier (dating_method column)."@en ;
+    rdfs:label "Datierungsmethode"@de , "Dating Method"@en .
+
+# --- DATING PROPERTIES -------------------------------------------------------
+
+bb5kbc:hatDatierung
+    rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf crm:P4_has_time-span ;
+    rdfs:domain bb5kbc:KulturelleZuordnung ;
+    rdfs:range bb5kbc:Datierung ;
+    rdfs:comment "Links a bb5kbc:KulturelleZuordnung to its bb5kbc:Datierung node. SubPropertyOf crm:P4_has_time-span."@en ;
+    rdfs:label "hat Datierung"@de , "has dating"@en .
+
+bb5kbc:datierungMethode
+    rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf crm:P2_has_type ;
+    rdfs:domain bb5kbc:Datierung ;
+    rdfs:range bb5kbc:DatierungsMethodeType ;
+    rdfs:label "Datierungsmethode"@de , "dating method"@en .
+
+bb5kbc:datierungStart
+    rdf:type owl:DatatypeProperty ;
+    rdfs:subPropertyOf crm:P82a_begin_of_the_begin ;
+    rdfs:domain bb5kbc:Datierung ;
+    rdfs:range xsd:integer ;
+    rdfs:comment "Start of the dating range (dating_start). Integer year (negative = BCE). SubPropertyOf crm:P82a_begin_of_the_begin; use time:hasBeginning / time:inXSDgYear for OWL Time."@en ;
+    rdfs:label "Datierung Beginn"@de , "dating start"@en .
+
+bb5kbc:datierungEnd
+    rdf:type owl:DatatypeProperty ;
+    rdfs:subPropertyOf crm:P82b_end_of_the_end ;
+    rdfs:domain bb5kbc:Datierung ;
+    rdfs:range xsd:integer ;
+    rdfs:comment "End of the dating range (dating_end). Integer year (negative = BCE). SubPropertyOf crm:P82b_end_of_the_end."@en ;
+    rdfs:label "Datierung Ende"@de , "dating end"@en .
+
+bb5kbc:datierungSicherheitStart
+    rdf:type owl:DatatypeProperty ;
+    rdfs:domain bb5kbc:Datierung ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Certainty qualifier for dating_start (dating_certainty_start)."@en ;
+    rdfs:label "Sicherheit Beginn"@de , "certainty start"@en .
+
+bb5kbc:datierungSicherheitEnd
+    rdf:type owl:DatatypeProperty ;
+    rdfs:domain bb5kbc:Datierung ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Certainty qualifier for dating_end (dating_certainty_end)."@en ;
+    rdfs:label "Sicherheit Ende"@de , "certainty end"@en .
+
+bb5kbc:datierungSicherheitRange
+    rdf:type owl:DatatypeProperty ;
+    rdfs:domain bb5kbc:Datierung ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Certainty qualifier for the overall range (dating_certainty_range, e.g. 'ca.')."@en ;
+    rdfs:label "Sicherheit Zeitraum"@de , "certainty range"@en .
+
+# --- SCHERBE -----------------------------------------------------------------
+
+bb5kbc:Scherbe
+    rdf:type owl:Class ;
+    rdfs:subClassOf crm:E22_Human-Made_Object ;
+    rdfs:comment """Ceramic sherd found at a Fundstelle (sherd column, 1-n Wikidata QIDs, delimiter |).
+URI: sherd_{MD5(QID)[:8]}. Each QID gets its own Named Node typed bb5kbc:Scherbe,
+linked to its Wikidata entity via bb5kbc:hasExternalIdentifier."""@en ;
+    rdfs:label "Scherbe"@de , "Sherd"@en .
+# CRM chain: crm:E1 → crm:E18_Physical_Thing → crm:E22_Human-Made_Object → bb5kbc:Scherbe
+
+bb5kbc:hatScherbe
+    rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf crm:P46i_forms_part_of ;
+    rdfs:domain bb5kbc:Fundstelle ;
+    rdfs:range bb5kbc:Scherbe ;
+    rdfs:comment "Links a bb5kbc:Fundstelle to one or more bb5kbc:Scherbe instances (sherd column). SubPropertyOf crm:P46i_forms_part_of."@en ;
+    rdfs:label "hat Scherbe"@de , "has sherd"@en .
 
 

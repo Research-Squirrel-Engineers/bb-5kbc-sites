@@ -39,6 +39,9 @@
 | `bb5kbc:Land` | `http://w3id.org/bb5kbc/land_{hash}` | `land_3c2f8b8c` ← `"Deutschland"` |
 | `bb5kbc:Kulturgruppe` | `http://w3id.org/bb5kbc/kultur_{hash}` | `kultur_cc414e20` ← `"SBK"`, `kultur_7a001224` ← `"SBK?"` |
 | `bb5kbc:KulturelleZuordnung` | `http://w3id.org/bb5kbc/culture_{hash}` | `culture_{hash}` ← hash aus kultur-Wert |
+| `bb5kbc:Datierung` | `http://w3id.org/bb5kbc/culture_{hash}_dating` | `culture_cc414e20_dating` ← KulturelleZuordnung von `"SBK"` |
+| `bb5kbc:DatierungsMethodeType` | `http://w3id.org/bb5kbc/datmethode_{hash}` | `datmethode_{hash}` ← hash aus Wikidata-QID |
+| `bb5kbc:Scherbe` | `http://w3id.org/bb5kbc/sherd_{hash}` | `sherd_ddd27e7f` ← `"Q173387"` |
 | `bb5kbc:Entdeckung` | `http://w3id.org/bb5kbc/entdeckung_{hash}` | `entdeckung_{hash}` ← hash aus entdeckung-Text |
 | `bb5kbc:EntdeckungsartType` | `http://w3id.org/bb5kbc/entdeckungsart_{hash}` | `entdeckungsart_1f56a08c` ← `"Ausgrabung"` |
 | `bb5kbc:FundstellenartType` | `http://w3id.org/bb5kbc/fundstellenart_{hash}` | `fundstellenart_1972902b` ← `"Siedlung"` |
@@ -84,13 +87,33 @@
 | 19 | `fundstellenart` | `"Siedlung und Grab"` | 🟦🔗 | `bb5kbc:Fundstelle` ← `fsl:siteType` → `bb5kbc:FundstellenartType` | Kombi-Werte als ein Node |
 | 20 | `QID_fundstellenart` | `"Q173387"` | 🔗 | `bb5kbc:FundstellenartType` ← `bb5kbc:hasExternalIdentifier` → Wikidata | 4 QIDs |
 
+### Dating-Spalten
+
+| # | CSV-Spalte | Beispielwert | Art | bb5kbc-Klasse / Property | Hinweis |
+|---|---|---|---|---|---|
+| — | *(URI)* | `culture_{hash}_dating` | 🟦 | `bb5kbc:KulturelleZuordnung` ← `bb5kbc:hatDatierung` → `bb5kbc:Datierung` | 1 Node pro Fundstelle; URI abgeleitet aus KulturelleZuordnung-Hash |
+| D1 | `dating_start` | `"-4500"` | 🟨 | `bb5kbc:Datierung` ← `bb5kbc:datierungStart` : `xsd:integer` | subPropertyOf `crm:P82a_begin_of_the_begin`; negativ = BCE |
+| D2 | `dating_end` | `"-4000"` | 🟨 | `bb5kbc:Datierung` ← `bb5kbc:datierungEnd` : `xsd:integer` | subPropertyOf `crm:P82b_end_of_the_end` |
+| D3 | `dating_method` | `"Q815688"` | 🟦🔗 | `bb5kbc:Datierung` ← `bb5kbc:datierungMethode` → `bb5kbc:DatierungsMethodeType` | hash-URI `datmethode_{hash}` + Wikidata-QID |
+| D4 | `dating_certainty_start` | `"ca."` | 🟨 | `bb5kbc:Datierung` ← `bb5kbc:datierungSicherheitStart` : `xsd:string` | |
+| D5 | `dating_certainty_end` | `"ca."` | 🟨 | `bb5kbc:Datierung` ← `bb5kbc:datierungSicherheitEnd` : `xsd:string` | |
+| D6 | `dating_certainty_range` | `"ca."` | 🟨 | `bb5kbc:Datierung` ← `bb5kbc:datierungSicherheitRange` : `xsd:string` | |
+| D7 | `dating_perio.do` | `"http://n2t.net/ark:/99152/..."` | 🔗 | `bb5kbc:Datierung` ← `skos:{matchType}` → Perio.do-URI | Match-Typ aus `dating_perio.do_match` |
+| D8 | `dating_perio.do_match` | `"exactMatch"` | — | bestimmt Property: `skos:exactMatch` / `skos:closeMatch` / `skos:relatedMatch` | kein eigenes Triple — steuert welche SKOS-Property genutzt wird |
+
+### Scherben-Spalte
+
+| # | CSV-Spalte | Beispielwert | Art | bb5kbc-Klasse / Property | Hinweis |
+|---|---|---|---|---|---|
+| S1 | `sherd` | `"Q173387\|Q59496158"` | 🟦🔗 | `bb5kbc:Fundstelle` ← `bb5kbc:hatScherbe` → `bb5kbc:Scherbe` | 1-n QIDs, Delimiter `\|`; hash-URI `sherd_{hash}` aus QID; Wikidata-URI via `bb5kbc:hasExternalIdentifier` |
+
 ---
 
 ## Mapping-Tabelle — CM
 
 | # | CSV-Spalte | Beispielwert | Art | bb5kbc-Klasse / Property | FSL OWL | Wikibase | Hinweis |
 |---|---|---|---|---|---|---|---|
-| — | *(abgeleitet)* | `Q23 / Q15 / Q24 / Q113` | 🟦 | `bb5kbc:Fundstelle` ← `fsl:certaintyLevel` → `fsl:CertaintyType` | `fsl:certaintyLevel` | P5 | Aus `genauigkeit_m`: `<Q23>` high <50m · `<Q15>` medium 50–500m · `<Q24>` low >500m · `<Q113>` dubious |
+| — | *(abgeleitet)* | `Q23 / Q15 / Q24 / Q113` | 🟦 | `bb5kbc:Fundstelle` ← `fsl:certaintyLevel` → `fsl:CertaintyType` | `fsl:certaintyLevel` | P5 | Aus `genauigkeit_m`: `<Q23>` high = 0m · `<Q15>` medium = 50–500m · `<Q24>` low = 800–5000m · `<Q113>` dubious = wgs84 0,0 (Koordinatenfehler) |
 | 24 | `quellen_typ` | `"Printpublikation"` | 🟦 | `bb5kbc:GeoreferenzierungsAktivitaet` ← `fsl:hasSourceType` → `fsl:SourceType` | `fsl:hasSourceType` | P6 | Named Node `quellentyp_{hash}`; 4 distinct |
 | 23 | `methode` | `"Übernahme aus externer Datenbank"` | 🟦 | `bb5kbc:GeoreferenzierungsAktivitaet` ← `fsl:methodUsed` → `fsl:MethodType` | `fsl:methodUsed` | P7 | Named Node `methode_{hash}`; 3 distinct |
 | 26+27 | `wgs84_x` + `wgs84_y` | `"10.58"` + `"51.03"` | 🟨 | `sf:Point` ← `geosparql:asWKT` : `"POINT(10.58 51.03)"^^geosparql:wktLiteral` via `fsl:representativeGeometry` + `geosparql:hasGeometry` | `geosparql:hasGeometry` | P4 | 539/540 gefüllt; FID=563 hat `0,0` → kein `sf:Point`, `fsl:certaintyLevel` → `<Q113>` dubious |
@@ -120,6 +143,9 @@
 | `bb5kbc:hatKulturelleZuordnung` | `bb5kbc:Fundstelle` | `bb5kbc:KulturelleZuordnung` | `crm:P10i_contains` | `crm:P10i_contains` |
 | `bb5kbc:hatKulturgruppe` | `bb5kbc:KulturelleZuordnung` | `bb5kbc:Kulturgruppe` | `crm:P9i_forms_part_of` | `crm:P9i_forms_part_of` |
 | `bb5kbc:hatPublikation` | `bb5kbc:Fundstelle` | `bb5kbc:Publikation` | `crm:P70i_is_documented_in` | `crm:P70i_is_documented_in` |
+| `bb5kbc:hatDatierung` | `bb5kbc:KulturelleZuordnung` | `bb5kbc:Datierung` | `crm:P4_has_time-span` | `crm:P4_has_time-span` |
+| `bb5kbc:datierungMethode` | `bb5kbc:Datierung` | `bb5kbc:DatierungsMethodeType` | `crm:P2_has_type` | `crm:P2_has_type` |
+| `bb5kbc:hatScherbe` | `bb5kbc:Fundstelle` | `bb5kbc:Scherbe` | `crm:P46i_forms_part_of` | `crm:P46i_forms_part_of` |
 | `bb5kbc:hasExternalIdentifier` | `owl:Thing` | `rdfs:Resource` | `skos:closeMatch` | `skos:closeMatch` |
 | `bb5kbc:hasExternalIdentifierType` | `rdfs:Resource` | `bb5kbc:externalIdentifierType` | — | — |
 
@@ -131,6 +157,11 @@
 | `bb5kbc:hatFundstellenID` | `bb5kbc:Fundstelle` | `xsd:string` | `crm:P1_is_identified_by` | `crm:P1_is_identified_by` |
 | `bb5kbc:hatKatalognummer` | `bb5kbc:Fundstelle` | `xsd:string` | `crm:P1_is_identified_by` | `crm:P1_is_identified_by` |
 | `bb5kbc:hatGenauigkeit` | `bb5kbc:Fundstelle` | `xsd:decimal` | `fsl:precision` | `fsl:precision` |
+| `bb5kbc:datierungStart` | `bb5kbc:Datierung` | `xsd:integer` | `crm:P82a_begin_of_the_begin` | `crm:P82a_begin_of_the_begin` |
+| `bb5kbc:datierungEnd` | `bb5kbc:Datierung` | `xsd:integer` | `crm:P82b_end_of_the_end` | `crm:P82b_end_of_the_end` |
+| `bb5kbc:datierungSicherheitStart` | `bb5kbc:Datierung` | `xsd:string` | — | — |
+| `bb5kbc:datierungSicherheitEnd` | `bb5kbc:Datierung` | `xsd:string` | — | — |
+| `bb5kbc:datierungSicherheitRange` | `bb5kbc:Datierung` | `xsd:string` | — | — |
 
 ### Nachgenutzte Properties (kein bb5kbc-Wrapper)
 
@@ -173,6 +204,9 @@
 | `bb5kbc:EntdeckungsartType` | `crm:E1` → `crm:E55_Type` → **`bb5kbc:EntdeckungsartType`** |
 | `bb5kbc:FundstellenartType` | `crm:E1` → `crm:E55_Type` → `lado:PlaceType` → `fsl:SiteType` → **`bb5kbc:FundstellenartType`** |
 | `bb5kbc:KulturelleZuordnung` | `crm:E1` → `crm:E92_Spacetime_Volume` → `lado:SpaceTimeItem` → **`bb5kbc:KulturelleZuordnung`** |
+| `bb5kbc:Datierung` | `crm:E1` → `crm:E2_Temporal_Entity` → `crm:E52_Time-Span` → **`bb5kbc:Datierung`** (+ `time:Interval`) |
+| `bb5kbc:DatierungsMethodeType` | `crm:E1` → `crm:E55_Type` → **`bb5kbc:DatierungsMethodeType`** |
+| `bb5kbc:Scherbe` | `crm:E1` → `crm:E18_Physical_Thing` → `crm:E22_Human-Made_Object` → **`bb5kbc:Scherbe`** |
 | `bb5kbc:Kulturgruppe` | `crm:E1` → `crm:E2_Temporal_Entity` → `crm:E4_Period` → **`bb5kbc:Kulturgruppe`** |
 | `bb5kbc:GeoReferenz` | `crm:E1` → `crm:E90_Symbolic_Object` → `crm:E73_Information_Object` → `crm:E32_Authority_Document` → **`bb5kbc:GeoReferenz`** |
 | `bb5kbc:Publikation` | `crm:E1` → `crm:E90_Symbolic_Object` → `crm:E73_Information_Object` → `crm:E32_Authority_Document` → **`bb5kbc:Publikation`** |
@@ -197,4 +231,212 @@ crm:E1_CRM_Entity
                     ├── lado:Location
                     └── fsl:Site
                           └── bb5kbc:Fundstelle  ← archäolog. Fundstelle mit Koordinaten
+```
+
+---
+
+## P5 Certainty Level — Ableitungslogik
+
+| Bedingung | Wikibase-Item | Label | Begründung |
+|---|---|---|---|
+| `genauigkeit_m = 0` | `fslwb:Q23` | **high** | Exakte Koordinate direkt aus Datenbank übernommen |
+| `genauigkeit_m = 50–500` | `fslwb:Q15` | **medium** | Grobe Lokalisierung, eindeutig einer Flur/Gemeinde zuzuordnen |
+| `genauigkeit_m = 800–5000` | `fslwb:Q24` | **low** | Nur auf Gemeindeebene verortet |
+| `wgs84_x = 0 AND wgs84_y = 0` | `fslwb:Q113` | **dubious** | Koordinatenfehler — kein `sf:Point` wird erzeugt (z.B. FID=563) |
+
+---
+
+## Beispiel-TTL (FID=33 — Friesack 4, vollständig ausgefüllt)
+
+Das folgende Beispiel zeigt wie eine vollständig ausgefüllte CSV-Zeile in RDF aussieht.
+Dating- und Scherben-Daten sind hypothetisch ergänzt (diese Spalten sind in der aktuellen CSV noch leer).
+
+```turtle
+@prefix bb5kbc:  <http://5kbc.archaeonatural.cloud/ont/> .
+@prefix data:    <http://w3id.org/bb5kbc/> .
+@prefix crm:     <http://www.cidoc-crm.org/cidoc-crm/> .
+@prefix crmsci:  <http://www.cidoc-crm.org/extensions/crmsci/> .
+@prefix fsl:     <http://fuzzy-sl.squirrel.link/ontology/> .
+@prefix fslwb:   <https://fuzzy-sl.wikibase.cloud/entity/> .
+@prefix time:    <http://www.w3.org/2006/time#> .
+@prefix geo:     <http://www.opengis.net/ont/geosparql#> .
+@prefix sf:      <http://www.opengis.net/ont/sf#> .
+@prefix prov:    <http://www.w3.org/ns/prov#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix wd:      <https://www.wikidata.org/entity/> .
+@prefix orcid:   <https://orcid.org/> .
+
+# =============================================================================
+# FUNDSTELLE
+# =============================================================================
+
+data:site_33
+    a bb5kbc:Fundstelle ;
+    dc:identifier "33"^^xsd:integer ;          # FID — auch URI-Basis
+    bb5kbc:hatFID "33"^^xsd:integer ;
+    bb5kbc:hatFundstellenID "129" ;
+    bb5kbc:hatKatalognummer "12485" ;
+    rdfs:label "Friesack 4"@de ;
+    skos:prefLabel "Friesack 4"@de ;
+    # Verwaltungsgebiete
+    bb5kbc:inGemeinde   data:gemeinde_ef3c98d9 ;
+    # Fundstellenart
+    fsl:siteType        data:fundstellenart_1972902b ;
+    # Entdeckung
+    bb5kbc:wurdeEntdecktDurch data:entdeckung_1f56a08c ;
+    # Publikation
+    bb5kbc:hatPublikation     data:pub_c54b495e ;
+    # Kulturelle Zuordnung
+    bb5kbc:hatKulturelleZuordnung data:culture_a36e9d6d ;
+    # Georeferenzierung
+    prov:wasGeneratedBy data:site_33_activity ;
+    # Geometrie
+    geo:hasGeometry     data:site_33_geom ;
+    # FSL CM properties
+    fsl:precision       "100"^^xsd:decimal ;    # P23 genauigkeit_m
+    fsl:certaintyLevel  fslwb:Q15 ;             # P5 medium (50–500m)
+    fsl:hasLocationType fslwb:Q80 ;             # P24 Findspot (fest)
+    # Scherbe (hypothetisch)
+    bb5kbc:hatScherbe   data:sherd_ddd27e7f .
+
+# =============================================================================
+# GEOMETRIE  (sf:Point)
+# =============================================================================
+
+data:site_33_geom
+    a sf:Point ;
+    geo:asWKT "POINT(12.54 52.75)"^^geo:wktLiteral ;
+    fsl:hasPointType fslwb:Q126 .               # P33 Representative Point (fest)
+
+# =============================================================================
+# GEOREFERENZIERUNGS-AKTIVITÄT
+# =============================================================================
+
+data:site_33_activity
+    a bb5kbc:GeoreferenzierungsAktivitaet ;
+    fsl:hasReference    "Denkmaldaten / BLDAM 2021" ;   # P25 quelle_georef
+    fsl:hasReference    wd:Q897952 ;                    # P31 QID_quelle_georef
+    fsl:methodUsed      data:methode_b57e2231 ;         # P7  methode
+    fsl:hasSourceType   data:quellentyp_5ae20fe0 ;      # P6  quellen_typ
+    fsl:hasSourceTypeDetail data:quellentyp_5ae20fe0 ;  # P16 quellen_typ (detail)
+    fsl:activityDesc    "die Koordinaten wurden beim BLDAM angefragt und übernommen" ; # P13+P15
+    fsl:georeferencingBy orcid:0000-0003-4696-2101 ;   # P14 acting person (fest)
+    prov:wasAssociatedWith orcid:0000-0003-4696-2101 .
+
+# =============================================================================
+# VERWALTUNGSGEBIETE
+# =============================================================================
+
+data:gemeinde_ef3c98d9
+    a bb5kbc:Gemeinde ;
+    rdfs:label "Friesack"@de ;
+    bb5kbc:inKreis data:kreis_d4d0a03b .
+    # GEM_TGN / GEM_IDAI / GEM_OSM_RELATION → noch leer ⏳
+
+data:kreis_d4d0a03b
+    a bb5kbc:Kreis ;
+    rdfs:label "Havelland"@de ;
+    bb5kbc:inBundesland data:bundesland_2ddb2d82 .
+    # KREIS_TGN / KREIS_IDAI / KREIS_OSM_RELATION → noch leer ⏳
+
+data:bundesland_2ddb2d82
+    a bb5kbc:Bundesland ;
+    rdfs:label "Brandenburg"@de ;
+    bb5kbc:inLand data:land_3c2f8b8c .
+    # BL_TGN / BL_IDAI / BL_OSM_RELATION → noch leer ⏳
+
+data:land_3c2f8b8c
+    a bb5kbc:Land ;
+    rdfs:label "Deutschland"@de ;
+    bb5kbc:hasExternalIdentifier <http://vocab.getty.edu/tgn/7000084> ,
+                                  <http://gazetteer.dainst.org/place/2044274> ,
+                                  <https://www.openstreetmap.org/relation/51477> .
+
+# =============================================================================
+# KULTURELLE ZUORDNUNG + KULTURGRUPPE
+# =============================================================================
+
+data:culture_a36e9d6d
+    a bb5kbc:KulturelleZuordnung ;
+    bb5kbc:hatKulturgruppe data:kultur_a36e9d6d ;
+    bb5kbc:hatDatierung    data:culture_a36e9d6d_dating .
+
+data:kultur_a36e9d6d
+    a bb5kbc:Kulturgruppe ;
+    rdfs:label "FBG"@de .
+    # perio.do → noch leer ⏳
+
+# =============================================================================
+# DATIERUNG  (hypothetisch — Spalten noch leer in CSV)
+# =============================================================================
+
+data:culture_a36e9d6d_dating
+    a bb5kbc:Datierung , time:Interval , crm:E52_Time-Span ;
+    bb5kbc:datierungStart "-4400"^^xsd:integer ;
+    bb5kbc:datierungEnd   "-4000"^^xsd:integer ;
+    bb5kbc:datierungMethode data:datmethode_c04e5109 ;  # dating_method
+    bb5kbc:datierungSicherheitStart "ca." ;
+    bb5kbc:datierungSicherheitEnd   "ca." ;
+    bb5kbc:datierungSicherheitRange "ca." ;
+    skos:closeMatch <http://n2t.net/ark:/99152/p0fp7wvsbk> . # dating_perio.do + closeMatch
+
+data:datmethode_c04e5109
+    a bb5kbc:DatierungsMethodeType ;
+    rdfs:label "Literatur"@de ;
+    bb5kbc:hasExternalIdentifier wd:Q815688 .
+
+# =============================================================================
+# ENTDECKUNG + ENTDECKUNGSART
+# =============================================================================
+
+data:entdeckung_1f56a08c
+    a bb5kbc:Entdeckung ;
+    rdfs:label "Ausgrabung"@de ;
+    crm:P2_has_type data:entdeckungsart_2b73226f .
+
+data:entdeckungsart_2b73226f
+    a bb5kbc:EntdeckungsartType ;
+    rdfs:label "Ausgrabung"@de ;
+    bb5kbc:hasExternalIdentifier wd:Q959782 .
+
+# =============================================================================
+# FUNDSTELLENART
+# =============================================================================
+
+data:fundstellenart_1972902b
+    a bb5kbc:FundstellenartType ;
+    rdfs:label "Siedlung"@de ;
+    bb5kbc:hasExternalIdentifier wd:Q486972 .
+
+# =============================================================================
+# PUBLIKATION
+# =============================================================================
+
+data:pub_c54b495e
+    a bb5kbc:Publikation ;
+    rdfs:label "Wetzel/Beran 2023"@de .
+    # QID_publikation → noch leer ⏳
+
+# =============================================================================
+# GEOREFERENZIERUNGS-TYPEN (dedupliziert, geteilt mit anderen Fundstellen)
+# =============================================================================
+
+data:methode_b57e2231
+    a fsl:MethodType ;
+    rdfs:label "Übernahme aus externer Datenbank"@de .
+
+data:quellentyp_5ae20fe0
+    a fsl:SourceType ;
+    rdfs:label "Strukturen des Landesdenkmalamts"@de .
+
+# =============================================================================
+# SCHERBE  (hypothetisch — Spalte noch nicht in CSV)
+# =============================================================================
+
+data:sherd_ddd27e7f
+    a bb5kbc:Scherbe ;
+    bb5kbc:hasExternalIdentifier wd:Q173387 .
 ```
