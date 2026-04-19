@@ -1,0 +1,32 @@
+CREATE
+LAST	P31	Q1980247
+LAST	Den	"book section from 'Krzemień jurajski w Pradziejach. Materiały z konferencji w Krakowie 28-30 września 2017' published in 2023"
+LAST	P304	"213-228"
+LAST	P1104	16
+LAST	P2093	"Marcin Dziewanowski"	P1545	"1"
+LAST	P577	+2023-00-00T00:00:00Z/9
+LAST	Lmul	"Krzemień jurajski na Pomorzu Zachodnim. Prypadek wióra z jamy kultury rösseńskiej w Mierzynie, pow. policki"
+LAST	Len	"Krzemień jurajski na Pomorzu Zachodnim. Prypadek wióra z jamy kultury rösseńskiej w Mierzynie, pow. policki"
+LAST	P1476	und:"Krzemień jurajski na Pomorzu Zachodnim. Prypadek wióra z jamy kultury rösseńskiej w Mierzynie, pow. policki"
+
+CREATE
+LAST	P31	Q13442814
+LAST	Den	"journal article from 'Mitteilungen aus dem vorgeschichtlichen Seminar der Universität Greifswald' published in 1940"
+LAST	P478	"11-12"
+LAST	P304	"30-61"
+LAST	P1104	32
+LAST	P2093	"Carl Umbreit"	P1545	"1"
+LAST	P577	+1940-00-00T00:00:00Z/9
+LAST	Lmul	"Zur Chronologie der Lietzow-Kultur"
+LAST	Len	"Zur Chronologie der Lietzow-Kultur"
+LAST	P1476	und:"Zur Chronologie der Lietzow-Kultur"
+
+CREATE
+LAST	P31	Q3331189
+LAST	Den	"book published in 2019"
+LAST	P953	"https://doi.org/10.33547/ODA-SAH.08.Lud"
+LAST	P577	+2019-00-00T00:00:00Z/9
+LAST	P212	"978-83-952339-5-1"
+LAST	Lmul	"Ludwinowo. Osada neolityczna na Kujawach / Ludwinowo. Neolithic settlement in Kuyavia"
+LAST	Len	"Ludwinowo. Osada neolityczna na Kujawach / Ludwinowo. Neolithic settlement in Kuyavia"
+LAST	P1476	und:"Ludwinowo. Osada neolityczna na Kujawach / Ludwinowo. Neolithic settlement in Kuyavia"

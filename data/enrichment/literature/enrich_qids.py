@@ -107,27 +107,27 @@ QID_QUELLE_GEOREF = {
     "Stäuble/Veit 2016":                     "Q139304647",
     "Wetzel 1988":                           "Q139304620",
     "von Richthofen 1930, Karte 2":         "Q139304635",
-    "Pyzel 2019":                            None,   # kein eindeutiger QID aus HTML
+    "Pyzel 2019":                            "Q139460445",   # ersetzt
     "Umbreit 1937":                          "Q139304632",
-    "Umbreit 1940":                          None,   # kein Eintrag in HTML
+    "Umbreit 1940":                          "Q139459720",   # ersetzt
     "Kulczycka-Leciejewiczowa 1993, Karte 1":             "Q139304628",
     "Kulczycka-Leciejewiczowa 1993, Karte 1 Nr 5":        "Q139304628",
     "Kulczycka-Leciejewiczowa 1993, Karte 1, Berlekamp 1966":                            "Q139304628",
     "Kulczycka-Leciejewiczowa 1993, Karte 1, von Richthofen 1930, Karte 2 Nr 35":        "Q139304628",
     "Raddatz 1956":                          "Q139304631",
     "Ciesielski/Goczyca 2013":               "Q139304640",
-    "Dziewanowski 2023":                     None,   # Dziewanowski 2023 nicht in HTML (dort 2015/2019)
+    "Dziewanowski 2023":                     "Q139460420",   # Dziewanowski 2023 nicht in HTML (dort 2015/2019)
     "Swieder 2009, Kulczycka-Leciejewiczowa 1993, Karte 1 Nr. 23": "Q139304628",
-    # Nicht in HTML (institutionelle / sonstige Quellen):
-    "LfDA Sachsen-Anhalt":                   None,
-    "BLDAM 2021":                            None,
-    "BLDAM 2024":                            None,
-    "BLDAM / M. Ismail-Weber 2018":          None,
-    "Denkmaldaten / BLDAM 2021":             None,
-    "Denkmaldaten / BLDAM 2024":             None,
-    "Museum Angermünde":                     None,
-    "Museum Szczecin":                       None,
-    "Zabytek.pl":                            None,
+    # Nicht in HTML (institutionelle / sonstige Quellen): --> nachgereicht von Sophie
+    "LfDA Sachsen-Anhalt":                   "Q897952",
+    "BLDAM 2021":                            "Q897952",
+    "BLDAM 2024":                            "Q897952",
+    "BLDAM / M. Ismail-Weber 2018":          "Q897952",
+    "Denkmaldaten / BLDAM 2021":             "Q897952",
+    "Denkmaldaten / BLDAM 2024":             "Q897952",
+    "Museum Angermünde":                     "Q76632599",
+    "Museum Szczecin":                       "Q2802195",
+    "Zabytek.pl":                            "Q43301933",
     "W. Schier persönl. Kommunikation":      None,
     "Berlekamp 1966, Liste 9":               "Q139304613",
     "Czerniak":                              None,   # zu unspezifisch für eindeutiges Mapping
