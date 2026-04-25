@@ -37,8 +37,7 @@
     dc:contributor "Sophie C. Schmidt" ;
     dc:rights "CC BY 4.0" ;
     dc:subject "archaeology; Neolithic; Brandenburg; Linked Open Data; NFDI4Objects"@en ;
-    owl:imports <http://archaeology.link/ontology#> ;
-    owl:versionInfo "0.2" ;
+    owl:versionInfo "0.3" ;
     rdfs:comment """Data namespace: http://w3id.org/bb5kbc/
 URI patterns (FID-based, direct site attributes only):
   site_{FID}           → bb5kbc:Fundstelle
@@ -68,7 +67,338 @@ CM Literals (on GeoreferenzierungsAktivitaet):
   quellen_typ      → fsl:hasSourceType (P6) + fsl:hasSourceTypeDetail (P16) → fsl:SourceType Named Node
   methodenbeschr   → fsl:activityDesc (P15) : xsd:string
   genauigkeit_m    → fsl:precision (P23) : xsd:decimal (on bb5kbc:Fundstelle)
-  wgs84_x/y        → geosparql:asWKT on sf:Point (539/540 filled; FID=563 has 0,0 → no geometry)"""@en .
+  wgs84_x/y        → geosparql:asWKT on sf:Point (skip if both = 0,0)"""@en .
+
+# =============================================================================
+# EXTERNAL CLASS & PROPERTY HIERARCHY (locally declared, no owl:imports)
+# =============================================================================
+# All upper classes and properties referenced by bb5kbc are declared here as
+# local stubs (rdfs:subClassOf / rdfs:isDefinedBy only), so the full inheritance
+# chain is visible in Protégé without loading any external ontology. The
+# canonical definitions remain at their original namespaces — pointed to via
+# rdfs:isDefinedBy. Under no circumstances are the semantics of external terms
+# redefined; only their place in the subClassOf / subPropertyOf graph is mirrored.
+
+# --- CIDOC CRM (root: crm:E1_CRM_Entity) -------------------------------------
+
+crm:E1_CRM_Entity
+    rdf:type owl:Class ;
+    rdfs:isDefinedBy <http://www.cidoc-crm.org/cidoc-crm/> ;
+    rdfs:label "CRM Entity"@en .
+
+crm:E2_Temporal_Entity
+    rdf:type owl:Class ; rdfs:subClassOf crm:E1_CRM_Entity ;
+    rdfs:isDefinedBy <http://www.cidoc-crm.org/cidoc-crm/> ;
+    rdfs:label "Temporal Entity"@en .
+
+crm:E4_Period
+    rdf:type owl:Class ; rdfs:subClassOf crm:E2_Temporal_Entity ;
+    rdfs:isDefinedBy <http://www.cidoc-crm.org/cidoc-crm/> ;
+    rdfs:label "Period"@en .
+
+crm:E5_Event
+    rdf:type owl:Class ; rdfs:subClassOf crm:E4_Period ;
+    rdfs:isDefinedBy <http://www.cidoc-crm.org/cidoc-crm/> ;
+    rdfs:label "Event"@en .
+
+crm:E7_Activity
+    rdf:type owl:Class ; rdfs:subClassOf crm:E5_Event ;
+    rdfs:isDefinedBy <http://www.cidoc-crm.org/cidoc-crm/> ;
+    rdfs:label "Activity"@en .
+
+crm:E13_Attribute_Assignment
+    rdf:type owl:Class ; rdfs:subClassOf crm:E7_Activity ;
+    rdfs:isDefinedBy <http://www.cidoc-crm.org/cidoc-crm/> ;
+    rdfs:label "Attribute Assignment"@en .
+
+crm:E52_Time-Span
+    rdf:type owl:Class ; rdfs:subClassOf crm:E1_CRM_Entity ;
+    rdfs:isDefinedBy <http://www.cidoc-crm.org/cidoc-crm/> ;
+    rdfs:label "Time-Span"@en .
+
+crm:E53_Place
+    rdf:type owl:Class ; rdfs:subClassOf crm:E1_CRM_Entity ;
+    rdfs:isDefinedBy <http://www.cidoc-crm.org/cidoc-crm/> ;
+    rdfs:label "Place"@en .
+
+crm:E55_Type
+    rdf:type owl:Class ; rdfs:subClassOf crm:E1_CRM_Entity ;
+    rdfs:isDefinedBy <http://www.cidoc-crm.org/cidoc-crm/> ;
+    rdfs:label "Type"@en .
+
+crm:E70_Thing
+    rdf:type owl:Class ; rdfs:subClassOf crm:E1_CRM_Entity ;
+    rdfs:isDefinedBy <http://www.cidoc-crm.org/cidoc-crm/> ;
+    rdfs:label "Thing"@en .
+
+crm:E72_Legal_Object
+    rdf:type owl:Class ; rdfs:subClassOf crm:E70_Thing ;
+    rdfs:isDefinedBy <http://www.cidoc-crm.org/cidoc-crm/> ;
+    rdfs:label "Legal Object"@en .
+
+crm:E18_Physical_Thing
+    rdf:type owl:Class ; rdfs:subClassOf crm:E72_Legal_Object ;
+    rdfs:isDefinedBy <http://www.cidoc-crm.org/cidoc-crm/> ;
+    rdfs:label "Physical Thing"@en .
+
+crm:E22_Human-Made_Object
+    rdf:type owl:Class ; rdfs:subClassOf crm:E18_Physical_Thing ;
+    rdfs:isDefinedBy <http://www.cidoc-crm.org/cidoc-crm/> ;
+    rdfs:label "Human-Made Object"@en .
+
+crm:E26_Physical_Feature
+    rdf:type owl:Class ; rdfs:subClassOf crm:E18_Physical_Thing ;
+    rdfs:isDefinedBy <http://www.cidoc-crm.org/cidoc-crm/> ;
+    rdfs:label "Physical Feature"@en .
+
+crm:E27_Site
+    rdf:type owl:Class ; rdfs:subClassOf crm:E26_Physical_Feature , crm:E53_Place ;
+    rdfs:isDefinedBy <http://www.cidoc-crm.org/cidoc-crm/> ;
+    rdfs:label "Site"@en .
+
+crm:E73_Information_Object
+    rdf:type owl:Class ; rdfs:subClassOf crm:E70_Thing ;
+    rdfs:isDefinedBy <http://www.cidoc-crm.org/cidoc-crm/> ;
+    rdfs:label "Information Object"@en .
+
+crm:E32_Authority_Document
+    rdf:type owl:Class ; rdfs:subClassOf crm:E73_Information_Object ;
+    rdfs:isDefinedBy <http://www.cidoc-crm.org/cidoc-crm/> ;
+    rdfs:label "Authority Document"@en .
+
+crm:E92_Spacetime_Volume
+    rdf:type owl:Class ; rdfs:subClassOf crm:E1_CRM_Entity ;
+    rdfs:isDefinedBy <http://www.cidoc-crm.org/cidoc-crm/> ;
+    rdfs:label "Spacetime Volume"@en .
+
+# --- CRMgeo (subClassOf CIDOC CRM) -------------------------------------------
+
+crmgeo:SP5_Geometric_Place_Expression
+    rdf:type owl:Class ; rdfs:subClassOf crm:E73_Information_Object ;
+    rdfs:isDefinedBy <http://www.cidoc-crm.org/extensions/crmgeo/> ;
+    rdfs:label "Geometric Place Expression"@en .
+
+crmgeo:SP6_Declarative_Place
+    rdf:type owl:Class ; rdfs:subClassOf crm:E53_Place ;
+    rdfs:isDefinedBy <http://www.cidoc-crm.org/extensions/crmgeo/> ;
+    rdfs:label "Declarative Place"@en .
+
+# --- CRMsci (subClassOf CIDOC CRM) -------------------------------------------
+
+crmsci:S4_Observation
+    rdf:type owl:Class ; rdfs:subClassOf crm:E13_Attribute_Assignment ;
+    rdfs:isDefinedBy <http://www.cidoc-crm.org/extensions/crmsci/> ;
+    rdfs:label "Observation"@en .
+
+crmsci:S19_Encounter_Event
+    rdf:type owl:Class ; rdfs:subClassOf crmsci:S4_Observation ;
+    rdfs:isDefinedBy <http://www.cidoc-crm.org/extensions/crmsci/> ;
+    rdfs:label "Encounter Event"@en .
+
+# --- PROV-O (root: prov:Entity / prov:Activity / prov:Agent) -----------------
+
+prov:Entity
+    rdf:type owl:Class ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/prov#> ;
+    rdfs:label "Entity"@en .
+
+prov:Activity
+    rdf:type owl:Class ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/prov#> ;
+    rdfs:label "Activity"@en .
+
+prov:Agent
+    rdf:type owl:Class ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/prov#> ;
+    rdfs:label "Agent"@en .
+
+prov:Location
+    rdf:type owl:Class ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/prov#> ;
+    rdfs:label "Location"@en .
+
+# --- GeoSPARQL / Simple Features ---------------------------------------------
+
+geosparql:SpatialObject
+    rdf:type owl:Class ;
+    rdfs:isDefinedBy <http://www.opengis.net/ont/geosparql#> ;
+    rdfs:label "Spatial Object"@en .
+
+geosparql:Geometry
+    rdf:type owl:Class ; rdfs:subClassOf geosparql:SpatialObject ;
+    rdfs:isDefinedBy <http://www.opengis.net/ont/geosparql#> ;
+    rdfs:label "Geometry"@en .
+
+sf:Point
+    rdf:type owl:Class ; rdfs:subClassOf geosparql:Geometry ;
+    rdfs:isDefinedBy <http://www.opengis.net/ont/sf#> ;
+    rdfs:label "Point"@en .
+
+# --- Pleiades ----------------------------------------------------------------
+
+skos:Concept
+    rdf:type owl:Class ;
+    rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core#> ;
+    rdfs:label "Concept"@en .
+
+pleiades:Place
+    rdf:type owl:Class ; rdfs:subClassOf skos:Concept ;
+    rdfs:isDefinedBy <https://pleiades.stoa.org/places/vocab#> ;
+    rdfs:label "Pleiades Place"@en .
+
+pleiades:Location
+    rdf:type owl:Class ; rdfs:subClassOf geosparql:SpatialObject ;
+    rdfs:isDefinedBy <https://pleiades.stoa.org/places/vocab#> ;
+    rdfs:label "Pleiades Location"@en .
+
+# --- LADO (re-uses CRM, Pleiades) --------------------------------------------
+
+lado:Place
+    rdf:type owl:Class ; rdfs:subClassOf pleiades:Place ;
+    rdfs:isDefinedBy <http://archaeology.link/ontology#> ;
+    rdfs:label "LADO Place"@en .
+
+lado:Location
+    rdf:type owl:Class ; rdfs:subClassOf pleiades:Location ;
+    rdfs:isDefinedBy <http://archaeology.link/ontology#> ;
+    rdfs:label "LADO Location"@en .
+
+lado:PlaceType
+    rdf:type owl:Class ; rdfs:subClassOf crm:E55_Type ;
+    rdfs:isDefinedBy <http://archaeology.link/ontology#> ;
+    rdfs:label "LADO Place Type"@en .
+
+lado:Event
+    rdf:type owl:Class ; rdfs:subClassOf crm:E5_Event ;
+    rdfs:isDefinedBy <http://archaeology.link/ontology#> ;
+    rdfs:label "LADO Event"@en .
+
+lado:SpaceTimeItem
+    rdf:type owl:Class ; rdfs:subClassOf crm:E92_Spacetime_Volume ;
+    rdfs:isDefinedBy <http://archaeology.link/ontology#> ;
+    rdfs:label "LADO Space-Time Item"@en .
+
+# --- FSL (Fuzzy Spatial Linking) ---------------------------------------------
+
+fsl:Type
+    rdf:type owl:Class ;
+    rdfs:isDefinedBy <http://fuzzy-sl.squirrel.link/ontology/> ;
+    rdfs:label "FSL Type"@en .
+
+fsl:Location
+    rdf:type owl:Class ; rdfs:subClassOf prov:Location ;
+    rdfs:isDefinedBy <http://fuzzy-sl.squirrel.link/ontology/> ;
+    rdfs:label "FSL Location"@en .
+
+fsl:Site
+    rdf:type owl:Class ; rdfs:subClassOf fsl:Location ;
+    rdfs:isDefinedBy <http://fuzzy-sl.squirrel.link/ontology/> ;
+    rdfs:label "FSL Site"@en .
+
+fsl:SiteType
+    rdf:type owl:Class ; rdfs:subClassOf fsl:Type ;
+    rdfs:isDefinedBy <http://fuzzy-sl.squirrel.link/ontology/> ;
+    rdfs:label "FSL Site Type"@en .
+
+fsl:MethodType
+    rdf:type owl:Class ; rdfs:subClassOf fsl:Type ;
+    rdfs:isDefinedBy <http://fuzzy-sl.squirrel.link/ontology/> ;
+    rdfs:label "FSL Method Type"@en .
+
+fsl:SourceType
+    rdf:type owl:Class ; rdfs:subClassOf fsl:Type ;
+    rdfs:isDefinedBy <http://fuzzy-sl.squirrel.link/ontology/> ;
+    rdfs:label "FSL Source Type"@en .
+
+fsl:CertaintyType
+    rdf:type owl:Class ; rdfs:subClassOf fsl:Type ;
+    rdfs:isDefinedBy <http://fuzzy-sl.squirrel.link/ontology/> ;
+    rdfs:label "FSL Certainty Type"@en .
+
+fsl:LocationType
+    rdf:type owl:Class ; rdfs:subClassOf fsl:Type ;
+    rdfs:isDefinedBy <http://fuzzy-sl.squirrel.link/ontology/> ;
+    rdfs:label "FSL Location Type"@en .
+
+fsl:PointType
+    rdf:type owl:Class ; rdfs:subClassOf fsl:Type ;
+    rdfs:isDefinedBy <http://fuzzy-sl.squirrel.link/ontology/> ;
+    rdfs:label "FSL Point Type"@en .
+
+# --- FOAF --------------------------------------------------------------------
+
+foaf:Person
+    rdf:type owl:Class ; rdfs:subClassOf prov:Agent ;
+    rdfs:isDefinedBy <http://xmlns.com/foaf/0.1/> ;
+    rdfs:label "Person"@en .
+
+# --- OWL Time ----------------------------------------------------------------
+
+time:TemporalEntity
+    rdf:type owl:Class ;
+    rdfs:isDefinedBy <http://www.w3.org/2006/time#> ;
+    rdfs:label "Temporal Entity"@en .
+
+time:Interval
+    rdf:type owl:Class ; rdfs:subClassOf time:TemporalEntity ;
+    rdfs:isDefinedBy <http://www.w3.org/2006/time#> ;
+    rdfs:label "Time Interval"@en .
+
+# --- EXTERNAL PROPERTIES (referenced via rdfs:subPropertyOf) -----------------
+
+# CIDOC CRM properties
+crm:P1_is_identified_by    rdf:type owl:DatatypeProperty ; rdfs:isDefinedBy <http://www.cidoc-crm.org/cidoc-crm/> ; rdfs:label "is identified by"@en .
+crm:P2_has_type            rdf:type owl:ObjectProperty ;   rdfs:isDefinedBy <http://www.cidoc-crm.org/cidoc-crm/> ; rdfs:label "has type"@en .
+crm:P3_has_note            rdf:type owl:DatatypeProperty ; rdfs:isDefinedBy <http://www.cidoc-crm.org/cidoc-crm/> ; rdfs:label "has note"@en .
+crm:P4_has_time-span       rdf:type owl:ObjectProperty ;   rdfs:isDefinedBy <http://www.cidoc-crm.org/cidoc-crm/> ; rdfs:label "has time-span"@en .
+crm:P9i_forms_part_of      rdf:type owl:ObjectProperty ;   rdfs:isDefinedBy <http://www.cidoc-crm.org/cidoc-crm/> ; rdfs:label "forms part of"@en .
+crm:P10i_contains          rdf:type owl:ObjectProperty ;   rdfs:isDefinedBy <http://www.cidoc-crm.org/cidoc-crm/> ; rdfs:label "contains"@en .
+crm:P12i_was_present_at    rdf:type owl:ObjectProperty ;   rdfs:isDefinedBy <http://www.cidoc-crm.org/cidoc-crm/> ; rdfs:label "was present at"@en .
+crm:P46i_forms_part_of     rdf:type owl:ObjectProperty ;   rdfs:isDefinedBy <http://www.cidoc-crm.org/cidoc-crm/> ; rdfs:label "forms part of (object)"@en .
+crm:P70i_is_documented_in  rdf:type owl:ObjectProperty ;   rdfs:isDefinedBy <http://www.cidoc-crm.org/cidoc-crm/> ; rdfs:label "is documented in"@en .
+crm:P82a_begin_of_the_begin rdf:type owl:DatatypeProperty ; rdfs:isDefinedBy <http://www.cidoc-crm.org/cidoc-crm/> ; rdfs:label "begin of the begin"@en .
+crm:P82b_end_of_the_end    rdf:type owl:DatatypeProperty ; rdfs:isDefinedBy <http://www.cidoc-crm.org/cidoc-crm/> ; rdfs:label "end of the end"@en .
+crm:P89_falls_within       rdf:type owl:ObjectProperty ;   rdfs:isDefinedBy <http://www.cidoc-crm.org/cidoc-crm/> ; rdfs:label "falls within"@en .
+
+# FSL properties
+fsl:precision              rdf:type owl:DatatypeProperty ; rdfs:isDefinedBy <http://fuzzy-sl.squirrel.link/ontology/> ; rdfs:label "precision"@en .
+fsl:certaintyLevel         rdf:type owl:ObjectProperty ;   rdfs:isDefinedBy <http://fuzzy-sl.squirrel.link/ontology/> ; rdfs:label "certainty level"@en .
+fsl:certaintyDesc          rdf:type owl:DatatypeProperty ; rdfs:isDefinedBy <http://fuzzy-sl.squirrel.link/ontology/> ; rdfs:label "certainty description"@en .
+fsl:siteType               rdf:type owl:ObjectProperty ;   rdfs:isDefinedBy <http://fuzzy-sl.squirrel.link/ontology/> ; rdfs:label "site type"@en .
+fsl:hasReference           rdf:type owl:ObjectProperty ;   rdfs:isDefinedBy <http://fuzzy-sl.squirrel.link/ontology/> ; rdfs:label "has reference"@en .
+fsl:hasLocationType        rdf:type owl:ObjectProperty ;   rdfs:isDefinedBy <http://fuzzy-sl.squirrel.link/ontology/> ; rdfs:label "has location type"@en .
+fsl:hasPointType           rdf:type owl:ObjectProperty ;   rdfs:isDefinedBy <http://fuzzy-sl.squirrel.link/ontology/> ; rdfs:label "has point type"@en .
+fsl:hasSourceType          rdf:type owl:ObjectProperty ;   rdfs:isDefinedBy <http://fuzzy-sl.squirrel.link/ontology/> ; rdfs:label "has source type"@en .
+fsl:hasSourceTypeDetail    rdf:type owl:ObjectProperty ;   rdfs:isDefinedBy <http://fuzzy-sl.squirrel.link/ontology/> ; rdfs:label "has source type detail"@en .
+fsl:method                 rdf:type owl:ObjectProperty ;   rdfs:isDefinedBy <http://fuzzy-sl.squirrel.link/ontology/> ; rdfs:label "method"@en .
+fsl:methodUsed             rdf:type owl:ObjectProperty ;   rdfs:isDefinedBy <http://fuzzy-sl.squirrel.link/ontology/> ; rdfs:label "method used"@en .
+fsl:activityDesc           rdf:type owl:DatatypeProperty ; rdfs:isDefinedBy <http://fuzzy-sl.squirrel.link/ontology/> ; rdfs:label "activity description"@en .
+fsl:locatedInAdministrativeEntity rdf:type owl:ObjectProperty ; rdfs:isDefinedBy <http://fuzzy-sl.squirrel.link/ontology/> ; rdfs:label "located in administrative entity"@en .
+fsl:representativeGeometry rdf:type owl:ObjectProperty ;   rdfs:isDefinedBy <http://fuzzy-sl.squirrel.link/ontology/> ; rdfs:label "representative geometry"@en .
+fsl:georeferencingBy       rdf:type owl:ObjectProperty ;   rdfs:isDefinedBy <http://fuzzy-sl.squirrel.link/ontology/> ; rdfs:label "georeferencing by"@en .
+
+# PROV-O properties
+prov:wasGeneratedBy        rdf:type owl:ObjectProperty ;   rdfs:isDefinedBy <http://www.w3.org/ns/prov#> ; rdfs:label "was generated by"@en .
+prov:wasAssociatedWith     rdf:type owl:ObjectProperty ;   rdfs:isDefinedBy <http://www.w3.org/ns/prov#> ; rdfs:label "was associated with"@en .
+prov:wasAttributedTo       rdf:type owl:ObjectProperty ;   rdfs:isDefinedBy <http://www.w3.org/ns/prov#> ; rdfs:label "was attributed to"@en .
+prov:used                  rdf:type owl:ObjectProperty ;   rdfs:isDefinedBy <http://www.w3.org/ns/prov#> ; rdfs:label "used"@en .
+
+# GeoSPARQL properties
+geosparql:hasGeometry      rdf:type owl:ObjectProperty ;   rdfs:isDefinedBy <http://www.opengis.net/ont/geosparql#> ; rdfs:label "has geometry"@en .
+geosparql:asWKT            rdf:type owl:DatatypeProperty ; rdfs:isDefinedBy <http://www.opengis.net/ont/geosparql#> ; rdfs:label "as WKT"@en .
+
+# OWL Time properties
+time:hasBeginning          rdf:type owl:ObjectProperty ;   rdfs:isDefinedBy <http://www.w3.org/2006/time#> ; rdfs:label "has beginning"@en .
+time:hasEnd                rdf:type owl:ObjectProperty ;   rdfs:isDefinedBy <http://www.w3.org/2006/time#> ; rdfs:label "has end"@en .
+time:inXSDgYear            rdf:type owl:DatatypeProperty ; rdfs:isDefinedBy <http://www.w3.org/2006/time#> ; rdfs:label "in XSD gYear"@en .
+
+# SKOS properties (matching levels for Perio.do)
+skos:exactMatch            rdf:type owl:ObjectProperty ;   rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core#> ; rdfs:label "exact match"@en .
+skos:closeMatch            rdf:type owl:ObjectProperty ;   rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core#> ; rdfs:label "close match"@en .
+skos:relatedMatch          rdf:type owl:ObjectProperty ;   rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core#> ; rdfs:label "related match"@en .
+
+# Dublin Core
+dc:identifier              rdf:type owl:DatatypeProperty ; rdfs:isDefinedBy <http://purl.org/dc/elements/1.1/> ; rdfs:label "identifier"@en .
 
 # --- CLASSES -----------------------------------------------------------------
 
@@ -171,10 +501,10 @@ bb5kbc:Kulturgruppe
     rdf:type owl:Class ;
     rdfs:subClassOf crm:E4_Period ;
     rdfs:comment """Cultural group as a stable Named Node. URI: kultur_{MD5(label)[:8]}.
-10 distinct values (SBK, SRK, BKK, FBG, Rössen, Rössener, Guhrau,
+9 distinct values (SBK, SRK, BKK, FBG, Rössener Kultur, Guhrau,
 Mesolithikum, SBK?, SRK?). Uncertain assignments (SBK?, SRK?) get their own nodes.
-Perio.do URI (perio.do column) will be added via bb5kbc:hasExternalIdentifier
-when available."""@en ;
+Perio.do URI (perio.do column, currently empty in CSV) will be added via
+bb5kbc:hasExternalIdentifier when available."""@en ;
     rdfs:label "Kulturgruppe"@de , "Cultural Group"@en .
 
 bb5kbc:Publikation
