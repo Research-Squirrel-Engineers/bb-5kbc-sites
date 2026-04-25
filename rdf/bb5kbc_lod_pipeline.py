@@ -936,8 +936,12 @@ def main():
     g.add((pipeline_activity, PROV.startedAtTime,
            Literal(now.isoformat().replace("+00:00", "Z"),
                    datatype=XSD.dateTime)))
-    g.add((pipeline_activity, PROV.used, URIRef(f"file://{csv_path}")))
-    g.add((pipeline_activity, PROV.used, URIRef(f"file://{ontology_path}")))
+    # Path.as_uri() produces RFC-compliant file:// URIs on every OS,
+    # including Windows (file:///C:/...). Plain f"file://{path}" breaks on
+    # Windows because backslashes and the drive-letter colon are not valid
+    # URI characters.
+    g.add((pipeline_activity, PROV.used, URIRef(csv_path.resolve().as_uri())))
+    g.add((pipeline_activity, PROV.used, URIRef(ontology_path.resolve().as_uri())))
 
     # ----- Write data graph --------------------------------------------------
     g.serialize(destination=str(out_data), format="turtle")
