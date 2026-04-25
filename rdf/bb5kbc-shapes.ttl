@@ -1,0 +1,155 @@
+@prefix bb5kbc: <http://w3id.org/bb5kbc/ont/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix shape: <http://w3id.org/bb5kbc/shapes/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+shape: a owl:Ontology ;
+    dcterms:creator "Florian Thiery",
+        "Sophie C. Schmidt" ;
+    dcterms:description "Generated from bb5kbc-ontology.ttl by bb5kbc_lod_pipeline.py. Do not edit manually — regenerate from the ontology instead."@en ;
+    dcterms:title "bb5kbc SHACL shapes (auto-generated)"@en .
+
+shape:BundeslandShape a sh:NodeShape ;
+    rdfs:label "Shape for bb5kbc:Bundesland"@en ;
+    sh:property [ sh:class bb5kbc:Land ;
+            sh:path bb5kbc:inLand ;
+            sh:severity sh:Warning ] ;
+    sh:targetClass bb5kbc:Bundesland .
+
+shape:DatierungShape a sh:NodeShape ;
+    rdfs:label "Shape for bb5kbc:Datierung"@en ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:path bb5kbc:datierungSicherheitStart ;
+            sh:severity sh:Warning ],
+        [ sh:datatype xsd:integer ;
+            sh:path bb5kbc:datierungEnd ;
+            sh:severity sh:Warning ],
+        [ sh:datatype xsd:string ;
+            sh:path bb5kbc:datierungSicherheitEnd ;
+            sh:severity sh:Warning ],
+        [ sh:datatype xsd:integer ;
+            sh:path bb5kbc:datierungStart ;
+            sh:severity sh:Warning ],
+        [ sh:class bb5kbc:DatierungsMethodeType ;
+            sh:path bb5kbc:datierungMethode ;
+            sh:severity sh:Warning ],
+        [ sh:datatype xsd:string ;
+            sh:path bb5kbc:datierungSicherheitRange ;
+            sh:severity sh:Warning ] ;
+    sh:targetClass bb5kbc:Datierung .
+
+shape:DatierungsMethodeTypeShape a sh:NodeShape ;
+    rdfs:label "Shape for bb5kbc:DatierungsMethodeType"@en ;
+    sh:targetClass bb5kbc:DatierungsMethodeType .
+
+shape:EntdeckungShape a sh:NodeShape ;
+    rdfs:label "Shape for bb5kbc:Entdeckung"@en ;
+    sh:property [ sh:class bb5kbc:EntdeckungsartType ;
+            sh:path bb5kbc:hatEntdeckungsart ;
+            sh:severity sh:Warning ] ;
+    sh:targetClass bb5kbc:Entdeckung .
+
+shape:EntdeckungsartTypeShape a sh:NodeShape ;
+    rdfs:label "Shape for bb5kbc:EntdeckungsartType"@en ;
+    sh:targetClass bb5kbc:EntdeckungsartType .
+
+shape:FundstelleShape a sh:NodeShape ;
+    rdfs:label "Shape for bb5kbc:Fundstelle"@en ;
+    sh:property [ sh:class bb5kbc:Entdeckung ;
+            sh:path bb5kbc:wurdeEntdecktDurch ;
+            sh:severity sh:Warning ],
+        [ sh:class bb5kbc:FundstellenartType ;
+            sh:path bb5kbc:hatFundstellenart ;
+            sh:severity sh:Warning ],
+        [ sh:class bb5kbc:Gemeinde ;
+            sh:path bb5kbc:inGemeinde ;
+            sh:severity sh:Warning ],
+        [ sh:datatype xsd:integer ;
+            sh:path bb5kbc:hatFID ;
+            sh:severity sh:Warning ],
+        [ sh:datatype xsd:decimal ;
+            sh:path bb5kbc:hatGenauigkeit ;
+            sh:severity sh:Warning ],
+        [ sh:class bb5kbc:Publikation ;
+            sh:path bb5kbc:hatPublikation ;
+            sh:severity sh:Warning ],
+        [ sh:class bb5kbc:GeoreferenzierungsAktivitaet ;
+            sh:path bb5kbc:wurdeGeoreferenziertDurch ;
+            sh:severity sh:Warning ],
+        [ sh:datatype xsd:string ;
+            sh:path bb5kbc:hatFundstellenID ;
+            sh:severity sh:Warning ],
+        [ sh:class bb5kbc:Scherbe ;
+            sh:path bb5kbc:hatScherbe ;
+            sh:severity sh:Warning ],
+        [ sh:datatype xsd:string ;
+            sh:path bb5kbc:hatKatalognummer ;
+            sh:severity sh:Warning ],
+        [ sh:class bb5kbc:KulturelleZuordnung ;
+            sh:path bb5kbc:hatKulturelleZuordnung ;
+            sh:severity sh:Warning ],
+        shape:FundstelleShape_hatFID_required ;
+    sh:targetClass bb5kbc:Fundstelle .
+
+shape:FundstellenartTypeShape a sh:NodeShape ;
+    rdfs:label "Shape for bb5kbc:FundstellenartType"@en ;
+    sh:targetClass bb5kbc:FundstellenartType .
+
+shape:GemeindeShape a sh:NodeShape ;
+    rdfs:label "Shape for bb5kbc:Gemeinde"@en ;
+    sh:property [ sh:class bb5kbc:Kreis ;
+            sh:path bb5kbc:inKreis ;
+            sh:severity sh:Warning ] ;
+    sh:targetClass bb5kbc:Gemeinde .
+
+shape:GeoreferenzierungsAktivitaetShape a sh:NodeShape ;
+    rdfs:label "Shape for bb5kbc:GeoreferenzierungsAktivitaet"@en ;
+    sh:targetClass bb5kbc:GeoreferenzierungsAktivitaet .
+
+shape:KreisShape a sh:NodeShape ;
+    rdfs:label "Shape for bb5kbc:Kreis"@en ;
+    sh:property [ sh:class bb5kbc:Bundesland ;
+            sh:path bb5kbc:inBundesland ;
+            sh:severity sh:Warning ] ;
+    sh:targetClass bb5kbc:Kreis .
+
+shape:KulturelleZuordnungShape a sh:NodeShape ;
+    rdfs:label "Shape for bb5kbc:KulturelleZuordnung"@en ;
+    sh:property [ sh:class bb5kbc:Datierung ;
+            sh:path bb5kbc:hatDatierung ;
+            sh:severity sh:Warning ],
+        [ sh:class bb5kbc:Kulturgruppe ;
+            sh:path bb5kbc:hatKulturgruppe ;
+            sh:severity sh:Warning ] ;
+    sh:targetClass bb5kbc:KulturelleZuordnung .
+
+shape:KulturgruppeShape a sh:NodeShape ;
+    rdfs:label "Shape for bb5kbc:Kulturgruppe"@en ;
+    sh:targetClass bb5kbc:Kulturgruppe .
+
+shape:LandShape a sh:NodeShape ;
+    rdfs:label "Shape for bb5kbc:Land"@en ;
+    sh:targetClass bb5kbc:Land .
+
+shape:PublikationShape a sh:NodeShape ;
+    rdfs:label "Shape for bb5kbc:Publikation"@en ;
+    sh:targetClass bb5kbc:Publikation .
+
+shape:ScherbeShape a sh:NodeShape ;
+    rdfs:label "Shape for bb5kbc:Scherbe"@en ;
+    sh:targetClass bb5kbc:Scherbe .
+
+shape:externalIdentifierTypeShape a sh:NodeShape ;
+    rdfs:label "Shape for bb5kbc:externalIdentifierType"@en ;
+    sh:targetClass bb5kbc:externalIdentifierType .
+
+shape:FundstelleShape_hatFID_required rdfs:label "Every Fundstelle must have exactly one hatFID."@en ;
+    sh:datatype xsd:integer ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:path bb5kbc:hatFID ;
+    sh:severity sh:Violation .
+
