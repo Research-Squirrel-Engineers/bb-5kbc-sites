@@ -41,7 +41,9 @@ root/
 │   └── fst_wgs84_comma.csv           ← Eingabe (read-only)
 └── dist/
     ├── bb5kbc-data.ttl               ← konvertierte Daten
-    ├── shacl-report.ttl              ← Validierungsbericht
+    ├── bb5kbc-bundle.ttl             ← Daten + Ontologie (selbst-genügsam)
+    ├── shacl-report.ttl              ← Validierungsbericht (Daten-Graph)
+    ├── shacl-report-bundle.ttl       ← Validierungsbericht (Bundle-Graph)
     └── report.log                    ← vollständiger Terminal-Output
 ```
 
@@ -181,13 +183,26 @@ geladen werden.
 
 Typische Größe für 540 Zeilen: ca. 19 200 Triples in 1.6 MB.
 
-### `dist/shacl-report.ttl`
+### `dist/bb5kbc-bundle.ttl`
+
+**Daten + Ontologie in einer Datei** — selbst-genügsam, ideal zum Hochladen
+in Triplestores oder zum Teilen mit Dritten. Enthält dieselben Daten-Triples
+wie `bb5kbc-data.ttl` plus die kompletten Ontologie-Definitionen.
+
+Typische Größe: ca. 19 900 Triples (~600 mehr als `bb5kbc-data.ttl`).
+
+### `dist/shacl-report.ttl` und `dist/shacl-report-bundle.ttl`
 
 Der Validierungsbericht im SHACL-Standardformat. Bei einem sauberen Lauf
 enthält die Datei nur einen `sh:ValidationReport` mit `sh:conforms true`.
 Bei Fehlern listet sie pro Verstoß einen `sh:ValidationResult` mit
 `sh:focusNode` (welcher Knoten?), `sh:resultPath` (welche Property?) und
 `sh:resultMessage` (was war falsch?).
+
+Es gibt **zwei separate Berichte**: einen für `bb5kbc-data.ttl` (Daten-Graph
+allein) und einen für `bb5kbc-bundle.ttl` (Daten + Ontologie). Beide werden
+gegen dieselben SHACL-Shapes validiert, mit der Ontologie als Inferenz-Graph.
+Im Idealfall sind beide Reports identisch (`sh:conforms true`).
 
 Der Bericht ist selbst RDF und kann mit SPARQL abgefragt werden — siehe
 `bb5kbc-modelling-rules.md` für ein Beispiel.

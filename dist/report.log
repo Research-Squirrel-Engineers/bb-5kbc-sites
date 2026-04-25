@@ -1,32 +1,40 @@
-2026-04-25 11:17:43 [INFO] ======================================================================
-2026-04-25 11:17:43 [INFO] bb5kbc LOD pipeline — start
-2026-04-25 11:17:43 [INFO] ======================================================================
-2026-04-25 11:17:43 [INFO] CSV input:        C:\git\bb-5kbc-sites\data\fst_wgs84_comma.csv
-2026-04-25 11:17:43 [INFO] Ontology input:   C:\git\bb-5kbc-sites\ontology\bb5kbc-ontology.ttl
-2026-04-25 11:17:43 [INFO] Data output:      C:\git\bb-5kbc-sites\dist\bb5kbc-data.ttl
-2026-04-25 11:17:43 [INFO] SHACL shapes:     C:\git\bb-5kbc-sites\rdf\bb5kbc-shapes.ttl
-2026-04-25 11:17:43 [INFO] SHACL report:     C:\git\bb-5kbc-sites\dist\shacl-report.ttl
-2026-04-25 11:17:43 [INFO] Log file:         C:\git\bb-5kbc-sites\dist\report.log
-2026-04-25 11:17:43 [INFO] 
-2026-04-25 11:17:43 [INFO] Loaded CSV: 540 rows, 33 columns
-2026-04-25 11:17:43 [INFO] Processing rows ...
-2026-04-25 11:17:44 [INFO] Row 30: split fundstellenart 'Kreisgrabenanlage und Siedlung' into 2 components
-2026-04-25 11:17:44 [WARNING] Row FID=31: dating_end '4750' looks like a typo (missing minus sign). Corrected to '-4750'. Please fix in the CSV.
-2026-04-25 11:17:44 [INFO] Row FID=35: dating_perio.do present but no match level specified — defaulting to skos:relatedMatch.
-2026-04-25 11:17:44 [INFO] Row 39: split fundstellenart 'Siedlung, Kreisgrabenanlage' into 2 components
-2026-04-25 11:17:44 [INFO] Row 107: split fundstellenart 'Siedlung und Grab' into 2 components
-2026-04-25 11:17:44 [INFO] Row 185: split fundstellenart 'Siedlung und Grab' into 2 components
-2026-04-25 11:17:44 [INFO] Row 202: split fundstellenart 'Siedlung, Kreisgrabenanlage' into 2 components
-2026-04-25 11:17:44 [INFO] Row 228: split fundstellenart 'Siedlung, Brunnen' into 2 components
-2026-04-25 11:17:44 [WARNING] Row FID=257: dating_end '4344' looks like a typo (missing minus sign). Corrected to '-4344'. Please fix in the CSV.
-2026-04-25 11:17:45 [INFO] Processed: 540 rows, skipped: 0
-2026-04-25 11:17:45 [INFO] Generated graph: 19254 triples
-2026-04-25 11:17:46 [INFO] Wrote data graph: C:\git\bb-5kbc-sites\dist\bb5kbc-data.ttl (19261 triples)
-2026-04-25 11:17:46 [INFO] Generating SHACL shapes from ontology ...
-2026-04-25 11:17:46 [INFO] Wrote shapes: C:\git\bb-5kbc-sites\rdf\bb5kbc-shapes.ttl (152 triples)
-2026-04-25 11:17:46 [INFO] Validating data graph against shapes ...
-2026-04-25 11:18:00 [INFO] Wrote SHACL report: C:\git\bb-5kbc-sites\dist\shacl-report.ttl
-2026-04-25 11:18:00 [INFO] SHACL validation: PASS (0 validation results)
-2026-04-25 11:18:00 [INFO] ======================================================================
-2026-04-25 11:18:00 [INFO] bb5kbc LOD pipeline — done
-2026-04-25 11:18:00 [INFO] ======================================================================
+2026-04-25 12:30:10 [INFO] ======================================================================
+2026-04-25 12:30:10 [INFO] bb5kbc LOD pipeline — start
+2026-04-25 12:30:10 [INFO] ======================================================================
+2026-04-25 12:30:10 [INFO] CSV input:        C:\git\bb-5kbc-sites\data\fst_wgs84_comma.csv
+2026-04-25 12:30:10 [INFO] Ontology input:   C:\git\bb-5kbc-sites\ontology\bb5kbc-ontology.ttl
+2026-04-25 12:30:10 [INFO] Data output:      C:\git\bb-5kbc-sites\dist\bb5kbc-data.ttl
+2026-04-25 12:30:10 [INFO] Bundle output:    C:\git\bb-5kbc-sites\dist\bb5kbc-bundle.ttl
+2026-04-25 12:30:10 [INFO] SHACL shapes:     C:\git\bb-5kbc-sites\rdf\bb5kbc-shapes.ttl
+2026-04-25 12:30:10 [INFO] SHACL report:     C:\git\bb-5kbc-sites\dist\shacl-report.ttl
+2026-04-25 12:30:10 [INFO] Bundle report:    C:\git\bb-5kbc-sites\dist\shacl-report-bundle.ttl
+2026-04-25 12:30:10 [INFO] Log file:         C:\git\bb-5kbc-sites\dist\report.log
+2026-04-25 12:30:10 [INFO] 
+2026-04-25 12:30:10 [INFO] Loaded CSV: 540 rows, 33 columns
+2026-04-25 12:30:10 [INFO] Processing rows ...
+2026-04-25 12:30:10 [INFO] Row 30: split fundstellenart 'Kreisgrabenanlage und Siedlung' into 2 components
+2026-04-25 12:30:10 [WARNING] Row FID=31: dating_end '4750' looks like a typo (missing minus sign). Corrected to '-4750'. Please fix in the CSV.
+2026-04-25 12:30:10 [INFO] Row FID=35: dating_perio.do present but no match level specified — defaulting to skos:relatedMatch.
+2026-04-25 12:30:10 [INFO] Row 39: split fundstellenart 'Siedlung, Kreisgrabenanlage' into 2 components
+2026-04-25 12:30:10 [INFO] Row 107: split fundstellenart 'Siedlung und Grab' into 2 components
+2026-04-25 12:30:11 [INFO] Row 185: split fundstellenart 'Siedlung und Grab' into 2 components
+2026-04-25 12:30:11 [INFO] Row 202: split fundstellenart 'Siedlung, Kreisgrabenanlage' into 2 components
+2026-04-25 12:30:11 [INFO] Row 228: split fundstellenart 'Siedlung, Brunnen' into 2 components
+2026-04-25 12:30:11 [WARNING] Row FID=257: dating_end '4344' looks like a typo (missing minus sign). Corrected to '-4344'. Please fix in the CSV.
+2026-04-25 12:30:12 [INFO] Processed: 540 rows, skipped: 0
+2026-04-25 12:30:12 [INFO] Generated graph: 19254 triples
+2026-04-25 12:30:14 [INFO] Wrote data graph: C:\git\bb-5kbc-sites\dist\bb5kbc-data.ttl (19261 triples)
+2026-04-25 12:30:14 [INFO] Building bundle graph (data + ontology) ...
+2026-04-25 12:30:16 [INFO] Wrote bundle graph: C:\git\bb-5kbc-sites\dist\bb5kbc-bundle.ttl (19879 triples)
+2026-04-25 12:30:16 [INFO] Generating SHACL shapes from ontology ...
+2026-04-25 12:30:16 [INFO] Wrote shapes: C:\git\bb-5kbc-sites\rdf\bb5kbc-shapes.ttl (152 triples)
+2026-04-25 12:30:16 [INFO] Loading shapes for validation ...
+2026-04-25 12:30:16 [INFO] Validating data graph against shapes ...
+2026-04-25 12:30:31 [INFO] Wrote SHACL report (data graph): C:\git\bb-5kbc-sites\dist\shacl-report.ttl
+2026-04-25 12:30:31 [INFO] SHACL validation [data graph]: PASS (0 validation results)
+2026-04-25 12:30:31 [INFO] Validating bundle graph against shapes ...
+2026-04-25 12:30:58 [INFO] Wrote SHACL report (bundle graph): C:\git\bb-5kbc-sites\dist\shacl-report-bundle.ttl
+2026-04-25 12:30:58 [INFO] SHACL validation [bundle graph]: PASS (0 validation results)
+2026-04-25 12:30:58 [INFO] ======================================================================
+2026-04-25 12:30:58 [INFO] bb5kbc LOD pipeline — done
+2026-04-25 12:30:58 [INFO] ======================================================================

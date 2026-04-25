@@ -26,22 +26,24 @@ publiziert als Turtle.
 ```
 bb-5kbc-sites/
 ├── data/                         Eingabe-CSV (read-only)
-│   └── fst_wgs84_comma.csv
+│   ├── fst_wgs84_comma.csv
+│   └── bb5kbc-csv-issues.md      Offene Datenfragen für Sophie
 ├── ontology/                     Anwendungsontologie + Diagramm-Generator
 │   ├── bb5kbc-ontology.ttl
 │   ├── bb5kbc_mermaid.py
-│   └── bb5kbc-classes.mmd        ← auto-generiert
+│   ├── bb5kbc-classes.mmd        ← auto-generiert
+│   └── bb5kbc-csv-mapping.md     Spalte-für-Spalte-Mapping zur Ontologie
 ├── rdf/                          Pipeline-Skript + Schema-Artefakte
 │   ├── bb5kbc_lod_pipeline.py
 │   ├── bb5kbc-shapes.ttl         ← auto-generiert
+│   ├── bb5kbc-modelling-rules.md Modellierungsregeln + SPARQL-Kochbuch
 │   └── bb5kbc-pipeline-readme.md
-├── dist/                         Generierter Output
-│   ├── bb5kbc-data.ttl
-│   ├── shacl-report.ttl
-│   └── report.log
-├── bb5kbc-modelling-rules.md     Modellierungsregeln + SPARQL-Kochbuch
-├── bb5kbc-csv-mapping.md         Spalte-für-Spalte-Mapping zur Ontologie
-└── bb5kbc-csv-issues.md          Offene Datenfragen für Sophie
+└── dist/                         Generierter Output
+    ├── bb5kbc-data.ttl           Daten-Graph
+    ├── bb5kbc-bundle.ttl         Daten + Ontologie (selbst-genügsam)
+    ├── shacl-report.ttl
+    ├── shacl-report-bundle.ttl
+    └── report.log
 ```
 
 ---
@@ -70,7 +72,8 @@ cd ../rdf
 python bb5kbc_lod_pipeline.py
 ```
 
-Erzeugt `dist/bb5kbc-data.ttl` + `dist/shacl-report.ttl` + `dist/report.log`.
+Erzeugt `dist/bb5kbc-data.ttl`, `dist/bb5kbc-bundle.ttl`, beide
+SHACL-Reports und das `dist/report.log`.
 
 ---
 
@@ -91,12 +94,12 @@ Erzeugt `dist/bb5kbc-data.ttl` + `dist/shacl-report.ttl` + `dist/report.log`.
 
 | Frage | Datei |
 |---|---|
-| Wie sind die Daten modelliert? | `bb5kbc-modelling-rules.md` |
-| Welche CSV-Spalte wird zu welchem Triple? | `bb5kbc-csv-mapping.md` |
+| Wie sind die Daten modelliert? | `rdf/bb5kbc-modelling-rules.md` |
+| Welche CSV-Spalte wird zu welchem Triple? | `ontology/bb5kbc-csv-mapping.md` |
 | Wie läuft die Pipeline? | `rdf/bb5kbc-pipeline-readme.md` |
-| Welche Daten sind noch offen? | `bb5kbc-csv-issues.md` |
+| Welche Daten sind noch offen? | `data/bb5kbc-csv-issues.md` |
 | Welche Klassen gibt es? | `ontology/bb5kbc-classes.mmd` (in mermaid.live öffnen) |
-| Beispiel-SPARQL-Anfragen | `bb5kbc-modelling-rules.md`, Abschnitt SPARQL-Kochbuch |
+| Beispiel-SPARQL-Anfragen | `rdf/bb5kbc-modelling-rules.md`, Abschnitt SPARQL-Kochbuch |
 
 ---
 

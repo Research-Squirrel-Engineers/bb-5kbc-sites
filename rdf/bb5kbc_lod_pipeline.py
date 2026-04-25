@@ -855,8 +855,10 @@ def main():
     out_dir.mkdir(parents=True, exist_ok=True)
 
     out_data = out_dir / "bb5kbc-data.ttl"
+    out_bundle = out_dir / "bb5kbc-bundle.ttl"          # data + ontology merged
     out_shapes = script_dir / "bb5kbc-shapes.ttl"   # shapes live alongside the script
     out_report = out_dir / "shacl-report.ttl"
+    out_report_bundle = out_dir / "shacl-report-bundle.ttl"
     out_log = out_dir / "report.log"
 
     # ----- Logger ------------------------------------------------------------
@@ -867,8 +869,10 @@ def main():
     log.info(f"CSV input:        {csv_path}")
     log.info(f"Ontology input:   {ontology_path}")
     log.info(f"Data output:      {out_data}")
+    log.info(f"Bundle output:    {out_bundle}")
     log.info(f"SHACL shapes:     {out_shapes}")
     log.info(f"SHACL report:     {out_report}")
+    log.info(f"Bundle report:    {out_report_bundle}")
     log.info(f"Log file:         {out_log}")
     log.info("")
 
@@ -947,6 +951,18 @@ def main():
     g.serialize(destination=str(out_data), format="turtle")
     log.info(f"Wrote data graph: {out_data} ({len(g)} triples)")
 
+    # ----- Write bundle graph (data + ontology merged) ----------------------
+    # The bundle is self-contained: a single TTL that loads cleanly into any
+    # triplestore without needing a separate ontology import. Useful for
+    # publishing, sharing, and SHACL validation that needs full class hierarchy.
+    log.info("Building bundle graph (data + ontology) ...")
+    bundle = Graph()
+    _bind_namespaces(bundle)
+    bundle += g                                         # data triples
+    bundle += Graph().parse(str(ontology_path), format="turtle")  # ontology triples
+    bundle.serialize(destination=str(out_bundle), format="turtle")
+    log.info(f"Wrote bundle graph: {out_bundle} ({len(bundle)} triples)")
+
     # ----- Generate SHACL shapes --------------------------------------------
     log.info("Generating SHACL shapes from ontology ...")
     shapes = generate_shacl_shapes(ontology_path)
@@ -965,48 +981,60 @@ def main():
                     "Install with: pip install pyshacl")
         return 0
 
-    log.info("Validating data graph against shapes ...")
-
-    # Load fresh graphs from disk to validate the produced files (not in-memory)
-    data_graph = Graph().parse(str(out_data), format="turtle")
+    log.info("Loading shapes for validation ...")
     shapes_graph = Graph().parse(str(out_shapes), format="turtle")
     onto_graph = Graph().parse(str(ontology_path), format="turtle")
 
-    conforms, report_graph, report_text = shacl_validate(
-        data_graph,
-        shacl_graph=shapes_graph,
-        ont_graph=onto_graph,
-        inference="rdfs",
-        meta_shacl=False,
-        debug=False,
-    )
+    # Validate two TTLs in turn: the slim data file, and the self-contained
+    # bundle. Both go through the same shapes; results are written separately
+    # so reviewers can see whether the ontology import affects validation.
+    targets = [
+        ("data graph",   out_data,   out_report),
+        ("bundle graph", out_bundle, out_report_bundle),
+    ]
 
-    report_graph.serialize(destination=str(out_report), format="turtle")
-    log.info(f"Wrote SHACL report: {out_report}")
+    any_violations = False
 
-    # Count violations and warnings
-    violations = sum(1 for _ in report_graph.subjects(RDF.type, SH.ValidationResult))
-    log.info(f"SHACL validation: {'PASS' if conforms else 'CONFORMS=False'} "
-             f"({violations} validation results)")
+    for label, target_path, report_path in targets:
+        log.info(f"Validating {label} against shapes ...")
+        target_graph = Graph().parse(str(target_path), format="turtle")
 
-    if not conforms:
-        # Print first few failure summaries to the log
-        for i, vr in enumerate(report_graph.subjects(RDF.type, SH.ValidationResult)):
-            if i >= 10:
-                log.info(f"  ... and more (see {out_report})")
-                break
-            severity = list(report_graph.objects(vr, SH.resultSeverity))
-            focus = list(report_graph.objects(vr, SH.focusNode))
-            path = list(report_graph.objects(vr, SH.resultPath))
-            msg = list(report_graph.objects(vr, SH.resultMessage))
-            sev = severity[0].split("#")[-1] if severity else "?"
-            log.info(f"  [{sev}] focus={focus[0] if focus else '?'} "
-                     f"path={path[0] if path else '?'} "
-                     f"msg={msg[0] if msg else ''}")
+        conforms, report_graph, _ = shacl_validate(
+            target_graph,
+            shacl_graph=shapes_graph,
+            ont_graph=onto_graph,
+            inference="rdfs",
+            meta_shacl=False,
+            debug=False,
+        )
 
-        if args.strict:
-            log.error("Strict mode: SHACL violations are errors. Exiting with code 1.")
-            return 1
+        report_graph.serialize(destination=str(report_path), format="turtle")
+        log.info(f"Wrote SHACL report ({label}): {report_path}")
+
+        violations = sum(1 for _ in report_graph.subjects(RDF.type, SH.ValidationResult))
+        log.info(f"SHACL validation [{label}]: "
+                 f"{'PASS' if conforms else 'CONFORMS=False'} "
+                 f"({violations} validation results)")
+
+        if not conforms:
+            any_violations = True
+            # Print first few failure summaries to the log
+            for i, vr in enumerate(report_graph.subjects(RDF.type, SH.ValidationResult)):
+                if i >= 10:
+                    log.info(f"  ... and more (see {report_path})")
+                    break
+                severity = list(report_graph.objects(vr, SH.resultSeverity))
+                focus = list(report_graph.objects(vr, SH.focusNode))
+                path = list(report_graph.objects(vr, SH.resultPath))
+                msg = list(report_graph.objects(vr, SH.resultMessage))
+                sev = severity[0].split("#")[-1] if severity else "?"
+                log.info(f"  [{sev}] focus={focus[0] if focus else '?'} "
+                         f"path={path[0] if path else '?'} "
+                         f"msg={msg[0] if msg else ''}")
+
+    if any_violations and args.strict:
+        log.error("Strict mode: SHACL violations are errors. Exiting with code 1.")
+        return 1
 
     log.info("=" * 70)
     log.info("bb5kbc LOD pipeline — done")
