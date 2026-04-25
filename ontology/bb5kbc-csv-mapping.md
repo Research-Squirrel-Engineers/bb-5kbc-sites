@@ -140,6 +140,7 @@
 | `bb5kbc:inBundesland` | `bb5kbc:Kreis` | `bb5kbc:Bundesland` | `crm:P89_falls_within`, `fsl:locatedInAdministrativeEntity` | `crm:P89_falls_within` |
 | `bb5kbc:inLand` | `bb5kbc:Bundesland` | `bb5kbc:Land` | `crm:P89_falls_within`, `fsl:locatedInAdministrativeEntity` | `crm:P89_falls_within` |
 | `bb5kbc:wurdeEntdecktDurch` | `bb5kbc:Fundstelle` | `bb5kbc:Entdeckung` | `crm:P12i_was_present_at` | `crm:P12i_was_present_at` |
+| `bb5kbc:wurdeGeoreferenziertDurch` | `bb5kbc:Fundstelle` | `bb5kbc:GeoreferenzierungsAktivitaet` | `prov:wasGeneratedBy` | `prov:wasGeneratedBy` |
 | `bb5kbc:hatEntdeckungsart` | `bb5kbc:Entdeckung` | `bb5kbc:EntdeckungsartType` | `crm:P2_has_type` | `crm:P2_has_type` |
 | `bb5kbc:hatFundstellenart` | `bb5kbc:Fundstelle` | `bb5kbc:FundstellenartType` | `crm:P2_has_type`, `fsl:siteType` | `crm:P2_has_type` |
 | `bb5kbc:hatKulturelleZuordnung` | `bb5kbc:Fundstelle` | `bb5kbc:KulturelleZuordnung` | `crm:P10i_contains` | `crm:P10i_contains` |
@@ -175,7 +176,6 @@
 | `fsl:activityDesc` | FSL | `bb5kbc:GeoreferenzierungsAktivitaet` | `xsd:string` |
 | `fsl:precision` | FSL | `bb5kbc:Fundstelle` | `xsd:decimal` |
 | `fsl:representativeGeometry` | FSL | `bb5kbc:Fundstelle` | `sf:Point` |
-| `prov:wasGeneratedBy` | PROV-O | `bb5kbc:Fundstelle` | `bb5kbc:GeoreferenzierungsAktivitaet` |
 | `prov:wasAssociatedWith` | PROV-O | `bb5kbc:GeoreferenzierungsAktivitaet` | `foaf:Person` |
 | `rdfs:label` / `skos:prefLabel` | RDFS / SKOS | alle Klassen | Literal `@de` |
 | `geosparql:hasGeometry` | GeoSPARQL | `bb5kbc:Fundstelle` | `sf:Point` |
@@ -412,7 +412,7 @@ data:site_33
     # Kulturelle Zuordnung
     bb5kbc:hatKulturelleZuordnung data:culture_a36e9d6d ;
     # Georeferenzierung
-    prov:wasGeneratedBy data:site_33_activity ;
+    bb5kbc:wurdeGeoreferenziertDurch data:site_33_activity ;   # ⊂ prov:wasGeneratedBy
     # Geometrie
     geo:hasGeometry     data:site_33_geom ;
     # FSL CM properties (auf Site, nicht auf Activity)

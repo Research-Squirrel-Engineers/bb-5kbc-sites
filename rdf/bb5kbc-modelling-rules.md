@@ -156,6 +156,20 @@ funktionieren — man fragt einen Knoten, nicht 137 Strings.
 ist *nicht* dasselbe wie der Wert ohne — die Unsicherheit ist Teil der
 Aussage. Beide tragen aber dieselbe Wikidata-QID.
 
+**Sonderfall Mehrwertige Fundstellenart:** Werte wie `"Siedlung und Grab"`
+oder `"Kreisgrabenanlage und Siedlung"` werden in **zwei separate Knoten**
+aufgesplittet. An der Fundstelle hängen dann zwei `bb5kbc:hatFundstellenart`-
+Triples — eines pro Komponente. Beispiel:
+
+```
+data:site_X
+    bb5kbc:hatFundstellenart data:fundstellenart_<hash_siedlung> ;
+    bb5kbc:hatFundstellenart data:fundstellenart_<hash_grab> .
+```
+
+Damit geht keine Information verloren, und Anfragen wie "Welche Fundstellen
+sind sowohl Siedlung als auch Grab?" funktionieren ohne String-Matching.
+
 ### Regel 4: Kulturelle Zuordnung trägt eigene Datierung — 1:1 zur Fundstelle
 
 Eine Fundstelle hat genau **eine** kulturelle Zuordnung — das ist die
@@ -212,7 +226,7 @@ der irgendwann von jemandem mit irgendeiner Methode irgendwo verortet wurde.
 Diese Verortung wird als **eigene Aktivität** modelliert:
 
 ```
-Fundstelle ─wurdeGeneriertVon→ GeoreferenzierungsAktivitaet
+Fundstelle ─wurdeGeoreferenziertDurch→ GeoreferenzierungsAktivitaet
     │                                  │
     │                                  ├─→ Methode (z.B. "Übernahme aus DB")
     │                                  ├─→ Quelle ("BLDAM 2021")
@@ -429,6 +443,26 @@ ORDER BY DESC(?anzahl)
 > Eine analytische Anfrage: wie viele Fundstellen gibt es pro Kombination
 > Fundstellenart × Kulturgruppe? Zeigt den Wert der Knoten-Deduplizierung —
 > ohne Regel 3 wäre `GROUP BY` über String-Werte unzuverlässig.
+
+### 9. Fundstellen, deren Koordinaten vom BLDAM stammen
+
+```sparql
+SELECT ?name ?genauigkeit WHERE {
+    ?site a bb5kbc:Fundstelle ;
+          rdfs:label ?name ;
+          bb5kbc:hatGenauigkeit ?genauigkeit ;
+          bb5kbc:wurdeGeoreferenziertDurch ?activity .
+
+    ?activity ?p ?ref .
+    FILTER(CONTAINS(LCASE(STR(?ref)), "bldam"))
+}
+ORDER BY ?genauigkeit
+```
+
+> Folgt der Provenance-Kette (Regel 6): von der Fundstelle über die
+> Georeferenzierungs-Aktivität zur Quelle. Hier ist die Quelle als String
+> hinterlegt — bei strikt typisierten Anfragen würde man stattdessen die
+> Wikidata-QID `Q897952` (BLDAM) über `bb5kbc:hasExternalIdentifier` matchen.
 
 ---
 

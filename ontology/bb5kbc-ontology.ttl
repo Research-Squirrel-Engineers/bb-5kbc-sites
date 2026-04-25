@@ -442,7 +442,8 @@ crm:E26_Physical_Feature → crm:E18_Physical_Thing → crm:E72_Legal_Object
 → crm:E70_Thing → crm:E1_CRM_Entity, and also via crm:E53_Place.
 FSL Wikibase metadata: fsl:certaintyLevel, fsl:certaintyDesc, fsl:spatialType,
 fsl:siteType, fsl:hasReference, geosparql:hasGeometry.
-PROV-O: prov:wasGeneratedBy → bb5kbc:GeoreferenzierungsAktivitaet;
+PROV-O: prov:wasGeneratedBy → bb5kbc:GeoreferenzierungsAktivitaet
+        (use bb5kbc:wurdeGeoreferenziertDurch as the typed subproperty);
         prov:wasAttributedTo → foaf:Person."""@en ;
     rdfs:label "Fundstelle"@de , "Archaeological Site"@en .
 
@@ -663,6 +664,14 @@ bb5kbc:wurdeEntdecktDurch
     rdfs:domain bb5kbc:Fundstelle ;
     rdfs:range  bb5kbc:Entdeckung ;
     rdfs:label "wurde entdeckt durch"@de , "was discovered through"@en .
+
+bb5kbc:wurdeGeoreferenziertDurch
+    rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf prov:wasGeneratedBy ;
+    rdfs:domain bb5kbc:Fundstelle ;
+    rdfs:range  bb5kbc:GeoreferenzierungsAktivitaet ;
+    rdfs:comment "Links a Fundstelle to the georeferencing activity that produced its coordinates. Subproperty of prov:wasGeneratedBy (PROV-O provenance)."@en ;
+    rdfs:label "wurde georeferenziert durch"@de , "was georeferenced through"@en .
 
 bb5kbc:hatEntdeckungsart
     rdf:type owl:ObjectProperty ;
