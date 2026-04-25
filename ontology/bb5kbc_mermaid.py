@@ -5,9 +5,13 @@ bb5kbc application ontology.
 USAGE:
     python bb5kbc_mermaid.py [path-to-ontology.ttl] [-o output.mmd]
 
-Defaults:
+Defaults (when called without arguments):
     Reads:  ./bb5kbc-ontology.ttl   (script directory)
-    Writes: ./bb5kbc-classes.mmd    (next to script)
+    Writes: ./bb5kbc-classes.mmd    (script directory)
+
+Designed to live inside the project's ontology/ directory alongside the
+ontology file itself, so a plain `python bb5kbc_mermaid.py` from there
+regenerates the diagram in place.
 
 The script extracts only bb5kbc:-namespaced classes and properties; for each
 class it shows the closest CRM (or CRMsci/CRMgeo) ancestor as a UML stereotype,

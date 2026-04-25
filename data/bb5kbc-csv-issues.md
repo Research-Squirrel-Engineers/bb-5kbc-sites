@@ -25,6 +25,8 @@ was offensichtlich falsch ist.
 **Aktion:** in der CSV korrigieren oder im Pipeline-Script abfangen?
 *(Vorerst nicht angefasst — Sophie klärt.)*
 
+*Sophie: hat korrigiert*
+
 ---
 
 ## 🟡 Modellierungsfragen
@@ -34,13 +36,19 @@ was offensichtlich falsch ist.
 460 von 540 Zeilen haben `fundstellenart = "unbek."` (= unbekannt) und werden auf
 **Q59496158** gemappt. Q59496158 ist auf Wikidata aber `"Findspot of an excavation"`
 / `"Fundstelle einer Grabung"` — das beschreibt eine **bekannte** Fundstellenart und
-ist semantisch das Gegenteil von "unbekannt".
+ist semantisch das Gegenteil von "unbekannt". 
+
+*Sophie: Das ist gelogen: Q59496158 beschreibt 'not yet determined', was genau das ist, was wir sagen wollen.*
 
 **Frage:** Soll `"unbek."` im RDF überhaupt einen QID-Bezug bekommen, oder
 besser nur als `rdfs:label "unbek."@de` ohne `bb5kbc:hasExternalIdentifier` modelliert werden?
 
+*Sophie: meinetwegen auch weglassen, geht m.E. beides gut (easy find and replace für Q59496158*
+
 Zudem gibt es eine Zeile mit `fundstellenart = "Ausgrabung"` (1× — was als
 Fundstellenart, nicht als Entdeckungsart, ungewöhnlich klingt) ebenfalls auf Q59496158.
+
+*Sophie: ist korrigiert*
 
 ### 3. `fundstellenart = "Grab?"` — wie wird die Unsicherheit modelliert?
 
@@ -51,6 +59,8 @@ Das Fragezeichen geht im RDF verloren.
 - (a) Eigener Knoten `fundstellenart_<hash>` mit Label `"Grab?"@de` und derselben QID — Fragezeichen bleibt im Label sichtbar (aktueller Default).
 - (b) Zusätzlich `fsl:certaintyDesc "uncertain"@en` oder ein `fsl:certaintyLevel`-Verweis auf den Knoten.
 - (c) `skos:relatedMatch` statt `bb5kbc:hasExternalIdentifier` zur QID, weil die Identität nur vermutet ist.
+
+*Sophie: finde Lösung b gut, ebenso für unten*
 
 Analog: `kultur = "SBK?"` und `kultur = "SRK?"` (jeweils eigene Kulturgruppe-Knoten).
 
@@ -69,6 +79,8 @@ Vier kombinierte Werte landen jeweils auf nur einer QID — die zweite Komponent
 modelliert werden (eines pro Komponente)? Das wäre RDF-konform und verlustfrei,
 würde aber eine Aufsplittung im Pipeline-Script erfordern.
 
+*Sophie: das wäre eine Möglichkeit. Wenn zu aufwändig, als Siedlung lassen, das ist meist die wichtigere Kategorie*
+
 ### 5. `entdeckung` ohne QID
 
 Drei Werte haben gar keine `QID_entdeckung`-Zuordnung:
@@ -86,6 +98,7 @@ Drei Werte haben gar keine `QID_entdeckung`-Zuordnung:
 Im RDF entstehen dadurch `bb5kbc:Entdeckung`-Knoten **ohne** `crm:P2_has_type` —
 das ist OK, aber Sophie sollte entscheiden, ob die QIDs nachgetragen werden.
 
+*Sophie: Altfund und "Sondage, ..." = unbek. (geändert) und Siedlung war ein Fehler, ist korrigiert*
 ---
 
 ## 🟠 Formale Inkonsistenzen
@@ -121,6 +134,8 @@ Werte als `xsd:string` erhalten bleiben. Wenn aber eine spätere strukturierte
 Auswertung (z.B. numerische Toleranz extrahieren) gewünscht ist, lohnt eine
 Normalisierung auf eine Schreibweise, idealerweise englisch (`+/- 100 years`).
 
+*Sophie: vereinheitlicht*
+
 ### 7. `dating_perio.do_match` leer trotz vorhandener URI
 
 Eine Zeile hat eine Perio.do-URI, aber kein Match-Level:
@@ -133,6 +148,8 @@ Eine Zeile hat eine Perio.do-URI, aber kein Match-Level:
 verwendet (schwächste Aussage). Falls Sophie dort `closeMatch` oder `exactMatch`
 beabsichtigt hatte, sollte das Feld nachgetragen werden.
 
+*Sophie hat das nachgetragen und allgemein die periodo-Links ersetzt, wo nun neue zur Verfügung standen*
+
 ### 8. `kultur = "Rössener Kultur"` (Vereinheitlichung gegenüber früherer CSV)
 
 In früheren Versionen der CSV gab es zwei Schreibweisen (`"Rössen"`, `"Rössener"`),
@@ -141,6 +158,8 @@ jetzt nur noch `"Rössener Kultur"`. Damit gibt es **9 distinct Kulturgruppen** 
 
 *(Kein Fehler — nur ein Hinweis, dass der Ontologie-Kommentar in v0.3 entsprechend
 angepasst wurde.)*
+
+*Sophie: Es sind 7 distinkte Kulturgruppen, die mit Fragezeichen müssen, wie oben gesagt, als unsicher markiert werden -> Lösung b) Zusätzlich `fsl:certaintyDesc "uncertain"@en` oder ein `fsl:certaintyLevel`-Verweis auf den Knoten.*
 
 ---
 
@@ -158,6 +177,8 @@ Die Spalten `GEM_TGN`, `GEM_IDAI`, `GEM_OSM_RELATION`, `KREIS_TGN`,
 `KREIS_IDAI`, `KREIS_OSM_RELATION`, `BL_TGN`, `BL_IDAI`, `BL_OSM_RELATION`
 sind im Mapping-Schema vorgesehen, aktuell aber gar nicht in der CSV vorhanden —
 sie werden vom `wikidata_map.py`-Script nachgereicht.
+
+*Sophie: perio.do rausgenommen, gibt die andere Spalte dazu*
 
 ---
 
