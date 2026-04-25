@@ -31,6 +31,7 @@
 
 <http://w3id.org/bb5kbc/ont/>
     rdf:type owl:Ontology ;
+    owl:versionIRI <http://w3id.org/bb5kbc/ont/0.9> ;
     dc:title "Brandenburg 5000 BC Sites Ontology"@en ,
              "Brandenburg 5000 BC Fundstellen-Ontologie"@de ;
     dc:creator "Sophie C. Schmidt" , "Florian Thiery" ;
@@ -807,23 +808,26 @@ bb5kbc:datierungEnd
 
 bb5kbc:datierungSicherheitStart
     rdf:type owl:DatatypeProperty ;
+    rdfs:subPropertyOf fsl:certaintyDesc ;
     rdfs:domain bb5kbc:Datierung ;
     rdfs:range xsd:string ;
-    rdfs:comment "Certainty qualifier for dating_start (dating_certainty_start)."@en ;
+    rdfs:comment "Certainty qualifier for dating_start (dating_certainty_start). SubPropertyOf fsl:certaintyDesc."@en ;
     rdfs:label "Sicherheit Beginn"@de , "certainty start"@en .
 
 bb5kbc:datierungSicherheitEnd
     rdf:type owl:DatatypeProperty ;
+    rdfs:subPropertyOf fsl:certaintyDesc ;
     rdfs:domain bb5kbc:Datierung ;
     rdfs:range xsd:string ;
-    rdfs:comment "Certainty qualifier for dating_end (dating_certainty_end)."@en ;
+    rdfs:comment "Certainty qualifier for dating_end (dating_certainty_end). SubPropertyOf fsl:certaintyDesc."@en ;
     rdfs:label "Sicherheit Ende"@de , "certainty end"@en .
 
 bb5kbc:datierungSicherheitRange
     rdf:type owl:DatatypeProperty ;
+    rdfs:subPropertyOf fsl:certaintyDesc ;
     rdfs:domain bb5kbc:Datierung ;
     rdfs:range xsd:string ;
-    rdfs:comment "Certainty qualifier for the overall range (dating_certainty_range, e.g. 'ca.')."@en ;
+    rdfs:comment "Certainty qualifier for the overall range (dating_certainty_range, e.g. 'ca.'). SubPropertyOf fsl:certaintyDesc."@en ;
     rdfs:label "Sicherheit Zeitraum"@de , "certainty range"@en .
 
 # --- SCHERBE -----------------------------------------------------------------

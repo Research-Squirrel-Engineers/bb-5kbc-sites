@@ -161,9 +161,9 @@
 | `bb5kbc:hatGenauigkeit` | `bb5kbc:Fundstelle` | `xsd:decimal` | `fsl:precision` | `fsl:precision` |
 | `bb5kbc:datierungStart` | `bb5kbc:Datierung` | `xsd:integer` | `crm:P82a_begin_of_the_begin` | `crm:P82a_begin_of_the_begin` |
 | `bb5kbc:datierungEnd` | `bb5kbc:Datierung` | `xsd:integer` | `crm:P82b_end_of_the_end` | `crm:P82b_end_of_the_end` |
-| `bb5kbc:datierungSicherheitStart` | `bb5kbc:Datierung` | `xsd:string` | — | — |
-| `bb5kbc:datierungSicherheitEnd` | `bb5kbc:Datierung` | `xsd:string` | — | — |
-| `bb5kbc:datierungSicherheitRange` | `bb5kbc:Datierung` | `xsd:string` | — | — |
+| `bb5kbc:datierungSicherheitStart` | `bb5kbc:Datierung` | `xsd:string` | `fsl:certaintyDesc` | `fsl:certaintyDesc` |
+| `bb5kbc:datierungSicherheitEnd` | `bb5kbc:Datierung` | `xsd:string` | `fsl:certaintyDesc` | `fsl:certaintyDesc` |
+| `bb5kbc:datierungSicherheitRange` | `bb5kbc:Datierung` | `xsd:string` | `fsl:certaintyDesc` | `fsl:certaintyDesc` |
 
 ### Nachgenutzte Properties (kein bb5kbc-Wrapper)
 
