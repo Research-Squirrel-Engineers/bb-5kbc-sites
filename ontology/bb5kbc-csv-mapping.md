@@ -80,11 +80,11 @@
 | 21 | `LAND_OSM_Relation` | `"51477"` | 🔗 | `bb5kbc:Land` ← `bb5kbc:hasExternalIdentifier` → `bb5kbc:ExternalIdentifier_OSM` | |
 | 13 | `perio.do` | *(leer)* | 🔗 ⏳ | `bb5kbc:Kulturgruppe` ← `bb5kbc:hasExternalIdentifier` → `bb5kbc:ExternalIdentifier_PerioDo` | 0/540 gefüllt |
 | 14 | `kultur` | `"SBK"` | 🟦🔗 | `bb5kbc:KulturelleZuordnung` ← `bb5kbc:hatKulturgruppe` → `bb5kbc:Kulturgruppe` | + Perio.do (⏳); `SBK?`/`SRK?` eigene Nodes |
-| 15 | `entdeckung` | `"Ausgrabung Bersu"` | 🟦🔗 | `bb5kbc:Fundstelle` ← `bb5kbc:wurdeEntdecktDurch` → `bb5kbc:Entdeckung` | `rdfs:label` aus Text + `crm:P2_has_type` → `bb5kbc:EntdeckungsartType` |
+| 15 | `entdeckung` | `"Ausgrabung Bersu"` | 🟦🔗 | `bb5kbc:Fundstelle` ← `bb5kbc:wurdeEntdecktDurch` → `bb5kbc:Entdeckung` | `rdfs:label` aus Text + `bb5kbc:hatEntdeckungsart` → `bb5kbc:EntdeckungsartType` |
 | 16 | `QID_entdeckung` | `"Q959782"` | 🔗 | `bb5kbc:EntdeckungsartType` ← `bb5kbc:hasExternalIdentifier` → Wikidata | nur 2 QIDs |
 | 17 | `publikation_arch` | `"Kaufmann 1976"` | 🟦🔗 | `bb5kbc:Fundstelle` ← `bb5kbc:hatPublikation` → `bb5kbc:Publikation` | + QID_publikation (⏳); 273 leer |
 | 18 | `QID_publikation` | *(leer)* | 🔗 ⏳ | `bb5kbc:Publikation` ← `bb5kbc:hasExternalIdentifier` → `bb5kbc:ExternalIdentifier_Wikidata` | 0/540 gefüllt |
-| 19 | `fundstellenart` | `"Siedlung und Grab"` | 🟦🔗 | `bb5kbc:Fundstelle` ← `fsl:siteType` → `bb5kbc:FundstellenartType` | Kombi-Werte als ein Node |
+| 19 | `fundstellenart` | `"Siedlung und Grab"` | 🟦🔗 | `bb5kbc:Fundstelle` ← `bb5kbc:hatFundstellenart` → `bb5kbc:FundstellenartType` | subPropertyOf `crm:P2_has_type` + `fsl:siteType`; Kombi-Werte als ein Node |
 | 20 | `QID_fundstellenart` | `"Q173387"` | 🔗 | `bb5kbc:FundstellenartType` ← `bb5kbc:hasExternalIdentifier` → Wikidata | 4 QIDs |
 
 ### Dating-Spalten
@@ -140,6 +140,8 @@
 | `bb5kbc:inBundesland` | `bb5kbc:Kreis` | `bb5kbc:Bundesland` | `crm:P89_falls_within`, `fsl:locatedInAdministrativeEntity` | `crm:P89_falls_within` |
 | `bb5kbc:inLand` | `bb5kbc:Bundesland` | `bb5kbc:Land` | `crm:P89_falls_within`, `fsl:locatedInAdministrativeEntity` | `crm:P89_falls_within` |
 | `bb5kbc:wurdeEntdecktDurch` | `bb5kbc:Fundstelle` | `bb5kbc:Entdeckung` | `crm:P12i_was_present_at` | `crm:P12i_was_present_at` |
+| `bb5kbc:hatEntdeckungsart` | `bb5kbc:Entdeckung` | `bb5kbc:EntdeckungsartType` | `crm:P2_has_type` | `crm:P2_has_type` |
+| `bb5kbc:hatFundstellenart` | `bb5kbc:Fundstelle` | `bb5kbc:FundstellenartType` | `crm:P2_has_type`, `fsl:siteType` | `crm:P2_has_type` |
 | `bb5kbc:hatKulturelleZuordnung` | `bb5kbc:Fundstelle` | `bb5kbc:KulturelleZuordnung` | `crm:P10i_contains` | `crm:P10i_contains` |
 | `bb5kbc:hatKulturgruppe` | `bb5kbc:KulturelleZuordnung` | `bb5kbc:Kulturgruppe` | `crm:P9i_forms_part_of` | `crm:P9i_forms_part_of` |
 | `bb5kbc:hatPublikation` | `bb5kbc:Fundstelle` | `bb5kbc:Publikation` | `crm:P70i_is_documented_in` | `crm:P70i_is_documented_in` |
@@ -172,9 +174,7 @@
 | `fsl:hasSourceType` | FSL | `bb5kbc:GeoreferenzierungsAktivitaet` | `fsl:SourceType` |
 | `fsl:activityDesc` | FSL | `bb5kbc:GeoreferenzierungsAktivitaet` | `xsd:string` |
 | `fsl:precision` | FSL | `bb5kbc:Fundstelle` | `xsd:decimal` |
-| `fsl:siteType` | FSL | `bb5kbc:Fundstelle` | `bb5kbc:FundstellenartType` |
 | `fsl:representativeGeometry` | FSL | `bb5kbc:Fundstelle` | `sf:Point` |
-| `crm:P2_has_type` | CRM | `bb5kbc:Entdeckung` | `bb5kbc:EntdeckungsartType` |
 | `prov:wasGeneratedBy` | PROV-O | `bb5kbc:Fundstelle` | `bb5kbc:GeoreferenzierungsAktivitaet` |
 | `prov:wasAssociatedWith` | PROV-O | `bb5kbc:GeoreferenzierungsAktivitaet` | `foaf:Person` |
 | `rdfs:label` / `skos:prefLabel` | RDFS / SKOS | alle Klassen | Literal `@de` |
@@ -372,7 +372,7 @@ Alle Werte stammen direkt aus der aktuellen CSV; FID=33 hat keinen Sherd, daher 
 der Sherd-Block beispielhaft für eine andere Fundstelle (FID=80, Seelow 20) gezeigt.
 
 ```turtle
-@prefix bb5kbc:  <http://5kbc.archaeonatural.cloud/ont/> .
+@prefix bb5kbc:  <http://w3id.org/bb5kbc/ont/> .
 @prefix data:    <http://w3id.org/bb5kbc/> .
 @prefix crm:     <http://www.cidoc-crm.org/cidoc-crm/> .
 @prefix crmsci:  <http://www.cidoc-crm.org/extensions/crmsci/> .
@@ -404,7 +404,7 @@ data:site_33
     # Verwaltungsgebiete
     bb5kbc:inGemeinde   data:gemeinde_ef3c98d9 ;
     # Fundstellenart
-    fsl:siteType        data:fundstellenart_1972902b ;
+    bb5kbc:hatFundstellenart data:fundstellenart_1972902b ; # ⊂ crm:P2_has_type, ⊂ fsl:siteType
     # Entdeckung
     bb5kbc:wurdeEntdecktDurch data:entdeckung_1f56a08c ;
     # Publikation
@@ -517,7 +517,7 @@ data:datmethode_98fc5e34
 data:entdeckung_1f56a08c
     a bb5kbc:Entdeckung ;
     rdfs:label "Ausgrabung"@de ;
-    crm:P2_has_type data:entdeckungsart_2b73226f .
+    bb5kbc:hatEntdeckungsart data:entdeckungsart_2b73226f .   # ⊂ crm:P2_has_type
 
 data:entdeckungsart_2b73226f
     a bb5kbc:EntdeckungsartType ;

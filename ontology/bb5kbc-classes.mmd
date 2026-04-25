@@ -1,0 +1,96 @@
+classDiagram
+direction TB
+
+class Bundesland {
+  <<crm:E53_Place>>
+  rdfs:label : @de
+  bb5kbc:hasExternalIdentifier : URI
+}
+class Datierung {
+  <<crm:E52_Time-Span>>
+  rdfs:label : @de
+  datierungEnd : xsd:integer
+  datierungSicherheitEnd : xsd:string
+  datierungSicherheitRange : xsd:string
+  datierungSicherheitStart : xsd:string
+  datierungStart : xsd:integer
+}
+class DatierungsMethodeType {
+  <<crm:E55_Type>>
+  rdfs:label : @de
+  bb5kbc:hasExternalIdentifier : URI
+}
+class Entdeckung {
+  <<crmsci:S19_Encounter_Event>>
+  rdfs:label : @de
+}
+class EntdeckungsartType {
+  <<crm:E55_Type>>
+  rdfs:label : @de
+  bb5kbc:hasExternalIdentifier : URI
+}
+class Fundstelle {
+  <<crm:E27_Site>>
+  rdfs:label : @de
+  hatFID : xsd:integer
+  hatFundstellenID : xsd:string
+  hatGenauigkeit : xsd:decimal
+  hatKatalognummer : xsd:string
+}
+class FundstellenartType {
+  <<crm:E55_Type>>
+  rdfs:label : @de
+  bb5kbc:hasExternalIdentifier : URI
+}
+class Gemeinde {
+  <<crm:E53_Place>>
+  rdfs:label : @de
+  bb5kbc:hasExternalIdentifier : URI
+}
+class GeoreferenzierungsAktivitaet {
+  <<crm:E13_Attribute_Assignment>>
+  rdfs:label : @de
+}
+class Kreis {
+  <<crm:E53_Place>>
+  rdfs:label : @de
+  bb5kbc:hasExternalIdentifier : URI
+}
+class KulturelleZuordnung {
+  <<crm:E92_Spacetime_Volume>>
+  rdfs:label : @de
+}
+class Kulturgruppe {
+  <<crm:E4_Period>>
+  rdfs:label : @de
+  bb5kbc:hasExternalIdentifier : URI
+}
+class Land {
+  <<crm:E53_Place>>
+  rdfs:label : @de
+  bb5kbc:hasExternalIdentifier : URI
+}
+class Publikation {
+  <<crm:E32_Authority_Document>>
+  rdfs:label : @de
+  bb5kbc:hasExternalIdentifier : URI
+}
+class Scherbe {
+  <<crm:E22_Human-Made_Object>>
+  rdfs:label : @de
+  bb5kbc:hasExternalIdentifier : URI
+}
+
+Bundesland --> Land : inLand
+Datierung --> DatierungsMethodeType : datierungMethode
+Entdeckung --> EntdeckungsartType : hatEntdeckungsart
+Fundstelle --> Entdeckung : wurdeEntdecktDurch
+Fundstelle --> FundstellenartType : hatFundstellenart
+Fundstelle --> Gemeinde : inGemeinde
+Fundstelle --> KulturelleZuordnung : hatKulturelleZuordnung
+Fundstelle --> Publikation : hatPublikation
+Fundstelle --> Scherbe : hatScherbe
+Gemeinde --> Kreis : inKreis
+Kreis --> Bundesland : inBundesland
+KulturelleZuordnung --> Datierung : hatDatierung
+KulturelleZuordnung --> Kulturgruppe : hatKulturgruppe

@@ -9,7 +9,7 @@
 #           →  prov  (Activity / Agent / Entity provenance)
 ###############################################################################
 
-@prefix bb5kbc:   <http://5kbc.archaeonatural.cloud/ont/> .
+@prefix bb5kbc:   <http://w3id.org/bb5kbc/ont/> .
 @prefix arno:     <http://archaeonatural.cloud/ont/> .
 @prefix lado:     <http://archaeology.link/ontology#> .
 @prefix fsl:      <http://fuzzy-sl.squirrel.link/ontology/> .
@@ -29,15 +29,15 @@
 @prefix xsd:      <http://www.w3.org/2001/XMLSchema#> .
 @prefix time:     <http://www.w3.org/2006/time#> .
 
-<http://5kbc.archaeonatural.cloud/ont/>
+<http://w3id.org/bb5kbc/ont/>
     rdf:type owl:Ontology ;
     dc:title "Brandenburg 5000 BC Sites Ontology"@en ,
              "Brandenburg 5000 BC Fundstellen-Ontologie"@de ;
-    dc:creator "Florian Thiery" ;
-    dc:contributor "Sophie C. Schmidt" ;
+    dc:creator "Sophie C. Schmidt" , "Florian Thiery" ;
+    dc:contributor "Sophie C. Schmidt" , "Florian Thiery" ;
     dc:rights "CC BY 4.0" ;
     dc:subject "archaeology; Neolithic; Brandenburg; Linked Open Data; NFDI4Objects"@en ;
-    owl:versionInfo "0.3" ;
+    owl:versionInfo "0.9" ;
     rdfs:comment """Data namespace: http://w3id.org/bb5kbc/
 URI patterns (FID-based, direct site attributes only):
   site_{FID}           → bb5kbc:Fundstelle
@@ -447,7 +447,8 @@ PROV-O: prov:wasGeneratedBy → bb5kbc:GeoreferenzierungsAktivitaet;
 
 bb5kbc:GeoreferenzierungsAktivitaet
     rdf:type owl:Class ;
-    rdfs:subClassOf prov:Activity ;
+    rdfs:subClassOf prov:Activity ,
+                    crm:E13_Attribute_Assignment ;
     rdfs:comment """Georeferencing activity (FSL CM pattern). All 10 CM properties:
   P5  fsl:certaintyLevel     → fsl:CertaintyType (derived from genauigkeit_m:
                                  <Q23> high <50m, <Q15> medium 50-500m,
@@ -477,7 +478,7 @@ bb5kbc:Entdeckung
     rdfs:comment """Discovery/encounter event. URI: site_{FID}_discovery.
 entdeckung column → rdfs:label literal (free text, 15 heterogeneous values
 including proper names like 'Ausgrabung Bersu' — not a Named Node).
-QID_entdeckung → crm:P2_has_type → bb5kbc:EntdeckungsartType (Named Node)."""@en ;
+QID_entdeckung → bb5kbc:hatEntdeckungsart → bb5kbc:EntdeckungsartType (Named Node)."""@en ;
     rdfs:label "Entdeckung"@de , "Discovery / Encounter Event"@en .
 # CRM chain: crm:E1 → crm:E13_Attribute_Assignment
 #            → crmsci:S4_Observation → crmsci:S19_Encounter_Event
@@ -661,6 +662,26 @@ bb5kbc:wurdeEntdecktDurch
     rdfs:domain bb5kbc:Fundstelle ;
     rdfs:range  bb5kbc:Entdeckung ;
     rdfs:label "wurde entdeckt durch"@de , "was discovered through"@en .
+
+bb5kbc:hatEntdeckungsart
+    rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf crm:P2_has_type ;
+    rdfs:domain bb5kbc:Entdeckung ;
+    rdfs:range  bb5kbc:EntdeckungsartType ;
+    rdfs:comment "Type of the discovery / encounter event (Ausgrabung, Lesefund, etc.). Subproperty of crm:P2_has_type."@en ;
+    rdfs:label "hat Entdeckungsart"@de , "has discovery type"@en .
+
+# Site type
+
+bb5kbc:hatFundstellenart
+    rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf crm:P2_has_type , fsl:siteType ;
+    rdfs:domain bb5kbc:Fundstelle ;
+    rdfs:range  bb5kbc:FundstellenartType ;
+    rdfs:comment """Type of the archaeological site (Siedlung, Grab, KGA, etc.).
+Doubly anchored: subPropertyOf crm:P2_has_type (CRM type assignment) and
+fsl:siteType (FSL Wikibase site-type relation)."""@en ;
+    rdfs:label "hat Fundstellenart"@de , "has site type"@en .
 
 # Cultural assignment
 
