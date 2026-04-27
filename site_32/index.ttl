@@ -1,30 +1,30 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix geo: <http://www.opengis.net/ont/geosparql#> .
-@prefix ns1: <http://fuzzy-sl.squirrel.link/ontology/> .
-@prefix ns2: <http://w3id.org/bb5kbc/ont/> .
+@prefix ns1: <http://w3id.org/bb5kbc/ont/> .
+@prefix ns2: <http://fuzzy-sl.squirrel.link/ontology/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix void: <http://rdfs.org/ns/void#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://w3id.org/bb5kbc/site_32> a ns2:Fundstelle,
+<http://w3id.org/bb5kbc/site_32> a ns1:Fundstelle,
         <http://www.w3.org/ns/ldp#Resource>,
         <https://www.iana.org/assignments/media-types/text/turtle#Resource> ;
     rdfs:label "Steckelsdorf 12"@de ;
-    ns1:certaintyLevel <https://fuzzy-sl.wikibase.cloud/entity/Q23> ;
-    ns1:hasLocationType <https://fuzzy-sl.wikibase.cloud/entity/Q80> ;
-    ns1:representativeGeometry <http://w3id.org/bb5kbc/site_32_geom> ;
+    ns2:certaintyLevel <https://fuzzy-sl.wikibase.cloud/entity/Q23> ;
+    ns2:hasLocationType <https://fuzzy-sl.wikibase.cloud/entity/Q80> ;
+    ns2:representativeGeometry <http://w3id.org/bb5kbc/site_32_geom> ;
     dcterms:identifier 32 ;
     void:inDataset <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data> ;
-    ns2:hatFID 32 ;
-    ns2:hatFundstellenID "422" ;
-    ns2:hatFundstellenart <http://w3id.org/bb5kbc/fundstellenart_376218bc> ;
-    ns2:hatGenauigkeit 0.0 ;
-    ns2:hatKulturelleZuordnung <http://w3id.org/bb5kbc/site_32_culture> ;
-    ns2:hatPublikation <http://w3id.org/bb5kbc/pub_c54b495e> ;
-    ns2:inGemeinde <http://w3id.org/bb5kbc/gemeinde_be5b3a56> ;
-    ns2:wurdeEntdecktDurch <http://w3id.org/bb5kbc/site_32_discovery> ;
-    ns2:wurdeGeoreferenziertDurch <http://w3id.org/bb5kbc/site_32_activity> ;
+    ns1:hatFID 32 ;
+    ns1:hatFundstellenID "422" ;
+    ns1:hatFundstellenart <http://w3id.org/bb5kbc/fundstellenart_376218bc> ;
+    ns1:hatGenauigkeit 0.0 ;
+    ns1:hatKulturelleZuordnung <http://w3id.org/bb5kbc/site_32_culture> ;
+    ns1:hatPublikation <http://w3id.org/bb5kbc/pub_c54b495e> ;
+    ns1:inGemeinde <http://w3id.org/bb5kbc/gemeinde_be5b3a56> ;
+    ns1:wurdeEntdecktDurch <http://w3id.org/bb5kbc/site_32_discovery> ;
+    ns1:wurdeGeoreferenziertDurch <http://w3id.org/bb5kbc/site_32_activity> ;
     geo:hasGeometry <http://w3id.org/bb5kbc/site_32_geom> ;
     skos:prefLabel "Steckelsdorf 12"@de .
 
