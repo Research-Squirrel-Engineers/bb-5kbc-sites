@@ -31,6 +31,6 @@ jobs:
       metadatatable: true
       createnonNSPages: true
       logourl: https://raw.githubusercontent.com/Research-Squirrel-Engineers/EPICA-SISAL-FAIRification/main/logo.png
-      templatedir: https://github.com/Research-Squirrel-Engineers/unicorn-ontdoc-template-archaeolink-scsft/archive/refs/tags/v1.2.zip
+      templatedir: https://github.com/Research-Squirrel-Engineers/unicorn-ontdoc-template-squirrels/archive/refs/tags/scrat.1.zip
       ogcapifeatures: false
       datasettitle: Brandenburg 5000 BC Data
