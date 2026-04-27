@@ -1,30 +1,30 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix geo: <http://www.opengis.net/ont/geosparql#> .
-@prefix ns1: <http://w3id.org/bb5kbc/ont/> .
-@prefix ns2: <http://fuzzy-sl.squirrel.link/ontology/> .
+@prefix ns1: <http://fuzzy-sl.squirrel.link/ontology/> .
+@prefix ns2: <http://w3id.org/bb5kbc/ont/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix void: <http://rdfs.org/ns/void#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://w3id.org/bb5kbc/site_195> a ns1:Fundstelle,
+<http://w3id.org/bb5kbc/site_195> a ns2:Fundstelle,
         <http://www.w3.org/ns/ldp#Resource>,
         <https://www.iana.org/assignments/media-types/text/turtle#Resource> ;
     rdfs:label "Osłonki 2"@de ;
-    ns2:certaintyLevel <https://fuzzy-sl.wikibase.cloud/entity/Q15> ;
-    ns2:hasLocationType <https://fuzzy-sl.wikibase.cloud/entity/Q80> ;
-    ns2:representativeGeometry <http://w3id.org/bb5kbc/site_195_geom> ;
+    ns1:certaintyLevel <https://fuzzy-sl.wikibase.cloud/entity/Q15> ;
+    ns1:hasLocationType <https://fuzzy-sl.wikibase.cloud/entity/Q80> ;
+    ns1:representativeGeometry <http://w3id.org/bb5kbc/site_195_geom> ;
     dcterms:identifier 195 ;
     void:inDataset <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data> ;
-    ns1:hatFID 195 ;
-    ns1:hatFundstellenID "318" ;
-    ns1:hatFundstellenart <http://w3id.org/bb5kbc/fundstellenart_376218bc> ;
-    ns1:hatGenauigkeit 200.0 ;
-    ns1:hatKatalognummer "27" ;
-    ns1:hatKulturelleZuordnung <http://w3id.org/bb5kbc/site_195_culture> ;
-    ns1:hatPublikation <http://w3id.org/bb5kbc/pub_f53d5dd0> ;
-    ns1:inGemeinde <http://w3id.org/bb5kbc/gemeinde_91c3fb1f> ;
-    ns1:wurdeGeoreferenziertDurch <http://w3id.org/bb5kbc/site_195_activity> ;
+    ns2:hatFID 195 ;
+    ns2:hatFundstellenID "318" ;
+    ns2:hatFundstellenart <http://w3id.org/bb5kbc/fundstellenart_376218bc> ;
+    ns2:hatGenauigkeit 200.0 ;
+    ns2:hatKatalognummer "27" ;
+    ns2:hatKulturelleZuordnung <http://w3id.org/bb5kbc/site_195_culture> ;
+    ns2:hatPublikation <http://w3id.org/bb5kbc/pub_f53d5dd0> ;
+    ns2:inGemeinde <http://w3id.org/bb5kbc/gemeinde_91c3fb1f> ;
+    ns2:wurdeGeoreferenziertDurch <http://w3id.org/bb5kbc/site_195_activity> ;
     geo:hasGeometry <http://w3id.org/bb5kbc/site_195_geom> ;
     skos:prefLabel "Osłonki 2"@de .
 
