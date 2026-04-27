@@ -22,7 +22,7 @@
     ns1:hatGenauigkeit 0.0 ;
     ns1:hatKatalognummer "18010" ;
     ns1:hatKulturelleZuordnung <http://w3id.org/bb5kbc/site_586_culture> ;
-    ns1:hatPublikation <http://w3id.org/bb5kbc/pub_805202e9> ;
+    ns1:hatPublikation <http://w3id.org/bb5kbc/pub_f5ff5579> ;
     ns1:inGemeinde <http://w3id.org/bb5kbc/gemeinde_e743046d> ;
     ns1:wurdeEntdecktDurch <http://w3id.org/bb5kbc/site_586_discovery> ;
     ns1:wurdeGeoreferenziertDurch <http://w3id.org/bb5kbc/site_586_activity> ;

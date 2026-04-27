@@ -40,13 +40,13 @@
     ns1:averageSubjectIRILength 37 ;
     ns1:datatypes 0 ;
     ns1:distinctBlankNodes 0 ;
-    ns1:distinctIRIReferences 13002 ;
+    ns1:distinctIRIReferences 13015 ;
     ns1:distinctLiterals 0 ;
-    ns1:distinctRDFNodes 13002 ;
+    ns1:distinctRDFNodes 13015 ;
     ns1:languages 0 ;
     ns1:propertyClasses 0 ;
     dc:language <http://www.lexvo.org/page/iso639-1/en> ;
-    dcterms:modified "2026-04-27T13:09:26"^^xsd:dateTime ;
+    dcterms:modified "2026-04-27T14:01:20"^^xsd:dateTime ;
     dcterms:subject <http://dbpedia.org/resource/Location>,
         <http://dbpedia.org/resource/OGC_GeoSPARQL>,
         <http://dbpedia.org/resource/Time>,
@@ -124,12 +124,12 @@
         <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_externalIdentifierType> ;
     void:classes 71 ;
     void:dataDump <https://Research-Squirrel-Engineers.github.io/bb-5kbc-sites//index.ttl> ;
-    void:distinctObjects 8080 ;
-    void:distinctSubjects 4844 ;
+    void:distinctObjects 8086 ;
+    void:distinctSubjects 4849 ;
     void:entities 3726 ;
     void:feature <http://www.w3.org/ns/formats/RDFa>,
         <http://www.w3.org/ns/formats/Turtle> ;
-    void:properties 78 ;
+    void:properties 80 ;
     void:propertyPartition <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_activityDesc>,
         <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_asWKT>,
         <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_atLocation>,
@@ -189,8 +189,10 @@
         <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_range>,
         <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_relatedMatch>,
         <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_representativeGeometry>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_reusedFromMTime>,
         <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_rights>,
         <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_rowCount>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_stageStatus>,
         <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_startedAtTime>,
         <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_subClassOf>,
         <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_subPropertyOf>,
@@ -207,7 +209,7 @@
         <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_wasInformedBy>,
         <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_wurdeEntdecktDurch>,
         <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_wurdeGeoreferenziertDurch> ;
-    void:triples 35577 ;
+    void:triples 35587 ;
     void:uriSpace "http://w3id.org/bb5kbc/"^^xsd:string ;
     void:vocabulary ns1:,
         dcam:,

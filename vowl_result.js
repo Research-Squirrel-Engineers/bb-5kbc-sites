@@ -4419,39 +4419,39 @@ var vowlresult={
   },
   {
    "id": 702,
-   "type": "http://fuzzy-sl.squirrel.link/ontology/CertaintyType"
+   "type": "http://www.w3.org/ns/prov#Activity"
   },
   {
    "id": 703,
-   "type": "http://fuzzy-sl.squirrel.link/ontology/CertaintyType"
+   "type": "http://www.w3.org/ns/prov#Activity"
   },
   {
    "id": 704,
-   "type": "http://fuzzy-sl.squirrel.link/ontology/CertaintyType"
+   "type": "http://www.w3.org/ns/prov#Activity"
   },
   {
    "id": 705,
-   "type": "http://fuzzy-sl.squirrel.link/ontology/CertaintyType"
+   "type": "http://www.w3.org/ns/prov#Activity"
   },
   {
    "id": 706,
-   "type": "http://www.w3.org/ns/prov#Plan"
+   "type": "http://www.w3.org/ns/prov#Activity"
   },
   {
    "id": 707,
-   "type": "http://www.w3.org/ns/prov#Plan"
+   "type": "http://fuzzy-sl.squirrel.link/ontology/CertaintyType"
   },
   {
    "id": 708,
-   "type": "http://www.w3.org/ns/prov#Plan"
+   "type": "http://fuzzy-sl.squirrel.link/ontology/CertaintyType"
   },
   {
    "id": 709,
-   "type": "http://www.w3.org/ns/prov#Plan"
+   "type": "http://fuzzy-sl.squirrel.link/ontology/CertaintyType"
   },
   {
    "id": 710,
-   "type": "http://www.w3.org/ns/prov#Plan"
+   "type": "http://fuzzy-sl.squirrel.link/ontology/CertaintyType"
   },
   {
    "id": 711,
@@ -4475,23 +4475,23 @@ var vowlresult={
   },
   {
    "id": 716,
-   "type": "http://w3id.org/bb5kbc/ont/Bundesland"
+   "type": "http://www.w3.org/ns/prov#Plan"
   },
   {
    "id": 717,
-   "type": "http://w3id.org/bb5kbc/ont/Bundesland"
+   "type": "http://www.w3.org/ns/prov#Plan"
   },
   {
    "id": 718,
-   "type": "http://w3id.org/bb5kbc/ont/Bundesland"
+   "type": "http://www.w3.org/ns/prov#Plan"
   },
   {
    "id": 719,
-   "type": "http://w3id.org/bb5kbc/ont/Bundesland"
+   "type": "http://www.w3.org/ns/prov#Plan"
   },
   {
    "id": 720,
-   "type": "http://w3id.org/bb5kbc/ont/Bundesland"
+   "type": "http://www.w3.org/ns/prov#Plan"
   },
   {
    "id": 721,
@@ -4535,23 +4535,23 @@ var vowlresult={
   },
   {
    "id": 731,
-   "type": "http://w3id.org/bb5kbc/ont/EntdeckungsartType"
+   "type": "http://w3id.org/bb5kbc/ont/Bundesland"
   },
   {
    "id": 732,
-   "type": "http://w3id.org/bb5kbc/ont/EntdeckungsartType"
+   "type": "http://w3id.org/bb5kbc/ont/Bundesland"
   },
   {
    "id": 733,
-   "type": "http://w3id.org/bb5kbc/ont/EntdeckungsartType"
+   "type": "http://w3id.org/bb5kbc/ont/Bundesland"
   },
   {
    "id": 734,
-   "type": "http://w3id.org/bb5kbc/ont/EntdeckungsartType"
+   "type": "http://w3id.org/bb5kbc/ont/Bundesland"
   },
   {
    "id": 735,
-   "type": "http://w3id.org/bb5kbc/ont/EntdeckungsartType"
+   "type": "http://w3id.org/bb5kbc/ont/Bundesland"
   },
   {
    "id": 736,
@@ -4583,23 +4583,23 @@ var vowlresult={
   },
   {
    "id": 743,
-   "type": "http://w3id.org/bb5kbc/ont/FundstellenartType"
+   "type": "http://w3id.org/bb5kbc/ont/EntdeckungsartType"
   },
   {
    "id": 744,
-   "type": "http://w3id.org/bb5kbc/ont/FundstellenartType"
+   "type": "http://w3id.org/bb5kbc/ont/EntdeckungsartType"
   },
   {
    "id": 745,
-   "type": "http://w3id.org/bb5kbc/ont/FundstellenartType"
+   "type": "http://w3id.org/bb5kbc/ont/EntdeckungsartType"
   },
   {
    "id": 746,
-   "type": "http://w3id.org/bb5kbc/ont/FundstellenartType"
+   "type": "http://w3id.org/bb5kbc/ont/EntdeckungsartType"
   },
   {
    "id": 747,
-   "type": "http://w3id.org/bb5kbc/ont/FundstellenartType"
+   "type": "http://w3id.org/bb5kbc/ont/EntdeckungsartType"
   },
   {
    "id": 748,
@@ -4631,23 +4631,23 @@ var vowlresult={
   },
   {
    "id": 755,
-   "type": "http://w3id.org/bb5kbc/ont/Gemeinde"
+   "type": "http://w3id.org/bb5kbc/ont/FundstellenartType"
   },
   {
    "id": 756,
-   "type": "http://w3id.org/bb5kbc/ont/Gemeinde"
+   "type": "http://w3id.org/bb5kbc/ont/FundstellenartType"
   },
   {
    "id": 757,
-   "type": "http://w3id.org/bb5kbc/ont/Gemeinde"
+   "type": "http://w3id.org/bb5kbc/ont/FundstellenartType"
   },
   {
    "id": 758,
-   "type": "http://w3id.org/bb5kbc/ont/Gemeinde"
+   "type": "http://w3id.org/bb5kbc/ont/FundstellenartType"
   },
   {
    "id": 759,
-   "type": "http://w3id.org/bb5kbc/ont/Gemeinde"
+   "type": "http://w3id.org/bb5kbc/ont/FundstellenartType"
   },
   {
    "id": 760,
@@ -5903,23 +5903,23 @@ var vowlresult={
   },
   {
    "id": 1073,
-   "type": "http://w3id.org/bb5kbc/ont/Kreis"
+   "type": "http://w3id.org/bb5kbc/ont/Gemeinde"
   },
   {
    "id": 1074,
-   "type": "http://w3id.org/bb5kbc/ont/Kreis"
+   "type": "http://w3id.org/bb5kbc/ont/Gemeinde"
   },
   {
    "id": 1075,
-   "type": "http://w3id.org/bb5kbc/ont/Kreis"
+   "type": "http://w3id.org/bb5kbc/ont/Gemeinde"
   },
   {
    "id": 1076,
-   "type": "http://w3id.org/bb5kbc/ont/Kreis"
+   "type": "http://w3id.org/bb5kbc/ont/Gemeinde"
   },
   {
    "id": 1077,
-   "type": "http://w3id.org/bb5kbc/ont/Kreis"
+   "type": "http://w3id.org/bb5kbc/ont/Gemeinde"
   },
   {
    "id": 1078,
@@ -6231,23 +6231,23 @@ var vowlresult={
   },
   {
    "id": 1155,
-   "type": "http://w3id.org/bb5kbc/ont/Kulturgruppe"
+   "type": "http://w3id.org/bb5kbc/ont/Kreis"
   },
   {
    "id": 1156,
-   "type": "http://w3id.org/bb5kbc/ont/Kulturgruppe"
+   "type": "http://w3id.org/bb5kbc/ont/Kreis"
   },
   {
    "id": 1157,
-   "type": "http://w3id.org/bb5kbc/ont/Kulturgruppe"
+   "type": "http://w3id.org/bb5kbc/ont/Kreis"
   },
   {
    "id": 1158,
-   "type": "http://w3id.org/bb5kbc/ont/Kulturgruppe"
+   "type": "http://w3id.org/bb5kbc/ont/Kreis"
   },
   {
    "id": 1159,
-   "type": "http://w3id.org/bb5kbc/ont/Kulturgruppe"
+   "type": "http://w3id.org/bb5kbc/ont/Kreis"
   },
   {
    "id": 1160,
@@ -6267,23 +6267,23 @@ var vowlresult={
   },
   {
    "id": 1164,
-   "type": "http://w3id.org/bb5kbc/ont/Publikation"
+   "type": "http://w3id.org/bb5kbc/ont/Kulturgruppe"
   },
   {
    "id": 1165,
-   "type": "http://w3id.org/bb5kbc/ont/Publikation"
+   "type": "http://w3id.org/bb5kbc/ont/Kulturgruppe"
   },
   {
    "id": 1166,
-   "type": "http://w3id.org/bb5kbc/ont/Publikation"
+   "type": "http://w3id.org/bb5kbc/ont/Kulturgruppe"
   },
   {
    "id": 1167,
-   "type": "http://w3id.org/bb5kbc/ont/Publikation"
+   "type": "http://w3id.org/bb5kbc/ont/Kulturgruppe"
   },
   {
    "id": 1168,
-   "type": "http://w3id.org/bb5kbc/ont/Publikation"
+   "type": "http://w3id.org/bb5kbc/ont/Kulturgruppe"
   },
   {
    "id": 1169,
@@ -6447,23 +6447,23 @@ var vowlresult={
   },
   {
    "id": 1209,
-   "type": "http://w3id.org/bb5kbc/ont/Scherbe"
+   "type": "http://w3id.org/bb5kbc/ont/Publikation"
   },
   {
    "id": 1210,
-   "type": "http://w3id.org/bb5kbc/ont/Scherbe"
+   "type": "http://w3id.org/bb5kbc/ont/Publikation"
   },
   {
    "id": 1211,
-   "type": "http://w3id.org/bb5kbc/ont/Scherbe"
+   "type": "http://w3id.org/bb5kbc/ont/Publikation"
   },
   {
    "id": 1212,
-   "type": "http://w3id.org/bb5kbc/ont/Scherbe"
+   "type": "http://w3id.org/bb5kbc/ont/Publikation"
   },
   {
    "id": 1213,
-   "type": "http://w3id.org/bb5kbc/ont/Scherbe"
+   "type": "http://w3id.org/bb5kbc/ont/Publikation"
   },
   {
    "id": 1214,
@@ -6483,23 +6483,23 @@ var vowlresult={
   },
   {
    "id": 1218,
-   "type": "http://w3id.org/bb5kbc/ont/GeoreferenzierungsAktivitaet"
+   "type": "http://w3id.org/bb5kbc/ont/Scherbe"
   },
   {
    "id": 1219,
-   "type": "http://w3id.org/bb5kbc/ont/GeoreferenzierungsAktivitaet"
+   "type": "http://w3id.org/bb5kbc/ont/Scherbe"
   },
   {
    "id": 1220,
-   "type": "http://w3id.org/bb5kbc/ont/GeoreferenzierungsAktivitaet"
+   "type": "http://w3id.org/bb5kbc/ont/Scherbe"
   },
   {
    "id": 1221,
-   "type": "http://w3id.org/bb5kbc/ont/GeoreferenzierungsAktivitaet"
+   "type": "http://w3id.org/bb5kbc/ont/Scherbe"
   },
   {
    "id": 1222,
-   "type": "http://w3id.org/bb5kbc/ont/GeoreferenzierungsAktivitaet"
+   "type": "http://w3id.org/bb5kbc/ont/Scherbe"
   },
   {
    "id": 1223,
@@ -8643,23 +8643,23 @@ var vowlresult={
   },
   {
    "id": 1758,
-   "type": "http://w3id.org/bb5kbc/ont/KulturelleZuordnung"
+   "type": "http://w3id.org/bb5kbc/ont/GeoreferenzierungsAktivitaet"
   },
   {
    "id": 1759,
-   "type": "http://w3id.org/bb5kbc/ont/KulturelleZuordnung"
+   "type": "http://w3id.org/bb5kbc/ont/GeoreferenzierungsAktivitaet"
   },
   {
    "id": 1760,
-   "type": "http://w3id.org/bb5kbc/ont/KulturelleZuordnung"
+   "type": "http://w3id.org/bb5kbc/ont/GeoreferenzierungsAktivitaet"
   },
   {
    "id": 1761,
-   "type": "http://w3id.org/bb5kbc/ont/KulturelleZuordnung"
+   "type": "http://w3id.org/bb5kbc/ont/GeoreferenzierungsAktivitaet"
   },
   {
    "id": 1762,
-   "type": "http://w3id.org/bb5kbc/ont/KulturelleZuordnung"
+   "type": "http://w3id.org/bb5kbc/ont/GeoreferenzierungsAktivitaet"
   },
   {
    "id": 1763,
@@ -10803,23 +10803,23 @@ var vowlresult={
   },
   {
    "id": 2298,
-   "type": "http://w3id.org/bb5kbc/ont/Datierung"
+   "type": "http://w3id.org/bb5kbc/ont/KulturelleZuordnung"
   },
   {
    "id": 2299,
-   "type": "http://w3id.org/bb5kbc/ont/Datierung"
+   "type": "http://w3id.org/bb5kbc/ont/KulturelleZuordnung"
   },
   {
    "id": 2300,
-   "type": "http://w3id.org/bb5kbc/ont/Datierung"
+   "type": "http://w3id.org/bb5kbc/ont/KulturelleZuordnung"
   },
   {
    "id": 2301,
-   "type": "http://w3id.org/bb5kbc/ont/Datierung"
+   "type": "http://w3id.org/bb5kbc/ont/KulturelleZuordnung"
   },
   {
    "id": 2302,
-   "type": "http://w3id.org/bb5kbc/ont/Datierung"
+   "type": "http://w3id.org/bb5kbc/ont/KulturelleZuordnung"
   },
   {
    "id": 2303,
@@ -12963,23 +12963,23 @@ var vowlresult={
   },
   {
    "id": 2838,
-   "type": "http://w3id.org/bb5kbc/ont/Entdeckung"
+   "type": "http://w3id.org/bb5kbc/ont/Datierung"
   },
   {
    "id": 2839,
-   "type": "http://w3id.org/bb5kbc/ont/Entdeckung"
+   "type": "http://w3id.org/bb5kbc/ont/Datierung"
   },
   {
    "id": 2840,
-   "type": "http://w3id.org/bb5kbc/ont/Entdeckung"
+   "type": "http://w3id.org/bb5kbc/ont/Datierung"
   },
   {
    "id": 2841,
-   "type": "http://w3id.org/bb5kbc/ont/Entdeckung"
+   "type": "http://w3id.org/bb5kbc/ont/Datierung"
   },
   {
    "id": 2842,
-   "type": "http://w3id.org/bb5kbc/ont/Entdeckung"
+   "type": "http://w3id.org/bb5kbc/ont/Datierung"
   },
   {
    "id": 2843,
@@ -14691,23 +14691,23 @@ var vowlresult={
   },
   {
    "id": 3270,
-   "type": "http://www.w3.org/ns/prov#Activity"
+   "type": "http://w3id.org/bb5kbc/ont/Entdeckung"
   },
   {
    "id": 3271,
-   "type": "http://www.w3.org/ns/prov#Activity"
+   "type": "http://w3id.org/bb5kbc/ont/Entdeckung"
   },
   {
    "id": 3272,
-   "type": "http://www.w3.org/ns/prov#Activity"
+   "type": "http://w3id.org/bb5kbc/ont/Entdeckung"
   },
   {
    "id": 3273,
-   "type": "http://www.w3.org/ns/prov#Activity"
+   "type": "http://w3id.org/bb5kbc/ont/Entdeckung"
   },
   {
    "id": 3274,
-   "type": "http://www.w3.org/ns/prov#Activity"
+   "type": "http://w3id.org/bb5kbc/ont/Entdeckung"
   },
   {
    "id": 3275,
@@ -18716,7 +18716,7 @@ var vowlresult={
      {
       "identifier": "http://www.w3.org/ns/prov#wasGeneratedBy",
       "language": "undefined",
-      "value": "http://w3id.org/bb5kbc/pipeline_run_2026-04-27T10-24-51Z",
+      "value": "http://w3id.org/bb5kbc/pipeline_run_2026-04-27T13-59-02Z",
       "type": "iri"
      }
     ]
@@ -18753,7 +18753,7 @@ var vowlresult={
      {
       "identifier": "http://www.w3.org/ns/prov#wasGeneratedBy",
       "language": "undefined",
-      "value": "http://w3id.org/bb5kbc/pipeline_run_2026-04-27T10-24-51Z",
+      "value": "http://w3id.org/bb5kbc/pipeline_run_2026-04-27T13-59-02Z",
       "type": "iri"
      }
     ]
@@ -18777,22 +18777,6 @@ var vowlresult={
       "value": "file:///C:/git/bb-5kbc-sites/data/enrichment/mapping_admin_regions/fst_standortanalysen_ref_report.csv",
       "type": "label"
      }
-    ],
-    "http://www.w3.org/ns/prov#wasDerivedFrom": [
-     {
-      "identifier": "http://www.w3.org/ns/prov#wasDerivedFrom",
-      "language": "undefined",
-      "value": "https://example.org/bb-5kbc-sites/fst_standortanalysen_ref_csv",
-      "type": "iri"
-     }
-    ],
-    "http://www.w3.org/ns/prov#wasGeneratedBy": [
-     {
-      "identifier": "http://www.w3.org/ns/prov#wasGeneratedBy",
-      "language": "undefined",
-      "value": "https://example.org/bb-5kbc-sites/run/2026-04-27T08-21-21Z/stage2_geo",
-      "type": "iri"
-     }
     ]
    },
    "range": [],
@@ -18813,14 +18797,6 @@ var vowlresult={
       "language": "undefined",
       "value": "file:///C:/git/bb-5kbc-sites/data/csv_enrichment_geo.log",
       "type": "label"
-     }
-    ],
-    "http://www.w3.org/ns/prov#wasGeneratedBy": [
-     {
-      "identifier": "http://www.w3.org/ns/prov#wasGeneratedBy",
-      "language": "undefined",
-      "value": "https://example.org/bb-5kbc-sites/run/2026-04-27T08-21-21Z/stage2_geo",
-      "type": "iri"
      }
     ]
    },
@@ -18848,7 +18824,7 @@ var vowlresult={
      {
       "identifier": "http://www.w3.org/ns/prov#wasGeneratedBy",
       "language": "undefined",
-      "value": "https://example.org/bb-5kbc-sites/run/2026-04-27T08-21-21Z/stage1_literature",
+      "value": "https://example.org/bb-5kbc-sites/run/2026-04-27T13-58-01Z/stage1_literature",
       "type": "iri"
      }
     ]
@@ -18877,7 +18853,7 @@ var vowlresult={
      {
       "identifier": "http://www.w3.org/ns/prov#wasGeneratedBy",
       "language": "undefined",
-      "value": "https://example.org/bb-5kbc-sites/run/2026-04-27T08-21-21Z",
+      "value": "https://example.org/bb-5kbc-sites/run/2026-04-27T13-58-01Z",
       "type": "iri"
      }
     ]
@@ -18914,7 +18890,7 @@ var vowlresult={
      {
       "identifier": "http://www.w3.org/ns/prov#wasGeneratedBy",
       "language": "undefined",
-      "value": "https://example.org/bb-5kbc-sites/run/2026-04-27T08-21-21Z/stage1_literature",
+      "value": "https://example.org/bb-5kbc-sites/run/2026-04-27T13-58-01Z/stage1_literature",
       "type": "iri"
      }
     ]
@@ -18943,7 +18919,7 @@ var vowlresult={
      {
       "identifier": "https://example.org/bb-5kbc-sites/gitCommit",
       "language": "undefined",
-      "value": "c6d67f6ad4fbe03136a181eeb222216c3c0fc302",
+      "value": "c996fbf4ac682f0e3455b32f7763c5a21b71ce0e",
       "type": "label"
      }
     ],
@@ -18966,30 +18942,14 @@ var vowlresult={
    "iri": "https://example.org/bb-5kbc-sites/repo_version",
    "baseIRI": "https://example.org/bb-5kbc-sites",
    "instances": 0,
-   "label": "Geo reference table with Wikidata authority IDs",
+   "label": "Geo reference table (input)",
    "annotations": {
     "http://www.w3.org/ns/prov#atLocation": [
      {
       "identifier": "http://www.w3.org/ns/prov#atLocation",
       "language": "undefined",
-      "value": "file:///C:/git/bb-5kbc-sites/data/enrichment/mapping_admin_regions/fst_standortanalysen_ref_mapped.csv",
+      "value": "file:///C:/git/bb-5kbc-sites/data/enrichment/mapping_admin_regions/fst_standortanalysen_ref.csv",
       "type": "label"
-     }
-    ],
-    "http://www.w3.org/ns/prov#wasDerivedFrom": [
-     {
-      "identifier": "http://www.w3.org/ns/prov#wasDerivedFrom",
-      "language": "undefined",
-      "value": "https://example.org/bb-5kbc-sites/fst_standortanalysen_ref_csv",
-      "type": "iri"
-     }
-    ],
-    "http://www.w3.org/ns/prov#wasGeneratedBy": [
-     {
-      "identifier": "http://www.w3.org/ns/prov#wasGeneratedBy",
-      "language": "undefined",
-      "value": "https://example.org/bb-5kbc-sites/run/2026-04-27T08-21-21Z/stage2_geo",
-      "type": "iri"
      }
     ]
    },
@@ -19000,6 +18960,27 @@ var vowlresult={
   },
   {
    "id": 138,
+   "iri": "https://example.org/bb-5kbc-sites/fst_standortanalysen_ref_csv",
+   "baseIRI": "https://example.org/bb-5kbc-sites",
+   "instances": 0,
+   "label": "Geo reference table with Wikidata authority IDs",
+   "annotations": {
+    "http://www.w3.org/ns/prov#atLocation": [
+     {
+      "identifier": "http://www.w3.org/ns/prov#atLocation",
+      "language": "undefined",
+      "value": "file:///C:/git/bb-5kbc-sites/data/enrichment/mapping_admin_regions/fst_standortanalysen_ref_mapped.csv",
+      "type": "label"
+     }
+    ]
+   },
+   "range": [],
+   "domain": [],
+   "subProperties": [],
+   "superProperties": []
+  },
+  {
+   "id": 139,
    "iri": "https://example.org/bb-5kbc-sites/fst_standortanalysen_ref_mapped_csv",
    "baseIRI": "https://example.org/bb-5kbc-sites",
    "instances": 0,
@@ -19025,7 +19006,7 @@ var vowlresult={
      {
       "identifier": "http://www.w3.org/ns/prov#wasGeneratedBy",
       "language": "undefined",
-      "value": "https://example.org/bb-5kbc-sites/run/2026-04-27T08-21-21Z/stage3_merge",
+      "value": "https://example.org/bb-5kbc-sites/run/2026-04-27T13-58-01Z/stage3_merge",
       "type": "iri"
      }
     ]
@@ -19036,29 +19017,8 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 139,
-   "iri": "https://example.org/bb-5kbc-sites/fst_wgs84_csv",
-   "baseIRI": "https://example.org/bb-5kbc-sites",
-   "instances": 0,
-   "label": "Geo reference table (input)",
-   "annotations": {
-    "http://www.w3.org/ns/prov#atLocation": [
-     {
-      "identifier": "http://www.w3.org/ns/prov#atLocation",
-      "language": "undefined",
-      "value": "file:///C:/git/bb-5kbc-sites/data/enrichment/mapping_admin_regions/fst_standortanalysen_ref.csv",
-      "type": "label"
-     }
-    ]
-   },
-   "range": [],
-   "domain": [],
-   "subProperties": [],
-   "superProperties": []
-  },
-  {
    "id": 140,
-   "iri": "https://example.org/bb-5kbc-sites/fst_standortanalysen_ref_csv",
+   "iri": "https://example.org/bb-5kbc-sites/fst_wgs84_csv",
    "baseIRI": "https://example.org/bb-5kbc-sites",
    "instances": 0,
    "label": "Original location dataset (input)",
@@ -40405,7 +40365,7 @@ var vowlresult={
      {
       "identifier": "http://w3id.org/bb5kbc/ont/hatPublikation",
       "language": "undefined",
-      "value": "http://w3id.org/bb5kbc/pub_b359cdf6",
+      "value": "http://w3id.org/bb5kbc/pub_23e2b3b3",
       "type": "iri"
      }
     ],
@@ -86049,7 +86009,7 @@ var vowlresult={
      {
       "identifier": "http://w3id.org/bb5kbc/ont/hatPublikation",
       "language": "undefined",
-      "value": "http://w3id.org/bb5kbc/pub_805202e9",
+      "value": "http://w3id.org/bb5kbc/pub_f5ff5579",
       "type": "iri"
      }
     ],
@@ -92209,6 +92169,303 @@ var vowlresult={
    "iri": "http://w3id.org/bb5kbc/site_99",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
+   "label": "Stage 2 \u2014 geo SPARQL mapping (Wikidata)",
+   "annotations": {
+    "http://www.w3.org/ns/prov#used": [
+     {
+      "identifier": "http://www.w3.org/ns/prov#used",
+      "language": "undefined",
+      "value": "https://example.org/bb-5kbc-sites/fst_standortanalysen_ref_mapped_csv",
+      "type": "iri"
+     }
+    ],
+    "http://www.w3.org/ns/prov#wasAssociatedWith": [
+     {
+      "identifier": "http://www.w3.org/ns/prov#wasAssociatedWith",
+      "language": "undefined",
+      "value": "https://example.org/bb-5kbc-sites/wikidata_map_py",
+      "type": "iri"
+     }
+    ],
+    "http://www.w3.org/ns/prov#wasInformedBy": [
+     {
+      "identifier": "http://www.w3.org/ns/prov#wasInformedBy",
+      "language": "undefined",
+      "value": "https://example.org/bb-5kbc-sites/run/2026-04-27T13-58-01Z",
+      "type": "iri"
+     }
+    ],
+    "https://example.org/bb-5kbc-sites/reusedFromMTime": [
+     {
+      "identifier": "https://example.org/bb-5kbc-sites/reusedFromMTime",
+      "language": "undefined",
+      "value": "2026-04-27T08:29:10+00:00",
+      "type": "label"
+     }
+    ],
+    "https://example.org/bb-5kbc-sites/stageStatus": [
+     {
+      "identifier": "https://example.org/bb-5kbc-sites/stageStatus",
+      "language": "undefined",
+      "value": "skipped",
+      "type": "label"
+     }
+    ]
+   },
+   "range": [],
+   "domain": [],
+   "subProperties": [],
+   "superProperties": []
+  },
+  {
+   "id": 702,
+   "iri": "https://example.org/bb-5kbc-sites/run/2026-04-27T13-58-01Z/stage2_geo",
+   "baseIRI": "https://example.org/bb-5kbc-sites/run/2026-04-27T13-58-01Z",
+   "instances": 0,
+   "label": "Stage 3 \u2014 merge geo IDs into literature-enriched CSV",
+   "annotations": {
+    "http://www.w3.org/ns/prov#used": [
+     {
+      "identifier": "http://www.w3.org/ns/prov#used",
+      "language": "undefined",
+      "value": "https://example.org/bb-5kbc-sites/fst_wgs84_lit_enriched_csv",
+      "type": "iri"
+     }
+    ],
+    "http://www.w3.org/ns/prov#wasAssociatedWith": [
+     {
+      "identifier": "http://www.w3.org/ns/prov#wasAssociatedWith",
+      "language": "undefined",
+      "value": "https://example.org/bb-5kbc-sites/enrich_fst_py",
+      "type": "iri"
+     }
+    ],
+    "http://www.w3.org/ns/prov#wasInformedBy": [
+     {
+      "identifier": "http://www.w3.org/ns/prov#wasInformedBy",
+      "language": "undefined",
+      "value": "https://example.org/bb-5kbc-sites/run/2026-04-27T13-58-01Z",
+      "type": "iri"
+     }
+    ],
+    "https://example.org/bb-5kbc-sites/columnCount": [
+     {
+      "identifier": "https://example.org/bb-5kbc-sites/columnCount",
+      "language": "undefined",
+      "value": "64",
+      "type": "label"
+     }
+    ],
+    "https://example.org/bb-5kbc-sites/durationSeconds": [
+     {
+      "identifier": "https://example.org/bb-5kbc-sites/durationSeconds",
+      "language": "undefined",
+      "value": "0.07",
+      "type": "label"
+     }
+    ],
+    "https://example.org/bb-5kbc-sites/rowCount": [
+     {
+      "identifier": "https://example.org/bb-5kbc-sites/rowCount",
+      "language": "undefined",
+      "value": "540",
+      "type": "label"
+     }
+    ]
+   },
+   "range": [],
+   "domain": [],
+   "subProperties": [],
+   "superProperties": []
+  },
+  {
+   "id": 703,
+   "iri": "https://example.org/bb-5kbc-sites/run/2026-04-27T13-58-01Z/stage3_merge",
+   "baseIRI": "https://example.org/bb-5kbc-sites/run/2026-04-27T13-58-01Z",
+   "instances": 0,
+   "label": "bb5kbc CSV-to-RDF pipeline run 2026-04-27T13-59-02Z",
+   "annotations": {
+    "http://w3id.org/bb5kbc/dataTripleCount": [
+     {
+      "identifier": "http://w3id.org/bb5kbc/dataTripleCount",
+      "language": "undefined",
+      "value": "27450",
+      "type": "label"
+     }
+    ],
+    "http://w3id.org/bb5kbc/rowCount": [
+     {
+      "identifier": "http://w3id.org/bb5kbc/rowCount",
+      "language": "undefined",
+      "value": "540",
+      "type": "label"
+     }
+    ],
+    "http://www.w3.org/ns/prov#endedAtTime": [
+     {
+      "identifier": "http://www.w3.org/ns/prov#endedAtTime",
+      "language": "undefined",
+      "value": "2026-04-27T13:59:03.495536+00:00",
+      "type": "label"
+     }
+    ],
+    "http://www.w3.org/ns/prov#startedAtTime": [
+     {
+      "identifier": "http://www.w3.org/ns/prov#startedAtTime",
+      "language": "undefined",
+      "value": "2026-04-27T13:59:02.271193+00:00",
+      "type": "label"
+     }
+    ],
+    "http://www.w3.org/ns/prov#used": [
+     {
+      "identifier": "http://www.w3.org/ns/prov#used",
+      "language": "undefined",
+      "value": "https://example.org/bb-5kbc-sites/fst_wgs84_csv",
+      "type": "iri"
+     }
+    ],
+    "http://www.w3.org/ns/prov#wasAssociatedWith": [
+     {
+      "identifier": "http://www.w3.org/ns/prov#wasAssociatedWith",
+      "language": "undefined",
+      "value": "https://orcid.org/0000-0003-4696-2101",
+      "type": "iri"
+     }
+    ],
+    "http://www.w3.org/ns/prov#wasInformedBy": [
+     {
+      "identifier": "http://www.w3.org/ns/prov#wasInformedBy",
+      "language": "undefined",
+      "value": "https://example.org/bb-5kbc-sites/run/2026-04-27T13-58-01Z",
+      "type": "iri"
+     }
+    ]
+   },
+   "range": [],
+   "domain": [],
+   "subProperties": [],
+   "superProperties": []
+  },
+  {
+   "id": 704,
+   "iri": "http://w3id.org/bb5kbc/pipeline_run_2026-04-27T13-59-02Z",
+   "baseIRI": "http://w3id.org/bb5kbc",
+   "instances": 0,
+   "label": "Stage 1 \u2014 literature QID enrichment",
+   "annotations": {
+    "http://www.w3.org/ns/prov#used": [
+     {
+      "identifier": "http://www.w3.org/ns/prov#used",
+      "language": "undefined",
+      "value": "https://example.org/bb-5kbc-sites/fst_wgs84_comma_csv",
+      "type": "iri"
+     }
+    ],
+    "http://www.w3.org/ns/prov#wasAssociatedWith": [
+     {
+      "identifier": "http://www.w3.org/ns/prov#wasAssociatedWith",
+      "language": "undefined",
+      "value": "https://example.org/bb-5kbc-sites/enrich_qids_py",
+      "type": "iri"
+     }
+    ],
+    "http://www.w3.org/ns/prov#wasInformedBy": [
+     {
+      "identifier": "http://www.w3.org/ns/prov#wasInformedBy",
+      "language": "undefined",
+      "value": "https://example.org/bb-5kbc-sites/run/2026-04-27T13-58-01Z",
+      "type": "iri"
+     }
+    ],
+    "https://example.org/bb-5kbc-sites/durationSeconds": [
+     {
+      "identifier": "https://example.org/bb-5kbc-sites/durationSeconds",
+      "language": "undefined",
+      "value": "0.06",
+      "type": "label"
+     }
+    ],
+    "https://example.org/bb-5kbc-sites/qidsFilledGeoref": [
+     {
+      "identifier": "https://example.org/bb-5kbc-sites/qidsFilledGeoref",
+      "language": "undefined",
+      "value": "205",
+      "type": "label"
+     }
+    ],
+    "https://example.org/bb-5kbc-sites/qidsFilledPublication": [
+     {
+      "identifier": "https://example.org/bb-5kbc-sites/qidsFilledPublication",
+      "language": "undefined",
+      "value": "269",
+      "type": "label"
+     }
+    ],
+    "https://example.org/bb-5kbc-sites/warningsLogged": [
+     {
+      "identifier": "https://example.org/bb-5kbc-sites/warningsLogged",
+      "language": "undefined",
+      "value": "0",
+      "type": "label"
+     }
+    ]
+   },
+   "range": [],
+   "domain": [],
+   "subProperties": [],
+   "superProperties": []
+  },
+  {
+   "id": 705,
+   "iri": "https://example.org/bb-5kbc-sites/run/2026-04-27T13-58-01Z/stage1_literature",
+   "baseIRI": "https://example.org/bb-5kbc-sites/run/2026-04-27T13-58-01Z",
+   "instances": 0,
+   "label": "CSV enrichment pipeline run 2026-04-27T13-58-01Z",
+   "annotations": {
+    "http://www.w3.org/ns/prov#endedAtTime": [
+     {
+      "identifier": "http://www.w3.org/ns/prov#endedAtTime",
+      "language": "undefined",
+      "value": "2026-04-27T13:58:08+00:00",
+      "type": "label"
+     }
+    ],
+    "http://www.w3.org/ns/prov#startedAtTime": [
+     {
+      "identifier": "http://www.w3.org/ns/prov#startedAtTime",
+      "language": "undefined",
+      "value": "2026-04-27T13:58:01+00:00",
+      "type": "label"
+     }
+    ],
+    "http://www.w3.org/ns/prov#used": [
+     {
+      "identifier": "http://www.w3.org/ns/prov#used",
+      "language": "undefined",
+      "value": "https://example.org/bb-5kbc-sites/repo_version",
+      "type": "iri"
+     }
+    ],
+    "http://www.w3.org/ns/prov#wasAssociatedWith": [
+     {
+      "identifier": "http://www.w3.org/ns/prov#wasAssociatedWith",
+      "language": "undefined",
+      "value": "https://example.org/bb-5kbc-sites/csv_enrichment_py",
+      "type": "iri"
+     }
+    ]
+   },
+   "range": [],
+   "domain": [],
+   "subProperties": [],
+   "superProperties": []
+  },
+  {
+   "id": 706,
+   "iri": "https://example.org/bb-5kbc-sites/run/2026-04-27T13-58-01Z",
+   "baseIRI": "https://example.org/bb-5kbc-sites/run",
+   "instances": 0,
    "label": "dubious",
    "annotations": {
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
@@ -92226,7 +92483,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 702,
+   "id": 707,
    "iri": "https://fuzzy-sl.wikibase.cloud/entity/Q113",
    "baseIRI": "https://fuzzy-sl.wikibase.cloud/entity",
    "instances": 0,
@@ -92247,7 +92504,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 703,
+   "id": 708,
    "iri": "https://fuzzy-sl.wikibase.cloud/entity/Q15",
    "baseIRI": "https://fuzzy-sl.wikibase.cloud/entity",
    "instances": 0,
@@ -92268,7 +92525,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 704,
+   "id": 709,
    "iri": "https://fuzzy-sl.wikibase.cloud/entity/Q24",
    "baseIRI": "https://fuzzy-sl.wikibase.cloud/entity",
    "instances": 0,
@@ -92289,7 +92546,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 705,
+   "id": 710,
    "iri": "https://fuzzy-sl.wikibase.cloud/entity/Q23",
    "baseIRI": "https://fuzzy-sl.wikibase.cloud/entity",
    "instances": 0,
@@ -92303,7 +92560,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 706,
+   "id": 711,
    "iri": "http://w3id.org/bb5kbc/bb5kbc_lod_pipeline_py",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -92317,7 +92574,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 707,
+   "id": 712,
    "iri": "https://example.org/bb-5kbc-sites/csv_enrichment_py",
    "baseIRI": "https://example.org/bb-5kbc-sites",
    "instances": 0,
@@ -92331,7 +92588,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 708,
+   "id": 713,
    "iri": "https://example.org/bb-5kbc-sites/enrich_fst_py",
    "baseIRI": "https://example.org/bb-5kbc-sites",
    "instances": 0,
@@ -92345,7 +92602,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 709,
+   "id": 714,
    "iri": "https://example.org/bb-5kbc-sites/enrich_qids_py",
    "baseIRI": "https://example.org/bb-5kbc-sites",
    "instances": 0,
@@ -92359,7 +92616,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 710,
+   "id": 715,
    "iri": "https://example.org/bb-5kbc-sites/wikidata_map_py",
    "baseIRI": "https://example.org/bb-5kbc-sites",
    "instances": 0,
@@ -92380,7 +92637,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 711,
+   "id": 716,
    "iri": "http://w3id.org/bb5kbc/bb5kbc_lod_pipeline_py",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -92401,7 +92658,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 712,
+   "id": 717,
    "iri": "https://example.org/bb-5kbc-sites/csv_enrichment_py",
    "baseIRI": "https://example.org/bb-5kbc-sites",
    "instances": 0,
@@ -92422,7 +92679,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 713,
+   "id": 718,
    "iri": "https://example.org/bb-5kbc-sites/enrich_fst_py",
    "baseIRI": "https://example.org/bb-5kbc-sites",
    "instances": 0,
@@ -92443,7 +92700,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 714,
+   "id": 719,
    "iri": "https://example.org/bb-5kbc-sites/enrich_qids_py",
    "baseIRI": "https://example.org/bb-5kbc-sites",
    "instances": 0,
@@ -92464,7 +92721,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 715,
+   "id": 720,
    "iri": "https://example.org/bb-5kbc-sites/wikidata_map_py",
    "baseIRI": "https://example.org/bb-5kbc-sites",
    "instances": 0,
@@ -92501,7 +92758,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 716,
+   "id": 721,
    "iri": "http://w3id.org/bb5kbc/bundesland_1d9b61a6",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -92538,7 +92795,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 717,
+   "id": 722,
    "iri": "http://w3id.org/bb5kbc/bundesland_21d5096a",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -92575,7 +92832,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 718,
+   "id": 723,
    "iri": "http://w3id.org/bb5kbc/bundesland_30cdd2fc",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -92612,7 +92869,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 719,
+   "id": 724,
    "iri": "http://w3id.org/bb5kbc/bundesland_98bc89ff",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -92649,7 +92906,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 720,
+   "id": 725,
    "iri": "http://w3id.org/bb5kbc/bundesland_076e84b3",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -92686,7 +92943,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 721,
+   "id": 726,
    "iri": "http://w3id.org/bb5kbc/bundesland_2b599b59",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -92723,7 +92980,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 722,
+   "id": 727,
    "iri": "http://w3id.org/bb5kbc/bundesland_51c8eb2f",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -92760,7 +93017,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 723,
+   "id": 728,
    "iri": "http://w3id.org/bb5kbc/bundesland_7c0cb461",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -92797,7 +93054,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 724,
+   "id": 729,
    "iri": "http://w3id.org/bb5kbc/bundesland_4bcbd621",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -92834,7 +93091,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 725,
+   "id": 730,
    "iri": "http://w3id.org/bb5kbc/bundesland_eec0c902",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -92871,7 +93128,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 726,
+   "id": 731,
    "iri": "http://w3id.org/bb5kbc/bundesland_3dfdb305",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -92908,7 +93165,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 727,
+   "id": 732,
    "iri": "http://w3id.org/bb5kbc/bundesland_26b09cd0",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -92945,7 +93202,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 728,
+   "id": 733,
    "iri": "http://w3id.org/bb5kbc/bundesland_333d842b",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -92982,7 +93239,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 729,
+   "id": 734,
    "iri": "http://w3id.org/bb5kbc/bundesland_af35ac58",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -93019,7 +93276,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 730,
+   "id": 735,
    "iri": "http://w3id.org/bb5kbc/bundesland_2ddb2d82",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -93048,7 +93305,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 731,
+   "id": 736,
    "iri": "http://w3id.org/bb5kbc/entdeckungsart_41a94108",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -93077,7 +93334,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 732,
+   "id": 737,
    "iri": "http://w3id.org/bb5kbc/entdeckungsart_6243da4f",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -93106,7 +93363,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 733,
+   "id": 738,
    "iri": "http://w3id.org/bb5kbc/entdeckungsart_b4142fe0",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -93135,7 +93392,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 734,
+   "id": 739,
    "iri": "http://w3id.org/bb5kbc/entdeckungsart_d21f7694",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -93164,7 +93421,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 735,
+   "id": 740,
    "iri": "http://w3id.org/bb5kbc/entdeckungsart_ddbae54f",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -93193,7 +93450,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 736,
+   "id": 741,
    "iri": "http://w3id.org/bb5kbc/entdeckungsart_38d772d5",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -93222,7 +93479,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 737,
+   "id": 742,
    "iri": "http://w3id.org/bb5kbc/entdeckungsart_df0a6329",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -93251,7 +93508,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 738,
+   "id": 743,
    "iri": "http://w3id.org/bb5kbc/entdeckungsart_dfe70523",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -93280,7 +93537,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 739,
+   "id": 744,
    "iri": "http://w3id.org/bb5kbc/entdeckungsart_4d59fcb4",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -93309,7 +93566,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 740,
+   "id": 745,
    "iri": "http://w3id.org/bb5kbc/entdeckungsart_1f56a08c",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -93338,7 +93595,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 741,
+   "id": 746,
    "iri": "http://w3id.org/bb5kbc/entdeckungsart_3f60287a",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -93367,7 +93624,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 742,
+   "id": 747,
    "iri": "http://w3id.org/bb5kbc/entdeckungsart_aa5835d2",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -93404,7 +93661,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 743,
+   "id": 748,
    "iri": "http://w3id.org/bb5kbc/fundstellenart_018f2eff",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -93433,7 +93690,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 744,
+   "id": 749,
    "iri": "http://w3id.org/bb5kbc/fundstellenart_4e3fc426",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -93470,7 +93727,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 745,
+   "id": 750,
    "iri": "http://w3id.org/bb5kbc/fundstellenart_7f90f4dc",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -93507,7 +93764,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 746,
+   "id": 751,
    "iri": "http://w3id.org/bb5kbc/fundstellenart_922703ea",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -93544,7 +93801,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 747,
+   "id": 752,
    "iri": "http://w3id.org/bb5kbc/fundstellenart_95db16a0",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -93581,7 +93838,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 748,
+   "id": 753,
    "iri": "http://w3id.org/bb5kbc/fundstellenart_a6ac26a5",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -93618,7 +93875,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 749,
+   "id": 754,
    "iri": "http://w3id.org/bb5kbc/fundstellenart_e18215e5",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -93655,7 +93912,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 750,
+   "id": 755,
    "iri": "http://w3id.org/bb5kbc/fundstellenart_e5b4c377",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -93684,7 +93941,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 751,
+   "id": 756,
    "iri": "http://w3id.org/bb5kbc/fundstellenart_5df80d7e",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -93713,7 +93970,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 752,
+   "id": 757,
    "iri": "http://w3id.org/bb5kbc/fundstellenart_b635ceb0",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -93742,7 +93999,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 753,
+   "id": 758,
    "iri": "http://w3id.org/bb5kbc/fundstellenart_1972902b",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -93771,7 +94028,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 754,
+   "id": 759,
    "iri": "http://w3id.org/bb5kbc/fundstellenart_376218bc",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -93808,7 +94065,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 755,
+   "id": 760,
    "iri": "http://w3id.org/bb5kbc/gemeinde_00bcd289",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -93845,7 +94102,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 756,
+   "id": 761,
    "iri": "http://w3id.org/bb5kbc/gemeinde_00f8780e",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -93882,7 +94139,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 757,
+   "id": 762,
    "iri": "http://w3id.org/bb5kbc/gemeinde_01f8fc9b",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -93919,7 +94176,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 758,
+   "id": 763,
    "iri": "http://w3id.org/bb5kbc/gemeinde_03bc2ce1",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -93956,7 +94213,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 759,
+   "id": 764,
    "iri": "http://w3id.org/bb5kbc/gemeinde_0463ef92",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -93993,7 +94250,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 760,
+   "id": 765,
    "iri": "http://w3id.org/bb5kbc/gemeinde_046a56e3",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -94030,7 +94287,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 761,
+   "id": 766,
    "iri": "http://w3id.org/bb5kbc/gemeinde_04bef580",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -94067,7 +94324,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 762,
+   "id": 767,
    "iri": "http://w3id.org/bb5kbc/gemeinde_04edad38",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -94104,7 +94361,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 763,
+   "id": 768,
    "iri": "http://w3id.org/bb5kbc/gemeinde_054697b8",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -94141,7 +94398,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 764,
+   "id": 769,
    "iri": "http://w3id.org/bb5kbc/gemeinde_05836479",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -94178,7 +94435,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 765,
+   "id": 770,
    "iri": "http://w3id.org/bb5kbc/gemeinde_066b7b50",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -94215,7 +94472,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 766,
+   "id": 771,
    "iri": "http://w3id.org/bb5kbc/gemeinde_08904f9c",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -94252,7 +94509,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 767,
+   "id": 772,
    "iri": "http://w3id.org/bb5kbc/gemeinde_092a5f71",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -94289,7 +94546,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 768,
+   "id": 773,
    "iri": "http://w3id.org/bb5kbc/gemeinde_0a25557e",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -94326,7 +94583,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 769,
+   "id": 774,
    "iri": "http://w3id.org/bb5kbc/gemeinde_0bbe84f0",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -94363,7 +94620,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 770,
+   "id": 775,
    "iri": "http://w3id.org/bb5kbc/gemeinde_0c37a662",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -94400,7 +94657,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 771,
+   "id": 776,
    "iri": "http://w3id.org/bb5kbc/gemeinde_0c9d0eec",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -94437,7 +94694,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 772,
+   "id": 777,
    "iri": "http://w3id.org/bb5kbc/gemeinde_0d76ce70",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -94474,7 +94731,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 773,
+   "id": 778,
    "iri": "http://w3id.org/bb5kbc/gemeinde_0fa6a063",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -94511,7 +94768,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 774,
+   "id": 779,
    "iri": "http://w3id.org/bb5kbc/gemeinde_1296d84a",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -94548,7 +94805,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 775,
+   "id": 780,
    "iri": "http://w3id.org/bb5kbc/gemeinde_14d3d5d6",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -94585,7 +94842,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 776,
+   "id": 781,
    "iri": "http://w3id.org/bb5kbc/gemeinde_15becd4c",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -94622,7 +94879,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 777,
+   "id": 782,
    "iri": "http://w3id.org/bb5kbc/gemeinde_162c9ac8",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -94659,7 +94916,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 778,
+   "id": 783,
    "iri": "http://w3id.org/bb5kbc/gemeinde_1642bb74",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -94696,7 +94953,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 779,
+   "id": 784,
    "iri": "http://w3id.org/bb5kbc/gemeinde_1718ba8b",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -94733,7 +94990,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 780,
+   "id": 785,
    "iri": "http://w3id.org/bb5kbc/gemeinde_17b9fa26",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -94770,7 +95027,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 781,
+   "id": 786,
    "iri": "http://w3id.org/bb5kbc/gemeinde_17f4047a",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -94807,7 +95064,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 782,
+   "id": 787,
    "iri": "http://w3id.org/bb5kbc/gemeinde_1832f521",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -94844,7 +95101,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 783,
+   "id": 788,
    "iri": "http://w3id.org/bb5kbc/gemeinde_18798fd1",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -94881,7 +95138,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 784,
+   "id": 789,
    "iri": "http://w3id.org/bb5kbc/gemeinde_18816168",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -94918,7 +95175,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 785,
+   "id": 790,
    "iri": "http://w3id.org/bb5kbc/gemeinde_1924ad8d",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -94955,7 +95212,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 786,
+   "id": 791,
    "iri": "http://w3id.org/bb5kbc/gemeinde_1a960638",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -94992,7 +95249,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 787,
+   "id": 792,
    "iri": "http://w3id.org/bb5kbc/gemeinde_1b0f7ba1",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -95029,7 +95286,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 788,
+   "id": 793,
    "iri": "http://w3id.org/bb5kbc/gemeinde_1d1e9123",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -95066,7 +95323,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 789,
+   "id": 794,
    "iri": "http://w3id.org/bb5kbc/gemeinde_1db80596",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -95103,7 +95360,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 790,
+   "id": 795,
    "iri": "http://w3id.org/bb5kbc/gemeinde_1dfaac5b",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -95140,7 +95397,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 791,
+   "id": 796,
    "iri": "http://w3id.org/bb5kbc/gemeinde_1ef9888d",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -95177,7 +95434,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 792,
+   "id": 797,
    "iri": "http://w3id.org/bb5kbc/gemeinde_23c83da0",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -95214,7 +95471,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 793,
+   "id": 798,
    "iri": "http://w3id.org/bb5kbc/gemeinde_2755f3e6",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -95251,7 +95508,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 794,
+   "id": 799,
    "iri": "http://w3id.org/bb5kbc/gemeinde_2aa723b1",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -95288,7 +95545,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 795,
+   "id": 800,
    "iri": "http://w3id.org/bb5kbc/gemeinde_2c6d34a7",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -95325,7 +95582,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 796,
+   "id": 801,
    "iri": "http://w3id.org/bb5kbc/gemeinde_30b450ec",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -95362,7 +95619,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 797,
+   "id": 802,
    "iri": "http://w3id.org/bb5kbc/gemeinde_31074870",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -95399,7 +95656,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 798,
+   "id": 803,
    "iri": "http://w3id.org/bb5kbc/gemeinde_330f1f98",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -95436,7 +95693,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 799,
+   "id": 804,
    "iri": "http://w3id.org/bb5kbc/gemeinde_3338fd8a",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -95473,7 +95730,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 800,
+   "id": 805,
    "iri": "http://w3id.org/bb5kbc/gemeinde_346c322f",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -95510,7 +95767,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 801,
+   "id": 806,
    "iri": "http://w3id.org/bb5kbc/gemeinde_3633ef94",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -95547,7 +95804,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 802,
+   "id": 807,
    "iri": "http://w3id.org/bb5kbc/gemeinde_38a7ae32",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -95584,7 +95841,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 803,
+   "id": 808,
    "iri": "http://w3id.org/bb5kbc/gemeinde_3b212bd0",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -95621,7 +95878,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 804,
+   "id": 809,
    "iri": "http://w3id.org/bb5kbc/gemeinde_3b84f8ca",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -95658,7 +95915,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 805,
+   "id": 810,
    "iri": "http://w3id.org/bb5kbc/gemeinde_3dc75404",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -95695,7 +95952,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 806,
+   "id": 811,
    "iri": "http://w3id.org/bb5kbc/gemeinde_3e2337ff",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -95732,7 +95989,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 807,
+   "id": 812,
    "iri": "http://w3id.org/bb5kbc/gemeinde_3e591ed5",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -95769,7 +96026,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 808,
+   "id": 813,
    "iri": "http://w3id.org/bb5kbc/gemeinde_3ff72526",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -95806,7 +96063,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 809,
+   "id": 814,
    "iri": "http://w3id.org/bb5kbc/gemeinde_40b6aa6d",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -95843,7 +96100,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 810,
+   "id": 815,
    "iri": "http://w3id.org/bb5kbc/gemeinde_40de695c",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -95880,7 +96137,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 811,
+   "id": 816,
    "iri": "http://w3id.org/bb5kbc/gemeinde_4178d1e3",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -95917,7 +96174,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 812,
+   "id": 817,
    "iri": "http://w3id.org/bb5kbc/gemeinde_4312d5c8",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -95954,7 +96211,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 813,
+   "id": 818,
    "iri": "http://w3id.org/bb5kbc/gemeinde_43214e03",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -95991,7 +96248,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 814,
+   "id": 819,
    "iri": "http://w3id.org/bb5kbc/gemeinde_457a383f",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -96028,7 +96285,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 815,
+   "id": 820,
    "iri": "http://w3id.org/bb5kbc/gemeinde_459e1581",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -96065,7 +96322,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 816,
+   "id": 821,
    "iri": "http://w3id.org/bb5kbc/gemeinde_46d823b9",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -96102,7 +96359,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 817,
+   "id": 822,
    "iri": "http://w3id.org/bb5kbc/gemeinde_47a686f8",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -96139,7 +96396,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 818,
+   "id": 823,
    "iri": "http://w3id.org/bb5kbc/gemeinde_47f3b243",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -96176,7 +96433,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 819,
+   "id": 824,
    "iri": "http://w3id.org/bb5kbc/gemeinde_497938d6",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -96213,7 +96470,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 820,
+   "id": 825,
    "iri": "http://w3id.org/bb5kbc/gemeinde_4b2d55a8",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -96250,7 +96507,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 821,
+   "id": 826,
    "iri": "http://w3id.org/bb5kbc/gemeinde_4ced2ba4",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -96287,7 +96544,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 822,
+   "id": 827,
    "iri": "http://w3id.org/bb5kbc/gemeinde_4d3ea100",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -96324,7 +96581,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 823,
+   "id": 828,
    "iri": "http://w3id.org/bb5kbc/gemeinde_4eab58dc",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -96361,7 +96618,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 824,
+   "id": 829,
    "iri": "http://w3id.org/bb5kbc/gemeinde_4ee9e7f1",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -96398,7 +96655,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 825,
+   "id": 830,
    "iri": "http://w3id.org/bb5kbc/gemeinde_4ff34eff",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -96435,7 +96692,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 826,
+   "id": 831,
    "iri": "http://w3id.org/bb5kbc/gemeinde_5031f0b9",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -96472,7 +96729,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 827,
+   "id": 832,
    "iri": "http://w3id.org/bb5kbc/gemeinde_51246348",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -96509,7 +96766,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 828,
+   "id": 833,
    "iri": "http://w3id.org/bb5kbc/gemeinde_532d544d",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -96546,7 +96803,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 829,
+   "id": 834,
    "iri": "http://w3id.org/bb5kbc/gemeinde_54032a6a",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -96583,7 +96840,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 830,
+   "id": 835,
    "iri": "http://w3id.org/bb5kbc/gemeinde_54a545e1",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -96620,7 +96877,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 831,
+   "id": 836,
    "iri": "http://w3id.org/bb5kbc/gemeinde_5570aa35",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -96657,7 +96914,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 832,
+   "id": 837,
    "iri": "http://w3id.org/bb5kbc/gemeinde_569e340e",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -96694,7 +96951,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 833,
+   "id": 838,
    "iri": "http://w3id.org/bb5kbc/gemeinde_56e75073",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -96731,7 +96988,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 834,
+   "id": 839,
    "iri": "http://w3id.org/bb5kbc/gemeinde_59aceadf",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -96768,7 +97025,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 835,
+   "id": 840,
    "iri": "http://w3id.org/bb5kbc/gemeinde_5ad83012",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -96805,7 +97062,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 836,
+   "id": 841,
    "iri": "http://w3id.org/bb5kbc/gemeinde_5cd70155",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -96842,7 +97099,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 837,
+   "id": 842,
    "iri": "http://w3id.org/bb5kbc/gemeinde_5f3f3424",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -96879,7 +97136,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 838,
+   "id": 843,
    "iri": "http://w3id.org/bb5kbc/gemeinde_60ef3bea",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -96916,7 +97173,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 839,
+   "id": 844,
    "iri": "http://w3id.org/bb5kbc/gemeinde_628a501c",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -96953,7 +97210,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 840,
+   "id": 845,
    "iri": "http://w3id.org/bb5kbc/gemeinde_65612e3d",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -96990,7 +97247,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 841,
+   "id": 846,
    "iri": "http://w3id.org/bb5kbc/gemeinde_6564c551",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -97027,7 +97284,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 842,
+   "id": 847,
    "iri": "http://w3id.org/bb5kbc/gemeinde_6581ad87",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -97064,7 +97321,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 843,
+   "id": 848,
    "iri": "http://w3id.org/bb5kbc/gemeinde_65d485e2",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -97101,7 +97358,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 844,
+   "id": 849,
    "iri": "http://w3id.org/bb5kbc/gemeinde_661da3e9",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -97138,7 +97395,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 845,
+   "id": 850,
    "iri": "http://w3id.org/bb5kbc/gemeinde_66a82682",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -97175,7 +97432,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 846,
+   "id": 851,
    "iri": "http://w3id.org/bb5kbc/gemeinde_69b11c14",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -97212,7 +97469,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 847,
+   "id": 852,
    "iri": "http://w3id.org/bb5kbc/gemeinde_6a6097c7",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -97249,7 +97506,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 848,
+   "id": 853,
    "iri": "http://w3id.org/bb5kbc/gemeinde_6d042847",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -97286,7 +97543,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 849,
+   "id": 854,
    "iri": "http://w3id.org/bb5kbc/gemeinde_6d1158c9",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -97323,7 +97580,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 850,
+   "id": 855,
    "iri": "http://w3id.org/bb5kbc/gemeinde_6f71f095",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -97360,7 +97617,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 851,
+   "id": 856,
    "iri": "http://w3id.org/bb5kbc/gemeinde_708fb4af",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -97397,7 +97654,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 852,
+   "id": 857,
    "iri": "http://w3id.org/bb5kbc/gemeinde_741ae909",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -97434,7 +97691,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 853,
+   "id": 858,
    "iri": "http://w3id.org/bb5kbc/gemeinde_741b7687",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -97471,7 +97728,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 854,
+   "id": 859,
    "iri": "http://w3id.org/bb5kbc/gemeinde_74c68a6b",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -97508,7 +97765,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 855,
+   "id": 860,
    "iri": "http://w3id.org/bb5kbc/gemeinde_786eb79c",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -97545,7 +97802,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 856,
+   "id": 861,
    "iri": "http://w3id.org/bb5kbc/gemeinde_7922c5d2",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -97582,7 +97839,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 857,
+   "id": 862,
    "iri": "http://w3id.org/bb5kbc/gemeinde_7f02affe",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -97619,7 +97876,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 858,
+   "id": 863,
    "iri": "http://w3id.org/bb5kbc/gemeinde_8058a570",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -97656,7 +97913,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 859,
+   "id": 864,
    "iri": "http://w3id.org/bb5kbc/gemeinde_819b9dc0",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -97693,7 +97950,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 860,
+   "id": 865,
    "iri": "http://w3id.org/bb5kbc/gemeinde_83d7d6b7",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -97730,7 +97987,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 861,
+   "id": 866,
    "iri": "http://w3id.org/bb5kbc/gemeinde_83fc8fe6",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -97767,7 +98024,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 862,
+   "id": 867,
    "iri": "http://w3id.org/bb5kbc/gemeinde_863bdb55",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -97804,7 +98061,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 863,
+   "id": 868,
    "iri": "http://w3id.org/bb5kbc/gemeinde_878496f5",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -97841,7 +98098,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 864,
+   "id": 869,
    "iri": "http://w3id.org/bb5kbc/gemeinde_8885ce4e",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -97878,7 +98135,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 865,
+   "id": 870,
    "iri": "http://w3id.org/bb5kbc/gemeinde_894db7a9",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -97915,7 +98172,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 866,
+   "id": 871,
    "iri": "http://w3id.org/bb5kbc/gemeinde_8a04de01",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -97952,7 +98209,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 867,
+   "id": 872,
    "iri": "http://w3id.org/bb5kbc/gemeinde_8b875fd6",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -97989,7 +98246,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 868,
+   "id": 873,
    "iri": "http://w3id.org/bb5kbc/gemeinde_8d594034",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -98026,7 +98283,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 869,
+   "id": 874,
    "iri": "http://w3id.org/bb5kbc/gemeinde_8efb2a9d",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -98063,7 +98320,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 870,
+   "id": 875,
    "iri": "http://w3id.org/bb5kbc/gemeinde_8f27a091",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -98100,7 +98357,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 871,
+   "id": 876,
    "iri": "http://w3id.org/bb5kbc/gemeinde_8f511de3",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -98137,7 +98394,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 872,
+   "id": 877,
    "iri": "http://w3id.org/bb5kbc/gemeinde_91940b2d",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -98174,7 +98431,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 873,
+   "id": 878,
    "iri": "http://w3id.org/bb5kbc/gemeinde_925f9c89",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -98211,7 +98468,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 874,
+   "id": 879,
    "iri": "http://w3id.org/bb5kbc/gemeinde_926d3655",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -98248,7 +98505,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 875,
+   "id": 880,
    "iri": "http://w3id.org/bb5kbc/gemeinde_92d70ce8",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -98285,7 +98542,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 876,
+   "id": 881,
    "iri": "http://w3id.org/bb5kbc/gemeinde_93f97f80",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -98322,7 +98579,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 877,
+   "id": 882,
    "iri": "http://w3id.org/bb5kbc/gemeinde_95870524",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -98359,7 +98616,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 878,
+   "id": 883,
    "iri": "http://w3id.org/bb5kbc/gemeinde_9631cb6e",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -98396,7 +98653,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 879,
+   "id": 884,
    "iri": "http://w3id.org/bb5kbc/gemeinde_96434152",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -98433,7 +98690,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 880,
+   "id": 885,
    "iri": "http://w3id.org/bb5kbc/gemeinde_96d6e90b",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -98470,7 +98727,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 881,
+   "id": 886,
    "iri": "http://w3id.org/bb5kbc/gemeinde_98c28bee",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -98507,7 +98764,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 882,
+   "id": 887,
    "iri": "http://w3id.org/bb5kbc/gemeinde_9ac49f61",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -98544,7 +98801,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 883,
+   "id": 888,
    "iri": "http://w3id.org/bb5kbc/gemeinde_9ca3bbc2",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -98581,7 +98838,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 884,
+   "id": 889,
    "iri": "http://w3id.org/bb5kbc/gemeinde_9d0aeaff",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -98618,7 +98875,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 885,
+   "id": 890,
    "iri": "http://w3id.org/bb5kbc/gemeinde_9d6c06e1",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -98655,7 +98912,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 886,
+   "id": 891,
    "iri": "http://w3id.org/bb5kbc/gemeinde_9dcb05b6",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -98692,7 +98949,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 887,
+   "id": 892,
    "iri": "http://w3id.org/bb5kbc/gemeinde_9e7070c4",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -98729,7 +98986,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 888,
+   "id": 893,
    "iri": "http://w3id.org/bb5kbc/gemeinde_a138e5d7",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -98766,7 +99023,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 889,
+   "id": 894,
    "iri": "http://w3id.org/bb5kbc/gemeinde_a31925c9",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -98803,7 +99060,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 890,
+   "id": 895,
    "iri": "http://w3id.org/bb5kbc/gemeinde_a425017d",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -98840,7 +99097,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 891,
+   "id": 896,
    "iri": "http://w3id.org/bb5kbc/gemeinde_a4d18f6c",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -98877,7 +99134,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 892,
+   "id": 897,
    "iri": "http://w3id.org/bb5kbc/gemeinde_a573416c",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -98914,7 +99171,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 893,
+   "id": 898,
    "iri": "http://w3id.org/bb5kbc/gemeinde_a72e9166",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -98951,7 +99208,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 894,
+   "id": 899,
    "iri": "http://w3id.org/bb5kbc/gemeinde_a7fdf216",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -98988,7 +99245,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 895,
+   "id": 900,
    "iri": "http://w3id.org/bb5kbc/gemeinde_a805f245",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -99025,7 +99282,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 896,
+   "id": 901,
    "iri": "http://w3id.org/bb5kbc/gemeinde_a8a78781",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -99062,7 +99319,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 897,
+   "id": 902,
    "iri": "http://w3id.org/bb5kbc/gemeinde_a93b50a5",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -99099,7 +99356,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 898,
+   "id": 903,
    "iri": "http://w3id.org/bb5kbc/gemeinde_aa9ecbe1",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -99136,7 +99393,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 899,
+   "id": 904,
    "iri": "http://w3id.org/bb5kbc/gemeinde_ab70e834",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -99173,7 +99430,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 900,
+   "id": 905,
    "iri": "http://w3id.org/bb5kbc/gemeinde_ae29252c",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -99210,7 +99467,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 901,
+   "id": 906,
    "iri": "http://w3id.org/bb5kbc/gemeinde_aeeaeaa9",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -99247,7 +99504,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 902,
+   "id": 907,
    "iri": "http://w3id.org/bb5kbc/gemeinde_b08e3852",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -99284,7 +99541,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 903,
+   "id": 908,
    "iri": "http://w3id.org/bb5kbc/gemeinde_b1964348",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -99321,7 +99578,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 904,
+   "id": 909,
    "iri": "http://w3id.org/bb5kbc/gemeinde_b2c5ee81",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -99358,7 +99615,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 905,
+   "id": 910,
    "iri": "http://w3id.org/bb5kbc/gemeinde_b3927945",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -99395,7 +99652,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 906,
+   "id": 911,
    "iri": "http://w3id.org/bb5kbc/gemeinde_b39b7833",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -99432,7 +99689,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 907,
+   "id": 912,
    "iri": "http://w3id.org/bb5kbc/gemeinde_b3c00b51",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -99469,7 +99726,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 908,
+   "id": 913,
    "iri": "http://w3id.org/bb5kbc/gemeinde_b599ac34",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -99506,7 +99763,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 909,
+   "id": 914,
    "iri": "http://w3id.org/bb5kbc/gemeinde_b71ac0c3",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -99543,7 +99800,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 910,
+   "id": 915,
    "iri": "http://w3id.org/bb5kbc/gemeinde_b82232f1",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -99580,7 +99837,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 911,
+   "id": 916,
    "iri": "http://w3id.org/bb5kbc/gemeinde_b8664712",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -99617,7 +99874,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 912,
+   "id": 917,
    "iri": "http://w3id.org/bb5kbc/gemeinde_baa445cf",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -99654,7 +99911,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 913,
+   "id": 918,
    "iri": "http://w3id.org/bb5kbc/gemeinde_bb20b99e",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -99691,7 +99948,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 914,
+   "id": 919,
    "iri": "http://w3id.org/bb5kbc/gemeinde_bc6bff70",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -99728,7 +99985,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 915,
+   "id": 920,
    "iri": "http://w3id.org/bb5kbc/gemeinde_be5b3a56",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -99765,7 +100022,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 916,
+   "id": 921,
    "iri": "http://w3id.org/bb5kbc/gemeinde_bffe1784",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -99802,7 +100059,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 917,
+   "id": 922,
    "iri": "http://w3id.org/bb5kbc/gemeinde_c2503a4e",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -99839,7 +100096,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 918,
+   "id": 923,
    "iri": "http://w3id.org/bb5kbc/gemeinde_c2ad88d4",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -99876,7 +100133,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 919,
+   "id": 924,
    "iri": "http://w3id.org/bb5kbc/gemeinde_c2e2aa37",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -99913,7 +100170,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 920,
+   "id": 925,
    "iri": "http://w3id.org/bb5kbc/gemeinde_c3119952",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -99950,7 +100207,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 921,
+   "id": 926,
    "iri": "http://w3id.org/bb5kbc/gemeinde_c647e7ed",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -99987,7 +100244,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 922,
+   "id": 927,
    "iri": "http://w3id.org/bb5kbc/gemeinde_c672785b",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -100024,7 +100281,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 923,
+   "id": 928,
    "iri": "http://w3id.org/bb5kbc/gemeinde_c73df9b6",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -100061,7 +100318,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 924,
+   "id": 929,
    "iri": "http://w3id.org/bb5kbc/gemeinde_c7f16846",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -100098,7 +100355,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 925,
+   "id": 930,
    "iri": "http://w3id.org/bb5kbc/gemeinde_ca66eee4",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -100135,7 +100392,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 926,
+   "id": 931,
    "iri": "http://w3id.org/bb5kbc/gemeinde_cc2756d4",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -100172,7 +100429,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 927,
+   "id": 932,
    "iri": "http://w3id.org/bb5kbc/gemeinde_cee8d1fb",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -100209,7 +100466,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 928,
+   "id": 933,
    "iri": "http://w3id.org/bb5kbc/gemeinde_d1f5d746",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -100246,7 +100503,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 929,
+   "id": 934,
    "iri": "http://w3id.org/bb5kbc/gemeinde_d21ba2df",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -100283,7 +100540,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 930,
+   "id": 935,
    "iri": "http://w3id.org/bb5kbc/gemeinde_d2768c87",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -100320,7 +100577,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 931,
+   "id": 936,
    "iri": "http://w3id.org/bb5kbc/gemeinde_d2fcd3a0",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -100357,7 +100614,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 932,
+   "id": 937,
    "iri": "http://w3id.org/bb5kbc/gemeinde_d3185c9b",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -100394,7 +100651,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 933,
+   "id": 938,
    "iri": "http://w3id.org/bb5kbc/gemeinde_d333c074",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -100431,7 +100688,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 934,
+   "id": 939,
    "iri": "http://w3id.org/bb5kbc/gemeinde_d49351d6",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -100468,7 +100725,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 935,
+   "id": 940,
    "iri": "http://w3id.org/bb5kbc/gemeinde_d5bf8290",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -100505,7 +100762,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 936,
+   "id": 941,
    "iri": "http://w3id.org/bb5kbc/gemeinde_d6479e1b",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -100542,7 +100799,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 937,
+   "id": 942,
    "iri": "http://w3id.org/bb5kbc/gemeinde_d666d93b",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -100579,7 +100836,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 938,
+   "id": 943,
    "iri": "http://w3id.org/bb5kbc/gemeinde_d834fc1f",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -100616,7 +100873,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 939,
+   "id": 944,
    "iri": "http://w3id.org/bb5kbc/gemeinde_d84a5f7a",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -100653,7 +100910,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 940,
+   "id": 945,
    "iri": "http://w3id.org/bb5kbc/gemeinde_d8ab4de6",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -100690,7 +100947,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 941,
+   "id": 946,
    "iri": "http://w3id.org/bb5kbc/gemeinde_dca931f9",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -100727,7 +100984,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 942,
+   "id": 947,
    "iri": "http://w3id.org/bb5kbc/gemeinde_dcfcf708",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -100764,7 +101021,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 943,
+   "id": 948,
    "iri": "http://w3id.org/bb5kbc/gemeinde_deaa7060",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -100801,7 +101058,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 944,
+   "id": 949,
    "iri": "http://w3id.org/bb5kbc/gemeinde_e0ce34b1",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -100838,7 +101095,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 945,
+   "id": 950,
    "iri": "http://w3id.org/bb5kbc/gemeinde_e1efb5e6",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -100875,7 +101132,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 946,
+   "id": 951,
    "iri": "http://w3id.org/bb5kbc/gemeinde_e2c79888",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -100912,7 +101169,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 947,
+   "id": 952,
    "iri": "http://w3id.org/bb5kbc/gemeinde_e31295ec",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -100949,7 +101206,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 948,
+   "id": 953,
    "iri": "http://w3id.org/bb5kbc/gemeinde_e586fde4",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -100986,7 +101243,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 949,
+   "id": 954,
    "iri": "http://w3id.org/bb5kbc/gemeinde_e743046d",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -101023,7 +101280,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 950,
+   "id": 955,
    "iri": "http://w3id.org/bb5kbc/gemeinde_e7493e62",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -101060,7 +101317,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 951,
+   "id": 956,
    "iri": "http://w3id.org/bb5kbc/gemeinde_e7dc4d81",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -101097,7 +101354,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 952,
+   "id": 957,
    "iri": "http://w3id.org/bb5kbc/gemeinde_e8bc45d9",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -101134,7 +101391,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 953,
+   "id": 958,
    "iri": "http://w3id.org/bb5kbc/gemeinde_eaadc786",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -101171,7 +101428,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 954,
+   "id": 959,
    "iri": "http://w3id.org/bb5kbc/gemeinde_eae37432",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -101208,7 +101465,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 955,
+   "id": 960,
    "iri": "http://w3id.org/bb5kbc/gemeinde_eb1d0c76",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -101245,7 +101502,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 956,
+   "id": 961,
    "iri": "http://w3id.org/bb5kbc/gemeinde_eca6e67b",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -101282,7 +101539,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 957,
+   "id": 962,
    "iri": "http://w3id.org/bb5kbc/gemeinde_ee90557b",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -101319,7 +101576,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 958,
+   "id": 963,
    "iri": "http://w3id.org/bb5kbc/gemeinde_efd7bdeb",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -101356,7 +101613,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 959,
+   "id": 964,
    "iri": "http://w3id.org/bb5kbc/gemeinde_f2c96b2d",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -101393,7 +101650,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 960,
+   "id": 965,
    "iri": "http://w3id.org/bb5kbc/gemeinde_f3241fbb",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -101430,7 +101687,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 961,
+   "id": 966,
    "iri": "http://w3id.org/bb5kbc/gemeinde_f352e7e0",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -101467,7 +101724,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 962,
+   "id": 967,
    "iri": "http://w3id.org/bb5kbc/gemeinde_f35aca85",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -101504,7 +101761,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 963,
+   "id": 968,
    "iri": "http://w3id.org/bb5kbc/gemeinde_f3f21f7d",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -101541,7 +101798,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 964,
+   "id": 969,
    "iri": "http://w3id.org/bb5kbc/gemeinde_f66f9bc9",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -101578,7 +101835,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 965,
+   "id": 970,
    "iri": "http://w3id.org/bb5kbc/gemeinde_f67216a6",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -101615,7 +101872,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 966,
+   "id": 971,
    "iri": "http://w3id.org/bb5kbc/gemeinde_f70b4861",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -101652,7 +101909,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 967,
+   "id": 972,
    "iri": "http://w3id.org/bb5kbc/gemeinde_f70e2132",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -101689,7 +101946,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 968,
+   "id": 973,
    "iri": "http://w3id.org/bb5kbc/gemeinde_f83cc495",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -101726,7 +101983,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 969,
+   "id": 974,
    "iri": "http://w3id.org/bb5kbc/gemeinde_f945ced1",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -101763,7 +102020,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 970,
+   "id": 975,
    "iri": "http://w3id.org/bb5kbc/gemeinde_fb6d8a7d",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -101800,7 +102057,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 971,
+   "id": 976,
    "iri": "http://w3id.org/bb5kbc/gemeinde_fbf0fa55",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -101837,7 +102094,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 972,
+   "id": 977,
    "iri": "http://w3id.org/bb5kbc/gemeinde_fc124913",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -101874,7 +102131,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 973,
+   "id": 978,
    "iri": "http://w3id.org/bb5kbc/gemeinde_fd18a4c7",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -101911,7 +102168,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 974,
+   "id": 979,
    "iri": "http://w3id.org/bb5kbc/gemeinde_feba34e4",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -101948,7 +102205,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 975,
+   "id": 980,
    "iri": "http://w3id.org/bb5kbc/gemeinde_fed08e54",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -101985,7 +102242,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 976,
+   "id": 981,
    "iri": "http://w3id.org/bb5kbc/gemeinde_ff627570",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -102022,7 +102279,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 977,
+   "id": 982,
    "iri": "http://w3id.org/bb5kbc/gemeinde_fff454c7",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -102059,7 +102316,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 978,
+   "id": 983,
    "iri": "http://w3id.org/bb5kbc/gemeinde_01aebe87",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -102096,7 +102353,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 979,
+   "id": 984,
    "iri": "http://w3id.org/bb5kbc/gemeinde_03e347e3",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -102133,7 +102390,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 980,
+   "id": 985,
    "iri": "http://w3id.org/bb5kbc/gemeinde_07d65af2",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -102170,7 +102427,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 981,
+   "id": 986,
    "iri": "http://w3id.org/bb5kbc/gemeinde_099020b6",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -102207,7 +102464,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 982,
+   "id": 987,
    "iri": "http://w3id.org/bb5kbc/gemeinde_0add3709",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -102244,7 +102501,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 983,
+   "id": 988,
    "iri": "http://w3id.org/bb5kbc/gemeinde_0f80183e",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -102281,7 +102538,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 984,
+   "id": 989,
    "iri": "http://w3id.org/bb5kbc/gemeinde_1a77989b",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -102318,7 +102575,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 985,
+   "id": 990,
    "iri": "http://w3id.org/bb5kbc/gemeinde_20dea27b",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -102355,7 +102612,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 986,
+   "id": 991,
    "iri": "http://w3id.org/bb5kbc/gemeinde_2748805e",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -102392,7 +102649,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 987,
+   "id": 992,
    "iri": "http://w3id.org/bb5kbc/gemeinde_3d1e103a",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -102429,7 +102686,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 988,
+   "id": 993,
    "iri": "http://w3id.org/bb5kbc/gemeinde_3e3c7e44",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -102466,7 +102723,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 989,
+   "id": 994,
    "iri": "http://w3id.org/bb5kbc/gemeinde_3fac05a9",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -102503,7 +102760,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 990,
+   "id": 995,
    "iri": "http://w3id.org/bb5kbc/gemeinde_405a2d04",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -102540,7 +102797,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 991,
+   "id": 996,
    "iri": "http://w3id.org/bb5kbc/gemeinde_41748915",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -102577,7 +102834,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 992,
+   "id": 997,
    "iri": "http://w3id.org/bb5kbc/gemeinde_442bdcd1",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -102614,7 +102871,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 993,
+   "id": 998,
    "iri": "http://w3id.org/bb5kbc/gemeinde_454163f6",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -102651,7 +102908,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 994,
+   "id": 999,
    "iri": "http://w3id.org/bb5kbc/gemeinde_4afd2c13",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -102688,7 +102945,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 995,
+   "id": 1000,
    "iri": "http://w3id.org/bb5kbc/gemeinde_4c9b4dd1",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -102725,7 +102982,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 996,
+   "id": 1001,
    "iri": "http://w3id.org/bb5kbc/gemeinde_4f66da0e",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -102762,7 +103019,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 997,
+   "id": 1002,
    "iri": "http://w3id.org/bb5kbc/gemeinde_55240cf0",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -102799,7 +103056,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 998,
+   "id": 1003,
    "iri": "http://w3id.org/bb5kbc/gemeinde_57f651b9",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -102836,7 +103093,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 999,
+   "id": 1004,
    "iri": "http://w3id.org/bb5kbc/gemeinde_5a24db07",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -102873,7 +103130,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1000,
+   "id": 1005,
    "iri": "http://w3id.org/bb5kbc/gemeinde_5e3894c8",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -102910,7 +103167,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1001,
+   "id": 1006,
    "iri": "http://w3id.org/bb5kbc/gemeinde_62d44c05",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -102947,7 +103204,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1002,
+   "id": 1007,
    "iri": "http://w3id.org/bb5kbc/gemeinde_680491ed",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -102984,7 +103241,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1003,
+   "id": 1008,
    "iri": "http://w3id.org/bb5kbc/gemeinde_71d32acb",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -103021,7 +103278,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1004,
+   "id": 1009,
    "iri": "http://w3id.org/bb5kbc/gemeinde_74711701",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -103058,7 +103315,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1005,
+   "id": 1010,
    "iri": "http://w3id.org/bb5kbc/gemeinde_868b6904",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -103095,7 +103352,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1006,
+   "id": 1011,
    "iri": "http://w3id.org/bb5kbc/gemeinde_89d48ad2",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -103132,7 +103389,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1007,
+   "id": 1012,
    "iri": "http://w3id.org/bb5kbc/gemeinde_8aa181f6",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -103169,7 +103426,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1008,
+   "id": 1013,
    "iri": "http://w3id.org/bb5kbc/gemeinde_8c7fd844",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -103206,7 +103463,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1009,
+   "id": 1014,
    "iri": "http://w3id.org/bb5kbc/gemeinde_91f15ef0",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -103243,7 +103500,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1010,
+   "id": 1015,
    "iri": "http://w3id.org/bb5kbc/gemeinde_9a9f9999",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -103280,7 +103537,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1011,
+   "id": 1016,
    "iri": "http://w3id.org/bb5kbc/gemeinde_9df1f628",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -103317,7 +103574,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1012,
+   "id": 1017,
    "iri": "http://w3id.org/bb5kbc/gemeinde_a4b9efc1",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -103354,7 +103611,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1013,
+   "id": 1018,
    "iri": "http://w3id.org/bb5kbc/gemeinde_a4ecbeef",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -103391,7 +103648,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1014,
+   "id": 1019,
    "iri": "http://w3id.org/bb5kbc/gemeinde_a89f762d",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -103428,7 +103685,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1015,
+   "id": 1020,
    "iri": "http://w3id.org/bb5kbc/gemeinde_b74dc437",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -103465,7 +103722,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1016,
+   "id": 1021,
    "iri": "http://w3id.org/bb5kbc/gemeinde_bb46b330",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -103502,7 +103759,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1017,
+   "id": 1022,
    "iri": "http://w3id.org/bb5kbc/gemeinde_bcb69aa3",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -103539,7 +103796,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1018,
+   "id": 1023,
    "iri": "http://w3id.org/bb5kbc/gemeinde_c000c7a8",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -103576,7 +103833,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1019,
+   "id": 1024,
    "iri": "http://w3id.org/bb5kbc/gemeinde_c08ec2bf",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -103613,7 +103870,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1020,
+   "id": 1025,
    "iri": "http://w3id.org/bb5kbc/gemeinde_c1b145da",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -103650,7 +103907,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1021,
+   "id": 1026,
    "iri": "http://w3id.org/bb5kbc/gemeinde_c8396f9c",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -103687,7 +103944,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1022,
+   "id": 1027,
    "iri": "http://w3id.org/bb5kbc/gemeinde_d1afd416",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -103724,7 +103981,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1023,
+   "id": 1028,
    "iri": "http://w3id.org/bb5kbc/gemeinde_d568b9b5",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -103761,7 +104018,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1024,
+   "id": 1029,
    "iri": "http://w3id.org/bb5kbc/gemeinde_db4a9ae5",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -103798,7 +104055,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1025,
+   "id": 1030,
    "iri": "http://w3id.org/bb5kbc/gemeinde_dd8c0a93",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -103835,7 +104092,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1026,
+   "id": 1031,
    "iri": "http://w3id.org/bb5kbc/gemeinde_f4e93f80",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -103872,7 +104129,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1027,
+   "id": 1032,
    "iri": "http://w3id.org/bb5kbc/gemeinde_f8f8b6a1",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -103909,7 +104166,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1028,
+   "id": 1033,
    "iri": "http://w3id.org/bb5kbc/gemeinde_f9518cd7",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -103946,7 +104203,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1029,
+   "id": 1034,
    "iri": "http://w3id.org/bb5kbc/gemeinde_fdfff175",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -103983,7 +104240,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1030,
+   "id": 1035,
    "iri": "http://w3id.org/bb5kbc/gemeinde_fe851cf4",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -104020,7 +104277,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1031,
+   "id": 1036,
    "iri": "http://w3id.org/bb5kbc/gemeinde_0be828be",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -104057,7 +104314,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1032,
+   "id": 1037,
    "iri": "http://w3id.org/bb5kbc/gemeinde_0c4453de",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -104094,7 +104351,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1033,
+   "id": 1038,
    "iri": "http://w3id.org/bb5kbc/gemeinde_3b273beb",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -104131,7 +104388,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1034,
+   "id": 1039,
    "iri": "http://w3id.org/bb5kbc/gemeinde_43ef91a0",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -104168,7 +104425,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1035,
+   "id": 1040,
    "iri": "http://w3id.org/bb5kbc/gemeinde_4bb6d2e8",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -104205,7 +104462,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1036,
+   "id": 1041,
    "iri": "http://w3id.org/bb5kbc/gemeinde_55c656bb",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -104242,7 +104499,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1037,
+   "id": 1042,
    "iri": "http://w3id.org/bb5kbc/gemeinde_634a28ea",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -104279,7 +104536,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1038,
+   "id": 1043,
    "iri": "http://w3id.org/bb5kbc/gemeinde_7dfe2095",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -104316,7 +104573,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1039,
+   "id": 1044,
    "iri": "http://w3id.org/bb5kbc/gemeinde_80df634c",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -104353,7 +104610,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1040,
+   "id": 1045,
    "iri": "http://w3id.org/bb5kbc/gemeinde_8126043e",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -104390,7 +104647,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1041,
+   "id": 1046,
    "iri": "http://w3id.org/bb5kbc/gemeinde_b5488fb1",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -104427,7 +104684,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1042,
+   "id": 1047,
    "iri": "http://w3id.org/bb5kbc/gemeinde_b54adf41",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -104464,7 +104721,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1043,
+   "id": 1048,
    "iri": "http://w3id.org/bb5kbc/gemeinde_b5edf5ed",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -104501,7 +104758,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1044,
+   "id": 1049,
    "iri": "http://w3id.org/bb5kbc/gemeinde_bd78dc11",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -104538,7 +104795,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1045,
+   "id": 1050,
    "iri": "http://w3id.org/bb5kbc/gemeinde_beacd9bd",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -104575,7 +104832,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1046,
+   "id": 1051,
    "iri": "http://w3id.org/bb5kbc/gemeinde_e324c365",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -104612,7 +104869,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1047,
+   "id": 1052,
    "iri": "http://w3id.org/bb5kbc/gemeinde_e7108498",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -104649,7 +104906,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1048,
+   "id": 1053,
    "iri": "http://w3id.org/bb5kbc/gemeinde_e84110d7",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -104686,7 +104943,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1049,
+   "id": 1054,
    "iri": "http://w3id.org/bb5kbc/gemeinde_0376cd79",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -104723,7 +104980,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1050,
+   "id": 1055,
    "iri": "http://w3id.org/bb5kbc/gemeinde_0b8be4ac",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -104760,7 +105017,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1051,
+   "id": 1056,
    "iri": "http://w3id.org/bb5kbc/gemeinde_0e7e4009",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -104797,7 +105054,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1052,
+   "id": 1057,
    "iri": "http://w3id.org/bb5kbc/gemeinde_19809dcf",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -104834,7 +105091,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1053,
+   "id": 1058,
    "iri": "http://w3id.org/bb5kbc/gemeinde_28687181",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -104871,7 +105128,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1054,
+   "id": 1059,
    "iri": "http://w3id.org/bb5kbc/gemeinde_2f4a3bd4",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -104908,7 +105165,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1055,
+   "id": 1060,
    "iri": "http://w3id.org/bb5kbc/gemeinde_3923ce06",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -104945,7 +105202,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1056,
+   "id": 1061,
    "iri": "http://w3id.org/bb5kbc/gemeinde_697fa2ca",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -104982,7 +105239,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1057,
+   "id": 1062,
    "iri": "http://w3id.org/bb5kbc/gemeinde_866c0d08",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -105019,7 +105276,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1058,
+   "id": 1063,
    "iri": "http://w3id.org/bb5kbc/gemeinde_c9b9271b",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -105056,7 +105313,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1059,
+   "id": 1064,
    "iri": "http://w3id.org/bb5kbc/gemeinde_455beb00",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -105093,7 +105350,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1060,
+   "id": 1065,
    "iri": "http://w3id.org/bb5kbc/gemeinde_469c793d",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -105130,7 +105387,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1061,
+   "id": 1066,
    "iri": "http://w3id.org/bb5kbc/gemeinde_4c04791f",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -105167,7 +105424,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1062,
+   "id": 1067,
    "iri": "http://w3id.org/bb5kbc/gemeinde_5cf23149",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -105204,7 +105461,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1063,
+   "id": 1068,
    "iri": "http://w3id.org/bb5kbc/gemeinde_7ff1cdab",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -105241,7 +105498,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1064,
+   "id": 1069,
    "iri": "http://w3id.org/bb5kbc/gemeinde_87523d5e",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -105278,7 +105535,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1065,
+   "id": 1070,
    "iri": "http://w3id.org/bb5kbc/gemeinde_af614e64",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -105315,7 +105572,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1066,
+   "id": 1071,
    "iri": "http://w3id.org/bb5kbc/gemeinde_ef3c98d9",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -105352,7 +105609,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1067,
+   "id": 1072,
    "iri": "http://w3id.org/bb5kbc/gemeinde_f8e717c1",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -105389,7 +105646,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1068,
+   "id": 1073,
    "iri": "http://w3id.org/bb5kbc/gemeinde_b2684065",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -105426,7 +105683,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1069,
+   "id": 1074,
    "iri": "http://w3id.org/bb5kbc/gemeinde_7aa1556f",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -105463,7 +105720,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1070,
+   "id": 1075,
    "iri": "http://w3id.org/bb5kbc/gemeinde_d5404511",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -105500,7 +105757,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1071,
+   "id": 1076,
    "iri": "http://w3id.org/bb5kbc/gemeinde_91c3fb1f",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -105537,7 +105794,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1072,
+   "id": 1077,
    "iri": "http://w3id.org/bb5kbc/gemeinde_8d17a3ac",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -105574,7 +105831,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1073,
+   "id": 1078,
    "iri": "http://w3id.org/bb5kbc/kreis_053ee615",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -105611,7 +105868,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1074,
+   "id": 1079,
    "iri": "http://w3id.org/bb5kbc/kreis_09060b5f",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -105648,7 +105905,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1075,
+   "id": 1080,
    "iri": "http://w3id.org/bb5kbc/kreis_2090da70",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -105685,7 +105942,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1076,
+   "id": 1081,
    "iri": "http://w3id.org/bb5kbc/kreis_2a0f5e5e",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -105722,7 +105979,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1077,
+   "id": 1082,
    "iri": "http://w3id.org/bb5kbc/kreis_2c041c6c",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -105759,7 +106016,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1078,
+   "id": 1083,
    "iri": "http://w3id.org/bb5kbc/kreis_3a9bc5c0",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -105796,7 +106053,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1079,
+   "id": 1084,
    "iri": "http://w3id.org/bb5kbc/kreis_3e64d70d",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -105833,7 +106090,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1080,
+   "id": 1085,
    "iri": "http://w3id.org/bb5kbc/kreis_524d36ba",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -105870,7 +106127,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1081,
+   "id": 1086,
    "iri": "http://w3id.org/bb5kbc/kreis_59aceadf",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -105907,7 +106164,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1082,
+   "id": 1087,
    "iri": "http://w3id.org/bb5kbc/kreis_63e70789",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -105944,7 +106201,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1083,
+   "id": 1088,
    "iri": "http://w3id.org/bb5kbc/kreis_65cce59a",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -105981,7 +106238,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1084,
+   "id": 1089,
    "iri": "http://w3id.org/bb5kbc/kreis_702e19b6",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -106018,7 +106275,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1085,
+   "id": 1090,
    "iri": "http://w3id.org/bb5kbc/kreis_703d0ac1",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -106055,7 +106312,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1086,
+   "id": 1091,
    "iri": "http://w3id.org/bb5kbc/kreis_71ef1381",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -106092,7 +106349,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1087,
+   "id": 1092,
    "iri": "http://w3id.org/bb5kbc/kreis_725de27f",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -106129,7 +106386,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1088,
+   "id": 1093,
    "iri": "http://w3id.org/bb5kbc/kreis_76afd314",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -106166,7 +106423,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1089,
+   "id": 1094,
    "iri": "http://w3id.org/bb5kbc/kreis_7f02affe",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -106203,7 +106460,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1090,
+   "id": 1095,
    "iri": "http://w3id.org/bb5kbc/kreis_82a6d438",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -106240,7 +106497,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1091,
+   "id": 1096,
    "iri": "http://w3id.org/bb5kbc/kreis_851e8a7c",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -106277,7 +106534,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1092,
+   "id": 1097,
    "iri": "http://w3id.org/bb5kbc/kreis_894f5898",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -106314,7 +106571,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1093,
+   "id": 1098,
    "iri": "http://w3id.org/bb5kbc/kreis_89f46930",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -106351,7 +106608,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1094,
+   "id": 1099,
    "iri": "http://w3id.org/bb5kbc/kreis_8a8f88e5",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -106388,7 +106645,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1095,
+   "id": 1100,
    "iri": "http://w3id.org/bb5kbc/kreis_944498f5",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -106425,7 +106682,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1096,
+   "id": 1101,
    "iri": "http://w3id.org/bb5kbc/kreis_96274613",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -106462,7 +106719,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1097,
+   "id": 1102,
    "iri": "http://w3id.org/bb5kbc/kreis_a38bbea6",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -106499,7 +106756,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1098,
+   "id": 1103,
    "iri": "http://w3id.org/bb5kbc/kreis_aa320c08",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -106536,7 +106793,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1099,
+   "id": 1104,
    "iri": "http://w3id.org/bb5kbc/kreis_b2bf6138",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -106573,7 +106830,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1100,
+   "id": 1105,
    "iri": "http://w3id.org/bb5kbc/kreis_b44e37a4",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -106610,7 +106867,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1101,
+   "id": 1106,
    "iri": "http://w3id.org/bb5kbc/kreis_c1492242",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -106647,7 +106904,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1102,
+   "id": 1107,
    "iri": "http://w3id.org/bb5kbc/kreis_c8510b50",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -106684,7 +106941,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1103,
+   "id": 1108,
    "iri": "http://w3id.org/bb5kbc/kreis_c8b09c56",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -106721,7 +106978,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1104,
+   "id": 1109,
    "iri": "http://w3id.org/bb5kbc/kreis_c9772f41",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -106758,7 +107015,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1105,
+   "id": 1110,
    "iri": "http://w3id.org/bb5kbc/kreis_cae21d94",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -106795,7 +107052,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1106,
+   "id": 1111,
    "iri": "http://w3id.org/bb5kbc/kreis_d1b39f85",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -106832,7 +107089,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1107,
+   "id": 1112,
    "iri": "http://w3id.org/bb5kbc/kreis_d3e4767f",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -106869,7 +107126,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1108,
+   "id": 1113,
    "iri": "http://w3id.org/bb5kbc/kreis_d6187276",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -106906,7 +107163,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1109,
+   "id": 1114,
    "iri": "http://w3id.org/bb5kbc/kreis_d7261016",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -106943,7 +107200,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1110,
+   "id": 1115,
    "iri": "http://w3id.org/bb5kbc/kreis_da5b0d01",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -106980,7 +107237,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1111,
+   "id": 1116,
    "iri": "http://w3id.org/bb5kbc/kreis_dba7671b",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -107017,7 +107274,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1112,
+   "id": 1117,
    "iri": "http://w3id.org/bb5kbc/kreis_df92e229",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -107054,7 +107311,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1113,
+   "id": 1118,
    "iri": "http://w3id.org/bb5kbc/kreis_dfbeddd9",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -107091,7 +107348,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1114,
+   "id": 1119,
    "iri": "http://w3id.org/bb5kbc/kreis_e28b3f2c",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -107128,7 +107385,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1115,
+   "id": 1120,
    "iri": "http://w3id.org/bb5kbc/kreis_ec96f9ce",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -107165,7 +107422,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1116,
+   "id": 1121,
    "iri": "http://w3id.org/bb5kbc/kreis_ef45870e",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -107202,7 +107459,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1117,
+   "id": 1122,
    "iri": "http://w3id.org/bb5kbc/kreis_fd0b0698",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -107239,7 +107496,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1118,
+   "id": 1123,
    "iri": "http://w3id.org/bb5kbc/kreis_00406c53",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -107276,7 +107533,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1119,
+   "id": 1124,
    "iri": "http://w3id.org/bb5kbc/kreis_22998a51",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -107313,7 +107570,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1120,
+   "id": 1125,
    "iri": "http://w3id.org/bb5kbc/kreis_34e779a6",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -107350,7 +107607,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1121,
+   "id": 1126,
    "iri": "http://w3id.org/bb5kbc/kreis_44302f2d",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -107387,7 +107644,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1122,
+   "id": 1127,
    "iri": "http://w3id.org/bb5kbc/kreis_5f5319e2",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -107424,7 +107681,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1123,
+   "id": 1128,
    "iri": "http://w3id.org/bb5kbc/kreis_759243cc",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -107461,7 +107718,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1124,
+   "id": 1129,
    "iri": "http://w3id.org/bb5kbc/kreis_7d5e48f9",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -107498,7 +107755,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1125,
+   "id": 1130,
    "iri": "http://w3id.org/bb5kbc/kreis_8eb4d6b2",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -107535,7 +107792,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1126,
+   "id": 1131,
    "iri": "http://w3id.org/bb5kbc/kreis_969dc2b1",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -107572,7 +107829,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1127,
+   "id": 1132,
    "iri": "http://w3id.org/bb5kbc/kreis_a67ba2d2",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -107609,7 +107866,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1128,
+   "id": 1133,
    "iri": "http://w3id.org/bb5kbc/kreis_a9d8c52e",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -107646,7 +107903,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1129,
+   "id": 1134,
    "iri": "http://w3id.org/bb5kbc/kreis_aa8aad2b",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -107683,7 +107940,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1130,
+   "id": 1135,
    "iri": "http://w3id.org/bb5kbc/kreis_c8fe2693",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -107720,7 +107977,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1131,
+   "id": 1136,
    "iri": "http://w3id.org/bb5kbc/kreis_d2918bbf",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -107757,7 +108014,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1132,
+   "id": 1137,
    "iri": "http://w3id.org/bb5kbc/kreis_4759b8ea",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -107794,7 +108051,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1133,
+   "id": 1138,
    "iri": "http://w3id.org/bb5kbc/kreis_4bb6d2e8",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -107831,7 +108088,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1134,
+   "id": 1139,
    "iri": "http://w3id.org/bb5kbc/kreis_61991e7b",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -107868,7 +108125,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1135,
+   "id": 1140,
    "iri": "http://w3id.org/bb5kbc/kreis_cf141a0a",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -107905,7 +108162,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1136,
+   "id": 1141,
    "iri": "http://w3id.org/bb5kbc/kreis_d5404511",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -107942,7 +108199,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1137,
+   "id": 1142,
    "iri": "http://w3id.org/bb5kbc/kreis_063ba201",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -107979,7 +108236,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1138,
+   "id": 1143,
    "iri": "http://w3id.org/bb5kbc/kreis_a8ddc1b2",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -108016,7 +108273,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1139,
+   "id": 1144,
    "iri": "http://w3id.org/bb5kbc/kreis_d3d391e6",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -108053,7 +108310,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1140,
+   "id": 1145,
    "iri": "http://w3id.org/bb5kbc/kreis_f6c6e0be",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -108090,7 +108347,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1141,
+   "id": 1146,
    "iri": "http://w3id.org/bb5kbc/kreis_5f84543e",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -108127,7 +108384,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1142,
+   "id": 1147,
    "iri": "http://w3id.org/bb5kbc/kreis_b031fa42",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -108164,7 +108421,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1143,
+   "id": 1148,
    "iri": "http://w3id.org/bb5kbc/kreis_fa49171f",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -108201,7 +108458,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1144,
+   "id": 1149,
    "iri": "http://w3id.org/bb5kbc/kreis_be942c19",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -108238,7 +108495,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1145,
+   "id": 1150,
    "iri": "http://w3id.org/bb5kbc/kreis_d26f6fb5",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -108275,7 +108532,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1146,
+   "id": 1151,
    "iri": "http://w3id.org/bb5kbc/kreis_0a6e4d3b",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -108312,7 +108569,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1147,
+   "id": 1152,
    "iri": "http://w3id.org/bb5kbc/kreis_06458fa6",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -108349,7 +108606,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1148,
+   "id": 1153,
    "iri": "http://w3id.org/bb5kbc/kreis_2783ecb9",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -108386,7 +108643,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1149,
+   "id": 1154,
    "iri": "http://w3id.org/bb5kbc/kreis_2b31d535",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -108423,7 +108680,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1150,
+   "id": 1155,
    "iri": "http://w3id.org/bb5kbc/kreis_f18982f6",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -108460,7 +108717,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1151,
+   "id": 1156,
    "iri": "http://w3id.org/bb5kbc/kreis_484c68b5",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -108497,7 +108754,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1152,
+   "id": 1157,
    "iri": "http://w3id.org/bb5kbc/kreis_0b003b3b",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -108534,7 +108791,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1153,
+   "id": 1158,
    "iri": "http://w3id.org/bb5kbc/kreis_d4d0a03b",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -108571,7 +108828,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1154,
+   "id": 1159,
    "iri": "http://w3id.org/bb5kbc/kreis_0a22f293",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -108583,7 +108840,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1155,
+   "id": 1160,
    "iri": "http://w3id.org/bb5kbc/kultur_cf06f188",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -108595,7 +108852,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1156,
+   "id": 1161,
    "iri": "http://w3id.org/bb5kbc/kultur_31cb32d8",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -108607,7 +108864,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1157,
+   "id": 1162,
    "iri": "http://w3id.org/bb5kbc/kultur_7a001224",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -108619,7 +108876,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1158,
+   "id": 1163,
    "iri": "http://w3id.org/bb5kbc/kultur_a36e9d6d",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -108631,7 +108888,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1159,
+   "id": 1164,
    "iri": "http://w3id.org/bb5kbc/kultur_341c441b",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -108643,7 +108900,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1160,
+   "id": 1165,
    "iri": "http://w3id.org/bb5kbc/kultur_a3882646",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -108655,7 +108912,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1161,
+   "id": 1166,
    "iri": "http://w3id.org/bb5kbc/kultur_d4c087cb",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -108667,7 +108924,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1162,
+   "id": 1167,
    "iri": "http://w3id.org/bb5kbc/kultur_cc414e20",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -108679,7 +108936,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1163,
+   "id": 1168,
    "iri": "http://w3id.org/bb5kbc/kultur_fd12974a",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -108700,19 +108957,28 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1164,
+   "id": 1169,
    "iri": "http://w3id.org/bb5kbc/pub_0b536e9d",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
    "label": "Umbreit 1940",
-   "annotations": {},
+   "annotations": {
+    "http://w3id.org/bb5kbc/ont/hasExternalIdentifier": [
+     {
+      "identifier": "http://w3id.org/bb5kbc/ont/hasExternalIdentifier",
+      "language": "undefined",
+      "value": "https://www.wikidata.org/entity/Q139459720",
+      "type": "iri"
+     }
+    ]
+   },
    "range": [],
    "domain": [],
    "subProperties": [],
    "superProperties": []
   },
   {
-   "id": 1165,
+   "id": 1170,
    "iri": "http://w3id.org/bb5kbc/pub_0bced945",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -108733,8 +108999,29 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1166,
+   "id": 1171,
    "iri": "http://w3id.org/bb5kbc/pub_115d399f",
+   "baseIRI": "http://w3id.org/bb5kbc",
+   "instances": 0,
+   "label": "Wetzel/Babiel 2016",
+   "annotations": {
+    "http://w3id.org/bb5kbc/ont/hasExternalIdentifier": [
+     {
+      "identifier": "http://w3id.org/bb5kbc/ont/hasExternalIdentifier",
+      "language": "undefined",
+      "value": "https://www.wikidata.org/entity/Q139555259",
+      "type": "iri"
+     }
+    ]
+   },
+   "range": [],
+   "domain": [],
+   "subProperties": [],
+   "superProperties": []
+  },
+  {
+   "id": 1172,
+   "iri": "http://w3id.org/bb5kbc/pub_23e2b3b3",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
    "label": "Czerniak et al 2020",
@@ -108754,7 +109041,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1167,
+   "id": 1173,
    "iri": "http://w3id.org/bb5kbc/pub_25823239",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -108775,19 +109062,28 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1168,
+   "id": 1174,
    "iri": "http://w3id.org/bb5kbc/pub_28d0e362",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
    "label": "Raddatz 1956",
-   "annotations": {},
+   "annotations": {
+    "http://w3id.org/bb5kbc/ont/hasExternalIdentifier": [
+     {
+      "identifier": "http://w3id.org/bb5kbc/ont/hasExternalIdentifier",
+      "language": "undefined",
+      "value": "https://www.wikidata.org/entity/Q139304631",
+      "type": "iri"
+     }
+    ]
+   },
    "range": [],
    "domain": [],
    "subProperties": [],
    "superProperties": []
   },
   {
-   "id": 1169,
+   "id": 1175,
    "iri": "http://w3id.org/bb5kbc/pub_3f8665d8",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -108808,7 +109104,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1170,
+   "id": 1176,
    "iri": "http://w3id.org/bb5kbc/pub_4151a647",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -108829,7 +109125,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1171,
+   "id": 1177,
    "iri": "http://w3id.org/bb5kbc/pub_4380d476",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -108850,19 +109146,28 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1172,
+   "id": 1178,
    "iri": "http://w3id.org/bb5kbc/pub_6e2b44a1",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
    "label": "Schier et al. 2023",
-   "annotations": {},
+   "annotations": {
+    "http://w3id.org/bb5kbc/ont/hasExternalIdentifier": [
+     {
+      "identifier": "http://w3id.org/bb5kbc/ont/hasExternalIdentifier",
+      "language": "undefined",
+      "value": "https://www.wikidata.org/entity/Q139555255",
+      "type": "iri"
+     }
+    ]
+   },
    "range": [],
    "domain": [],
    "subProperties": [],
    "superProperties": []
   },
   {
-   "id": 1173,
+   "id": 1179,
    "iri": "http://w3id.org/bb5kbc/pub_75c7a1cf",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -108883,7 +109188,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1174,
+   "id": 1180,
    "iri": "http://w3id.org/bb5kbc/pub_76224a7a",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -108904,7 +109209,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1175,
+   "id": 1181,
    "iri": "http://w3id.org/bb5kbc/pub_7d001871",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -108925,29 +109230,8 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1176,
+   "id": 1182,
    "iri": "http://w3id.org/bb5kbc/pub_7f2f6697",
-   "baseIRI": "http://w3id.org/bb5kbc",
-   "instances": 0,
-   "label": "Raddatz 1959",
-   "annotations": {
-    "http://w3id.org/bb5kbc/ont/hasExternalIdentifier": [
-     {
-      "identifier": "http://w3id.org/bb5kbc/ont/hasExternalIdentifier",
-      "language": "undefined",
-      "value": "https://www.wikidata.org/entity/Q139304631",
-      "type": "iri"
-     }
-    ]
-   },
-   "range": [],
-   "domain": [],
-   "subProperties": [],
-   "superProperties": []
-  },
-  {
-   "id": 1177,
-   "iri": "http://w3id.org/bb5kbc/pub_805202e9",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
    "label": "Czerniak et al. 2020",
@@ -108967,7 +109251,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1178,
+   "id": 1183,
    "iri": "http://w3id.org/bb5kbc/pub_87c3d133",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -108988,7 +109272,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1179,
+   "id": 1184,
    "iri": "http://w3id.org/bb5kbc/pub_9056d6a4",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -109009,7 +109293,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1180,
+   "id": 1185,
    "iri": "http://w3id.org/bb5kbc/pub_907840f1",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -109030,7 +109314,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1181,
+   "id": 1186,
    "iri": "http://w3id.org/bb5kbc/pub_a8377c99",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -109051,20 +109335,8 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1182,
+   "id": 1187,
    "iri": "http://w3id.org/bb5kbc/pub_b1c8f989",
-   "baseIRI": "http://w3id.org/bb5kbc",
-   "instances": 0,
-   "label": "Wetzel/Babieel 2016",
-   "annotations": {},
-   "range": [],
-   "domain": [],
-   "subProperties": [],
-   "superProperties": []
-  },
-  {
-   "id": 1183,
-   "iri": "http://w3id.org/bb5kbc/pub_b359cdf6",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
    "label": "Sprockhoff 1926",
@@ -109084,7 +109356,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1184,
+   "id": 1188,
    "iri": "http://w3id.org/bb5kbc/pub_b9d66f04",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -109105,7 +109377,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1185,
+   "id": 1189,
    "iri": "http://w3id.org/bb5kbc/pub_c7a96985",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -109126,7 +109398,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1186,
+   "id": 1190,
    "iri": "http://w3id.org/bb5kbc/pub_cdb51966",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -109147,7 +109419,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1187,
+   "id": 1191,
    "iri": "http://w3id.org/bb5kbc/pub_cde15c81",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -109168,7 +109440,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1188,
+   "id": 1192,
    "iri": "http://w3id.org/bb5kbc/pub_d0a84231",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -109189,8 +109461,29 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1189,
+   "id": 1193,
    "iri": "http://w3id.org/bb5kbc/pub_d0e4fb80",
+   "baseIRI": "http://w3id.org/bb5kbc",
+   "instances": 0,
+   "label": "Raddatz 1958",
+   "annotations": {
+    "http://w3id.org/bb5kbc/ont/hasExternalIdentifier": [
+     {
+      "identifier": "http://w3id.org/bb5kbc/ont/hasExternalIdentifier",
+      "language": "undefined",
+      "value": "https://www.wikidata.org/entity/Q139570571",
+      "type": "iri"
+     }
+    ]
+   },
+   "range": [],
+   "domain": [],
+   "subProperties": [],
+   "superProperties": []
+  },
+  {
+   "id": 1194,
+   "iri": "http://w3id.org/bb5kbc/pub_f5ff5579",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
    "label": "Rybicka/Wysocki 2004",
@@ -109210,7 +109503,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1190,
+   "id": 1195,
    "iri": "http://w3id.org/bb5kbc/pub_72ab46f0",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -109231,19 +109524,28 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1191,
+   "id": 1196,
    "iri": "http://w3id.org/bb5kbc/pub_7aa848bc",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
    "label": "Pyzel 2019",
-   "annotations": {},
+   "annotations": {
+    "http://w3id.org/bb5kbc/ont/hasExternalIdentifier": [
+     {
+      "identifier": "http://w3id.org/bb5kbc/ont/hasExternalIdentifier",
+      "language": "undefined",
+      "value": "https://www.wikidata.org/entity/Q139460445",
+      "type": "iri"
+     }
+    ]
+   },
    "range": [],
    "domain": [],
    "subProperties": [],
    "superProperties": []
   },
   {
-   "id": 1192,
+   "id": 1197,
    "iri": "http://w3id.org/bb5kbc/pub_aa96c11a",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -109264,7 +109566,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1193,
+   "id": 1198,
    "iri": "http://w3id.org/bb5kbc/pub_b505d72d",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -109285,7 +109587,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1194,
+   "id": 1199,
    "iri": "http://w3id.org/bb5kbc/pub_c33f9df2",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -109306,7 +109608,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1195,
+   "id": 1200,
    "iri": "http://w3id.org/bb5kbc/pub_67ee6ee4",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -109327,7 +109629,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1196,
+   "id": 1201,
    "iri": "http://w3id.org/bb5kbc/pub_7f0902ba",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -109348,7 +109650,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1197,
+   "id": 1202,
    "iri": "http://w3id.org/bb5kbc/pub_f5ed98b4",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -109369,7 +109671,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1198,
+   "id": 1203,
    "iri": "http://w3id.org/bb5kbc/pub_920f260d",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -109390,7 +109692,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1199,
+   "id": 1204,
    "iri": "http://w3id.org/bb5kbc/pub_21405e20",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -109411,7 +109713,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1200,
+   "id": 1205,
    "iri": "http://w3id.org/bb5kbc/pub_69451dca",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -109432,7 +109734,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1201,
+   "id": 1206,
    "iri": "http://w3id.org/bb5kbc/pub_b7c68a6f",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -109453,7 +109755,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1202,
+   "id": 1207,
    "iri": "http://w3id.org/bb5kbc/pub_c54b495e",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -109474,7 +109776,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1203,
+   "id": 1208,
    "iri": "http://w3id.org/bb5kbc/pub_05cf84ec",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -109495,7 +109797,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1204,
+   "id": 1209,
    "iri": "http://w3id.org/bb5kbc/pub_aab60e84",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -109516,7 +109818,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1205,
+   "id": 1210,
    "iri": "http://w3id.org/bb5kbc/pub_c5110572",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -109537,7 +109839,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1206,
+   "id": 1211,
    "iri": "http://w3id.org/bb5kbc/pub_1ed4ab72",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -109558,7 +109860,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1207,
+   "id": 1212,
    "iri": "http://w3id.org/bb5kbc/pub_d3fe8d6a",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -109579,7 +109881,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1208,
+   "id": 1213,
    "iri": "http://w3id.org/bb5kbc/pub_f53d5dd0",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -109602,7 +109904,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1209,
+   "id": 1214,
    "iri": "http://w3id.org/bb5kbc/sherd_02807cc2",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -109625,7 +109927,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1210,
+   "id": 1215,
    "iri": "http://w3id.org/bb5kbc/sherd_06629eab",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -109648,7 +109950,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1211,
+   "id": 1216,
    "iri": "http://w3id.org/bb5kbc/sherd_094ecff2",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -109671,7 +109973,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1212,
+   "id": 1217,
    "iri": "http://w3id.org/bb5kbc/sherd_12ea954a",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -109694,7 +109996,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1213,
+   "id": 1218,
    "iri": "http://w3id.org/bb5kbc/sherd_28dfc2ab",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -109717,7 +110019,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1214,
+   "id": 1219,
    "iri": "http://w3id.org/bb5kbc/sherd_7eb7e637",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -109740,7 +110042,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1215,
+   "id": 1220,
    "iri": "http://w3id.org/bb5kbc/sherd_93d86da9",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -109763,7 +110065,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1216,
+   "id": 1221,
    "iri": "http://w3id.org/bb5kbc/sherd_e6015507",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -109786,7 +110088,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1217,
+   "id": 1222,
    "iri": "http://w3id.org/bb5kbc/sherd_fe397b50",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -109855,7 +110157,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1218,
+   "id": 1223,
    "iri": "http://w3id.org/bb5kbc/site_100_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -109924,7 +110226,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1219,
+   "id": 1224,
    "iri": "http://w3id.org/bb5kbc/site_101_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -109993,7 +110295,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1220,
+   "id": 1225,
    "iri": "http://w3id.org/bb5kbc/site_103_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -110062,7 +110364,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1221,
+   "id": 1226,
    "iri": "http://w3id.org/bb5kbc/site_107_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -110131,7 +110433,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1222,
+   "id": 1227,
    "iri": "http://w3id.org/bb5kbc/site_10_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -110200,7 +110502,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1223,
+   "id": 1228,
    "iri": "http://w3id.org/bb5kbc/site_111_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -110269,7 +110571,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1224,
+   "id": 1229,
    "iri": "http://w3id.org/bb5kbc/site_114_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -110338,7 +110640,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1225,
+   "id": 1230,
    "iri": "http://w3id.org/bb5kbc/site_116_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -110407,7 +110709,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1226,
+   "id": 1231,
    "iri": "http://w3id.org/bb5kbc/site_119_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -110476,7 +110778,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1227,
+   "id": 1232,
    "iri": "http://w3id.org/bb5kbc/site_11_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -110545,7 +110847,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1228,
+   "id": 1233,
    "iri": "http://w3id.org/bb5kbc/site_120_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -110614,7 +110916,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1229,
+   "id": 1234,
    "iri": "http://w3id.org/bb5kbc/site_121_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -110683,7 +110985,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1230,
+   "id": 1235,
    "iri": "http://w3id.org/bb5kbc/site_122_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -110752,7 +111054,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1231,
+   "id": 1236,
    "iri": "http://w3id.org/bb5kbc/site_123_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -110821,7 +111123,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1232,
+   "id": 1237,
    "iri": "http://w3id.org/bb5kbc/site_125_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -110890,7 +111192,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1233,
+   "id": 1238,
    "iri": "http://w3id.org/bb5kbc/site_126_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -110959,7 +111261,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1234,
+   "id": 1239,
    "iri": "http://w3id.org/bb5kbc/site_128_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -111028,7 +111330,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1235,
+   "id": 1240,
    "iri": "http://w3id.org/bb5kbc/site_129_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -111097,7 +111399,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1236,
+   "id": 1241,
    "iri": "http://w3id.org/bb5kbc/site_12_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -111166,7 +111468,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1237,
+   "id": 1242,
    "iri": "http://w3id.org/bb5kbc/site_131_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -111235,7 +111537,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1238,
+   "id": 1243,
    "iri": "http://w3id.org/bb5kbc/site_134_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -111304,7 +111606,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1239,
+   "id": 1244,
    "iri": "http://w3id.org/bb5kbc/site_136_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -111373,7 +111675,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1240,
+   "id": 1245,
    "iri": "http://w3id.org/bb5kbc/site_138_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -111442,7 +111744,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1241,
+   "id": 1246,
    "iri": "http://w3id.org/bb5kbc/site_139_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -111511,7 +111813,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1242,
+   "id": 1247,
    "iri": "http://w3id.org/bb5kbc/site_13_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -111580,7 +111882,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1243,
+   "id": 1248,
    "iri": "http://w3id.org/bb5kbc/site_140_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -111649,7 +111951,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1244,
+   "id": 1249,
    "iri": "http://w3id.org/bb5kbc/site_141_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -111718,7 +112020,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1245,
+   "id": 1250,
    "iri": "http://w3id.org/bb5kbc/site_142_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -111787,7 +112089,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1246,
+   "id": 1251,
    "iri": "http://w3id.org/bb5kbc/site_144_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -111856,7 +112158,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1247,
+   "id": 1252,
    "iri": "http://w3id.org/bb5kbc/site_145_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -111925,7 +112227,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1248,
+   "id": 1253,
    "iri": "http://w3id.org/bb5kbc/site_146_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -111994,7 +112296,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1249,
+   "id": 1254,
    "iri": "http://w3id.org/bb5kbc/site_147_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -112063,7 +112365,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1250,
+   "id": 1255,
    "iri": "http://w3id.org/bb5kbc/site_148_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -112132,7 +112434,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1251,
+   "id": 1256,
    "iri": "http://w3id.org/bb5kbc/site_149_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -112201,7 +112503,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1252,
+   "id": 1257,
    "iri": "http://w3id.org/bb5kbc/site_14_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -112270,7 +112572,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1253,
+   "id": 1258,
    "iri": "http://w3id.org/bb5kbc/site_150_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -112339,7 +112641,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1254,
+   "id": 1259,
    "iri": "http://w3id.org/bb5kbc/site_151_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -112408,7 +112710,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1255,
+   "id": 1260,
    "iri": "http://w3id.org/bb5kbc/site_152_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -112477,7 +112779,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1256,
+   "id": 1261,
    "iri": "http://w3id.org/bb5kbc/site_153_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -112546,7 +112848,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1257,
+   "id": 1262,
    "iri": "http://w3id.org/bb5kbc/site_154_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -112615,7 +112917,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1258,
+   "id": 1263,
    "iri": "http://w3id.org/bb5kbc/site_155_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -112684,7 +112986,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1259,
+   "id": 1264,
    "iri": "http://w3id.org/bb5kbc/site_156_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -112753,7 +113055,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1260,
+   "id": 1265,
    "iri": "http://w3id.org/bb5kbc/site_157_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -112822,7 +113124,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1261,
+   "id": 1266,
    "iri": "http://w3id.org/bb5kbc/site_158_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -112891,7 +113193,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1262,
+   "id": 1267,
    "iri": "http://w3id.org/bb5kbc/site_159_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -112960,7 +113262,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1263,
+   "id": 1268,
    "iri": "http://w3id.org/bb5kbc/site_15_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -113029,7 +113331,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1264,
+   "id": 1269,
    "iri": "http://w3id.org/bb5kbc/site_160_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -113098,7 +113400,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1265,
+   "id": 1270,
    "iri": "http://w3id.org/bb5kbc/site_161_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -113167,7 +113469,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1266,
+   "id": 1271,
    "iri": "http://w3id.org/bb5kbc/site_162_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -113236,7 +113538,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1267,
+   "id": 1272,
    "iri": "http://w3id.org/bb5kbc/site_163_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -113305,7 +113607,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1268,
+   "id": 1273,
    "iri": "http://w3id.org/bb5kbc/site_164_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -113374,7 +113676,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1269,
+   "id": 1274,
    "iri": "http://w3id.org/bb5kbc/site_165_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -113443,7 +113745,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1270,
+   "id": 1275,
    "iri": "http://w3id.org/bb5kbc/site_166_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -113512,7 +113814,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1271,
+   "id": 1276,
    "iri": "http://w3id.org/bb5kbc/site_167_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -113581,7 +113883,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1272,
+   "id": 1277,
    "iri": "http://w3id.org/bb5kbc/site_168_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -113650,7 +113952,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1273,
+   "id": 1278,
    "iri": "http://w3id.org/bb5kbc/site_169_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -113719,7 +114021,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1274,
+   "id": 1279,
    "iri": "http://w3id.org/bb5kbc/site_16_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -113788,7 +114090,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1275,
+   "id": 1280,
    "iri": "http://w3id.org/bb5kbc/site_170_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -113857,7 +114159,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1276,
+   "id": 1281,
    "iri": "http://w3id.org/bb5kbc/site_171_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -113926,7 +114228,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1277,
+   "id": 1282,
    "iri": "http://w3id.org/bb5kbc/site_172_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -113995,7 +114297,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1278,
+   "id": 1283,
    "iri": "http://w3id.org/bb5kbc/site_173_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -114064,7 +114366,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1279,
+   "id": 1284,
    "iri": "http://w3id.org/bb5kbc/site_174_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -114133,7 +114435,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1280,
+   "id": 1285,
    "iri": "http://w3id.org/bb5kbc/site_175_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -114202,7 +114504,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1281,
+   "id": 1286,
    "iri": "http://w3id.org/bb5kbc/site_176_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -114271,7 +114573,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1282,
+   "id": 1287,
    "iri": "http://w3id.org/bb5kbc/site_177_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -114340,7 +114642,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1283,
+   "id": 1288,
    "iri": "http://w3id.org/bb5kbc/site_178_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -114409,7 +114711,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1284,
+   "id": 1289,
    "iri": "http://w3id.org/bb5kbc/site_179_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -114478,7 +114780,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1285,
+   "id": 1290,
    "iri": "http://w3id.org/bb5kbc/site_17_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -114547,7 +114849,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1286,
+   "id": 1291,
    "iri": "http://w3id.org/bb5kbc/site_180_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -114616,7 +114918,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1287,
+   "id": 1292,
    "iri": "http://w3id.org/bb5kbc/site_181_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -114685,7 +114987,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1288,
+   "id": 1293,
    "iri": "http://w3id.org/bb5kbc/site_182_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -114754,7 +115056,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1289,
+   "id": 1294,
    "iri": "http://w3id.org/bb5kbc/site_183_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -114823,7 +115125,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1290,
+   "id": 1295,
    "iri": "http://w3id.org/bb5kbc/site_184_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -114892,7 +115194,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1291,
+   "id": 1296,
    "iri": "http://w3id.org/bb5kbc/site_185_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -114961,7 +115263,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1292,
+   "id": 1297,
    "iri": "http://w3id.org/bb5kbc/site_186_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -115030,7 +115332,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1293,
+   "id": 1298,
    "iri": "http://w3id.org/bb5kbc/site_187_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -115099,7 +115401,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1294,
+   "id": 1299,
    "iri": "http://w3id.org/bb5kbc/site_188_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -115168,7 +115470,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1295,
+   "id": 1300,
    "iri": "http://w3id.org/bb5kbc/site_189_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -115237,7 +115539,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1296,
+   "id": 1301,
    "iri": "http://w3id.org/bb5kbc/site_18_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -115306,7 +115608,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1297,
+   "id": 1302,
    "iri": "http://w3id.org/bb5kbc/site_190_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -115375,7 +115677,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1298,
+   "id": 1303,
    "iri": "http://w3id.org/bb5kbc/site_191_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -115444,7 +115746,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1299,
+   "id": 1304,
    "iri": "http://w3id.org/bb5kbc/site_192_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -115513,7 +115815,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1300,
+   "id": 1305,
    "iri": "http://w3id.org/bb5kbc/site_193_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -115582,7 +115884,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1301,
+   "id": 1306,
    "iri": "http://w3id.org/bb5kbc/site_194_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -115651,7 +115953,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1302,
+   "id": 1307,
    "iri": "http://w3id.org/bb5kbc/site_195_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -115720,7 +116022,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1303,
+   "id": 1308,
    "iri": "http://w3id.org/bb5kbc/site_196_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -115789,7 +116091,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1304,
+   "id": 1309,
    "iri": "http://w3id.org/bb5kbc/site_197_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -115858,7 +116160,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1305,
+   "id": 1310,
    "iri": "http://w3id.org/bb5kbc/site_198_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -115927,7 +116229,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1306,
+   "id": 1311,
    "iri": "http://w3id.org/bb5kbc/site_199_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -115996,7 +116298,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1307,
+   "id": 1312,
    "iri": "http://w3id.org/bb5kbc/site_19_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -116065,7 +116367,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1308,
+   "id": 1313,
    "iri": "http://w3id.org/bb5kbc/site_1_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -116134,7 +116436,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1309,
+   "id": 1314,
    "iri": "http://w3id.org/bb5kbc/site_200_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -116203,7 +116505,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1310,
+   "id": 1315,
    "iri": "http://w3id.org/bb5kbc/site_201_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -116272,7 +116574,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1311,
+   "id": 1316,
    "iri": "http://w3id.org/bb5kbc/site_202_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -116341,7 +116643,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1312,
+   "id": 1317,
    "iri": "http://w3id.org/bb5kbc/site_203_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -116410,7 +116712,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1313,
+   "id": 1318,
    "iri": "http://w3id.org/bb5kbc/site_204_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -116479,7 +116781,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1314,
+   "id": 1319,
    "iri": "http://w3id.org/bb5kbc/site_205_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -116548,7 +116850,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1315,
+   "id": 1320,
    "iri": "http://w3id.org/bb5kbc/site_206_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -116617,7 +116919,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1316,
+   "id": 1321,
    "iri": "http://w3id.org/bb5kbc/site_207_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -116686,7 +116988,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1317,
+   "id": 1322,
    "iri": "http://w3id.org/bb5kbc/site_208_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -116755,7 +117057,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1318,
+   "id": 1323,
    "iri": "http://w3id.org/bb5kbc/site_209_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -116824,7 +117126,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1319,
+   "id": 1324,
    "iri": "http://w3id.org/bb5kbc/site_20_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -116893,7 +117195,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1320,
+   "id": 1325,
    "iri": "http://w3id.org/bb5kbc/site_210_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -116962,7 +117264,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1321,
+   "id": 1326,
    "iri": "http://w3id.org/bb5kbc/site_211_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -117031,7 +117333,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1322,
+   "id": 1327,
    "iri": "http://w3id.org/bb5kbc/site_212_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -117100,7 +117402,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1323,
+   "id": 1328,
    "iri": "http://w3id.org/bb5kbc/site_213_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -117169,7 +117471,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1324,
+   "id": 1329,
    "iri": "http://w3id.org/bb5kbc/site_214_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -117238,7 +117540,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1325,
+   "id": 1330,
    "iri": "http://w3id.org/bb5kbc/site_215_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -117307,7 +117609,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1326,
+   "id": 1331,
    "iri": "http://w3id.org/bb5kbc/site_216_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -117376,7 +117678,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1327,
+   "id": 1332,
    "iri": "http://w3id.org/bb5kbc/site_217_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -117445,7 +117747,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1328,
+   "id": 1333,
    "iri": "http://w3id.org/bb5kbc/site_218_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -117514,7 +117816,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1329,
+   "id": 1334,
    "iri": "http://w3id.org/bb5kbc/site_219_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -117583,7 +117885,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1330,
+   "id": 1335,
    "iri": "http://w3id.org/bb5kbc/site_21_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -117652,7 +117954,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1331,
+   "id": 1336,
    "iri": "http://w3id.org/bb5kbc/site_220_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -117721,7 +118023,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1332,
+   "id": 1337,
    "iri": "http://w3id.org/bb5kbc/site_221_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -117790,7 +118092,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1333,
+   "id": 1338,
    "iri": "http://w3id.org/bb5kbc/site_222_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -117859,7 +118161,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1334,
+   "id": 1339,
    "iri": "http://w3id.org/bb5kbc/site_223_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -117928,7 +118230,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1335,
+   "id": 1340,
    "iri": "http://w3id.org/bb5kbc/site_224_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -117997,7 +118299,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1336,
+   "id": 1341,
    "iri": "http://w3id.org/bb5kbc/site_225_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -118066,7 +118368,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1337,
+   "id": 1342,
    "iri": "http://w3id.org/bb5kbc/site_226_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -118135,7 +118437,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1338,
+   "id": 1343,
    "iri": "http://w3id.org/bb5kbc/site_227_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -118204,7 +118506,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1339,
+   "id": 1344,
    "iri": "http://w3id.org/bb5kbc/site_228_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -118273,7 +118575,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1340,
+   "id": 1345,
    "iri": "http://w3id.org/bb5kbc/site_22_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -118342,7 +118644,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1341,
+   "id": 1346,
    "iri": "http://w3id.org/bb5kbc/site_230_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -118411,7 +118713,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1342,
+   "id": 1347,
    "iri": "http://w3id.org/bb5kbc/site_231_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -118480,7 +118782,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1343,
+   "id": 1348,
    "iri": "http://w3id.org/bb5kbc/site_232_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -118549,7 +118851,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1344,
+   "id": 1349,
    "iri": "http://w3id.org/bb5kbc/site_233_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -118618,7 +118920,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1345,
+   "id": 1350,
    "iri": "http://w3id.org/bb5kbc/site_234_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -118687,7 +118989,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1346,
+   "id": 1351,
    "iri": "http://w3id.org/bb5kbc/site_235_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -118756,7 +119058,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1347,
+   "id": 1352,
    "iri": "http://w3id.org/bb5kbc/site_236_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -118825,7 +119127,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1348,
+   "id": 1353,
    "iri": "http://w3id.org/bb5kbc/site_237_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -118894,7 +119196,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1349,
+   "id": 1354,
    "iri": "http://w3id.org/bb5kbc/site_238_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -118963,7 +119265,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1350,
+   "id": 1355,
    "iri": "http://w3id.org/bb5kbc/site_239_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -119032,7 +119334,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1351,
+   "id": 1356,
    "iri": "http://w3id.org/bb5kbc/site_23_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -119101,7 +119403,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1352,
+   "id": 1357,
    "iri": "http://w3id.org/bb5kbc/site_240_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -119170,7 +119472,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1353,
+   "id": 1358,
    "iri": "http://w3id.org/bb5kbc/site_241_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -119239,7 +119541,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1354,
+   "id": 1359,
    "iri": "http://w3id.org/bb5kbc/site_242_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -119308,7 +119610,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1355,
+   "id": 1360,
    "iri": "http://w3id.org/bb5kbc/site_243_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -119377,7 +119679,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1356,
+   "id": 1361,
    "iri": "http://w3id.org/bb5kbc/site_244_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -119446,7 +119748,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1357,
+   "id": 1362,
    "iri": "http://w3id.org/bb5kbc/site_245_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -119515,7 +119817,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1358,
+   "id": 1363,
    "iri": "http://w3id.org/bb5kbc/site_246_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -119584,7 +119886,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1359,
+   "id": 1364,
    "iri": "http://w3id.org/bb5kbc/site_247_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -119653,7 +119955,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1360,
+   "id": 1365,
    "iri": "http://w3id.org/bb5kbc/site_248_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -119722,7 +120024,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1361,
+   "id": 1366,
    "iri": "http://w3id.org/bb5kbc/site_249_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -119791,7 +120093,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1362,
+   "id": 1367,
    "iri": "http://w3id.org/bb5kbc/site_24_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -119860,7 +120162,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1363,
+   "id": 1368,
    "iri": "http://w3id.org/bb5kbc/site_250_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -119929,7 +120231,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1364,
+   "id": 1369,
    "iri": "http://w3id.org/bb5kbc/site_251_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -119998,7 +120300,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1365,
+   "id": 1370,
    "iri": "http://w3id.org/bb5kbc/site_252_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -120067,7 +120369,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1366,
+   "id": 1371,
    "iri": "http://w3id.org/bb5kbc/site_253_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -120136,7 +120438,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1367,
+   "id": 1372,
    "iri": "http://w3id.org/bb5kbc/site_254_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -120205,7 +120507,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1368,
+   "id": 1373,
    "iri": "http://w3id.org/bb5kbc/site_255_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -120274,7 +120576,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1369,
+   "id": 1374,
    "iri": "http://w3id.org/bb5kbc/site_256_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -120343,7 +120645,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1370,
+   "id": 1375,
    "iri": "http://w3id.org/bb5kbc/site_257_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -120412,7 +120714,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1371,
+   "id": 1376,
    "iri": "http://w3id.org/bb5kbc/site_258_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -120481,7 +120783,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1372,
+   "id": 1377,
    "iri": "http://w3id.org/bb5kbc/site_259_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -120550,7 +120852,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1373,
+   "id": 1378,
    "iri": "http://w3id.org/bb5kbc/site_25_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -120619,7 +120921,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1374,
+   "id": 1379,
    "iri": "http://w3id.org/bb5kbc/site_260_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -120688,7 +120990,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1375,
+   "id": 1380,
    "iri": "http://w3id.org/bb5kbc/site_261_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -120757,7 +121059,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1376,
+   "id": 1381,
    "iri": "http://w3id.org/bb5kbc/site_262_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -120826,7 +121128,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1377,
+   "id": 1382,
    "iri": "http://w3id.org/bb5kbc/site_263_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -120895,7 +121197,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1378,
+   "id": 1383,
    "iri": "http://w3id.org/bb5kbc/site_264_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -120964,7 +121266,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1379,
+   "id": 1384,
    "iri": "http://w3id.org/bb5kbc/site_265_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -121033,7 +121335,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1380,
+   "id": 1385,
    "iri": "http://w3id.org/bb5kbc/site_266_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -121102,7 +121404,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1381,
+   "id": 1386,
    "iri": "http://w3id.org/bb5kbc/site_267_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -121171,7 +121473,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1382,
+   "id": 1387,
    "iri": "http://w3id.org/bb5kbc/site_268_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -121240,7 +121542,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1383,
+   "id": 1388,
    "iri": "http://w3id.org/bb5kbc/site_269_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -121309,7 +121611,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1384,
+   "id": 1389,
    "iri": "http://w3id.org/bb5kbc/site_26_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -121378,7 +121680,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1385,
+   "id": 1390,
    "iri": "http://w3id.org/bb5kbc/site_270_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -121447,7 +121749,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1386,
+   "id": 1391,
    "iri": "http://w3id.org/bb5kbc/site_271_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -121516,7 +121818,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1387,
+   "id": 1392,
    "iri": "http://w3id.org/bb5kbc/site_272_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -121585,7 +121887,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1388,
+   "id": 1393,
    "iri": "http://w3id.org/bb5kbc/site_273_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -121654,7 +121956,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1389,
+   "id": 1394,
    "iri": "http://w3id.org/bb5kbc/site_274_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -121723,7 +122025,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1390,
+   "id": 1395,
    "iri": "http://w3id.org/bb5kbc/site_275_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -121792,7 +122094,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1391,
+   "id": 1396,
    "iri": "http://w3id.org/bb5kbc/site_276_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -121861,7 +122163,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1392,
+   "id": 1397,
    "iri": "http://w3id.org/bb5kbc/site_277_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -121930,7 +122232,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1393,
+   "id": 1398,
    "iri": "http://w3id.org/bb5kbc/site_278_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -121999,7 +122301,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1394,
+   "id": 1399,
    "iri": "http://w3id.org/bb5kbc/site_279_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -122068,7 +122370,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1395,
+   "id": 1400,
    "iri": "http://w3id.org/bb5kbc/site_27_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -122137,7 +122439,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1396,
+   "id": 1401,
    "iri": "http://w3id.org/bb5kbc/site_280_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -122206,7 +122508,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1397,
+   "id": 1402,
    "iri": "http://w3id.org/bb5kbc/site_281_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -122275,7 +122577,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1398,
+   "id": 1403,
    "iri": "http://w3id.org/bb5kbc/site_282_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -122344,7 +122646,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1399,
+   "id": 1404,
    "iri": "http://w3id.org/bb5kbc/site_283_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -122413,7 +122715,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1400,
+   "id": 1405,
    "iri": "http://w3id.org/bb5kbc/site_284_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -122482,7 +122784,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1401,
+   "id": 1406,
    "iri": "http://w3id.org/bb5kbc/site_285_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -122551,7 +122853,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1402,
+   "id": 1407,
    "iri": "http://w3id.org/bb5kbc/site_286_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -122620,7 +122922,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1403,
+   "id": 1408,
    "iri": "http://w3id.org/bb5kbc/site_287_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -122689,7 +122991,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1404,
+   "id": 1409,
    "iri": "http://w3id.org/bb5kbc/site_288_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -122758,7 +123060,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1405,
+   "id": 1410,
    "iri": "http://w3id.org/bb5kbc/site_289_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -122827,7 +123129,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1406,
+   "id": 1411,
    "iri": "http://w3id.org/bb5kbc/site_28_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -122896,7 +123198,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1407,
+   "id": 1412,
    "iri": "http://w3id.org/bb5kbc/site_290_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -122965,7 +123267,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1408,
+   "id": 1413,
    "iri": "http://w3id.org/bb5kbc/site_291_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -123034,7 +123336,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1409,
+   "id": 1414,
    "iri": "http://w3id.org/bb5kbc/site_292_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -123103,7 +123405,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1410,
+   "id": 1415,
    "iri": "http://w3id.org/bb5kbc/site_293_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -123172,7 +123474,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1411,
+   "id": 1416,
    "iri": "http://w3id.org/bb5kbc/site_294_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -123241,7 +123543,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1412,
+   "id": 1417,
    "iri": "http://w3id.org/bb5kbc/site_295_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -123310,7 +123612,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1413,
+   "id": 1418,
    "iri": "http://w3id.org/bb5kbc/site_296_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -123379,7 +123681,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1414,
+   "id": 1419,
    "iri": "http://w3id.org/bb5kbc/site_297_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -123448,7 +123750,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1415,
+   "id": 1420,
    "iri": "http://w3id.org/bb5kbc/site_298_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -123517,7 +123819,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1416,
+   "id": 1421,
    "iri": "http://w3id.org/bb5kbc/site_299_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -123586,7 +123888,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1417,
+   "id": 1422,
    "iri": "http://w3id.org/bb5kbc/site_29_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -123655,7 +123957,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1418,
+   "id": 1423,
    "iri": "http://w3id.org/bb5kbc/site_2_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -123724,7 +124026,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1419,
+   "id": 1424,
    "iri": "http://w3id.org/bb5kbc/site_300_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -123793,7 +124095,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1420,
+   "id": 1425,
    "iri": "http://w3id.org/bb5kbc/site_301_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -123862,7 +124164,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1421,
+   "id": 1426,
    "iri": "http://w3id.org/bb5kbc/site_302_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -123931,7 +124233,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1422,
+   "id": 1427,
    "iri": "http://w3id.org/bb5kbc/site_303_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -124000,7 +124302,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1423,
+   "id": 1428,
    "iri": "http://w3id.org/bb5kbc/site_304_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -124069,7 +124371,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1424,
+   "id": 1429,
    "iri": "http://w3id.org/bb5kbc/site_305_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -124138,7 +124440,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1425,
+   "id": 1430,
    "iri": "http://w3id.org/bb5kbc/site_306_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -124207,7 +124509,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1426,
+   "id": 1431,
    "iri": "http://w3id.org/bb5kbc/site_307_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -124276,7 +124578,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1427,
+   "id": 1432,
    "iri": "http://w3id.org/bb5kbc/site_308_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -124345,7 +124647,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1428,
+   "id": 1433,
    "iri": "http://w3id.org/bb5kbc/site_309_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -124414,7 +124716,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1429,
+   "id": 1434,
    "iri": "http://w3id.org/bb5kbc/site_30_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -124483,7 +124785,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1430,
+   "id": 1435,
    "iri": "http://w3id.org/bb5kbc/site_310_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -124552,7 +124854,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1431,
+   "id": 1436,
    "iri": "http://w3id.org/bb5kbc/site_311_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -124621,7 +124923,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1432,
+   "id": 1437,
    "iri": "http://w3id.org/bb5kbc/site_312_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -124690,7 +124992,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1433,
+   "id": 1438,
    "iri": "http://w3id.org/bb5kbc/site_313_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -124759,7 +125061,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1434,
+   "id": 1439,
    "iri": "http://w3id.org/bb5kbc/site_314_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -124828,7 +125130,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1435,
+   "id": 1440,
    "iri": "http://w3id.org/bb5kbc/site_315_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -124897,7 +125199,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1436,
+   "id": 1441,
    "iri": "http://w3id.org/bb5kbc/site_316_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -124966,7 +125268,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1437,
+   "id": 1442,
    "iri": "http://w3id.org/bb5kbc/site_317_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -125035,7 +125337,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1438,
+   "id": 1443,
    "iri": "http://w3id.org/bb5kbc/site_318_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -125104,7 +125406,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1439,
+   "id": 1444,
    "iri": "http://w3id.org/bb5kbc/site_319_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -125173,7 +125475,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1440,
+   "id": 1445,
    "iri": "http://w3id.org/bb5kbc/site_31_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -125242,7 +125544,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1441,
+   "id": 1446,
    "iri": "http://w3id.org/bb5kbc/site_321_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -125311,7 +125613,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1442,
+   "id": 1447,
    "iri": "http://w3id.org/bb5kbc/site_322_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -125380,7 +125682,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1443,
+   "id": 1448,
    "iri": "http://w3id.org/bb5kbc/site_323_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -125449,7 +125751,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1444,
+   "id": 1449,
    "iri": "http://w3id.org/bb5kbc/site_324_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -125518,7 +125820,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1445,
+   "id": 1450,
    "iri": "http://w3id.org/bb5kbc/site_325_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -125587,7 +125889,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1446,
+   "id": 1451,
    "iri": "http://w3id.org/bb5kbc/site_326_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -125656,7 +125958,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1447,
+   "id": 1452,
    "iri": "http://w3id.org/bb5kbc/site_327_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -125725,7 +126027,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1448,
+   "id": 1453,
    "iri": "http://w3id.org/bb5kbc/site_328_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -125794,7 +126096,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1449,
+   "id": 1454,
    "iri": "http://w3id.org/bb5kbc/site_329_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -125863,7 +126165,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1450,
+   "id": 1455,
    "iri": "http://w3id.org/bb5kbc/site_32_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -125932,7 +126234,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1451,
+   "id": 1456,
    "iri": "http://w3id.org/bb5kbc/site_332_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -126001,7 +126303,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1452,
+   "id": 1457,
    "iri": "http://w3id.org/bb5kbc/site_333_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -126070,7 +126372,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1453,
+   "id": 1458,
    "iri": "http://w3id.org/bb5kbc/site_334_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -126139,7 +126441,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1454,
+   "id": 1459,
    "iri": "http://w3id.org/bb5kbc/site_336_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -126208,7 +126510,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1455,
+   "id": 1460,
    "iri": "http://w3id.org/bb5kbc/site_337_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -126277,7 +126579,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1456,
+   "id": 1461,
    "iri": "http://w3id.org/bb5kbc/site_338_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -126346,7 +126648,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1457,
+   "id": 1462,
    "iri": "http://w3id.org/bb5kbc/site_339_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -126415,7 +126717,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1458,
+   "id": 1463,
    "iri": "http://w3id.org/bb5kbc/site_33_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -126484,7 +126786,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1459,
+   "id": 1464,
    "iri": "http://w3id.org/bb5kbc/site_340_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -126553,7 +126855,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1460,
+   "id": 1465,
    "iri": "http://w3id.org/bb5kbc/site_341_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -126622,7 +126924,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1461,
+   "id": 1466,
    "iri": "http://w3id.org/bb5kbc/site_342_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -126691,7 +126993,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1462,
+   "id": 1467,
    "iri": "http://w3id.org/bb5kbc/site_343_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -126760,7 +127062,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1463,
+   "id": 1468,
    "iri": "http://w3id.org/bb5kbc/site_344_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -126829,7 +127131,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1464,
+   "id": 1469,
    "iri": "http://w3id.org/bb5kbc/site_345_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -126898,7 +127200,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1465,
+   "id": 1470,
    "iri": "http://w3id.org/bb5kbc/site_346_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -126967,7 +127269,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1466,
+   "id": 1471,
    "iri": "http://w3id.org/bb5kbc/site_347_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -127036,7 +127338,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1467,
+   "id": 1472,
    "iri": "http://w3id.org/bb5kbc/site_348_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -127105,7 +127407,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1468,
+   "id": 1473,
    "iri": "http://w3id.org/bb5kbc/site_349_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -127174,7 +127476,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1469,
+   "id": 1474,
    "iri": "http://w3id.org/bb5kbc/site_34_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -127243,7 +127545,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1470,
+   "id": 1475,
    "iri": "http://w3id.org/bb5kbc/site_350_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -127312,7 +127614,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1471,
+   "id": 1476,
    "iri": "http://w3id.org/bb5kbc/site_351_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -127381,7 +127683,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1472,
+   "id": 1477,
    "iri": "http://w3id.org/bb5kbc/site_352_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -127450,7 +127752,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1473,
+   "id": 1478,
    "iri": "http://w3id.org/bb5kbc/site_353_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -127519,7 +127821,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1474,
+   "id": 1479,
    "iri": "http://w3id.org/bb5kbc/site_354_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -127588,7 +127890,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1475,
+   "id": 1480,
    "iri": "http://w3id.org/bb5kbc/site_355_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -127657,7 +127959,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1476,
+   "id": 1481,
    "iri": "http://w3id.org/bb5kbc/site_356_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -127726,7 +128028,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1477,
+   "id": 1482,
    "iri": "http://w3id.org/bb5kbc/site_357_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -127795,7 +128097,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1478,
+   "id": 1483,
    "iri": "http://w3id.org/bb5kbc/site_358_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -127864,7 +128166,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1479,
+   "id": 1484,
    "iri": "http://w3id.org/bb5kbc/site_359_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -127933,7 +128235,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1480,
+   "id": 1485,
    "iri": "http://w3id.org/bb5kbc/site_35_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -128002,7 +128304,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1481,
+   "id": 1486,
    "iri": "http://w3id.org/bb5kbc/site_360_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -128071,7 +128373,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1482,
+   "id": 1487,
    "iri": "http://w3id.org/bb5kbc/site_361_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -128140,7 +128442,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1483,
+   "id": 1488,
    "iri": "http://w3id.org/bb5kbc/site_362_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -128209,7 +128511,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1484,
+   "id": 1489,
    "iri": "http://w3id.org/bb5kbc/site_363_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -128278,7 +128580,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1485,
+   "id": 1490,
    "iri": "http://w3id.org/bb5kbc/site_364_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -128347,7 +128649,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1486,
+   "id": 1491,
    "iri": "http://w3id.org/bb5kbc/site_365_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -128416,7 +128718,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1487,
+   "id": 1492,
    "iri": "http://w3id.org/bb5kbc/site_366_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -128485,7 +128787,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1488,
+   "id": 1493,
    "iri": "http://w3id.org/bb5kbc/site_367_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -128554,7 +128856,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1489,
+   "id": 1494,
    "iri": "http://w3id.org/bb5kbc/site_368_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -128623,7 +128925,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1490,
+   "id": 1495,
    "iri": "http://w3id.org/bb5kbc/site_369_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -128692,7 +128994,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1491,
+   "id": 1496,
    "iri": "http://w3id.org/bb5kbc/site_36_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -128761,7 +129063,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1492,
+   "id": 1497,
    "iri": "http://w3id.org/bb5kbc/site_370_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -128830,7 +129132,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1493,
+   "id": 1498,
    "iri": "http://w3id.org/bb5kbc/site_371_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -128899,7 +129201,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1494,
+   "id": 1499,
    "iri": "http://w3id.org/bb5kbc/site_372_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -128968,7 +129270,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1495,
+   "id": 1500,
    "iri": "http://w3id.org/bb5kbc/site_373_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -129037,7 +129339,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1496,
+   "id": 1501,
    "iri": "http://w3id.org/bb5kbc/site_374_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -129106,7 +129408,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1497,
+   "id": 1502,
    "iri": "http://w3id.org/bb5kbc/site_375_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -129175,7 +129477,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1498,
+   "id": 1503,
    "iri": "http://w3id.org/bb5kbc/site_376_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -129244,7 +129546,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1499,
+   "id": 1504,
    "iri": "http://w3id.org/bb5kbc/site_377_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -129313,7 +129615,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1500,
+   "id": 1505,
    "iri": "http://w3id.org/bb5kbc/site_378_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -129382,7 +129684,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1501,
+   "id": 1506,
    "iri": "http://w3id.org/bb5kbc/site_379_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -129451,7 +129753,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1502,
+   "id": 1507,
    "iri": "http://w3id.org/bb5kbc/site_37_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -129520,7 +129822,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1503,
+   "id": 1508,
    "iri": "http://w3id.org/bb5kbc/site_380_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -129589,7 +129891,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1504,
+   "id": 1509,
    "iri": "http://w3id.org/bb5kbc/site_381_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -129658,7 +129960,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1505,
+   "id": 1510,
    "iri": "http://w3id.org/bb5kbc/site_382_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -129727,7 +130029,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1506,
+   "id": 1511,
    "iri": "http://w3id.org/bb5kbc/site_383_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -129796,7 +130098,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1507,
+   "id": 1512,
    "iri": "http://w3id.org/bb5kbc/site_384_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -129865,7 +130167,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1508,
+   "id": 1513,
    "iri": "http://w3id.org/bb5kbc/site_385_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -129934,7 +130236,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1509,
+   "id": 1514,
    "iri": "http://w3id.org/bb5kbc/site_386_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -130003,7 +130305,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1510,
+   "id": 1515,
    "iri": "http://w3id.org/bb5kbc/site_387_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -130072,7 +130374,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1511,
+   "id": 1516,
    "iri": "http://w3id.org/bb5kbc/site_388_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -130141,7 +130443,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1512,
+   "id": 1517,
    "iri": "http://w3id.org/bb5kbc/site_389_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -130210,7 +130512,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1513,
+   "id": 1518,
    "iri": "http://w3id.org/bb5kbc/site_38_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -130279,7 +130581,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1514,
+   "id": 1519,
    "iri": "http://w3id.org/bb5kbc/site_390_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -130348,7 +130650,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1515,
+   "id": 1520,
    "iri": "http://w3id.org/bb5kbc/site_391_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -130417,7 +130719,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1516,
+   "id": 1521,
    "iri": "http://w3id.org/bb5kbc/site_392_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -130486,7 +130788,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1517,
+   "id": 1522,
    "iri": "http://w3id.org/bb5kbc/site_393_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -130555,7 +130857,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1518,
+   "id": 1523,
    "iri": "http://w3id.org/bb5kbc/site_394_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -130624,7 +130926,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1519,
+   "id": 1524,
    "iri": "http://w3id.org/bb5kbc/site_395_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -130693,7 +130995,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1520,
+   "id": 1525,
    "iri": "http://w3id.org/bb5kbc/site_396_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -130762,7 +131064,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1521,
+   "id": 1526,
    "iri": "http://w3id.org/bb5kbc/site_397_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -130831,7 +131133,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1522,
+   "id": 1527,
    "iri": "http://w3id.org/bb5kbc/site_398_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -130900,7 +131202,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1523,
+   "id": 1528,
    "iri": "http://w3id.org/bb5kbc/site_399_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -130969,7 +131271,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1524,
+   "id": 1529,
    "iri": "http://w3id.org/bb5kbc/site_39_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -131038,7 +131340,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1525,
+   "id": 1530,
    "iri": "http://w3id.org/bb5kbc/site_3_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -131107,7 +131409,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1526,
+   "id": 1531,
    "iri": "http://w3id.org/bb5kbc/site_400_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -131176,7 +131478,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1527,
+   "id": 1532,
    "iri": "http://w3id.org/bb5kbc/site_401_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -131245,7 +131547,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1528,
+   "id": 1533,
    "iri": "http://w3id.org/bb5kbc/site_402_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -131314,7 +131616,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1529,
+   "id": 1534,
    "iri": "http://w3id.org/bb5kbc/site_403_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -131383,7 +131685,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1530,
+   "id": 1535,
    "iri": "http://w3id.org/bb5kbc/site_404_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -131452,7 +131754,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1531,
+   "id": 1536,
    "iri": "http://w3id.org/bb5kbc/site_405_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -131521,7 +131823,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1532,
+   "id": 1537,
    "iri": "http://w3id.org/bb5kbc/site_406_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -131590,7 +131892,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1533,
+   "id": 1538,
    "iri": "http://w3id.org/bb5kbc/site_407_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -131659,7 +131961,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1534,
+   "id": 1539,
    "iri": "http://w3id.org/bb5kbc/site_408_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -131728,7 +132030,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1535,
+   "id": 1540,
    "iri": "http://w3id.org/bb5kbc/site_409_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -131797,7 +132099,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1536,
+   "id": 1541,
    "iri": "http://w3id.org/bb5kbc/site_40_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -131866,7 +132168,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1537,
+   "id": 1542,
    "iri": "http://w3id.org/bb5kbc/site_410_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -131935,7 +132237,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1538,
+   "id": 1543,
    "iri": "http://w3id.org/bb5kbc/site_411_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -132004,7 +132306,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1539,
+   "id": 1544,
    "iri": "http://w3id.org/bb5kbc/site_412_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -132073,7 +132375,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1540,
+   "id": 1545,
    "iri": "http://w3id.org/bb5kbc/site_413_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -132142,7 +132444,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1541,
+   "id": 1546,
    "iri": "http://w3id.org/bb5kbc/site_414_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -132211,7 +132513,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1542,
+   "id": 1547,
    "iri": "http://w3id.org/bb5kbc/site_415_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -132280,7 +132582,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1543,
+   "id": 1548,
    "iri": "http://w3id.org/bb5kbc/site_416_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -132349,7 +132651,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1544,
+   "id": 1549,
    "iri": "http://w3id.org/bb5kbc/site_417_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -132418,7 +132720,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1545,
+   "id": 1550,
    "iri": "http://w3id.org/bb5kbc/site_418_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -132487,7 +132789,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1546,
+   "id": 1551,
    "iri": "http://w3id.org/bb5kbc/site_419_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -132556,7 +132858,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1547,
+   "id": 1552,
    "iri": "http://w3id.org/bb5kbc/site_41_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -132625,7 +132927,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1548,
+   "id": 1553,
    "iri": "http://w3id.org/bb5kbc/site_421_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -132694,7 +132996,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1549,
+   "id": 1554,
    "iri": "http://w3id.org/bb5kbc/site_422_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -132763,7 +133065,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1550,
+   "id": 1555,
    "iri": "http://w3id.org/bb5kbc/site_423_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -132832,7 +133134,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1551,
+   "id": 1556,
    "iri": "http://w3id.org/bb5kbc/site_424_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -132901,7 +133203,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1552,
+   "id": 1557,
    "iri": "http://w3id.org/bb5kbc/site_425_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -132970,7 +133272,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1553,
+   "id": 1558,
    "iri": "http://w3id.org/bb5kbc/site_426_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -133039,7 +133341,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1554,
+   "id": 1559,
    "iri": "http://w3id.org/bb5kbc/site_427_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -133108,7 +133410,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1555,
+   "id": 1560,
    "iri": "http://w3id.org/bb5kbc/site_428_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -133177,7 +133479,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1556,
+   "id": 1561,
    "iri": "http://w3id.org/bb5kbc/site_429_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -133246,7 +133548,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1557,
+   "id": 1562,
    "iri": "http://w3id.org/bb5kbc/site_430_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -133315,7 +133617,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1558,
+   "id": 1563,
    "iri": "http://w3id.org/bb5kbc/site_431_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -133384,7 +133686,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1559,
+   "id": 1564,
    "iri": "http://w3id.org/bb5kbc/site_432_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -133453,7 +133755,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1560,
+   "id": 1565,
    "iri": "http://w3id.org/bb5kbc/site_433_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -133522,7 +133824,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1561,
+   "id": 1566,
    "iri": "http://w3id.org/bb5kbc/site_434_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -133591,7 +133893,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1562,
+   "id": 1567,
    "iri": "http://w3id.org/bb5kbc/site_435_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -133660,7 +133962,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1563,
+   "id": 1568,
    "iri": "http://w3id.org/bb5kbc/site_436_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -133729,7 +134031,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1564,
+   "id": 1569,
    "iri": "http://w3id.org/bb5kbc/site_437_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -133798,7 +134100,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1565,
+   "id": 1570,
    "iri": "http://w3id.org/bb5kbc/site_438_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -133867,7 +134169,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1566,
+   "id": 1571,
    "iri": "http://w3id.org/bb5kbc/site_439_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -133936,7 +134238,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1567,
+   "id": 1572,
    "iri": "http://w3id.org/bb5kbc/site_43_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -134005,7 +134307,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1568,
+   "id": 1573,
    "iri": "http://w3id.org/bb5kbc/site_440_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -134074,7 +134376,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1569,
+   "id": 1574,
    "iri": "http://w3id.org/bb5kbc/site_441_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -134143,7 +134445,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1570,
+   "id": 1575,
    "iri": "http://w3id.org/bb5kbc/site_442_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -134212,7 +134514,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1571,
+   "id": 1576,
    "iri": "http://w3id.org/bb5kbc/site_443_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -134281,7 +134583,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1572,
+   "id": 1577,
    "iri": "http://w3id.org/bb5kbc/site_444_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -134350,7 +134652,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1573,
+   "id": 1578,
    "iri": "http://w3id.org/bb5kbc/site_445_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -134419,7 +134721,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1574,
+   "id": 1579,
    "iri": "http://w3id.org/bb5kbc/site_446_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -134488,7 +134790,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1575,
+   "id": 1580,
    "iri": "http://w3id.org/bb5kbc/site_447_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -134557,7 +134859,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1576,
+   "id": 1581,
    "iri": "http://w3id.org/bb5kbc/site_448_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -134626,7 +134928,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1577,
+   "id": 1582,
    "iri": "http://w3id.org/bb5kbc/site_449_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -134695,7 +134997,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1578,
+   "id": 1583,
    "iri": "http://w3id.org/bb5kbc/site_44_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -134764,7 +135066,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1579,
+   "id": 1584,
    "iri": "http://w3id.org/bb5kbc/site_450_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -134833,7 +135135,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1580,
+   "id": 1585,
    "iri": "http://w3id.org/bb5kbc/site_453_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -134902,7 +135204,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1581,
+   "id": 1586,
    "iri": "http://w3id.org/bb5kbc/site_454_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -134971,7 +135273,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1582,
+   "id": 1587,
    "iri": "http://w3id.org/bb5kbc/site_455_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -135040,7 +135342,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1583,
+   "id": 1588,
    "iri": "http://w3id.org/bb5kbc/site_456_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -135109,7 +135411,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1584,
+   "id": 1589,
    "iri": "http://w3id.org/bb5kbc/site_459_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -135178,7 +135480,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1585,
+   "id": 1590,
    "iri": "http://w3id.org/bb5kbc/site_45_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -135247,7 +135549,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1586,
+   "id": 1591,
    "iri": "http://w3id.org/bb5kbc/site_460_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -135316,7 +135618,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1587,
+   "id": 1592,
    "iri": "http://w3id.org/bb5kbc/site_461_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -135385,7 +135687,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1588,
+   "id": 1593,
    "iri": "http://w3id.org/bb5kbc/site_462_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -135454,7 +135756,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1589,
+   "id": 1594,
    "iri": "http://w3id.org/bb5kbc/site_463_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -135523,7 +135825,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1590,
+   "id": 1595,
    "iri": "http://w3id.org/bb5kbc/site_464_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -135592,7 +135894,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1591,
+   "id": 1596,
    "iri": "http://w3id.org/bb5kbc/site_465_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -135661,7 +135963,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1592,
+   "id": 1597,
    "iri": "http://w3id.org/bb5kbc/site_466_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -135730,7 +136032,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1593,
+   "id": 1598,
    "iri": "http://w3id.org/bb5kbc/site_467_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -135799,7 +136101,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1594,
+   "id": 1599,
    "iri": "http://w3id.org/bb5kbc/site_468_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -135868,7 +136170,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1595,
+   "id": 1600,
    "iri": "http://w3id.org/bb5kbc/site_469_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -135937,7 +136239,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1596,
+   "id": 1601,
    "iri": "http://w3id.org/bb5kbc/site_46_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -136006,7 +136308,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1597,
+   "id": 1602,
    "iri": "http://w3id.org/bb5kbc/site_470_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -136075,7 +136377,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1598,
+   "id": 1603,
    "iri": "http://w3id.org/bb5kbc/site_471_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -136144,7 +136446,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1599,
+   "id": 1604,
    "iri": "http://w3id.org/bb5kbc/site_472_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -136213,7 +136515,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1600,
+   "id": 1605,
    "iri": "http://w3id.org/bb5kbc/site_473_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -136282,7 +136584,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1601,
+   "id": 1606,
    "iri": "http://w3id.org/bb5kbc/site_474_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -136351,7 +136653,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1602,
+   "id": 1607,
    "iri": "http://w3id.org/bb5kbc/site_475_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -136420,7 +136722,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1603,
+   "id": 1608,
    "iri": "http://w3id.org/bb5kbc/site_476_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -136489,7 +136791,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1604,
+   "id": 1609,
    "iri": "http://w3id.org/bb5kbc/site_477_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -136558,7 +136860,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1605,
+   "id": 1610,
    "iri": "http://w3id.org/bb5kbc/site_478_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -136627,7 +136929,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1606,
+   "id": 1611,
    "iri": "http://w3id.org/bb5kbc/site_479_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -136696,7 +136998,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1607,
+   "id": 1612,
    "iri": "http://w3id.org/bb5kbc/site_47_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -136765,7 +137067,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1608,
+   "id": 1613,
    "iri": "http://w3id.org/bb5kbc/site_480_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -136834,7 +137136,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1609,
+   "id": 1614,
    "iri": "http://w3id.org/bb5kbc/site_481_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -136903,7 +137205,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1610,
+   "id": 1615,
    "iri": "http://w3id.org/bb5kbc/site_482_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -136972,7 +137274,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1611,
+   "id": 1616,
    "iri": "http://w3id.org/bb5kbc/site_483_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -137041,7 +137343,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1612,
+   "id": 1617,
    "iri": "http://w3id.org/bb5kbc/site_484_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -137110,7 +137412,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1613,
+   "id": 1618,
    "iri": "http://w3id.org/bb5kbc/site_485_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -137179,7 +137481,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1614,
+   "id": 1619,
    "iri": "http://w3id.org/bb5kbc/site_486_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -137248,7 +137550,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1615,
+   "id": 1620,
    "iri": "http://w3id.org/bb5kbc/site_487_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -137317,7 +137619,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1616,
+   "id": 1621,
    "iri": "http://w3id.org/bb5kbc/site_488_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -137386,7 +137688,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1617,
+   "id": 1622,
    "iri": "http://w3id.org/bb5kbc/site_489_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -137455,7 +137757,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1618,
+   "id": 1623,
    "iri": "http://w3id.org/bb5kbc/site_48_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -137524,7 +137826,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1619,
+   "id": 1624,
    "iri": "http://w3id.org/bb5kbc/site_490_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -137593,7 +137895,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1620,
+   "id": 1625,
    "iri": "http://w3id.org/bb5kbc/site_491_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -137662,7 +137964,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1621,
+   "id": 1626,
    "iri": "http://w3id.org/bb5kbc/site_492_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -137731,7 +138033,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1622,
+   "id": 1627,
    "iri": "http://w3id.org/bb5kbc/site_493_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -137800,7 +138102,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1623,
+   "id": 1628,
    "iri": "http://w3id.org/bb5kbc/site_494_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -137869,7 +138171,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1624,
+   "id": 1629,
    "iri": "http://w3id.org/bb5kbc/site_495_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -137938,7 +138240,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1625,
+   "id": 1630,
    "iri": "http://w3id.org/bb5kbc/site_496_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -138007,7 +138309,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1626,
+   "id": 1631,
    "iri": "http://w3id.org/bb5kbc/site_497_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -138076,7 +138378,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1627,
+   "id": 1632,
    "iri": "http://w3id.org/bb5kbc/site_498_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -138145,7 +138447,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1628,
+   "id": 1633,
    "iri": "http://w3id.org/bb5kbc/site_499_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -138214,7 +138516,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1629,
+   "id": 1634,
    "iri": "http://w3id.org/bb5kbc/site_49_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -138283,7 +138585,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1630,
+   "id": 1635,
    "iri": "http://w3id.org/bb5kbc/site_4_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -138352,7 +138654,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1631,
+   "id": 1636,
    "iri": "http://w3id.org/bb5kbc/site_500_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -138421,7 +138723,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1632,
+   "id": 1637,
    "iri": "http://w3id.org/bb5kbc/site_501_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -138490,7 +138792,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1633,
+   "id": 1638,
    "iri": "http://w3id.org/bb5kbc/site_502_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -138559,7 +138861,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1634,
+   "id": 1639,
    "iri": "http://w3id.org/bb5kbc/site_503_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -138628,7 +138930,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1635,
+   "id": 1640,
    "iri": "http://w3id.org/bb5kbc/site_504_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -138697,7 +138999,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1636,
+   "id": 1641,
    "iri": "http://w3id.org/bb5kbc/site_505_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -138766,7 +139068,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1637,
+   "id": 1642,
    "iri": "http://w3id.org/bb5kbc/site_506_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -138835,7 +139137,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1638,
+   "id": 1643,
    "iri": "http://w3id.org/bb5kbc/site_507_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -138904,7 +139206,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1639,
+   "id": 1644,
    "iri": "http://w3id.org/bb5kbc/site_508_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -138973,7 +139275,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1640,
+   "id": 1645,
    "iri": "http://w3id.org/bb5kbc/site_50_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -139042,7 +139344,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1641,
+   "id": 1646,
    "iri": "http://w3id.org/bb5kbc/site_510_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -139111,7 +139413,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1642,
+   "id": 1647,
    "iri": "http://w3id.org/bb5kbc/site_511_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -139180,7 +139482,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1643,
+   "id": 1648,
    "iri": "http://w3id.org/bb5kbc/site_512_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -139249,7 +139551,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1644,
+   "id": 1649,
    "iri": "http://w3id.org/bb5kbc/site_513_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -139318,7 +139620,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1645,
+   "id": 1650,
    "iri": "http://w3id.org/bb5kbc/site_514_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -139387,7 +139689,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1646,
+   "id": 1651,
    "iri": "http://w3id.org/bb5kbc/site_515_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -139456,7 +139758,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1647,
+   "id": 1652,
    "iri": "http://w3id.org/bb5kbc/site_516_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -139525,7 +139827,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1648,
+   "id": 1653,
    "iri": "http://w3id.org/bb5kbc/site_517_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -139594,7 +139896,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1649,
+   "id": 1654,
    "iri": "http://w3id.org/bb5kbc/site_518_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -139663,7 +139965,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1650,
+   "id": 1655,
    "iri": "http://w3id.org/bb5kbc/site_519_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -139732,7 +140034,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1651,
+   "id": 1656,
    "iri": "http://w3id.org/bb5kbc/site_520_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -139801,7 +140103,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1652,
+   "id": 1657,
    "iri": "http://w3id.org/bb5kbc/site_521_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -139870,7 +140172,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1653,
+   "id": 1658,
    "iri": "http://w3id.org/bb5kbc/site_522_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -139939,7 +140241,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1654,
+   "id": 1659,
    "iri": "http://w3id.org/bb5kbc/site_523_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -140008,7 +140310,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1655,
+   "id": 1660,
    "iri": "http://w3id.org/bb5kbc/site_524_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -140077,7 +140379,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1656,
+   "id": 1661,
    "iri": "http://w3id.org/bb5kbc/site_525_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -140146,7 +140448,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1657,
+   "id": 1662,
    "iri": "http://w3id.org/bb5kbc/site_526_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -140215,7 +140517,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1658,
+   "id": 1663,
    "iri": "http://w3id.org/bb5kbc/site_527_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -140284,7 +140586,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1659,
+   "id": 1664,
    "iri": "http://w3id.org/bb5kbc/site_528_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -140353,7 +140655,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1660,
+   "id": 1665,
    "iri": "http://w3id.org/bb5kbc/site_529_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -140422,7 +140724,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1661,
+   "id": 1666,
    "iri": "http://w3id.org/bb5kbc/site_530_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -140491,7 +140793,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1662,
+   "id": 1667,
    "iri": "http://w3id.org/bb5kbc/site_531_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -140560,7 +140862,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1663,
+   "id": 1668,
    "iri": "http://w3id.org/bb5kbc/site_532_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -140629,7 +140931,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1664,
+   "id": 1669,
    "iri": "http://w3id.org/bb5kbc/site_533_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -140698,7 +141000,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1665,
+   "id": 1670,
    "iri": "http://w3id.org/bb5kbc/site_534_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -140767,7 +141069,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1666,
+   "id": 1671,
    "iri": "http://w3id.org/bb5kbc/site_535_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -140836,7 +141138,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1667,
+   "id": 1672,
    "iri": "http://w3id.org/bb5kbc/site_536_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -140905,7 +141207,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1668,
+   "id": 1673,
    "iri": "http://w3id.org/bb5kbc/site_537_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -140974,7 +141276,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1669,
+   "id": 1674,
    "iri": "http://w3id.org/bb5kbc/site_538_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -141043,7 +141345,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1670,
+   "id": 1675,
    "iri": "http://w3id.org/bb5kbc/site_539_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -141112,7 +141414,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1671,
+   "id": 1676,
    "iri": "http://w3id.org/bb5kbc/site_53_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -141181,7 +141483,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1672,
+   "id": 1677,
    "iri": "http://w3id.org/bb5kbc/site_540_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -141250,7 +141552,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1673,
+   "id": 1678,
    "iri": "http://w3id.org/bb5kbc/site_541_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -141319,7 +141621,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1674,
+   "id": 1679,
    "iri": "http://w3id.org/bb5kbc/site_542_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -141388,7 +141690,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1675,
+   "id": 1680,
    "iri": "http://w3id.org/bb5kbc/site_543_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -141457,7 +141759,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1676,
+   "id": 1681,
    "iri": "http://w3id.org/bb5kbc/site_544_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -141526,7 +141828,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1677,
+   "id": 1682,
    "iri": "http://w3id.org/bb5kbc/site_546_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -141595,7 +141897,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1678,
+   "id": 1683,
    "iri": "http://w3id.org/bb5kbc/site_547_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -141664,7 +141966,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1679,
+   "id": 1684,
    "iri": "http://w3id.org/bb5kbc/site_548_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -141733,7 +142035,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1680,
+   "id": 1685,
    "iri": "http://w3id.org/bb5kbc/site_549_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -141802,7 +142104,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1681,
+   "id": 1686,
    "iri": "http://w3id.org/bb5kbc/site_54_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -141871,7 +142173,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1682,
+   "id": 1687,
    "iri": "http://w3id.org/bb5kbc/site_550_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -141940,7 +142242,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1683,
+   "id": 1688,
    "iri": "http://w3id.org/bb5kbc/site_551_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -142009,7 +142311,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1684,
+   "id": 1689,
    "iri": "http://w3id.org/bb5kbc/site_552_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -142078,7 +142380,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1685,
+   "id": 1690,
    "iri": "http://w3id.org/bb5kbc/site_553_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -142147,7 +142449,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1686,
+   "id": 1691,
    "iri": "http://w3id.org/bb5kbc/site_554_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -142216,7 +142518,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1687,
+   "id": 1692,
    "iri": "http://w3id.org/bb5kbc/site_555_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -142285,7 +142587,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1688,
+   "id": 1693,
    "iri": "http://w3id.org/bb5kbc/site_556_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -142354,7 +142656,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1689,
+   "id": 1694,
    "iri": "http://w3id.org/bb5kbc/site_557_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -142423,7 +142725,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1690,
+   "id": 1695,
    "iri": "http://w3id.org/bb5kbc/site_558_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -142492,7 +142794,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1691,
+   "id": 1696,
    "iri": "http://w3id.org/bb5kbc/site_559_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -142561,7 +142863,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1692,
+   "id": 1697,
    "iri": "http://w3id.org/bb5kbc/site_55_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -142630,7 +142932,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1693,
+   "id": 1698,
    "iri": "http://w3id.org/bb5kbc/site_560_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -142699,7 +143001,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1694,
+   "id": 1699,
    "iri": "http://w3id.org/bb5kbc/site_561_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -142768,7 +143070,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1695,
+   "id": 1700,
    "iri": "http://w3id.org/bb5kbc/site_562_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -142837,7 +143139,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1696,
+   "id": 1701,
    "iri": "http://w3id.org/bb5kbc/site_563_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -142906,7 +143208,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1697,
+   "id": 1702,
    "iri": "http://w3id.org/bb5kbc/site_564_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -142975,7 +143277,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1698,
+   "id": 1703,
    "iri": "http://w3id.org/bb5kbc/site_565_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -143044,7 +143346,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1699,
+   "id": 1704,
    "iri": "http://w3id.org/bb5kbc/site_56_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -143113,7 +143415,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1700,
+   "id": 1705,
    "iri": "http://w3id.org/bb5kbc/site_571_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -143182,7 +143484,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1701,
+   "id": 1706,
    "iri": "http://w3id.org/bb5kbc/site_574_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -143251,7 +143553,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1702,
+   "id": 1707,
    "iri": "http://w3id.org/bb5kbc/site_575_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -143320,7 +143622,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1703,
+   "id": 1708,
    "iri": "http://w3id.org/bb5kbc/site_579_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -143389,7 +143691,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1704,
+   "id": 1709,
    "iri": "http://w3id.org/bb5kbc/site_57_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -143458,7 +143760,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1705,
+   "id": 1710,
    "iri": "http://w3id.org/bb5kbc/site_580_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -143527,7 +143829,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1706,
+   "id": 1711,
    "iri": "http://w3id.org/bb5kbc/site_581_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -143596,7 +143898,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1707,
+   "id": 1712,
    "iri": "http://w3id.org/bb5kbc/site_582_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -143665,7 +143967,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1708,
+   "id": 1713,
    "iri": "http://w3id.org/bb5kbc/site_584_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -143734,7 +144036,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1709,
+   "id": 1714,
    "iri": "http://w3id.org/bb5kbc/site_585_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -143803,7 +144105,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1710,
+   "id": 1715,
    "iri": "http://w3id.org/bb5kbc/site_586_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -143872,7 +144174,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1711,
+   "id": 1716,
    "iri": "http://w3id.org/bb5kbc/site_587_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -143941,7 +144243,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1712,
+   "id": 1717,
    "iri": "http://w3id.org/bb5kbc/site_588_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -144010,7 +144312,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1713,
+   "id": 1718,
    "iri": "http://w3id.org/bb5kbc/site_589_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -144079,7 +144381,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1714,
+   "id": 1719,
    "iri": "http://w3id.org/bb5kbc/site_58_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -144148,7 +144450,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1715,
+   "id": 1720,
    "iri": "http://w3id.org/bb5kbc/site_590_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -144217,7 +144519,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1716,
+   "id": 1721,
    "iri": "http://w3id.org/bb5kbc/site_59_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -144286,7 +144588,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1717,
+   "id": 1722,
    "iri": "http://w3id.org/bb5kbc/site_5_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -144355,7 +144657,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1718,
+   "id": 1723,
    "iri": "http://w3id.org/bb5kbc/site_60_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -144424,7 +144726,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1719,
+   "id": 1724,
    "iri": "http://w3id.org/bb5kbc/site_61_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -144493,7 +144795,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1720,
+   "id": 1725,
    "iri": "http://w3id.org/bb5kbc/site_64_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -144562,7 +144864,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1721,
+   "id": 1726,
    "iri": "http://w3id.org/bb5kbc/site_65_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -144631,7 +144933,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1722,
+   "id": 1727,
    "iri": "http://w3id.org/bb5kbc/site_66_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -144700,7 +145002,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1723,
+   "id": 1728,
    "iri": "http://w3id.org/bb5kbc/site_67_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -144769,7 +145071,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1724,
+   "id": 1729,
    "iri": "http://w3id.org/bb5kbc/site_68_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -144838,7 +145140,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1725,
+   "id": 1730,
    "iri": "http://w3id.org/bb5kbc/site_69_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -144907,7 +145209,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1726,
+   "id": 1731,
    "iri": "http://w3id.org/bb5kbc/site_6_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -144976,7 +145278,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1727,
+   "id": 1732,
    "iri": "http://w3id.org/bb5kbc/site_70_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -145045,7 +145347,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1728,
+   "id": 1733,
    "iri": "http://w3id.org/bb5kbc/site_72_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -145114,7 +145416,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1729,
+   "id": 1734,
    "iri": "http://w3id.org/bb5kbc/site_73_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -145183,7 +145485,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1730,
+   "id": 1735,
    "iri": "http://w3id.org/bb5kbc/site_74_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -145252,7 +145554,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1731,
+   "id": 1736,
    "iri": "http://w3id.org/bb5kbc/site_75_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -145321,7 +145623,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1732,
+   "id": 1737,
    "iri": "http://w3id.org/bb5kbc/site_76_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -145390,7 +145692,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1733,
+   "id": 1738,
    "iri": "http://w3id.org/bb5kbc/site_77_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -145459,7 +145761,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1734,
+   "id": 1739,
    "iri": "http://w3id.org/bb5kbc/site_78_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -145528,7 +145830,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1735,
+   "id": 1740,
    "iri": "http://w3id.org/bb5kbc/site_79_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -145597,7 +145899,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1736,
+   "id": 1741,
    "iri": "http://w3id.org/bb5kbc/site_7_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -145666,7 +145968,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1737,
+   "id": 1742,
    "iri": "http://w3id.org/bb5kbc/site_80_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -145735,7 +146037,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1738,
+   "id": 1743,
    "iri": "http://w3id.org/bb5kbc/site_81_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -145804,7 +146106,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1739,
+   "id": 1744,
    "iri": "http://w3id.org/bb5kbc/site_82_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -145873,7 +146175,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1740,
+   "id": 1745,
    "iri": "http://w3id.org/bb5kbc/site_83_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -145942,7 +146244,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1741,
+   "id": 1746,
    "iri": "http://w3id.org/bb5kbc/site_84_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -146011,7 +146313,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1742,
+   "id": 1747,
    "iri": "http://w3id.org/bb5kbc/site_85_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -146080,7 +146382,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1743,
+   "id": 1748,
    "iri": "http://w3id.org/bb5kbc/site_86_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -146149,7 +146451,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1744,
+   "id": 1749,
    "iri": "http://w3id.org/bb5kbc/site_87_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -146218,7 +146520,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1745,
+   "id": 1750,
    "iri": "http://w3id.org/bb5kbc/site_88_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -146287,7 +146589,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1746,
+   "id": 1751,
    "iri": "http://w3id.org/bb5kbc/site_89_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -146356,7 +146658,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1747,
+   "id": 1752,
    "iri": "http://w3id.org/bb5kbc/site_8_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -146425,7 +146727,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1748,
+   "id": 1753,
    "iri": "http://w3id.org/bb5kbc/site_90_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -146494,7 +146796,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1749,
+   "id": 1754,
    "iri": "http://w3id.org/bb5kbc/site_91_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -146563,7 +146865,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1750,
+   "id": 1755,
    "iri": "http://w3id.org/bb5kbc/site_92_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -146632,7 +146934,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1751,
+   "id": 1756,
    "iri": "http://w3id.org/bb5kbc/site_93_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -146701,7 +147003,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1752,
+   "id": 1757,
    "iri": "http://w3id.org/bb5kbc/site_94_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -146770,7 +147072,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1753,
+   "id": 1758,
    "iri": "http://w3id.org/bb5kbc/site_96_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -146839,7 +147141,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1754,
+   "id": 1759,
    "iri": "http://w3id.org/bb5kbc/site_97_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -146908,7 +147210,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1755,
+   "id": 1760,
    "iri": "http://w3id.org/bb5kbc/site_98_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -146977,7 +147279,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1756,
+   "id": 1761,
    "iri": "http://w3id.org/bb5kbc/site_99_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -147046,7 +147348,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1757,
+   "id": 1762,
    "iri": "http://w3id.org/bb5kbc/site_9_activity",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -147077,7 +147379,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1758,
+   "id": 1763,
    "iri": "http://w3id.org/bb5kbc/site_100_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -147108,7 +147410,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1759,
+   "id": 1764,
    "iri": "http://w3id.org/bb5kbc/site_101_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -147139,7 +147441,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1760,
+   "id": 1765,
    "iri": "http://w3id.org/bb5kbc/site_103_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -147170,7 +147472,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1761,
+   "id": 1766,
    "iri": "http://w3id.org/bb5kbc/site_107_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -147201,7 +147503,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1762,
+   "id": 1767,
    "iri": "http://w3id.org/bb5kbc/site_10_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -147232,7 +147534,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1763,
+   "id": 1768,
    "iri": "http://w3id.org/bb5kbc/site_111_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -147263,7 +147565,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1764,
+   "id": 1769,
    "iri": "http://w3id.org/bb5kbc/site_114_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -147294,7 +147596,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1765,
+   "id": 1770,
    "iri": "http://w3id.org/bb5kbc/site_116_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -147325,7 +147627,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1766,
+   "id": 1771,
    "iri": "http://w3id.org/bb5kbc/site_119_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -147356,7 +147658,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1767,
+   "id": 1772,
    "iri": "http://w3id.org/bb5kbc/site_11_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -147387,7 +147689,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1768,
+   "id": 1773,
    "iri": "http://w3id.org/bb5kbc/site_120_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -147418,7 +147720,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1769,
+   "id": 1774,
    "iri": "http://w3id.org/bb5kbc/site_121_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -147449,7 +147751,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1770,
+   "id": 1775,
    "iri": "http://w3id.org/bb5kbc/site_122_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -147480,7 +147782,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1771,
+   "id": 1776,
    "iri": "http://w3id.org/bb5kbc/site_123_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -147511,7 +147813,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1772,
+   "id": 1777,
    "iri": "http://w3id.org/bb5kbc/site_125_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -147542,7 +147844,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1773,
+   "id": 1778,
    "iri": "http://w3id.org/bb5kbc/site_126_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -147573,7 +147875,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1774,
+   "id": 1779,
    "iri": "http://w3id.org/bb5kbc/site_128_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -147604,7 +147906,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1775,
+   "id": 1780,
    "iri": "http://w3id.org/bb5kbc/site_129_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -147635,7 +147937,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1776,
+   "id": 1781,
    "iri": "http://w3id.org/bb5kbc/site_12_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -147666,7 +147968,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1777,
+   "id": 1782,
    "iri": "http://w3id.org/bb5kbc/site_131_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -147697,7 +147999,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1778,
+   "id": 1783,
    "iri": "http://w3id.org/bb5kbc/site_134_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -147728,7 +148030,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1779,
+   "id": 1784,
    "iri": "http://w3id.org/bb5kbc/site_136_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -147759,7 +148061,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1780,
+   "id": 1785,
    "iri": "http://w3id.org/bb5kbc/site_138_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -147790,7 +148092,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1781,
+   "id": 1786,
    "iri": "http://w3id.org/bb5kbc/site_139_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -147821,7 +148123,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1782,
+   "id": 1787,
    "iri": "http://w3id.org/bb5kbc/site_13_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -147852,7 +148154,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1783,
+   "id": 1788,
    "iri": "http://w3id.org/bb5kbc/site_140_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -147883,7 +148185,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1784,
+   "id": 1789,
    "iri": "http://w3id.org/bb5kbc/site_141_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -147914,7 +148216,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1785,
+   "id": 1790,
    "iri": "http://w3id.org/bb5kbc/site_142_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -147945,7 +148247,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1786,
+   "id": 1791,
    "iri": "http://w3id.org/bb5kbc/site_144_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -147976,7 +148278,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1787,
+   "id": 1792,
    "iri": "http://w3id.org/bb5kbc/site_145_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -148007,7 +148309,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1788,
+   "id": 1793,
    "iri": "http://w3id.org/bb5kbc/site_146_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -148038,7 +148340,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1789,
+   "id": 1794,
    "iri": "http://w3id.org/bb5kbc/site_147_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -148069,7 +148371,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1790,
+   "id": 1795,
    "iri": "http://w3id.org/bb5kbc/site_148_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -148100,7 +148402,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1791,
+   "id": 1796,
    "iri": "http://w3id.org/bb5kbc/site_149_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -148131,7 +148433,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1792,
+   "id": 1797,
    "iri": "http://w3id.org/bb5kbc/site_14_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -148162,7 +148464,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1793,
+   "id": 1798,
    "iri": "http://w3id.org/bb5kbc/site_150_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -148193,7 +148495,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1794,
+   "id": 1799,
    "iri": "http://w3id.org/bb5kbc/site_151_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -148224,7 +148526,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1795,
+   "id": 1800,
    "iri": "http://w3id.org/bb5kbc/site_152_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -148255,7 +148557,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1796,
+   "id": 1801,
    "iri": "http://w3id.org/bb5kbc/site_153_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -148286,7 +148588,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1797,
+   "id": 1802,
    "iri": "http://w3id.org/bb5kbc/site_154_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -148317,7 +148619,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1798,
+   "id": 1803,
    "iri": "http://w3id.org/bb5kbc/site_155_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -148348,7 +148650,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1799,
+   "id": 1804,
    "iri": "http://w3id.org/bb5kbc/site_156_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -148379,7 +148681,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1800,
+   "id": 1805,
    "iri": "http://w3id.org/bb5kbc/site_157_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -148410,7 +148712,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1801,
+   "id": 1806,
    "iri": "http://w3id.org/bb5kbc/site_158_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -148441,7 +148743,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1802,
+   "id": 1807,
    "iri": "http://w3id.org/bb5kbc/site_159_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -148472,7 +148774,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1803,
+   "id": 1808,
    "iri": "http://w3id.org/bb5kbc/site_15_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -148503,7 +148805,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1804,
+   "id": 1809,
    "iri": "http://w3id.org/bb5kbc/site_160_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -148534,7 +148836,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1805,
+   "id": 1810,
    "iri": "http://w3id.org/bb5kbc/site_161_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -148565,7 +148867,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1806,
+   "id": 1811,
    "iri": "http://w3id.org/bb5kbc/site_162_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -148596,7 +148898,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1807,
+   "id": 1812,
    "iri": "http://w3id.org/bb5kbc/site_163_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -148627,7 +148929,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1808,
+   "id": 1813,
    "iri": "http://w3id.org/bb5kbc/site_164_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -148658,7 +148960,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1809,
+   "id": 1814,
    "iri": "http://w3id.org/bb5kbc/site_165_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -148689,7 +148991,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1810,
+   "id": 1815,
    "iri": "http://w3id.org/bb5kbc/site_166_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -148720,7 +149022,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1811,
+   "id": 1816,
    "iri": "http://w3id.org/bb5kbc/site_167_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -148751,7 +149053,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1812,
+   "id": 1817,
    "iri": "http://w3id.org/bb5kbc/site_168_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -148782,7 +149084,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1813,
+   "id": 1818,
    "iri": "http://w3id.org/bb5kbc/site_169_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -148813,7 +149115,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1814,
+   "id": 1819,
    "iri": "http://w3id.org/bb5kbc/site_16_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -148844,7 +149146,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1815,
+   "id": 1820,
    "iri": "http://w3id.org/bb5kbc/site_170_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -148875,7 +149177,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1816,
+   "id": 1821,
    "iri": "http://w3id.org/bb5kbc/site_171_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -148906,7 +149208,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1817,
+   "id": 1822,
    "iri": "http://w3id.org/bb5kbc/site_172_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -148937,7 +149239,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1818,
+   "id": 1823,
    "iri": "http://w3id.org/bb5kbc/site_173_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -148968,7 +149270,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1819,
+   "id": 1824,
    "iri": "http://w3id.org/bb5kbc/site_174_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -148999,7 +149301,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1820,
+   "id": 1825,
    "iri": "http://w3id.org/bb5kbc/site_175_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -149030,7 +149332,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1821,
+   "id": 1826,
    "iri": "http://w3id.org/bb5kbc/site_176_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -149061,7 +149363,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1822,
+   "id": 1827,
    "iri": "http://w3id.org/bb5kbc/site_177_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -149092,7 +149394,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1823,
+   "id": 1828,
    "iri": "http://w3id.org/bb5kbc/site_178_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -149123,7 +149425,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1824,
+   "id": 1829,
    "iri": "http://w3id.org/bb5kbc/site_179_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -149154,7 +149456,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1825,
+   "id": 1830,
    "iri": "http://w3id.org/bb5kbc/site_17_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -149185,7 +149487,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1826,
+   "id": 1831,
    "iri": "http://w3id.org/bb5kbc/site_180_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -149216,7 +149518,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1827,
+   "id": 1832,
    "iri": "http://w3id.org/bb5kbc/site_181_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -149247,7 +149549,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1828,
+   "id": 1833,
    "iri": "http://w3id.org/bb5kbc/site_182_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -149278,7 +149580,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1829,
+   "id": 1834,
    "iri": "http://w3id.org/bb5kbc/site_183_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -149309,7 +149611,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1830,
+   "id": 1835,
    "iri": "http://w3id.org/bb5kbc/site_184_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -149340,7 +149642,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1831,
+   "id": 1836,
    "iri": "http://w3id.org/bb5kbc/site_185_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -149371,7 +149673,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1832,
+   "id": 1837,
    "iri": "http://w3id.org/bb5kbc/site_186_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -149402,7 +149704,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1833,
+   "id": 1838,
    "iri": "http://w3id.org/bb5kbc/site_187_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -149433,7 +149735,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1834,
+   "id": 1839,
    "iri": "http://w3id.org/bb5kbc/site_188_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -149464,7 +149766,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1835,
+   "id": 1840,
    "iri": "http://w3id.org/bb5kbc/site_189_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -149495,7 +149797,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1836,
+   "id": 1841,
    "iri": "http://w3id.org/bb5kbc/site_18_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -149526,7 +149828,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1837,
+   "id": 1842,
    "iri": "http://w3id.org/bb5kbc/site_190_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -149557,7 +149859,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1838,
+   "id": 1843,
    "iri": "http://w3id.org/bb5kbc/site_191_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -149588,7 +149890,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1839,
+   "id": 1844,
    "iri": "http://w3id.org/bb5kbc/site_192_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -149619,7 +149921,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1840,
+   "id": 1845,
    "iri": "http://w3id.org/bb5kbc/site_193_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -149650,7 +149952,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1841,
+   "id": 1846,
    "iri": "http://w3id.org/bb5kbc/site_194_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -149681,7 +149983,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1842,
+   "id": 1847,
    "iri": "http://w3id.org/bb5kbc/site_195_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -149712,7 +150014,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1843,
+   "id": 1848,
    "iri": "http://w3id.org/bb5kbc/site_196_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -149743,7 +150045,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1844,
+   "id": 1849,
    "iri": "http://w3id.org/bb5kbc/site_197_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -149774,7 +150076,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1845,
+   "id": 1850,
    "iri": "http://w3id.org/bb5kbc/site_198_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -149805,7 +150107,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1846,
+   "id": 1851,
    "iri": "http://w3id.org/bb5kbc/site_199_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -149836,7 +150138,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1847,
+   "id": 1852,
    "iri": "http://w3id.org/bb5kbc/site_19_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -149867,7 +150169,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1848,
+   "id": 1853,
    "iri": "http://w3id.org/bb5kbc/site_1_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -149898,7 +150200,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1849,
+   "id": 1854,
    "iri": "http://w3id.org/bb5kbc/site_200_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -149929,7 +150231,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1850,
+   "id": 1855,
    "iri": "http://w3id.org/bb5kbc/site_201_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -149960,7 +150262,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1851,
+   "id": 1856,
    "iri": "http://w3id.org/bb5kbc/site_202_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -149991,7 +150293,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1852,
+   "id": 1857,
    "iri": "http://w3id.org/bb5kbc/site_203_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -150022,7 +150324,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1853,
+   "id": 1858,
    "iri": "http://w3id.org/bb5kbc/site_204_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -150053,7 +150355,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1854,
+   "id": 1859,
    "iri": "http://w3id.org/bb5kbc/site_205_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -150084,7 +150386,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1855,
+   "id": 1860,
    "iri": "http://w3id.org/bb5kbc/site_206_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -150115,7 +150417,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1856,
+   "id": 1861,
    "iri": "http://w3id.org/bb5kbc/site_207_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -150146,7 +150448,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1857,
+   "id": 1862,
    "iri": "http://w3id.org/bb5kbc/site_208_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -150177,7 +150479,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1858,
+   "id": 1863,
    "iri": "http://w3id.org/bb5kbc/site_209_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -150208,7 +150510,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1859,
+   "id": 1864,
    "iri": "http://w3id.org/bb5kbc/site_20_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -150239,7 +150541,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1860,
+   "id": 1865,
    "iri": "http://w3id.org/bb5kbc/site_210_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -150270,7 +150572,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1861,
+   "id": 1866,
    "iri": "http://w3id.org/bb5kbc/site_211_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -150301,7 +150603,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1862,
+   "id": 1867,
    "iri": "http://w3id.org/bb5kbc/site_212_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -150332,7 +150634,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1863,
+   "id": 1868,
    "iri": "http://w3id.org/bb5kbc/site_213_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -150363,7 +150665,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1864,
+   "id": 1869,
    "iri": "http://w3id.org/bb5kbc/site_214_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -150394,7 +150696,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1865,
+   "id": 1870,
    "iri": "http://w3id.org/bb5kbc/site_215_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -150425,7 +150727,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1866,
+   "id": 1871,
    "iri": "http://w3id.org/bb5kbc/site_216_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -150456,7 +150758,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1867,
+   "id": 1872,
    "iri": "http://w3id.org/bb5kbc/site_217_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -150487,7 +150789,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1868,
+   "id": 1873,
    "iri": "http://w3id.org/bb5kbc/site_218_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -150518,7 +150820,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1869,
+   "id": 1874,
    "iri": "http://w3id.org/bb5kbc/site_219_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -150549,7 +150851,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1870,
+   "id": 1875,
    "iri": "http://w3id.org/bb5kbc/site_21_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -150580,7 +150882,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1871,
+   "id": 1876,
    "iri": "http://w3id.org/bb5kbc/site_220_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -150611,7 +150913,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1872,
+   "id": 1877,
    "iri": "http://w3id.org/bb5kbc/site_221_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -150642,7 +150944,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1873,
+   "id": 1878,
    "iri": "http://w3id.org/bb5kbc/site_222_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -150673,7 +150975,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1874,
+   "id": 1879,
    "iri": "http://w3id.org/bb5kbc/site_223_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -150704,7 +151006,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1875,
+   "id": 1880,
    "iri": "http://w3id.org/bb5kbc/site_224_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -150735,7 +151037,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1876,
+   "id": 1881,
    "iri": "http://w3id.org/bb5kbc/site_225_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -150766,7 +151068,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1877,
+   "id": 1882,
    "iri": "http://w3id.org/bb5kbc/site_226_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -150797,7 +151099,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1878,
+   "id": 1883,
    "iri": "http://w3id.org/bb5kbc/site_227_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -150828,7 +151130,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1879,
+   "id": 1884,
    "iri": "http://w3id.org/bb5kbc/site_228_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -150859,7 +151161,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1880,
+   "id": 1885,
    "iri": "http://w3id.org/bb5kbc/site_22_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -150890,7 +151192,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1881,
+   "id": 1886,
    "iri": "http://w3id.org/bb5kbc/site_230_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -150921,7 +151223,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1882,
+   "id": 1887,
    "iri": "http://w3id.org/bb5kbc/site_231_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -150952,7 +151254,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1883,
+   "id": 1888,
    "iri": "http://w3id.org/bb5kbc/site_232_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -150983,7 +151285,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1884,
+   "id": 1889,
    "iri": "http://w3id.org/bb5kbc/site_233_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -151014,7 +151316,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1885,
+   "id": 1890,
    "iri": "http://w3id.org/bb5kbc/site_234_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -151045,7 +151347,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1886,
+   "id": 1891,
    "iri": "http://w3id.org/bb5kbc/site_235_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -151076,7 +151378,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1887,
+   "id": 1892,
    "iri": "http://w3id.org/bb5kbc/site_236_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -151107,7 +151409,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1888,
+   "id": 1893,
    "iri": "http://w3id.org/bb5kbc/site_237_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -151138,7 +151440,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1889,
+   "id": 1894,
    "iri": "http://w3id.org/bb5kbc/site_238_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -151169,7 +151471,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1890,
+   "id": 1895,
    "iri": "http://w3id.org/bb5kbc/site_239_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -151200,7 +151502,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1891,
+   "id": 1896,
    "iri": "http://w3id.org/bb5kbc/site_23_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -151231,7 +151533,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1892,
+   "id": 1897,
    "iri": "http://w3id.org/bb5kbc/site_240_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -151270,7 +151572,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1893,
+   "id": 1898,
    "iri": "http://w3id.org/bb5kbc/site_241_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -151301,7 +151603,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1894,
+   "id": 1899,
    "iri": "http://w3id.org/bb5kbc/site_242_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -151332,7 +151634,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1895,
+   "id": 1900,
    "iri": "http://w3id.org/bb5kbc/site_243_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -151363,7 +151665,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1896,
+   "id": 1901,
    "iri": "http://w3id.org/bb5kbc/site_244_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -151394,7 +151696,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1897,
+   "id": 1902,
    "iri": "http://w3id.org/bb5kbc/site_245_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -151425,7 +151727,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1898,
+   "id": 1903,
    "iri": "http://w3id.org/bb5kbc/site_246_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -151456,7 +151758,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1899,
+   "id": 1904,
    "iri": "http://w3id.org/bb5kbc/site_247_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -151487,7 +151789,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1900,
+   "id": 1905,
    "iri": "http://w3id.org/bb5kbc/site_248_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -151518,7 +151820,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1901,
+   "id": 1906,
    "iri": "http://w3id.org/bb5kbc/site_249_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -151549,7 +151851,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1902,
+   "id": 1907,
    "iri": "http://w3id.org/bb5kbc/site_24_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -151580,7 +151882,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1903,
+   "id": 1908,
    "iri": "http://w3id.org/bb5kbc/site_250_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -151611,7 +151913,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1904,
+   "id": 1909,
    "iri": "http://w3id.org/bb5kbc/site_251_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -151642,7 +151944,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1905,
+   "id": 1910,
    "iri": "http://w3id.org/bb5kbc/site_252_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -151673,7 +151975,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1906,
+   "id": 1911,
    "iri": "http://w3id.org/bb5kbc/site_253_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -151704,7 +152006,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1907,
+   "id": 1912,
    "iri": "http://w3id.org/bb5kbc/site_254_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -151735,7 +152037,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1908,
+   "id": 1913,
    "iri": "http://w3id.org/bb5kbc/site_255_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -151766,7 +152068,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1909,
+   "id": 1914,
    "iri": "http://w3id.org/bb5kbc/site_256_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -151797,7 +152099,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1910,
+   "id": 1915,
    "iri": "http://w3id.org/bb5kbc/site_257_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -151828,7 +152130,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1911,
+   "id": 1916,
    "iri": "http://w3id.org/bb5kbc/site_258_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -151859,7 +152161,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1912,
+   "id": 1917,
    "iri": "http://w3id.org/bb5kbc/site_259_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -151890,7 +152192,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1913,
+   "id": 1918,
    "iri": "http://w3id.org/bb5kbc/site_25_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -151921,7 +152223,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1914,
+   "id": 1919,
    "iri": "http://w3id.org/bb5kbc/site_260_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -151952,7 +152254,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1915,
+   "id": 1920,
    "iri": "http://w3id.org/bb5kbc/site_261_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -151983,7 +152285,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1916,
+   "id": 1921,
    "iri": "http://w3id.org/bb5kbc/site_262_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -152014,7 +152316,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1917,
+   "id": 1922,
    "iri": "http://w3id.org/bb5kbc/site_263_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -152045,7 +152347,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1918,
+   "id": 1923,
    "iri": "http://w3id.org/bb5kbc/site_264_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -152076,7 +152378,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1919,
+   "id": 1924,
    "iri": "http://w3id.org/bb5kbc/site_265_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -152107,7 +152409,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1920,
+   "id": 1925,
    "iri": "http://w3id.org/bb5kbc/site_266_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -152138,7 +152440,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1921,
+   "id": 1926,
    "iri": "http://w3id.org/bb5kbc/site_267_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -152169,7 +152471,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1922,
+   "id": 1927,
    "iri": "http://w3id.org/bb5kbc/site_268_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -152200,7 +152502,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1923,
+   "id": 1928,
    "iri": "http://w3id.org/bb5kbc/site_269_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -152231,7 +152533,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1924,
+   "id": 1929,
    "iri": "http://w3id.org/bb5kbc/site_26_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -152262,7 +152564,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1925,
+   "id": 1930,
    "iri": "http://w3id.org/bb5kbc/site_270_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -152293,7 +152595,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1926,
+   "id": 1931,
    "iri": "http://w3id.org/bb5kbc/site_271_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -152324,7 +152626,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1927,
+   "id": 1932,
    "iri": "http://w3id.org/bb5kbc/site_272_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -152355,7 +152657,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1928,
+   "id": 1933,
    "iri": "http://w3id.org/bb5kbc/site_273_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -152386,7 +152688,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1929,
+   "id": 1934,
    "iri": "http://w3id.org/bb5kbc/site_274_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -152417,7 +152719,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1930,
+   "id": 1935,
    "iri": "http://w3id.org/bb5kbc/site_275_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -152448,7 +152750,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1931,
+   "id": 1936,
    "iri": "http://w3id.org/bb5kbc/site_276_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -152479,7 +152781,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1932,
+   "id": 1937,
    "iri": "http://w3id.org/bb5kbc/site_277_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -152510,7 +152812,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1933,
+   "id": 1938,
    "iri": "http://w3id.org/bb5kbc/site_278_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -152541,7 +152843,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1934,
+   "id": 1939,
    "iri": "http://w3id.org/bb5kbc/site_279_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -152572,7 +152874,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1935,
+   "id": 1940,
    "iri": "http://w3id.org/bb5kbc/site_27_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -152603,7 +152905,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1936,
+   "id": 1941,
    "iri": "http://w3id.org/bb5kbc/site_280_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -152634,7 +152936,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1937,
+   "id": 1942,
    "iri": "http://w3id.org/bb5kbc/site_281_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -152665,7 +152967,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1938,
+   "id": 1943,
    "iri": "http://w3id.org/bb5kbc/site_282_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -152696,7 +152998,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1939,
+   "id": 1944,
    "iri": "http://w3id.org/bb5kbc/site_283_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -152727,7 +153029,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1940,
+   "id": 1945,
    "iri": "http://w3id.org/bb5kbc/site_284_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -152758,7 +153060,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1941,
+   "id": 1946,
    "iri": "http://w3id.org/bb5kbc/site_285_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -152789,7 +153091,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1942,
+   "id": 1947,
    "iri": "http://w3id.org/bb5kbc/site_286_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -152820,7 +153122,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1943,
+   "id": 1948,
    "iri": "http://w3id.org/bb5kbc/site_287_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -152851,7 +153153,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1944,
+   "id": 1949,
    "iri": "http://w3id.org/bb5kbc/site_288_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -152882,7 +153184,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1945,
+   "id": 1950,
    "iri": "http://w3id.org/bb5kbc/site_289_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -152913,7 +153215,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1946,
+   "id": 1951,
    "iri": "http://w3id.org/bb5kbc/site_28_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -152944,7 +153246,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1947,
+   "id": 1952,
    "iri": "http://w3id.org/bb5kbc/site_290_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -152975,7 +153277,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1948,
+   "id": 1953,
    "iri": "http://w3id.org/bb5kbc/site_291_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -153006,7 +153308,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1949,
+   "id": 1954,
    "iri": "http://w3id.org/bb5kbc/site_292_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -153037,7 +153339,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1950,
+   "id": 1955,
    "iri": "http://w3id.org/bb5kbc/site_293_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -153068,7 +153370,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1951,
+   "id": 1956,
    "iri": "http://w3id.org/bb5kbc/site_294_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -153099,7 +153401,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1952,
+   "id": 1957,
    "iri": "http://w3id.org/bb5kbc/site_295_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -153130,7 +153432,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1953,
+   "id": 1958,
    "iri": "http://w3id.org/bb5kbc/site_296_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -153161,7 +153463,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1954,
+   "id": 1959,
    "iri": "http://w3id.org/bb5kbc/site_297_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -153192,7 +153494,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1955,
+   "id": 1960,
    "iri": "http://w3id.org/bb5kbc/site_298_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -153223,7 +153525,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1956,
+   "id": 1961,
    "iri": "http://w3id.org/bb5kbc/site_299_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -153254,7 +153556,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1957,
+   "id": 1962,
    "iri": "http://w3id.org/bb5kbc/site_29_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -153285,7 +153587,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1958,
+   "id": 1963,
    "iri": "http://w3id.org/bb5kbc/site_2_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -153316,7 +153618,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1959,
+   "id": 1964,
    "iri": "http://w3id.org/bb5kbc/site_300_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -153347,7 +153649,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1960,
+   "id": 1965,
    "iri": "http://w3id.org/bb5kbc/site_301_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -153378,7 +153680,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1961,
+   "id": 1966,
    "iri": "http://w3id.org/bb5kbc/site_302_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -153409,7 +153711,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1962,
+   "id": 1967,
    "iri": "http://w3id.org/bb5kbc/site_303_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -153440,7 +153742,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1963,
+   "id": 1968,
    "iri": "http://w3id.org/bb5kbc/site_304_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -153471,7 +153773,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1964,
+   "id": 1969,
    "iri": "http://w3id.org/bb5kbc/site_305_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -153502,7 +153804,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1965,
+   "id": 1970,
    "iri": "http://w3id.org/bb5kbc/site_306_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -153533,7 +153835,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1966,
+   "id": 1971,
    "iri": "http://w3id.org/bb5kbc/site_307_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -153564,7 +153866,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1967,
+   "id": 1972,
    "iri": "http://w3id.org/bb5kbc/site_308_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -153595,7 +153897,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1968,
+   "id": 1973,
    "iri": "http://w3id.org/bb5kbc/site_309_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -153626,7 +153928,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1969,
+   "id": 1974,
    "iri": "http://w3id.org/bb5kbc/site_30_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -153657,7 +153959,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1970,
+   "id": 1975,
    "iri": "http://w3id.org/bb5kbc/site_310_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -153688,7 +153990,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1971,
+   "id": 1976,
    "iri": "http://w3id.org/bb5kbc/site_311_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -153719,7 +154021,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1972,
+   "id": 1977,
    "iri": "http://w3id.org/bb5kbc/site_312_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -153750,7 +154052,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1973,
+   "id": 1978,
    "iri": "http://w3id.org/bb5kbc/site_313_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -153781,7 +154083,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1974,
+   "id": 1979,
    "iri": "http://w3id.org/bb5kbc/site_314_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -153812,7 +154114,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1975,
+   "id": 1980,
    "iri": "http://w3id.org/bb5kbc/site_315_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -153843,7 +154145,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1976,
+   "id": 1981,
    "iri": "http://w3id.org/bb5kbc/site_316_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -153874,7 +154176,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1977,
+   "id": 1982,
    "iri": "http://w3id.org/bb5kbc/site_317_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -153905,7 +154207,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1978,
+   "id": 1983,
    "iri": "http://w3id.org/bb5kbc/site_318_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -153936,7 +154238,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1979,
+   "id": 1984,
    "iri": "http://w3id.org/bb5kbc/site_319_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -153967,7 +154269,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1980,
+   "id": 1985,
    "iri": "http://w3id.org/bb5kbc/site_31_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -153998,7 +154300,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1981,
+   "id": 1986,
    "iri": "http://w3id.org/bb5kbc/site_321_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -154029,7 +154331,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1982,
+   "id": 1987,
    "iri": "http://w3id.org/bb5kbc/site_322_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -154060,7 +154362,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1983,
+   "id": 1988,
    "iri": "http://w3id.org/bb5kbc/site_323_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -154091,7 +154393,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1984,
+   "id": 1989,
    "iri": "http://w3id.org/bb5kbc/site_324_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -154122,7 +154424,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1985,
+   "id": 1990,
    "iri": "http://w3id.org/bb5kbc/site_325_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -154153,7 +154455,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1986,
+   "id": 1991,
    "iri": "http://w3id.org/bb5kbc/site_326_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -154184,7 +154486,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1987,
+   "id": 1992,
    "iri": "http://w3id.org/bb5kbc/site_327_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -154215,7 +154517,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1988,
+   "id": 1993,
    "iri": "http://w3id.org/bb5kbc/site_328_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -154246,7 +154548,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1989,
+   "id": 1994,
    "iri": "http://w3id.org/bb5kbc/site_329_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -154277,7 +154579,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1990,
+   "id": 1995,
    "iri": "http://w3id.org/bb5kbc/site_32_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -154308,7 +154610,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1991,
+   "id": 1996,
    "iri": "http://w3id.org/bb5kbc/site_332_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -154339,7 +154641,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1992,
+   "id": 1997,
    "iri": "http://w3id.org/bb5kbc/site_333_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -154370,7 +154672,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1993,
+   "id": 1998,
    "iri": "http://w3id.org/bb5kbc/site_334_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -154401,7 +154703,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1994,
+   "id": 1999,
    "iri": "http://w3id.org/bb5kbc/site_336_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -154432,7 +154734,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1995,
+   "id": 2000,
    "iri": "http://w3id.org/bb5kbc/site_337_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -154463,7 +154765,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1996,
+   "id": 2001,
    "iri": "http://w3id.org/bb5kbc/site_338_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -154494,7 +154796,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1997,
+   "id": 2002,
    "iri": "http://w3id.org/bb5kbc/site_339_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -154525,7 +154827,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1998,
+   "id": 2003,
    "iri": "http://w3id.org/bb5kbc/site_33_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -154556,7 +154858,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 1999,
+   "id": 2004,
    "iri": "http://w3id.org/bb5kbc/site_340_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -154587,7 +154889,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2000,
+   "id": 2005,
    "iri": "http://w3id.org/bb5kbc/site_341_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -154618,7 +154920,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2001,
+   "id": 2006,
    "iri": "http://w3id.org/bb5kbc/site_342_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -154649,7 +154951,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2002,
+   "id": 2007,
    "iri": "http://w3id.org/bb5kbc/site_343_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -154680,7 +154982,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2003,
+   "id": 2008,
    "iri": "http://w3id.org/bb5kbc/site_344_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -154711,7 +155013,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2004,
+   "id": 2009,
    "iri": "http://w3id.org/bb5kbc/site_345_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -154742,7 +155044,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2005,
+   "id": 2010,
    "iri": "http://w3id.org/bb5kbc/site_346_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -154773,7 +155075,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2006,
+   "id": 2011,
    "iri": "http://w3id.org/bb5kbc/site_347_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -154804,7 +155106,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2007,
+   "id": 2012,
    "iri": "http://w3id.org/bb5kbc/site_348_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -154835,7 +155137,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2008,
+   "id": 2013,
    "iri": "http://w3id.org/bb5kbc/site_349_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -154866,7 +155168,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2009,
+   "id": 2014,
    "iri": "http://w3id.org/bb5kbc/site_34_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -154897,7 +155199,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2010,
+   "id": 2015,
    "iri": "http://w3id.org/bb5kbc/site_350_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -154928,7 +155230,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2011,
+   "id": 2016,
    "iri": "http://w3id.org/bb5kbc/site_351_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -154959,7 +155261,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2012,
+   "id": 2017,
    "iri": "http://w3id.org/bb5kbc/site_352_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -154990,7 +155292,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2013,
+   "id": 2018,
    "iri": "http://w3id.org/bb5kbc/site_353_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -155021,7 +155323,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2014,
+   "id": 2019,
    "iri": "http://w3id.org/bb5kbc/site_354_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -155052,7 +155354,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2015,
+   "id": 2020,
    "iri": "http://w3id.org/bb5kbc/site_355_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -155083,7 +155385,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2016,
+   "id": 2021,
    "iri": "http://w3id.org/bb5kbc/site_356_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -155114,7 +155416,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2017,
+   "id": 2022,
    "iri": "http://w3id.org/bb5kbc/site_357_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -155145,7 +155447,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2018,
+   "id": 2023,
    "iri": "http://w3id.org/bb5kbc/site_358_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -155176,7 +155478,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2019,
+   "id": 2024,
    "iri": "http://w3id.org/bb5kbc/site_359_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -155207,7 +155509,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2020,
+   "id": 2025,
    "iri": "http://w3id.org/bb5kbc/site_35_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -155238,7 +155540,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2021,
+   "id": 2026,
    "iri": "http://w3id.org/bb5kbc/site_360_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -155269,7 +155571,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2022,
+   "id": 2027,
    "iri": "http://w3id.org/bb5kbc/site_361_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -155300,7 +155602,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2023,
+   "id": 2028,
    "iri": "http://w3id.org/bb5kbc/site_362_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -155331,7 +155633,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2024,
+   "id": 2029,
    "iri": "http://w3id.org/bb5kbc/site_363_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -155362,7 +155664,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2025,
+   "id": 2030,
    "iri": "http://w3id.org/bb5kbc/site_364_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -155393,7 +155695,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2026,
+   "id": 2031,
    "iri": "http://w3id.org/bb5kbc/site_365_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -155424,7 +155726,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2027,
+   "id": 2032,
    "iri": "http://w3id.org/bb5kbc/site_366_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -155455,7 +155757,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2028,
+   "id": 2033,
    "iri": "http://w3id.org/bb5kbc/site_367_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -155486,7 +155788,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2029,
+   "id": 2034,
    "iri": "http://w3id.org/bb5kbc/site_368_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -155517,7 +155819,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2030,
+   "id": 2035,
    "iri": "http://w3id.org/bb5kbc/site_369_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -155548,7 +155850,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2031,
+   "id": 2036,
    "iri": "http://w3id.org/bb5kbc/site_36_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -155579,7 +155881,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2032,
+   "id": 2037,
    "iri": "http://w3id.org/bb5kbc/site_370_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -155610,7 +155912,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2033,
+   "id": 2038,
    "iri": "http://w3id.org/bb5kbc/site_371_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -155641,7 +155943,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2034,
+   "id": 2039,
    "iri": "http://w3id.org/bb5kbc/site_372_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -155672,7 +155974,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2035,
+   "id": 2040,
    "iri": "http://w3id.org/bb5kbc/site_373_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -155703,7 +156005,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2036,
+   "id": 2041,
    "iri": "http://w3id.org/bb5kbc/site_374_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -155734,7 +156036,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2037,
+   "id": 2042,
    "iri": "http://w3id.org/bb5kbc/site_375_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -155765,7 +156067,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2038,
+   "id": 2043,
    "iri": "http://w3id.org/bb5kbc/site_376_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -155796,7 +156098,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2039,
+   "id": 2044,
    "iri": "http://w3id.org/bb5kbc/site_377_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -155827,7 +156129,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2040,
+   "id": 2045,
    "iri": "http://w3id.org/bb5kbc/site_378_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -155858,7 +156160,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2041,
+   "id": 2046,
    "iri": "http://w3id.org/bb5kbc/site_379_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -155889,7 +156191,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2042,
+   "id": 2047,
    "iri": "http://w3id.org/bb5kbc/site_37_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -155920,7 +156222,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2043,
+   "id": 2048,
    "iri": "http://w3id.org/bb5kbc/site_380_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -155951,7 +156253,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2044,
+   "id": 2049,
    "iri": "http://w3id.org/bb5kbc/site_381_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -155982,7 +156284,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2045,
+   "id": 2050,
    "iri": "http://w3id.org/bb5kbc/site_382_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -156013,7 +156315,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2046,
+   "id": 2051,
    "iri": "http://w3id.org/bb5kbc/site_383_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -156044,7 +156346,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2047,
+   "id": 2052,
    "iri": "http://w3id.org/bb5kbc/site_384_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -156075,7 +156377,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2048,
+   "id": 2053,
    "iri": "http://w3id.org/bb5kbc/site_385_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -156106,7 +156408,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2049,
+   "id": 2054,
    "iri": "http://w3id.org/bb5kbc/site_386_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -156137,7 +156439,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2050,
+   "id": 2055,
    "iri": "http://w3id.org/bb5kbc/site_387_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -156168,7 +156470,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2051,
+   "id": 2056,
    "iri": "http://w3id.org/bb5kbc/site_388_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -156199,7 +156501,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2052,
+   "id": 2057,
    "iri": "http://w3id.org/bb5kbc/site_389_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -156230,7 +156532,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2053,
+   "id": 2058,
    "iri": "http://w3id.org/bb5kbc/site_38_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -156261,7 +156563,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2054,
+   "id": 2059,
    "iri": "http://w3id.org/bb5kbc/site_390_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -156292,7 +156594,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2055,
+   "id": 2060,
    "iri": "http://w3id.org/bb5kbc/site_391_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -156323,7 +156625,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2056,
+   "id": 2061,
    "iri": "http://w3id.org/bb5kbc/site_392_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -156354,7 +156656,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2057,
+   "id": 2062,
    "iri": "http://w3id.org/bb5kbc/site_393_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -156385,7 +156687,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2058,
+   "id": 2063,
    "iri": "http://w3id.org/bb5kbc/site_394_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -156416,7 +156718,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2059,
+   "id": 2064,
    "iri": "http://w3id.org/bb5kbc/site_395_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -156447,7 +156749,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2060,
+   "id": 2065,
    "iri": "http://w3id.org/bb5kbc/site_396_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -156478,7 +156780,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2061,
+   "id": 2066,
    "iri": "http://w3id.org/bb5kbc/site_397_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -156509,7 +156811,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2062,
+   "id": 2067,
    "iri": "http://w3id.org/bb5kbc/site_398_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -156540,7 +156842,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2063,
+   "id": 2068,
    "iri": "http://w3id.org/bb5kbc/site_399_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -156571,7 +156873,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2064,
+   "id": 2069,
    "iri": "http://w3id.org/bb5kbc/site_39_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -156602,7 +156904,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2065,
+   "id": 2070,
    "iri": "http://w3id.org/bb5kbc/site_3_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -156633,7 +156935,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2066,
+   "id": 2071,
    "iri": "http://w3id.org/bb5kbc/site_400_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -156664,7 +156966,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2067,
+   "id": 2072,
    "iri": "http://w3id.org/bb5kbc/site_401_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -156695,7 +156997,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2068,
+   "id": 2073,
    "iri": "http://w3id.org/bb5kbc/site_402_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -156726,7 +157028,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2069,
+   "id": 2074,
    "iri": "http://w3id.org/bb5kbc/site_403_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -156757,7 +157059,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2070,
+   "id": 2075,
    "iri": "http://w3id.org/bb5kbc/site_404_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -156788,7 +157090,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2071,
+   "id": 2076,
    "iri": "http://w3id.org/bb5kbc/site_405_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -156819,7 +157121,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2072,
+   "id": 2077,
    "iri": "http://w3id.org/bb5kbc/site_406_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -156850,7 +157152,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2073,
+   "id": 2078,
    "iri": "http://w3id.org/bb5kbc/site_407_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -156881,7 +157183,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2074,
+   "id": 2079,
    "iri": "http://w3id.org/bb5kbc/site_408_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -156912,7 +157214,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2075,
+   "id": 2080,
    "iri": "http://w3id.org/bb5kbc/site_409_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -156943,7 +157245,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2076,
+   "id": 2081,
    "iri": "http://w3id.org/bb5kbc/site_40_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -156974,7 +157276,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2077,
+   "id": 2082,
    "iri": "http://w3id.org/bb5kbc/site_410_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -157005,7 +157307,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2078,
+   "id": 2083,
    "iri": "http://w3id.org/bb5kbc/site_411_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -157036,7 +157338,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2079,
+   "id": 2084,
    "iri": "http://w3id.org/bb5kbc/site_412_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -157067,7 +157369,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2080,
+   "id": 2085,
    "iri": "http://w3id.org/bb5kbc/site_413_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -157098,7 +157400,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2081,
+   "id": 2086,
    "iri": "http://w3id.org/bb5kbc/site_414_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -157129,7 +157431,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2082,
+   "id": 2087,
    "iri": "http://w3id.org/bb5kbc/site_415_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -157160,7 +157462,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2083,
+   "id": 2088,
    "iri": "http://w3id.org/bb5kbc/site_416_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -157191,7 +157493,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2084,
+   "id": 2089,
    "iri": "http://w3id.org/bb5kbc/site_417_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -157222,7 +157524,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2085,
+   "id": 2090,
    "iri": "http://w3id.org/bb5kbc/site_418_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -157253,7 +157555,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2086,
+   "id": 2091,
    "iri": "http://w3id.org/bb5kbc/site_419_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -157284,7 +157586,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2087,
+   "id": 2092,
    "iri": "http://w3id.org/bb5kbc/site_41_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -157315,7 +157617,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2088,
+   "id": 2093,
    "iri": "http://w3id.org/bb5kbc/site_421_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -157346,7 +157648,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2089,
+   "id": 2094,
    "iri": "http://w3id.org/bb5kbc/site_422_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -157377,7 +157679,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2090,
+   "id": 2095,
    "iri": "http://w3id.org/bb5kbc/site_423_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -157408,7 +157710,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2091,
+   "id": 2096,
    "iri": "http://w3id.org/bb5kbc/site_424_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -157439,7 +157741,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2092,
+   "id": 2097,
    "iri": "http://w3id.org/bb5kbc/site_425_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -157470,7 +157772,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2093,
+   "id": 2098,
    "iri": "http://w3id.org/bb5kbc/site_426_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -157501,7 +157803,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2094,
+   "id": 2099,
    "iri": "http://w3id.org/bb5kbc/site_427_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -157532,7 +157834,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2095,
+   "id": 2100,
    "iri": "http://w3id.org/bb5kbc/site_428_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -157563,7 +157865,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2096,
+   "id": 2101,
    "iri": "http://w3id.org/bb5kbc/site_429_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -157594,7 +157896,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2097,
+   "id": 2102,
    "iri": "http://w3id.org/bb5kbc/site_430_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -157625,7 +157927,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2098,
+   "id": 2103,
    "iri": "http://w3id.org/bb5kbc/site_431_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -157656,7 +157958,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2099,
+   "id": 2104,
    "iri": "http://w3id.org/bb5kbc/site_432_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -157687,7 +157989,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2100,
+   "id": 2105,
    "iri": "http://w3id.org/bb5kbc/site_433_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -157718,7 +158020,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2101,
+   "id": 2106,
    "iri": "http://w3id.org/bb5kbc/site_434_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -157749,7 +158051,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2102,
+   "id": 2107,
    "iri": "http://w3id.org/bb5kbc/site_435_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -157780,7 +158082,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2103,
+   "id": 2108,
    "iri": "http://w3id.org/bb5kbc/site_436_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -157811,7 +158113,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2104,
+   "id": 2109,
    "iri": "http://w3id.org/bb5kbc/site_437_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -157842,7 +158144,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2105,
+   "id": 2110,
    "iri": "http://w3id.org/bb5kbc/site_438_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -157873,7 +158175,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2106,
+   "id": 2111,
    "iri": "http://w3id.org/bb5kbc/site_439_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -157904,7 +158206,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2107,
+   "id": 2112,
    "iri": "http://w3id.org/bb5kbc/site_43_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -157935,7 +158237,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2108,
+   "id": 2113,
    "iri": "http://w3id.org/bb5kbc/site_440_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -157966,7 +158268,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2109,
+   "id": 2114,
    "iri": "http://w3id.org/bb5kbc/site_441_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -157997,7 +158299,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2110,
+   "id": 2115,
    "iri": "http://w3id.org/bb5kbc/site_442_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -158028,7 +158330,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2111,
+   "id": 2116,
    "iri": "http://w3id.org/bb5kbc/site_443_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -158059,7 +158361,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2112,
+   "id": 2117,
    "iri": "http://w3id.org/bb5kbc/site_444_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -158090,7 +158392,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2113,
+   "id": 2118,
    "iri": "http://w3id.org/bb5kbc/site_445_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -158121,7 +158423,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2114,
+   "id": 2119,
    "iri": "http://w3id.org/bb5kbc/site_446_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -158152,7 +158454,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2115,
+   "id": 2120,
    "iri": "http://w3id.org/bb5kbc/site_447_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -158183,7 +158485,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2116,
+   "id": 2121,
    "iri": "http://w3id.org/bb5kbc/site_448_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -158214,7 +158516,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2117,
+   "id": 2122,
    "iri": "http://w3id.org/bb5kbc/site_449_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -158245,7 +158547,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2118,
+   "id": 2123,
    "iri": "http://w3id.org/bb5kbc/site_44_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -158276,7 +158578,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2119,
+   "id": 2124,
    "iri": "http://w3id.org/bb5kbc/site_450_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -158307,7 +158609,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2120,
+   "id": 2125,
    "iri": "http://w3id.org/bb5kbc/site_453_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -158338,7 +158640,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2121,
+   "id": 2126,
    "iri": "http://w3id.org/bb5kbc/site_454_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -158369,7 +158671,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2122,
+   "id": 2127,
    "iri": "http://w3id.org/bb5kbc/site_455_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -158400,7 +158702,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2123,
+   "id": 2128,
    "iri": "http://w3id.org/bb5kbc/site_456_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -158431,7 +158733,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2124,
+   "id": 2129,
    "iri": "http://w3id.org/bb5kbc/site_459_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -158462,7 +158764,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2125,
+   "id": 2130,
    "iri": "http://w3id.org/bb5kbc/site_45_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -158493,7 +158795,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2126,
+   "id": 2131,
    "iri": "http://w3id.org/bb5kbc/site_460_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -158524,7 +158826,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2127,
+   "id": 2132,
    "iri": "http://w3id.org/bb5kbc/site_461_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -158555,7 +158857,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2128,
+   "id": 2133,
    "iri": "http://w3id.org/bb5kbc/site_462_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -158586,7 +158888,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2129,
+   "id": 2134,
    "iri": "http://w3id.org/bb5kbc/site_463_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -158617,7 +158919,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2130,
+   "id": 2135,
    "iri": "http://w3id.org/bb5kbc/site_464_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -158648,7 +158950,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2131,
+   "id": 2136,
    "iri": "http://w3id.org/bb5kbc/site_465_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -158679,7 +158981,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2132,
+   "id": 2137,
    "iri": "http://w3id.org/bb5kbc/site_466_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -158710,7 +159012,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2133,
+   "id": 2138,
    "iri": "http://w3id.org/bb5kbc/site_467_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -158741,7 +159043,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2134,
+   "id": 2139,
    "iri": "http://w3id.org/bb5kbc/site_468_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -158772,7 +159074,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2135,
+   "id": 2140,
    "iri": "http://w3id.org/bb5kbc/site_469_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -158803,7 +159105,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2136,
+   "id": 2141,
    "iri": "http://w3id.org/bb5kbc/site_46_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -158834,7 +159136,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2137,
+   "id": 2142,
    "iri": "http://w3id.org/bb5kbc/site_470_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -158865,7 +159167,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2138,
+   "id": 2143,
    "iri": "http://w3id.org/bb5kbc/site_471_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -158896,7 +159198,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2139,
+   "id": 2144,
    "iri": "http://w3id.org/bb5kbc/site_472_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -158927,7 +159229,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2140,
+   "id": 2145,
    "iri": "http://w3id.org/bb5kbc/site_473_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -158958,7 +159260,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2141,
+   "id": 2146,
    "iri": "http://w3id.org/bb5kbc/site_474_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -158989,7 +159291,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2142,
+   "id": 2147,
    "iri": "http://w3id.org/bb5kbc/site_475_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -159020,7 +159322,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2143,
+   "id": 2148,
    "iri": "http://w3id.org/bb5kbc/site_476_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -159051,7 +159353,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2144,
+   "id": 2149,
    "iri": "http://w3id.org/bb5kbc/site_477_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -159082,7 +159384,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2145,
+   "id": 2150,
    "iri": "http://w3id.org/bb5kbc/site_478_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -159113,7 +159415,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2146,
+   "id": 2151,
    "iri": "http://w3id.org/bb5kbc/site_479_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -159144,7 +159446,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2147,
+   "id": 2152,
    "iri": "http://w3id.org/bb5kbc/site_47_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -159175,7 +159477,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2148,
+   "id": 2153,
    "iri": "http://w3id.org/bb5kbc/site_480_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -159206,7 +159508,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2149,
+   "id": 2154,
    "iri": "http://w3id.org/bb5kbc/site_481_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -159237,7 +159539,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2150,
+   "id": 2155,
    "iri": "http://w3id.org/bb5kbc/site_482_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -159268,7 +159570,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2151,
+   "id": 2156,
    "iri": "http://w3id.org/bb5kbc/site_483_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -159299,7 +159601,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2152,
+   "id": 2157,
    "iri": "http://w3id.org/bb5kbc/site_484_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -159330,7 +159632,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2153,
+   "id": 2158,
    "iri": "http://w3id.org/bb5kbc/site_485_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -159361,7 +159663,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2154,
+   "id": 2159,
    "iri": "http://w3id.org/bb5kbc/site_486_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -159392,7 +159694,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2155,
+   "id": 2160,
    "iri": "http://w3id.org/bb5kbc/site_487_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -159423,7 +159725,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2156,
+   "id": 2161,
    "iri": "http://w3id.org/bb5kbc/site_488_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -159454,7 +159756,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2157,
+   "id": 2162,
    "iri": "http://w3id.org/bb5kbc/site_489_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -159485,7 +159787,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2158,
+   "id": 2163,
    "iri": "http://w3id.org/bb5kbc/site_48_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -159516,7 +159818,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2159,
+   "id": 2164,
    "iri": "http://w3id.org/bb5kbc/site_490_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -159547,7 +159849,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2160,
+   "id": 2165,
    "iri": "http://w3id.org/bb5kbc/site_491_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -159578,7 +159880,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2161,
+   "id": 2166,
    "iri": "http://w3id.org/bb5kbc/site_492_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -159609,7 +159911,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2162,
+   "id": 2167,
    "iri": "http://w3id.org/bb5kbc/site_493_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -159640,7 +159942,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2163,
+   "id": 2168,
    "iri": "http://w3id.org/bb5kbc/site_494_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -159671,7 +159973,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2164,
+   "id": 2169,
    "iri": "http://w3id.org/bb5kbc/site_495_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -159702,7 +160004,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2165,
+   "id": 2170,
    "iri": "http://w3id.org/bb5kbc/site_496_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -159733,7 +160035,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2166,
+   "id": 2171,
    "iri": "http://w3id.org/bb5kbc/site_497_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -159764,7 +160066,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2167,
+   "id": 2172,
    "iri": "http://w3id.org/bb5kbc/site_498_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -159795,7 +160097,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2168,
+   "id": 2173,
    "iri": "http://w3id.org/bb5kbc/site_499_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -159826,7 +160128,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2169,
+   "id": 2174,
    "iri": "http://w3id.org/bb5kbc/site_49_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -159857,7 +160159,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2170,
+   "id": 2175,
    "iri": "http://w3id.org/bb5kbc/site_4_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -159888,7 +160190,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2171,
+   "id": 2176,
    "iri": "http://w3id.org/bb5kbc/site_500_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -159919,7 +160221,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2172,
+   "id": 2177,
    "iri": "http://w3id.org/bb5kbc/site_501_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -159950,7 +160252,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2173,
+   "id": 2178,
    "iri": "http://w3id.org/bb5kbc/site_502_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -159981,7 +160283,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2174,
+   "id": 2179,
    "iri": "http://w3id.org/bb5kbc/site_503_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -160012,7 +160314,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2175,
+   "id": 2180,
    "iri": "http://w3id.org/bb5kbc/site_504_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -160043,7 +160345,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2176,
+   "id": 2181,
    "iri": "http://w3id.org/bb5kbc/site_505_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -160074,7 +160376,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2177,
+   "id": 2182,
    "iri": "http://w3id.org/bb5kbc/site_506_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -160105,7 +160407,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2178,
+   "id": 2183,
    "iri": "http://w3id.org/bb5kbc/site_507_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -160136,7 +160438,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2179,
+   "id": 2184,
    "iri": "http://w3id.org/bb5kbc/site_508_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -160167,7 +160469,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2180,
+   "id": 2185,
    "iri": "http://w3id.org/bb5kbc/site_50_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -160198,7 +160500,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2181,
+   "id": 2186,
    "iri": "http://w3id.org/bb5kbc/site_510_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -160229,7 +160531,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2182,
+   "id": 2187,
    "iri": "http://w3id.org/bb5kbc/site_511_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -160260,7 +160562,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2183,
+   "id": 2188,
    "iri": "http://w3id.org/bb5kbc/site_512_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -160291,7 +160593,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2184,
+   "id": 2189,
    "iri": "http://w3id.org/bb5kbc/site_513_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -160322,7 +160624,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2185,
+   "id": 2190,
    "iri": "http://w3id.org/bb5kbc/site_514_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -160353,7 +160655,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2186,
+   "id": 2191,
    "iri": "http://w3id.org/bb5kbc/site_515_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -160384,7 +160686,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2187,
+   "id": 2192,
    "iri": "http://w3id.org/bb5kbc/site_516_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -160415,7 +160717,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2188,
+   "id": 2193,
    "iri": "http://w3id.org/bb5kbc/site_517_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -160446,7 +160748,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2189,
+   "id": 2194,
    "iri": "http://w3id.org/bb5kbc/site_518_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -160477,7 +160779,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2190,
+   "id": 2195,
    "iri": "http://w3id.org/bb5kbc/site_519_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -160508,7 +160810,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2191,
+   "id": 2196,
    "iri": "http://w3id.org/bb5kbc/site_520_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -160539,7 +160841,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2192,
+   "id": 2197,
    "iri": "http://w3id.org/bb5kbc/site_521_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -160570,7 +160872,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2193,
+   "id": 2198,
    "iri": "http://w3id.org/bb5kbc/site_522_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -160601,7 +160903,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2194,
+   "id": 2199,
    "iri": "http://w3id.org/bb5kbc/site_523_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -160632,7 +160934,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2195,
+   "id": 2200,
    "iri": "http://w3id.org/bb5kbc/site_524_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -160663,7 +160965,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2196,
+   "id": 2201,
    "iri": "http://w3id.org/bb5kbc/site_525_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -160694,7 +160996,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2197,
+   "id": 2202,
    "iri": "http://w3id.org/bb5kbc/site_526_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -160725,7 +161027,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2198,
+   "id": 2203,
    "iri": "http://w3id.org/bb5kbc/site_527_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -160756,7 +161058,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2199,
+   "id": 2204,
    "iri": "http://w3id.org/bb5kbc/site_528_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -160787,7 +161089,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2200,
+   "id": 2205,
    "iri": "http://w3id.org/bb5kbc/site_529_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -160818,7 +161120,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2201,
+   "id": 2206,
    "iri": "http://w3id.org/bb5kbc/site_530_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -160849,7 +161151,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2202,
+   "id": 2207,
    "iri": "http://w3id.org/bb5kbc/site_531_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -160880,7 +161182,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2203,
+   "id": 2208,
    "iri": "http://w3id.org/bb5kbc/site_532_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -160911,7 +161213,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2204,
+   "id": 2209,
    "iri": "http://w3id.org/bb5kbc/site_533_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -160950,7 +161252,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2205,
+   "id": 2210,
    "iri": "http://w3id.org/bb5kbc/site_534_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -160981,7 +161283,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2206,
+   "id": 2211,
    "iri": "http://w3id.org/bb5kbc/site_535_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -161020,7 +161322,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2207,
+   "id": 2212,
    "iri": "http://w3id.org/bb5kbc/site_536_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -161051,7 +161353,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2208,
+   "id": 2213,
    "iri": "http://w3id.org/bb5kbc/site_537_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -161082,7 +161384,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2209,
+   "id": 2214,
    "iri": "http://w3id.org/bb5kbc/site_538_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -161113,7 +161415,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2210,
+   "id": 2215,
    "iri": "http://w3id.org/bb5kbc/site_539_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -161144,7 +161446,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2211,
+   "id": 2216,
    "iri": "http://w3id.org/bb5kbc/site_53_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -161175,7 +161477,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2212,
+   "id": 2217,
    "iri": "http://w3id.org/bb5kbc/site_540_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -161206,7 +161508,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2213,
+   "id": 2218,
    "iri": "http://w3id.org/bb5kbc/site_541_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -161237,7 +161539,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2214,
+   "id": 2219,
    "iri": "http://w3id.org/bb5kbc/site_542_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -161268,7 +161570,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2215,
+   "id": 2220,
    "iri": "http://w3id.org/bb5kbc/site_543_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -161299,7 +161601,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2216,
+   "id": 2221,
    "iri": "http://w3id.org/bb5kbc/site_544_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -161330,7 +161632,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2217,
+   "id": 2222,
    "iri": "http://w3id.org/bb5kbc/site_546_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -161361,7 +161663,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2218,
+   "id": 2223,
    "iri": "http://w3id.org/bb5kbc/site_547_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -161392,7 +161694,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2219,
+   "id": 2224,
    "iri": "http://w3id.org/bb5kbc/site_548_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -161423,7 +161725,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2220,
+   "id": 2225,
    "iri": "http://w3id.org/bb5kbc/site_549_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -161454,7 +161756,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2221,
+   "id": 2226,
    "iri": "http://w3id.org/bb5kbc/site_54_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -161485,7 +161787,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2222,
+   "id": 2227,
    "iri": "http://w3id.org/bb5kbc/site_550_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -161516,7 +161818,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2223,
+   "id": 2228,
    "iri": "http://w3id.org/bb5kbc/site_551_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -161555,7 +161857,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2224,
+   "id": 2229,
    "iri": "http://w3id.org/bb5kbc/site_552_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -161586,7 +161888,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2225,
+   "id": 2230,
    "iri": "http://w3id.org/bb5kbc/site_553_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -161617,7 +161919,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2226,
+   "id": 2231,
    "iri": "http://w3id.org/bb5kbc/site_554_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -161648,7 +161950,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2227,
+   "id": 2232,
    "iri": "http://w3id.org/bb5kbc/site_555_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -161679,7 +161981,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2228,
+   "id": 2233,
    "iri": "http://w3id.org/bb5kbc/site_556_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -161710,7 +162012,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2229,
+   "id": 2234,
    "iri": "http://w3id.org/bb5kbc/site_557_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -161741,7 +162043,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2230,
+   "id": 2235,
    "iri": "http://w3id.org/bb5kbc/site_558_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -161772,7 +162074,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2231,
+   "id": 2236,
    "iri": "http://w3id.org/bb5kbc/site_559_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -161803,7 +162105,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2232,
+   "id": 2237,
    "iri": "http://w3id.org/bb5kbc/site_55_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -161834,7 +162136,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2233,
+   "id": 2238,
    "iri": "http://w3id.org/bb5kbc/site_560_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -161865,7 +162167,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2234,
+   "id": 2239,
    "iri": "http://w3id.org/bb5kbc/site_561_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -161896,7 +162198,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2235,
+   "id": 2240,
    "iri": "http://w3id.org/bb5kbc/site_562_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -161927,7 +162229,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2236,
+   "id": 2241,
    "iri": "http://w3id.org/bb5kbc/site_563_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -161958,7 +162260,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2237,
+   "id": 2242,
    "iri": "http://w3id.org/bb5kbc/site_564_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -161989,7 +162291,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2238,
+   "id": 2243,
    "iri": "http://w3id.org/bb5kbc/site_565_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -162020,7 +162322,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2239,
+   "id": 2244,
    "iri": "http://w3id.org/bb5kbc/site_56_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -162051,7 +162353,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2240,
+   "id": 2245,
    "iri": "http://w3id.org/bb5kbc/site_571_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -162082,7 +162384,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2241,
+   "id": 2246,
    "iri": "http://w3id.org/bb5kbc/site_574_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -162113,7 +162415,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2242,
+   "id": 2247,
    "iri": "http://w3id.org/bb5kbc/site_575_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -162144,7 +162446,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2243,
+   "id": 2248,
    "iri": "http://w3id.org/bb5kbc/site_579_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -162175,7 +162477,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2244,
+   "id": 2249,
    "iri": "http://w3id.org/bb5kbc/site_57_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -162206,7 +162508,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2245,
+   "id": 2250,
    "iri": "http://w3id.org/bb5kbc/site_580_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -162237,7 +162539,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2246,
+   "id": 2251,
    "iri": "http://w3id.org/bb5kbc/site_581_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -162268,7 +162570,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2247,
+   "id": 2252,
    "iri": "http://w3id.org/bb5kbc/site_582_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -162299,7 +162601,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2248,
+   "id": 2253,
    "iri": "http://w3id.org/bb5kbc/site_584_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -162330,7 +162632,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2249,
+   "id": 2254,
    "iri": "http://w3id.org/bb5kbc/site_585_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -162361,7 +162663,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2250,
+   "id": 2255,
    "iri": "http://w3id.org/bb5kbc/site_586_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -162392,7 +162694,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2251,
+   "id": 2256,
    "iri": "http://w3id.org/bb5kbc/site_587_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -162423,7 +162725,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2252,
+   "id": 2257,
    "iri": "http://w3id.org/bb5kbc/site_588_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -162454,7 +162756,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2253,
+   "id": 2258,
    "iri": "http://w3id.org/bb5kbc/site_589_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -162485,7 +162787,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2254,
+   "id": 2259,
    "iri": "http://w3id.org/bb5kbc/site_58_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -162516,7 +162818,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2255,
+   "id": 2260,
    "iri": "http://w3id.org/bb5kbc/site_590_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -162547,7 +162849,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2256,
+   "id": 2261,
    "iri": "http://w3id.org/bb5kbc/site_59_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -162578,7 +162880,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2257,
+   "id": 2262,
    "iri": "http://w3id.org/bb5kbc/site_5_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -162609,7 +162911,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2258,
+   "id": 2263,
    "iri": "http://w3id.org/bb5kbc/site_60_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -162640,7 +162942,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2259,
+   "id": 2264,
    "iri": "http://w3id.org/bb5kbc/site_61_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -162671,7 +162973,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2260,
+   "id": 2265,
    "iri": "http://w3id.org/bb5kbc/site_64_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -162702,7 +163004,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2261,
+   "id": 2266,
    "iri": "http://w3id.org/bb5kbc/site_65_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -162733,7 +163035,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2262,
+   "id": 2267,
    "iri": "http://w3id.org/bb5kbc/site_66_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -162764,7 +163066,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2263,
+   "id": 2268,
    "iri": "http://w3id.org/bb5kbc/site_67_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -162795,7 +163097,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2264,
+   "id": 2269,
    "iri": "http://w3id.org/bb5kbc/site_68_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -162826,7 +163128,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2265,
+   "id": 2270,
    "iri": "http://w3id.org/bb5kbc/site_69_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -162857,7 +163159,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2266,
+   "id": 2271,
    "iri": "http://w3id.org/bb5kbc/site_6_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -162888,7 +163190,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2267,
+   "id": 2272,
    "iri": "http://w3id.org/bb5kbc/site_70_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -162919,7 +163221,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2268,
+   "id": 2273,
    "iri": "http://w3id.org/bb5kbc/site_72_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -162950,7 +163252,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2269,
+   "id": 2274,
    "iri": "http://w3id.org/bb5kbc/site_73_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -162981,7 +163283,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2270,
+   "id": 2275,
    "iri": "http://w3id.org/bb5kbc/site_74_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -163012,7 +163314,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2271,
+   "id": 2276,
    "iri": "http://w3id.org/bb5kbc/site_75_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -163043,7 +163345,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2272,
+   "id": 2277,
    "iri": "http://w3id.org/bb5kbc/site_76_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -163074,7 +163376,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2273,
+   "id": 2278,
    "iri": "http://w3id.org/bb5kbc/site_77_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -163105,7 +163407,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2274,
+   "id": 2279,
    "iri": "http://w3id.org/bb5kbc/site_78_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -163136,7 +163438,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2275,
+   "id": 2280,
    "iri": "http://w3id.org/bb5kbc/site_79_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -163167,7 +163469,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2276,
+   "id": 2281,
    "iri": "http://w3id.org/bb5kbc/site_7_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -163198,7 +163500,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2277,
+   "id": 2282,
    "iri": "http://w3id.org/bb5kbc/site_80_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -163237,7 +163539,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2278,
+   "id": 2283,
    "iri": "http://w3id.org/bb5kbc/site_81_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -163268,7 +163570,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2279,
+   "id": 2284,
    "iri": "http://w3id.org/bb5kbc/site_82_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -163299,7 +163601,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2280,
+   "id": 2285,
    "iri": "http://w3id.org/bb5kbc/site_83_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -163330,7 +163632,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2281,
+   "id": 2286,
    "iri": "http://w3id.org/bb5kbc/site_84_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -163361,7 +163663,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2282,
+   "id": 2287,
    "iri": "http://w3id.org/bb5kbc/site_85_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -163392,7 +163694,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2283,
+   "id": 2288,
    "iri": "http://w3id.org/bb5kbc/site_86_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -163423,7 +163725,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2284,
+   "id": 2289,
    "iri": "http://w3id.org/bb5kbc/site_87_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -163454,7 +163756,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2285,
+   "id": 2290,
    "iri": "http://w3id.org/bb5kbc/site_88_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -163485,7 +163787,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2286,
+   "id": 2291,
    "iri": "http://w3id.org/bb5kbc/site_89_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -163516,7 +163818,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2287,
+   "id": 2292,
    "iri": "http://w3id.org/bb5kbc/site_8_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -163547,7 +163849,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2288,
+   "id": 2293,
    "iri": "http://w3id.org/bb5kbc/site_90_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -163578,7 +163880,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2289,
+   "id": 2294,
    "iri": "http://w3id.org/bb5kbc/site_91_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -163609,7 +163911,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2290,
+   "id": 2295,
    "iri": "http://w3id.org/bb5kbc/site_92_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -163640,7 +163942,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2291,
+   "id": 2296,
    "iri": "http://w3id.org/bb5kbc/site_93_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -163671,7 +163973,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2292,
+   "id": 2297,
    "iri": "http://w3id.org/bb5kbc/site_94_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -163702,7 +164004,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2293,
+   "id": 2298,
    "iri": "http://w3id.org/bb5kbc/site_96_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -163733,7 +164035,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2294,
+   "id": 2299,
    "iri": "http://w3id.org/bb5kbc/site_97_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -163764,7 +164066,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2295,
+   "id": 2300,
    "iri": "http://w3id.org/bb5kbc/site_98_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -163795,7 +164097,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2296,
+   "id": 2301,
    "iri": "http://w3id.org/bb5kbc/site_99_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -163826,7 +164128,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2297,
+   "id": 2302,
    "iri": "http://w3id.org/bb5kbc/site_9_culture",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -163897,7 +164199,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2298,
+   "id": 2303,
    "iri": "http://w3id.org/bb5kbc/site_100_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -163968,7 +164270,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2299,
+   "id": 2304,
    "iri": "http://w3id.org/bb5kbc/site_101_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -164031,7 +164333,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2300,
+   "id": 2305,
    "iri": "http://w3id.org/bb5kbc/site_103_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -164102,7 +164404,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2301,
+   "id": 2306,
    "iri": "http://w3id.org/bb5kbc/site_107_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -164173,7 +164475,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2302,
+   "id": 2307,
    "iri": "http://w3id.org/bb5kbc/site_10_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -164244,7 +164546,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2303,
+   "id": 2308,
    "iri": "http://w3id.org/bb5kbc/site_111_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -164315,7 +164617,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2304,
+   "id": 2309,
    "iri": "http://w3id.org/bb5kbc/site_114_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -164386,7 +164688,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2305,
+   "id": 2310,
    "iri": "http://w3id.org/bb5kbc/site_116_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -164457,7 +164759,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2306,
+   "id": 2311,
    "iri": "http://w3id.org/bb5kbc/site_119_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -164528,7 +164830,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2307,
+   "id": 2312,
    "iri": "http://w3id.org/bb5kbc/site_11_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -164599,7 +164901,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2308,
+   "id": 2313,
    "iri": "http://w3id.org/bb5kbc/site_120_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -164670,7 +164972,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2309,
+   "id": 2314,
    "iri": "http://w3id.org/bb5kbc/site_121_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -164741,7 +165043,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2310,
+   "id": 2315,
    "iri": "http://w3id.org/bb5kbc/site_122_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -164812,7 +165114,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2311,
+   "id": 2316,
    "iri": "http://w3id.org/bb5kbc/site_123_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -164883,7 +165185,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2312,
+   "id": 2317,
    "iri": "http://w3id.org/bb5kbc/site_125_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -164954,7 +165256,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2313,
+   "id": 2318,
    "iri": "http://w3id.org/bb5kbc/site_126_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -165025,7 +165327,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2314,
+   "id": 2319,
    "iri": "http://w3id.org/bb5kbc/site_128_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -165096,7 +165398,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2315,
+   "id": 2320,
    "iri": "http://w3id.org/bb5kbc/site_129_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -165167,7 +165469,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2316,
+   "id": 2321,
    "iri": "http://w3id.org/bb5kbc/site_12_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -165238,7 +165540,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2317,
+   "id": 2322,
    "iri": "http://w3id.org/bb5kbc/site_131_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -165309,7 +165611,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2318,
+   "id": 2323,
    "iri": "http://w3id.org/bb5kbc/site_134_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -165380,7 +165682,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2319,
+   "id": 2324,
    "iri": "http://w3id.org/bb5kbc/site_136_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -165451,7 +165753,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2320,
+   "id": 2325,
    "iri": "http://w3id.org/bb5kbc/site_138_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -165522,7 +165824,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2321,
+   "id": 2326,
    "iri": "http://w3id.org/bb5kbc/site_139_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -165593,7 +165895,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2322,
+   "id": 2327,
    "iri": "http://w3id.org/bb5kbc/site_13_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -165664,7 +165966,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2323,
+   "id": 2328,
    "iri": "http://w3id.org/bb5kbc/site_140_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -165735,7 +166037,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2324,
+   "id": 2329,
    "iri": "http://w3id.org/bb5kbc/site_141_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -165806,7 +166108,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2325,
+   "id": 2330,
    "iri": "http://w3id.org/bb5kbc/site_142_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -165877,7 +166179,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2326,
+   "id": 2331,
    "iri": "http://w3id.org/bb5kbc/site_144_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -165948,7 +166250,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2327,
+   "id": 2332,
    "iri": "http://w3id.org/bb5kbc/site_145_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -166019,7 +166321,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2328,
+   "id": 2333,
    "iri": "http://w3id.org/bb5kbc/site_146_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -166090,7 +166392,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2329,
+   "id": 2334,
    "iri": "http://w3id.org/bb5kbc/site_147_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -166161,7 +166463,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2330,
+   "id": 2335,
    "iri": "http://w3id.org/bb5kbc/site_148_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -166232,7 +166534,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2331,
+   "id": 2336,
    "iri": "http://w3id.org/bb5kbc/site_149_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -166303,7 +166605,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2332,
+   "id": 2337,
    "iri": "http://w3id.org/bb5kbc/site_14_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -166366,7 +166668,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2333,
+   "id": 2338,
    "iri": "http://w3id.org/bb5kbc/site_150_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -166437,7 +166739,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2334,
+   "id": 2339,
    "iri": "http://w3id.org/bb5kbc/site_151_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -166508,7 +166810,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2335,
+   "id": 2340,
    "iri": "http://w3id.org/bb5kbc/site_152_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -166571,7 +166873,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2336,
+   "id": 2341,
    "iri": "http://w3id.org/bb5kbc/site_153_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -166642,7 +166944,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2337,
+   "id": 2342,
    "iri": "http://w3id.org/bb5kbc/site_154_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -166713,7 +167015,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2338,
+   "id": 2343,
    "iri": "http://w3id.org/bb5kbc/site_155_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -166784,7 +167086,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2339,
+   "id": 2344,
    "iri": "http://w3id.org/bb5kbc/site_156_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -166855,7 +167157,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2340,
+   "id": 2345,
    "iri": "http://w3id.org/bb5kbc/site_157_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -166926,7 +167228,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2341,
+   "id": 2346,
    "iri": "http://w3id.org/bb5kbc/site_158_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -166997,7 +167299,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2342,
+   "id": 2347,
    "iri": "http://w3id.org/bb5kbc/site_159_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -167068,7 +167370,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2343,
+   "id": 2348,
    "iri": "http://w3id.org/bb5kbc/site_15_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -167139,7 +167441,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2344,
+   "id": 2349,
    "iri": "http://w3id.org/bb5kbc/site_160_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -167210,7 +167512,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2345,
+   "id": 2350,
    "iri": "http://w3id.org/bb5kbc/site_161_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -167281,7 +167583,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2346,
+   "id": 2351,
    "iri": "http://w3id.org/bb5kbc/site_162_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -167352,7 +167654,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2347,
+   "id": 2352,
    "iri": "http://w3id.org/bb5kbc/site_163_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -167423,7 +167725,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2348,
+   "id": 2353,
    "iri": "http://w3id.org/bb5kbc/site_164_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -167494,7 +167796,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2349,
+   "id": 2354,
    "iri": "http://w3id.org/bb5kbc/site_165_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -167565,7 +167867,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2350,
+   "id": 2355,
    "iri": "http://w3id.org/bb5kbc/site_166_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -167636,7 +167938,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2351,
+   "id": 2356,
    "iri": "http://w3id.org/bb5kbc/site_167_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -167707,7 +168009,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2352,
+   "id": 2357,
    "iri": "http://w3id.org/bb5kbc/site_168_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -167778,7 +168080,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2353,
+   "id": 2358,
    "iri": "http://w3id.org/bb5kbc/site_169_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -167849,7 +168151,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2354,
+   "id": 2359,
    "iri": "http://w3id.org/bb5kbc/site_16_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -167920,7 +168222,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2355,
+   "id": 2360,
    "iri": "http://w3id.org/bb5kbc/site_170_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -167991,7 +168293,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2356,
+   "id": 2361,
    "iri": "http://w3id.org/bb5kbc/site_171_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -168062,7 +168364,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2357,
+   "id": 2362,
    "iri": "http://w3id.org/bb5kbc/site_172_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -168133,7 +168435,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2358,
+   "id": 2363,
    "iri": "http://w3id.org/bb5kbc/site_173_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -168196,7 +168498,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2359,
+   "id": 2364,
    "iri": "http://w3id.org/bb5kbc/site_174_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -168267,7 +168569,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2360,
+   "id": 2365,
    "iri": "http://w3id.org/bb5kbc/site_175_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -168330,7 +168632,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2361,
+   "id": 2366,
    "iri": "http://w3id.org/bb5kbc/site_176_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -168401,7 +168703,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2362,
+   "id": 2367,
    "iri": "http://w3id.org/bb5kbc/site_177_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -168464,7 +168766,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2363,
+   "id": 2368,
    "iri": "http://w3id.org/bb5kbc/site_178_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -168527,7 +168829,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2364,
+   "id": 2369,
    "iri": "http://w3id.org/bb5kbc/site_179_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -168598,7 +168900,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2365,
+   "id": 2370,
    "iri": "http://w3id.org/bb5kbc/site_17_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -168661,7 +168963,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2366,
+   "id": 2371,
    "iri": "http://w3id.org/bb5kbc/site_180_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -168724,7 +169026,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2367,
+   "id": 2372,
    "iri": "http://w3id.org/bb5kbc/site_181_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -168787,7 +169089,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2368,
+   "id": 2373,
    "iri": "http://w3id.org/bb5kbc/site_182_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -168850,7 +169152,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2369,
+   "id": 2374,
    "iri": "http://w3id.org/bb5kbc/site_183_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -168913,7 +169215,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2370,
+   "id": 2375,
    "iri": "http://w3id.org/bb5kbc/site_184_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -168976,7 +169278,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2371,
+   "id": 2376,
    "iri": "http://w3id.org/bb5kbc/site_185_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -169039,7 +169341,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2372,
+   "id": 2377,
    "iri": "http://w3id.org/bb5kbc/site_186_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -169102,7 +169404,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2373,
+   "id": 2378,
    "iri": "http://w3id.org/bb5kbc/site_187_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -169165,7 +169467,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2374,
+   "id": 2379,
    "iri": "http://w3id.org/bb5kbc/site_188_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -169228,7 +169530,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2375,
+   "id": 2380,
    "iri": "http://w3id.org/bb5kbc/site_189_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -169299,7 +169601,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2376,
+   "id": 2381,
    "iri": "http://w3id.org/bb5kbc/site_18_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -169362,7 +169664,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2377,
+   "id": 2382,
    "iri": "http://w3id.org/bb5kbc/site_190_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -169425,7 +169727,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2378,
+   "id": 2383,
    "iri": "http://w3id.org/bb5kbc/site_191_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -169488,7 +169790,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2379,
+   "id": 2384,
    "iri": "http://w3id.org/bb5kbc/site_192_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -169551,7 +169853,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2380,
+   "id": 2385,
    "iri": "http://w3id.org/bb5kbc/site_193_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -169614,7 +169916,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2381,
+   "id": 2386,
    "iri": "http://w3id.org/bb5kbc/site_194_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -169677,7 +169979,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2382,
+   "id": 2387,
    "iri": "http://w3id.org/bb5kbc/site_195_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -169740,7 +170042,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2383,
+   "id": 2388,
    "iri": "http://w3id.org/bb5kbc/site_196_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -169803,7 +170105,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2384,
+   "id": 2389,
    "iri": "http://w3id.org/bb5kbc/site_197_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -169866,7 +170168,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2385,
+   "id": 2390,
    "iri": "http://w3id.org/bb5kbc/site_198_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -169929,7 +170231,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2386,
+   "id": 2391,
    "iri": "http://w3id.org/bb5kbc/site_199_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -170000,7 +170302,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2387,
+   "id": 2392,
    "iri": "http://w3id.org/bb5kbc/site_19_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -170071,7 +170373,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2388,
+   "id": 2393,
    "iri": "http://w3id.org/bb5kbc/site_1_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -170134,7 +170436,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2389,
+   "id": 2394,
    "iri": "http://w3id.org/bb5kbc/site_200_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -170197,7 +170499,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2390,
+   "id": 2395,
    "iri": "http://w3id.org/bb5kbc/site_201_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -170260,7 +170562,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2391,
+   "id": 2396,
    "iri": "http://w3id.org/bb5kbc/site_202_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -170323,7 +170625,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2392,
+   "id": 2397,
    "iri": "http://w3id.org/bb5kbc/site_203_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -170394,7 +170696,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2393,
+   "id": 2398,
    "iri": "http://w3id.org/bb5kbc/site_204_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -170457,7 +170759,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2394,
+   "id": 2399,
    "iri": "http://w3id.org/bb5kbc/site_205_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -170520,7 +170822,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2395,
+   "id": 2400,
    "iri": "http://w3id.org/bb5kbc/site_206_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -170583,7 +170885,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2396,
+   "id": 2401,
    "iri": "http://w3id.org/bb5kbc/site_207_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -170646,7 +170948,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2397,
+   "id": 2402,
    "iri": "http://w3id.org/bb5kbc/site_208_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -170709,7 +171011,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2398,
+   "id": 2403,
    "iri": "http://w3id.org/bb5kbc/site_209_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -170780,7 +171082,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2399,
+   "id": 2404,
    "iri": "http://w3id.org/bb5kbc/site_20_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -170843,7 +171145,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2400,
+   "id": 2405,
    "iri": "http://w3id.org/bb5kbc/site_210_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -170906,7 +171208,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2401,
+   "id": 2406,
    "iri": "http://w3id.org/bb5kbc/site_211_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -170977,7 +171279,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2402,
+   "id": 2407,
    "iri": "http://w3id.org/bb5kbc/site_212_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -171040,7 +171342,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2403,
+   "id": 2408,
    "iri": "http://w3id.org/bb5kbc/site_213_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -171103,7 +171405,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2404,
+   "id": 2409,
    "iri": "http://w3id.org/bb5kbc/site_214_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -171166,7 +171468,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2405,
+   "id": 2410,
    "iri": "http://w3id.org/bb5kbc/site_215_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -171229,7 +171531,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2406,
+   "id": 2411,
    "iri": "http://w3id.org/bb5kbc/site_216_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -171292,7 +171594,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2407,
+   "id": 2412,
    "iri": "http://w3id.org/bb5kbc/site_217_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -171355,7 +171657,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2408,
+   "id": 2413,
    "iri": "http://w3id.org/bb5kbc/site_218_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -171418,7 +171720,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2409,
+   "id": 2414,
    "iri": "http://w3id.org/bb5kbc/site_219_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -171489,7 +171791,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2410,
+   "id": 2415,
    "iri": "http://w3id.org/bb5kbc/site_21_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -171552,7 +171854,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2411,
+   "id": 2416,
    "iri": "http://w3id.org/bb5kbc/site_220_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -171615,7 +171917,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2412,
+   "id": 2417,
    "iri": "http://w3id.org/bb5kbc/site_221_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -171678,7 +171980,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2413,
+   "id": 2418,
    "iri": "http://w3id.org/bb5kbc/site_222_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -171741,7 +172043,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2414,
+   "id": 2419,
    "iri": "http://w3id.org/bb5kbc/site_223_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -171804,7 +172106,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2415,
+   "id": 2420,
    "iri": "http://w3id.org/bb5kbc/site_224_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -171875,7 +172177,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2416,
+   "id": 2421,
    "iri": "http://w3id.org/bb5kbc/site_225_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -171938,7 +172240,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2417,
+   "id": 2422,
    "iri": "http://w3id.org/bb5kbc/site_226_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -172001,7 +172303,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2418,
+   "id": 2423,
    "iri": "http://w3id.org/bb5kbc/site_227_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -172072,7 +172374,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2419,
+   "id": 2424,
    "iri": "http://w3id.org/bb5kbc/site_228_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -172143,7 +172445,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2420,
+   "id": 2425,
    "iri": "http://w3id.org/bb5kbc/site_22_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -172214,7 +172516,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2421,
+   "id": 2426,
    "iri": "http://w3id.org/bb5kbc/site_230_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -172285,7 +172587,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2422,
+   "id": 2427,
    "iri": "http://w3id.org/bb5kbc/site_231_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -172356,7 +172658,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2423,
+   "id": 2428,
    "iri": "http://w3id.org/bb5kbc/site_232_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -172427,7 +172729,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2424,
+   "id": 2429,
    "iri": "http://w3id.org/bb5kbc/site_233_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -172498,7 +172800,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2425,
+   "id": 2430,
    "iri": "http://w3id.org/bb5kbc/site_234_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -172569,7 +172871,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2426,
+   "id": 2431,
    "iri": "http://w3id.org/bb5kbc/site_235_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -172640,7 +172942,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2427,
+   "id": 2432,
    "iri": "http://w3id.org/bb5kbc/site_236_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -172711,7 +173013,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2428,
+   "id": 2433,
    "iri": "http://w3id.org/bb5kbc/site_237_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -172774,7 +173076,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2429,
+   "id": 2434,
    "iri": "http://w3id.org/bb5kbc/site_238_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -172845,7 +173147,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2430,
+   "id": 2435,
    "iri": "http://w3id.org/bb5kbc/site_239_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -172916,7 +173218,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2431,
+   "id": 2436,
    "iri": "http://w3id.org/bb5kbc/site_23_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -172987,7 +173289,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2432,
+   "id": 2437,
    "iri": "http://w3id.org/bb5kbc/site_240_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -173058,7 +173360,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2433,
+   "id": 2438,
    "iri": "http://w3id.org/bb5kbc/site_241_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -173121,7 +173423,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2434,
+   "id": 2439,
    "iri": "http://w3id.org/bb5kbc/site_242_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -173192,7 +173494,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2435,
+   "id": 2440,
    "iri": "http://w3id.org/bb5kbc/site_243_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -173255,7 +173557,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2436,
+   "id": 2441,
    "iri": "http://w3id.org/bb5kbc/site_244_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -173326,7 +173628,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2437,
+   "id": 2442,
    "iri": "http://w3id.org/bb5kbc/site_245_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -173397,7 +173699,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2438,
+   "id": 2443,
    "iri": "http://w3id.org/bb5kbc/site_246_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -173468,7 +173770,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2439,
+   "id": 2444,
    "iri": "http://w3id.org/bb5kbc/site_247_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -173539,7 +173841,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2440,
+   "id": 2445,
    "iri": "http://w3id.org/bb5kbc/site_248_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -173610,7 +173912,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2441,
+   "id": 2446,
    "iri": "http://w3id.org/bb5kbc/site_249_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -173681,7 +173983,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2442,
+   "id": 2447,
    "iri": "http://w3id.org/bb5kbc/site_24_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -173752,7 +174054,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2443,
+   "id": 2448,
    "iri": "http://w3id.org/bb5kbc/site_250_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -173823,7 +174125,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2444,
+   "id": 2449,
    "iri": "http://w3id.org/bb5kbc/site_251_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -173894,7 +174196,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2445,
+   "id": 2450,
    "iri": "http://w3id.org/bb5kbc/site_252_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -173965,7 +174267,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2446,
+   "id": 2451,
    "iri": "http://w3id.org/bb5kbc/site_253_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -174036,7 +174338,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2447,
+   "id": 2452,
    "iri": "http://w3id.org/bb5kbc/site_254_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -174107,7 +174409,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2448,
+   "id": 2453,
    "iri": "http://w3id.org/bb5kbc/site_255_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -174178,7 +174480,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2449,
+   "id": 2454,
    "iri": "http://w3id.org/bb5kbc/site_256_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -174249,7 +174551,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2450,
+   "id": 2455,
    "iri": "http://w3id.org/bb5kbc/site_257_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -174320,7 +174622,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2451,
+   "id": 2456,
    "iri": "http://w3id.org/bb5kbc/site_258_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -174391,7 +174693,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2452,
+   "id": 2457,
    "iri": "http://w3id.org/bb5kbc/site_259_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -174462,7 +174764,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2453,
+   "id": 2458,
    "iri": "http://w3id.org/bb5kbc/site_25_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -174533,7 +174835,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2454,
+   "id": 2459,
    "iri": "http://w3id.org/bb5kbc/site_260_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -174604,7 +174906,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2455,
+   "id": 2460,
    "iri": "http://w3id.org/bb5kbc/site_261_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -174675,7 +174977,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2456,
+   "id": 2461,
    "iri": "http://w3id.org/bb5kbc/site_262_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -174746,7 +175048,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2457,
+   "id": 2462,
    "iri": "http://w3id.org/bb5kbc/site_263_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -174817,7 +175119,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2458,
+   "id": 2463,
    "iri": "http://w3id.org/bb5kbc/site_264_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -174888,7 +175190,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2459,
+   "id": 2464,
    "iri": "http://w3id.org/bb5kbc/site_265_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -174959,7 +175261,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2460,
+   "id": 2465,
    "iri": "http://w3id.org/bb5kbc/site_266_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -175030,7 +175332,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2461,
+   "id": 2466,
    "iri": "http://w3id.org/bb5kbc/site_267_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -175101,7 +175403,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2462,
+   "id": 2467,
    "iri": "http://w3id.org/bb5kbc/site_268_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -175172,7 +175474,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2463,
+   "id": 2468,
    "iri": "http://w3id.org/bb5kbc/site_269_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -175243,7 +175545,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2464,
+   "id": 2469,
    "iri": "http://w3id.org/bb5kbc/site_26_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -175314,7 +175616,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2465,
+   "id": 2470,
    "iri": "http://w3id.org/bb5kbc/site_270_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -175385,7 +175687,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2466,
+   "id": 2471,
    "iri": "http://w3id.org/bb5kbc/site_271_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -175456,7 +175758,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2467,
+   "id": 2472,
    "iri": "http://w3id.org/bb5kbc/site_272_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -175527,7 +175829,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2468,
+   "id": 2473,
    "iri": "http://w3id.org/bb5kbc/site_273_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -175598,7 +175900,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2469,
+   "id": 2474,
    "iri": "http://w3id.org/bb5kbc/site_274_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -175669,7 +175971,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2470,
+   "id": 2475,
    "iri": "http://w3id.org/bb5kbc/site_275_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -175740,7 +176042,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2471,
+   "id": 2476,
    "iri": "http://w3id.org/bb5kbc/site_276_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -175811,7 +176113,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2472,
+   "id": 2477,
    "iri": "http://w3id.org/bb5kbc/site_277_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -175874,7 +176176,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2473,
+   "id": 2478,
    "iri": "http://w3id.org/bb5kbc/site_278_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -175945,7 +176247,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2474,
+   "id": 2479,
    "iri": "http://w3id.org/bb5kbc/site_279_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -176016,7 +176318,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2475,
+   "id": 2480,
    "iri": "http://w3id.org/bb5kbc/site_27_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -176087,7 +176389,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2476,
+   "id": 2481,
    "iri": "http://w3id.org/bb5kbc/site_280_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -176158,7 +176460,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2477,
+   "id": 2482,
    "iri": "http://w3id.org/bb5kbc/site_281_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -176229,7 +176531,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2478,
+   "id": 2483,
    "iri": "http://w3id.org/bb5kbc/site_282_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -176300,7 +176602,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2479,
+   "id": 2484,
    "iri": "http://w3id.org/bb5kbc/site_283_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -176371,7 +176673,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2480,
+   "id": 2485,
    "iri": "http://w3id.org/bb5kbc/site_284_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -176442,7 +176744,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2481,
+   "id": 2486,
    "iri": "http://w3id.org/bb5kbc/site_285_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -176513,7 +176815,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2482,
+   "id": 2487,
    "iri": "http://w3id.org/bb5kbc/site_286_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -176584,7 +176886,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2483,
+   "id": 2488,
    "iri": "http://w3id.org/bb5kbc/site_287_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -176655,7 +176957,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2484,
+   "id": 2489,
    "iri": "http://w3id.org/bb5kbc/site_288_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -176726,7 +177028,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2485,
+   "id": 2490,
    "iri": "http://w3id.org/bb5kbc/site_289_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -176797,7 +177099,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2486,
+   "id": 2491,
    "iri": "http://w3id.org/bb5kbc/site_28_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -176868,7 +177170,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2487,
+   "id": 2492,
    "iri": "http://w3id.org/bb5kbc/site_290_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -176939,7 +177241,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2488,
+   "id": 2493,
    "iri": "http://w3id.org/bb5kbc/site_291_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -177010,7 +177312,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2489,
+   "id": 2494,
    "iri": "http://w3id.org/bb5kbc/site_292_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -177081,7 +177383,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2490,
+   "id": 2495,
    "iri": "http://w3id.org/bb5kbc/site_293_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -177152,7 +177454,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2491,
+   "id": 2496,
    "iri": "http://w3id.org/bb5kbc/site_294_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -177223,7 +177525,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2492,
+   "id": 2497,
    "iri": "http://w3id.org/bb5kbc/site_295_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -177294,7 +177596,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2493,
+   "id": 2498,
    "iri": "http://w3id.org/bb5kbc/site_296_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -177365,7 +177667,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2494,
+   "id": 2499,
    "iri": "http://w3id.org/bb5kbc/site_297_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -177436,7 +177738,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2495,
+   "id": 2500,
    "iri": "http://w3id.org/bb5kbc/site_298_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -177507,7 +177809,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2496,
+   "id": 2501,
    "iri": "http://w3id.org/bb5kbc/site_299_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -177578,7 +177880,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2497,
+   "id": 2502,
    "iri": "http://w3id.org/bb5kbc/site_29_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -177649,7 +177951,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2498,
+   "id": 2503,
    "iri": "http://w3id.org/bb5kbc/site_2_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -177720,7 +178022,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2499,
+   "id": 2504,
    "iri": "http://w3id.org/bb5kbc/site_300_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -177791,7 +178093,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2500,
+   "id": 2505,
    "iri": "http://w3id.org/bb5kbc/site_301_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -177862,7 +178164,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2501,
+   "id": 2506,
    "iri": "http://w3id.org/bb5kbc/site_302_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -177933,7 +178235,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2502,
+   "id": 2507,
    "iri": "http://w3id.org/bb5kbc/site_303_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -178004,7 +178306,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2503,
+   "id": 2508,
    "iri": "http://w3id.org/bb5kbc/site_304_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -178075,7 +178377,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2504,
+   "id": 2509,
    "iri": "http://w3id.org/bb5kbc/site_305_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -178146,7 +178448,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2505,
+   "id": 2510,
    "iri": "http://w3id.org/bb5kbc/site_306_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -178217,7 +178519,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2506,
+   "id": 2511,
    "iri": "http://w3id.org/bb5kbc/site_307_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -178288,7 +178590,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2507,
+   "id": 2512,
    "iri": "http://w3id.org/bb5kbc/site_308_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -178359,7 +178661,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2508,
+   "id": 2513,
    "iri": "http://w3id.org/bb5kbc/site_309_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -178430,7 +178732,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2509,
+   "id": 2514,
    "iri": "http://w3id.org/bb5kbc/site_30_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -178501,7 +178803,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2510,
+   "id": 2515,
    "iri": "http://w3id.org/bb5kbc/site_310_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -178572,7 +178874,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2511,
+   "id": 2516,
    "iri": "http://w3id.org/bb5kbc/site_311_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -178643,7 +178945,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2512,
+   "id": 2517,
    "iri": "http://w3id.org/bb5kbc/site_312_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -178714,7 +179016,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2513,
+   "id": 2518,
    "iri": "http://w3id.org/bb5kbc/site_313_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -178785,7 +179087,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2514,
+   "id": 2519,
    "iri": "http://w3id.org/bb5kbc/site_314_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -178856,7 +179158,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2515,
+   "id": 2520,
    "iri": "http://w3id.org/bb5kbc/site_315_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -178927,7 +179229,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2516,
+   "id": 2521,
    "iri": "http://w3id.org/bb5kbc/site_316_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -178998,7 +179300,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2517,
+   "id": 2522,
    "iri": "http://w3id.org/bb5kbc/site_317_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -179069,7 +179371,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2518,
+   "id": 2523,
    "iri": "http://w3id.org/bb5kbc/site_318_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -179140,7 +179442,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2519,
+   "id": 2524,
    "iri": "http://w3id.org/bb5kbc/site_319_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -179211,7 +179513,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2520,
+   "id": 2525,
    "iri": "http://w3id.org/bb5kbc/site_31_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -179282,7 +179584,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2521,
+   "id": 2526,
    "iri": "http://w3id.org/bb5kbc/site_321_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -179353,7 +179655,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2522,
+   "id": 2527,
    "iri": "http://w3id.org/bb5kbc/site_322_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -179424,7 +179726,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2523,
+   "id": 2528,
    "iri": "http://w3id.org/bb5kbc/site_323_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -179495,7 +179797,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2524,
+   "id": 2529,
    "iri": "http://w3id.org/bb5kbc/site_324_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -179566,7 +179868,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2525,
+   "id": 2530,
    "iri": "http://w3id.org/bb5kbc/site_325_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -179637,7 +179939,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2526,
+   "id": 2531,
    "iri": "http://w3id.org/bb5kbc/site_326_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -179708,7 +180010,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2527,
+   "id": 2532,
    "iri": "http://w3id.org/bb5kbc/site_327_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -179779,7 +180081,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2528,
+   "id": 2533,
    "iri": "http://w3id.org/bb5kbc/site_328_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -179850,7 +180152,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2529,
+   "id": 2534,
    "iri": "http://w3id.org/bb5kbc/site_329_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -179913,7 +180215,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2530,
+   "id": 2535,
    "iri": "http://w3id.org/bb5kbc/site_32_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -179984,7 +180286,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2531,
+   "id": 2536,
    "iri": "http://w3id.org/bb5kbc/site_332_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -180055,7 +180357,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2532,
+   "id": 2537,
    "iri": "http://w3id.org/bb5kbc/site_333_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -180126,7 +180428,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2533,
+   "id": 2538,
    "iri": "http://w3id.org/bb5kbc/site_334_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -180197,7 +180499,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2534,
+   "id": 2539,
    "iri": "http://w3id.org/bb5kbc/site_336_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -180268,7 +180570,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2535,
+   "id": 2540,
    "iri": "http://w3id.org/bb5kbc/site_337_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -180339,7 +180641,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2536,
+   "id": 2541,
    "iri": "http://w3id.org/bb5kbc/site_338_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -180410,7 +180712,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2537,
+   "id": 2542,
    "iri": "http://w3id.org/bb5kbc/site_339_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -180473,7 +180775,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2538,
+   "id": 2543,
    "iri": "http://w3id.org/bb5kbc/site_33_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -180544,7 +180846,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2539,
+   "id": 2544,
    "iri": "http://w3id.org/bb5kbc/site_340_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -180615,7 +180917,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2540,
+   "id": 2545,
    "iri": "http://w3id.org/bb5kbc/site_341_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -180686,7 +180988,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2541,
+   "id": 2546,
    "iri": "http://w3id.org/bb5kbc/site_342_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -180757,7 +181059,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2542,
+   "id": 2547,
    "iri": "http://w3id.org/bb5kbc/site_343_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -180828,7 +181130,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2543,
+   "id": 2548,
    "iri": "http://w3id.org/bb5kbc/site_344_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -180899,7 +181201,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2544,
+   "id": 2549,
    "iri": "http://w3id.org/bb5kbc/site_345_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -180970,7 +181272,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2545,
+   "id": 2550,
    "iri": "http://w3id.org/bb5kbc/site_346_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -181041,7 +181343,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2546,
+   "id": 2551,
    "iri": "http://w3id.org/bb5kbc/site_347_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -181112,7 +181414,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2547,
+   "id": 2552,
    "iri": "http://w3id.org/bb5kbc/site_348_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -181183,7 +181485,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2548,
+   "id": 2553,
    "iri": "http://w3id.org/bb5kbc/site_349_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -181246,7 +181548,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2549,
+   "id": 2554,
    "iri": "http://w3id.org/bb5kbc/site_34_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -181317,7 +181619,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2550,
+   "id": 2555,
    "iri": "http://w3id.org/bb5kbc/site_350_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -181388,7 +181690,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2551,
+   "id": 2556,
    "iri": "http://w3id.org/bb5kbc/site_351_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -181459,7 +181761,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2552,
+   "id": 2557,
    "iri": "http://w3id.org/bb5kbc/site_352_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -181530,7 +181832,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2553,
+   "id": 2558,
    "iri": "http://w3id.org/bb5kbc/site_353_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -181601,7 +181903,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2554,
+   "id": 2559,
    "iri": "http://w3id.org/bb5kbc/site_354_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -181672,7 +181974,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2555,
+   "id": 2560,
    "iri": "http://w3id.org/bb5kbc/site_355_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -181743,7 +182045,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2556,
+   "id": 2561,
    "iri": "http://w3id.org/bb5kbc/site_356_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -181814,7 +182116,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2557,
+   "id": 2562,
    "iri": "http://w3id.org/bb5kbc/site_357_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -181885,7 +182187,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2558,
+   "id": 2563,
    "iri": "http://w3id.org/bb5kbc/site_358_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -181956,7 +182258,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2559,
+   "id": 2564,
    "iri": "http://w3id.org/bb5kbc/site_359_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -182027,7 +182329,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2560,
+   "id": 2565,
    "iri": "http://w3id.org/bb5kbc/site_35_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -182098,7 +182400,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2561,
+   "id": 2566,
    "iri": "http://w3id.org/bb5kbc/site_360_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -182169,7 +182471,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2562,
+   "id": 2567,
    "iri": "http://w3id.org/bb5kbc/site_361_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -182240,7 +182542,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2563,
+   "id": 2568,
    "iri": "http://w3id.org/bb5kbc/site_362_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -182311,7 +182613,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2564,
+   "id": 2569,
    "iri": "http://w3id.org/bb5kbc/site_363_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -182382,7 +182684,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2565,
+   "id": 2570,
    "iri": "http://w3id.org/bb5kbc/site_364_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -182453,7 +182755,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2566,
+   "id": 2571,
    "iri": "http://w3id.org/bb5kbc/site_365_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -182524,7 +182826,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2567,
+   "id": 2572,
    "iri": "http://w3id.org/bb5kbc/site_366_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -182595,7 +182897,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2568,
+   "id": 2573,
    "iri": "http://w3id.org/bb5kbc/site_367_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -182666,7 +182968,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2569,
+   "id": 2574,
    "iri": "http://w3id.org/bb5kbc/site_368_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -182737,7 +183039,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2570,
+   "id": 2575,
    "iri": "http://w3id.org/bb5kbc/site_369_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -182808,7 +183110,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2571,
+   "id": 2576,
    "iri": "http://w3id.org/bb5kbc/site_36_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -182879,7 +183181,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2572,
+   "id": 2577,
    "iri": "http://w3id.org/bb5kbc/site_370_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -182950,7 +183252,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2573,
+   "id": 2578,
    "iri": "http://w3id.org/bb5kbc/site_371_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -183021,7 +183323,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2574,
+   "id": 2579,
    "iri": "http://w3id.org/bb5kbc/site_372_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -183092,7 +183394,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2575,
+   "id": 2580,
    "iri": "http://w3id.org/bb5kbc/site_373_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -183163,7 +183465,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2576,
+   "id": 2581,
    "iri": "http://w3id.org/bb5kbc/site_374_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -183234,7 +183536,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2577,
+   "id": 2582,
    "iri": "http://w3id.org/bb5kbc/site_375_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -183305,7 +183607,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2578,
+   "id": 2583,
    "iri": "http://w3id.org/bb5kbc/site_376_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -183376,7 +183678,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2579,
+   "id": 2584,
    "iri": "http://w3id.org/bb5kbc/site_377_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -183447,7 +183749,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2580,
+   "id": 2585,
    "iri": "http://w3id.org/bb5kbc/site_378_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -183518,7 +183820,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2581,
+   "id": 2586,
    "iri": "http://w3id.org/bb5kbc/site_379_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -183589,7 +183891,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2582,
+   "id": 2587,
    "iri": "http://w3id.org/bb5kbc/site_37_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -183660,7 +183962,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2583,
+   "id": 2588,
    "iri": "http://w3id.org/bb5kbc/site_380_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -183731,7 +184033,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2584,
+   "id": 2589,
    "iri": "http://w3id.org/bb5kbc/site_381_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -183802,7 +184104,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2585,
+   "id": 2590,
    "iri": "http://w3id.org/bb5kbc/site_382_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -183873,7 +184175,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2586,
+   "id": 2591,
    "iri": "http://w3id.org/bb5kbc/site_383_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -183944,7 +184246,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2587,
+   "id": 2592,
    "iri": "http://w3id.org/bb5kbc/site_384_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -184015,7 +184317,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2588,
+   "id": 2593,
    "iri": "http://w3id.org/bb5kbc/site_385_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -184086,7 +184388,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2589,
+   "id": 2594,
    "iri": "http://w3id.org/bb5kbc/site_386_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -184157,7 +184459,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2590,
+   "id": 2595,
    "iri": "http://w3id.org/bb5kbc/site_387_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -184228,7 +184530,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2591,
+   "id": 2596,
    "iri": "http://w3id.org/bb5kbc/site_388_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -184299,7 +184601,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2592,
+   "id": 2597,
    "iri": "http://w3id.org/bb5kbc/site_389_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -184370,7 +184672,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2593,
+   "id": 2598,
    "iri": "http://w3id.org/bb5kbc/site_38_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -184441,7 +184743,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2594,
+   "id": 2599,
    "iri": "http://w3id.org/bb5kbc/site_390_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -184512,7 +184814,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2595,
+   "id": 2600,
    "iri": "http://w3id.org/bb5kbc/site_391_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -184583,7 +184885,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2596,
+   "id": 2601,
    "iri": "http://w3id.org/bb5kbc/site_392_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -184654,7 +184956,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2597,
+   "id": 2602,
    "iri": "http://w3id.org/bb5kbc/site_393_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -184725,7 +185027,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2598,
+   "id": 2603,
    "iri": "http://w3id.org/bb5kbc/site_394_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -184796,7 +185098,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2599,
+   "id": 2604,
    "iri": "http://w3id.org/bb5kbc/site_395_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -184867,7 +185169,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2600,
+   "id": 2605,
    "iri": "http://w3id.org/bb5kbc/site_396_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -184938,7 +185240,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2601,
+   "id": 2606,
    "iri": "http://w3id.org/bb5kbc/site_397_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -185009,7 +185311,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2602,
+   "id": 2607,
    "iri": "http://w3id.org/bb5kbc/site_398_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -185080,7 +185382,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2603,
+   "id": 2608,
    "iri": "http://w3id.org/bb5kbc/site_399_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -185143,7 +185445,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2604,
+   "id": 2609,
    "iri": "http://w3id.org/bb5kbc/site_39_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -185214,7 +185516,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2605,
+   "id": 2610,
    "iri": "http://w3id.org/bb5kbc/site_3_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -185285,7 +185587,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2606,
+   "id": 2611,
    "iri": "http://w3id.org/bb5kbc/site_400_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -185356,7 +185658,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2607,
+   "id": 2612,
    "iri": "http://w3id.org/bb5kbc/site_401_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -185427,7 +185729,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2608,
+   "id": 2613,
    "iri": "http://w3id.org/bb5kbc/site_402_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -185498,7 +185800,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2609,
+   "id": 2614,
    "iri": "http://w3id.org/bb5kbc/site_403_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -185569,7 +185871,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2610,
+   "id": 2615,
    "iri": "http://w3id.org/bb5kbc/site_404_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -185640,7 +185942,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2611,
+   "id": 2616,
    "iri": "http://w3id.org/bb5kbc/site_405_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -185711,7 +186013,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2612,
+   "id": 2617,
    "iri": "http://w3id.org/bb5kbc/site_406_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -185782,7 +186084,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2613,
+   "id": 2618,
    "iri": "http://w3id.org/bb5kbc/site_407_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -185853,7 +186155,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2614,
+   "id": 2619,
    "iri": "http://w3id.org/bb5kbc/site_408_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -185924,7 +186226,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2615,
+   "id": 2620,
    "iri": "http://w3id.org/bb5kbc/site_409_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -185995,7 +186297,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2616,
+   "id": 2621,
    "iri": "http://w3id.org/bb5kbc/site_40_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -186066,7 +186368,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2617,
+   "id": 2622,
    "iri": "http://w3id.org/bb5kbc/site_410_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -186137,7 +186439,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2618,
+   "id": 2623,
    "iri": "http://w3id.org/bb5kbc/site_411_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -186208,7 +186510,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2619,
+   "id": 2624,
    "iri": "http://w3id.org/bb5kbc/site_412_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -186279,7 +186581,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2620,
+   "id": 2625,
    "iri": "http://w3id.org/bb5kbc/site_413_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -186350,7 +186652,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2621,
+   "id": 2626,
    "iri": "http://w3id.org/bb5kbc/site_414_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -186421,7 +186723,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2622,
+   "id": 2627,
    "iri": "http://w3id.org/bb5kbc/site_415_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -186492,7 +186794,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2623,
+   "id": 2628,
    "iri": "http://w3id.org/bb5kbc/site_416_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -186563,7 +186865,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2624,
+   "id": 2629,
    "iri": "http://w3id.org/bb5kbc/site_417_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -186634,7 +186936,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2625,
+   "id": 2630,
    "iri": "http://w3id.org/bb5kbc/site_418_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -186705,7 +187007,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2626,
+   "id": 2631,
    "iri": "http://w3id.org/bb5kbc/site_419_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -186776,7 +187078,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2627,
+   "id": 2632,
    "iri": "http://w3id.org/bb5kbc/site_41_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -186847,7 +187149,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2628,
+   "id": 2633,
    "iri": "http://w3id.org/bb5kbc/site_421_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -186918,7 +187220,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2629,
+   "id": 2634,
    "iri": "http://w3id.org/bb5kbc/site_422_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -186989,7 +187291,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2630,
+   "id": 2635,
    "iri": "http://w3id.org/bb5kbc/site_423_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -187060,7 +187362,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2631,
+   "id": 2636,
    "iri": "http://w3id.org/bb5kbc/site_424_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -187131,7 +187433,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2632,
+   "id": 2637,
    "iri": "http://w3id.org/bb5kbc/site_425_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -187202,7 +187504,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2633,
+   "id": 2638,
    "iri": "http://w3id.org/bb5kbc/site_426_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -187273,7 +187575,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2634,
+   "id": 2639,
    "iri": "http://w3id.org/bb5kbc/site_427_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -187344,7 +187646,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2635,
+   "id": 2640,
    "iri": "http://w3id.org/bb5kbc/site_428_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -187415,7 +187717,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2636,
+   "id": 2641,
    "iri": "http://w3id.org/bb5kbc/site_429_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -187486,7 +187788,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2637,
+   "id": 2642,
    "iri": "http://w3id.org/bb5kbc/site_430_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -187557,7 +187859,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2638,
+   "id": 2643,
    "iri": "http://w3id.org/bb5kbc/site_431_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -187628,7 +187930,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2639,
+   "id": 2644,
    "iri": "http://w3id.org/bb5kbc/site_432_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -187699,7 +188001,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2640,
+   "id": 2645,
    "iri": "http://w3id.org/bb5kbc/site_433_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -187770,7 +188072,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2641,
+   "id": 2646,
    "iri": "http://w3id.org/bb5kbc/site_434_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -187841,7 +188143,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2642,
+   "id": 2647,
    "iri": "http://w3id.org/bb5kbc/site_435_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -187912,7 +188214,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2643,
+   "id": 2648,
    "iri": "http://w3id.org/bb5kbc/site_436_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -187983,7 +188285,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2644,
+   "id": 2649,
    "iri": "http://w3id.org/bb5kbc/site_437_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -188054,7 +188356,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2645,
+   "id": 2650,
    "iri": "http://w3id.org/bb5kbc/site_438_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -188125,7 +188427,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2646,
+   "id": 2651,
    "iri": "http://w3id.org/bb5kbc/site_439_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -188196,7 +188498,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2647,
+   "id": 2652,
    "iri": "http://w3id.org/bb5kbc/site_43_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -188267,7 +188569,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2648,
+   "id": 2653,
    "iri": "http://w3id.org/bb5kbc/site_440_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -188338,7 +188640,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2649,
+   "id": 2654,
    "iri": "http://w3id.org/bb5kbc/site_441_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -188409,7 +188711,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2650,
+   "id": 2655,
    "iri": "http://w3id.org/bb5kbc/site_442_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -188480,7 +188782,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2651,
+   "id": 2656,
    "iri": "http://w3id.org/bb5kbc/site_443_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -188551,7 +188853,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2652,
+   "id": 2657,
    "iri": "http://w3id.org/bb5kbc/site_444_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -188622,7 +188924,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2653,
+   "id": 2658,
    "iri": "http://w3id.org/bb5kbc/site_445_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -188693,7 +188995,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2654,
+   "id": 2659,
    "iri": "http://w3id.org/bb5kbc/site_446_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -188764,7 +189066,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2655,
+   "id": 2660,
    "iri": "http://w3id.org/bb5kbc/site_447_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -188835,7 +189137,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2656,
+   "id": 2661,
    "iri": "http://w3id.org/bb5kbc/site_448_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -188906,7 +189208,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2657,
+   "id": 2662,
    "iri": "http://w3id.org/bb5kbc/site_449_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -188977,7 +189279,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2658,
+   "id": 2663,
    "iri": "http://w3id.org/bb5kbc/site_44_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -189048,7 +189350,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2659,
+   "id": 2664,
    "iri": "http://w3id.org/bb5kbc/site_450_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -189119,7 +189421,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2660,
+   "id": 2665,
    "iri": "http://w3id.org/bb5kbc/site_453_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -189190,7 +189492,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2661,
+   "id": 2666,
    "iri": "http://w3id.org/bb5kbc/site_454_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -189261,7 +189563,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2662,
+   "id": 2667,
    "iri": "http://w3id.org/bb5kbc/site_455_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -189332,7 +189634,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2663,
+   "id": 2668,
    "iri": "http://w3id.org/bb5kbc/site_456_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -189403,7 +189705,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2664,
+   "id": 2669,
    "iri": "http://w3id.org/bb5kbc/site_459_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -189474,7 +189776,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2665,
+   "id": 2670,
    "iri": "http://w3id.org/bb5kbc/site_45_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -189545,7 +189847,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2666,
+   "id": 2671,
    "iri": "http://w3id.org/bb5kbc/site_460_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -189616,7 +189918,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2667,
+   "id": 2672,
    "iri": "http://w3id.org/bb5kbc/site_461_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -189687,7 +189989,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2668,
+   "id": 2673,
    "iri": "http://w3id.org/bb5kbc/site_462_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -189758,7 +190060,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2669,
+   "id": 2674,
    "iri": "http://w3id.org/bb5kbc/site_463_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -189829,7 +190131,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2670,
+   "id": 2675,
    "iri": "http://w3id.org/bb5kbc/site_464_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -189900,7 +190202,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2671,
+   "id": 2676,
    "iri": "http://w3id.org/bb5kbc/site_465_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -189971,7 +190273,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2672,
+   "id": 2677,
    "iri": "http://w3id.org/bb5kbc/site_466_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -190042,7 +190344,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2673,
+   "id": 2678,
    "iri": "http://w3id.org/bb5kbc/site_467_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -190113,7 +190415,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2674,
+   "id": 2679,
    "iri": "http://w3id.org/bb5kbc/site_468_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -190184,7 +190486,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2675,
+   "id": 2680,
    "iri": "http://w3id.org/bb5kbc/site_469_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -190255,7 +190557,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2676,
+   "id": 2681,
    "iri": "http://w3id.org/bb5kbc/site_46_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -190326,7 +190628,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2677,
+   "id": 2682,
    "iri": "http://w3id.org/bb5kbc/site_470_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -190397,7 +190699,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2678,
+   "id": 2683,
    "iri": "http://w3id.org/bb5kbc/site_471_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -190468,7 +190770,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2679,
+   "id": 2684,
    "iri": "http://w3id.org/bb5kbc/site_472_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -190539,7 +190841,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2680,
+   "id": 2685,
    "iri": "http://w3id.org/bb5kbc/site_473_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -190610,7 +190912,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2681,
+   "id": 2686,
    "iri": "http://w3id.org/bb5kbc/site_474_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -190681,7 +190983,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2682,
+   "id": 2687,
    "iri": "http://w3id.org/bb5kbc/site_475_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -190752,7 +191054,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2683,
+   "id": 2688,
    "iri": "http://w3id.org/bb5kbc/site_476_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -190823,7 +191125,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2684,
+   "id": 2689,
    "iri": "http://w3id.org/bb5kbc/site_477_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -190894,7 +191196,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2685,
+   "id": 2690,
    "iri": "http://w3id.org/bb5kbc/site_478_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -190965,7 +191267,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2686,
+   "id": 2691,
    "iri": "http://w3id.org/bb5kbc/site_479_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -191036,7 +191338,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2687,
+   "id": 2692,
    "iri": "http://w3id.org/bb5kbc/site_47_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -191107,7 +191409,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2688,
+   "id": 2693,
    "iri": "http://w3id.org/bb5kbc/site_480_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -191178,7 +191480,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2689,
+   "id": 2694,
    "iri": "http://w3id.org/bb5kbc/site_481_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -191249,7 +191551,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2690,
+   "id": 2695,
    "iri": "http://w3id.org/bb5kbc/site_482_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -191320,7 +191622,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2691,
+   "id": 2696,
    "iri": "http://w3id.org/bb5kbc/site_483_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -191391,7 +191693,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2692,
+   "id": 2697,
    "iri": "http://w3id.org/bb5kbc/site_484_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -191462,7 +191764,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2693,
+   "id": 2698,
    "iri": "http://w3id.org/bb5kbc/site_485_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -191533,7 +191835,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2694,
+   "id": 2699,
    "iri": "http://w3id.org/bb5kbc/site_486_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -191604,7 +191906,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2695,
+   "id": 2700,
    "iri": "http://w3id.org/bb5kbc/site_487_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -191675,7 +191977,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2696,
+   "id": 2701,
    "iri": "http://w3id.org/bb5kbc/site_488_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -191746,7 +192048,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2697,
+   "id": 2702,
    "iri": "http://w3id.org/bb5kbc/site_489_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -191817,7 +192119,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2698,
+   "id": 2703,
    "iri": "http://w3id.org/bb5kbc/site_48_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -191888,7 +192190,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2699,
+   "id": 2704,
    "iri": "http://w3id.org/bb5kbc/site_490_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -191959,7 +192261,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2700,
+   "id": 2705,
    "iri": "http://w3id.org/bb5kbc/site_491_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -192030,7 +192332,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2701,
+   "id": 2706,
    "iri": "http://w3id.org/bb5kbc/site_492_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -192101,7 +192403,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2702,
+   "id": 2707,
    "iri": "http://w3id.org/bb5kbc/site_493_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -192172,7 +192474,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2703,
+   "id": 2708,
    "iri": "http://w3id.org/bb5kbc/site_494_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -192243,7 +192545,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2704,
+   "id": 2709,
    "iri": "http://w3id.org/bb5kbc/site_495_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -192314,7 +192616,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2705,
+   "id": 2710,
    "iri": "http://w3id.org/bb5kbc/site_496_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -192385,7 +192687,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2706,
+   "id": 2711,
    "iri": "http://w3id.org/bb5kbc/site_497_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -192456,7 +192758,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2707,
+   "id": 2712,
    "iri": "http://w3id.org/bb5kbc/site_498_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -192527,7 +192829,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2708,
+   "id": 2713,
    "iri": "http://w3id.org/bb5kbc/site_499_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -192598,7 +192900,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2709,
+   "id": 2714,
    "iri": "http://w3id.org/bb5kbc/site_49_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -192669,7 +192971,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2710,
+   "id": 2715,
    "iri": "http://w3id.org/bb5kbc/site_4_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -192740,7 +193042,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2711,
+   "id": 2716,
    "iri": "http://w3id.org/bb5kbc/site_500_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -192811,7 +193113,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2712,
+   "id": 2717,
    "iri": "http://w3id.org/bb5kbc/site_501_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -192882,7 +193184,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2713,
+   "id": 2718,
    "iri": "http://w3id.org/bb5kbc/site_502_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -192953,7 +193255,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2714,
+   "id": 2719,
    "iri": "http://w3id.org/bb5kbc/site_503_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -193016,7 +193318,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2715,
+   "id": 2720,
    "iri": "http://w3id.org/bb5kbc/site_504_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -193079,7 +193381,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2716,
+   "id": 2721,
    "iri": "http://w3id.org/bb5kbc/site_505_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -193142,7 +193444,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2717,
+   "id": 2722,
    "iri": "http://w3id.org/bb5kbc/site_506_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -193205,7 +193507,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2718,
+   "id": 2723,
    "iri": "http://w3id.org/bb5kbc/site_507_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -193268,7 +193570,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2719,
+   "id": 2724,
    "iri": "http://w3id.org/bb5kbc/site_508_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -193331,7 +193633,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2720,
+   "id": 2725,
    "iri": "http://w3id.org/bb5kbc/site_50_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -193394,7 +193696,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2721,
+   "id": 2726,
    "iri": "http://w3id.org/bb5kbc/site_510_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -193465,7 +193767,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2722,
+   "id": 2727,
    "iri": "http://w3id.org/bb5kbc/site_511_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -193536,7 +193838,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2723,
+   "id": 2728,
    "iri": "http://w3id.org/bb5kbc/site_512_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -193599,7 +193901,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2724,
+   "id": 2729,
    "iri": "http://w3id.org/bb5kbc/site_513_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -193670,7 +193972,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2725,
+   "id": 2730,
    "iri": "http://w3id.org/bb5kbc/site_514_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -193741,7 +194043,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2726,
+   "id": 2731,
    "iri": "http://w3id.org/bb5kbc/site_515_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -193812,7 +194114,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2727,
+   "id": 2732,
    "iri": "http://w3id.org/bb5kbc/site_516_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -193883,7 +194185,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2728,
+   "id": 2733,
    "iri": "http://w3id.org/bb5kbc/site_517_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -193954,7 +194256,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2729,
+   "id": 2734,
    "iri": "http://w3id.org/bb5kbc/site_518_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -194017,7 +194319,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2730,
+   "id": 2735,
    "iri": "http://w3id.org/bb5kbc/site_519_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -194088,7 +194390,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2731,
+   "id": 2736,
    "iri": "http://w3id.org/bb5kbc/site_520_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -194159,7 +194461,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2732,
+   "id": 2737,
    "iri": "http://w3id.org/bb5kbc/site_521_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -194230,7 +194532,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2733,
+   "id": 2738,
    "iri": "http://w3id.org/bb5kbc/site_522_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -194301,7 +194603,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2734,
+   "id": 2739,
    "iri": "http://w3id.org/bb5kbc/site_523_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -194364,7 +194666,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2735,
+   "id": 2740,
    "iri": "http://w3id.org/bb5kbc/site_524_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -194427,7 +194729,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2736,
+   "id": 2741,
    "iri": "http://w3id.org/bb5kbc/site_525_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -194490,7 +194792,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2737,
+   "id": 2742,
    "iri": "http://w3id.org/bb5kbc/site_526_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -194553,7 +194855,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2738,
+   "id": 2743,
    "iri": "http://w3id.org/bb5kbc/site_527_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -194624,7 +194926,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2739,
+   "id": 2744,
    "iri": "http://w3id.org/bb5kbc/site_528_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -194687,7 +194989,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2740,
+   "id": 2745,
    "iri": "http://w3id.org/bb5kbc/site_529_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -194758,7 +195060,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2741,
+   "id": 2746,
    "iri": "http://w3id.org/bb5kbc/site_530_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -194821,7 +195123,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2742,
+   "id": 2747,
    "iri": "http://w3id.org/bb5kbc/site_531_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -194884,7 +195186,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2743,
+   "id": 2748,
    "iri": "http://w3id.org/bb5kbc/site_532_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -194955,7 +195257,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2744,
+   "id": 2749,
    "iri": "http://w3id.org/bb5kbc/site_533_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -195026,7 +195328,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2745,
+   "id": 2750,
    "iri": "http://w3id.org/bb5kbc/site_534_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -195097,7 +195399,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2746,
+   "id": 2751,
    "iri": "http://w3id.org/bb5kbc/site_535_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -195168,7 +195470,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2747,
+   "id": 2752,
    "iri": "http://w3id.org/bb5kbc/site_536_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -195231,7 +195533,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2748,
+   "id": 2753,
    "iri": "http://w3id.org/bb5kbc/site_537_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -195302,7 +195604,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2749,
+   "id": 2754,
    "iri": "http://w3id.org/bb5kbc/site_538_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -195365,7 +195667,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2750,
+   "id": 2755,
    "iri": "http://w3id.org/bb5kbc/site_539_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -195436,7 +195738,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2751,
+   "id": 2756,
    "iri": "http://w3id.org/bb5kbc/site_53_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -195507,7 +195809,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2752,
+   "id": 2757,
    "iri": "http://w3id.org/bb5kbc/site_540_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -195578,7 +195880,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2753,
+   "id": 2758,
    "iri": "http://w3id.org/bb5kbc/site_541_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -195641,7 +195943,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2754,
+   "id": 2759,
    "iri": "http://w3id.org/bb5kbc/site_542_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -195704,7 +196006,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2755,
+   "id": 2760,
    "iri": "http://w3id.org/bb5kbc/site_543_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -195767,7 +196069,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2756,
+   "id": 2761,
    "iri": "http://w3id.org/bb5kbc/site_544_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -195830,7 +196132,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2757,
+   "id": 2762,
    "iri": "http://w3id.org/bb5kbc/site_546_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -195893,7 +196195,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2758,
+   "id": 2763,
    "iri": "http://w3id.org/bb5kbc/site_547_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -195964,7 +196266,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2759,
+   "id": 2764,
    "iri": "http://w3id.org/bb5kbc/site_548_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -196027,7 +196329,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2760,
+   "id": 2765,
    "iri": "http://w3id.org/bb5kbc/site_549_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -196098,7 +196400,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2761,
+   "id": 2766,
    "iri": "http://w3id.org/bb5kbc/site_54_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -196169,7 +196471,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2762,
+   "id": 2767,
    "iri": "http://w3id.org/bb5kbc/site_550_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -196232,7 +196534,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2763,
+   "id": 2768,
    "iri": "http://w3id.org/bb5kbc/site_551_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -196303,7 +196605,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2764,
+   "id": 2769,
    "iri": "http://w3id.org/bb5kbc/site_552_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -196374,7 +196676,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2765,
+   "id": 2770,
    "iri": "http://w3id.org/bb5kbc/site_553_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -196445,7 +196747,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2766,
+   "id": 2771,
    "iri": "http://w3id.org/bb5kbc/site_554_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -196516,7 +196818,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2767,
+   "id": 2772,
    "iri": "http://w3id.org/bb5kbc/site_555_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -196587,7 +196889,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2768,
+   "id": 2773,
    "iri": "http://w3id.org/bb5kbc/site_556_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -196658,7 +196960,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2769,
+   "id": 2774,
    "iri": "http://w3id.org/bb5kbc/site_557_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -196729,7 +197031,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2770,
+   "id": 2775,
    "iri": "http://w3id.org/bb5kbc/site_558_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -196800,7 +197102,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2771,
+   "id": 2776,
    "iri": "http://w3id.org/bb5kbc/site_559_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -196871,7 +197173,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2772,
+   "id": 2777,
    "iri": "http://w3id.org/bb5kbc/site_55_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -196942,7 +197244,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2773,
+   "id": 2778,
    "iri": "http://w3id.org/bb5kbc/site_560_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -197013,7 +197315,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2774,
+   "id": 2779,
    "iri": "http://w3id.org/bb5kbc/site_561_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -197084,7 +197386,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2775,
+   "id": 2780,
    "iri": "http://w3id.org/bb5kbc/site_562_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -197147,7 +197449,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2776,
+   "id": 2781,
    "iri": "http://w3id.org/bb5kbc/site_563_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -197210,7 +197512,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2777,
+   "id": 2782,
    "iri": "http://w3id.org/bb5kbc/site_564_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -197273,7 +197575,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2778,
+   "id": 2783,
    "iri": "http://w3id.org/bb5kbc/site_565_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -197336,7 +197638,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2779,
+   "id": 2784,
    "iri": "http://w3id.org/bb5kbc/site_56_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -197399,7 +197701,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2780,
+   "id": 2785,
    "iri": "http://w3id.org/bb5kbc/site_571_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -197462,7 +197764,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2781,
+   "id": 2786,
    "iri": "http://w3id.org/bb5kbc/site_574_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -197525,7 +197827,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2782,
+   "id": 2787,
    "iri": "http://w3id.org/bb5kbc/site_575_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -197588,7 +197890,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2783,
+   "id": 2788,
    "iri": "http://w3id.org/bb5kbc/site_579_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -197659,7 +197961,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2784,
+   "id": 2789,
    "iri": "http://w3id.org/bb5kbc/site_57_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -197722,7 +198024,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2785,
+   "id": 2790,
    "iri": "http://w3id.org/bb5kbc/site_580_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -197785,7 +198087,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2786,
+   "id": 2791,
    "iri": "http://w3id.org/bb5kbc/site_581_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -197848,7 +198150,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2787,
+   "id": 2792,
    "iri": "http://w3id.org/bb5kbc/site_582_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -197911,7 +198213,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2788,
+   "id": 2793,
    "iri": "http://w3id.org/bb5kbc/site_584_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -197974,7 +198276,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2789,
+   "id": 2794,
    "iri": "http://w3id.org/bb5kbc/site_585_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -198037,7 +198339,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2790,
+   "id": 2795,
    "iri": "http://w3id.org/bb5kbc/site_586_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -198100,7 +198402,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2791,
+   "id": 2796,
    "iri": "http://w3id.org/bb5kbc/site_587_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -198163,7 +198465,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2792,
+   "id": 2797,
    "iri": "http://w3id.org/bb5kbc/site_588_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -198226,7 +198528,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2793,
+   "id": 2798,
    "iri": "http://w3id.org/bb5kbc/site_589_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -198297,7 +198599,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2794,
+   "id": 2799,
    "iri": "http://w3id.org/bb5kbc/site_58_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -198360,7 +198662,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2795,
+   "id": 2800,
    "iri": "http://w3id.org/bb5kbc/site_590_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -198423,7 +198725,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2796,
+   "id": 2801,
    "iri": "http://w3id.org/bb5kbc/site_59_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -198494,7 +198796,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2797,
+   "id": 2802,
    "iri": "http://w3id.org/bb5kbc/site_5_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -198565,7 +198867,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2798,
+   "id": 2803,
    "iri": "http://w3id.org/bb5kbc/site_60_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -198628,7 +198930,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2799,
+   "id": 2804,
    "iri": "http://w3id.org/bb5kbc/site_61_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -198699,7 +199001,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2800,
+   "id": 2805,
    "iri": "http://w3id.org/bb5kbc/site_64_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -198770,7 +199072,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2801,
+   "id": 2806,
    "iri": "http://w3id.org/bb5kbc/site_65_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -198841,7 +199143,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2802,
+   "id": 2807,
    "iri": "http://w3id.org/bb5kbc/site_66_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -198912,7 +199214,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2803,
+   "id": 2808,
    "iri": "http://w3id.org/bb5kbc/site_67_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -198983,7 +199285,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2804,
+   "id": 2809,
    "iri": "http://w3id.org/bb5kbc/site_68_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -199054,7 +199356,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2805,
+   "id": 2810,
    "iri": "http://w3id.org/bb5kbc/site_69_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -199125,7 +199427,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2806,
+   "id": 2811,
    "iri": "http://w3id.org/bb5kbc/site_6_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -199196,7 +199498,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2807,
+   "id": 2812,
    "iri": "http://w3id.org/bb5kbc/site_70_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -199267,7 +199569,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2808,
+   "id": 2813,
    "iri": "http://w3id.org/bb5kbc/site_72_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -199338,7 +199640,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2809,
+   "id": 2814,
    "iri": "http://w3id.org/bb5kbc/site_73_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -199409,7 +199711,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2810,
+   "id": 2815,
    "iri": "http://w3id.org/bb5kbc/site_74_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -199480,7 +199782,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2811,
+   "id": 2816,
    "iri": "http://w3id.org/bb5kbc/site_75_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -199551,7 +199853,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2812,
+   "id": 2817,
    "iri": "http://w3id.org/bb5kbc/site_76_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -199614,7 +199916,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2813,
+   "id": 2818,
    "iri": "http://w3id.org/bb5kbc/site_77_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -199685,7 +199987,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2814,
+   "id": 2819,
    "iri": "http://w3id.org/bb5kbc/site_78_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -199756,7 +200058,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2815,
+   "id": 2820,
    "iri": "http://w3id.org/bb5kbc/site_79_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -199827,7 +200129,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2816,
+   "id": 2821,
    "iri": "http://w3id.org/bb5kbc/site_7_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -199898,7 +200200,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2817,
+   "id": 2822,
    "iri": "http://w3id.org/bb5kbc/site_80_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -199969,7 +200271,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2818,
+   "id": 2823,
    "iri": "http://w3id.org/bb5kbc/site_81_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -200040,7 +200342,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2819,
+   "id": 2824,
    "iri": "http://w3id.org/bb5kbc/site_82_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -200111,7 +200413,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2820,
+   "id": 2825,
    "iri": "http://w3id.org/bb5kbc/site_83_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -200182,7 +200484,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2821,
+   "id": 2826,
    "iri": "http://w3id.org/bb5kbc/site_84_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -200253,7 +200555,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2822,
+   "id": 2827,
    "iri": "http://w3id.org/bb5kbc/site_85_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -200324,7 +200626,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2823,
+   "id": 2828,
    "iri": "http://w3id.org/bb5kbc/site_86_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -200395,7 +200697,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2824,
+   "id": 2829,
    "iri": "http://w3id.org/bb5kbc/site_87_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -200466,7 +200768,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2825,
+   "id": 2830,
    "iri": "http://w3id.org/bb5kbc/site_88_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -200537,7 +200839,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2826,
+   "id": 2831,
    "iri": "http://w3id.org/bb5kbc/site_89_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -200608,7 +200910,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2827,
+   "id": 2832,
    "iri": "http://w3id.org/bb5kbc/site_8_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -200679,7 +200981,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2828,
+   "id": 2833,
    "iri": "http://w3id.org/bb5kbc/site_90_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -200742,7 +201044,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2829,
+   "id": 2834,
    "iri": "http://w3id.org/bb5kbc/site_91_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -200813,7 +201115,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2830,
+   "id": 2835,
    "iri": "http://w3id.org/bb5kbc/site_92_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -200884,7 +201186,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2831,
+   "id": 2836,
    "iri": "http://w3id.org/bb5kbc/site_93_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -200955,7 +201257,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2832,
+   "id": 2837,
    "iri": "http://w3id.org/bb5kbc/site_94_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -201026,7 +201328,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2833,
+   "id": 2838,
    "iri": "http://w3id.org/bb5kbc/site_96_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -201097,7 +201399,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2834,
+   "id": 2839,
    "iri": "http://w3id.org/bb5kbc/site_97_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -201168,7 +201470,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2835,
+   "id": 2840,
    "iri": "http://w3id.org/bb5kbc/site_98_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -201239,7 +201541,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2836,
+   "id": 2841,
    "iri": "http://w3id.org/bb5kbc/site_99_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -201310,7 +201612,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2837,
+   "id": 2842,
    "iri": "http://w3id.org/bb5kbc/site_9_dating",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -201331,7 +201633,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2838,
+   "id": 2843,
    "iri": "http://w3id.org/bb5kbc/site_100_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -201343,7 +201645,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2839,
+   "id": 2844,
    "iri": "http://w3id.org/bb5kbc/site_101_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -201364,7 +201666,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2840,
+   "id": 2845,
    "iri": "http://w3id.org/bb5kbc/site_103_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -201385,7 +201687,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2841,
+   "id": 2846,
    "iri": "http://w3id.org/bb5kbc/site_107_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -201406,7 +201708,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2842,
+   "id": 2847,
    "iri": "http://w3id.org/bb5kbc/site_10_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -201418,7 +201720,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2843,
+   "id": 2848,
    "iri": "http://w3id.org/bb5kbc/site_111_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -201439,7 +201741,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2844,
+   "id": 2849,
    "iri": "http://w3id.org/bb5kbc/site_114_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -201451,7 +201753,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2845,
+   "id": 2850,
    "iri": "http://w3id.org/bb5kbc/site_116_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -201463,7 +201765,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2846,
+   "id": 2851,
    "iri": "http://w3id.org/bb5kbc/site_119_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -201484,7 +201786,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2847,
+   "id": 2852,
    "iri": "http://w3id.org/bb5kbc/site_11_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -201496,7 +201798,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2848,
+   "id": 2853,
    "iri": "http://w3id.org/bb5kbc/site_120_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -201508,7 +201810,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2849,
+   "id": 2854,
    "iri": "http://w3id.org/bb5kbc/site_121_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -201520,7 +201822,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2850,
+   "id": 2855,
    "iri": "http://w3id.org/bb5kbc/site_122_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -201541,7 +201843,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2851,
+   "id": 2856,
    "iri": "http://w3id.org/bb5kbc/site_123_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -201553,7 +201855,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2852,
+   "id": 2857,
    "iri": "http://w3id.org/bb5kbc/site_125_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -201565,7 +201867,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2853,
+   "id": 2858,
    "iri": "http://w3id.org/bb5kbc/site_126_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -201577,7 +201879,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2854,
+   "id": 2859,
    "iri": "http://w3id.org/bb5kbc/site_128_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -201598,7 +201900,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2855,
+   "id": 2860,
    "iri": "http://w3id.org/bb5kbc/site_129_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -201619,7 +201921,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2856,
+   "id": 2861,
    "iri": "http://w3id.org/bb5kbc/site_12_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -201640,7 +201942,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2857,
+   "id": 2862,
    "iri": "http://w3id.org/bb5kbc/site_131_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -201652,7 +201954,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2858,
+   "id": 2863,
    "iri": "http://w3id.org/bb5kbc/site_134_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -201664,7 +201966,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2859,
+   "id": 2864,
    "iri": "http://w3id.org/bb5kbc/site_136_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -201685,7 +201987,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2860,
+   "id": 2865,
    "iri": "http://w3id.org/bb5kbc/site_138_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -201697,7 +201999,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2861,
+   "id": 2866,
    "iri": "http://w3id.org/bb5kbc/site_139_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -201709,7 +202011,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2862,
+   "id": 2867,
    "iri": "http://w3id.org/bb5kbc/site_13_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -201730,7 +202032,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2863,
+   "id": 2868,
    "iri": "http://w3id.org/bb5kbc/site_142_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -201742,7 +202044,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2864,
+   "id": 2869,
    "iri": "http://w3id.org/bb5kbc/site_144_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -201763,7 +202065,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2865,
+   "id": 2870,
    "iri": "http://w3id.org/bb5kbc/site_14_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -201784,7 +202086,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2866,
+   "id": 2871,
    "iri": "http://w3id.org/bb5kbc/site_150_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -201805,7 +202107,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2867,
+   "id": 2872,
    "iri": "http://w3id.org/bb5kbc/site_152_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -201826,7 +202128,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2868,
+   "id": 2873,
    "iri": "http://w3id.org/bb5kbc/site_153_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -201838,7 +202140,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2869,
+   "id": 2874,
    "iri": "http://w3id.org/bb5kbc/site_15_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -201850,7 +202152,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2870,
+   "id": 2875,
    "iri": "http://w3id.org/bb5kbc/site_169_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -201862,7 +202164,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2871,
+   "id": 2876,
    "iri": "http://w3id.org/bb5kbc/site_16_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -201883,7 +202185,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2872,
+   "id": 2877,
    "iri": "http://w3id.org/bb5kbc/site_174_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -201904,7 +202206,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2873,
+   "id": 2878,
    "iri": "http://w3id.org/bb5kbc/site_176_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -201925,7 +202227,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2874,
+   "id": 2879,
    "iri": "http://w3id.org/bb5kbc/site_177_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -201946,7 +202248,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2875,
+   "id": 2880,
    "iri": "http://w3id.org/bb5kbc/site_178_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -201967,7 +202269,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2876,
+   "id": 2881,
    "iri": "http://w3id.org/bb5kbc/site_17_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -201979,7 +202281,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2877,
+   "id": 2882,
    "iri": "http://w3id.org/bb5kbc/site_18_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -202000,7 +202302,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2878,
+   "id": 2883,
    "iri": "http://w3id.org/bb5kbc/site_197_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -202012,7 +202314,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2879,
+   "id": 2884,
    "iri": "http://w3id.org/bb5kbc/site_19_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -202033,7 +202335,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2880,
+   "id": 2885,
    "iri": "http://w3id.org/bb5kbc/site_1_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -202054,7 +202356,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2881,
+   "id": 2886,
    "iri": "http://w3id.org/bb5kbc/site_20_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -202075,7 +202377,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2882,
+   "id": 2887,
    "iri": "http://w3id.org/bb5kbc/site_215_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -202096,7 +202398,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2883,
+   "id": 2888,
    "iri": "http://w3id.org/bb5kbc/site_216_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -202108,7 +202410,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2884,
+   "id": 2889,
    "iri": "http://w3id.org/bb5kbc/site_21_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -202129,7 +202431,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2885,
+   "id": 2890,
    "iri": "http://w3id.org/bb5kbc/site_227_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -202150,7 +202452,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2886,
+   "id": 2891,
    "iri": "http://w3id.org/bb5kbc/site_228_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -202162,7 +202464,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2887,
+   "id": 2892,
    "iri": "http://w3id.org/bb5kbc/site_22_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -202183,7 +202485,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2888,
+   "id": 2893,
    "iri": "http://w3id.org/bb5kbc/site_231_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -202204,7 +202506,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2889,
+   "id": 2894,
    "iri": "http://w3id.org/bb5kbc/site_233_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -202225,7 +202527,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2890,
+   "id": 2895,
    "iri": "http://w3id.org/bb5kbc/site_235_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -202246,7 +202548,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2891,
+   "id": 2896,
    "iri": "http://w3id.org/bb5kbc/site_238_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -202258,7 +202560,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2892,
+   "id": 2897,
    "iri": "http://w3id.org/bb5kbc/site_239_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -202270,7 +202572,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2893,
+   "id": 2898,
    "iri": "http://w3id.org/bb5kbc/site_23_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -202291,7 +202593,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2894,
+   "id": 2899,
    "iri": "http://w3id.org/bb5kbc/site_240_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -202312,7 +202614,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2895,
+   "id": 2900,
    "iri": "http://w3id.org/bb5kbc/site_241_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -202333,7 +202635,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2896,
+   "id": 2901,
    "iri": "http://w3id.org/bb5kbc/site_242_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -202345,7 +202647,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2897,
+   "id": 2902,
    "iri": "http://w3id.org/bb5kbc/site_243_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -202357,7 +202659,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2898,
+   "id": 2903,
    "iri": "http://w3id.org/bb5kbc/site_244_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -202378,7 +202680,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2899,
+   "id": 2904,
    "iri": "http://w3id.org/bb5kbc/site_245_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -202399,7 +202701,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2900,
+   "id": 2905,
    "iri": "http://w3id.org/bb5kbc/site_246_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -202420,7 +202722,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2901,
+   "id": 2906,
    "iri": "http://w3id.org/bb5kbc/site_247_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -202441,7 +202743,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2902,
+   "id": 2907,
    "iri": "http://w3id.org/bb5kbc/site_248_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -202462,7 +202764,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2903,
+   "id": 2908,
    "iri": "http://w3id.org/bb5kbc/site_249_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -202483,7 +202785,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2904,
+   "id": 2909,
    "iri": "http://w3id.org/bb5kbc/site_24_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -202504,7 +202806,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2905,
+   "id": 2910,
    "iri": "http://w3id.org/bb5kbc/site_250_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -202525,7 +202827,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2906,
+   "id": 2911,
    "iri": "http://w3id.org/bb5kbc/site_251_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -202546,7 +202848,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2907,
+   "id": 2912,
    "iri": "http://w3id.org/bb5kbc/site_252_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -202567,7 +202869,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2908,
+   "id": 2913,
    "iri": "http://w3id.org/bb5kbc/site_253_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -202588,7 +202890,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2909,
+   "id": 2914,
    "iri": "http://w3id.org/bb5kbc/site_254_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -202609,7 +202911,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2910,
+   "id": 2915,
    "iri": "http://w3id.org/bb5kbc/site_255_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -202630,7 +202932,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2911,
+   "id": 2916,
    "iri": "http://w3id.org/bb5kbc/site_256_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -202651,7 +202953,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2912,
+   "id": 2917,
    "iri": "http://w3id.org/bb5kbc/site_257_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -202672,7 +202974,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2913,
+   "id": 2918,
    "iri": "http://w3id.org/bb5kbc/site_258_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -202693,7 +202995,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2914,
+   "id": 2919,
    "iri": "http://w3id.org/bb5kbc/site_259_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -202705,7 +203007,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2915,
+   "id": 2920,
    "iri": "http://w3id.org/bb5kbc/site_25_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -202726,7 +203028,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2916,
+   "id": 2921,
    "iri": "http://w3id.org/bb5kbc/site_260_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -202747,7 +203049,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2917,
+   "id": 2922,
    "iri": "http://w3id.org/bb5kbc/site_261_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -202768,7 +203070,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2918,
+   "id": 2923,
    "iri": "http://w3id.org/bb5kbc/site_262_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -202789,7 +203091,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2919,
+   "id": 2924,
    "iri": "http://w3id.org/bb5kbc/site_263_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -202810,7 +203112,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2920,
+   "id": 2925,
    "iri": "http://w3id.org/bb5kbc/site_264_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -202831,7 +203133,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2921,
+   "id": 2926,
    "iri": "http://w3id.org/bb5kbc/site_265_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -202852,7 +203154,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2922,
+   "id": 2927,
    "iri": "http://w3id.org/bb5kbc/site_266_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -202873,7 +203175,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2923,
+   "id": 2928,
    "iri": "http://w3id.org/bb5kbc/site_267_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -202894,7 +203196,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2924,
+   "id": 2929,
    "iri": "http://w3id.org/bb5kbc/site_268_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -202915,7 +203217,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2925,
+   "id": 2930,
    "iri": "http://w3id.org/bb5kbc/site_269_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -202936,7 +203238,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2926,
+   "id": 2931,
    "iri": "http://w3id.org/bb5kbc/site_26_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -202957,7 +203259,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2927,
+   "id": 2932,
    "iri": "http://w3id.org/bb5kbc/site_270_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -202978,7 +203280,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2928,
+   "id": 2933,
    "iri": "http://w3id.org/bb5kbc/site_271_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -202999,7 +203301,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2929,
+   "id": 2934,
    "iri": "http://w3id.org/bb5kbc/site_272_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -203020,7 +203322,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2930,
+   "id": 2935,
    "iri": "http://w3id.org/bb5kbc/site_273_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -203041,7 +203343,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2931,
+   "id": 2936,
    "iri": "http://w3id.org/bb5kbc/site_274_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -203062,7 +203364,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2932,
+   "id": 2937,
    "iri": "http://w3id.org/bb5kbc/site_275_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -203083,7 +203385,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2933,
+   "id": 2938,
    "iri": "http://w3id.org/bb5kbc/site_276_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -203104,7 +203406,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2934,
+   "id": 2939,
    "iri": "http://w3id.org/bb5kbc/site_277_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -203125,7 +203427,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2935,
+   "id": 2940,
    "iri": "http://w3id.org/bb5kbc/site_278_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -203146,7 +203448,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2936,
+   "id": 2941,
    "iri": "http://w3id.org/bb5kbc/site_279_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -203158,7 +203460,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2937,
+   "id": 2942,
    "iri": "http://w3id.org/bb5kbc/site_27_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -203179,7 +203481,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2938,
+   "id": 2943,
    "iri": "http://w3id.org/bb5kbc/site_280_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -203200,7 +203502,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2939,
+   "id": 2944,
    "iri": "http://w3id.org/bb5kbc/site_281_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -203221,7 +203523,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2940,
+   "id": 2945,
    "iri": "http://w3id.org/bb5kbc/site_282_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -203242,7 +203544,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2941,
+   "id": 2946,
    "iri": "http://w3id.org/bb5kbc/site_283_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -203263,7 +203565,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2942,
+   "id": 2947,
    "iri": "http://w3id.org/bb5kbc/site_284_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -203284,7 +203586,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2943,
+   "id": 2948,
    "iri": "http://w3id.org/bb5kbc/site_285_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -203305,7 +203607,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2944,
+   "id": 2949,
    "iri": "http://w3id.org/bb5kbc/site_286_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -203326,7 +203628,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2945,
+   "id": 2950,
    "iri": "http://w3id.org/bb5kbc/site_287_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -203347,7 +203649,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2946,
+   "id": 2951,
    "iri": "http://w3id.org/bb5kbc/site_288_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -203368,7 +203670,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2947,
+   "id": 2952,
    "iri": "http://w3id.org/bb5kbc/site_289_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -203380,7 +203682,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2948,
+   "id": 2953,
    "iri": "http://w3id.org/bb5kbc/site_28_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -203401,7 +203703,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2949,
+   "id": 2954,
    "iri": "http://w3id.org/bb5kbc/site_290_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -203422,7 +203724,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2950,
+   "id": 2955,
    "iri": "http://w3id.org/bb5kbc/site_291_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -203443,7 +203745,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2951,
+   "id": 2956,
    "iri": "http://w3id.org/bb5kbc/site_292_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -203464,7 +203766,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2952,
+   "id": 2957,
    "iri": "http://w3id.org/bb5kbc/site_293_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -203485,7 +203787,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2953,
+   "id": 2958,
    "iri": "http://w3id.org/bb5kbc/site_294_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -203506,7 +203808,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2954,
+   "id": 2959,
    "iri": "http://w3id.org/bb5kbc/site_295_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -203527,7 +203829,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2955,
+   "id": 2960,
    "iri": "http://w3id.org/bb5kbc/site_296_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -203548,7 +203850,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2956,
+   "id": 2961,
    "iri": "http://w3id.org/bb5kbc/site_297_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -203569,7 +203871,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2957,
+   "id": 2962,
    "iri": "http://w3id.org/bb5kbc/site_298_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -203590,7 +203892,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2958,
+   "id": 2963,
    "iri": "http://w3id.org/bb5kbc/site_299_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -203611,7 +203913,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2959,
+   "id": 2964,
    "iri": "http://w3id.org/bb5kbc/site_29_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -203623,7 +203925,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2960,
+   "id": 2965,
    "iri": "http://w3id.org/bb5kbc/site_2_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -203644,7 +203946,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2961,
+   "id": 2966,
    "iri": "http://w3id.org/bb5kbc/site_300_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -203665,7 +203967,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2962,
+   "id": 2967,
    "iri": "http://w3id.org/bb5kbc/site_301_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -203686,7 +203988,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2963,
+   "id": 2968,
    "iri": "http://w3id.org/bb5kbc/site_302_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -203707,7 +204009,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2964,
+   "id": 2969,
    "iri": "http://w3id.org/bb5kbc/site_303_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -203728,7 +204030,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2965,
+   "id": 2970,
    "iri": "http://w3id.org/bb5kbc/site_304_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -203749,7 +204051,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2966,
+   "id": 2971,
    "iri": "http://w3id.org/bb5kbc/site_305_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -203770,7 +204072,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2967,
+   "id": 2972,
    "iri": "http://w3id.org/bb5kbc/site_306_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -203791,7 +204093,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2968,
+   "id": 2973,
    "iri": "http://w3id.org/bb5kbc/site_307_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -203812,7 +204114,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2969,
+   "id": 2974,
    "iri": "http://w3id.org/bb5kbc/site_308_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -203833,7 +204135,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2970,
+   "id": 2975,
    "iri": "http://w3id.org/bb5kbc/site_309_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -203854,7 +204156,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2971,
+   "id": 2976,
    "iri": "http://w3id.org/bb5kbc/site_30_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -203875,7 +204177,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2972,
+   "id": 2977,
    "iri": "http://w3id.org/bb5kbc/site_310_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -203896,7 +204198,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2973,
+   "id": 2978,
    "iri": "http://w3id.org/bb5kbc/site_311_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -203917,7 +204219,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2974,
+   "id": 2979,
    "iri": "http://w3id.org/bb5kbc/site_312_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -203938,7 +204240,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2975,
+   "id": 2980,
    "iri": "http://w3id.org/bb5kbc/site_313_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -203959,7 +204261,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2976,
+   "id": 2981,
    "iri": "http://w3id.org/bb5kbc/site_314_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -203980,7 +204282,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2977,
+   "id": 2982,
    "iri": "http://w3id.org/bb5kbc/site_315_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -204001,7 +204303,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2978,
+   "id": 2983,
    "iri": "http://w3id.org/bb5kbc/site_316_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -204022,7 +204324,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2979,
+   "id": 2984,
    "iri": "http://w3id.org/bb5kbc/site_317_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -204043,7 +204345,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2980,
+   "id": 2985,
    "iri": "http://w3id.org/bb5kbc/site_318_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -204064,7 +204366,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2981,
+   "id": 2986,
    "iri": "http://w3id.org/bb5kbc/site_319_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -204085,7 +204387,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2982,
+   "id": 2987,
    "iri": "http://w3id.org/bb5kbc/site_31_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -204106,7 +204408,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2983,
+   "id": 2988,
    "iri": "http://w3id.org/bb5kbc/site_321_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -204127,7 +204429,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2984,
+   "id": 2989,
    "iri": "http://w3id.org/bb5kbc/site_322_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -204148,7 +204450,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2985,
+   "id": 2990,
    "iri": "http://w3id.org/bb5kbc/site_323_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -204169,7 +204471,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2986,
+   "id": 2991,
    "iri": "http://w3id.org/bb5kbc/site_324_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -204190,7 +204492,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2987,
+   "id": 2992,
    "iri": "http://w3id.org/bb5kbc/site_325_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -204211,7 +204513,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2988,
+   "id": 2993,
    "iri": "http://w3id.org/bb5kbc/site_326_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -204232,7 +204534,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2989,
+   "id": 2994,
    "iri": "http://w3id.org/bb5kbc/site_327_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -204253,7 +204555,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2990,
+   "id": 2995,
    "iri": "http://w3id.org/bb5kbc/site_328_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -204274,7 +204576,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2991,
+   "id": 2996,
    "iri": "http://w3id.org/bb5kbc/site_329_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -204295,7 +204597,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2992,
+   "id": 2997,
    "iri": "http://w3id.org/bb5kbc/site_32_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -204316,7 +204618,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2993,
+   "id": 2998,
    "iri": "http://w3id.org/bb5kbc/site_332_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -204337,7 +204639,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2994,
+   "id": 2999,
    "iri": "http://w3id.org/bb5kbc/site_333_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -204358,7 +204660,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2995,
+   "id": 3000,
    "iri": "http://w3id.org/bb5kbc/site_334_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -204379,7 +204681,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2996,
+   "id": 3001,
    "iri": "http://w3id.org/bb5kbc/site_336_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -204400,7 +204702,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2997,
+   "id": 3002,
    "iri": "http://w3id.org/bb5kbc/site_337_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -204421,7 +204723,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2998,
+   "id": 3003,
    "iri": "http://w3id.org/bb5kbc/site_338_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -204442,7 +204744,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 2999,
+   "id": 3004,
    "iri": "http://w3id.org/bb5kbc/site_339_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -204463,7 +204765,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3000,
+   "id": 3005,
    "iri": "http://w3id.org/bb5kbc/site_33_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -204484,7 +204786,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3001,
+   "id": 3006,
    "iri": "http://w3id.org/bb5kbc/site_340_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -204505,7 +204807,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3002,
+   "id": 3007,
    "iri": "http://w3id.org/bb5kbc/site_341_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -204526,7 +204828,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3003,
+   "id": 3008,
    "iri": "http://w3id.org/bb5kbc/site_342_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -204547,7 +204849,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3004,
+   "id": 3009,
    "iri": "http://w3id.org/bb5kbc/site_343_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -204568,7 +204870,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3005,
+   "id": 3010,
    "iri": "http://w3id.org/bb5kbc/site_344_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -204589,7 +204891,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3006,
+   "id": 3011,
    "iri": "http://w3id.org/bb5kbc/site_345_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -204610,7 +204912,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3007,
+   "id": 3012,
    "iri": "http://w3id.org/bb5kbc/site_346_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -204631,7 +204933,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3008,
+   "id": 3013,
    "iri": "http://w3id.org/bb5kbc/site_347_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -204652,7 +204954,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3009,
+   "id": 3014,
    "iri": "http://w3id.org/bb5kbc/site_348_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -204673,7 +204975,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3010,
+   "id": 3015,
    "iri": "http://w3id.org/bb5kbc/site_349_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -204694,7 +204996,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3011,
+   "id": 3016,
    "iri": "http://w3id.org/bb5kbc/site_34_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -204715,7 +205017,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3012,
+   "id": 3017,
    "iri": "http://w3id.org/bb5kbc/site_350_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -204736,7 +205038,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3013,
+   "id": 3018,
    "iri": "http://w3id.org/bb5kbc/site_351_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -204757,7 +205059,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3014,
+   "id": 3019,
    "iri": "http://w3id.org/bb5kbc/site_352_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -204778,7 +205080,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3015,
+   "id": 3020,
    "iri": "http://w3id.org/bb5kbc/site_353_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -204799,7 +205101,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3016,
+   "id": 3021,
    "iri": "http://w3id.org/bb5kbc/site_354_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -204820,7 +205122,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3017,
+   "id": 3022,
    "iri": "http://w3id.org/bb5kbc/site_355_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -204841,7 +205143,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3018,
+   "id": 3023,
    "iri": "http://w3id.org/bb5kbc/site_356_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -204862,7 +205164,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3019,
+   "id": 3024,
    "iri": "http://w3id.org/bb5kbc/site_357_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -204883,7 +205185,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3020,
+   "id": 3025,
    "iri": "http://w3id.org/bb5kbc/site_358_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -204904,7 +205206,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3021,
+   "id": 3026,
    "iri": "http://w3id.org/bb5kbc/site_359_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -204925,7 +205227,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3022,
+   "id": 3027,
    "iri": "http://w3id.org/bb5kbc/site_35_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -204946,7 +205248,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3023,
+   "id": 3028,
    "iri": "http://w3id.org/bb5kbc/site_360_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -204967,7 +205269,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3024,
+   "id": 3029,
    "iri": "http://w3id.org/bb5kbc/site_361_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -204988,7 +205290,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3025,
+   "id": 3030,
    "iri": "http://w3id.org/bb5kbc/site_362_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -205009,7 +205311,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3026,
+   "id": 3031,
    "iri": "http://w3id.org/bb5kbc/site_363_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -205030,7 +205332,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3027,
+   "id": 3032,
    "iri": "http://w3id.org/bb5kbc/site_364_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -205051,7 +205353,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3028,
+   "id": 3033,
    "iri": "http://w3id.org/bb5kbc/site_365_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -205072,7 +205374,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3029,
+   "id": 3034,
    "iri": "http://w3id.org/bb5kbc/site_366_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -205093,7 +205395,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3030,
+   "id": 3035,
    "iri": "http://w3id.org/bb5kbc/site_367_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -205114,7 +205416,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3031,
+   "id": 3036,
    "iri": "http://w3id.org/bb5kbc/site_368_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -205135,7 +205437,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3032,
+   "id": 3037,
    "iri": "http://w3id.org/bb5kbc/site_369_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -205156,7 +205458,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3033,
+   "id": 3038,
    "iri": "http://w3id.org/bb5kbc/site_36_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -205177,7 +205479,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3034,
+   "id": 3039,
    "iri": "http://w3id.org/bb5kbc/site_370_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -205198,7 +205500,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3035,
+   "id": 3040,
    "iri": "http://w3id.org/bb5kbc/site_371_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -205219,7 +205521,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3036,
+   "id": 3041,
    "iri": "http://w3id.org/bb5kbc/site_372_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -205240,7 +205542,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3037,
+   "id": 3042,
    "iri": "http://w3id.org/bb5kbc/site_373_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -205261,7 +205563,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3038,
+   "id": 3043,
    "iri": "http://w3id.org/bb5kbc/site_374_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -205282,7 +205584,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3039,
+   "id": 3044,
    "iri": "http://w3id.org/bb5kbc/site_375_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -205303,7 +205605,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3040,
+   "id": 3045,
    "iri": "http://w3id.org/bb5kbc/site_376_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -205324,7 +205626,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3041,
+   "id": 3046,
    "iri": "http://w3id.org/bb5kbc/site_377_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -205345,7 +205647,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3042,
+   "id": 3047,
    "iri": "http://w3id.org/bb5kbc/site_378_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -205366,7 +205668,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3043,
+   "id": 3048,
    "iri": "http://w3id.org/bb5kbc/site_379_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -205387,7 +205689,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3044,
+   "id": 3049,
    "iri": "http://w3id.org/bb5kbc/site_37_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -205408,7 +205710,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3045,
+   "id": 3050,
    "iri": "http://w3id.org/bb5kbc/site_380_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -205429,7 +205731,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3046,
+   "id": 3051,
    "iri": "http://w3id.org/bb5kbc/site_381_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -205450,7 +205752,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3047,
+   "id": 3052,
    "iri": "http://w3id.org/bb5kbc/site_382_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -205471,7 +205773,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3048,
+   "id": 3053,
    "iri": "http://w3id.org/bb5kbc/site_383_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -205492,7 +205794,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3049,
+   "id": 3054,
    "iri": "http://w3id.org/bb5kbc/site_384_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -205513,7 +205815,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3050,
+   "id": 3055,
    "iri": "http://w3id.org/bb5kbc/site_385_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -205534,7 +205836,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3051,
+   "id": 3056,
    "iri": "http://w3id.org/bb5kbc/site_386_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -205555,7 +205857,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3052,
+   "id": 3057,
    "iri": "http://w3id.org/bb5kbc/site_387_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -205576,7 +205878,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3053,
+   "id": 3058,
    "iri": "http://w3id.org/bb5kbc/site_388_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -205597,7 +205899,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3054,
+   "id": 3059,
    "iri": "http://w3id.org/bb5kbc/site_389_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -205618,7 +205920,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3055,
+   "id": 3060,
    "iri": "http://w3id.org/bb5kbc/site_38_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -205639,7 +205941,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3056,
+   "id": 3061,
    "iri": "http://w3id.org/bb5kbc/site_390_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -205660,7 +205962,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3057,
+   "id": 3062,
    "iri": "http://w3id.org/bb5kbc/site_391_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -205681,7 +205983,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3058,
+   "id": 3063,
    "iri": "http://w3id.org/bb5kbc/site_392_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -205702,7 +206004,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3059,
+   "id": 3064,
    "iri": "http://w3id.org/bb5kbc/site_393_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -205723,7 +206025,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3060,
+   "id": 3065,
    "iri": "http://w3id.org/bb5kbc/site_394_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -205744,7 +206046,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3061,
+   "id": 3066,
    "iri": "http://w3id.org/bb5kbc/site_395_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -205765,7 +206067,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3062,
+   "id": 3067,
    "iri": "http://w3id.org/bb5kbc/site_396_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -205786,7 +206088,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3063,
+   "id": 3068,
    "iri": "http://w3id.org/bb5kbc/site_397_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -205807,7 +206109,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3064,
+   "id": 3069,
    "iri": "http://w3id.org/bb5kbc/site_398_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -205828,7 +206130,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3065,
+   "id": 3070,
    "iri": "http://w3id.org/bb5kbc/site_399_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -205849,7 +206151,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3066,
+   "id": 3071,
    "iri": "http://w3id.org/bb5kbc/site_39_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -205870,7 +206172,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3067,
+   "id": 3072,
    "iri": "http://w3id.org/bb5kbc/site_3_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -205891,7 +206193,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3068,
+   "id": 3073,
    "iri": "http://w3id.org/bb5kbc/site_400_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -205912,7 +206214,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3069,
+   "id": 3074,
    "iri": "http://w3id.org/bb5kbc/site_401_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -205933,7 +206235,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3070,
+   "id": 3075,
    "iri": "http://w3id.org/bb5kbc/site_402_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -205954,7 +206256,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3071,
+   "id": 3076,
    "iri": "http://w3id.org/bb5kbc/site_403_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -205975,7 +206277,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3072,
+   "id": 3077,
    "iri": "http://w3id.org/bb5kbc/site_404_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -205996,7 +206298,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3073,
+   "id": 3078,
    "iri": "http://w3id.org/bb5kbc/site_405_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -206017,7 +206319,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3074,
+   "id": 3079,
    "iri": "http://w3id.org/bb5kbc/site_406_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -206038,7 +206340,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3075,
+   "id": 3080,
    "iri": "http://w3id.org/bb5kbc/site_407_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -206059,7 +206361,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3076,
+   "id": 3081,
    "iri": "http://w3id.org/bb5kbc/site_408_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -206080,7 +206382,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3077,
+   "id": 3082,
    "iri": "http://w3id.org/bb5kbc/site_409_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -206101,7 +206403,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3078,
+   "id": 3083,
    "iri": "http://w3id.org/bb5kbc/site_40_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -206122,7 +206424,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3079,
+   "id": 3084,
    "iri": "http://w3id.org/bb5kbc/site_410_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -206143,7 +206445,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3080,
+   "id": 3085,
    "iri": "http://w3id.org/bb5kbc/site_411_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -206164,7 +206466,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3081,
+   "id": 3086,
    "iri": "http://w3id.org/bb5kbc/site_412_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -206185,7 +206487,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3082,
+   "id": 3087,
    "iri": "http://w3id.org/bb5kbc/site_413_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -206206,7 +206508,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3083,
+   "id": 3088,
    "iri": "http://w3id.org/bb5kbc/site_414_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -206227,7 +206529,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3084,
+   "id": 3089,
    "iri": "http://w3id.org/bb5kbc/site_415_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -206248,7 +206550,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3085,
+   "id": 3090,
    "iri": "http://w3id.org/bb5kbc/site_416_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -206269,7 +206571,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3086,
+   "id": 3091,
    "iri": "http://w3id.org/bb5kbc/site_417_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -206290,7 +206592,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3087,
+   "id": 3092,
    "iri": "http://w3id.org/bb5kbc/site_418_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -206311,7 +206613,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3088,
+   "id": 3093,
    "iri": "http://w3id.org/bb5kbc/site_419_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -206332,7 +206634,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3089,
+   "id": 3094,
    "iri": "http://w3id.org/bb5kbc/site_41_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -206353,7 +206655,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3090,
+   "id": 3095,
    "iri": "http://w3id.org/bb5kbc/site_421_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -206374,7 +206676,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3091,
+   "id": 3096,
    "iri": "http://w3id.org/bb5kbc/site_422_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -206395,7 +206697,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3092,
+   "id": 3097,
    "iri": "http://w3id.org/bb5kbc/site_423_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -206416,7 +206718,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3093,
+   "id": 3098,
    "iri": "http://w3id.org/bb5kbc/site_424_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -206437,7 +206739,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3094,
+   "id": 3099,
    "iri": "http://w3id.org/bb5kbc/site_425_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -206458,7 +206760,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3095,
+   "id": 3100,
    "iri": "http://w3id.org/bb5kbc/site_426_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -206479,7 +206781,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3096,
+   "id": 3101,
    "iri": "http://w3id.org/bb5kbc/site_427_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -206500,7 +206802,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3097,
+   "id": 3102,
    "iri": "http://w3id.org/bb5kbc/site_428_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -206521,7 +206823,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3098,
+   "id": 3103,
    "iri": "http://w3id.org/bb5kbc/site_429_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -206542,7 +206844,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3099,
+   "id": 3104,
    "iri": "http://w3id.org/bb5kbc/site_430_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -206563,7 +206865,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3100,
+   "id": 3105,
    "iri": "http://w3id.org/bb5kbc/site_431_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -206584,7 +206886,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3101,
+   "id": 3106,
    "iri": "http://w3id.org/bb5kbc/site_432_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -206605,7 +206907,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3102,
+   "id": 3107,
    "iri": "http://w3id.org/bb5kbc/site_433_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -206626,7 +206928,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3103,
+   "id": 3108,
    "iri": "http://w3id.org/bb5kbc/site_434_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -206647,7 +206949,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3104,
+   "id": 3109,
    "iri": "http://w3id.org/bb5kbc/site_435_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -206668,7 +206970,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3105,
+   "id": 3110,
    "iri": "http://w3id.org/bb5kbc/site_436_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -206689,7 +206991,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3106,
+   "id": 3111,
    "iri": "http://w3id.org/bb5kbc/site_437_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -206710,7 +207012,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3107,
+   "id": 3112,
    "iri": "http://w3id.org/bb5kbc/site_438_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -206731,7 +207033,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3108,
+   "id": 3113,
    "iri": "http://w3id.org/bb5kbc/site_439_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -206752,7 +207054,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3109,
+   "id": 3114,
    "iri": "http://w3id.org/bb5kbc/site_43_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -206773,7 +207075,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3110,
+   "id": 3115,
    "iri": "http://w3id.org/bb5kbc/site_440_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -206794,7 +207096,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3111,
+   "id": 3116,
    "iri": "http://w3id.org/bb5kbc/site_441_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -206815,7 +207117,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3112,
+   "id": 3117,
    "iri": "http://w3id.org/bb5kbc/site_442_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -206836,7 +207138,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3113,
+   "id": 3118,
    "iri": "http://w3id.org/bb5kbc/site_443_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -206857,7 +207159,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3114,
+   "id": 3119,
    "iri": "http://w3id.org/bb5kbc/site_444_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -206878,7 +207180,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3115,
+   "id": 3120,
    "iri": "http://w3id.org/bb5kbc/site_445_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -206899,7 +207201,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3116,
+   "id": 3121,
    "iri": "http://w3id.org/bb5kbc/site_446_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -206920,7 +207222,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3117,
+   "id": 3122,
    "iri": "http://w3id.org/bb5kbc/site_447_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -206941,7 +207243,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3118,
+   "id": 3123,
    "iri": "http://w3id.org/bb5kbc/site_448_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -206962,7 +207264,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3119,
+   "id": 3124,
    "iri": "http://w3id.org/bb5kbc/site_449_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -206983,7 +207285,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3120,
+   "id": 3125,
    "iri": "http://w3id.org/bb5kbc/site_44_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -207004,7 +207306,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3121,
+   "id": 3126,
    "iri": "http://w3id.org/bb5kbc/site_450_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -207025,7 +207327,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3122,
+   "id": 3127,
    "iri": "http://w3id.org/bb5kbc/site_453_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -207046,7 +207348,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3123,
+   "id": 3128,
    "iri": "http://w3id.org/bb5kbc/site_454_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -207067,7 +207369,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3124,
+   "id": 3129,
    "iri": "http://w3id.org/bb5kbc/site_455_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -207088,7 +207390,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3125,
+   "id": 3130,
    "iri": "http://w3id.org/bb5kbc/site_456_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -207109,7 +207411,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3126,
+   "id": 3131,
    "iri": "http://w3id.org/bb5kbc/site_459_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -207130,7 +207432,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3127,
+   "id": 3132,
    "iri": "http://w3id.org/bb5kbc/site_45_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -207151,7 +207453,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3128,
+   "id": 3133,
    "iri": "http://w3id.org/bb5kbc/site_460_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -207172,7 +207474,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3129,
+   "id": 3134,
    "iri": "http://w3id.org/bb5kbc/site_461_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -207193,7 +207495,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3130,
+   "id": 3135,
    "iri": "http://w3id.org/bb5kbc/site_462_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -207214,7 +207516,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3131,
+   "id": 3136,
    "iri": "http://w3id.org/bb5kbc/site_463_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -207235,7 +207537,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3132,
+   "id": 3137,
    "iri": "http://w3id.org/bb5kbc/site_464_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -207256,7 +207558,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3133,
+   "id": 3138,
    "iri": "http://w3id.org/bb5kbc/site_465_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -207277,7 +207579,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3134,
+   "id": 3139,
    "iri": "http://w3id.org/bb5kbc/site_466_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -207298,7 +207600,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3135,
+   "id": 3140,
    "iri": "http://w3id.org/bb5kbc/site_467_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -207319,7 +207621,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3136,
+   "id": 3141,
    "iri": "http://w3id.org/bb5kbc/site_468_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -207340,7 +207642,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3137,
+   "id": 3142,
    "iri": "http://w3id.org/bb5kbc/site_469_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -207361,7 +207663,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3138,
+   "id": 3143,
    "iri": "http://w3id.org/bb5kbc/site_46_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -207382,7 +207684,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3139,
+   "id": 3144,
    "iri": "http://w3id.org/bb5kbc/site_470_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -207403,7 +207705,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3140,
+   "id": 3145,
    "iri": "http://w3id.org/bb5kbc/site_471_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -207424,7 +207726,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3141,
+   "id": 3146,
    "iri": "http://w3id.org/bb5kbc/site_472_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -207445,7 +207747,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3142,
+   "id": 3147,
    "iri": "http://w3id.org/bb5kbc/site_473_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -207466,7 +207768,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3143,
+   "id": 3148,
    "iri": "http://w3id.org/bb5kbc/site_474_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -207487,7 +207789,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3144,
+   "id": 3149,
    "iri": "http://w3id.org/bb5kbc/site_475_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -207508,7 +207810,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3145,
+   "id": 3150,
    "iri": "http://w3id.org/bb5kbc/site_476_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -207529,7 +207831,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3146,
+   "id": 3151,
    "iri": "http://w3id.org/bb5kbc/site_477_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -207550,7 +207852,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3147,
+   "id": 3152,
    "iri": "http://w3id.org/bb5kbc/site_478_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -207571,7 +207873,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3148,
+   "id": 3153,
    "iri": "http://w3id.org/bb5kbc/site_479_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -207592,7 +207894,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3149,
+   "id": 3154,
    "iri": "http://w3id.org/bb5kbc/site_47_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -207613,7 +207915,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3150,
+   "id": 3155,
    "iri": "http://w3id.org/bb5kbc/site_480_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -207634,7 +207936,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3151,
+   "id": 3156,
    "iri": "http://w3id.org/bb5kbc/site_481_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -207655,7 +207957,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3152,
+   "id": 3157,
    "iri": "http://w3id.org/bb5kbc/site_482_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -207676,7 +207978,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3153,
+   "id": 3158,
    "iri": "http://w3id.org/bb5kbc/site_483_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -207697,7 +207999,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3154,
+   "id": 3159,
    "iri": "http://w3id.org/bb5kbc/site_484_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -207718,7 +208020,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3155,
+   "id": 3160,
    "iri": "http://w3id.org/bb5kbc/site_485_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -207739,7 +208041,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3156,
+   "id": 3161,
    "iri": "http://w3id.org/bb5kbc/site_486_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -207760,7 +208062,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3157,
+   "id": 3162,
    "iri": "http://w3id.org/bb5kbc/site_487_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -207781,7 +208083,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3158,
+   "id": 3163,
    "iri": "http://w3id.org/bb5kbc/site_488_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -207802,7 +208104,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3159,
+   "id": 3164,
    "iri": "http://w3id.org/bb5kbc/site_489_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -207823,7 +208125,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3160,
+   "id": 3165,
    "iri": "http://w3id.org/bb5kbc/site_48_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -207844,7 +208146,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3161,
+   "id": 3166,
    "iri": "http://w3id.org/bb5kbc/site_490_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -207865,7 +208167,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3162,
+   "id": 3167,
    "iri": "http://w3id.org/bb5kbc/site_491_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -207886,7 +208188,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3163,
+   "id": 3168,
    "iri": "http://w3id.org/bb5kbc/site_492_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -207907,7 +208209,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3164,
+   "id": 3169,
    "iri": "http://w3id.org/bb5kbc/site_493_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -207928,7 +208230,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3165,
+   "id": 3170,
    "iri": "http://w3id.org/bb5kbc/site_494_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -207949,7 +208251,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3166,
+   "id": 3171,
    "iri": "http://w3id.org/bb5kbc/site_495_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -207970,7 +208272,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3167,
+   "id": 3172,
    "iri": "http://w3id.org/bb5kbc/site_496_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -207991,7 +208293,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3168,
+   "id": 3173,
    "iri": "http://w3id.org/bb5kbc/site_497_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -208012,7 +208314,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3169,
+   "id": 3174,
    "iri": "http://w3id.org/bb5kbc/site_498_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -208033,7 +208335,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3170,
+   "id": 3175,
    "iri": "http://w3id.org/bb5kbc/site_499_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -208054,7 +208356,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3171,
+   "id": 3176,
    "iri": "http://w3id.org/bb5kbc/site_49_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -208066,7 +208368,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3172,
+   "id": 3177,
    "iri": "http://w3id.org/bb5kbc/site_4_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -208087,7 +208389,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3173,
+   "id": 3178,
    "iri": "http://w3id.org/bb5kbc/site_500_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -208108,7 +208410,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3174,
+   "id": 3179,
    "iri": "http://w3id.org/bb5kbc/site_501_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -208129,7 +208431,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3175,
+   "id": 3180,
    "iri": "http://w3id.org/bb5kbc/site_502_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -208150,7 +208452,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3176,
+   "id": 3181,
    "iri": "http://w3id.org/bb5kbc/site_503_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -208171,7 +208473,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3177,
+   "id": 3182,
    "iri": "http://w3id.org/bb5kbc/site_504_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -208192,7 +208494,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3178,
+   "id": 3183,
    "iri": "http://w3id.org/bb5kbc/site_505_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -208213,7 +208515,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3179,
+   "id": 3184,
    "iri": "http://w3id.org/bb5kbc/site_506_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -208234,7 +208536,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3180,
+   "id": 3185,
    "iri": "http://w3id.org/bb5kbc/site_507_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -208255,7 +208557,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3181,
+   "id": 3186,
    "iri": "http://w3id.org/bb5kbc/site_508_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -208276,7 +208578,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3182,
+   "id": 3187,
    "iri": "http://w3id.org/bb5kbc/site_50_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -208297,7 +208599,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3183,
+   "id": 3188,
    "iri": "http://w3id.org/bb5kbc/site_510_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -208318,7 +208620,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3184,
+   "id": 3189,
    "iri": "http://w3id.org/bb5kbc/site_511_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -208339,7 +208641,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3185,
+   "id": 3190,
    "iri": "http://w3id.org/bb5kbc/site_512_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -208360,7 +208662,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3186,
+   "id": 3191,
    "iri": "http://w3id.org/bb5kbc/site_513_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -208381,7 +208683,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3187,
+   "id": 3192,
    "iri": "http://w3id.org/bb5kbc/site_514_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -208402,7 +208704,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3188,
+   "id": 3193,
    "iri": "http://w3id.org/bb5kbc/site_515_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -208423,7 +208725,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3189,
+   "id": 3194,
    "iri": "http://w3id.org/bb5kbc/site_516_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -208444,7 +208746,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3190,
+   "id": 3195,
    "iri": "http://w3id.org/bb5kbc/site_517_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -208465,7 +208767,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3191,
+   "id": 3196,
    "iri": "http://w3id.org/bb5kbc/site_519_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -208486,7 +208788,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3192,
+   "id": 3197,
    "iri": "http://w3id.org/bb5kbc/site_520_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -208507,7 +208809,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3193,
+   "id": 3198,
    "iri": "http://w3id.org/bb5kbc/site_525_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -208519,7 +208821,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3194,
+   "id": 3199,
    "iri": "http://w3id.org/bb5kbc/site_53_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -208540,7 +208842,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3195,
+   "id": 3200,
    "iri": "http://w3id.org/bb5kbc/site_541_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -208561,7 +208863,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3196,
+   "id": 3201,
    "iri": "http://w3id.org/bb5kbc/site_548_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -208582,7 +208884,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3197,
+   "id": 3202,
    "iri": "http://w3id.org/bb5kbc/site_549_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -208603,7 +208905,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3198,
+   "id": 3203,
    "iri": "http://w3id.org/bb5kbc/site_54_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -208615,7 +208917,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3199,
+   "id": 3204,
    "iri": "http://w3id.org/bb5kbc/site_551_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -208636,7 +208938,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3200,
+   "id": 3205,
    "iri": "http://w3id.org/bb5kbc/site_553_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -208657,7 +208959,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3201,
+   "id": 3206,
    "iri": "http://w3id.org/bb5kbc/site_556_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -208678,7 +208980,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3202,
+   "id": 3207,
    "iri": "http://w3id.org/bb5kbc/site_557_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -208699,7 +209001,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3203,
+   "id": 3208,
    "iri": "http://w3id.org/bb5kbc/site_558_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -208720,7 +209022,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3204,
+   "id": 3209,
    "iri": "http://w3id.org/bb5kbc/site_559_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -208741,7 +209043,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3205,
+   "id": 3210,
    "iri": "http://w3id.org/bb5kbc/site_55_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -208762,7 +209064,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3206,
+   "id": 3211,
    "iri": "http://w3id.org/bb5kbc/site_560_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -208783,7 +209085,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3207,
+   "id": 3212,
    "iri": "http://w3id.org/bb5kbc/site_561_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -208804,7 +209106,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3208,
+   "id": 3213,
    "iri": "http://w3id.org/bb5kbc/site_562_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -208825,7 +209127,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3209,
+   "id": 3214,
    "iri": "http://w3id.org/bb5kbc/site_563_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -208837,7 +209139,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3210,
+   "id": 3215,
    "iri": "http://w3id.org/bb5kbc/site_564_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -208849,7 +209151,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3211,
+   "id": 3216,
    "iri": "http://w3id.org/bb5kbc/site_565_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -208870,7 +209172,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3212,
+   "id": 3217,
    "iri": "http://w3id.org/bb5kbc/site_56_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -208891,7 +209193,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3213,
+   "id": 3218,
    "iri": "http://w3id.org/bb5kbc/site_571_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -208912,7 +209214,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3214,
+   "id": 3219,
    "iri": "http://w3id.org/bb5kbc/site_574_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -208924,7 +209226,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3215,
+   "id": 3220,
    "iri": "http://w3id.org/bb5kbc/site_575_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -208945,7 +209247,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3216,
+   "id": 3221,
    "iri": "http://w3id.org/bb5kbc/site_579_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -208966,7 +209268,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3217,
+   "id": 3222,
    "iri": "http://w3id.org/bb5kbc/site_57_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -208987,7 +209289,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3218,
+   "id": 3223,
    "iri": "http://w3id.org/bb5kbc/site_580_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -209008,7 +209310,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3219,
+   "id": 3224,
    "iri": "http://w3id.org/bb5kbc/site_582_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -209029,7 +209331,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3220,
+   "id": 3225,
    "iri": "http://w3id.org/bb5kbc/site_584_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -209050,7 +209352,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3221,
+   "id": 3226,
    "iri": "http://w3id.org/bb5kbc/site_585_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -209071,7 +209373,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3222,
+   "id": 3227,
    "iri": "http://w3id.org/bb5kbc/site_586_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -209092,7 +209394,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3223,
+   "id": 3228,
    "iri": "http://w3id.org/bb5kbc/site_587_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -209113,7 +209415,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3224,
+   "id": 3229,
    "iri": "http://w3id.org/bb5kbc/site_588_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -209134,7 +209436,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3225,
+   "id": 3230,
    "iri": "http://w3id.org/bb5kbc/site_589_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -209155,7 +209457,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3226,
+   "id": 3231,
    "iri": "http://w3id.org/bb5kbc/site_58_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -209176,7 +209478,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3227,
+   "id": 3232,
    "iri": "http://w3id.org/bb5kbc/site_590_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -209197,7 +209499,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3228,
+   "id": 3233,
    "iri": "http://w3id.org/bb5kbc/site_59_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -209209,7 +209511,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3229,
+   "id": 3234,
    "iri": "http://w3id.org/bb5kbc/site_5_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -209230,7 +209532,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3230,
+   "id": 3235,
    "iri": "http://w3id.org/bb5kbc/site_60_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -209251,7 +209553,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3231,
+   "id": 3236,
    "iri": "http://w3id.org/bb5kbc/site_61_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -209272,7 +209574,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3232,
+   "id": 3237,
    "iri": "http://w3id.org/bb5kbc/site_64_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -209293,7 +209595,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3233,
+   "id": 3238,
    "iri": "http://w3id.org/bb5kbc/site_65_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -209314,7 +209616,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3234,
+   "id": 3239,
    "iri": "http://w3id.org/bb5kbc/site_66_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -209335,7 +209637,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3235,
+   "id": 3240,
    "iri": "http://w3id.org/bb5kbc/site_67_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -209356,7 +209658,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3236,
+   "id": 3241,
    "iri": "http://w3id.org/bb5kbc/site_68_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -209368,7 +209670,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3237,
+   "id": 3242,
    "iri": "http://w3id.org/bb5kbc/site_69_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -209389,7 +209691,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3238,
+   "id": 3243,
    "iri": "http://w3id.org/bb5kbc/site_6_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -209410,7 +209712,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3239,
+   "id": 3244,
    "iri": "http://w3id.org/bb5kbc/site_70_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -209431,7 +209733,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3240,
+   "id": 3245,
    "iri": "http://w3id.org/bb5kbc/site_72_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -209452,7 +209754,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3241,
+   "id": 3246,
    "iri": "http://w3id.org/bb5kbc/site_73_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -209473,7 +209775,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3242,
+   "id": 3247,
    "iri": "http://w3id.org/bb5kbc/site_74_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -209494,7 +209796,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3243,
+   "id": 3248,
    "iri": "http://w3id.org/bb5kbc/site_75_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -209506,7 +209808,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3244,
+   "id": 3249,
    "iri": "http://w3id.org/bb5kbc/site_76_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -209527,7 +209829,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3245,
+   "id": 3250,
    "iri": "http://w3id.org/bb5kbc/site_77_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -209548,7 +209850,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3246,
+   "id": 3251,
    "iri": "http://w3id.org/bb5kbc/site_78_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -209560,7 +209862,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3247,
+   "id": 3252,
    "iri": "http://w3id.org/bb5kbc/site_79_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -209581,7 +209883,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3248,
+   "id": 3253,
    "iri": "http://w3id.org/bb5kbc/site_7_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -209602,7 +209904,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3249,
+   "id": 3254,
    "iri": "http://w3id.org/bb5kbc/site_80_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -209623,7 +209925,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3250,
+   "id": 3255,
    "iri": "http://w3id.org/bb5kbc/site_81_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -209644,7 +209946,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3251,
+   "id": 3256,
    "iri": "http://w3id.org/bb5kbc/site_82_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -209665,7 +209967,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3252,
+   "id": 3257,
    "iri": "http://w3id.org/bb5kbc/site_83_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -209686,7 +209988,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3253,
+   "id": 3258,
    "iri": "http://w3id.org/bb5kbc/site_84_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -209707,7 +210009,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3254,
+   "id": 3259,
    "iri": "http://w3id.org/bb5kbc/site_85_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -209728,7 +210030,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3255,
+   "id": 3260,
    "iri": "http://w3id.org/bb5kbc/site_86_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -209740,7 +210042,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3256,
+   "id": 3261,
    "iri": "http://w3id.org/bb5kbc/site_87_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -209761,7 +210063,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3257,
+   "id": 3262,
    "iri": "http://w3id.org/bb5kbc/site_88_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -209773,7 +210075,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3258,
+   "id": 3263,
    "iri": "http://w3id.org/bb5kbc/site_89_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -209794,7 +210096,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3259,
+   "id": 3264,
    "iri": "http://w3id.org/bb5kbc/site_8_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -209806,7 +210108,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3260,
+   "id": 3265,
    "iri": "http://w3id.org/bb5kbc/site_90_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -209818,7 +210120,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3261,
+   "id": 3266,
    "iri": "http://w3id.org/bb5kbc/site_91_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -209839,7 +210141,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3262,
+   "id": 3267,
    "iri": "http://w3id.org/bb5kbc/site_92_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -209851,7 +210153,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3263,
+   "id": 3268,
    "iri": "http://w3id.org/bb5kbc/site_93_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -209872,7 +210174,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3264,
+   "id": 3269,
    "iri": "http://w3id.org/bb5kbc/site_94_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -209884,7 +210186,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3265,
+   "id": 3270,
    "iri": "http://w3id.org/bb5kbc/site_96_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -209896,7 +210198,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3266,
+   "id": 3271,
    "iri": "http://w3id.org/bb5kbc/site_97_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -209908,7 +210210,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3267,
+   "id": 3272,
    "iri": "http://w3id.org/bb5kbc/site_98_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -209920,7 +210222,7 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3268,
+   "id": 3273,
    "iri": "http://w3id.org/bb5kbc/site_99_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
@@ -209932,301 +210234,12 @@ var vowlresult={
    "superProperties": []
   },
   {
-   "id": 3269,
+   "id": 3274,
    "iri": "http://w3id.org/bb5kbc/site_9_discovery",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
-   "label": "Stage 3 \u2014 merge geo IDs into literature-enriched CSV",
-   "annotations": {
-    "http://www.w3.org/ns/prov#used": [
-     {
-      "identifier": "http://www.w3.org/ns/prov#used",
-      "language": "undefined",
-      "value": "https://example.org/bb-5kbc-sites/fst_wgs84_lit_enriched_csv",
-      "type": "iri"
-     }
-    ],
-    "http://www.w3.org/ns/prov#wasAssociatedWith": [
-     {
-      "identifier": "http://www.w3.org/ns/prov#wasAssociatedWith",
-      "language": "undefined",
-      "value": "https://example.org/bb-5kbc-sites/enrich_fst_py",
-      "type": "iri"
-     }
-    ],
-    "http://www.w3.org/ns/prov#wasInformedBy": [
-     {
-      "identifier": "http://www.w3.org/ns/prov#wasInformedBy",
-      "language": "undefined",
-      "value": "https://example.org/bb-5kbc-sites/run/2026-04-27T08-21-21Z",
-      "type": "iri"
-     }
-    ],
-    "https://example.org/bb-5kbc-sites/columnCount": [
-     {
-      "identifier": "https://example.org/bb-5kbc-sites/columnCount",
-      "language": "undefined",
-      "value": "65",
-      "type": "label"
-     }
-    ],
-    "https://example.org/bb-5kbc-sites/durationSeconds": [
-     {
-      "identifier": "https://example.org/bb-5kbc-sites/durationSeconds",
-      "language": "undefined",
-      "value": "0.10",
-      "type": "label"
-     }
-    ],
-    "https://example.org/bb-5kbc-sites/rowCount": [
-     {
-      "identifier": "https://example.org/bb-5kbc-sites/rowCount",
-      "language": "undefined",
-      "value": "540",
-      "type": "label"
-     }
-    ]
-   },
-   "range": [],
-   "domain": [],
-   "subProperties": [],
-   "superProperties": []
-  },
-  {
-   "id": 3270,
-   "iri": "https://example.org/bb-5kbc-sites/run/2026-04-27T08-21-21Z/stage3_merge",
-   "baseIRI": "https://example.org/bb-5kbc-sites/run/2026-04-27T08-21-21Z",
-   "instances": 0,
-   "label": "bb5kbc CSV-to-RDF pipeline run 2026-04-27T10-24-51Z",
-   "annotations": {
-    "http://w3id.org/bb5kbc/dataTripleCount": [
-     {
-      "identifier": "http://w3id.org/bb5kbc/dataTripleCount",
-      "language": "undefined",
-      "value": "27440",
-      "type": "label"
-     }
-    ],
-    "http://w3id.org/bb5kbc/rowCount": [
-     {
-      "identifier": "http://w3id.org/bb5kbc/rowCount",
-      "language": "undefined",
-      "value": "540",
-      "type": "label"
-     }
-    ],
-    "http://www.w3.org/ns/prov#endedAtTime": [
-     {
-      "identifier": "http://www.w3.org/ns/prov#endedAtTime",
-      "language": "undefined",
-      "value": "2026-04-27T10:24:53.392550+00:00",
-      "type": "label"
-     }
-    ],
-    "http://www.w3.org/ns/prov#startedAtTime": [
-     {
-      "identifier": "http://www.w3.org/ns/prov#startedAtTime",
-      "language": "undefined",
-      "value": "2026-04-27T10:24:51.802253+00:00",
-      "type": "label"
-     }
-    ],
-    "http://www.w3.org/ns/prov#used": [
-     {
-      "identifier": "http://www.w3.org/ns/prov#used",
-      "language": "undefined",
-      "value": "https://example.org/bb-5kbc-sites/fst_wgs84_csv",
-      "type": "iri"
-     }
-    ],
-    "http://www.w3.org/ns/prov#wasAssociatedWith": [
-     {
-      "identifier": "http://www.w3.org/ns/prov#wasAssociatedWith",
-      "language": "undefined",
-      "value": "https://orcid.org/0000-0003-4696-2101",
-      "type": "iri"
-     }
-    ],
-    "http://www.w3.org/ns/prov#wasInformedBy": [
-     {
-      "identifier": "http://www.w3.org/ns/prov#wasInformedBy",
-      "language": "undefined",
-      "value": "https://example.org/bb-5kbc-sites/run/2026-04-27T08-21-21Z",
-      "type": "iri"
-     }
-    ]
-   },
-   "range": [],
-   "domain": [],
-   "subProperties": [],
-   "superProperties": []
-  },
-  {
-   "id": 3271,
-   "iri": "http://w3id.org/bb5kbc/pipeline_run_2026-04-27T10-24-51Z",
-   "baseIRI": "http://w3id.org/bb5kbc",
-   "instances": 0,
-   "label": "Stage 1 \u2014 literature QID enrichment",
-   "annotations": {
-    "http://www.w3.org/ns/prov#used": [
-     {
-      "identifier": "http://www.w3.org/ns/prov#used",
-      "language": "undefined",
-      "value": "https://example.org/bb-5kbc-sites/fst_wgs84_comma_csv",
-      "type": "iri"
-     }
-    ],
-    "http://www.w3.org/ns/prov#wasAssociatedWith": [
-     {
-      "identifier": "http://www.w3.org/ns/prov#wasAssociatedWith",
-      "language": "undefined",
-      "value": "https://example.org/bb-5kbc-sites/enrich_qids_py",
-      "type": "iri"
-     }
-    ],
-    "http://www.w3.org/ns/prov#wasInformedBy": [
-     {
-      "identifier": "http://www.w3.org/ns/prov#wasInformedBy",
-      "language": "undefined",
-      "value": "https://example.org/bb-5kbc-sites/run/2026-04-27T08-21-21Z",
-      "type": "iri"
-     }
-    ],
-    "https://example.org/bb-5kbc-sites/durationSeconds": [
-     {
-      "identifier": "https://example.org/bb-5kbc-sites/durationSeconds",
-      "language": "undefined",
-      "value": "0.15",
-      "type": "label"
-     }
-    ],
-    "https://example.org/bb-5kbc-sites/qidsFilledGeoref": [
-     {
-      "identifier": "https://example.org/bb-5kbc-sites/qidsFilledGeoref",
-      "language": "undefined",
-      "value": "202",
-      "type": "label"
-     }
-    ],
-    "https://example.org/bb-5kbc-sites/qidsFilledPublication": [
-     {
-      "identifier": "https://example.org/bb-5kbc-sites/qidsFilledPublication",
-      "language": "undefined",
-      "value": "265",
-      "type": "label"
-     }
-    ],
-    "https://example.org/bb-5kbc-sites/warningsLogged": [
-     {
-      "identifier": "https://example.org/bb-5kbc-sites/warningsLogged",
-      "language": "undefined",
-      "value": "9",
-      "type": "label"
-     }
-    ]
-   },
-   "range": [],
-   "domain": [],
-   "subProperties": [],
-   "superProperties": []
-  },
-  {
-   "id": 3272,
-   "iri": "https://example.org/bb-5kbc-sites/run/2026-04-27T08-21-21Z/stage1_literature",
-   "baseIRI": "https://example.org/bb-5kbc-sites/run/2026-04-27T08-21-21Z",
-   "instances": 0,
-   "label": "Stage 2 \u2014 geo SPARQL mapping (Wikidata)",
-   "annotations": {
-    "http://www.w3.org/ns/prov#used": [
-     {
-      "identifier": "http://www.w3.org/ns/prov#used",
-      "language": "undefined",
-      "value": "https://example.org/bb-5kbc-sites/fst_standortanalysen_ref_csv",
-      "type": "iri"
-     }
-    ],
-    "http://www.w3.org/ns/prov#wasAssociatedWith": [
-     {
-      "identifier": "http://www.w3.org/ns/prov#wasAssociatedWith",
-      "language": "undefined",
-      "value": "https://example.org/bb-5kbc-sites/wikidata_map_py",
-      "type": "iri"
-     }
-    ],
-    "http://www.w3.org/ns/prov#wasInformedBy": [
-     {
-      "identifier": "http://www.w3.org/ns/prov#wasInformedBy",
-      "language": "undefined",
-      "value": "https://example.org/bb-5kbc-sites/run/2026-04-27T08-21-21Z",
-      "type": "iri"
-     }
-    ],
-    "https://example.org/bb-5kbc-sites/durationSeconds": [
-     {
-      "identifier": "https://example.org/bb-5kbc-sites/durationSeconds",
-      "language": "undefined",
-      "value": "467.44",
-      "type": "label"
-     }
-    ]
-   },
-   "range": [],
-   "domain": [],
-   "subProperties": [],
-   "superProperties": []
-  },
-  {
-   "id": 3273,
-   "iri": "https://example.org/bb-5kbc-sites/run/2026-04-27T08-21-21Z/stage2_geo",
-   "baseIRI": "https://example.org/bb-5kbc-sites/run/2026-04-27T08-21-21Z",
-   "instances": 0,
-   "label": "CSV enrichment pipeline run 2026-04-27T08-21-21Z",
-   "annotations": {
-    "http://www.w3.org/ns/prov#endedAtTime": [
-     {
-      "identifier": "http://www.w3.org/ns/prov#endedAtTime",
-      "language": "undefined",
-      "value": "2026-04-27T08:29:11+00:00",
-      "type": "label"
-     }
-    ],
-    "http://www.w3.org/ns/prov#startedAtTime": [
-     {
-      "identifier": "http://www.w3.org/ns/prov#startedAtTime",
-      "language": "undefined",
-      "value": "2026-04-27T08:21:21+00:00",
-      "type": "label"
-     }
-    ],
-    "http://www.w3.org/ns/prov#used": [
-     {
-      "identifier": "http://www.w3.org/ns/prov#used",
-      "language": "undefined",
-      "value": "https://example.org/bb-5kbc-sites/repo_version",
-      "type": "iri"
-     }
-    ],
-    "http://www.w3.org/ns/prov#wasAssociatedWith": [
-     {
-      "identifier": "http://www.w3.org/ns/prov#wasAssociatedWith",
-      "language": "undefined",
-      "value": "https://example.org/bb-5kbc-sites/csv_enrichment_py",
-      "type": "iri"
-     }
-    ]
-   },
-   "range": [],
-   "domain": [],
-   "subProperties": [],
-   "superProperties": []
-  },
-  {
-   "id": 3274,
-   "iri": "https://example.org/bb-5kbc-sites/run/2026-04-27T08-21-21Z",
-   "baseIRI": "https://example.org/bb-5kbc-sites/run",
-   "instances": 0,
    "label": {
-    "IRI-based": "2026-04-27T08-21-21Z"
+    "IRI-based": "site_9_discovery"
    },
    "annotations": {
     "http://fuzzy-sl.squirrel.link/ontology/hasPointType": [
@@ -225059,7 +225072,7 @@ var vowlresult={
      {
       "identifier": "http://www.opengis.net/ont/geosparql#asWKT",
       "language": "undefined",
-      "value": "POINT(52.10 13.89)",
+      "value": "POINT(13.89 52.1)",
       "type": "label"
      }
     ]
@@ -225896,7 +225909,7 @@ var vowlresult={
      {
       "identifier": "http://www.opengis.net/ont/geosparql#asWKT",
       "language": "undefined",
-      "value": "POINT(14.01 53.00)",
+      "value": "POINT(14.01 53)",
       "type": "label"
      }
     ]
@@ -225927,7 +225940,7 @@ var vowlresult={
      {
       "identifier": "http://www.opengis.net/ont/geosparql#asWKT",
       "language": "undefined",
-      "value": "POINT(14.02 53.00)",
+      "value": "POINT(14.02 53)",
       "type": "label"
      }
     ]

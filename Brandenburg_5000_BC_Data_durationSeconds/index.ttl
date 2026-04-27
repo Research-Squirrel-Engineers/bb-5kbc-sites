@@ -7,5 +7,5 @@
         <https://www.iana.org/assignments/media-types/text/turtle#Resource> ;
     rdfs:label "Property Partition: durationSeconds"@en ;
     void:property <https://example.org/bb-5kbc-sites/durationSeconds> ;
-    void:triples 3 .
+    void:triples 2 .
 

@@ -7,5 +7,5 @@
         <https://www.iana.org/assignments/media-types/text/turtle#Resource> ;
     ns1:hasPointType <https://fuzzy-sl.wikibase.cloud/entity/Q126> ;
     void:inDataset <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data> ;
-    geo:asWKT "POINT(14.01 53.00)"^^geo:wktLiteral .
+    geo:asWKT "POINT(14.01 53)"^^geo:wktLiteral .
 

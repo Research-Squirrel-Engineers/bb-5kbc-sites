@@ -9,7 +9,8 @@
     rdfs:label "Georeferenzierung von Fundstelle 6"@de ;
     ns1:activityDesc "Koordinaten von Kollegen erhalten" ;
     ns1:georeferencingBy <https://orcid.org/0000-0003-4696-2101> ;
-    ns1:hasReference "W. Schier persönl. Kommunikation" ;
+    ns1:hasReference <https://www.wikidata.org/entity/Q15445052>,
+        "W. Schier persönl. Kommunikation" ;
     ns1:hasSourceType <http://w3id.org/bb5kbc/quellentyp_6d2d546f> ;
     ns1:hasSourceTypeDetail <http://w3id.org/bb5kbc/quellentyp_6d2d546f> ;
     ns1:methodUsed <http://w3id.org/bb5kbc/methode_b57e2231> ;

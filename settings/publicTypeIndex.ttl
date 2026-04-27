@@ -607,7 +607,7 @@ owl:Ontology a owl:Class .
         <https://Research-Squirrel-Engineers.github.io/bb-5kbc-sites//settings/publicTypeIndex.ttl#methode_b1c767a2>,
         <https://Research-Squirrel-Engineers.github.io/bb-5kbc-sites//settings/publicTypeIndex.ttl#methode_b57e2231>,
         <https://Research-Squirrel-Engineers.github.io/bb-5kbc-sites//settings/publicTypeIndex.ttl#nonns_0000-0003-4696-2101.html>,
-        <https://Research-Squirrel-Engineers.github.io/bb-5kbc-sites//settings/publicTypeIndex.ttl#nonns_2026-04-27T08-21-21Z.html>,
+        <https://Research-Squirrel-Engineers.github.io/bb-5kbc-sites//settings/publicTypeIndex.ttl#nonns_2026-04-27T13-58-01Z.html>,
         <https://Research-Squirrel-Engineers.github.io/bb-5kbc-sites//settings/publicTypeIndex.ttl#nonns_Activity.html>,
         <https://Research-Squirrel-Engineers.github.io/bb-5kbc-sites//settings/publicTypeIndex.ttl#nonns_E13_Attribute_Assignment.html>,
         <https://Research-Squirrel-Engineers.github.io/bb-5kbc-sites//settings/publicTypeIndex.ttl#nonns_E22_Human-Made_Object.html>,
@@ -631,13 +631,14 @@ owl:Ontology a owl:Class .
         <https://Research-Squirrel-Engineers.github.io/bb-5kbc-sites//settings/publicTypeIndex.ttl#nonns_SiteType.html>,
         <https://Research-Squirrel-Engineers.github.io/bb-5kbc-sites//settings/publicTypeIndex.ttl#nonns_SpaceTimeItem.html>,
         <https://Research-Squirrel-Engineers.github.io/bb-5kbc-sites//settings/publicTypeIndex.ttl#nonns_fst_wgs84_csv.html>,
-        <https://Research-Squirrel-Engineers.github.io/bb-5kbc-sites//settings/publicTypeIndex.ttl#pipeline_run_2026-04-27T10-24-51Z>,
+        <https://Research-Squirrel-Engineers.github.io/bb-5kbc-sites//settings/publicTypeIndex.ttl#pipeline_run_2026-04-27T13-59-02Z>,
         <https://Research-Squirrel-Engineers.github.io/bb-5kbc-sites//settings/publicTypeIndex.ttl#pub_05cf84ec>,
         <https://Research-Squirrel-Engineers.github.io/bb-5kbc-sites//settings/publicTypeIndex.ttl#pub_0b536e9d>,
         <https://Research-Squirrel-Engineers.github.io/bb-5kbc-sites//settings/publicTypeIndex.ttl#pub_0bced945>,
         <https://Research-Squirrel-Engineers.github.io/bb-5kbc-sites//settings/publicTypeIndex.ttl#pub_115d399f>,
         <https://Research-Squirrel-Engineers.github.io/bb-5kbc-sites//settings/publicTypeIndex.ttl#pub_1ed4ab72>,
         <https://Research-Squirrel-Engineers.github.io/bb-5kbc-sites//settings/publicTypeIndex.ttl#pub_21405e20>,
+        <https://Research-Squirrel-Engineers.github.io/bb-5kbc-sites//settings/publicTypeIndex.ttl#pub_23e2b3b3>,
         <https://Research-Squirrel-Engineers.github.io/bb-5kbc-sites//settings/publicTypeIndex.ttl#pub_25823239>,
         <https://Research-Squirrel-Engineers.github.io/bb-5kbc-sites//settings/publicTypeIndex.ttl#pub_28d0e362>,
         <https://Research-Squirrel-Engineers.github.io/bb-5kbc-sites//settings/publicTypeIndex.ttl#pub_3f8665d8>,
@@ -653,7 +654,6 @@ owl:Ontology a owl:Class .
         <https://Research-Squirrel-Engineers.github.io/bb-5kbc-sites//settings/publicTypeIndex.ttl#pub_7d001871>,
         <https://Research-Squirrel-Engineers.github.io/bb-5kbc-sites//settings/publicTypeIndex.ttl#pub_7f0902ba>,
         <https://Research-Squirrel-Engineers.github.io/bb-5kbc-sites//settings/publicTypeIndex.ttl#pub_7f2f6697>,
-        <https://Research-Squirrel-Engineers.github.io/bb-5kbc-sites//settings/publicTypeIndex.ttl#pub_805202e9>,
         <https://Research-Squirrel-Engineers.github.io/bb-5kbc-sites//settings/publicTypeIndex.ttl#pub_87c3d133>,
         <https://Research-Squirrel-Engineers.github.io/bb-5kbc-sites//settings/publicTypeIndex.ttl#pub_9056d6a4>,
         <https://Research-Squirrel-Engineers.github.io/bb-5kbc-sites//settings/publicTypeIndex.ttl#pub_907840f1>,
@@ -662,7 +662,6 @@ owl:Ontology a owl:Class .
         <https://Research-Squirrel-Engineers.github.io/bb-5kbc-sites//settings/publicTypeIndex.ttl#pub_aa96c11a>,
         <https://Research-Squirrel-Engineers.github.io/bb-5kbc-sites//settings/publicTypeIndex.ttl#pub_aab60e84>,
         <https://Research-Squirrel-Engineers.github.io/bb-5kbc-sites//settings/publicTypeIndex.ttl#pub_b1c8f989>,
-        <https://Research-Squirrel-Engineers.github.io/bb-5kbc-sites//settings/publicTypeIndex.ttl#pub_b359cdf6>,
         <https://Research-Squirrel-Engineers.github.io/bb-5kbc-sites//settings/publicTypeIndex.ttl#pub_b505d72d>,
         <https://Research-Squirrel-Engineers.github.io/bb-5kbc-sites//settings/publicTypeIndex.ttl#pub_b7c68a6f>,
         <https://Research-Squirrel-Engineers.github.io/bb-5kbc-sites//settings/publicTypeIndex.ttl#pub_b9d66f04>,
@@ -677,6 +676,7 @@ owl:Ontology a owl:Class .
         <https://Research-Squirrel-Engineers.github.io/bb-5kbc-sites//settings/publicTypeIndex.ttl#pub_d3fe8d6a>,
         <https://Research-Squirrel-Engineers.github.io/bb-5kbc-sites//settings/publicTypeIndex.ttl#pub_f53d5dd0>,
         <https://Research-Squirrel-Engineers.github.io/bb-5kbc-sites//settings/publicTypeIndex.ttl#pub_f5ed98b4>,
+        <https://Research-Squirrel-Engineers.github.io/bb-5kbc-sites//settings/publicTypeIndex.ttl#pub_f5ff5579>,
         <https://Research-Squirrel-Engineers.github.io/bb-5kbc-sites//settings/publicTypeIndex.ttl#quellentyp_570ad906>,
         <https://Research-Squirrel-Engineers.github.io/bb-5kbc-sites//settings/publicTypeIndex.ttl#quellentyp_5ae20fe0>,
         <https://Research-Squirrel-Engineers.github.io/bb-5kbc-sites//settings/publicTypeIndex.ttl#quellentyp_6d2d546f>,
@@ -5543,8 +5543,8 @@ foaf:Person a owl:Class ;
 <https://Research-Squirrel-Engineers.github.io/bb-5kbc-sites//settings/publicTypeIndex.ttl#nonns_0000-0003-4696-2101.html> ns1:forClass foaf:Person ;
     ns1:instance <https://Research-Squirrel-Engineers.github.io/bb-5kbc-sites//nonns_0000-0003-4696-2101.html> .
 
-<https://Research-Squirrel-Engineers.github.io/bb-5kbc-sites//settings/publicTypeIndex.ttl#nonns_2026-04-27T08-21-21Z.html> ns1:forClass prov:Activity ;
-    ns1:instance <https://Research-Squirrel-Engineers.github.io/bb-5kbc-sites//nonns_2026-04-27T08-21-21Z.html> .
+<https://Research-Squirrel-Engineers.github.io/bb-5kbc-sites//settings/publicTypeIndex.ttl#nonns_2026-04-27T13-58-01Z.html> ns1:forClass prov:Activity ;
+    ns1:instance <https://Research-Squirrel-Engineers.github.io/bb-5kbc-sites//nonns_2026-04-27T13-58-01Z.html> .
 
 <https://Research-Squirrel-Engineers.github.io/bb-5kbc-sites//settings/publicTypeIndex.ttl#nonns_Activity.html> ns1:forClass <#> ;
     ns1:instance <https://Research-Squirrel-Engineers.github.io/bb-5kbc-sites//nonns_Activity.html> .
@@ -5615,8 +5615,8 @@ foaf:Person a owl:Class ;
 <https://Research-Squirrel-Engineers.github.io/bb-5kbc-sites//settings/publicTypeIndex.ttl#nonns_fst_wgs84_csv.html> ns1:forClass prov:Entity ;
     ns1:instance <https://Research-Squirrel-Engineers.github.io/bb-5kbc-sites//nonns_fst_wgs84_csv.html> .
 
-<https://Research-Squirrel-Engineers.github.io/bb-5kbc-sites//settings/publicTypeIndex.ttl#pipeline_run_2026-04-27T10-24-51Z> ns1:forClass prov:Activity ;
-    ns1:instance <https://Research-Squirrel-Engineers.github.io/bb-5kbc-sites//pipeline_run_2026-04-27T10-24-51Z> .
+<https://Research-Squirrel-Engineers.github.io/bb-5kbc-sites//settings/publicTypeIndex.ttl#pipeline_run_2026-04-27T13-59-02Z> ns1:forClass prov:Activity ;
+    ns1:instance <https://Research-Squirrel-Engineers.github.io/bb-5kbc-sites//pipeline_run_2026-04-27T13-59-02Z> .
 
 <https://Research-Squirrel-Engineers.github.io/bb-5kbc-sites//settings/publicTypeIndex.ttl#pub_05cf84ec> ns1:forClass <http://w3id.org/bb5kbc/ont/Publikation> ;
     ns1:instance <https://Research-Squirrel-Engineers.github.io/bb-5kbc-sites//pub_05cf84ec> .
@@ -5635,6 +5635,9 @@ foaf:Person a owl:Class ;
 
 <https://Research-Squirrel-Engineers.github.io/bb-5kbc-sites//settings/publicTypeIndex.ttl#pub_21405e20> ns1:forClass <http://w3id.org/bb5kbc/ont/Publikation> ;
     ns1:instance <https://Research-Squirrel-Engineers.github.io/bb-5kbc-sites//pub_21405e20> .
+
+<https://Research-Squirrel-Engineers.github.io/bb-5kbc-sites//settings/publicTypeIndex.ttl#pub_23e2b3b3> ns1:forClass <http://w3id.org/bb5kbc/ont/Publikation> ;
+    ns1:instance <https://Research-Squirrel-Engineers.github.io/bb-5kbc-sites//pub_23e2b3b3> .
 
 <https://Research-Squirrel-Engineers.github.io/bb-5kbc-sites//settings/publicTypeIndex.ttl#pub_25823239> ns1:forClass <http://w3id.org/bb5kbc/ont/Publikation> ;
     ns1:instance <https://Research-Squirrel-Engineers.github.io/bb-5kbc-sites//pub_25823239> .
@@ -5681,9 +5684,6 @@ foaf:Person a owl:Class ;
 <https://Research-Squirrel-Engineers.github.io/bb-5kbc-sites//settings/publicTypeIndex.ttl#pub_7f2f6697> ns1:forClass <http://w3id.org/bb5kbc/ont/Publikation> ;
     ns1:instance <https://Research-Squirrel-Engineers.github.io/bb-5kbc-sites//pub_7f2f6697> .
 
-<https://Research-Squirrel-Engineers.github.io/bb-5kbc-sites//settings/publicTypeIndex.ttl#pub_805202e9> ns1:forClass <http://w3id.org/bb5kbc/ont/Publikation> ;
-    ns1:instance <https://Research-Squirrel-Engineers.github.io/bb-5kbc-sites//pub_805202e9> .
-
 <https://Research-Squirrel-Engineers.github.io/bb-5kbc-sites//settings/publicTypeIndex.ttl#pub_87c3d133> ns1:forClass <http://w3id.org/bb5kbc/ont/Publikation> ;
     ns1:instance <https://Research-Squirrel-Engineers.github.io/bb-5kbc-sites//pub_87c3d133> .
 
@@ -5707,9 +5707,6 @@ foaf:Person a owl:Class ;
 
 <https://Research-Squirrel-Engineers.github.io/bb-5kbc-sites//settings/publicTypeIndex.ttl#pub_b1c8f989> ns1:forClass <http://w3id.org/bb5kbc/ont/Publikation> ;
     ns1:instance <https://Research-Squirrel-Engineers.github.io/bb-5kbc-sites//pub_b1c8f989> .
-
-<https://Research-Squirrel-Engineers.github.io/bb-5kbc-sites//settings/publicTypeIndex.ttl#pub_b359cdf6> ns1:forClass <http://w3id.org/bb5kbc/ont/Publikation> ;
-    ns1:instance <https://Research-Squirrel-Engineers.github.io/bb-5kbc-sites//pub_b359cdf6> .
 
 <https://Research-Squirrel-Engineers.github.io/bb-5kbc-sites//settings/publicTypeIndex.ttl#pub_b505d72d> ns1:forClass <http://w3id.org/bb5kbc/ont/Publikation> ;
     ns1:instance <https://Research-Squirrel-Engineers.github.io/bb-5kbc-sites//pub_b505d72d> .
@@ -5752,6 +5749,9 @@ foaf:Person a owl:Class ;
 
 <https://Research-Squirrel-Engineers.github.io/bb-5kbc-sites//settings/publicTypeIndex.ttl#pub_f5ed98b4> ns1:forClass <http://w3id.org/bb5kbc/ont/Publikation> ;
     ns1:instance <https://Research-Squirrel-Engineers.github.io/bb-5kbc-sites//pub_f5ed98b4> .
+
+<https://Research-Squirrel-Engineers.github.io/bb-5kbc-sites//settings/publicTypeIndex.ttl#pub_f5ff5579> ns1:forClass <http://w3id.org/bb5kbc/ont/Publikation> ;
+    ns1:instance <https://Research-Squirrel-Engineers.github.io/bb-5kbc-sites//pub_f5ff5579> .
 
 <https://Research-Squirrel-Engineers.github.io/bb-5kbc-sites//settings/publicTypeIndex.ttl#quellentyp_570ad906> ns1:forClass <http://fuzzy-sl.squirrel.link/ontology/SourceType> ;
     ns1:instance <https://Research-Squirrel-Engineers.github.io/bb-5kbc-sites//quellentyp_570ad906> .

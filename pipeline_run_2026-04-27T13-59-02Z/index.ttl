@@ -1,0 +1,23 @@
+@prefix ns1: <http://w3id.org/bb5kbc/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns1:pipeline_run_2026-04-27T13-59-02Z a <http://www.w3.org/ns/ldp#Resource>,
+        prov:Activity,
+        <https://www.iana.org/assignments/media-types/text/turtle#Resource> ;
+    rdfs:label "bb5kbc CSV-to-RDF pipeline run 2026-04-27T13-59-02Z"@en ;
+    void:inDataset ns1:Brandenburg_5000_BC_Data ;
+    ns1:dataTripleCount 27450 ;
+    ns1:rowCount 540 ;
+    prov:endedAtTime "2026-04-27T13:59:03.495536+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-04-27T13:59:02.271193+00:00"^^xsd:dateTime ;
+    prov:used <file:///C:/git/bb-5kbc-sites/data/fst_wgs84.csv>,
+        <file:///C:/git/bb-5kbc-sites/ontology/bb5kbc-ontology.ttl>,
+        <https://example.org/bb-5kbc-sites/fst_wgs84_csv> ;
+    prov:wasAssociatedWith ns1:bb5kbc_lod_pipeline_py,
+        <https://orcid.org/0000-0002-3246-3531>,
+        <https://orcid.org/0000-0003-4696-2101> ;
+    prov:wasInformedBy <https://example.org/bb-5kbc-sites/run/2026-04-27T13-58-01Z> .
+

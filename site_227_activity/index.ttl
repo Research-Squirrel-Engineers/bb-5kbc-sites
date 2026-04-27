@@ -9,7 +9,8 @@
     rdfs:label "Georeferenzierung von Fundstelle 227"@de ;
     ns1:activityDesc "die Gemeinde wurde in digitalen Kartenwerken nachgeschlagen und der ungefähre Mittelpunkt der Gemeinde ausgelesen" ;
     ns1:georeferencingBy <https://orcid.org/0000-0003-4696-2101> ;
-    ns1:hasReference "Czerniak" ;
+    ns1:hasReference <https://www.wikidata.org/entity/Q11753457>,
+        "Czerniak" ;
     ns1:hasSourceType <http://w3id.org/bb5kbc/quellentyp_e6dc730e> ;
     ns1:hasSourceTypeDetail <http://w3id.org/bb5kbc/quellentyp_e6dc730e> ;
     ns1:methodUsed <http://w3id.org/bb5kbc/methode_b1c767a2> ;

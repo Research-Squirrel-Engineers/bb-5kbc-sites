@@ -7,5 +7,5 @@
         <https://www.iana.org/assignments/media-types/text/turtle#Resource> ;
     rdfs:label "Property Partition: hasExternalIdentifier"@en ;
     void:property <http://w3id.org/bb5kbc/ont/hasExternalIdentifier> ;
-    void:triples 1052 .
+    void:triples 1057 .
 

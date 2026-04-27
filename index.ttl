@@ -38,7 +38,7 @@ ns4:Activity_collection a skos:Collection,
         <http://www.w3.org/ns/ldp#Resource> ;
     rdfs:label "Activity Instances Collection"@en ;
     void:inDataset ns4:Brandenburg_5000_BC_Data ;
-    rdfs:member ns4:pipeline_run_2026-04-27T10-24-51Z .
+    rdfs:member ns4:pipeline_run_2026-04-27T13-59-02Z .
 
 ns4:Brandenburg_5000_BC_Data_archaeology.link_ontology_ a void:Linkset,
         <http://www.w3.org/ns/ldp#BasicContainer>,
@@ -333,8 +333,8 @@ ns4:Brandenburg_5000_BC_Data_www.wikidata.org_entity_ a void:Linkset,
         ns1:hasExternalIdentifier ;
     void:objectsTarget <https://www.wikidata.org/entity/> ;
     void:subjectsTarget ns4:Brandenburg_5000_BC_Data ;
-    void:triples 492,
-        537 .
+    void:triples 497,
+        540 .
 
 ns4:Bundesland_collection a skos:Collection,
         <http://www.w3.org/ns/ldp#BasicContainer>,
@@ -4140,6 +4140,7 @@ ns4:Publikation_collection a skos:Collection,
         ns4:pub_115d399f,
         ns4:pub_1ed4ab72,
         ns4:pub_21405e20,
+        ns4:pub_23e2b3b3,
         ns4:pub_25823239,
         ns4:pub_28d0e362,
         ns4:pub_3f8665d8,
@@ -4155,7 +4156,6 @@ ns4:Publikation_collection a skos:Collection,
         ns4:pub_7d001871,
         ns4:pub_7f0902ba,
         ns4:pub_7f2f6697,
-        ns4:pub_805202e9,
         ns4:pub_87c3d133,
         ns4:pub_9056d6a4,
         ns4:pub_907840f1,
@@ -4164,7 +4164,6 @@ ns4:Publikation_collection a skos:Collection,
         ns4:pub_aa96c11a,
         ns4:pub_aab60e84,
         ns4:pub_b1c8f989,
-        ns4:pub_b359cdf6,
         ns4:pub_b505d72d,
         ns4:pub_b7c68a6f,
         ns4:pub_b9d66f04,
@@ -4178,7 +4177,8 @@ ns4:Publikation_collection a skos:Collection,
         ns4:pub_d0e4fb80,
         ns4:pub_d3fe8d6a,
         ns4:pub_f53d5dd0,
-        ns4:pub_f5ed98b4 .
+        ns4:pub_f5ed98b4,
+        ns4:pub_f5ff5579 .
 
 ns4:Scherbe_collection a skos:Collection,
         <http://www.w3.org/ns/ldp#BasicContainer>,
@@ -4378,7 +4378,7 @@ ns4:Brandenburg_5000_BC_Data_durationSeconds a void:Dataset,
         <http://www.w3.org/ns/ldp#Resource> ;
     rdfs:label "Property Partition: durationSeconds"@en ;
     void:property <https://example.org/bb-5kbc-sites/durationSeconds> ;
-    void:triples 3 .
+    void:triples 2 .
 
 ns4:Brandenburg_5000_BC_Data_endedAtTime a void:Dataset,
         <http://www.w3.org/ns/ldp#BasicContainer>,
@@ -4434,7 +4434,7 @@ ns4:Brandenburg_5000_BC_Data_hasExternalIdentifier a void:Dataset,
         <http://www.w3.org/ns/ldp#Resource> ;
     rdfs:label "Property Partition: hasExternalIdentifier"@en ;
     void:property ns1:hasExternalIdentifier ;
-    void:triples 1052 .
+    void:triples 1057 .
 
 ns4:Brandenburg_5000_BC_Data_hasExternalIdentifierType a void:Dataset,
         <http://www.w3.org/ns/ldp#BasicContainer>,
@@ -4442,7 +4442,7 @@ ns4:Brandenburg_5000_BC_Data_hasExternalIdentifierType a void:Dataset,
         <http://www.w3.org/ns/ldp#Resource> ;
     rdfs:label "Property Partition: hasExternalIdentifierType"@en ;
     void:property ns1:hasExternalIdentifierType ;
-    void:triples 1002 .
+    void:triples 1007 .
 
 ns4:Brandenburg_5000_BC_Data_hasGeometry a void:Dataset,
         <http://www.w3.org/ns/ldp#BasicContainer>,
@@ -4474,7 +4474,7 @@ ns4:Brandenburg_5000_BC_Data_hasReference a void:Dataset,
         <http://www.w3.org/ns/ldp#Resource> ;
     rdfs:label "Property Partition: hasReference"@en ;
     void:property ns2:hasReference ;
-    void:triples 1077 .
+    void:triples 1080 .
 
 ns4:Brandenburg_5000_BC_Data_hasSourceType a void:Dataset,
         <http://www.w3.org/ns/ldp#BasicContainer>,
@@ -4700,6 +4700,14 @@ ns4:Brandenburg_5000_BC_Data_representativeGeometry a void:Dataset,
     void:property ns2:representativeGeometry ;
     void:triples 540 .
 
+ns4:Brandenburg_5000_BC_Data_reusedFromMTime a void:Dataset,
+        <http://www.w3.org/ns/ldp#BasicContainer>,
+        <http://www.w3.org/ns/ldp#Container>,
+        <http://www.w3.org/ns/ldp#Resource> ;
+    rdfs:label "Property Partition: reusedFromMTime"@en ;
+    void:property <https://example.org/bb-5kbc-sites/reusedFromMTime> ;
+    void:triples 1 .
+
 ns4:Brandenburg_5000_BC_Data_rights a void:Dataset,
         <http://www.w3.org/ns/ldp#BasicContainer>,
         <http://www.w3.org/ns/ldp#Container>,
@@ -4715,6 +4723,14 @@ ns4:Brandenburg_5000_BC_Data_rowCount a void:Dataset,
     rdfs:label "Property Partition: rowCount"@en ;
     void:property ns4:rowCount,
         <https://example.org/bb-5kbc-sites/rowCount> ;
+    void:triples 1 .
+
+ns4:Brandenburg_5000_BC_Data_stageStatus a void:Dataset,
+        <http://www.w3.org/ns/ldp#BasicContainer>,
+        <http://www.w3.org/ns/ldp#Container>,
+        <http://www.w3.org/ns/ldp#Resource> ;
+    rdfs:label "Property Partition: stageStatus"@en ;
+    void:property <https://example.org/bb-5kbc-sites/stageStatus> ;
     void:triples 1 .
 
 ns4:Brandenburg_5000_BC_Data_startedAtTime a void:Dataset,
@@ -4771,7 +4787,7 @@ ns4:Brandenburg_5000_BC_Data_used a void:Dataset,
         <http://www.w3.org/ns/ldp#Resource> ;
     rdfs:label "Property Partition: used"@en ;
     void:property prov:used ;
-    void:triples 10 .
+    void:triples 11 .
 
 ns4:Brandenburg_5000_BC_Data_versionIRI a void:Dataset,
         <http://www.w3.org/ns/ldp#BasicContainer>,
@@ -4811,7 +4827,7 @@ ns4:Brandenburg_5000_BC_Data_wasDerivedFrom a void:Dataset,
         <http://www.w3.org/ns/ldp#Resource> ;
     rdfs:label "Property Partition: wasDerivedFrom"@en ;
     void:property prov:wasDerivedFrom ;
-    void:triples 7 .
+    void:triples 5 .
 
 ns4:Brandenburg_5000_BC_Data_wasGeneratedBy a void:Dataset,
         <http://www.w3.org/ns/ldp#BasicContainer>,
@@ -4819,7 +4835,7 @@ ns4:Brandenburg_5000_BC_Data_wasGeneratedBy a void:Dataset,
         <http://www.w3.org/ns/ldp#Resource> ;
     rdfs:label "Property Partition: wasGeneratedBy"@en ;
     void:property prov:wasGeneratedBy ;
-    void:triples 10 .
+    void:triples 7 .
 
 ns4:Brandenburg_5000_BC_Data_wasInformedBy a void:Dataset,
         <http://www.w3.org/ns/ldp#BasicContainer>,
@@ -4853,7 +4869,7 @@ ns4:bb5kbc_bundle_ttl a <http://www.w3.org/ns/ldp#BasicContainer>,
     void:inDataset ns4:Brandenburg_5000_BC_Data ;
     prov:atLocation <file:///C:/git/bb-5kbc-sites/dist/bb5kbc-bundle.ttl> ;
     prov:wasDerivedFrom <https://example.org/bb-5kbc-sites/fst_wgs84_csv> ;
-    prov:wasGeneratedBy ns4:pipeline_run_2026-04-27T10-24-51Z .
+    prov:wasGeneratedBy ns4:pipeline_run_2026-04-27T13-59-02Z .
 
 ns4:bb5kbc_data_ttl a <http://www.w3.org/ns/ldp#BasicContainer>,
         <http://www.w3.org/ns/ldp#Container>,
@@ -4863,7 +4879,7 @@ ns4:bb5kbc_data_ttl a <http://www.w3.org/ns/ldp#BasicContainer>,
     void:inDataset ns4:Brandenburg_5000_BC_Data ;
     prov:atLocation <file:///C:/git/bb-5kbc-sites/dist/bb5kbc-data.ttl> ;
     prov:wasDerivedFrom <https://example.org/bb-5kbc-sites/fst_wgs84_csv> ;
-    prov:wasGeneratedBy ns4:pipeline_run_2026-04-27T10-24-51Z .
+    prov:wasGeneratedBy ns4:pipeline_run_2026-04-27T13-59-02Z .
 
 ns1: a owl:Ontology,
         <http://www.w3.org/ns/ldp#BasicContainer>,
@@ -8365,7 +8381,7 @@ ns4:site_257 a ns1:Fundstelle,
     ns1:hatGenauigkeit 0.0 ;
     ns1:hatKatalognummer "12418" ;
     ns1:hatKulturelleZuordnung ns4:site_257_culture ;
-    ns1:hatPublikation ns4:pub_b359cdf6 ;
+    ns1:hatPublikation ns4:pub_23e2b3b3 ;
     ns1:inGemeinde ns4:gemeinde_0f80183e ;
     ns1:wurdeEntdecktDurch ns4:site_257_discovery ;
     ns1:wurdeGeoreferenziertDurch ns4:site_257_activity ;
@@ -15904,7 +15920,7 @@ ns4:site_586 a ns1:Fundstelle,
     ns1:hatGenauigkeit 0.0 ;
     ns1:hatKatalognummer "18010" ;
     ns1:hatKulturelleZuordnung ns4:site_586_culture ;
-    ns1:hatPublikation ns4:pub_805202e9 ;
+    ns1:hatPublikation ns4:pub_f5ff5579 ;
     ns1:inGemeinde ns4:gemeinde_e743046d ;
     ns1:wurdeEntdecktDurch ns4:site_586_discovery ;
     ns1:wurdeGeoreferenziertDurch ns4:site_586_activity ;
@@ -20455,7 +20471,8 @@ ns4:pub_0bced945 a ns1:Publikation,
         <http://www.w3.org/ns/ldp#Container>,
         <http://www.w3.org/ns/ldp#Resource> ;
     rdfs:label "Umbreit 1940"@de ;
-    void:inDataset ns4:Brandenburg_5000_BC_Data .
+    void:inDataset ns4:Brandenburg_5000_BC_Data ;
+    ns1:hasExternalIdentifier <https://www.wikidata.org/entity/Q139459720> .
 
 ns4:pub_115d399f a ns1:Publikation,
         <http://www.w3.org/ns/ldp#BasicContainer>,
@@ -20464,6 +20481,14 @@ ns4:pub_115d399f a ns1:Publikation,
     rdfs:label "Schmiederer 1997"@de ;
     void:inDataset ns4:Brandenburg_5000_BC_Data ;
     ns1:hasExternalIdentifier <https://www.wikidata.org/entity/Q139304643> .
+
+ns4:pub_23e2b3b3 a ns1:Publikation,
+        <http://www.w3.org/ns/ldp#BasicContainer>,
+        <http://www.w3.org/ns/ldp#Container>,
+        <http://www.w3.org/ns/ldp#Resource> ;
+    rdfs:label "Wetzel/Babiel 2016"@de ;
+    void:inDataset ns4:Brandenburg_5000_BC_Data ;
+    ns1:hasExternalIdentifier <https://www.wikidata.org/entity/Q139555259> .
 
 ns4:pub_25823239 a ns1:Publikation,
         <http://www.w3.org/ns/ldp#BasicContainer>,
@@ -20486,7 +20511,8 @@ ns4:pub_3f8665d8 a ns1:Publikation,
         <http://www.w3.org/ns/ldp#Container>,
         <http://www.w3.org/ns/ldp#Resource> ;
     rdfs:label "Raddatz 1956"@de ;
-    void:inDataset ns4:Brandenburg_5000_BC_Data .
+    void:inDataset ns4:Brandenburg_5000_BC_Data ;
+    ns1:hasExternalIdentifier <https://www.wikidata.org/entity/Q139304631> .
 
 ns4:pub_4151a647 a ns1:Publikation,
         <http://www.w3.org/ns/ldp#BasicContainer>,
@@ -20517,7 +20543,8 @@ ns4:pub_75c7a1cf a ns1:Publikation,
         <http://www.w3.org/ns/ldp#Container>,
         <http://www.w3.org/ns/ldp#Resource> ;
     rdfs:label "Schier et al. 2023"@de ;
-    void:inDataset ns4:Brandenburg_5000_BC_Data .
+    void:inDataset ns4:Brandenburg_5000_BC_Data ;
+    ns1:hasExternalIdentifier <https://www.wikidata.org/entity/Q139555255> .
 
 ns4:pub_76224a7a a ns1:Publikation,
         <http://www.w3.org/ns/ldp#BasicContainer>,
@@ -20542,14 +20569,6 @@ ns4:pub_7f2f6697 a ns1:Publikation,
     rdfs:label "Lehmphul 2015"@de ;
     void:inDataset ns4:Brandenburg_5000_BC_Data ;
     ns1:hasExternalIdentifier <https://www.wikidata.org/entity/Q139304610> .
-
-ns4:pub_805202e9 a ns1:Publikation,
-        <http://www.w3.org/ns/ldp#BasicContainer>,
-        <http://www.w3.org/ns/ldp#Container>,
-        <http://www.w3.org/ns/ldp#Resource> ;
-    rdfs:label "Raddatz 1959"@de ;
-    void:inDataset ns4:Brandenburg_5000_BC_Data ;
-    ns1:hasExternalIdentifier <https://www.wikidata.org/entity/Q139304631> .
 
 ns4:pub_87c3d133 a ns1:Publikation,
         <http://www.w3.org/ns/ldp#BasicContainer>,
@@ -20590,13 +20609,6 @@ ns4:pub_b1c8f989 a ns1:Publikation,
     rdfs:label "Czerniak/Pyzel 2016"@de ;
     void:inDataset ns4:Brandenburg_5000_BC_Data ;
     ns1:hasExternalIdentifier <https://www.wikidata.org/entity/Q139304607> .
-
-ns4:pub_b359cdf6 a ns1:Publikation,
-        <http://www.w3.org/ns/ldp#BasicContainer>,
-        <http://www.w3.org/ns/ldp#Container>,
-        <http://www.w3.org/ns/ldp#Resource> ;
-    rdfs:label "Wetzel/Babieel 2016"@de ;
-    void:inDataset ns4:Brandenburg_5000_BC_Data .
 
 ns4:pub_b9d66f04 a ns1:Publikation,
         <http://www.w3.org/ns/ldp#BasicContainer>,
@@ -20645,6 +20657,14 @@ ns4:pub_d0e4fb80 a ns1:Publikation,
     rdfs:label "Jentsch 1885"@de ;
     void:inDataset ns4:Brandenburg_5000_BC_Data ;
     ns1:hasExternalIdentifier <https://www.wikidata.org/entity/Q139304636> .
+
+ns4:pub_f5ff5579 a ns1:Publikation,
+        <http://www.w3.org/ns/ldp#BasicContainer>,
+        <http://www.w3.org/ns/ldp#Container>,
+        <http://www.w3.org/ns/ldp#Resource> ;
+    rdfs:label "Raddatz 1958"@de ;
+    void:inDataset ns4:Brandenburg_5000_BC_Data ;
+    ns1:hasExternalIdentifier <https://www.wikidata.org/entity/Q139570571> .
 
 ns4:sherd_02807cc2 a ns1:Scherbe,
         <http://www.w3.org/ns/ldp#BasicContainer>,
@@ -25340,7 +25360,8 @@ ns4:site_227_activity a ns1:GeoreferenzierungsAktivitaet,
     rdfs:label "Georeferenzierung von Fundstelle 227"@de ;
     ns2:activityDesc "die Gemeinde wurde in digitalen Kartenwerken nachgeschlagen und der ungefähre Mittelpunkt der Gemeinde ausgelesen" ;
     ns2:georeferencingBy <https://orcid.org/0000-0003-4696-2101> ;
-    ns2:hasReference "Czerniak" ;
+    ns2:hasReference <https://www.wikidata.org/entity/Q11753457>,
+        "Czerniak" ;
     ns2:hasSourceType ns4:quellentyp_e6dc730e ;
     ns2:hasSourceTypeDetail ns4:quellentyp_e6dc730e ;
     ns2:methodUsed ns4:methode_b1c767a2 ;
@@ -42064,7 +42085,8 @@ ns4:site_6_activity a ns1:GeoreferenzierungsAktivitaet,
     rdfs:label "Georeferenzierung von Fundstelle 6"@de ;
     ns2:activityDesc "Koordinaten von Kollegen erhalten" ;
     ns2:georeferencingBy <https://orcid.org/0000-0003-4696-2101> ;
-    ns2:hasReference "W. Schier persönl. Kommunikation" ;
+    ns2:hasReference <https://www.wikidata.org/entity/Q15445052>,
+        "W. Schier persönl. Kommunikation" ;
     ns2:hasSourceType ns4:quellentyp_6d2d546f ;
     ns2:hasSourceTypeDetail ns4:quellentyp_6d2d546f ;
     ns2:methodUsed ns4:methode_b57e2231 ;
@@ -42983,7 +43005,8 @@ ns4:site_8_activity a ns1:GeoreferenzierungsAktivitaet,
     rdfs:label "Georeferenzierung von Fundstelle 8"@de ;
     ns2:activityDesc "Koordinaten von Kollegen erhalten" ;
     ns2:georeferencingBy <https://orcid.org/0000-0003-4696-2101> ;
-    ns2:hasReference "W. Schier persönl. Kommunikation" ;
+    ns2:hasReference <https://www.wikidata.org/entity/Q15445052>,
+        "W. Schier persönl. Kommunikation" ;
     ns2:hasSourceType ns4:quellentyp_6d2d546f ;
     ns2:hasSourceTypeDetail ns4:quellentyp_6d2d546f ;
     ns2:methodUsed ns4:methode_b57e2231 ;
@@ -44251,23 +44274,23 @@ ns4:kreis_d2918bbf a ns1:Kreis,
         ns4:bundesland_af35ac58 ;
     skos:prefLabel "pow. Strzelecko-Drezdenecki"@de .
 
-ns4:pipeline_run_2026-04-27T10-24-51Z a <http://www.w3.org/ns/ldp#BasicContainer>,
+ns4:pipeline_run_2026-04-27T13-59-02Z a <http://www.w3.org/ns/ldp#BasicContainer>,
         <http://www.w3.org/ns/ldp#Container>,
         <http://www.w3.org/ns/ldp#Resource>,
         prov:Activity ;
-    rdfs:label "bb5kbc CSV-to-RDF pipeline run 2026-04-27T10-24-51Z"@en ;
+    rdfs:label "bb5kbc CSV-to-RDF pipeline run 2026-04-27T13-59-02Z"@en ;
     void:inDataset ns4:Brandenburg_5000_BC_Data ;
-    ns4:dataTripleCount 27440 ;
+    ns4:dataTripleCount 27450 ;
     ns4:rowCount 540 ;
-    prov:endedAtTime "2026-04-27T10:24:53.392550+00:00"^^xsd:dateTime ;
-    prov:startedAtTime "2026-04-27T10:24:51.802253+00:00"^^xsd:dateTime ;
+    prov:endedAtTime "2026-04-27T13:59:03.495536+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-04-27T13:59:02.271193+00:00"^^xsd:dateTime ;
     prov:used <file:///C:/git/bb-5kbc-sites/data/fst_wgs84.csv>,
         <file:///C:/git/bb-5kbc-sites/ontology/bb5kbc-ontology.ttl>,
         <https://example.org/bb-5kbc-sites/fst_wgs84_csv> ;
     prov:wasAssociatedWith ns4:bb5kbc_lod_pipeline_py,
         <https://orcid.org/0000-0002-3246-3531>,
         <https://orcid.org/0000-0003-4696-2101> ;
-    prov:wasInformedBy <https://example.org/bb-5kbc-sites/run/2026-04-27T08-21-21Z> .
+    prov:wasInformedBy <https://example.org/bb-5kbc-sites/run/2026-04-27T13-58-01Z> .
 
 ns4:pub_72ab46f0 a ns1:Publikation,
         <http://www.w3.org/ns/ldp#BasicContainer>,
@@ -44290,7 +44313,8 @@ ns4:pub_aa96c11a a ns1:Publikation,
         <http://www.w3.org/ns/ldp#Container>,
         <http://www.w3.org/ns/ldp#Resource> ;
     rdfs:label "Pyzel 2019"@de ;
-    void:inDataset ns4:Brandenburg_5000_BC_Data .
+    void:inDataset ns4:Brandenburg_5000_BC_Data ;
+    ns1:hasExternalIdentifier <https://www.wikidata.org/entity/Q139460445> .
 
 ns4:pub_b505d72d a ns1:Publikation,
         <http://www.w3.org/ns/ldp#BasicContainer>,
@@ -48138,7 +48162,7 @@ ns4:site_563_geom a <http://www.opengis.net/ont/sf#Point>,
         <http://www.w3.org/ns/ldp#Resource> ;
     ns2:hasPointType <https://fuzzy-sl.wikibase.cloud/entity/Q126> ;
     void:inDataset ns4:Brandenburg_5000_BC_Data ;
-    geo:asWKT "POINT(52.10 13.89)"^^geo:wktLiteral .
+    geo:asWKT "POINT(13.89 52.1)"^^geo:wktLiteral .
 
 ns4:site_564_geom a <http://www.opengis.net/ont/sf#Point>,
         <http://www.w3.org/ns/ldp#BasicContainer>,
@@ -48354,7 +48378,7 @@ ns4:site_67_geom a <http://www.opengis.net/ont/sf#Point>,
         <http://www.w3.org/ns/ldp#Resource> ;
     ns2:hasPointType <https://fuzzy-sl.wikibase.cloud/entity/Q126> ;
     void:inDataset ns4:Brandenburg_5000_BC_Data ;
-    geo:asWKT "POINT(14.01 53.00)"^^geo:wktLiteral .
+    geo:asWKT "POINT(14.01 53)"^^geo:wktLiteral .
 
 ns4:site_68_geom a <http://www.opengis.net/ont/sf#Point>,
         <http://www.w3.org/ns/ldp#BasicContainer>,
@@ -48362,7 +48386,7 @@ ns4:site_68_geom a <http://www.opengis.net/ont/sf#Point>,
         <http://www.w3.org/ns/ldp#Resource> ;
     ns2:hasPointType <https://fuzzy-sl.wikibase.cloud/entity/Q126> ;
     void:inDataset ns4:Brandenburg_5000_BC_Data ;
-    geo:asWKT "POINT(14.02 53.00)"^^geo:wktLiteral .
+    geo:asWKT "POINT(14.02 53)"^^geo:wktLiteral .
 
 ns4:site_69_geom a <http://www.opengis.net/ont/sf#Point>,
         <http://www.w3.org/ns/ldp#BasicContainer>,
@@ -50084,13 +50108,13 @@ ns4:Brandenburg_5000_BC_Data a void:Dataset,
     ns3:averageSubjectIRILength 37 ;
     ns3:datatypes 0 ;
     ns3:distinctBlankNodes 0 ;
-    ns3:distinctIRIReferences 13002 ;
+    ns3:distinctIRIReferences 13015 ;
     ns3:distinctLiterals 0 ;
-    ns3:distinctRDFNodes 13002 ;
+    ns3:distinctRDFNodes 13015 ;
     ns3:languages 0 ;
     ns3:propertyClasses 0 ;
     dc:language <http://www.lexvo.org/page/iso639-1/en> ;
-    dcterms:modified "2026-04-27T13:09:26"^^xsd:dateTime ;
+    dcterms:modified "2026-04-27T14:01:20"^^xsd:dateTime ;
     dcterms:subject <http://dbpedia.org/resource/Location>,
         <http://dbpedia.org/resource/OGC_GeoSPARQL>,
         <http://dbpedia.org/resource/Time>,
@@ -50168,12 +50192,12 @@ ns4:Brandenburg_5000_BC_Data a void:Dataset,
         ns4:Brandenburg_5000_BC_Data_externalIdentifierType ;
     void:classes 71 ;
     void:dataDump <https://Research-Squirrel-Engineers.github.io/bb-5kbc-sites//index.ttl> ;
-    void:distinctObjects 8080 ;
-    void:distinctSubjects 4844 ;
+    void:distinctObjects 8086 ;
+    void:distinctSubjects 4849 ;
     void:entities 3726 ;
     void:feature <http://www.w3.org/ns/formats/RDFa>,
         <http://www.w3.org/ns/formats/Turtle> ;
-    void:properties 78 ;
+    void:properties 80 ;
     void:propertyPartition ns4:Brandenburg_5000_BC_Data_activityDesc,
         ns4:Brandenburg_5000_BC_Data_asWKT,
         ns4:Brandenburg_5000_BC_Data_atLocation,
@@ -50233,8 +50257,10 @@ ns4:Brandenburg_5000_BC_Data a void:Dataset,
         ns4:Brandenburg_5000_BC_Data_range,
         ns4:Brandenburg_5000_BC_Data_relatedMatch,
         ns4:Brandenburg_5000_BC_Data_representativeGeometry,
+        ns4:Brandenburg_5000_BC_Data_reusedFromMTime,
         ns4:Brandenburg_5000_BC_Data_rights,
         ns4:Brandenburg_5000_BC_Data_rowCount,
+        ns4:Brandenburg_5000_BC_Data_stageStatus,
         ns4:Brandenburg_5000_BC_Data_startedAtTime,
         ns4:Brandenburg_5000_BC_Data_subClassOf,
         ns4:Brandenburg_5000_BC_Data_subPropertyOf,
@@ -50251,7 +50277,7 @@ ns4:Brandenburg_5000_BC_Data a void:Dataset,
         ns4:Brandenburg_5000_BC_Data_wasInformedBy,
         ns4:Brandenburg_5000_BC_Data_wurdeEntdecktDurch,
         ns4:Brandenburg_5000_BC_Data_wurdeGeoreferenziertDurch ;
-    void:triples 35577 ;
+    void:triples 35587 ;
     void:uriSpace "http://w3id.org/bb5kbc/"^^xsd:string ;
     void:vocabulary ns3:,
         dcam:,

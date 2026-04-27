@@ -9,5 +9,5 @@
     void:inDataset <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data> ;
     prov:atLocation <file:///C:/git/bb-5kbc-sites/dist/bb5kbc-bundle.ttl> ;
     prov:wasDerivedFrom <https://example.org/bb-5kbc-sites/fst_wgs84_csv> ;
-    prov:wasGeneratedBy <http://w3id.org/bb5kbc/pipeline_run_2026-04-27T10-24-51Z> .
+    prov:wasGeneratedBy <http://w3id.org/bb5kbc/pipeline_run_2026-04-27T13-59-02Z> .
 

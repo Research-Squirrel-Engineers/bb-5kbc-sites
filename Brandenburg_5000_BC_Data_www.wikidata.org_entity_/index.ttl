@@ -10,6 +10,6 @@
         <http://w3id.org/bb5kbc/ont/hasExternalIdentifier> ;
     void:objectsTarget <https://www.wikidata.org/entity/> ;
     void:subjectsTarget <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data> ;
-    void:triples 492,
-        537 .
+    void:triples 497,
+        540 .
 
