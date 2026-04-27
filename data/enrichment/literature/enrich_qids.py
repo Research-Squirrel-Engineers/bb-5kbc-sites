@@ -91,22 +91,22 @@ QID_PUBLIKATION = {
     #
     # "Pyzel 2019"        FID 548, 549 (Ludwinowo 7, SBK, Polen)
     #                     In QID_QUELLE_GEOREF als Q139460445 hinterlegt;
-    #                     Sophie muss bestätigen, ob dasselbe Werk gemeint ist.
+    #                     Sophie muss bestätigen, ob dasselbe Werk gemeint ist. --> stimmt
     # "Umbreit 1940"      FID 244 (Lietzow-Buddelin/Saiser 1)
     #                     In QID_QUELLE_GEOREF als Q139459720 hinterlegt;
-    #                     Sophie muss bestätigen, ob dasselbe Werk gemeint ist.
+    #                     Sophie muss bestätigen, ob dasselbe Werk gemeint ist. --> stimmt
     # "Schier et al. 2023" FID 8 (Quedlinburg KGA 1)
     #                     Mehrdeutig: Schiers 2023-Hauptpublikation ist die
     #                     Ippesheim-Endmonografie (BAF 22, Rahden/Westf. 2023);
     #                     Quedlinburg ist eine andere Anlage. Sophie klärt
-    #                     welches Werk gemeint ist.
+    #                     welches Werk gemeint ist. --> Q139555255
     # "Raddatz 1956"      FID 94 (Kaaso/Kozów, SBK, Polen, Woj. Lubuskie)
     #                     Achtung: in QID_QUELLE_GEOREF unten als Q139304631
     #                     hinterlegt — das ist aber das QID für "Raddatz 1959"
     #                     (siehe oben). Sophie muss klären: ist das ein Tippfehler
     #                     in der CSV (1956 → 1959), oder existiert eine separate
     #                     Raddatz-1956-Publikation, die noch ein eigenes
-    #                     Wikidata-Item braucht?
+    #                     Wikidata-Item braucht? --> Raddatz 1956 = Q139304631, Raddatz 1958 (das war ein tippfehler '59 war falsch) -> Q139570571
     # "Wetzel/Babieel 2016" FID 257 (Dyrotz 37, Rössener Kultur, Havelland)
     #                     Eindeutig identifiziert als:
     #                       Wetzel, G. / Babiel, K.: Der Rössener Brunnen von
@@ -114,7 +114,7 @@ QID_PUBLIKATION = {
     #                       Veröff. brandenb. Landesarchäologie 47 (2016),
     #                       79–108.
     #                     CSV-Tippfehler: Co-Autor heißt Babiel, nicht Babieel.
-    #                     Wikidata-Item existiert (Stand April 2026) noch nicht.
+    #                     Wikidata-Item existiert (Stand April 2026) noch nicht. --> Tippfehler korrigiert, QID ist Q139555259
     # ---------------------------------------------------------------------
 }
 
