@@ -111,7 +111,7 @@ PROV_BASE = "https://example.org/bb-5kbc-sites/"
 #
 # Skip-mode safety: if a stage is skipped but its expected output file is
 # missing, the pipeline aborts before doing any work (see _preflight).
-PIPELINE_MODE = "literature"
+PIPELINE_MODE = "full"
 
 _VALID_MODES = ("full", "literature", "geo", "merge")
 

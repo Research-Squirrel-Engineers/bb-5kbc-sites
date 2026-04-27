@@ -78,13 +78,13 @@ data:bb5kbc_bundle_ttl a prov:Entity ;
     rdfs:label "bb5kbc-bundle.ttl (data + ontology, self-contained)"@en ;
     prov:atLocation <file:///C:/git/bb-5kbc-sites/dist/bb5kbc-bundle.ttl> ;
     prov:wasDerivedFrom ns1:fst_wgs84_csv ;
-    prov:wasGeneratedBy data:pipeline_run_2026-04-27T13-59-02Z .
+    prov:wasGeneratedBy data:pipeline_run_2026-04-27T19-10-14Z .
 
 data:bb5kbc_data_ttl a prov:Entity ;
     rdfs:label "bb5kbc-data.ttl (LOD-converted site data)"@en ;
     prov:atLocation <file:///C:/git/bb-5kbc-sites/dist/bb5kbc-data.ttl> ;
     prov:wasDerivedFrom ns1:fst_wgs84_csv ;
-    prov:wasGeneratedBy data:pipeline_run_2026-04-27T13-59-02Z .
+    prov:wasGeneratedBy data:pipeline_run_2026-04-27T19-10-14Z .
 
 bb5kbc: a owl:Ontology ;
     dc:contributor "Florian Thiery",
@@ -316,6 +316,18 @@ bb5kbc:inLand a owl:ObjectProperty ;
     rdfs:range bb5kbc:Land ;
     rdfs:subPropertyOf fsl:locatedInAdministrativeEntity,
         crm:P89_falls_within .
+
+bb5kbc:wikidataMatchDescription a owl:DatatypeProperty ;
+    rdfs:label "Wikidata-Match-Beschreibung"@de,
+        "Wikidata match description"@en ;
+    rdfs:comment """Audit note in plain text describing how this administrative entity was matched against Wikidata: method (exact / fuzzy / override / transitive P131+), normalisation steps applied, search label and matched label, and the confidence score. Carried over verbatim from the matchReason field produced by wikidata_map.py during CSV enrichment.
+
+Multiple rdfs:domain triples are used (Land, Bundesland, Kreis, Gemeinde) rather than owl:unionOf, to keep auto-generated SHACL shapes simple — the auto-generator picks the first domain. The semantic restriction is: the property applies to any of the four administrative-area classes."""@en ;
+    rdfs:domain bb5kbc:Bundesland,
+        bb5kbc:Gemeinde,
+        bb5kbc:Kreis,
+        bb5kbc:Land ;
+    rdfs:range xsd:string .
 
 bb5kbc:wurdeEntdecktDurch a owl:ObjectProperty ;
     rdfs:label "wurde entdeckt durch"@de,
@@ -10234,30 +10246,24 @@ prov:wasAttributedTo a owl:ObjectProperty ;
 
 ns1:fst_standortanalysen_ref_report_csv a prov:Entity ;
     rdfs:label "Per-row QA report for geo mapping" ;
-    prov:atLocation <file:///C:/git/bb-5kbc-sites/data/enrichment/mapping_admin_regions/fst_standortanalysen_ref_report.csv> .
+    prov:atLocation <file:///C:/git/bb-5kbc-sites/data/enrichment/mapping_admin_regions/fst_standortanalysen_ref_report.csv> ;
+    prov:wasDerivedFrom ns1:fst_standortanalysen_ref_csv ;
+    prov:wasGeneratedBy <https://example.org/bb-5kbc-sites/run/2026-04-27T18-56-13Z/stage2_geo> .
 
 ns1:geo_log a prov:Entity ;
     rdfs:label "Geo stage full stdout log" ;
-    prov:atLocation <file:///C:/git/bb-5kbc-sites/data/csv_enrichment_geo.log> .
+    prov:atLocation <file:///C:/git/bb-5kbc-sites/data/csv_enrichment_geo.log> ;
+    prov:wasGeneratedBy <https://example.org/bb-5kbc-sites/run/2026-04-27T18-56-13Z/stage2_geo> .
 
 ns1:lit_log a prov:Entity ;
     rdfs:label "Literature stage warning log" ;
     prov:atLocation <file:///C:/git/bb-5kbc-sites/data/csv_enrichment_literature.log> ;
-    prov:wasGeneratedBy <https://example.org/bb-5kbc-sites/run/2026-04-27T13-58-01Z/stage1_literature> .
-
-<https://example.org/bb-5kbc-sites/run/2026-04-27T13-58-01Z/stage2_geo> a prov:Activity ;
-    rdfs:label "Stage 2 — geo SPARQL mapping (Wikidata)" ;
-    prov:used ns1:fst_standortanalysen_ref_csv,
-        ns1:fst_standortanalysen_ref_mapped_csv ;
-    prov:wasAssociatedWith ns1:wikidata_map_py ;
-    prov:wasInformedBy <https://example.org/bb-5kbc-sites/run/2026-04-27T13-58-01Z> ;
-    ns1:reusedFromMTime "2026-04-27T08:29:10+00:00"^^xsd:dateTime ;
-    ns1:stageStatus "skipped" .
+    prov:wasGeneratedBy <https://example.org/bb-5kbc-sites/run/2026-04-27T18-56-13Z/stage1_literature> .
 
 ns1:run_log a prov:Entity ;
     rdfs:label "Full pipeline run log (all stages, teed from stdout)" ;
     prov:atLocation <file:///C:/git/bb-5kbc-sites/data/csv_enrichment_run.log> ;
-    prov:wasGeneratedBy <https://example.org/bb-5kbc-sites/run/2026-04-27T13-58-01Z> .
+    prov:wasGeneratedBy <https://example.org/bb-5kbc-sites/run/2026-04-27T18-56-13Z> .
 
 fslwb:Q113 a fsl:CertaintyType,
         owl:NamedIndividual ;
@@ -10474,6 +10480,7 @@ data:bundesland_1d9b61a6 a bb5kbc:Bundesland ;
         <https://www.openstreetmap.org/relation/224459>,
         wd:Q54159 ;
     bb5kbc:inLand data:land_c5d7f540 ;
+    bb5kbc:wikidataMatchDescription "Exact match via skos:altLabel [global index] | 'Małopolskie' -> 'małopolskie' | [normalised: stripped -> 'Małopolskie']"^^xsd:string ;
     skos:prefLabel "Woj. Małopolskie"@de .
 
 data:bundesland_21d5096a a bb5kbc:Bundesland ;
@@ -10484,6 +10491,7 @@ data:bundesland_21d5096a a bb5kbc:Bundesland ;
         <https://www.openstreetmap.org/relation/28322>,
         wd:Q1196 ;
     bb5kbc:inLand data:land_3c2f8b8c ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Mecklenburg-Vorpommern' -> 'Mecklenburg-Vorpommern' | [normalised: alias 'MVP' -> 'Mecklenburg-Vorpommern']"^^xsd:string ;
     skos:prefLabel "MVP"@de .
 
 data:bundesland_30cdd2fc a bb5kbc:Bundesland ;
@@ -10492,6 +10500,7 @@ data:bundesland_30cdd2fc a bb5kbc:Bundesland ;
         <https://www.openstreetmap.org/relation/223408>,
         wd:Q54184 ;
     bb5kbc:inLand data:land_c5d7f540 ;
+    bb5kbc:wikidataMatchDescription "Exact match via skos:altLabel [global index] | 'Warmińsko-Mazurskie' -> 'warmińsko-mazurskie' | [normalised: stripped -> 'Warmińsko-Mazurskie']"^^xsd:string ;
     skos:prefLabel "Woj. Warmińsko-Mazurskie"@de .
 
 data:bundesland_98bc89ff a bb5kbc:Bundesland ;
@@ -10500,6 +10509,7 @@ data:bundesland_98bc89ff a bb5kbc:Bundesland ;
         <https://www.openstreetmap.org/relation/224462>,
         wd:Q54181 ;
     bb5kbc:inLand data:land_c5d7f540 ;
+    bb5kbc:wikidataMatchDescription "Direct override | 'Woj. Śląskie' -> QID=Q54181 | [stripped -> 'Śląskie'; override -> QID=Q54181]"^^xsd:string ;
     skos:prefLabel "Woj. Śląskie"@de .
 
 data:entdeckungsart_41a94108 a bb5kbc:EntdeckungsartType ;
@@ -10578,18 +10588,21 @@ data:gemeinde_00bcd289 a bb5kbc:Gemeinde ;
     rdfs:label "Schönfeld bei Prenzlau"@de ;
     bb5kbc:hasExternalIdentifier wd:Q623861 ;
     bb5kbc:inKreis data:kreis_0a22f293 ;
+    bb5kbc:wikidataMatchDescription "Direct override | 'Schönfeld bei Prenzlau' -> QID=Q623861 | [override -> QID=Q623861]"^^xsd:string ;
     skos:prefLabel "Schönfeld bei Prenzlau"@de .
 
 data:gemeinde_00f8780e a bb5kbc:Gemeinde ;
     rdfs:label "Weimar"@de ;
     bb5kbc:hasExternalIdentifier wd:Q3955 ;
     bb5kbc:inKreis data:kreis_8eb4d6b2 ;
+    bb5kbc:wikidataMatchDescription "Direct override | 'Weimar' -> QID=Q3955 | [override -> QID=Q3955]"^^xsd:string ;
     skos:prefLabel "Weimar"@de .
 
 data:gemeinde_01f8fc9b a bb5kbc:Gemeinde ;
     rdfs:label "Crussow"@de ;
     bb5kbc:hasExternalIdentifier wd:Q1142097 ;
     bb5kbc:inKreis data:kreis_0a22f293 ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Crussow' -> 'Crussow'"^^xsd:string ;
     skos:prefLabel "Crussow"@de .
 
 data:gemeinde_03bc2ce1 a bb5kbc:Gemeinde ;
@@ -10597,12 +10610,14 @@ data:gemeinde_03bc2ce1 a bb5kbc:Gemeinde ;
     bb5kbc:hasExternalIdentifier <https://www.openstreetmap.org/relation/2720275>,
         wd:Q1243275 ;
     bb5kbc:inKreis data:kreis_aa8aad2b ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Eichhorst' -> 'Eichhorst'"^^xsd:string ;
     skos:prefLabel "Eichhorst"@de .
 
 data:gemeinde_0463ef92 a bb5kbc:Gemeinde ;
     rdfs:label "Münchehofe"@de ;
     bb5kbc:hasExternalIdentifier wd:Q2781495 ;
     bb5kbc:inKreis data:kreis_be942c19 ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Münchehofe' -> 'Münchehofe'"^^xsd:string ;
     skos:prefLabel "Münchehofe"@de .
 
 data:gemeinde_046a56e3 a bb5kbc:Gemeinde ;
@@ -10611,24 +10626,28 @@ data:gemeinde_046a56e3 a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/3928725>,
         wd:Q144915 ;
     bb5kbc:inKreis data:kreis_00406c53 ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Leipe' -> 'Leipe'"^^xsd:string ;
     skos:prefLabel "Leipe"@de .
 
 data:gemeinde_04bef580 a bb5kbc:Gemeinde ;
     rdfs:label "Rübehorst"@de ;
     bb5kbc:hasExternalIdentifier wd:Q110987406 ;
     bb5kbc:inKreis data:kreis_d4d0a03b ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Rübehorst' -> 'Rübehorst'"^^xsd:string ;
     skos:prefLabel "Rübehorst"@de .
 
 data:gemeinde_04edad38 a bb5kbc:Gemeinde ;
     rdfs:label "Gmina Raciborz"@de ;
     bb5kbc:hasExternalIdentifier wd:Q25302 ;
     bb5kbc:inKreis data:kreis_3e64d70d ;
+    bb5kbc:wikidataMatchDescription "Direct override | 'Gmina Raciborz' -> QID=Q25302 | [override -> QID=Q25302]"^^xsd:string ;
     skos:prefLabel "Gmina Raciborz"@de .
 
 data:gemeinde_054697b8 a bb5kbc:Gemeinde ;
     rdfs:label "Kötzlin"@de ;
     bb5kbc:hasExternalIdentifier wd:Q116995126 ;
     bb5kbc:inKreis data:kreis_2783ecb9 ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Kötzlin' -> 'Kötzlin'"^^xsd:string ;
     skos:prefLabel "Kötzlin"@de .
 
 data:gemeinde_05836479 a bb5kbc:Gemeinde ;
@@ -10637,6 +10656,7 @@ data:gemeinde_05836479 a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/2627455>,
         wd:Q2463043 ;
     bb5kbc:inKreis data:kreis_76afd314 ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Gmina Bukowiec' -> 'Gmina Bukowiec'"^^xsd:string ;
     skos:prefLabel "Gmina Bukowiec"@de .
 
 data:gemeinde_066b7b50 a bb5kbc:Gemeinde ;
@@ -10645,6 +10665,7 @@ data:gemeinde_066b7b50 a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/2896986>,
         wd:Q557756 ;
     bb5kbc:inKreis data:kreis_cf141a0a ;
+    bb5kbc:wikidataMatchDescription "Exact match via skos:altLabel [global index] | 'Gmina Przelewice' -> 'gmina Przelewice'"^^xsd:string ;
     skos:prefLabel "Gmina Przelewice"@de .
 
 data:gemeinde_08904f9c a bb5kbc:Gemeinde ;
@@ -10654,18 +10675,21 @@ data:gemeinde_08904f9c a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/365645>,
         wd:Q1522443 ;
     bb5kbc:inKreis data:kreis_484c68b5 ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Wildenbruch' -> 'Wildenbruch'"^^xsd:string ;
     skos:prefLabel "Wildenbruch"@de .
 
 data:gemeinde_092a5f71 a bb5kbc:Gemeinde ;
     rdfs:label "Neuhausen"@de ;
     bb5kbc:hasExternalIdentifier wd:Q101555304 ;
     bb5kbc:inKreis data:kreis_2b31d535 ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Neuhausen' -> 'Neuhausen'"^^xsd:string ;
     skos:prefLabel "Neuhausen"@de .
 
 data:gemeinde_0a25557e a bb5kbc:Gemeinde ;
     rdfs:label "Kietz"@de ;
     bb5kbc:hasExternalIdentifier wd:Q532037 ;
     bb5kbc:inKreis data:kreis_d4d0a03b ;
+    bb5kbc:wikidataMatchDescription "Direct override | 'Kietz' -> QID=Q532037 | [override -> QID=Q532037]"^^xsd:string ;
     skos:prefLabel "Kietz"@de .
 
 data:gemeinde_0bbe84f0 a bb5kbc:Gemeinde ;
@@ -10675,6 +10699,7 @@ data:gemeinde_0bbe84f0 a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/1302387>,
         wd:Q621912 ;
     bb5kbc:inKreis data:kreis_2783ecb9 ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Dreetz' -> 'Dreetz'"^^xsd:string ;
     skos:prefLabel "Dreetz"@de .
 
 data:gemeinde_0c37a662 a bb5kbc:Gemeinde ;
@@ -10683,6 +10708,7 @@ data:gemeinde_0c37a662 a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/1286651>,
         wd:Q554720 ;
     bb5kbc:inKreis data:kreis_34e779a6 ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Niedere Börde' -> 'Niedere Börde'"^^xsd:string ;
     skos:prefLabel "Niedere Börde"@de .
 
 data:gemeinde_0c9d0eec a bb5kbc:Gemeinde ;
@@ -10692,6 +10718,7 @@ data:gemeinde_0c9d0eec a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/531653>,
         wd:Q544439 ;
     bb5kbc:inKreis data:kreis_484c68b5 ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Beelitz' -> 'Beelitz'"^^xsd:string ;
     skos:prefLabel "Beelitz"@de .
 
 data:gemeinde_0d76ce70 a bb5kbc:Gemeinde ;
@@ -10700,24 +10727,28 @@ data:gemeinde_0d76ce70 a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/1271899>,
         wd:Q525425 ;
     bb5kbc:inKreis data:kreis_d4d0a03b ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Rathenow' -> 'Rathenow'"^^xsd:string ;
     skos:prefLabel "Rathenow"@de .
 
 data:gemeinde_0fa6a063 a bb5kbc:Gemeinde ;
     rdfs:label "Herzsprung"@de ;
     bb5kbc:hasExternalIdentifier wd:Q33198119 ;
     bb5kbc:inKreis data:kreis_0a22f293 ;
+    bb5kbc:wikidataMatchDescription "Direct override | 'Herzsprung' -> QID=Q33198119 | [override -> QID=Q33198119]"^^xsd:string ;
     skos:prefLabel "Herzsprung"@de .
 
 data:gemeinde_1296d84a a bb5kbc:Gemeinde ;
     rdfs:label "Petersburg"@de ;
     bb5kbc:hasExternalIdentifier wd:Q635001 ;
     bb5kbc:inKreis data:kreis_5f5319e2 ;
+    bb5kbc:wikidataMatchDescription "Direct override | 'Petersburg' -> QID=Q635001 | [override -> QID=Q635001]"^^xsd:string ;
     skos:prefLabel "Petersburg"@de .
 
 data:gemeinde_14d3d5d6 a bb5kbc:Gemeinde ;
     rdfs:label "Hertefeld"@de ;
     bb5kbc:hasExternalIdentifier wd:Q113182090 ;
     bb5kbc:inKreis data:kreis_d4d0a03b ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Hertefeld' -> 'Hertefeld'"^^xsd:string ;
     skos:prefLabel "Hertefeld"@de .
 
 data:gemeinde_15becd4c a bb5kbc:Gemeinde ;
@@ -10725,12 +10756,14 @@ data:gemeinde_15becd4c a bb5kbc:Gemeinde ;
     bb5kbc:hasExternalIdentifier <https://www.openstreetmap.org/relation/11004806>,
         wd:Q106526549 ;
     bb5kbc:inKreis data:kreis_0a22f293 ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Grünberg' -> 'Grünberg'"^^xsd:string ;
     skos:prefLabel "Grünberg"@de .
 
 data:gemeinde_162c9ac8 a bb5kbc:Gemeinde ;
     rdfs:label "Zollchow"@de ;
     bb5kbc:hasExternalIdentifier wd:Q61745376 ;
     bb5kbc:inKreis data:kreis_0a22f293 ;
+    bb5kbc:wikidataMatchDescription "Direct override | 'Zollchow' -> QID=Q61745376 | [override -> QID=Q61745376]"^^xsd:string ;
     skos:prefLabel "Zollchow"@de .
 
 data:gemeinde_1642bb74 a bb5kbc:Gemeinde ;
@@ -10740,12 +10773,14 @@ data:gemeinde_1642bb74 a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/1332952>,
         wd:Q427655 ;
     bb5kbc:inKreis data:kreis_be942c19 ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Bad Freienwalde' -> 'Bad Freienwalde'"^^xsd:string ;
     skos:prefLabel "Bad Freienwalde"@de .
 
 data:gemeinde_1718ba8b a bb5kbc:Gemeinde ;
     rdfs:label "Friedersdorf"@de ;
     bb5kbc:hasExternalIdentifier wd:Q1457140 ;
     bb5kbc:inKreis data:kreis_be942c19 ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Friedersdorf' -> 'Friedersdorf'"^^xsd:string ;
     skos:prefLabel "Friedersdorf"@de .
 
 data:gemeinde_17b9fa26 a bb5kbc:Gemeinde ;
@@ -10754,6 +10789,7 @@ data:gemeinde_17b9fa26 a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/2635727>,
         wd:Q2317830 ;
     bb5kbc:inKreis data:kreis_22998a51 ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Gmina Zakrzewo' -> 'Gmina Zakrzewo'"^^xsd:string ;
     skos:prefLabel "Gmina Zakrzewo"@de .
 
 data:gemeinde_17f4047a a bb5kbc:Gemeinde ;
@@ -10761,6 +10797,7 @@ data:gemeinde_17f4047a a bb5kbc:Gemeinde ;
     bb5kbc:hasExternalIdentifier <https://www.openstreetmap.org/relation/8026838>,
         wd:Q1615128 ;
     bb5kbc:inKreis data:kreis_0a22f293 ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Herzfelde' -> 'Herzfelde'"^^xsd:string ;
     skos:prefLabel "Herzfelde"@de .
 
 data:gemeinde_1832f521 a bb5kbc:Gemeinde ;
@@ -10769,6 +10806,7 @@ data:gemeinde_1832f521 a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/1302375>,
         wd:Q529841 ;
     bb5kbc:inKreis data:kreis_2783ecb9 ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Herzberg' -> 'Herzberg'"^^xsd:string ;
     skos:prefLabel "Herzberg"@de .
 
 data:gemeinde_18798fd1 a bb5kbc:Gemeinde ;
@@ -10776,6 +10814,7 @@ data:gemeinde_18798fd1 a bb5kbc:Gemeinde ;
     bb5kbc:hasExternalIdentifier gn:2839525,
         wd:Q1747721 ;
     bb5kbc:inKreis data:kreis_f18982f6 ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Schiaß' -> 'Schiaß'"^^xsd:string ;
     skos:prefLabel "Schiaß"@de .
 
 data:gemeinde_18816168 a bb5kbc:Gemeinde ;
@@ -10783,12 +10822,14 @@ data:gemeinde_18816168 a bb5kbc:Gemeinde ;
     bb5kbc:hasExternalIdentifier <https://www.openstreetmap.org/relation/151959>,
         wd:Q653055 ;
     bb5kbc:inKreis data:kreis_0b003b3b ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Selchow' -> 'Selchow'"^^xsd:string ;
     skos:prefLabel "Selchow"@de .
 
 data:gemeinde_1924ad8d a bb5kbc:Gemeinde ;
     rdfs:label "Kerkow"@de ;
     bb5kbc:hasExternalIdentifier wd:Q69417727 ;
     bb5kbc:inKreis data:kreis_0a22f293 ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Kerkow' -> 'Kerkow'"^^xsd:string ;
     skos:prefLabel "Kerkow"@de .
 
 data:gemeinde_1a960638 a bb5kbc:Gemeinde ;
@@ -10797,6 +10838,7 @@ data:gemeinde_1a960638 a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/2857008>,
         wd:Q684601 ;
     bb5kbc:inKreis data:kreis_8eb4d6b2 ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Mellingen' -> 'Mellingen'"^^xsd:string ;
     skos:prefLabel "Mellingen"@de .
 
 data:gemeinde_1b0f7ba1 a bb5kbc:Gemeinde ;
@@ -10804,6 +10846,7 @@ data:gemeinde_1b0f7ba1 a bb5kbc:Gemeinde ;
     bb5kbc:hasExternalIdentifier gn:2914767,
         wd:Q30112712 ;
     bb5kbc:inKreis data:kreis_b031fa42 ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Grötsch' -> 'Grötsch'"^^xsd:string ;
     skos:prefLabel "Grötsch"@de .
 
 data:gemeinde_1d1e9123 a bb5kbc:Gemeinde ;
@@ -10811,24 +10854,28 @@ data:gemeinde_1d1e9123 a bb5kbc:Gemeinde ;
     bb5kbc:hasExternalIdentifier <https://www.openstreetmap.org/relation/3877259>,
         wd:Q1774345 ;
     bb5kbc:inKreis data:kreis_f18982f6 ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Kliestow' -> 'Kliestow'"^^xsd:string ;
     skos:prefLabel "Kliestow"@de .
 
 data:gemeinde_1db80596 a bb5kbc:Gemeinde ;
     rdfs:label "Kummersdorf"@de ;
     bb5kbc:hasExternalIdentifier wd:Q1718490 ;
     bb5kbc:inKreis data:kreis_f18982f6 ;
+    bb5kbc:wikidataMatchDescription "Direct override | 'Kummersdorf' -> QID=Q1718490 | [override -> QID=Q1718490]"^^xsd:string ;
     skos:prefLabel "Kummersdorf"@de .
 
 data:gemeinde_1dfaac5b a bb5kbc:Gemeinde ;
     rdfs:label "Bietikow"@de ;
     bb5kbc:hasExternalIdentifier wd:Q105946872 ;
     bb5kbc:inKreis data:kreis_0a22f293 ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Bietikow' -> 'Bietikow'"^^xsd:string ;
     skos:prefLabel "Bietikow"@de .
 
 data:gemeinde_1ef9888d a bb5kbc:Gemeinde ;
     rdfs:label "Carmzow"@de ;
     bb5kbc:hasExternalIdentifier wd:Q622491 ;
     bb5kbc:inKreis data:kreis_0a22f293 ;
+    bb5kbc:wikidataMatchDescription "Direct override | 'Carmzow' -> QID=Q622491 | [override -> QID=Q622491]"^^xsd:string ;
     skos:prefLabel "Carmzow"@de .
 
 data:gemeinde_23c83da0 a bb5kbc:Gemeinde ;
@@ -10836,36 +10883,42 @@ data:gemeinde_23c83da0 a bb5kbc:Gemeinde ;
     bb5kbc:hasExternalIdentifier <https://www.openstreetmap.org/relation/4778119>,
         wd:Q25158450 ;
     bb5kbc:inKreis data:kreis_f18982f6 ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Groß Kienitz' -> 'Groß Kienitz'"^^xsd:string ;
     skos:prefLabel "Groß Kienitz"@de .
 
 data:gemeinde_2755f3e6 a bb5kbc:Gemeinde ;
     rdfs:label "Babekuhl"@de ;
     bb5kbc:hasExternalIdentifier wd:Q22691266 ;
     bb5kbc:inKreis data:kreis_2b31d535 ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Babekuhl' -> 'Babekuhl'"^^xsd:string ;
     skos:prefLabel "Babekuhl"@de .
 
 data:gemeinde_2aa723b1 a bb5kbc:Gemeinde ;
     rdfs:label "Prettin"@de ;
     bb5kbc:hasExternalIdentifier wd:Q573500 ;
     bb5kbc:inKreis data:kreis_703d0ac1 ;
+    bb5kbc:wikidataMatchDescription "Direct override | 'Prettin' -> QID=Q573500 | [override -> QID=Q573500]"^^xsd:string ;
     skos:prefLabel "Prettin"@de .
 
 data:gemeinde_2c6d34a7 a bb5kbc:Gemeinde ;
     rdfs:label "Gmina Kłodawa"@de ;
     bb5kbc:hasExternalIdentifier wd:Q1532938 ;
     bb5kbc:inKreis data:kreis_725de27f ;
+    bb5kbc:wikidataMatchDescription "Direct override | 'Gmina Kłodawa' -> QID=Q1532938 | [override -> QID=Q1532938]"^^xsd:string ;
     skos:prefLabel "Gmina Kłodawa"@de .
 
 data:gemeinde_30b450ec a bb5kbc:Gemeinde ;
     rdfs:label "Gmina Ciechocinek"@de ;
     bb5kbc:hasExternalIdentifier wd:Q985659 ;
     bb5kbc:inKreis data:kreis_22998a51 ;
+    bb5kbc:wikidataMatchDescription "Direct override | 'Gmina Ciechocinek' -> QID=Q985659 | [override -> QID=Q985659]"^^xsd:string ;
     skos:prefLabel "Gmina Ciechocinek"@de .
 
 data:gemeinde_31074870 a bb5kbc:Gemeinde ;
     rdfs:label "Altranft"@de ;
     bb5kbc:hasExternalIdentifier wd:Q444837 ;
     bb5kbc:inKreis data:kreis_be942c19 ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Altranft' -> 'Altranft'"^^xsd:string ;
     skos:prefLabel "Altranft"@de .
 
 data:gemeinde_330f1f98 a bb5kbc:Gemeinde ;
@@ -10874,6 +10927,7 @@ data:gemeinde_330f1f98 a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/2635755>,
         wd:Q2605893 ;
     bb5kbc:inKreis data:kreis_fa49171f ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Gmina Lubraniec' -> 'Gmina Lubraniec'"^^xsd:string ;
     skos:prefLabel "Gmina Lubraniec"@de .
 
 data:gemeinde_3338fd8a a bb5kbc:Gemeinde ;
@@ -10881,6 +10935,7 @@ data:gemeinde_3338fd8a a bb5kbc:Gemeinde ;
     bb5kbc:hasExternalIdentifier <http://vocab.getty.edu/tgn/7207423>,
         wd:Q998407 ;
     bb5kbc:inKreis data:kreis_61991e7b ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Buchhain' -> 'Buchhain'"^^xsd:string ;
     skos:prefLabel "Buchhain"@de .
 
 data:gemeinde_346c322f a bb5kbc:Gemeinde ;
@@ -10888,6 +10943,7 @@ data:gemeinde_346c322f a bb5kbc:Gemeinde ;
     bb5kbc:hasExternalIdentifier gn:2952963,
         wd:Q106473106 ;
     bb5kbc:inKreis data:kreis_0a22f293 ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Bandelow' -> 'Bandelow'"^^xsd:string ;
     skos:prefLabel "Bandelow"@de .
 
 data:gemeinde_3633ef94 a bb5kbc:Gemeinde ;
@@ -10896,6 +10952,7 @@ data:gemeinde_3633ef94 a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/85214>,
         wd:Q50880 ;
     bb5kbc:inKreis data:kreis_71ef1381 ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Gommern' -> 'Gommern'"^^xsd:string ;
     skos:prefLabel "Gommern"@de .
 
 data:gemeinde_38a7ae32 a bb5kbc:Gemeinde ;
@@ -10905,12 +10962,14 @@ data:gemeinde_38a7ae32 a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/124297>,
         wd:Q14938 ;
     bb5kbc:inKreis data:kreis_a8ddc1b2 ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Bernburg' -> 'Bernburg'"^^xsd:string ;
     skos:prefLabel "Bernburg"@de .
 
 data:gemeinde_3b212bd0 a bb5kbc:Gemeinde ;
     rdfs:label "Woltersdorf"@de ;
     bb5kbc:hasExternalIdentifier wd:Q139380043 ;
     bb5kbc:inKreis data:kreis_484c68b5 ;
+    bb5kbc:wikidataMatchDescription "Direct override | 'Woltersdorf' -> QID=Q139380043 | [override -> QID=Q139380043]"^^xsd:string ;
     skos:prefLabel "Woltersdorf"@de .
 
 data:gemeinde_3b84f8ca a bb5kbc:Gemeinde ;
@@ -10920,18 +10979,21 @@ data:gemeinde_3b84f8ca a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/1240588>,
         wd:Q583450 ;
     bb5kbc:inKreis data:kreis_d4d0a03b ;
+    bb5kbc:wikidataMatchDescription "Exact match via skos:altLabel [global index] | 'Ketzin' -> 'Ketzin'"^^xsd:string ;
     skos:prefLabel "Ketzin"@de .
 
 data:gemeinde_3dc75404 a bb5kbc:Gemeinde ;
     rdfs:label "Rathenow-Neue Schleuse"@de ;
     bb5kbc:hasExternalIdentifier wd:Q525425 ;
     bb5kbc:inKreis data:kreis_d4d0a03b ;
+    bb5kbc:wikidataMatchDescription "Direct override | 'Rathenow-Neue Schleuse' -> QID=Q525425 | [override -> QID=Q525425]"^^xsd:string ;
     skos:prefLabel "Rathenow-Neue Schleuse"@de .
 
 data:gemeinde_3e2337ff a bb5kbc:Gemeinde ;
     rdfs:label "Merzdorf"@de ;
     bb5kbc:hasExternalIdentifier wd:Q160419 ;
     bb5kbc:inKreis data:kreis_c9772f41 ;
+    bb5kbc:wikidataMatchDescription "Direct override | 'Merzdorf' -> QID=Q160419 | [override -> QID=Q160419]"^^xsd:string ;
     skos:prefLabel "Merzdorf"@de .
 
 data:gemeinde_3e591ed5 a bb5kbc:Gemeinde ;
@@ -10940,6 +11002,7 @@ data:gemeinde_3e591ed5 a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/2710249>,
         wd:Q2458456 ;
     bb5kbc:inKreis data:kreis_a67ba2d2 ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Gmina Wądroże Wielkie' -> 'Gmina Wądroże Wielkie'"^^xsd:string ;
     skos:prefLabel "Gmina Wądroże Wielkie"@de .
 
 data:gemeinde_3ff72526 a bb5kbc:Gemeinde ;
@@ -10948,30 +11011,35 @@ data:gemeinde_3ff72526 a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/1385335>,
         wd:Q2461528 ;
     bb5kbc:inKreis data:kreis_063ba201 ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Gmina Dąbrowa' -> 'Gmina Dąbrowa'"^^xsd:string ;
     skos:prefLabel "Gmina Dąbrowa"@de .
 
 data:gemeinde_40b6aa6d a bb5kbc:Gemeinde ;
     rdfs:label "Sadenbeck"@de ;
     bb5kbc:hasExternalIdentifier wd:Q56197823 ;
     bb5kbc:inKreis data:kreis_2b31d535 ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Sadenbeck' -> 'Sadenbeck'"^^xsd:string ;
     skos:prefLabel "Sadenbeck"@de .
 
 data:gemeinde_40de695c a bb5kbc:Gemeinde ;
     rdfs:label "Kreuzkrug"@de ;
     bb5kbc:hasExternalIdentifier wd:Q51248699 ;
     bb5kbc:inKreis data:kreis_0a22f293 ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Kreuzkrug' -> 'Kreuzkrug'"^^xsd:string ;
     skos:prefLabel "Kreuzkrug"@de .
 
 data:gemeinde_4178d1e3 a bb5kbc:Gemeinde ;
     rdfs:label "Ahrensdorf bei Ludwigsfelde"@de ;
     bb5kbc:hasExternalIdentifier wd:Q327744 ;
     bb5kbc:inKreis data:kreis_f18982f6 ;
+    bb5kbc:wikidataMatchDescription "Direct override | 'Ahrensdorf bei Ludwigsfelde' -> QID=Q327744 | [override -> QID=Q327744]"^^xsd:string ;
     skos:prefLabel "Ahrensdorf bei Ludwigsfelde"@de .
 
 data:gemeinde_4312d5c8 a bb5kbc:Gemeinde ;
     rdfs:label "Frankfurt"@de ;
     bb5kbc:hasExternalIdentifier wd:Q4024 ;
     bb5kbc:inKreis data:kreis_4bb6d2e8 ;
+    bb5kbc:wikidataMatchDescription "Direct override | 'Frankfurt' -> QID=Q4024 | [override -> QID=Q4024]"^^xsd:string ;
     skos:prefLabel "Frankfurt"@de .
 
 data:gemeinde_43214e03 a bb5kbc:Gemeinde ;
@@ -10980,6 +11048,7 @@ data:gemeinde_43214e03 a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/1334083>,
         wd:Q429574 ;
     bb5kbc:inKreis data:kreis_0a22f293 ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Schenkenberg' -> 'Schenkenberg'"^^xsd:string ;
     skos:prefLabel "Schenkenberg"@de .
 
 data:gemeinde_457a383f a bb5kbc:Gemeinde ;
@@ -10988,6 +11057,7 @@ data:gemeinde_457a383f a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/2635538>,
         wd:Q2347468 ;
     bb5kbc:inKreis data:kreis_063ba201 ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Gmina Strzelno' -> 'Gmina Strzelno'"^^xsd:string ;
     skos:prefLabel "Gmin Strzelno"@de .
 
 data:gemeinde_459e1581 a bb5kbc:Gemeinde ;
@@ -10997,6 +11067,7 @@ data:gemeinde_459e1581 a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/1334116>,
         wd:Q198395 ;
     bb5kbc:inKreis data:kreis_0a22f293 ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Zichow' -> 'Zichow'"^^xsd:string ;
     skos:prefLabel "Zichow"@de .
 
 data:gemeinde_46d823b9 a bb5kbc:Gemeinde ;
@@ -11006,6 +11077,7 @@ data:gemeinde_46d823b9 a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/422433>,
         wd:Q570114 ;
     bb5kbc:inKreis data:kreis_f18982f6 ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Trebbin' -> 'Trebbin'"^^xsd:string ;
     skos:prefLabel "Trebbin"@de .
 
 data:gemeinde_47a686f8 a bb5kbc:Gemeinde ;
@@ -11013,12 +11085,14 @@ data:gemeinde_47a686f8 a bb5kbc:Gemeinde ;
     bb5kbc:hasExternalIdentifier gn:2830622,
         wd:Q882100 ;
     bb5kbc:inKreis data:kreis_f18982f6 ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Sperenberg' -> 'Sperenberg'"^^xsd:string ;
     skos:prefLabel "Sperenberg"@de .
 
 data:gemeinde_47f3b243 a bb5kbc:Gemeinde ;
     rdfs:label "Langen"@de ;
     bb5kbc:hasExternalIdentifier wd:Q916311 ;
     bb5kbc:inKreis data:kreis_2783ecb9 ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Langen' -> 'Langen'"^^xsd:string ;
     skos:prefLabel "Langen"@de .
 
 data:gemeinde_497938d6 a bb5kbc:Gemeinde ;
@@ -11028,12 +11102,14 @@ data:gemeinde_497938d6 a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/176781>,
         wd:Q226884 ;
     bb5kbc:inKreis data:kreis_f18982f6 ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Zossen' -> 'Zossen'"^^xsd:string ;
     skos:prefLabel "Zossen"@de .
 
 data:gemeinde_4b2d55a8 a bb5kbc:Gemeinde ;
     rdfs:label "Teschendorf"@de ;
     bb5kbc:hasExternalIdentifier wd:Q21039506 ;
     bb5kbc:inKreis data:kreis_06458fa6 ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Teschendorf' -> 'Teschendorf'"^^xsd:string ;
     skos:prefLabel "Teschendorf"@de .
 
 data:gemeinde_4ced2ba4 a bb5kbc:Gemeinde ;
@@ -11042,30 +11118,35 @@ data:gemeinde_4ced2ba4 a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/390044>,
         wd:Q50856 ;
     bb5kbc:inKreis data:kreis_a8ddc1b2 ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Seeland' -> 'Seeland'"^^xsd:string ;
     skos:prefLabel "Seeland"@de .
 
 data:gemeinde_4d3ea100 a bb5kbc:Gemeinde ;
     rdfs:label "Gartz"@de ;
     bb5kbc:hasExternalIdentifier wd:Q571998 ;
     bb5kbc:inKreis data:kreis_0a22f293 ;
+    bb5kbc:wikidataMatchDescription "Direct override | 'Gartz' -> QID=Q571998 | [override -> QID=Q571998]"^^xsd:string ;
     skos:prefLabel "Gartz"@de .
 
 data:gemeinde_4eab58dc a bb5kbc:Gemeinde ;
     rdfs:label "Kaden"@de ;
     bb5kbc:hasExternalIdentifier wd:Q16832339 ;
     bb5kbc:inKreis data:kreis_0b003b3b ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Kaden' -> 'Kaden'"^^xsd:string ;
     skos:prefLabel "Kaden"@de .
 
 data:gemeinde_4ee9e7f1 a bb5kbc:Gemeinde ;
     rdfs:label "Gmina Zlotniki Kuj."@de ;
     bb5kbc:hasExternalIdentifier wd:Q618437 ;
     bb5kbc:inKreis data:kreis_d26f6fb5 ;
+    bb5kbc:wikidataMatchDescription "Direct override | 'Gmina Zlotniki Kuj.' -> QID=Q618437 | [override -> QID=Q618437]"^^xsd:string ;
     skos:prefLabel "Gmina Zlotniki Kuj."@de .
 
 data:gemeinde_4ff34eff a bb5kbc:Gemeinde ;
     rdfs:label "Wansdorf"@de ;
     bb5kbc:hasExternalIdentifier wd:Q2548510 ;
     bb5kbc:inKreis data:kreis_d4d0a03b ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Wansdorf' -> 'Wansdorf'"^^xsd:string ;
     skos:prefLabel "Wansdorf"@de .
 
 data:gemeinde_5031f0b9 a bb5kbc:Gemeinde ;
@@ -11074,6 +11155,7 @@ data:gemeinde_5031f0b9 a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/2955355>,
         wd:Q2192626 ;
     bb5kbc:inKreis data:kreis_b2bf6138 ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Gmina Wiązów' -> 'Gmina Wiązów'"^^xsd:string ;
     skos:prefLabel "Gmina Wiązów"@de .
 
 data:gemeinde_51246348 a bb5kbc:Gemeinde ;
@@ -11082,6 +11164,7 @@ data:gemeinde_51246348 a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/2681511>,
         wd:Q554765 ;
     bb5kbc:inKreis data:kreis_c8510b50 ;
+    bb5kbc:wikidataMatchDescription "Fuzzy match (score=0.92) via rdfs:label [global index] | 'Gmina Słubca' -> 'Gmina Słupca'"^^xsd:string ;
     skos:prefLabel "Gmina Słubca"@de .
 
 data:gemeinde_532d544d a bb5kbc:Gemeinde ;
@@ -11090,6 +11173,7 @@ data:gemeinde_532d544d a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/2864888>,
         wd:Q2216341 ;
     bb5kbc:inKreis data:kreis_82a6d438 ;
+    bb5kbc:wikidataMatchDescription "Exact match via skos:altLabel [global index] | 'Gmina Szlichtyngowa' -> 'gmina Szlichtyngowa'"^^xsd:string ;
     skos:prefLabel "Gmina Szlichtyngowa"@de .
 
 data:gemeinde_54032a6a a bb5kbc:Gemeinde ;
@@ -11097,6 +11181,7 @@ data:gemeinde_54032a6a a bb5kbc:Gemeinde ;
     bb5kbc:hasExternalIdentifier <http://vocab.getty.edu/tgn/1037071>,
         wd:Q1670205 ;
     bb5kbc:inKreis data:kreis_f6c6e0be ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Kirchmöser' -> 'Kirchmöser'"^^xsd:string ;
     skos:prefLabel "Kirchmöser"@de .
 
 data:gemeinde_54a545e1 a bb5kbc:Gemeinde ;
@@ -11105,6 +11190,7 @@ data:gemeinde_54a545e1 a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/2709066>,
         wd:Q2100627 ;
     bb5kbc:inKreis data:kreis_4759b8ea ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Gmina Pęcław' -> 'Gmina Pęcław'"^^xsd:string ;
     skos:prefLabel "Gmina Pęcław"@de .
 
 data:gemeinde_5570aa35 a bb5kbc:Gemeinde ;
@@ -11112,12 +11198,14 @@ data:gemeinde_5570aa35 a bb5kbc:Gemeinde ;
     bb5kbc:hasExternalIdentifier <https://www.openstreetmap.org/relation/1977450>,
         wd:Q105597560 ;
     bb5kbc:inKreis data:kreis_0a22f293 ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Wollschow' -> 'Wollschow'"^^xsd:string ;
     skos:prefLabel "Wollschow"@de .
 
 data:gemeinde_569e340e a bb5kbc:Gemeinde ;
     rdfs:label "Kappe"@de ;
     bb5kbc:hasExternalIdentifier wd:Q25158548 ;
     bb5kbc:inKreis data:kreis_06458fa6 ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Kappe' -> 'Kappe'"^^xsd:string ;
     skos:prefLabel "Kappe"@de .
 
 data:gemeinde_56e75073 a bb5kbc:Gemeinde ;
@@ -11126,6 +11214,7 @@ data:gemeinde_56e75073 a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/1384840>,
         wd:Q637911 ;
     bb5kbc:inKreis data:kreis_0a6e4d3b ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Rietz-Neuendorf' -> 'Rietz-Neuendorf'"^^xsd:string ;
     skos:prefLabel "Rietz-Neuendorf"@de .
 
 data:gemeinde_59aceadf a bb5kbc:Gemeinde ;
@@ -11133,6 +11222,7 @@ data:gemeinde_59aceadf a bb5kbc:Gemeinde ;
     bb5kbc:hasExternalIdentifier gn:6551235,
         wd:Q32116077 ;
     bb5kbc:inKreis data:kreis_59aceadf ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Magdeburg' -> 'Magdeburg'"^^xsd:string ;
     skos:prefLabel "Magdeburg"@de .
 
 data:gemeinde_5ad83012 a bb5kbc:Gemeinde ;
@@ -11143,6 +11233,7 @@ data:gemeinde_5ad83012 a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/1310102>,
         wd:Q14808 ;
     bb5kbc:inKreis data:kreis_06458fa6 ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Oranienburg' -> 'Oranienburg'"^^xsd:string ;
     skos:prefLabel "Oranienburg"@de .
 
 data:gemeinde_5cd70155 a bb5kbc:Gemeinde ;
@@ -11151,6 +11242,7 @@ data:gemeinde_5cd70155 a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/1289817>,
         wd:Q628458 ;
     bb5kbc:inKreis data:kreis_2b31d535 ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Pirow' -> 'Pirow'"^^xsd:string ;
     skos:prefLabel "Pirow"@de .
 
 data:gemeinde_5f3f3424 a bb5kbc:Gemeinde ;
@@ -11159,6 +11251,7 @@ data:gemeinde_5f3f3424 a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/1389638>,
         wd:Q548429 ;
     bb5kbc:inKreis data:kreis_0b003b3b ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Groß Köris' -> 'Groß Köris'"^^xsd:string ;
     skos:prefLabel "Groß Köris"@de .
 
 data:gemeinde_60ef3bea a bb5kbc:Gemeinde ;
@@ -11166,6 +11259,7 @@ data:gemeinde_60ef3bea a bb5kbc:Gemeinde ;
     bb5kbc:hasExternalIdentifier <https://www.openstreetmap.org/relation/3573931>,
         wd:Q893226 ;
     bb5kbc:inKreis data:kreis_4bb6d2e8 ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Booßen' -> 'Booßen'"^^xsd:string ;
     skos:prefLabel "Booßen"@de .
 
 data:gemeinde_628a501c a bb5kbc:Gemeinde ;
@@ -11174,6 +11268,7 @@ data:gemeinde_628a501c a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/1334117>,
         wd:Q635901 ;
     bb5kbc:inKreis data:kreis_0a22f293 ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Lychen' -> 'Lychen'"^^xsd:string ;
     skos:prefLabel "Lychen"@de .
 
 data:gemeinde_65612e3d a bb5kbc:Gemeinde ;
@@ -11181,18 +11276,21 @@ data:gemeinde_65612e3d a bb5kbc:Gemeinde ;
     bb5kbc:hasExternalIdentifier gn:2913612,
         wd:Q87433829 ;
     bb5kbc:inKreis data:kreis_0a22f293 ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Günterberg' -> 'Günterberg'"^^xsd:string ;
     skos:prefLabel "Günterberg"@de .
 
 data:gemeinde_6564c551 a bb5kbc:Gemeinde ;
     rdfs:label "Deutsch Wusterhausen"@de ;
     bb5kbc:hasExternalIdentifier wd:Q16013 ;
     bb5kbc:inKreis data:kreis_0b003b3b ;
+    bb5kbc:wikidataMatchDescription "Direct override | 'Deutsch Wusterhausen' -> QID=Q16013 | [override -> QID=Q16013]"^^xsd:string ;
     skos:prefLabel "Deutsch Wusterhausen"@de .
 
 data:gemeinde_6581ad87 a bb5kbc:Gemeinde ;
     rdfs:label "Marquardt"@de ;
     bb5kbc:hasExternalIdentifier wd:Q896887 ;
     bb5kbc:inKreis data:kreis_484c68b5 ;
+    bb5kbc:wikidataMatchDescription "Direct override | 'Marquardt' -> QID=Q896887 | [override -> QID=Q896887]"^^xsd:string ;
     skos:prefLabel "Marquardt"@de .
 
 data:gemeinde_65d485e2 a bb5kbc:Gemeinde ;
@@ -11201,6 +11299,7 @@ data:gemeinde_65d485e2 a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/2886166>,
         wd:Q2460579 ;
     bb5kbc:inKreis data:kreis_944498f5 ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Gmina Lubniewice' -> 'Gmina Lubniewice'"^^xsd:string ;
     skos:prefLabel "Gmina Lubniewice"@de .
 
 data:gemeinde_661da3e9 a bb5kbc:Gemeinde ;
@@ -11208,6 +11307,7 @@ data:gemeinde_661da3e9 a bb5kbc:Gemeinde ;
     bb5kbc:hasExternalIdentifier <https://www.openstreetmap.org/relation/374692>,
         wd:Q507824 ;
     bb5kbc:inKreis data:kreis_484c68b5 ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Ferch' -> 'Ferch'"^^xsd:string ;
     skos:prefLabel "Ferch"@de .
 
 data:gemeinde_66a82682 a bb5kbc:Gemeinde ;
@@ -11216,6 +11316,7 @@ data:gemeinde_66a82682 a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/1334104>,
         wd:Q458313 ;
     bb5kbc:inKreis data:kreis_0a22f293 ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Gramzow' -> 'Gramzow'"^^xsd:string ;
     skos:prefLabel "Gramzow"@de .
 
 data:gemeinde_69b11c14 a bb5kbc:Gemeinde ;
@@ -11223,6 +11324,7 @@ data:gemeinde_69b11c14 a bb5kbc:Gemeinde ;
     bb5kbc:hasExternalIdentifier gn:2948065,
         wd:Q3640862 ;
     bb5kbc:inKreis data:kreis_f18982f6 ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Blankenfelde' -> 'Blankenfelde'"^^xsd:string ;
     skos:prefLabel "Blankenfelde"@de .
 
 data:gemeinde_6a6097c7 a bb5kbc:Gemeinde ;
@@ -11230,12 +11332,14 @@ data:gemeinde_6a6097c7 a bb5kbc:Gemeinde ;
     bb5kbc:hasExternalIdentifier <https://www.openstreetmap.org/relation/153111>,
         wd:Q2563228 ;
     bb5kbc:inKreis data:kreis_0b003b3b ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Wernsdorf' -> 'Wernsdorf'"^^xsd:string ;
     skos:prefLabel "Wernsdorf"@de .
 
 data:gemeinde_6d042847 a bb5kbc:Gemeinde ;
     rdfs:label "Groß Linde"@de ;
     bb5kbc:hasExternalIdentifier wd:Q1547935 ;
     bb5kbc:inKreis data:kreis_2b31d535 ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Groß Linde' -> 'Groß Linde'"^^xsd:string ;
     skos:prefLabel "Groß Linde"@de .
 
 data:gemeinde_6d1158c9 a bb5kbc:Gemeinde ;
@@ -11243,18 +11347,21 @@ data:gemeinde_6d1158c9 a bb5kbc:Gemeinde ;
     bb5kbc:hasExternalIdentifier gn:2888406,
         wd:Q101436943 ;
     bb5kbc:inKreis data:kreis_2b31d535 ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Kleinow' -> 'Kleinow'"^^xsd:string ;
     skos:prefLabel "Kleinow"@de .
 
 data:gemeinde_6f71f095 a bb5kbc:Gemeinde ;
     rdfs:label "Staffelde"@de ;
     bb5kbc:hasExternalIdentifier wd:Q9341289 ;
     bb5kbc:inKreis data:kreis_0a22f293 ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Staffelde' -> 'Staffelde'"^^xsd:string ;
     skos:prefLabel "Staffelde"@de .
 
 data:gemeinde_708fb4af a bb5kbc:Gemeinde ;
     rdfs:label "Waltersdorf bei Kö.Wusterhausen"@de ;
     bb5kbc:hasExternalIdentifier wd:Q896028 ;
     bb5kbc:inKreis data:kreis_0b003b3b ;
+    bb5kbc:wikidataMatchDescription "Direct override | 'Waltersdorf bei Kö.Wusterhausen' -> QID=Q896028 | [override -> QID=Q896028]"^^xsd:string ;
     skos:prefLabel "Waltersdorf bei Kö.Wusterhausen"@de .
 
 data:gemeinde_741ae909 a bb5kbc:Gemeinde ;
@@ -11264,6 +11371,7 @@ data:gemeinde_741ae909 a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/79776>,
         wd:Q550241 ;
     bb5kbc:inKreis data:kreis_34e779a6 ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Barleben' -> 'Barleben'"^^xsd:string ;
     skos:prefLabel "Barleben"@de .
 
 data:gemeinde_741b7687 a bb5kbc:Gemeinde ;
@@ -11271,12 +11379,14 @@ data:gemeinde_741b7687 a bb5kbc:Gemeinde ;
     bb5kbc:hasExternalIdentifier gn:2918978,
         wd:Q87411342 ;
     bb5kbc:inKreis data:kreis_0a22f293 ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Görlsdorf' -> 'Görlsdorf'"^^xsd:string ;
     skos:prefLabel "Görlsdorf"@de .
 
 data:gemeinde_74c68a6b a bb5kbc:Gemeinde ;
     rdfs:label "Emstal"@de ;
     bb5kbc:hasExternalIdentifier wd:Q15110344 ;
     bb5kbc:inKreis data:kreis_484c68b5 ;
+    bb5kbc:wikidataMatchDescription "Direct override | 'Emstal' -> QID=Q15110344 | [override -> QID=Q15110344]"^^xsd:string ;
     skos:prefLabel "Emstal"@de .
 
 data:gemeinde_786eb79c a bb5kbc:Gemeinde ;
@@ -11286,6 +11396,7 @@ data:gemeinde_786eb79c a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/1322898>,
         wd:Q147895 ;
     bb5kbc:inKreis data:kreis_00406c53 ;
+    bb5kbc:wikidataMatchDescription "Exact match via skos:altLabel [global index] | 'Lübbenau' -> 'Lübbenau'"^^xsd:string ;
     skos:prefLabel "Lübbenau"@de .
 
 data:gemeinde_7922c5d2 a bb5kbc:Gemeinde ;
@@ -11294,6 +11405,7 @@ data:gemeinde_7922c5d2 a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/2809063>,
         wd:Q2204843 ;
     bb5kbc:inKreis data:kreis_d6187276 ;
+    bb5kbc:wikidataMatchDescription "Exact match via skos:altLabel [global index] | 'Gmina Głogówek' -> 'gmina Głogówek'"^^xsd:string ;
     skos:prefLabel "Gmina Głogówek"@de .
 
 data:gemeinde_7f02affe a bb5kbc:Gemeinde ;
@@ -11303,6 +11415,7 @@ data:gemeinde_7f02affe a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/62671>,
         wd:Q706112 ;
     bb5kbc:inKreis data:kreis_7f02affe ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Gera' -> 'Gera'"^^xsd:string ;
     skos:prefLabel "Gera"@de .
 
 data:gemeinde_8058a570 a bb5kbc:Gemeinde ;
@@ -11311,6 +11424,7 @@ data:gemeinde_8058a570 a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/1289788>,
         wd:Q625768 ;
     bb5kbc:inKreis data:kreis_2b31d535 ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Lenzen' -> 'Lenzen'"^^xsd:string ;
     skos:prefLabel "Lenzen"@de .
 
 data:gemeinde_819b9dc0 a bb5kbc:Gemeinde ;
@@ -11319,6 +11433,7 @@ data:gemeinde_819b9dc0 a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/8795848>,
         wd:Q1919518 ;
     bb5kbc:inKreis data:kreis_f18982f6 ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Mellensee' -> 'Mellensee'"^^xsd:string ;
     skos:prefLabel "Mellensee"@de .
 
 data:gemeinde_83d7d6b7 a bb5kbc:Gemeinde ;
@@ -11328,6 +11443,7 @@ data:gemeinde_83d7d6b7 a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/1289805>,
         wd:Q498540 ;
     bb5kbc:inKreis data:kreis_2b31d535 ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Perleberg' -> 'Perleberg'"^^xsd:string ;
     skos:prefLabel "Perleberg"@de .
 
 data:gemeinde_83fc8fe6 a bb5kbc:Gemeinde ;
@@ -11336,6 +11452,7 @@ data:gemeinde_83fc8fe6 a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/4473474>,
         wd:Q14947358 ;
     bb5kbc:inKreis data:kreis_06458fa6 ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Sommerfeld' -> 'Sommerfeld'"^^xsd:string ;
     skos:prefLabel "Sommerfeld"@de .
 
 data:gemeinde_863bdb55 a bb5kbc:Gemeinde ;
@@ -11343,6 +11460,7 @@ data:gemeinde_863bdb55 a bb5kbc:Gemeinde ;
     bb5kbc:hasExternalIdentifier gn:2838010,
         wd:Q585981 ;
     bb5kbc:inKreis data:kreis_0a22f293 ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Schmargendorf' -> 'Schmargendorf'"^^xsd:string ;
     skos:prefLabel "Schmargendorf"@de .
 
 data:gemeinde_878496f5 a bb5kbc:Gemeinde ;
@@ -11352,6 +11470,7 @@ data:gemeinde_878496f5 a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/9206415>,
         wd:Q530154 ;
     bb5kbc:inKreis data:kreis_fd0b0698 ;
+    bb5kbc:wikidataMatchDescription "Fuzzy match (score=0.91) via rdfs:label [global index] | 'Knidelbrück' -> 'Kindelbrück'"^^xsd:string ;
     skos:prefLabel "Knidelbrück"@de .
 
 data:gemeinde_8885ce4e a bb5kbc:Gemeinde ;
@@ -11360,6 +11479,7 @@ data:gemeinde_8885ce4e a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/5672713>,
         wd:Q188338 ;
     bb5kbc:inKreis data:kreis_0b003b3b ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Gallun' -> 'Gallun'"^^xsd:string ;
     skos:prefLabel "Gallun"@de .
 
 data:gemeinde_894db7a9 a bb5kbc:Gemeinde ;
@@ -11369,6 +11489,7 @@ data:gemeinde_894db7a9 a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/1384849>,
         wd:Q572615 ;
     bb5kbc:inKreis data:kreis_0a6e4d3b ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Beeskow' -> 'Beeskow'"^^xsd:string ;
     skos:prefLabel "Beeskow"@de .
 
 data:gemeinde_8a04de01 a bb5kbc:Gemeinde ;
@@ -11378,12 +11499,14 @@ data:gemeinde_8a04de01 a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/1389285>,
         wd:Q584815 ;
     bb5kbc:inKreis data:kreis_0b003b3b ;
+    bb5kbc:wikidataMatchDescription "Exact match via skos:altLabel [global index] | 'Lübben' -> 'Lübben'"^^xsd:string ;
     skos:prefLabel "Lübben"@de .
 
 data:gemeinde_8b875fd6 a bb5kbc:Gemeinde ;
     rdfs:label "Knehden"@de ;
     bb5kbc:hasExternalIdentifier wd:Q519157 ;
     bb5kbc:inKreis data:kreis_0a22f293 ;
+    bb5kbc:wikidataMatchDescription "Direct override | 'Knehden' -> QID=Q519157 | [override -> QID=Q519157]"^^xsd:string ;
     skos:prefLabel "Knehden"@de .
 
 data:gemeinde_8d594034 a bb5kbc:Gemeinde ;
@@ -11391,12 +11514,14 @@ data:gemeinde_8d594034 a bb5kbc:Gemeinde ;
     bb5kbc:hasExternalIdentifier gn:2921484,
         wd:Q87413285 ;
     bb5kbc:inKreis data:kreis_0a22f293 ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Gellmersdorf' -> 'Gellmersdorf'"^^xsd:string ;
     skos:prefLabel "Gellmersdorf"@de .
 
 data:gemeinde_8efb2a9d a bb5kbc:Gemeinde ;
     rdfs:label "Reichwalde"@de ;
     bb5kbc:hasExternalIdentifier wd:Q160235 ;
     bb5kbc:inKreis data:kreis_0b003b3b ;
+    bb5kbc:wikidataMatchDescription "Direct override | 'Reichwalde' -> QID=Q160235 | [override -> QID=Q160235]"^^xsd:string ;
     skos:prefLabel "Reichwalde"@de .
 
 data:gemeinde_8f27a091 a bb5kbc:Gemeinde ;
@@ -11406,6 +11531,7 @@ data:gemeinde_8f27a091 a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/8081972>,
         wd:Q1701133 ;
     bb5kbc:inKreis data:kreis_2783ecb9 ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Roddahn' -> 'Roddahn'"^^xsd:string ;
     skos:prefLabel "Roddahn"@de .
 
 data:gemeinde_8f511de3 a bb5kbc:Gemeinde ;
@@ -11414,6 +11540,7 @@ data:gemeinde_8f511de3 a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/2896984>,
         wd:Q558805 ;
     bb5kbc:inKreis data:kreis_cf141a0a ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Gmina Kozielice' -> 'Gmina Kozielice'"^^xsd:string ;
     skos:prefLabel "Gmina Kozielice"@de .
 
 data:gemeinde_91940b2d a bb5kbc:Gemeinde ;
@@ -11422,12 +11549,14 @@ data:gemeinde_91940b2d a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/2635288>,
         wd:Q618429 ;
     bb5kbc:inKreis data:kreis_d26f6fb5 ;
+    bb5kbc:wikidataMatchDescription "Fuzzy match (score=0.97) via rdfs:label [global index] | 'Gmina Inwowrocław' -> 'Gmina Inowrocław'"^^xsd:string ;
     skos:prefLabel "Gmina Inwowrocław"@de .
 
 data:gemeinde_925f9c89 a bb5kbc:Gemeinde ;
     rdfs:label "Teurow"@de ;
     bb5kbc:hasExternalIdentifier wd:Q56426202 ;
     bb5kbc:inKreis data:kreis_0b003b3b ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Teurow' -> 'Teurow'"^^xsd:string ;
     skos:prefLabel "Teurow"@de .
 
 data:gemeinde_926d3655 a bb5kbc:Gemeinde ;
@@ -11436,6 +11565,7 @@ data:gemeinde_926d3655 a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/2613151>,
         wd:Q1974958 ;
     bb5kbc:inKreis data:kreis_c8fe2693 ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Gmina Sulechów' -> 'Gmina Sulechów'"^^xsd:string ;
     skos:prefLabel "Gmina Sulechów"@de .
 
 data:gemeinde_92d70ce8 a bb5kbc:Gemeinde ;
@@ -11444,6 +11574,7 @@ data:gemeinde_92d70ce8 a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/2354399>,
         wd:Q706307 ;
     bb5kbc:inKreis data:kreis_d3d391e6 ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Kaiserpfalz' -> 'Kaiserpfalz'"^^xsd:string ;
     skos:prefLabel "Kaiserpfalz"@de .
 
 data:gemeinde_93f97f80 a bb5kbc:Gemeinde ;
@@ -11452,18 +11583,21 @@ data:gemeinde_93f97f80 a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/2635731>,
         wd:Q749271 ;
     bb5kbc:inKreis data:kreis_fa49171f ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Włocławek' -> 'Włocławek'"^^xsd:string ;
     skos:prefLabel "Włocławek"@de .
 
 data:gemeinde_95870524 a bb5kbc:Gemeinde ;
     rdfs:label "Semlin"@de ;
     bb5kbc:hasExternalIdentifier wd:Q627161 ;
     bb5kbc:inKreis data:kreis_2b31d535 ;
+    bb5kbc:wikidataMatchDescription "Direct override | 'Semlin' -> QID=Q627161 | [override -> QID=Q627161]"^^xsd:string ;
     skos:prefLabel "Semlin"@de .
 
 data:gemeinde_9631cb6e a bb5kbc:Gemeinde ;
     rdfs:label "Trebus"@de ;
     bb5kbc:hasExternalIdentifier wd:Q14912355 ;
     bb5kbc:inKreis data:kreis_0a6e4d3b ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Trebus' -> 'Trebus'"^^xsd:string ;
     skos:prefLabel "Trebus"@de .
 
 data:gemeinde_96434152 a bb5kbc:Gemeinde ;
@@ -11473,6 +11607,7 @@ data:gemeinde_96434152 a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/1332928>,
         wd:Q587069 ;
     bb5kbc:inKreis data:kreis_be942c19 ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Seelow' -> 'Seelow'"^^xsd:string ;
     skos:prefLabel "Seelow"@de .
 
 data:gemeinde_96d6e90b a bb5kbc:Gemeinde ;
@@ -11481,18 +11616,21 @@ data:gemeinde_96d6e90b a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/2613151>,
         wd:Q1974958 ;
     bb5kbc:inKreis data:kreis_c8fe2693 ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Sulechów' -> 'Sulechów'"^^xsd:string ;
     skos:prefLabel "Sulechów"@de .
 
 data:gemeinde_98c28bee a bb5kbc:Gemeinde ;
     rdfs:label "Potzlow"@de ;
     bb5kbc:hasExternalIdentifier wd:Q2106643 ;
     bb5kbc:inKreis data:kreis_0a22f293 ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Potzlow' -> 'Potzlow'"^^xsd:string ;
     skos:prefLabel "Potzlow"@de .
 
 data:gemeinde_9ac49f61 a bb5kbc:Gemeinde ;
     rdfs:label "Hinzdorf"@de ;
     bb5kbc:hasExternalIdentifier wd:Q20828694 ;
     bb5kbc:inKreis data:kreis_2b31d535 ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Hinzdorf' -> 'Hinzdorf'"^^xsd:string ;
     skos:prefLabel "Hinzdorf"@de .
 
 data:gemeinde_9ca3bbc2 a bb5kbc:Gemeinde ;
@@ -11500,12 +11638,14 @@ data:gemeinde_9ca3bbc2 a bb5kbc:Gemeinde ;
     bb5kbc:hasExternalIdentifier <https://www.openstreetmap.org/relation/3335432>,
         wd:Q2402703 ;
     bb5kbc:inKreis data:kreis_0a6e4d3b ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Tempelberg' -> 'Tempelberg'"^^xsd:string ;
     skos:prefLabel "Tempelberg"@de .
 
 data:gemeinde_9d0aeaff a bb5kbc:Gemeinde ;
     rdfs:label "Niebede"@de ;
     bb5kbc:hasExternalIdentifier wd:Q989775 ;
     bb5kbc:inKreis data:kreis_d4d0a03b ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Niebede' -> 'Niebede'"^^xsd:string ;
     skos:prefLabel "Niebede"@de .
 
 data:gemeinde_9d6c06e1 a bb5kbc:Gemeinde ;
@@ -11514,12 +11654,14 @@ data:gemeinde_9d6c06e1 a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/3549562>,
         wd:Q181223 ;
     bb5kbc:inKreis data:kreis_0b003b3b ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Leibsch' -> 'Leibsch'"^^xsd:string ;
     skos:prefLabel "Leibsch"@de .
 
 data:gemeinde_9dcb05b6 a bb5kbc:Gemeinde ;
     rdfs:label "Wulkow bei Alt Ruppin"@de ;
     bb5kbc:hasExternalIdentifier wd:Q1295001 ;
     bb5kbc:inKreis data:kreis_2783ecb9 ;
+    bb5kbc:wikidataMatchDescription "Direct override | 'Wulkow bei Alt Ruppin' -> QID=Q1295001 | [override -> QID=Q1295001]"^^xsd:string ;
     skos:prefLabel "Wulkow bei Alt Ruppin"@de .
 
 data:gemeinde_9e7070c4 a bb5kbc:Gemeinde ;
@@ -11527,18 +11669,21 @@ data:gemeinde_9e7070c4 a bb5kbc:Gemeinde ;
     bb5kbc:hasExternalIdentifier gn:2949054,
         wd:Q858117 ;
     bb5kbc:inKreis data:kreis_0a22f293 ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Biesenbrow' -> 'Biesenbrow'"^^xsd:string ;
     skos:prefLabel "Biesenbrow"@de .
 
 data:gemeinde_a138e5d7 a bb5kbc:Gemeinde ;
     rdfs:label "Schönermark"@de ;
     bb5kbc:hasExternalIdentifier wd:Q61686732 ;
     bb5kbc:inKreis data:kreis_0a22f293 ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Schönermark' -> 'Schönermark'"^^xsd:string ;
     skos:prefLabel "Schönermark"@de .
 
 data:gemeinde_a31925c9 a bb5kbc:Gemeinde ;
     rdfs:label "Fürstenwalde-Süd"@de ;
     bb5kbc:hasExternalIdentifier wd:Q16064 ;
     bb5kbc:inKreis data:kreis_0a6e4d3b ;
+    bb5kbc:wikidataMatchDescription "Direct override | 'Fürstenwalde-Süd' -> QID=Q16064 | [override -> QID=Q16064]"^^xsd:string ;
     skos:prefLabel "Fürstenwalde-Süd"@de .
 
 data:gemeinde_a425017d a bb5kbc:Gemeinde ;
@@ -11546,6 +11691,7 @@ data:gemeinde_a425017d a bb5kbc:Gemeinde ;
     bb5kbc:hasExternalIdentifier gn:2813895,
         wd:Q2550009 ;
     bb5kbc:inKreis data:kreis_0a22f293 ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Wartin' -> 'Wartin'"^^xsd:string ;
     skos:prefLabel "Wartin"@de .
 
 data:gemeinde_a4d18f6c a bb5kbc:Gemeinde ;
@@ -11553,6 +11699,7 @@ data:gemeinde_a4d18f6c a bb5kbc:Gemeinde ;
     bb5kbc:hasExternalIdentifier <https://www.openstreetmap.org/relation/6709908>,
         wd:Q17124832 ;
     bb5kbc:inKreis data:kreis_484c68b5 ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Mötzow' -> 'Mötzow'"^^xsd:string ;
     skos:prefLabel "Mötzow"@de .
 
 data:gemeinde_a573416c a bb5kbc:Gemeinde ;
@@ -11561,6 +11708,7 @@ data:gemeinde_a573416c a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/2635538>,
         wd:Q2347468 ;
     bb5kbc:inKreis data:kreis_063ba201 ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Gmina Strzelno' -> 'Gmina Strzelno'"^^xsd:string ;
     skos:prefLabel "Gmina Strzelno"@de .
 
 data:gemeinde_a72e9166 a bb5kbc:Gemeinde ;
@@ -11569,12 +11717,14 @@ data:gemeinde_a72e9166 a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/2615389>,
         wd:Q550720 ;
     bb5kbc:inKreis data:kreis_c8b09c56 ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Skórcz' -> 'Skórcz'"^^xsd:string ;
     skos:prefLabel "Skórcz"@de .
 
 data:gemeinde_a7fdf216 a bb5kbc:Gemeinde ;
     rdfs:label "Wustrow"@de ;
     bb5kbc:hasExternalIdentifier wd:Q22694685 ;
     bb5kbc:inKreis data:kreis_2b31d535 ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Wustrow' -> 'Wustrow'"^^xsd:string ;
     skos:prefLabel "Wustrow"@de .
 
 data:gemeinde_a805f245 a bb5kbc:Gemeinde ;
@@ -11583,6 +11733,7 @@ data:gemeinde_a805f245 a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/3048178>,
         wd:Q2182816 ;
     bb5kbc:inKreis data:kreis_5f84543e ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Gmina Sobótka' -> 'Gmina Sobótka'"^^xsd:string ;
     skos:prefLabel "Gmina Sobótka"@de .
 
 data:gemeinde_a8a78781 a bb5kbc:Gemeinde ;
@@ -11590,24 +11741,28 @@ data:gemeinde_a8a78781 a bb5kbc:Gemeinde ;
     bb5kbc:hasExternalIdentifier <https://www.openstreetmap.org/relation/3549561>,
         wd:Q18628312 ;
     bb5kbc:inKreis data:kreis_0b003b3b ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Krausnick' -> 'Krausnick'"^^xsd:string ;
     skos:prefLabel "Krausnick"@de .
 
 data:gemeinde_a93b50a5 a bb5kbc:Gemeinde ;
     rdfs:label "Schmielsdorf"@de ;
     bb5kbc:hasExternalIdentifier wd:Q97991381 ;
     bb5kbc:inKreis data:kreis_61991e7b ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Schmielsdorf' -> 'Schmielsdorf'"^^xsd:string ;
     skos:prefLabel "Schmielsdorf"@de .
 
 data:gemeinde_aa9ecbe1 a bb5kbc:Gemeinde ;
     rdfs:label "Friedrichsbruch"@de ;
     bb5kbc:hasExternalIdentifier wd:Q88181595 ;
     bb5kbc:inKreis data:kreis_d4d0a03b ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Friedrichsbruch' -> 'Friedrichsbruch'"^^xsd:string ;
     skos:prefLabel "Friedrichsbruch"@de .
 
 data:gemeinde_ab70e834 a bb5kbc:Gemeinde ;
     rdfs:label "Lutherstadt Eilsleben"@de ;
     bb5kbc:hasExternalIdentifier wd:Q484870 ;
     bb5kbc:inKreis data:kreis_053ee615 ;
+    bb5kbc:wikidataMatchDescription "Direct override | 'Lutherstadt Eilsleben' -> QID=Q484870 | [stripped -> 'Eilsleben'; override -> QID=Q484870]"^^xsd:string ;
     skos:prefLabel "Lutherstadt Eilsleben"@de .
 
 data:gemeinde_ae29252c a bb5kbc:Gemeinde ;
@@ -11616,12 +11771,14 @@ data:gemeinde_ae29252c a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/2635336>,
         wd:Q428194 ;
     bb5kbc:inKreis data:kreis_d26f6fb5 ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Gmina Janikowo' -> 'Gmina Janikowo'"^^xsd:string ;
     skos:prefLabel "Gmina Janikowo"@de .
 
 data:gemeinde_aeeaeaa9 a bb5kbc:Gemeinde ;
     rdfs:label "Grünow bei Prenzlau"@de ;
     bb5kbc:hasExternalIdentifier wd:Q624125 ;
     bb5kbc:inKreis data:kreis_0a22f293 ;
+    bb5kbc:wikidataMatchDescription "Direct override | 'Grünow bei Prenzlau' -> QID=Q624125 | [override -> QID=Q624125]"^^xsd:string ;
     skos:prefLabel "Grünow bei Prenzlau"@de .
 
 data:gemeinde_b08e3852 a bb5kbc:Gemeinde ;
@@ -11630,12 +11787,14 @@ data:gemeinde_b08e3852 a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/2865855>,
         wd:Q2248472 ;
     bb5kbc:inKreis data:kreis_702e19b6 ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Gmina Bytom Odrzański' -> 'Gmina Bytom Odrzański'"^^xsd:string ;
     skos:prefLabel "Gmina Bytom Odrzański"@de .
 
 data:gemeinde_b1964348 a bb5kbc:Gemeinde ;
     rdfs:label "Grünow bei Schönermark"@de ;
     bb5kbc:hasExternalIdentifier wd:Q624125 ;
     bb5kbc:inKreis data:kreis_0a22f293 ;
+    bb5kbc:wikidataMatchDescription "Direct override | 'Grünow bei Schönermark' -> QID=Q624125 | [override -> QID=Q624125]"^^xsd:string ;
     skos:prefLabel "Grünow bei Schönermark"@de .
 
 data:gemeinde_b2c5ee81 a bb5kbc:Gemeinde ;
@@ -11644,6 +11803,7 @@ data:gemeinde_b2c5ee81 a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/2896953>,
         wd:Q557815 ;
     bb5kbc:inKreis data:kreis_96274613 ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Gmina Nowogródek Pomorski' -> 'Gmina Nowogródek Pomorski'"^^xsd:string ;
     skos:prefLabel "Gmina Nowogródek Pomorski"@de .
 
 data:gemeinde_b3927945 a bb5kbc:Gemeinde ;
@@ -11651,18 +11811,21 @@ data:gemeinde_b3927945 a bb5kbc:Gemeinde ;
     bb5kbc:hasExternalIdentifier gn:2827863,
         wd:Q28901331 ;
     bb5kbc:inKreis data:kreis_0b003b3b ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Steinkirchen' -> 'Steinkirchen'"^^xsd:string ;
     skos:prefLabel "Steinkirchen"@de .
 
 data:gemeinde_b39b7833 a bb5kbc:Gemeinde ;
     rdfs:label "Lüchfeld"@de ;
     bb5kbc:hasExternalIdentifier wd:Q109815104 ;
     bb5kbc:inKreis data:kreis_2783ecb9 ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Lüchfeld' -> 'Lüchfeld'"^^xsd:string ;
     skos:prefLabel "Lüchfeld"@de .
 
 data:gemeinde_b3c00b51 a bb5kbc:Gemeinde ;
     rdfs:label "Speichrow"@de ;
     bb5kbc:hasExternalIdentifier wd:Q19309298 ;
     bb5kbc:inKreis data:kreis_0b003b3b ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Speichrow' -> 'Speichrow'"^^xsd:string ;
     skos:prefLabel "Speichrow"@de .
 
 data:gemeinde_b599ac34 a bb5kbc:Gemeinde ;
@@ -11671,12 +11834,14 @@ data:gemeinde_b599ac34 a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/2404547>,
         wd:Q635076 ;
     bb5kbc:inKreis data:kreis_d3d391e6 ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Kretzschau' -> 'Kretzschau'"^^xsd:string ;
     skos:prefLabel "Kretzschau"@de .
 
 data:gemeinde_b71ac0c3 a bb5kbc:Gemeinde ;
     rdfs:label "Lanitz-Hasseltal"@de ;
     bb5kbc:hasExternalIdentifier wd:Q701298 ;
     bb5kbc:inKreis data:kreis_d3d391e6 ;
+    bb5kbc:wikidataMatchDescription "Direct override | 'Lanitz-Hasseltal' -> QID=Q701298 | [override -> QID=Q701298]"^^xsd:string ;
     skos:prefLabel "Lanitz-Hasseltal"@de .
 
 data:gemeinde_b82232f1 a bb5kbc:Gemeinde ;
@@ -11684,12 +11849,14 @@ data:gemeinde_b82232f1 a bb5kbc:Gemeinde ;
     bb5kbc:hasExternalIdentifier gn:2901644,
         wd:Q92039304 ;
     bb5kbc:inKreis data:kreis_0a22f293 ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Hohenlandin' -> 'Hohenlandin'"^^xsd:string ;
     skos:prefLabel "Hohenlandin"@de .
 
 data:gemeinde_b8664712 a bb5kbc:Gemeinde ;
     rdfs:label "Niederjesar"@de ;
     bb5kbc:hasExternalIdentifier wd:Q1987896 ;
     bb5kbc:inKreis data:kreis_be942c19 ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Niederjesar' -> 'Niederjesar'"^^xsd:string ;
     skos:prefLabel "Niederjesar"@de .
 
 data:gemeinde_baa445cf a bb5kbc:Gemeinde ;
@@ -11697,12 +11864,14 @@ data:gemeinde_baa445cf a bb5kbc:Gemeinde ;
     bb5kbc:hasExternalIdentifier <https://www.openstreetmap.org/relation/1032707>,
         wd:Q2099924 ;
     bb5kbc:inKreis data:kreis_484c68b5 ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Plötzin' -> 'Plötzin'"^^xsd:string ;
     skos:prefLabel "Plötzin"@de .
 
 data:gemeinde_bb20b99e a bb5kbc:Gemeinde ;
     rdfs:label "Klinkow"@de ;
     bb5kbc:hasExternalIdentifier wd:Q1416179 ;
     bb5kbc:inKreis data:kreis_0a22f293 ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Klinkow' -> 'Klinkow'"^^xsd:string ;
     skos:prefLabel "Klinkow"@de .
 
 data:gemeinde_bc6bff70 a bb5kbc:Gemeinde ;
@@ -11711,6 +11880,7 @@ data:gemeinde_bc6bff70 a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/85967>,
         wd:Q2152289 ;
     bb5kbc:inKreis data:kreis_0a6e4d3b ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Rieplos' -> 'Rieplos'"^^xsd:string ;
     skos:prefLabel "Rieplos"@de .
 
 data:gemeinde_be5b3a56 a bb5kbc:Gemeinde ;
@@ -11719,6 +11889,7 @@ data:gemeinde_be5b3a56 a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/1271899>,
         wd:Q525425 ;
     bb5kbc:inKreis data:kreis_d4d0a03b ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Rathenow' -> 'Rathenow' | [normalised: stripped -> 'Rathenow']"^^xsd:string ;
     skos:prefLabel "Stadt Rathenow"@de .
 
 data:gemeinde_bffe1784 a bb5kbc:Gemeinde ;
@@ -11728,12 +11899,14 @@ data:gemeinde_bffe1784 a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/1318355>,
         wd:Q587133 ;
     bb5kbc:inKreis data:kreis_aa8aad2b ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Hohenfinow' -> 'Hohenfinow'"^^xsd:string ;
     skos:prefLabel "Hohenfinow"@de .
 
 data:gemeinde_c2503a4e a bb5kbc:Gemeinde ;
     rdfs:label "Krampnitz"@de ;
     bb5kbc:hasExternalIdentifier wd:Q88458729 ;
     bb5kbc:inKreis data:kreis_484c68b5 ;
+    bb5kbc:wikidataMatchDescription "Direct override | 'Krampnitz' -> QID=Q88458729 | [override -> QID=Q88458729]"^^xsd:string ;
     skos:prefLabel "Krampnitz"@de .
 
 data:gemeinde_c2ad88d4 a bb5kbc:Gemeinde ;
@@ -11742,6 +11915,7 @@ data:gemeinde_c2ad88d4 a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/2824562>,
         wd:Q2491540 ;
     bb5kbc:inKreis data:kreis_d2918bbf ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Gmina Drezdenko' -> 'Gmina Drezdenko'"^^xsd:string ;
     skos:prefLabel "Gmina Drezdenko"@de .
 
 data:gemeinde_c2e2aa37 a bb5kbc:Gemeinde ;
@@ -11749,6 +11923,7 @@ data:gemeinde_c2e2aa37 a bb5kbc:Gemeinde ;
     bb5kbc:hasExternalIdentifier <https://www.openstreetmap.org/relation/422504>,
         wd:Q1382796 ;
     bb5kbc:inKreis data:kreis_484c68b5 ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Philippsthal' -> 'Philippsthal'"^^xsd:string ;
     skos:prefLabel "Philippsthal"@de .
 
 data:gemeinde_c3119952 a bb5kbc:Gemeinde ;
@@ -11756,12 +11931,14 @@ data:gemeinde_c3119952 a bb5kbc:Gemeinde ;
     bb5kbc:hasExternalIdentifier <https://www.openstreetmap.org/relation/6700888>,
         wd:Q15115053 ;
     bb5kbc:inKreis data:kreis_484c68b5 ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Hohenferchesar' -> 'Hohenferchesar'"^^xsd:string ;
     skos:prefLabel "Hohenferchesar"@de .
 
 data:gemeinde_c647e7ed a bb5kbc:Gemeinde ;
     rdfs:label "Gmina Jawor"@de ;
     bb5kbc:hasExternalIdentifier wd:Q731805 ;
     bb5kbc:inKreis data:kreis_a67ba2d2 ;
+    bb5kbc:wikidataMatchDescription "Direct override | 'Gmina Jawor' -> QID=Q731805 | [override -> QID=Q731805]"^^xsd:string ;
     skos:prefLabel "Gmina Jawor"@de .
 
 data:gemeinde_c672785b a bb5kbc:Gemeinde ;
@@ -11769,18 +11946,21 @@ data:gemeinde_c672785b a bb5kbc:Gemeinde ;
     bb5kbc:hasExternalIdentifier gn:3207125,
         wd:Q704400 ;
     bb5kbc:inKreis data:kreis_09060b5f ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Behringen' -> 'Behringen'"^^xsd:string ;
     skos:prefLabel "Behringen"@de .
 
 data:gemeinde_c73df9b6 a bb5kbc:Gemeinde ;
     rdfs:label "Gollmitz"@de ;
     bb5kbc:hasExternalIdentifier wd:Q87722176 ;
     bb5kbc:inKreis data:kreis_0a22f293 ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Gollmitz' -> 'Gollmitz'"^^xsd:string ;
     skos:prefLabel "Gollmitz"@de .
 
 data:gemeinde_c7f16846 a bb5kbc:Gemeinde ;
     rdfs:label "Kleeste"@de ;
     bb5kbc:hasExternalIdentifier wd:Q636945 ;
     bb5kbc:inKreis data:kreis_2b31d535 ;
+    bb5kbc:wikidataMatchDescription "Direct override | 'Kleeste' -> QID=Q636945 | [override -> QID=Q636945]"^^xsd:string ;
     skos:prefLabel "Kleeste"@de .
 
 data:gemeinde_ca66eee4 a bb5kbc:Gemeinde ;
@@ -11789,12 +11969,14 @@ data:gemeinde_ca66eee4 a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/4473530>,
         wd:Q47446677 ;
     bb5kbc:inKreis data:kreis_06458fa6 ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Flatow' -> 'Flatow'"^^xsd:string ;
     skos:prefLabel "Flatow"@de .
 
 data:gemeinde_cc2756d4 a bb5kbc:Gemeinde ;
     rdfs:label "Grube"@de ;
     bb5kbc:hasExternalIdentifier wd:Q23759940 ;
     bb5kbc:inKreis data:kreis_d5404511 ;
+    bb5kbc:wikidataMatchDescription "Direct override | 'Grube' -> QID=Q23759940 | [override -> QID=Q23759940]"^^xsd:string ;
     skos:prefLabel "Grube"@de .
 
 data:gemeinde_cee8d1fb a bb5kbc:Gemeinde ;
@@ -11802,6 +11984,7 @@ data:gemeinde_cee8d1fb a bb5kbc:Gemeinde ;
     bb5kbc:hasExternalIdentifier <https://www.openstreetmap.org/relation/84262>,
         wd:Q1615217 ;
     bb5kbc:inKreis data:kreis_0a6e4d3b ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Schwerin' -> 'Schwerin'"^^xsd:string ;
     skos:prefLabel "Schwerin"@de .
 
 data:gemeinde_d1f5d746 a bb5kbc:Gemeinde ;
@@ -11811,6 +11994,7 @@ data:gemeinde_d1f5d746 a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/1437546>,
         wd:Q339009 ;
     bb5kbc:inKreis data:kreis_89f46930 ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Lietzow' -> 'Lietzow'"^^xsd:string ;
     skos:prefLabel "Lietzow"@de .
 
 data:gemeinde_d21ba2df a bb5kbc:Gemeinde ;
@@ -11820,6 +12004,7 @@ data:gemeinde_d21ba2df a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/82601>,
         wd:Q525409 ;
     bb5kbc:inKreis data:kreis_a8ddc1b2 ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Staßfurt' -> 'Staßfurt'"^^xsd:string ;
     skos:prefLabel "Staßfurt"@de .
 
 data:gemeinde_d2768c87 a bb5kbc:Gemeinde ;
@@ -11827,12 +12012,14 @@ data:gemeinde_d2768c87 a bb5kbc:Gemeinde ;
     bb5kbc:hasExternalIdentifier <http://vocab.getty.edu/tgn/7186064>,
         wd:Q17321986 ;
     bb5kbc:inKreis data:kreis_484c68b5 ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Gollwitz' -> 'Gollwitz'"^^xsd:string ;
     skos:prefLabel "Gollwitz"@de .
 
 data:gemeinde_d2fcd3a0 a bb5kbc:Gemeinde ;
     rdfs:label "Buckow"@de ;
     bb5kbc:hasExternalIdentifier wd:Q29019815 ;
     bb5kbc:inKreis data:kreis_d4d0a03b ;
+    bb5kbc:wikidataMatchDescription "Direct override | 'Buckow' -> QID=Q29019815 | [override -> QID=Q29019815]"^^xsd:string ;
     skos:prefLabel "Buckow"@de .
 
 data:gemeinde_d3185c9b a bb5kbc:Gemeinde ;
@@ -11840,6 +12027,7 @@ data:gemeinde_d3185c9b a bb5kbc:Gemeinde ;
     bb5kbc:hasExternalIdentifier gn:2921042,
         wd:Q1514257 ;
     bb5kbc:inKreis data:kreis_06458fa6 ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Germendorf' -> 'Germendorf'"^^xsd:string ;
     skos:prefLabel "Germendorf"@de .
 
 data:gemeinde_d333c074 a bb5kbc:Gemeinde ;
@@ -11848,6 +12036,7 @@ data:gemeinde_d333c074 a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/2911034>,
         wd:Q776885 ;
     bb5kbc:inKreis data:kreis_759243cc ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Gmina Rudna' -> 'Gmina Rudna'"^^xsd:string ;
     skos:prefLabel "Gmina Rudna"@de .
 
 data:gemeinde_d49351d6 a bb5kbc:Gemeinde ;
@@ -11856,6 +12045,7 @@ data:gemeinde_d49351d6 a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/2911036>,
         wd:Q2376267 ;
     bb5kbc:inKreis data:kreis_759243cc ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Gmina Ścinawa' -> 'Gmina Ścinawa'"^^xsd:string ;
     skos:prefLabel "Gmina Ścinawa"@de .
 
 data:gemeinde_d5bf8290 a bb5kbc:Gemeinde ;
@@ -11863,6 +12053,7 @@ data:gemeinde_d5bf8290 a bb5kbc:Gemeinde ;
     bb5kbc:hasExternalIdentifier gn:2852228,
         wd:Q101522422 ;
     bb5kbc:inKreis data:kreis_2b31d535 ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Premslin' -> 'Premslin'"^^xsd:string ;
     skos:prefLabel "Premslin"@de .
 
 data:gemeinde_d6479e1b a bb5kbc:Gemeinde ;
@@ -11871,6 +12062,7 @@ data:gemeinde_d6479e1b a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/2671033>,
         wd:Q923169 ;
     bb5kbc:inKreis data:kreis_ef45870e ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Gmina Paczków' -> 'Gmina Paczków'"^^xsd:string ;
     skos:prefLabel "Gmina Paczków"@de .
 
 data:gemeinde_d666d93b a bb5kbc:Gemeinde ;
@@ -11879,12 +12071,14 @@ data:gemeinde_d666d93b a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/69745>,
         wd:Q505176 ;
     bb5kbc:inKreis data:kreis_a8ddc1b2 ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Calbe' -> 'Calbe'"^^xsd:string ;
     skos:prefLabel "Calbe"@de .
 
 data:gemeinde_d834fc1f a bb5kbc:Gemeinde ;
     rdfs:label "Zöllmersdorf"@de ;
     bb5kbc:hasExternalIdentifier wd:Q28972179 ;
     bb5kbc:inKreis data:kreis_0b003b3b ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Zöllmersdorf' -> 'Zöllmersdorf'"^^xsd:string ;
     skos:prefLabel "Zöllmersdorf"@de .
 
 data:gemeinde_d84a5f7a a bb5kbc:Gemeinde ;
@@ -11893,12 +12087,14 @@ data:gemeinde_d84a5f7a a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/10519435>,
         wd:Q71166816 ;
     bb5kbc:inKreis data:kreis_dba7671b ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Nottertal-Heilinger Höhen' -> 'Nottertal-Heilinger Höhen'"^^xsd:string ;
     skos:prefLabel "Nottertal-Heilinger Höhen"@de .
 
 data:gemeinde_d8ab4de6 a bb5kbc:Gemeinde ;
     rdfs:label "Zesch"@de ;
     bb5kbc:hasExternalIdentifier wd:Q196797 ;
     bb5kbc:inKreis data:kreis_f18982f6 ;
+    bb5kbc:wikidataMatchDescription "Direct override | 'Zesch' -> QID=Q196797 | [override -> QID=Q196797]"^^xsd:string ;
     skos:prefLabel "Zesch"@de .
 
 data:gemeinde_dca931f9 a bb5kbc:Gemeinde ;
@@ -11907,6 +12103,7 @@ data:gemeinde_dca931f9 a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/447955>,
         wd:Q104192 ;
     bb5kbc:inKreis data:kreis_484c68b5 ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Kleinmachnow' -> 'Kleinmachnow'"^^xsd:string ;
     skos:prefLabel "Kleinmachnow"@de .
 
 data:gemeinde_dcfcf708 a bb5kbc:Gemeinde ;
@@ -11915,6 +12112,7 @@ data:gemeinde_dcfcf708 a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/1359774>,
         wd:Q2204247 ;
     bb5kbc:inKreis data:kreis_969dc2b1 ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Gmina Żnin' -> 'Gmina Żnin'"^^xsd:string ;
     skos:prefLabel "Gmina Żnin"@de .
 
 data:gemeinde_deaa7060 a bb5kbc:Gemeinde ;
@@ -11922,18 +12120,21 @@ data:gemeinde_deaa7060 a bb5kbc:Gemeinde ;
     bb5kbc:hasExternalIdentifier <https://www.openstreetmap.org/relation/176419>,
         wd:Q1760458 ;
     bb5kbc:inKreis data:kreis_0b003b3b ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Töpchin' -> 'Töpchin'"^^xsd:string ;
     skos:prefLabel "Töpchin"@de .
 
 data:gemeinde_e0ce34b1 a bb5kbc:Gemeinde ;
     rdfs:label "Gmina Izbica Kuj."@de ;
     bb5kbc:hasExternalIdentifier wd:Q2461294 ;
     bb5kbc:inKreis data:kreis_fa49171f ;
+    bb5kbc:wikidataMatchDescription "Direct override | 'Gmina Izbica Kuj.' -> QID=Q2461294 | [override -> QID=Q2461294]"^^xsd:string ;
     skos:prefLabel "Gmina Izbica Kuj."@de .
 
 data:gemeinde_e1efb5e6 a bb5kbc:Gemeinde ;
     rdfs:label "Zwenkau"@de ;
     bb5kbc:hasExternalIdentifier wd:Q10779 ;
     bb5kbc:inKreis data:kreis_df92e229 ;
+    bb5kbc:wikidataMatchDescription "Direct override | 'Zwenkau' -> QID=Q10779 | [override -> QID=Q10779]"^^xsd:string ;
     skos:prefLabel "Zwenkau"@de .
 
 data:gemeinde_e2c79888 a bb5kbc:Gemeinde ;
@@ -11942,6 +12143,7 @@ data:gemeinde_e2c79888 a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/2807274>,
         wd:Q2127384 ;
     bb5kbc:inKreis data:kreis_d1b39f85 ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Gmina Branice' -> 'Gmina Branice'"^^xsd:string ;
     skos:prefLabel "Gmina Branice"@de .
 
 data:gemeinde_e31295ec a bb5kbc:Gemeinde ;
@@ -11950,6 +12152,7 @@ data:gemeinde_e31295ec a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/1329608>,
         wd:Q247868 ;
     bb5kbc:inKreis data:kreis_a9d8c52e ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Zörbig' -> 'Zörbig'"^^xsd:string ;
     skos:prefLabel "Zörbig"@de .
 
 data:gemeinde_e586fde4 a bb5kbc:Gemeinde ;
@@ -11958,18 +12161,21 @@ data:gemeinde_e586fde4 a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/3048177>,
         wd:Q2460985 ;
     bb5kbc:inKreis data:kreis_5f84543e ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Gmina Kąty Wrocławskie' -> 'Gmina Kąty Wrocławskie'"^^xsd:string ;
     skos:prefLabel "Gmina Kąty Wrocławskie"@de .
 
 data:gemeinde_e743046d a bb5kbc:Gemeinde ;
     rdfs:label "Schwaneberg"@de ;
     bb5kbc:hasExternalIdentifier wd:Q62448579 ;
     bb5kbc:inKreis data:kreis_0a22f293 ;
+    bb5kbc:wikidataMatchDescription "Direct override | 'Schwaneberg' -> QID=Q62448579 | [override -> QID=Q62448579]"^^xsd:string ;
     skos:prefLabel "Schwaneberg"@de .
 
 data:gemeinde_e7493e62 a bb5kbc:Gemeinde ;
     rdfs:label "Tacken"@de ;
     bb5kbc:hasExternalIdentifier wd:Q23787861 ;
     bb5kbc:inKreis data:kreis_2b31d535 ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Tacken' -> 'Tacken'"^^xsd:string ;
     skos:prefLabel "Tacken"@de .
 
 data:gemeinde_e7dc4d81 a bb5kbc:Gemeinde ;
@@ -11978,6 +12184,7 @@ data:gemeinde_e7dc4d81 a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/3049635>,
         wd:Q1922902 ;
     bb5kbc:inKreis data:kreis_5f84543e ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Gmina Kobierzyce' -> 'Gmina Kobierzyce'"^^xsd:string ;
     skos:prefLabel "Gmina Kobierzyce"@de .
 
 data:gemeinde_e8bc45d9 a bb5kbc:Gemeinde ;
@@ -11985,6 +12192,7 @@ data:gemeinde_e8bc45d9 a bb5kbc:Gemeinde ;
     bb5kbc:hasExternalIdentifier gn:2851286,
         wd:Q26271484 ;
     bb5kbc:inKreis data:kreis_b031fa42 ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Raakow' -> 'Raakow'"^^xsd:string ;
     skos:prefLabel "Raakow"@de .
 
 data:gemeinde_eaadc786 a bb5kbc:Gemeinde ;
@@ -11992,6 +12200,7 @@ data:gemeinde_eaadc786 a bb5kbc:Gemeinde ;
     bb5kbc:hasExternalIdentifier <https://www.openstreetmap.org/relation/1826942>,
         wd:Q55816238 ;
     bb5kbc:inKreis data:kreis_d4d0a03b ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Bredow' -> 'Bredow'"^^xsd:string ;
     skos:prefLabel "Bredow"@de .
 
 data:gemeinde_eae37432 a bb5kbc:Gemeinde ;
@@ -12000,6 +12209,7 @@ data:gemeinde_eae37432 a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/1322549>,
         wd:Q572518 ;
     bb5kbc:inKreis data:kreis_b031fa42 ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Drebkau' -> 'Drebkau'"^^xsd:string ;
     skos:prefLabel "Drebkau"@de .
 
 data:gemeinde_eb1d0c76 a bb5kbc:Gemeinde ;
@@ -12008,6 +12218,7 @@ data:gemeinde_eb1d0c76 a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/2456172>,
         wd:Q2462934 ;
     bb5kbc:inKreis data:kreis_2090da70 ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Gmina Brzeg Dolny' -> 'Gmina Brzeg Dolny'"^^xsd:string ;
     skos:prefLabel "Gmina Brzeg Dolny"@de .
 
 data:gemeinde_eca6e67b a bb5kbc:Gemeinde ;
@@ -12016,6 +12227,7 @@ data:gemeinde_eca6e67b a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/1332929>,
         wd:Q585301 ;
     bb5kbc:inKreis data:kreis_be942c19 ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Gusow-Platkow' -> 'Gusow-Platkow'"^^xsd:string ;
     skos:prefLabel "Gusow-Platkow"@de .
 
 data:gemeinde_ee90557b a bb5kbc:Gemeinde ;
@@ -12024,6 +12236,7 @@ data:gemeinde_ee90557b a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/2957949>,
         wd:Q2458293 ;
     bb5kbc:inKreis data:kreis_dfbeddd9 ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Gmina Ząbkowice Śląskie' -> 'Gmina Ząbkowice Śląskie'"^^xsd:string ;
     skos:prefLabel "Gmina Ząbkowice Śląskie"@de .
 
 data:gemeinde_efd7bdeb a bb5kbc:Gemeinde ;
@@ -12031,6 +12244,7 @@ data:gemeinde_efd7bdeb a bb5kbc:Gemeinde ;
     bb5kbc:hasExternalIdentifier <https://www.openstreetmap.org/relation/79592>,
         wd:Q1785108 ;
     bb5kbc:inKreis data:kreis_0a6e4d3b ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Kossenblatt' -> 'Kossenblatt'"^^xsd:string ;
     skos:prefLabel "Kossenblatt"@de .
 
 data:gemeinde_f2c96b2d a bb5kbc:Gemeinde ;
@@ -12039,24 +12253,28 @@ data:gemeinde_f2c96b2d a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/55774>,
         wd:Q581119 ;
     bb5kbc:inKreis data:kreis_0b003b3b ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Schulzendorf' -> 'Schulzendorf'"^^xsd:string ;
     skos:prefLabel "Schulzendorf"@de .
 
 data:gemeinde_f3241fbb a bb5kbc:Gemeinde ;
     rdfs:label "Klein Kienitz"@de ;
     bb5kbc:hasExternalIdentifier wd:Q1553107 ;
     bb5kbc:inKreis data:kreis_f18982f6 ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Klein Kienitz' -> 'Klein Kienitz'"^^xsd:string ;
     skos:prefLabel "Klein Kienitz"@de .
 
 data:gemeinde_f352e7e0 a bb5kbc:Gemeinde ;
     rdfs:label "Döberitz bei Premnitz"@de ;
     bb5kbc:hasExternalIdentifier wd:Q583555 ;
     bb5kbc:inKreis data:kreis_d4d0a03b ;
+    bb5kbc:wikidataMatchDescription "Direct override | 'Döberitz bei Premnitz' -> QID=Q583555 | [override -> QID=Q583555]"^^xsd:string ;
     skos:prefLabel "Döberitz bei Premnitz"@de .
 
 data:gemeinde_f35aca85 a bb5kbc:Gemeinde ;
     rdfs:label "Kienberg"@de ;
     bb5kbc:hasExternalIdentifier wd:Q96198777 ;
     bb5kbc:inKreis data:kreis_d4d0a03b ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Kienberg' -> 'Kienberg'"^^xsd:string ;
     skos:prefLabel "Kienberg"@de .
 
 data:gemeinde_f3f21f7d a bb5kbc:Gemeinde ;
@@ -12066,12 +12284,14 @@ data:gemeinde_f3f21f7d a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/1334098>,
         wd:Q519157 ;
     bb5kbc:inKreis data:kreis_0a22f293 ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Templin' -> 'Templin'"^^xsd:string ;
     skos:prefLabel "Templin"@de .
 
 data:gemeinde_f66f9bc9 a bb5kbc:Gemeinde ;
     rdfs:label "Wagenitz"@de ;
     bb5kbc:hasExternalIdentifier wd:Q1989221 ;
     bb5kbc:inKreis data:kreis_d4d0a03b ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Wagenitz' -> 'Wagenitz'"^^xsd:string ;
     skos:prefLabel "Wagenitz"@de .
 
 data:gemeinde_f67216a6 a bb5kbc:Gemeinde ;
@@ -12080,18 +12300,21 @@ data:gemeinde_f67216a6 a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/1289785>,
         wd:Q565732 ;
     bb5kbc:inKreis data:kreis_2b31d535 ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Putlitz' -> 'Putlitz'"^^xsd:string ;
     skos:prefLabel "Putlitz"@de .
 
 data:gemeinde_f70b4861 a bb5kbc:Gemeinde ;
     rdfs:label "Gohlitz"@de ;
     bb5kbc:hasExternalIdentifier wd:Q1534380 ;
     bb5kbc:inKreis data:kreis_d4d0a03b ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Gohlitz' -> 'Gohlitz'"^^xsd:string ;
     skos:prefLabel "Gohlitz"@de .
 
 data:gemeinde_f70e2132 a bb5kbc:Gemeinde ;
     rdfs:label "Burgwall"@de ;
     bb5kbc:hasExternalIdentifier wd:Q1016140 ;
     bb5kbc:inKreis data:kreis_06458fa6 ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Burgwall' -> 'Burgwall'"^^xsd:string ;
     skos:prefLabel "Burgwall"@de .
 
 data:gemeinde_f83cc495 a bb5kbc:Gemeinde ;
@@ -12100,12 +12323,14 @@ data:gemeinde_f83cc495 a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/966648>,
         wd:Q625962 ;
     bb5kbc:inKreis data:kreis_484c68b5 ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Groß Kreutz (Havel)' -> 'Groß Kreutz (Havel)'"^^xsd:string ;
     skos:prefLabel "Groß Kreutz (Havel)"@de .
 
 data:gemeinde_f945ced1 a bb5kbc:Gemeinde ;
     rdfs:label "Szczecin"@de ;
     bb5kbc:hasExternalIdentifier wd:Q848999 ;
     bb5kbc:inKreis data:kreis_aa320c08 ;
+    bb5kbc:wikidataMatchDescription "Direct override | 'Szczecin' -> QID=Q848999 | [override -> QID=Q848999]"^^xsd:string ;
     skos:prefLabel "Szczecin"@de .
 
 data:gemeinde_fb6d8a7d a bb5kbc:Gemeinde ;
@@ -12114,6 +12339,7 @@ data:gemeinde_fb6d8a7d a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/2090553>,
         wd:Q1796771 ;
     bb5kbc:inKreis data:kreis_a9d8c52e ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Köthen' -> 'Köthen'"^^xsd:string ;
     skos:prefLabel "Köthen"@de .
 
 data:gemeinde_fbf0fa55 a bb5kbc:Gemeinde ;
@@ -12122,12 +12348,14 @@ data:gemeinde_fbf0fa55 a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/2881701>,
         wd:Q2181160 ;
     bb5kbc:inKreis data:kreis_2c041c6c ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Gmina Międzyrzecz' -> 'Gmina Międzyrzecz'"^^xsd:string ;
     skos:prefLabel "Gmina Międzyrzecz"@de .
 
 data:gemeinde_fc124913 a bb5kbc:Gemeinde ;
     rdfs:label "Groß Dölln"@de ;
     bb5kbc:hasExternalIdentifier wd:Q1547891 ;
     bb5kbc:inKreis data:kreis_0a22f293 ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Groß Dölln' -> 'Groß Dölln'"^^xsd:string ;
     skos:prefLabel "Groß Dölln"@de .
 
 data:gemeinde_fd18a4c7 a bb5kbc:Gemeinde ;
@@ -12136,6 +12364,7 @@ data:gemeinde_fd18a4c7 a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/1302369>,
         wd:Q505160 ;
     bb5kbc:inKreis data:kreis_2783ecb9 ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Kyritz' -> 'Kyritz'"^^xsd:string ;
     skos:prefLabel "Kyritz"@de .
 
 data:gemeinde_feba34e4 a bb5kbc:Gemeinde ;
@@ -12145,6 +12374,7 @@ data:gemeinde_feba34e4 a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/1352956>,
         wd:Q7072 ;
     bb5kbc:inKreis data:kreis_7d5e48f9 ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Halberstadt' -> 'Halberstadt'"^^xsd:string ;
     skos:prefLabel "Halberstadt"@de .
 
 data:gemeinde_fed08e54 a bb5kbc:Gemeinde ;
@@ -12153,12 +12383,14 @@ data:gemeinde_fed08e54 a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/2908745>,
         wd:Q557687 ;
     bb5kbc:inKreis data:kreis_cae21d94 ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Gmina Dolice' -> 'Gmina Dolice'"^^xsd:string ;
     skos:prefLabel "Gmina Dolice"@de .
 
 data:gemeinde_ff627570 a bb5kbc:Gemeinde ;
     rdfs:label "Petersdorf"@de ;
     bb5kbc:hasExternalIdentifier wd:Q623967 ;
     bb5kbc:inKreis data:kreis_0a22f293 ;
+    bb5kbc:wikidataMatchDescription "Direct override | 'Petersdorf' -> QID=Q623967 | [override -> QID=Q623967]"^^xsd:string ;
     skos:prefLabel "Petersdorf"@de .
 
 data:gemeinde_fff454c7 a bb5kbc:Gemeinde ;
@@ -12167,12 +12399,14 @@ data:gemeinde_fff454c7 a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/9251482>,
         wd:Q59775089 ;
     bb5kbc:inKreis data:kreis_524d36ba ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Nessetal' -> 'Nessetal'"^^xsd:string ;
     skos:prefLabel "Nessetal"@de .
 
 data:kreis_053ee615 a bb5kbc:Kreis ;
     rdfs:label "Mansfeld-Südharz"@de ;
     bb5kbc:hasExternalIdentifier wd:Q6092 ;
     bb5kbc:inBundesland data:bundesland_26b09cd0 ;
+    bb5kbc:wikidataMatchDescription "Direct override | 'Mansfeld-Südharz' -> QID=Q6092 | [override -> QID=Q6092]"^^xsd:string ;
     skos:prefLabel "Mansfeld-Südharz"@de .
 
 data:kreis_09060b5f a bb5kbc:Kreis ;
@@ -12181,6 +12415,7 @@ data:kreis_09060b5f a bb5kbc:Kreis ;
         <https://www.openstreetmap.org/relation/62616>,
         wd:Q7866 ;
     bb5kbc:inBundesland data:bundesland_eec0c902 ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Wartburgkreis' -> 'Wartburgkreis'"^^xsd:string ;
     skos:prefLabel "Wartburgkreis"@de .
 
 data:kreis_2090da70 a bb5kbc:Kreis ;
@@ -12189,6 +12424,7 @@ data:kreis_2090da70 a bb5kbc:Kreis ;
         <https://www.openstreetmap.org/relation/451510>,
         wd:Q715925 ;
     bb5kbc:inBundesland data:bundesland_3dfdb305 ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Powiat Wołowski' -> 'powiat wołowski'"^^xsd:string ;
     skos:prefLabel "pow. Wołowski"@de .
 
 data:kreis_2a0f5e5e a bb5kbc:Kreis ;
@@ -12197,6 +12433,7 @@ data:kreis_2a0f5e5e a bb5kbc:Kreis ;
         <https://www.openstreetmap.org/relation/2675556>,
         wd:Q1135341 ;
     bb5kbc:inBundesland data:bundesland_30cdd2fc ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Powiat Kętrzyński' -> 'powiat kętrzyński'"^^xsd:string ;
     skos:prefLabel "pow. Kętrzyński"@de .
 
 data:kreis_2c041c6c a bb5kbc:Kreis ;
@@ -12205,6 +12442,7 @@ data:kreis_2c041c6c a bb5kbc:Kreis ;
         <https://www.openstreetmap.org/relation/2663893>,
         wd:Q317917 ;
     bb5kbc:inBundesland data:bundesland_af35ac58 ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Powiat Międzyrzecki' -> 'powiat międzyrzecki'"^^xsd:string ;
     skos:prefLabel "pow. Międzyrzecki"@de .
 
 data:kreis_3a9bc5c0 a bb5kbc:Kreis ;
@@ -12213,6 +12451,7 @@ data:kreis_3a9bc5c0 a bb5kbc:Kreis ;
         <https://www.openstreetmap.org/relation/451515>,
         wd:Q715475 ;
     bb5kbc:inBundesland data:bundesland_3dfdb305 ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Powiat Oławski' -> 'powiat oławski'"^^xsd:string ;
     skos:prefLabel "pow. Oławski"@de .
 
 data:kreis_3e64d70d a bb5kbc:Kreis ;
@@ -12221,12 +12460,14 @@ data:kreis_3e64d70d a bb5kbc:Kreis ;
         <https://www.openstreetmap.org/relation/2417246>,
         wd:Q554313 ;
     bb5kbc:inBundesland data:bundesland_98bc89ff ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Powiat Raciborski' -> 'Powiat Raciborski'"^^xsd:string ;
     skos:prefLabel "pow. Raciborski"@de .
 
 data:kreis_524d36ba a bb5kbc:Kreis ;
     rdfs:label "Gotha"@de ;
     bb5kbc:hasExternalIdentifier wd:Q7869 ;
     bb5kbc:inBundesland data:bundesland_eec0c902 ;
+    bb5kbc:wikidataMatchDescription "Direct override | 'Gotha' -> QID=Q7869 | [override -> QID=Q7869]"^^xsd:string ;
     skos:prefLabel "Gotha"@de .
 
 data:kreis_59aceadf a bb5kbc:Kreis ;
@@ -12236,12 +12477,14 @@ data:kreis_59aceadf a bb5kbc:Kreis ;
         <https://www.openstreetmap.org/relation/62481>,
         wd:Q1733 ;
     bb5kbc:inBundesland data:bundesland_26b09cd0 ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Magdeburg' -> 'Magdeburg'"^^xsd:string ;
     skos:prefLabel "Magdeburg"@de .
 
 data:kreis_63e70789 a bb5kbc:Kreis ;
     rdfs:label "pow. Gorẃski"@de ;
     bb5kbc:hasExternalIdentifier wd:Q636757 ;
     bb5kbc:inBundesland data:bundesland_3dfdb305 ;
+    bb5kbc:wikidataMatchDescription "Direct override | 'pow. Gorẃski' -> QID=Q636757 | [override -> QID=Q636757]"^^xsd:string ;
     skos:prefLabel "pow. Gorẃski"@de .
 
 data:kreis_65cce59a a bb5kbc:Kreis ;
@@ -12250,6 +12493,7 @@ data:kreis_65cce59a a bb5kbc:Kreis ;
         <https://www.openstreetmap.org/relation/2663855>,
         wd:Q317835 ;
     bb5kbc:inBundesland data:bundesland_af35ac58 ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Powiat Krośnieński' -> 'powiat krośnieński'"^^xsd:string ;
     skos:prefLabel "pow. Krośnieński"@de .
 
 data:kreis_702e19b6 a bb5kbc:Kreis ;
@@ -12258,12 +12502,14 @@ data:kreis_702e19b6 a bb5kbc:Kreis ;
         <https://www.openstreetmap.org/relation/2663868>,
         wd:Q317943 ;
     bb5kbc:inBundesland data:bundesland_af35ac58 ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Powiat Nowosolski' -> 'Powiat Nowosolski'"^^xsd:string ;
     skos:prefLabel "pow. Nowosolski"@de .
 
 data:kreis_703d0ac1 a bb5kbc:Kreis ;
     rdfs:label "Jessen"@de ;
     bb5kbc:hasExternalIdentifier wd:Q6075 ;
     bb5kbc:inBundesland data:bundesland_26b09cd0 ;
+    bb5kbc:wikidataMatchDescription "Direct override | 'Jessen' -> QID=Q6075 | [override -> QID=Q6075]"^^xsd:string ;
     skos:prefLabel "Jessen"@de .
 
 data:kreis_71ef1381 a bb5kbc:Kreis ;
@@ -12273,12 +12519,14 @@ data:kreis_71ef1381 a bb5kbc:Kreis ;
         <https://www.openstreetmap.org/relation/62477>,
         wd:Q6068 ;
     bb5kbc:inBundesland data:bundesland_26b09cd0 ;
+    bb5kbc:wikidataMatchDescription "Exact match via skos:altLabel [global index] | 'Jerichower Land' -> 'Jerichower Land'"^^xsd:string ;
     skos:prefLabel "Jerichower Land"@de .
 
 data:kreis_725de27f a bb5kbc:Kreis ;
     rdfs:label "pow. Gorzów Wielkopolski"@de ;
     bb5kbc:hasExternalIdentifier wd:Q104731 ;
     bb5kbc:inBundesland data:bundesland_4bcbd621 ;
+    bb5kbc:wikidataMatchDescription "Direct override | 'pow. Gorzów Wielkopolski' -> QID=Q104731 | [override -> QID=Q104731]"^^xsd:string ;
     skos:prefLabel "pow. Gorzów Wielkopolski"@de .
 
 data:kreis_76afd314 a bb5kbc:Kreis ;
@@ -12287,6 +12535,7 @@ data:kreis_76afd314 a bb5kbc:Kreis ;
         <https://www.openstreetmap.org/relation/1277982>,
         wd:Q774944 ;
     bb5kbc:inBundesland data:bundesland_333d842b ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Powiat Świecki' -> 'Powiat Świecki'"^^xsd:string ;
     skos:prefLabel "pow. Świecki"@de .
 
 data:kreis_7f02affe a bb5kbc:Kreis ;
@@ -12296,6 +12545,7 @@ data:kreis_7f02affe a bb5kbc:Kreis ;
         <https://www.openstreetmap.org/relation/62671>,
         wd:Q706112 ;
     bb5kbc:inBundesland data:bundesland_eec0c902 ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Gera' -> 'Gera'"^^xsd:string ;
     skos:prefLabel "Gera"@de .
 
 data:kreis_82a6d438 a bb5kbc:Kreis ;
@@ -12304,6 +12554,7 @@ data:kreis_82a6d438 a bb5kbc:Kreis ;
         <https://www.openstreetmap.org/relation/2663872>,
         wd:Q318376 ;
     bb5kbc:inBundesland data:bundesland_af35ac58 ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Powiat Wschowski' -> 'powiat wschowski'"^^xsd:string ;
     skos:prefLabel "pow. Wschowski"@de .
 
 data:kreis_851e8a7c a bb5kbc:Kreis ;
@@ -12312,6 +12563,7 @@ data:kreis_851e8a7c a bb5kbc:Kreis ;
         <https://www.openstreetmap.org/relation/1551609>,
         wd:Q1341069 ;
     bb5kbc:inBundesland data:bundesland_076e84b3 ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Powiat Tczewski' -> 'powiat tczewski'"^^xsd:string ;
     skos:prefLabel "pow. Tczewski"@de .
 
 data:kreis_894f5898 a bb5kbc:Kreis ;
@@ -12321,12 +12573,14 @@ data:kreis_894f5898 a bb5kbc:Kreis ;
         wd:Q583446 ;
     bb5kbc:inBundesland data:bundesland_333d842b,
         data:bundesland_4bcbd621 ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Powiat Nakielski' -> 'powiat nakielski'"^^xsd:string ;
     skos:prefLabel "pow. Nakielski"@de .
 
 data:kreis_89f46930 a bb5kbc:Kreis ;
     rdfs:label "Kreis Rügen"@de ;
     bb5kbc:hasExternalIdentifier wd:Q2909 ;
     bb5kbc:inBundesland data:bundesland_21d5096a ;
+    bb5kbc:wikidataMatchDescription "Direct override | 'Kreis Rügen' -> QID=Q2909 | [stripped -> 'Rügen'; override -> QID=Q2909]"^^xsd:string ;
     skos:prefLabel "Kreis Rügen"@de .
 
 data:kreis_8a8f88e5 a bb5kbc:Kreis ;
@@ -12335,6 +12589,7 @@ data:kreis_8a8f88e5 a bb5kbc:Kreis ;
         <https://www.openstreetmap.org/relation/2406440>,
         wd:Q101575 ;
     bb5kbc:inBundesland data:bundesland_4bcbd621 ;
+    bb5kbc:wikidataMatchDescription "Fuzzy match (score=0.94) via rdfs:label [global index] | 'Powiat Poznanski' -> 'powiat poznański'"^^xsd:string ;
     skos:prefLabel "pow. Poznanski"@de .
 
 data:kreis_944498f5 a bb5kbc:Kreis ;
@@ -12343,6 +12598,7 @@ data:kreis_944498f5 a bb5kbc:Kreis ;
         <https://www.openstreetmap.org/relation/2663875>,
         wd:Q318002 ;
     bb5kbc:inBundesland data:bundesland_af35ac58 ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Powiat Sulęciński' -> 'Powiat Sulęciński'"^^xsd:string ;
     skos:prefLabel "pow. Sulęciński"@de .
 
 data:kreis_96274613 a bb5kbc:Kreis ;
@@ -12351,18 +12607,21 @@ data:kreis_96274613 a bb5kbc:Kreis ;
         <https://www.openstreetmap.org/relation/2662786>,
         wd:Q558403 ;
     bb5kbc:inBundesland data:bundesland_7c0cb461 ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Powiat Myśliborski' -> 'Powiat myśliborski'"^^xsd:string ;
     skos:prefLabel "pow. Myśliborski"@de .
 
 data:kreis_a38bbea6 a bb5kbc:Kreis ;
     rdfs:label "pow. Krosno Odrzańskie"@de ;
     bb5kbc:hasExternalIdentifier wd:Q317835 ;
     bb5kbc:inBundesland data:bundesland_af35ac58 ;
+    bb5kbc:wikidataMatchDescription "Direct override | 'pow. Krosno Odrzańskie' -> QID=Q317835 | [override -> QID=Q317835]"^^xsd:string ;
     skos:prefLabel "pow. Krosno Odrzańskie"@de .
 
 data:kreis_aa320c08 a bb5kbc:Kreis ;
     rdfs:label "pow. Szczecińska"@de ;
     bb5kbc:hasExternalIdentifier wd:Q558408 ;
     bb5kbc:inBundesland data:bundesland_7c0cb461 ;
+    bb5kbc:wikidataMatchDescription "Direct override | 'pow. Szczecińska' -> QID=Q558408 | [override -> QID=Q558408]"^^xsd:string ;
     skos:prefLabel "pow. Szczecińska"@de .
 
 data:kreis_b2bf6138 a bb5kbc:Kreis ;
@@ -12371,24 +12630,28 @@ data:kreis_b2bf6138 a bb5kbc:Kreis ;
         <https://www.openstreetmap.org/relation/451514>,
         wd:Q179986 ;
     bb5kbc:inBundesland data:bundesland_3dfdb305 ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Powiat Strzeliński' -> 'powiat strzeliński'"^^xsd:string ;
     skos:prefLabel "pow. Strzeliński"@de .
 
 data:kreis_b44e37a4 a bb5kbc:Kreis ;
     rdfs:label "Görlitz"@de ;
     bb5kbc:hasExternalIdentifier wd:Q6317 ;
     bb5kbc:inBundesland data:bundesland_2b599b59 ;
+    bb5kbc:wikidataMatchDescription "Direct override | 'Görlitz' -> QID=Q6317 | [override -> QID=Q6317]"^^xsd:string ;
     skos:prefLabel "Görlitz"@de .
 
 data:kreis_c1492242 a bb5kbc:Kreis ;
     rdfs:label "pow. Miński"@de ;
     bb5kbc:hasExternalIdentifier wd:Q947536 ;
     bb5kbc:inBundesland data:bundesland_333d842b ;
+    bb5kbc:wikidataMatchDescription "Direct override | 'pow. Miński' -> QID=Q947536 | [override -> QID=Q947536]"^^xsd:string ;
     skos:prefLabel "pow. Miński"@de .
 
 data:kreis_c8510b50 a bb5kbc:Kreis ;
     rdfs:label "pow. Słupecki"@de ;
     bb5kbc:hasExternalIdentifier wd:Q133257 ;
     bb5kbc:inBundesland data:bundesland_1d9b61a6 ;
+    bb5kbc:wikidataMatchDescription "Direct override | 'pow. Słupecki' -> QID=Q133257 | [override -> QID=Q133257]"^^xsd:string ;
     skos:prefLabel "pow. Słupecki"@de .
 
 data:kreis_c8b09c56 a bb5kbc:Kreis ;
@@ -12397,12 +12660,14 @@ data:kreis_c8b09c56 a bb5kbc:Kreis ;
         <https://www.openstreetmap.org/relation/1514927>,
         wd:Q1341090 ;
     bb5kbc:inBundesland data:bundesland_076e84b3 ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Powiat Starogardzki' -> 'powiat starogardzki'"^^xsd:string ;
     skos:prefLabel "pow. Starogardzki"@de .
 
 data:kreis_c9772f41 a bb5kbc:Kreis ;
     rdfs:label "Hoyerswerda"@de ;
     bb5kbc:hasExternalIdentifier wd:Q571947 ;
     bb5kbc:inBundesland data:bundesland_2b599b59 ;
+    bb5kbc:wikidataMatchDescription "Direct override | 'Hoyerswerda' -> QID=Q571947 | [override -> QID=Q571947]"^^xsd:string ;
     skos:prefLabel "Hoyerswerda"@de .
 
 data:kreis_cae21d94 a bb5kbc:Kreis ;
@@ -12411,6 +12676,7 @@ data:kreis_cae21d94 a bb5kbc:Kreis ;
         <https://www.openstreetmap.org/relation/2662788>,
         wd:Q1340630 ;
     bb5kbc:inBundesland data:bundesland_7c0cb461 ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Powiat Stargardzki' -> 'powiat stargardzki'"^^xsd:string ;
     skos:prefLabel "pow. Stargardzki"@de .
 
 data:kreis_d1b39f85 a bb5kbc:Kreis ;
@@ -12419,6 +12685,7 @@ data:kreis_d1b39f85 a bb5kbc:Kreis ;
         <https://www.openstreetmap.org/relation/2662779>,
         wd:Q461252 ;
     bb5kbc:inBundesland data:bundesland_51c8eb2f ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Powiat Głubczycki' -> 'powiat głubczycki'"^^xsd:string ;
     skos:prefLabel "pow. Głubczycki"@de .
 
 data:kreis_d3e4767f a bb5kbc:Kreis ;
@@ -12427,6 +12694,7 @@ data:kreis_d3e4767f a bb5kbc:Kreis ;
         <https://www.openstreetmap.org/relation/2616210>,
         wd:Q687625 ;
     bb5kbc:inBundesland data:bundesland_333d842b ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Powiat Radziejowski' -> 'powiat radziejowski'"^^xsd:string ;
     skos:prefLabel "pow. Radziejowski"@de .
 
 data:kreis_d6187276 a bb5kbc:Kreis ;
@@ -12435,6 +12703,7 @@ data:kreis_d6187276 a bb5kbc:Kreis ;
         <https://www.openstreetmap.org/relation/2661910>,
         wd:Q462130 ;
     bb5kbc:inBundesland data:bundesland_51c8eb2f ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Powiat Prudnicki' -> 'Powiat Prudnicki'"^^xsd:string ;
     skos:prefLabel "pow. Prudnicki"@de .
 
 data:kreis_d7261016 a bb5kbc:Kreis ;
@@ -12443,6 +12712,7 @@ data:kreis_d7261016 a bb5kbc:Kreis ;
         <https://www.openstreetmap.org/relation/1686775>,
         wd:Q650180 ;
     bb5kbc:inBundesland data:bundesland_333d842b ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Powiat Toruński' -> 'Powiat Toruński'"^^xsd:string ;
     skos:prefLabel "pow. Toruński"@de .
 
 data:kreis_da5b0d01 a bb5kbc:Kreis ;
@@ -12451,6 +12721,7 @@ data:kreis_da5b0d01 a bb5kbc:Kreis ;
         <https://www.openstreetmap.org/relation/2690735>,
         wd:Q133188 ;
     bb5kbc:inBundesland data:bundesland_4bcbd621 ;
+    bb5kbc:wikidataMatchDescription "Fuzzy match (score=0.84) via rdfs:label [global index] | 'Powiat Kościan' -> 'powiat kościański'"^^xsd:string ;
     skos:prefLabel "pow. Kościan"@de .
 
 data:kreis_dba7671b a bb5kbc:Kreis ;
@@ -12459,12 +12730,14 @@ data:kreis_dba7671b a bb5kbc:Kreis ;
         <https://www.openstreetmap.org/relation/62424>,
         wd:Q7864 ;
     bb5kbc:inBundesland data:bundesland_eec0c902 ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Unstrut-Hainich-Kreis' -> 'Unstrut-Hainich-Kreis'"^^xsd:string ;
     skos:prefLabel "Unstrut-Hainich-Kreis"@de .
 
 data:kreis_df92e229 a bb5kbc:Kreis ;
     rdfs:label "Leipzig-Land"@de ;
     bb5kbc:hasExternalIdentifier wd:Q1323208 ;
     bb5kbc:inBundesland data:bundesland_2b599b59 ;
+    bb5kbc:wikidataMatchDescription "Direct override | 'Leipzig-Land' -> QID=Q1323208 | [override -> QID=Q1323208]"^^xsd:string ;
     skos:prefLabel "Leipzig-Land"@de .
 
 data:kreis_dfbeddd9 a bb5kbc:Kreis ;
@@ -12473,6 +12746,7 @@ data:kreis_dfbeddd9 a bb5kbc:Kreis ;
         <https://www.openstreetmap.org/relation/451513>,
         wd:Q716143 ;
     bb5kbc:inBundesland data:bundesland_3dfdb305 ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Powiat Ząbkowicki' -> 'Powiat Ząbkowicki'"^^xsd:string ;
     skos:prefLabel "pow. Ząbkowicki"@de .
 
 data:kreis_e28b3f2c a bb5kbc:Kreis ;
@@ -12481,12 +12755,14 @@ data:kreis_e28b3f2c a bb5kbc:Kreis ;
         <https://www.openstreetmap.org/relation/2663860>,
         wd:Q318459 ;
     bb5kbc:inBundesland data:bundesland_af35ac58 ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Powiat Żarski' -> 'powiat żarski'"^^xsd:string ;
     skos:prefLabel "pow. Żarski"@de .
 
 data:kreis_ec96f9ce a bb5kbc:Kreis ;
     rdfs:label "pow. Gryfiński"@de ;
     bb5kbc:hasExternalIdentifier wd:Q326895 ;
     bb5kbc:inBundesland data:bundesland_af35ac58 ;
+    bb5kbc:wikidataMatchDescription "Direct override | 'pow. Gryfiński' -> QID=Q326895 | [override -> QID=Q326895]"^^xsd:string ;
     skos:prefLabel "pow. Gryfiński"@de .
 
 data:kreis_ef45870e a bb5kbc:Kreis ;
@@ -12495,12 +12771,14 @@ data:kreis_ef45870e a bb5kbc:Kreis ;
         <https://www.openstreetmap.org/relation/2661908>,
         wd:Q461537 ;
     bb5kbc:inBundesland data:bundesland_51c8eb2f ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Powiat Nyski' -> 'powiat nyski'"^^xsd:string ;
     skos:prefLabel "pow. Nyski"@de .
 
 data:kreis_fd0b0698 a bb5kbc:Kreis ;
     rdfs:label "Sömmerda"@de ;
     bb5kbc:hasExternalIdentifier wd:Q7865 ;
     bb5kbc:inBundesland data:bundesland_eec0c902 ;
+    bb5kbc:wikidataMatchDescription "Direct override | 'Sommerda' -> QID=Q7865 | [alias 'Sommerda' -> 'Sömmerda'; override -> QID=Q7865]"^^xsd:string ;
     skos:prefLabel "Sömmerda"@de .
 
 data:kultur_cf06f188 a bb5kbc:Kulturgruppe ;
@@ -27315,22 +27593,22 @@ ns1:fst_wgs84_lit_enriched_csv a prov:Entity ;
     rdfs:label "Literature-enriched intermediate dataset" ;
     prov:atLocation <file:///C:/git/bb-5kbc-sites/data/fst_wgs84_lit_enriched.csv> ;
     prov:wasDerivedFrom ns1:fst_wgs84_comma_csv ;
-    prov:wasGeneratedBy <https://example.org/bb-5kbc-sites/run/2026-04-27T13-58-01Z/stage1_literature> .
+    prov:wasGeneratedBy <https://example.org/bb-5kbc-sites/run/2026-04-27T18-56-13Z/stage1_literature> .
 
 ns1:repo_version a prov:Entity ;
     rdfs:label "Repository state at run time" ;
     ns1:gitBranch "main" ;
-    ns1:gitCommit "c996fbf4ac682f0e3455b32f7763c5a21b71ce0e" ;
+    ns1:gitCommit "1531982cc81eb57306488f92aa1c9cc53b463c9e" ;
     ns1:gitDirty true .
 
-<https://example.org/bb-5kbc-sites/run/2026-04-27T13-58-01Z/stage3_merge> a prov:Activity ;
+<https://example.org/bb-5kbc-sites/run/2026-04-27T18-56-13Z/stage3_merge> a prov:Activity ;
     rdfs:label "Stage 3 — merge geo IDs into literature-enriched CSV" ;
     prov:used ns1:fst_standortanalysen_ref_mapped_csv,
         ns1:fst_wgs84_lit_enriched_csv ;
     prov:wasAssociatedWith ns1:enrich_fst_py ;
-    prov:wasInformedBy <https://example.org/bb-5kbc-sites/run/2026-04-27T13-58-01Z> ;
+    prov:wasInformedBy <https://example.org/bb-5kbc-sites/run/2026-04-27T18-56-13Z> ;
     ns1:columnCount 64 ;
-    ns1:durationSeconds 0.07 ;
+    ns1:durationSeconds 0.09 ;
     ns1:rowCount 540 .
 
 ns1:wikidata_map_py a prov:Plan,
@@ -29133,6 +29411,7 @@ data:bundesland_076e84b3 a bb5kbc:Bundesland ;
         <https://www.openstreetmap.org/relation/130975>,
         wd:Q54180 ;
     bb5kbc:inLand data:land_c5d7f540 ;
+    bb5kbc:wikidataMatchDescription "Exact match via skos:altLabel [global index] | 'Pomorskie' -> 'pomorskie' | [normalised: stripped -> 'Pomorskie']"^^xsd:string ;
     skos:prefLabel "Woj. Pomorskie"@de .
 
 data:entdeckungsart_38d772d5 a bb5kbc:EntdeckungsartType ;
@@ -29154,12 +29433,14 @@ data:gemeinde_01aebe87 a bb5kbc:Gemeinde ;
     rdfs:label "Zechliner Hütte"@de ;
     bb5kbc:hasExternalIdentifier wd:Q184162 ;
     bb5kbc:inKreis data:kreis_2783ecb9 ;
+    bb5kbc:wikidataMatchDescription "Direct override | 'Zechliner Hütte' -> QID=Q184162 | [override -> QID=Q184162]"^^xsd:string ;
     skos:prefLabel "Zechliner Hütte"@de .
 
 data:gemeinde_03e347e3 a bb5kbc:Gemeinde ;
     rdfs:label "Geltow"@de ;
     bb5kbc:hasExternalIdentifier wd:Q1499843 ;
     bb5kbc:inKreis data:kreis_484c68b5 ;
+    bb5kbc:wikidataMatchDescription "Direct override | 'Geltow' -> QID=Q1499843 | [override -> QID=Q1499843]"^^xsd:string ;
     skos:prefLabel "Geltow"@de .
 
 data:gemeinde_07d65af2 a bb5kbc:Gemeinde ;
@@ -29168,6 +29449,7 @@ data:gemeinde_07d65af2 a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/2979014>,
         wd:Q554998 ;
     bb5kbc:inKreis data:kreis_2a0f5e5e ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Korsze' -> 'Korsze'"^^xsd:string ;
     skos:prefLabel "Korsze"@de .
 
 data:gemeinde_099020b6 a bb5kbc:Gemeinde ;
@@ -29176,42 +29458,49 @@ data:gemeinde_099020b6 a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/2709067>,
         wd:Q2326629 ;
     bb5kbc:inKreis data:kreis_4759b8ea ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Gmina Żukowice' -> 'Gmina Żukowice'"^^xsd:string ;
     skos:prefLabel "Gmina Żukowice"@de .
 
 data:gemeinde_0add3709 a bb5kbc:Gemeinde ;
     rdfs:label "Sabrodt"@de ;
     bb5kbc:hasExternalIdentifier wd:Q78498958 ;
     bb5kbc:inKreis data:kreis_0a6e4d3b ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Sabrodt' -> 'Sabrodt'"^^xsd:string ;
     skos:prefLabel "Sabrodt"@de .
 
 data:gemeinde_0f80183e a bb5kbc:Gemeinde ;
     rdfs:label "Dyrotz"@de ;
     bb5kbc:hasExternalIdentifier wd:Q99646888 ;
     bb5kbc:inKreis data:kreis_d4d0a03b ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Dyrotz' -> 'Dyrotz'"^^xsd:string ;
     skos:prefLabel "Dyrotz"@de .
 
 data:gemeinde_1a77989b a bb5kbc:Gemeinde ;
     rdfs:label "Brandenburg-Altstadt"@de ;
     bb5kbc:hasExternalIdentifier wd:Q3931 ;
     bb5kbc:inKreis data:kreis_f6c6e0be ;
+    bb5kbc:wikidataMatchDescription "Direct override | 'Brandenburg-Altstadt' -> QID=Q3931 | [override -> QID=Q3931]"^^xsd:string ;
     skos:prefLabel "Brandenburg-Altstadt"@de .
 
 data:gemeinde_20dea27b a bb5kbc:Gemeinde ;
     rdfs:label "Blankenburg"@de ;
     bb5kbc:hasExternalIdentifier wd:Q881576 ;
     bb5kbc:inKreis data:kreis_0a22f293 ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Blankenburg' -> 'Blankenburg'"^^xsd:string ;
     skos:prefLabel "Blankenburg"@de .
 
 data:gemeinde_2748805e a bb5kbc:Gemeinde ;
     rdfs:label "Schönwalde"@de ;
     bb5kbc:hasExternalIdentifier wd:Q581715 ;
     bb5kbc:inKreis data:kreis_d4d0a03b ;
+    bb5kbc:wikidataMatchDescription "Direct override | 'Schönwalde' -> QID=Q581715 | [override -> QID=Q581715]"^^xsd:string ;
     skos:prefLabel "Schönwalde"@de .
 
 data:gemeinde_3d1e103a a bb5kbc:Gemeinde ;
     rdfs:label "Rohrbeck"@de ;
     bb5kbc:hasExternalIdentifier wd:Q22693663 ;
     bb5kbc:inKreis data:kreis_f18982f6 ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Rohrbeck' -> 'Rohrbeck'"^^xsd:string ;
     skos:prefLabel "Rohrbeck"@de .
 
 data:gemeinde_3e3c7e44 a bb5kbc:Gemeinde ;
@@ -29219,6 +29508,7 @@ data:gemeinde_3e3c7e44 a bb5kbc:Gemeinde ;
     bb5kbc:hasExternalIdentifier <https://www.openstreetmap.org/relation/4480066>,
         wd:Q2595469 ;
     bb5kbc:inKreis data:kreis_2783ecb9 ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ normalised match | 'Altfriesack' -> 'Wustrau-Altfriesack'"^^xsd:string ;
     skos:prefLabel "Altfriesack"@de .
 
 data:gemeinde_3fac05a9 a bb5kbc:Gemeinde ;
@@ -29227,6 +29517,7 @@ data:gemeinde_3fac05a9 a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/2851622>,
         wd:Q556749 ;
     bb5kbc:inKreis data:kreis_da5b0d01 ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Gmina Kościan' -> 'Gmina Kościan'"^^xsd:string ;
     skos:prefLabel "Gmina Kościan"@de .
 
 data:gemeinde_405a2d04 a bb5kbc:Gemeinde ;
@@ -29234,12 +29525,14 @@ data:gemeinde_405a2d04 a bb5kbc:Gemeinde ;
     bb5kbc:hasExternalIdentifier gn:2809010,
         wd:Q94645248 ;
     bb5kbc:inKreis data:kreis_2783ecb9 ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Wildberg' -> 'Wildberg'"^^xsd:string ;
     skos:prefLabel "Wildberg"@de .
 
 data:gemeinde_41748915 a bb5kbc:Gemeinde ;
     rdfs:label "Badingen"@de ;
     bb5kbc:hasExternalIdentifier wd:Q799036 ;
     bb5kbc:inKreis data:kreis_06458fa6 ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Badingen' -> 'Badingen'"^^xsd:string ;
     skos:prefLabel "Badingen"@de .
 
 data:gemeinde_442bdcd1 a bb5kbc:Gemeinde ;
@@ -29248,6 +29541,7 @@ data:gemeinde_442bdcd1 a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/2634358>,
         wd:Q2461196 ;
     bb5kbc:inKreis data:kreis_894f5898 ;
+    bb5kbc:wikidataMatchDescription "Exact match via skos:altLabel [global index] | 'Gmina Kcynia' -> 'gmina Kcynia'"^^xsd:string ;
     skos:prefLabel "Gmina Kcynia"@de .
 
 data:gemeinde_454163f6 a bb5kbc:Gemeinde ;
@@ -29255,12 +29549,14 @@ data:gemeinde_454163f6 a bb5kbc:Gemeinde ;
     bb5kbc:hasExternalIdentifier <http://vocab.getty.edu/tgn/7092275>,
         wd:Q2523873 ;
     bb5kbc:inKreis data:kreis_d4d0a03b ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Vietznitz' -> 'Vietznitz'"^^xsd:string ;
     skos:prefLabel "Vietznitz"@de .
 
 data:gemeinde_4afd2c13 a bb5kbc:Gemeinde ;
     rdfs:label "Fürstenwerder"@de ;
     bb5kbc:hasExternalIdentifier wd:Q1483538 ;
     bb5kbc:inKreis data:kreis_0a22f293 ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Fürstenwerder' -> 'Fürstenwerder'"^^xsd:string ;
     skos:prefLabel "Fürstenwerder"@de .
 
 data:gemeinde_4c9b4dd1 a bb5kbc:Gemeinde ;
@@ -29269,6 +29565,7 @@ data:gemeinde_4c9b4dd1 a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/1334121>,
         wd:Q455368 ;
     bb5kbc:inKreis data:kreis_0a22f293 ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Brüssow' -> 'Brüssow'"^^xsd:string ;
     skos:prefLabel "Brüssow"@de .
 
 data:gemeinde_4f66da0e a bb5kbc:Gemeinde ;
@@ -29276,6 +29573,7 @@ data:gemeinde_4f66da0e a bb5kbc:Gemeinde ;
     bb5kbc:hasExternalIdentifier gn:2805163,
         wd:Q42297036 ;
     bb5kbc:inKreis data:kreis_0b003b3b ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Zaue' -> 'Zaue'"^^xsd:string ;
     skos:prefLabel "Zaue"@de .
 
 data:gemeinde_55240cf0 a bb5kbc:Gemeinde ;
@@ -29285,6 +29583,7 @@ data:gemeinde_55240cf0 a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/1334102>,
         wd:Q537214 ;
     bb5kbc:inKreis data:kreis_0a22f293 ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Prenzlau' -> 'Prenzlau'"^^xsd:string ;
     skos:prefLabel "Prenzlau"@de .
 
 data:gemeinde_57f651b9 a bb5kbc:Gemeinde ;
@@ -29293,12 +29592,14 @@ data:gemeinde_57f651b9 a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/1334108>,
         wd:Q16008 ;
     bb5kbc:inKreis data:kreis_0a22f293 ;
+    bb5kbc:wikidataMatchDescription "Exact match via skos:altLabel [global index] | 'Schwedt' -> 'Schwedt'"^^xsd:string ;
     skos:prefLabel "Schwedt"@de .
 
 data:gemeinde_5a24db07 a bb5kbc:Gemeinde ;
     rdfs:label "Gmina Złotniki Kuj."@de ;
     bb5kbc:hasExternalIdentifier wd:Q618437 ;
     bb5kbc:inKreis data:kreis_d26f6fb5 ;
+    bb5kbc:wikidataMatchDescription "Direct override | 'Gmina Złotniki Kuj.' -> QID=Q618437 | [override -> QID=Q618437]"^^xsd:string ;
     skos:prefLabel "Gmina Złotniki Kuj."@de .
 
 data:gemeinde_5e3894c8 a bb5kbc:Gemeinde ;
@@ -29306,6 +29607,7 @@ data:gemeinde_5e3894c8 a bb5kbc:Gemeinde ;
     bb5kbc:hasExternalIdentifier wd:Q30039482 ;
     bb5kbc:inKreis data:kreis_b031fa42,
         data:kreis_f6c6e0be ;
+    bb5kbc:wikidataMatchDescription "Direct override | 'Neuendorf' -> QID=Q30039482 | [override -> QID=Q30039482]"^^xsd:string ;
     skos:prefLabel "Neuendorf"@de .
 
 data:gemeinde_62d44c05 a bb5kbc:Gemeinde ;
@@ -29314,6 +29616,7 @@ data:gemeinde_62d44c05 a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/2953627>,
         wd:Q2120688 ;
     bb5kbc:inKreis data:kreis_3a9bc5c0 ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Gmina Oława' -> 'Gmina Oława'"^^xsd:string ;
     skos:prefLabel "Gmina Oława"@de .
 
 data:gemeinde_680491ed a bb5kbc:Gemeinde ;
@@ -29323,18 +29626,21 @@ data:gemeinde_680491ed a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/422436>,
         wd:Q486541 ;
     bb5kbc:inKreis data:kreis_f18982f6 ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Jüterbog' -> 'Jüterbog'"^^xsd:string ;
     skos:prefLabel "Jüterbog"@de .
 
 data:gemeinde_71d32acb a bb5kbc:Gemeinde ;
     rdfs:label "Gmina Poznań"@de ;
     bb5kbc:hasExternalIdentifier wd:Q268 ;
     bb5kbc:inKreis data:kreis_8a8f88e5 ;
+    bb5kbc:wikidataMatchDescription "Direct override | 'Gmina Poznań' -> QID=Q268 | [override -> QID=Q268]"^^xsd:string ;
     skos:prefLabel "Gmina Poznań"@de .
 
 data:gemeinde_74711701 a bb5kbc:Gemeinde ;
     rdfs:label "Meichow"@de ;
     bb5kbc:hasExternalIdentifier wd:Q20828909 ;
     bb5kbc:inKreis data:kreis_0a22f293 ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Meichow' -> 'Meichow'"^^xsd:string ;
     skos:prefLabel "Meichow"@de .
 
 data:gemeinde_868b6904 a bb5kbc:Gemeinde ;
@@ -29343,6 +29649,7 @@ data:gemeinde_868b6904 a bb5kbc:Gemeinde ;
         gn:2917229,
         wd:Q884062 ;
     bb5kbc:inKreis data:kreis_f18982f6 ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Gröben' -> 'Gröben'"^^xsd:string ;
     skos:prefLabel "Gröben"@de .
 
 data:gemeinde_89d48ad2 a bb5kbc:Gemeinde ;
@@ -29352,6 +29659,7 @@ data:gemeinde_89d48ad2 a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/1384842>,
         wd:Q16064 ;
     bb5kbc:inKreis data:kreis_0a6e4d3b ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Fürstenwalde' -> 'Fürstenwalde'"^^xsd:string ;
     skos:prefLabel "Fürstenwalde"@de .
 
 data:gemeinde_8aa181f6 a bb5kbc:Gemeinde ;
@@ -29360,6 +29668,7 @@ data:gemeinde_8aa181f6 a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/1310088>,
         wd:Q587077 ;
     bb5kbc:inKreis data:kreis_06458fa6 ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Birkenwerder' -> 'Birkenwerder'"^^xsd:string ;
     skos:prefLabel "Birkenwerder"@de .
 
 data:gemeinde_8c7fd844 a bb5kbc:Gemeinde ;
@@ -29368,24 +29677,28 @@ data:gemeinde_8c7fd844 a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/2603565>,
         wd:Q550734 ;
     bb5kbc:inKreis data:kreis_851e8a7c ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Pelplin' -> 'Pelplin'"^^xsd:string ;
     skos:prefLabel "Pelplin"@de .
 
 data:gemeinde_91f15ef0 a bb5kbc:Gemeinde ;
     rdfs:label "Bornim"@de ;
     bb5kbc:hasExternalIdentifier wd:Q893995 ;
     bb5kbc:inKreis data:kreis_d5404511 ;
+    bb5kbc:wikidataMatchDescription "Direct override | 'Bornim' -> QID=Q893995 | [override -> QID=Q893995]"^^xsd:string ;
     skos:prefLabel "Bornim"@de .
 
 data:gemeinde_9a9f9999 a bb5kbc:Gemeinde ;
     rdfs:label "Brandenburg-Neustadt"@de ;
     bb5kbc:hasExternalIdentifier wd:Q3931 ;
     bb5kbc:inKreis data:kreis_f6c6e0be ;
+    bb5kbc:wikidataMatchDescription "Direct override | 'Brandenburg-Neustadt' -> QID=Q3931 | [override -> QID=Q3931]"^^xsd:string ;
     skos:prefLabel "Brandenburg-Neustadt"@de .
 
 data:gemeinde_9df1f628 a bb5kbc:Gemeinde ;
     rdfs:label "Satzkorn"@de ;
     bb5kbc:hasExternalIdentifier wd:Q131931 ;
     bb5kbc:inKreis data:kreis_484c68b5 ;
+    bb5kbc:wikidataMatchDescription "Direct override | 'Satzkorn' -> QID=Q131931 | [override -> QID=Q131931]"^^xsd:string ;
     skos:prefLabel "Satzkorn"@de .
 
 data:gemeinde_a4b9efc1 a bb5kbc:Gemeinde ;
@@ -29394,12 +29707,14 @@ data:gemeinde_a4b9efc1 a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/2635528>,
         wd:Q2182076 ;
     bb5kbc:inKreis data:kreis_063ba201 ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Gmina Mogilno' -> 'Gmina Mogilno'"^^xsd:string ;
     skos:prefLabel "Gmina Mogilno"@de .
 
 data:gemeinde_a4ecbeef a bb5kbc:Gemeinde ;
     rdfs:label "Strodehne"@de ;
     bb5kbc:hasExternalIdentifier wd:Q51682527 ;
     bb5kbc:inKreis data:kreis_d4d0a03b ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Strodehne' -> 'Strodehne'"^^xsd:string ;
     skos:prefLabel "Strodehne"@de .
 
 data:gemeinde_a89f762d a bb5kbc:Gemeinde ;
@@ -29408,6 +29723,7 @@ data:gemeinde_a89f762d a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/1303791>,
         wd:Q584473 ;
     bb5kbc:inKreis data:kreis_61991e7b ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Elsterwerda' -> 'Elsterwerda'"^^xsd:string ;
     skos:prefLabel "Elsterwerda"@de .
 
 data:gemeinde_b74dc437 a bb5kbc:Gemeinde ;
@@ -29416,12 +29732,14 @@ data:gemeinde_b74dc437 a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/2907351>,
         wd:Q557304 ;
     bb5kbc:inKreis data:kreis_ec96f9ce ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Moryń' -> 'Moryń'"^^xsd:string ;
     skos:prefLabel "Moryń"@de .
 
 data:gemeinde_bb46b330 a bb5kbc:Gemeinde ;
     rdfs:label "Lohm"@de ;
     bb5kbc:hasExternalIdentifier wd:Q88216510 ;
     bb5kbc:inKreis data:kreis_2783ecb9 ;
+    bb5kbc:wikidataMatchDescription "Direct override | 'Lohm' -> QID=Q88216510 | [override -> QID=Q88216510]"^^xsd:string ;
     skos:prefLabel "Lohm"@de .
 
 data:gemeinde_bcb69aa3 a bb5kbc:Gemeinde ;
@@ -29430,12 +29748,14 @@ data:gemeinde_bcb69aa3 a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/2406261>,
         wd:Q526388 ;
     bb5kbc:inKreis data:kreis_5f5319e2 ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Schkopau' -> 'Schkopau'"^^xsd:string ;
     skos:prefLabel "Schkopau"@de .
 
 data:gemeinde_c000c7a8 a bb5kbc:Gemeinde ;
     rdfs:label "Dobberzin"@de ;
     bb5kbc:hasExternalIdentifier wd:Q1233133 ;
     bb5kbc:inKreis data:kreis_0a22f293 ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Dobberzin' -> 'Dobberzin'"^^xsd:string ;
     skos:prefLabel "Dobberzin"@de .
 
 data:gemeinde_c08ec2bf a bb5kbc:Gemeinde ;
@@ -29444,6 +29764,7 @@ data:gemeinde_c08ec2bf a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/2635731>,
         wd:Q749271 ;
     bb5kbc:inKreis data:kreis_fa49171f ;
+    bb5kbc:wikidataMatchDescription "Fuzzy match (score=0.97) via rdfs:label [global index] | 'Gmina Wocławek' -> 'Gmina Włocławek'"^^xsd:string ;
     skos:prefLabel "Gmina Wocławek"@de .
 
 data:gemeinde_c1b145da a bb5kbc:Gemeinde ;
@@ -29452,6 +29773,7 @@ data:gemeinde_c1b145da a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/422527>,
         wd:Q819776 ;
     bb5kbc:inKreis data:kreis_484c68b5 ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Bergholz-Rehbrücke' -> 'Bergholz-Rehbrücke'"^^xsd:string ;
     skos:prefLabel "Bergholz-Rehbrücke"@de .
 
 data:gemeinde_c8396f9c a bb5kbc:Gemeinde ;
@@ -29461,12 +29783,14 @@ data:gemeinde_c8396f9c a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/1316017>,
         wd:Q184481 ;
     bb5kbc:inKreis data:kreis_06458fa6 ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Zehdenick' -> 'Zehdenick'"^^xsd:string ;
     skos:prefLabel "Zehdenick"@de .
 
 data:gemeinde_d1afd416 a bb5kbc:Gemeinde ;
     rdfs:label "Ribbeck"@de ;
     bb5kbc:hasExternalIdentifier wd:Q2148516 ;
     bb5kbc:inKreis data:kreis_d4d0a03b ;
+    bb5kbc:wikidataMatchDescription "Direct override | 'Ribbeck' -> QID=Q2148516 | [override -> QID=Q2148516]"^^xsd:string ;
     skos:prefLabel "Ribbeck"@de .
 
 data:gemeinde_d568b9b5 a bb5kbc:Gemeinde ;
@@ -29475,6 +29799,7 @@ data:gemeinde_d568b9b5 a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/2635362>,
         wd:Q618405 ;
     bb5kbc:inKreis data:kreis_d26f6fb5 ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Gmina Dąbrowa Biskupia' -> 'Gmina Dąbrowa Biskupia'"^^xsd:string ;
     skos:prefLabel "Gmina Dąbrowa Biskupia"@de .
 
 data:gemeinde_db4a9ae5 a bb5kbc:Gemeinde ;
@@ -29483,18 +29808,21 @@ data:gemeinde_db4a9ae5 a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/1262688>,
         wd:Q581994 ;
     bb5kbc:inKreis data:kreis_d4d0a03b ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Nauen' -> 'Nauen'"^^xsd:string ;
     skos:prefLabel "Nauen"@de .
 
 data:gemeinde_dd8c0a93 a bb5kbc:Gemeinde ;
     rdfs:label "Felchow"@de ;
     bb5kbc:hasExternalIdentifier wd:Q66363229 ;
     bb5kbc:inKreis data:kreis_0a22f293 ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Felchow' -> 'Felchow'"^^xsd:string ;
     skos:prefLabel "Felchow"@de .
 
 data:gemeinde_f4e93f80 a bb5kbc:Gemeinde ;
     rdfs:label "Krewelin"@de ;
     bb5kbc:hasExternalIdentifier wd:Q87325014 ;
     bb5kbc:inKreis data:kreis_06458fa6 ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Krewelin' -> 'Krewelin'"^^xsd:string ;
     skos:prefLabel "Krewelin"@de .
 
 data:gemeinde_f8f8b6a1 a bb5kbc:Gemeinde ;
@@ -29503,6 +29831,7 @@ data:gemeinde_f8f8b6a1 a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/2633696>,
         wd:Q2461605 ;
     bb5kbc:inKreis data:kreis_d7261016 ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Gmina Chełmża' -> 'Gmina Chełmża'"^^xsd:string ;
     skos:prefLabel "Gmina Chełmża"@de .
 
 data:gemeinde_f9518cd7 a bb5kbc:Gemeinde ;
@@ -29510,6 +29839,7 @@ data:gemeinde_f9518cd7 a bb5kbc:Gemeinde ;
     bb5kbc:hasExternalIdentifier <https://www.openstreetmap.org/relation/5638986>,
         wd:Q669289 ;
     bb5kbc:inKreis data:kreis_0b003b3b ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Gräbendorf' -> 'Gräbendorf'"^^xsd:string ;
     skos:prefLabel "Gräbendorf"@de .
 
 data:gemeinde_fdfff175 a bb5kbc:Gemeinde ;
@@ -29519,6 +29849,7 @@ data:gemeinde_fdfff175 a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/2405054>,
         wd:Q534715 ;
     bb5kbc:inKreis data:kreis_d3d391e6 ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Teuchern' -> 'Teuchern'"^^xsd:string ;
     skos:prefLabel "Teuchern"@de .
 
 data:gemeinde_fe851cf4 a bb5kbc:Gemeinde ;
@@ -29527,6 +29858,7 @@ data:gemeinde_fe851cf4 a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/2883387>,
         wd:Q244653 ;
     bb5kbc:inKreis data:kreis_d2918bbf ;
+    bb5kbc:wikidataMatchDescription "Exact match via skos:altLabel [global index] | 'Gmina Zwierzyn' -> 'gmina Zwierzyn'"^^xsd:string ;
     skos:prefLabel "Gmina Zwierzyn"@de .
 
 data:kreis_00406c53 a bb5kbc:Kreis ;
@@ -29536,6 +29868,7 @@ data:kreis_00406c53 a bb5kbc:Kreis ;
         <https://www.openstreetmap.org/relation/62571>,
         wd:Q6156 ;
     bb5kbc:inBundesland data:bundesland_2ddb2d82 ;
+    bb5kbc:wikidataMatchDescription "Exact match via skos:altLabel [global index] | 'Oberspreewald-Lausitz' -> 'Oberspreewald-Lausitz'"^^xsd:string ;
     skos:prefLabel "Oberspreewald-Lausitz"@de .
 
 data:kreis_22998a51 a bb5kbc:Kreis ;
@@ -29544,12 +29877,14 @@ data:kreis_22998a51 a bb5kbc:Kreis ;
         <https://www.openstreetmap.org/relation/2615964>,
         wd:Q750491 ;
     bb5kbc:inBundesland data:bundesland_333d842b ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Powiat Aleksandrowski' -> 'powiat aleksandrowski'"^^xsd:string ;
     skos:prefLabel "pow. Aleksandrowski"@de .
 
 data:kreis_34e779a6 a bb5kbc:Kreis ;
     rdfs:label "Landkreis Börde"@de ;
     bb5kbc:hasExternalIdentifier wd:Q6064 ;
     bb5kbc:inBundesland data:bundesland_26b09cd0 ;
+    bb5kbc:wikidataMatchDescription "Direct override | 'Landkreis Börde' -> QID=Q6064 | [stripped -> 'Börde'; override -> QID=Q6064]"^^xsd:string ;
     skos:prefLabel "Landkreis Börde"@de .
 
 data:kreis_44302f2d a bb5kbc:Kreis ;
@@ -29558,6 +29893,7 @@ data:kreis_44302f2d a bb5kbc:Kreis ;
         <https://www.openstreetmap.org/relation/343814>,
         wd:Q558696 ;
     bb5kbc:inBundesland data:bundesland_7c0cb461 ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Powiat Policki' -> 'powiat policki'"^^xsd:string ;
     skos:prefLabel "pow. Policki"@de .
 
 data:kreis_5f5319e2 a bb5kbc:Kreis ;
@@ -29566,6 +29902,7 @@ data:kreis_5f5319e2 a bb5kbc:Kreis ;
         <https://www.openstreetmap.org/relation/62473>,
         wd:Q6098 ;
     bb5kbc:inBundesland data:bundesland_26b09cd0 ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Saalekreis' -> 'Saalekreis'"^^xsd:string ;
     skos:prefLabel "Saalekreis"@de .
 
 data:kreis_759243cc a bb5kbc:Kreis ;
@@ -29574,18 +29911,21 @@ data:kreis_759243cc a bb5kbc:Kreis ;
         <https://www.openstreetmap.org/relation/451317>,
         wd:Q687839 ;
     bb5kbc:inBundesland data:bundesland_3dfdb305 ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Powiat Lubiński' -> 'powiat lubiński'"^^xsd:string ;
     skos:prefLabel "pow. Lubiński"@de .
 
 data:kreis_7d5e48f9 a bb5kbc:Kreis ;
     rdfs:label "Landkreis Harz"@de ;
     bb5kbc:hasExternalIdentifier wd:Q6087 ;
     bb5kbc:inBundesland data:bundesland_26b09cd0 ;
+    bb5kbc:wikidataMatchDescription "Direct override | 'Landkreis Harz' -> QID=Q6087 | [stripped -> 'Harz'; override -> QID=Q6087]"^^xsd:string ;
     skos:prefLabel "Landkreis Harz"@de .
 
 data:kreis_8eb4d6b2 a bb5kbc:Kreis ;
     rdfs:label "Weimarer Land"@de ;
     bb5kbc:hasExternalIdentifier wd:Q7879 ;
     bb5kbc:inBundesland data:bundesland_eec0c902 ;
+    bb5kbc:wikidataMatchDescription "Direct override | 'Weimarer Land' -> QID=Q7879 | [override -> QID=Q7879]"^^xsd:string ;
     skos:prefLabel "Weimarer Land"@de .
 
 data:kreis_969dc2b1 a bb5kbc:Kreis ;
@@ -29594,6 +29934,7 @@ data:kreis_969dc2b1 a bb5kbc:Kreis ;
         <https://www.openstreetmap.org/relation/1286781>,
         wd:Q577199 ;
     bb5kbc:inBundesland data:bundesland_333d842b ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Powiat Żniński' -> 'powiat żniński'"^^xsd:string ;
     skos:prefLabel "pow. Żniński"@de .
 
 data:kreis_a67ba2d2 a bb5kbc:Kreis ;
@@ -29602,18 +29943,21 @@ data:kreis_a67ba2d2 a bb5kbc:Kreis ;
         <https://www.openstreetmap.org/relation/451358>,
         wd:Q637105 ;
     bb5kbc:inBundesland data:bundesland_3dfdb305 ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Powiat Jaworski' -> 'powiat jaworski'"^^xsd:string ;
     skos:prefLabel "pow. Jaworski"@de .
 
 data:kreis_a9d8c52e a bb5kbc:Kreis ;
     rdfs:label "Anhalt-Bitterfeld"@de ;
     bb5kbc:hasExternalIdentifier wd:Q6071 ;
     bb5kbc:inBundesland data:bundesland_26b09cd0 ;
+    bb5kbc:wikidataMatchDescription "Direct override | 'Anhalt-Bitterfeld' -> QID=Q6071 | [override -> QID=Q6071]"^^xsd:string ;
     skos:prefLabel "Anhalt-Bitterfeld"@de .
 
 data:kreis_aa8aad2b a bb5kbc:Kreis ;
     rdfs:label "Barnim"@de ;
     bb5kbc:hasExternalIdentifier wd:Q6115 ;
     bb5kbc:inBundesland data:bundesland_2ddb2d82 ;
+    bb5kbc:wikidataMatchDescription "Direct override | 'Barnim' -> QID=Q6115 | [override -> QID=Q6115]"^^xsd:string ;
     skos:prefLabel "Barnim"@de .
 
 data:kreis_c8fe2693 a bb5kbc:Kreis ;
@@ -29623,6 +29967,7 @@ data:kreis_c8fe2693 a bb5kbc:Kreis ;
         wd:Q318384 ;
     bb5kbc:inBundesland data:bundesland_4bcbd621,
         data:bundesland_af35ac58 ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Powiat Zielonogórski' -> 'Powiat Zielonogórski'"^^xsd:string ;
     skos:prefLabel "pow. Zielonogórski"@de .
 
 data:kreis_d2918bbf a bb5kbc:Kreis ;
@@ -29632,21 +29977,22 @@ data:kreis_d2918bbf a bb5kbc:Kreis ;
         wd:Q317976 ;
     bb5kbc:inBundesland data:bundesland_4bcbd621,
         data:bundesland_af35ac58 ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Powiat Strzelecko-Drezdenecki' -> 'Powiat Strzelecko-Drezdenecki'"^^xsd:string ;
     skos:prefLabel "pow. Strzelecko-Drezdenecki"@de .
 
-data:pipeline_run_2026-04-27T13-59-02Z a prov:Activity ;
-    rdfs:label "bb5kbc CSV-to-RDF pipeline run 2026-04-27T13-59-02Z"@en ;
-    data:dataTripleCount 27450 ;
+data:pipeline_run_2026-04-27T19-10-14Z a prov:Activity ;
+    rdfs:label "bb5kbc CSV-to-RDF pipeline run 2026-04-27T19-10-14Z"@en ;
+    data:dataTripleCount 27870 ;
     data:rowCount 540 ;
-    prov:endedAtTime "2026-04-27T13:59:03.495536+00:00"^^xsd:dateTime ;
-    prov:startedAtTime "2026-04-27T13:59:02.271193+00:00"^^xsd:dateTime ;
+    prov:endedAtTime "2026-04-27T19:10:15.958957+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-04-27T19:10:14.688969+00:00"^^xsd:dateTime ;
     prov:used <file:///C:/git/bb-5kbc-sites/data/fst_wgs84.csv>,
         <file:///C:/git/bb-5kbc-sites/ontology/bb5kbc-ontology.ttl>,
         ns1:fst_wgs84_csv ;
     prov:wasAssociatedWith data:bb5kbc_lod_pipeline_py,
         orcid:0000-0002-3246-3531,
         orcid:0000-0003-4696-2101 ;
-    prov:wasInformedBy <https://example.org/bb-5kbc-sites/run/2026-04-27T13-58-01Z> .
+    prov:wasInformedBy <https://example.org/bb-5kbc-sites/run/2026-04-27T18-56-13Z> .
 
 data:pub_72ab46f0 a bb5kbc:Publikation ;
     rdfs:label "Rybicka/Wysocki 2004"@de ;
@@ -31866,15 +32212,17 @@ prov:Agent a owl:Class ;
     rdfs:label "Agent"@en ;
     rdfs:isDefinedBy prov: .
 
-ns1:fst_standortanalysen_ref_csv a prov:Entity ;
-    rdfs:label "Geo reference table (input)" ;
-    prov:atLocation <file:///C:/git/bb-5kbc-sites/data/enrichment/mapping_admin_regions/fst_standortanalysen_ref.csv> .
+ns1:fst_standortanalysen_ref_mapped_csv a prov:Entity ;
+    rdfs:label "Geo reference table with Wikidata authority IDs" ;
+    prov:atLocation <file:///C:/git/bb-5kbc-sites/data/enrichment/mapping_admin_regions/fst_standortanalysen_ref_mapped.csv> ;
+    prov:wasDerivedFrom ns1:fst_standortanalysen_ref_csv ;
+    prov:wasGeneratedBy <https://example.org/bb-5kbc-sites/run/2026-04-27T18-56-13Z/stage2_geo> .
 
-<https://example.org/bb-5kbc-sites/run/2026-04-27T13-58-01Z/stage1_literature> a prov:Activity ;
+<https://example.org/bb-5kbc-sites/run/2026-04-27T18-56-13Z/stage1_literature> a prov:Activity ;
     rdfs:label "Stage 1 — literature QID enrichment" ;
     prov:used ns1:fst_wgs84_comma_csv ;
     prov:wasAssociatedWith ns1:enrich_qids_py ;
-    prov:wasInformedBy <https://example.org/bb-5kbc-sites/run/2026-04-27T13-58-01Z> ;
+    prov:wasInformedBy <https://example.org/bb-5kbc-sites/run/2026-04-27T18-56-13Z> ;
     ns1:durationSeconds 0.06 ;
     ns1:qidsFilledGeoref 205 ;
     ns1:qidsFilledPublication 269 ;
@@ -31951,6 +32299,7 @@ data:bundesland_2b599b59 a bb5kbc:Bundesland ;
         <https://www.openstreetmap.org/relation/62467>,
         wd:Q1202 ;
     bb5kbc:inLand data:land_3c2f8b8c ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Sachsen' -> 'Sachsen'"^^xsd:string ;
     skos:prefLabel "Sachsen"@de .
 
 data:bundesland_51c8eb2f a bb5kbc:Bundesland ;
@@ -31959,6 +32308,7 @@ data:bundesland_51c8eb2f a bb5kbc:Bundesland ;
         <https://www.openstreetmap.org/relation/224460>,
         wd:Q54171 ;
     bb5kbc:inLand data:land_c5d7f540 ;
+    bb5kbc:wikidataMatchDescription "Exact match via skos:altLabel [global index] | 'Opolskie' -> 'opolskie' | [normalised: stripped -> 'Opolskie']"^^xsd:string ;
     skos:prefLabel "Woj. Opolskie"@de .
 
 data:gemeinde_0be828be a bb5kbc:Gemeinde ;
@@ -31966,6 +32316,7 @@ data:gemeinde_0be828be a bb5kbc:Gemeinde ;
     bb5kbc:hasExternalIdentifier <https://www.openstreetmap.org/relation/1266326>,
         wd:Q1297555 ;
     bb5kbc:inKreis data:kreis_d4d0a03b ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Wachow' -> 'Wachow'"^^xsd:string ;
     skos:prefLabel "Wachow"@de .
 
 data:gemeinde_0c4453de a bb5kbc:Gemeinde ;
@@ -31974,12 +32325,14 @@ data:gemeinde_0c4453de a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/2635353>,
         wd:Q7764069 ;
     bb5kbc:inKreis data:kreis_d26f6fb5 ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Gmina Kruszwica' -> 'Gmina Kruszwica'"^^xsd:string ;
     skos:prefLabel "Gmina Kruszwica"@de .
 
 data:gemeinde_3b273beb a bb5kbc:Gemeinde ;
     rdfs:label "Königshorst"@de ;
     bb5kbc:hasExternalIdentifier wd:Q1796386 ;
     bb5kbc:inKreis data:kreis_2783ecb9 ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Königshorst' -> 'Königshorst'"^^xsd:string ;
     skos:prefLabel "Königshorst"@de .
 
 data:gemeinde_43ef91a0 a bb5kbc:Gemeinde ;
@@ -31988,12 +32341,14 @@ data:gemeinde_43ef91a0 a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/3049634>,
         wd:Q2191877 ;
     bb5kbc:inKreis data:kreis_5f84543e ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Gmina Jordanów Śląski' -> 'Gmina Jordanów Śląski'"^^xsd:string ;
     skos:prefLabel "Gmina Jordanów Śląski"@de .
 
 data:gemeinde_4bb6d2e8 a bb5kbc:Gemeinde ;
     rdfs:label "Frankfurt (Oder)"@de ;
     bb5kbc:hasExternalIdentifier wd:Q445993 ;
     bb5kbc:inKreis data:kreis_4bb6d2e8 ;
+    bb5kbc:wikidataMatchDescription "Direct override | 'Frankfurt (Oder)' -> QID=Q445993 | [override -> QID=Q445993]"^^xsd:string ;
     skos:prefLabel "Frankfurt (Oder)"@de .
 
 data:gemeinde_55c656bb a bb5kbc:Gemeinde ;
@@ -32002,6 +32357,7 @@ data:gemeinde_55c656bb a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/2896987>,
         wd:Q557594 ;
     bb5kbc:inKreis data:kreis_cf141a0a ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Gmina Pyrzyce' -> 'Gmina Pyrzyce'"^^xsd:string ;
     skos:prefLabel "Gmina Pyrzyce"@de .
 
 data:gemeinde_634a28ea a bb5kbc:Gemeinde ;
@@ -32010,6 +32366,7 @@ data:gemeinde_634a28ea a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/2709176>,
         wd:Q2617476 ;
     bb5kbc:inKreis data:kreis_63e70789 ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Gmina Góra' -> 'Gmina Góra'"^^xsd:string ;
     skos:prefLabel "Gmina Góra"@de .
 
 data:gemeinde_7dfe2095 a bb5kbc:Gemeinde ;
@@ -32018,6 +32375,7 @@ data:gemeinde_7dfe2095 a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/55771>,
         wd:Q574811 ;
     bb5kbc:inKreis data:kreis_0b003b3b ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Mittenwalde' -> 'Mittenwalde'"^^xsd:string ;
     skos:prefLabel "Mittenwalde"@de .
 
 data:gemeinde_80df634c a bb5kbc:Gemeinde ;
@@ -32027,6 +32385,7 @@ data:gemeinde_80df634c a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/1334084>,
         wd:Q490066 ;
     bb5kbc:inKreis data:kreis_0a22f293 ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Angermünde' -> 'Angermünde'"^^xsd:string ;
     skos:prefLabel "Angermünde"@de .
 
 data:gemeinde_8126043e a bb5kbc:Gemeinde ;
@@ -32034,6 +32393,7 @@ data:gemeinde_8126043e a bb5kbc:Gemeinde ;
     bb5kbc:hasExternalIdentifier gn:2863187,
         wd:Q92038664 ;
     bb5kbc:inKreis data:kreis_0a22f293 ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Niederlandin' -> 'Niederlandin'"^^xsd:string ;
     skos:prefLabel "Niederlandin"@de .
 
 data:gemeinde_b5488fb1 a bb5kbc:Gemeinde ;
@@ -32043,6 +32403,7 @@ data:gemeinde_b5488fb1 a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/1251751>,
         wd:Q582671 ;
     bb5kbc:inKreis data:kreis_d4d0a03b ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Zeestow' -> 'Zeestow'"^^xsd:string ;
     skos:prefLabel "Zeestow"@de .
 
 data:gemeinde_b54adf41 a bb5kbc:Gemeinde ;
@@ -32051,6 +32412,7 @@ data:gemeinde_b54adf41 a bb5kbc:Gemeinde ;
         gn:2899161,
         wd:Q104757864 ;
     bb5kbc:inKreis data:kreis_d4d0a03b ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Hoppenrade' -> 'Hoppenrade'"^^xsd:string ;
     skos:prefLabel "Hoppenrade"@de .
 
 data:gemeinde_b5edf5ed a bb5kbc:Gemeinde ;
@@ -32059,6 +32421,7 @@ data:gemeinde_b5edf5ed a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/2994052>,
         wd:Q2051728 ;
     bb5kbc:inKreis data:kreis_c1492242 ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Gmina Dobre' -> 'Gmina Dobre'"^^xsd:string ;
     skos:prefLabel "Gmina Dobre"@de .
 
 data:gemeinde_bd78dc11 a bb5kbc:Gemeinde ;
@@ -32068,6 +32431,7 @@ data:gemeinde_bd78dc11 a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/369857>,
         wd:Q625078 ;
     bb5kbc:inKreis data:kreis_484c68b5 ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Treuenbrietzen' -> 'Treuenbrietzen'"^^xsd:string ;
     skos:prefLabel "Treuenbrietzen"@de .
 
 data:gemeinde_beacd9bd a bb5kbc:Gemeinde ;
@@ -32076,6 +32440,7 @@ data:gemeinde_beacd9bd a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/1332714>,
         wd:Q532037 ;
     bb5kbc:inKreis data:kreis_d4d0a03b ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Rhinow' -> 'Rhinow'"^^xsd:string ;
     skos:prefLabel "Rhinow"@de .
 
 data:gemeinde_e324c365 a bb5kbc:Gemeinde ;
@@ -32084,6 +32449,7 @@ data:gemeinde_e324c365 a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/153832>,
         wd:Q40623 ;
     bb5kbc:inKreis data:kreis_7d5e48f9 ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Quedlinburg' -> 'Quedlinburg'"^^xsd:string ;
     skos:prefLabel "Quedlinburg"@de .
 
 data:gemeinde_e7108498 a bb5kbc:Gemeinde ;
@@ -32092,6 +32458,7 @@ data:gemeinde_e7108498 a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/2871824>,
         wd:Q2241673 ;
     bb5kbc:inKreis data:kreis_e28b3f2c ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Gmina Brody' -> 'Gmina Brody'"^^xsd:string ;
     skos:prefLabel "Gmina Brody"@de .
 
 data:gemeinde_e84110d7 a bb5kbc:Gemeinde ;
@@ -32101,6 +32468,7 @@ data:gemeinde_e84110d7 a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/1240551>,
         wd:Q581938 ;
     bb5kbc:inKreis data:kreis_d4d0a03b ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Wustermark' -> 'Wustermark'"^^xsd:string ;
     skos:prefLabel "Wustermark"@de .
 
 data:kreis_4759b8ea a bb5kbc:Kreis ;
@@ -32109,6 +32477,7 @@ data:kreis_4759b8ea a bb5kbc:Kreis ;
         <https://www.openstreetmap.org/relation/451316>,
         wd:Q631754 ;
     bb5kbc:inBundesland data:bundesland_3dfdb305 ;
+    bb5kbc:wikidataMatchDescription "Fuzzy match (score=0.94) via rdfs:label [global index] | 'Powiat Głogówski' -> 'Powiat Głogowski'"^^xsd:string ;
     skos:prefLabel "pow. Głogówski"@de .
 
 data:kreis_4bb6d2e8 a bb5kbc:Kreis ;
@@ -32118,12 +32487,14 @@ data:kreis_4bb6d2e8 a bb5kbc:Kreis ;
         <https://www.openstreetmap.org/relation/62523>,
         wd:Q4024 ;
     bb5kbc:inBundesland data:bundesland_2ddb2d82 ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Frankfurt (Oder)' -> 'Frankfurt (Oder)'"^^xsd:string ;
     skos:prefLabel "Frankfurt (Oder)"@de .
 
 data:kreis_61991e7b a bb5kbc:Kreis ;
     rdfs:label "Elbe-Elster"@de ;
     bb5kbc:hasExternalIdentifier wd:Q6152 ;
     bb5kbc:inBundesland data:bundesland_2ddb2d82 ;
+    bb5kbc:wikidataMatchDescription "Direct override | 'Elbe-Elster' -> QID=Q6152 | [override -> QID=Q6152]"^^xsd:string ;
     skos:prefLabel "Elbe-Elster"@de .
 
 data:kreis_cf141a0a a bb5kbc:Kreis ;
@@ -32132,6 +32503,7 @@ data:kreis_cf141a0a a bb5kbc:Kreis ;
         <https://www.openstreetmap.org/relation/2662787>,
         wd:Q1411599 ;
     bb5kbc:inBundesland data:bundesland_7c0cb461 ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Powiat Pyrzycki' -> 'powiat pyrzycki'"^^xsd:string ;
     skos:prefLabel "pow. Pyrzycki"@de .
 
 data:kreis_d5404511 a bb5kbc:Kreis ;
@@ -32141,6 +32513,7 @@ data:kreis_d5404511 a bb5kbc:Kreis ;
         <https://www.openstreetmap.org/relation/62369>,
         wd:Q1711 ;
     bb5kbc:inBundesland data:bundesland_2ddb2d82 ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Potsdam' -> 'Potsdam'"^^xsd:string ;
     skos:prefLabel "Potsdam"@de .
 
 bb5kbc:DatierungsMethodeType a owl:Class ;
@@ -32148,14 +32521,6 @@ bb5kbc:DatierungsMethodeType a owl:Class ;
         "Dating Method"@en ;
     rdfs:comment "Dating method type (e.g. C14, Literatur, Typology). URI: datmethode_{hash}. WD QID via bb5kbc:hasExternalIdentifier (dating_method column)."@en ;
     rdfs:subClassOf crm:E55_Type .
-
-bb5kbc:Land a owl:Class ;
-    rdfs:label "Land"@de,
-        "Country"@en ;
-    rdfs:comment """Sovereign state (ISO 3166). URI: land_{MD5(label)[:8]}.
-External identifiers: TGN, iDAI, OSM via bb5kbc:hasExternalIdentifier.
-Only 2 values in dataset: Deutschland, Polen."""@en ;
-    rdfs:subClassOf crm:E53_Place .
 
 crm:P1_is_identified_by a owl:DatatypeProperty ;
     rdfs:label "is identified by"@en ;
@@ -32165,17 +32530,20 @@ crm:P2_has_type a owl:ObjectProperty ;
     rdfs:label "has type"@en ;
     rdfs:isDefinedBy crm: .
 
-ns1:fst_standortanalysen_ref_mapped_csv a prov:Entity ;
-    rdfs:label "Geo reference table with Wikidata authority IDs" ;
-    prov:atLocation <file:///C:/git/bb-5kbc-sites/data/enrichment/mapping_admin_regions/fst_standortanalysen_ref_mapped.csv> .
-
 ns1:fst_wgs84_csv a prov:Entity ;
     rdfs:label "Final enriched dataset (LOD-ready)" ;
     prov:atLocation <file:///C:/git/bb-5kbc-sites/data/fst_wgs84.csv> ;
     prov:wasDerivedFrom ns1:fst_standortanalysen_ref_mapped_csv,
         ns1:fst_wgs84_comma_csv ;
-    prov:wasGeneratedBy <https://example.org/bb-5kbc-sites/run/2026-04-27T13-58-01Z>,
-        <https://example.org/bb-5kbc-sites/run/2026-04-27T13-58-01Z/stage3_merge> .
+    prov:wasGeneratedBy <https://example.org/bb-5kbc-sites/run/2026-04-27T18-56-13Z>,
+        <https://example.org/bb-5kbc-sites/run/2026-04-27T18-56-13Z/stage3_merge> .
+
+<https://example.org/bb-5kbc-sites/run/2026-04-27T18-56-13Z/stage2_geo> a prov:Activity ;
+    rdfs:label "Stage 2 — geo SPARQL mapping (Wikidata)" ;
+    prov:used ns1:fst_standortanalysen_ref_csv ;
+    prov:wasAssociatedWith ns1:wikidata_map_py ;
+    prov:wasInformedBy <https://example.org/bb-5kbc-sites/run/2026-04-27T18-56-13Z> ;
+    ns1:durationSeconds 671.92 .
 
 gn:7532846 bb5kbc:hasExternalIdentifierType bb5kbc:ExternalIdentifier_GeoNames .
 
@@ -32211,18 +32579,21 @@ data:gemeinde_0376cd79 a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/2635731>,
         wd:Q749271 ;
     bb5kbc:inKreis data:kreis_fa49171f ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Gmina Włocławek' -> 'Gmina Włocławek'"^^xsd:string ;
     skos:prefLabel "Gmina Włocławek"@de .
 
 data:gemeinde_0b8be4ac a bb5kbc:Gemeinde ;
     rdfs:label "Wusterhausen (Dosse)"@de ;
     bb5kbc:hasExternalIdentifier wd:Q35639864 ;
     bb5kbc:inKreis data:kreis_2783ecb9 ;
+    bb5kbc:wikidataMatchDescription "Direct override | 'Wusterhausen (Dosse)' -> QID=Q35639864 | [override -> QID=Q35639864]"^^xsd:string ;
     skos:prefLabel "Wusterhausen (Dosse)"@de .
 
 data:gemeinde_0e7e4009 a bb5kbc:Gemeinde ;
     rdfs:label "Blankensee"@de ;
     bb5kbc:hasExternalIdentifier wd:Q881612 ;
     bb5kbc:inKreis data:kreis_f18982f6 ;
+    bb5kbc:wikidataMatchDescription "Direct override | 'Blankensee' -> QID=Q881612 | [override -> QID=Q881612]"^^xsd:string ;
     skos:prefLabel "Blankensee"@de .
 
 data:gemeinde_19809dcf a bb5kbc:Gemeinde ;
@@ -32231,12 +32602,14 @@ data:gemeinde_19809dcf a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/1392168>,
         wd:Q1941675 ;
     bb5kbc:inKreis data:kreis_969dc2b1 ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Gmina Gąsawa' -> 'Gmina Gąsawa'"^^xsd:string ;
     skos:prefLabel "Gmina Gąsawa"@de .
 
 data:gemeinde_28687181 a bb5kbc:Gemeinde ;
     rdfs:label "Gmina Wrocław"@de ;
     bb5kbc:hasExternalIdentifier wd:Q1799 ;
     bb5kbc:inKreis data:kreis_5f84543e ;
+    bb5kbc:wikidataMatchDescription "Direct override | 'Gmina Wrocław' -> QID=Q1799 | [override -> QID=Q1799]"^^xsd:string ;
     skos:prefLabel "Gmina Wrocław"@de .
 
 data:gemeinde_2f4a3bd4 a bb5kbc:Gemeinde ;
@@ -32246,12 +32619,14 @@ data:gemeinde_2f4a3bd4 a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/4482510>,
         wd:Q433253 ;
     bb5kbc:inKreis data:kreis_2783ecb9 ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Alt Ruppin' -> 'Alt Ruppin'"^^xsd:string ;
     skos:prefLabel "Alt Ruppin"@de .
 
 data:gemeinde_3923ce06 a bb5kbc:Gemeinde ;
     rdfs:label "Berkholz zu Berkholz-Meyenburg"@de ;
     bb5kbc:hasExternalIdentifier wd:Q621916 ;
     bb5kbc:inKreis data:kreis_0a22f293 ;
+    bb5kbc:wikidataMatchDescription "Direct override | 'Berkholz zu Berkholz-Meyenburg' -> QID=Q621916 | [override -> QID=Q621916]"^^xsd:string ;
     skos:prefLabel "Berkholz zu Berkholz-Meyenburg"@de .
 
 data:gemeinde_697fa2ca a bb5kbc:Gemeinde ;
@@ -32260,6 +32635,7 @@ data:gemeinde_697fa2ca a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/1310637>,
         wd:Q544833 ;
     bb5kbc:inKreis data:kreis_b44e37a4 ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Boxberg/O.L.' -> 'Boxberg/O.L.'"^^xsd:string ;
     skos:prefLabel "Boxberg/O.L."@de .
 
 data:gemeinde_866c0d08 a bb5kbc:Gemeinde ;
@@ -32267,6 +32643,7 @@ data:gemeinde_866c0d08 a bb5kbc:Gemeinde ;
     bb5kbc:hasExternalIdentifier <https://www.openstreetmap.org/relation/3548851>,
         wd:Q1623655 ;
     bb5kbc:inKreis data:kreis_0b003b3b ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Hohenbrück' -> 'Hohenbrück'"^^xsd:string ;
     skos:prefLabel "Hohenbrück"@de .
 
 data:gemeinde_c9b9271b a bb5kbc:Gemeinde ;
@@ -32275,6 +32652,7 @@ data:gemeinde_c9b9271b a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/1322805>,
         wd:Q574750 ;
     bb5kbc:inKreis data:kreis_b031fa42 ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Heinersbrück' -> 'Heinersbrück'"^^xsd:string ;
     skos:prefLabel "Heinersbrück"@de .
 
 data:kreis_063ba201 a bb5kbc:Kreis ;
@@ -32283,6 +32661,7 @@ data:kreis_063ba201 a bb5kbc:Kreis ;
         <https://www.openstreetmap.org/relation/1385334>,
         wd:Q604053 ;
     bb5kbc:inBundesland data:bundesland_333d842b ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Powiat Mogileński' -> 'Powiat Mogileński'"^^xsd:string ;
     skos:prefLabel "pow. Mogileński"@de .
 
 data:kreis_a8ddc1b2 a bb5kbc:Kreis ;
@@ -32292,18 +32671,21 @@ data:kreis_a8ddc1b2 a bb5kbc:Kreis ;
         <https://www.openstreetmap.org/relation/62502>,
         wd:Q6081 ;
     bb5kbc:inBundesland data:bundesland_26b09cd0 ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Salzlandkreis' -> 'Salzlandkreis'"^^xsd:string ;
     skos:prefLabel "Salzlandkreis"@de .
 
 data:kreis_d3d391e6 a bb5kbc:Kreis ;
     rdfs:label "Burgenlandkreis"@de ;
     bb5kbc:hasExternalIdentifier wd:Q6102 ;
     bb5kbc:inBundesland data:bundesland_26b09cd0 ;
+    bb5kbc:wikidataMatchDescription "Direct override | 'Burgenlandkreis' -> QID=Q6102 | [override -> QID=Q6102]"^^xsd:string ;
     skos:prefLabel "Burgenlandkreis"@de .
 
 data:kreis_f6c6e0be a bb5kbc:Kreis ;
     rdfs:label "Brandenburg (Havel)"@de ;
     bb5kbc:hasExternalIdentifier wd:Q3931 ;
     bb5kbc:inBundesland data:bundesland_2ddb2d82 ;
+    bb5kbc:wikidataMatchDescription "Direct override | 'Brandenburg (Havel)' -> QID=Q3931 | [override -> QID=Q3931]"^^xsd:string ;
     skos:prefLabel "Brandenburg (Havel)"@de .
 
 data:kultur_31cb32d8 a bb5kbc:Kulturgruppe ;
@@ -32311,6 +32693,14 @@ data:kultur_31cb32d8 a bb5kbc:Kulturgruppe ;
 
 data:kultur_7a001224 a bb5kbc:Kulturgruppe ;
     rdfs:label "SBK?"@de .
+
+bb5kbc:Land a owl:Class ;
+    rdfs:label "Land"@de,
+        "Country"@en ;
+    rdfs:comment """Sovereign state (ISO 3166). URI: land_{MD5(label)[:8]}.
+External identifiers: TGN, iDAI, OSM via bb5kbc:hasExternalIdentifier.
+Only 2 values in dataset: Deutschland, Polen."""@en ;
+    rdfs:subClassOf crm:E53_Place .
 
 data:pub_67ee6ee4 a bb5kbc:Publikation ;
     rdfs:label "Czerniak 2007"@de ;
@@ -32324,6 +32714,10 @@ crm:E55_Type a owl:Class ;
 crm:P89_falls_within a owl:ObjectProperty ;
     rdfs:label "falls within"@en ;
     rdfs:isDefinedBy crm: .
+
+ns1:fst_standortanalysen_ref_csv a prov:Entity ;
+    rdfs:label "Geo reference table (input)" ;
+    prov:atLocation <file:///C:/git/bb-5kbc-sites/data/enrichment/mapping_admin_regions/fst_standortanalysen_ref.csv> .
 
 ns1:fst_wgs84_comma_csv a prov:Entity ;
     rdfs:label "Original location dataset (input)" ;
@@ -32341,6 +32735,7 @@ data:bundesland_7c0cb461 a bb5kbc:Bundesland ;
         <https://www.openstreetmap.org/relation/104401>,
         wd:Q54188 ;
     bb5kbc:inLand data:land_c5d7f540 ;
+    bb5kbc:wikidataMatchDescription "Exact match via skos:altLabel [global index] | 'Zachodniopomorskie' -> 'zachodniopomorskie' | [normalised: stripped -> 'Zachodniopomorskie']"^^xsd:string ;
     skos:prefLabel "Woj. Zachodniopomorskie"@de .
 
 data:fundstellenart_5df80d7e a bb5kbc:FundstellenartType ;
@@ -32355,12 +32750,14 @@ data:gemeinde_455beb00 a bb5kbc:Gemeinde ;
         wd:Q1951800 ;
     bb5kbc:inKreis data:kreis_65cce59a,
         data:kreis_a38bbea6 ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Gmina Gubin' -> 'Gmina Gubin'"^^xsd:string ;
     skos:prefLabel "Gmina Gubin"@de .
 
 data:gemeinde_469c793d a bb5kbc:Gemeinde ;
     rdfs:label "Flemsdorf"@de ;
     bb5kbc:hasExternalIdentifier wd:Q66363175 ;
     bb5kbc:inKreis data:kreis_0a22f293 ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Flemsdorf' -> 'Flemsdorf'"^^xsd:string ;
     skos:prefLabel "Flemsdorf"@de .
 
 data:gemeinde_4c04791f a bb5kbc:Gemeinde ;
@@ -32368,6 +32765,7 @@ data:gemeinde_4c04791f a bb5kbc:Gemeinde ;
     bb5kbc:hasExternalIdentifier gn:2956795,
         wd:Q15106405 ;
     bb5kbc:inKreis data:kreis_484c68b5 ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Alt Töplitz' -> 'Alt Töplitz'"^^xsd:string ;
     skos:prefLabel "Alt Töplitz"@de .
 
 data:gemeinde_5cf23149 a bb5kbc:Gemeinde ;
@@ -32376,6 +32774,7 @@ data:gemeinde_5cf23149 a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/2635288>,
         wd:Q618429 ;
     bb5kbc:inKreis data:kreis_d26f6fb5 ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Gmina Inowrocław' -> 'Gmina Inowrocław'"^^xsd:string ;
     skos:prefLabel "Gmina Inowrocław"@de .
 
 data:gemeinde_7ff1cdab a bb5kbc:Gemeinde ;
@@ -32383,6 +32782,7 @@ data:gemeinde_7ff1cdab a bb5kbc:Gemeinde ;
     bb5kbc:hasExternalIdentifier <https://www.openstreetmap.org/relation/3549564>,
         wd:Q1979994 ;
     bb5kbc:inKreis data:kreis_0b003b3b ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Neuendorf am See' -> 'Neuendorf am See'"^^xsd:string ;
     skos:prefLabel "Neuendorf am See"@de .
 
 data:kreis_5f84543e a bb5kbc:Kreis ;
@@ -32391,6 +32791,7 @@ data:kreis_5f84543e a bb5kbc:Kreis ;
         <https://www.openstreetmap.org/relation/451517>,
         wd:Q715974 ;
     bb5kbc:inBundesland data:bundesland_3dfdb305 ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Powiat Wrocławski' -> 'powiat wrocławski'"^^xsd:string ;
     skos:prefLabel "pow. Wrocławski"@de .
 
 data:kreis_b031fa42 a bb5kbc:Kreis ;
@@ -32400,6 +32801,7 @@ data:kreis_b031fa42 a bb5kbc:Kreis ;
         <https://www.openstreetmap.org/relation/62683>,
         wd:Q6165 ;
     bb5kbc:inBundesland data:bundesland_2ddb2d82 ;
+    bb5kbc:wikidataMatchDescription "Exact match via skos:altLabel [global index] | 'Spree-Neiße' -> 'Spree-Neiße'"^^xsd:string ;
     skos:prefLabel "Spree-Neiße"@de .
 
 data:land_3c2f8b8c a bb5kbc:Land ;
@@ -32409,6 +32811,7 @@ data:land_3c2f8b8c a bb5kbc:Land ;
         gn:2921044,
         <https://www.openstreetmap.org/relation/51477>,
         wd:Q183 ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Deutschland' -> 'Deutschland'"^^xsd:string ;
     skos:prefLabel "Deutschland"@de .
 
 data:pub_7f0902ba a bb5kbc:Publikation ;
@@ -32430,6 +32833,7 @@ data:bundesland_4bcbd621 a bb5kbc:Bundesland ;
         <https://www.openstreetmap.org/relation/130971>,
         wd:Q54187 ;
     bb5kbc:inLand data:land_c5d7f540 ;
+    bb5kbc:wikidataMatchDescription "Exact match via skos:altLabel [global index] | 'Wielkopolskie' -> 'wielkopolskie' | [normalised: stripped -> 'Wielkopolskie']"^^xsd:string ;
     skos:prefLabel "Woj. Wielkopolskie"@de .
 
 data:bundesland_eec0c902 a bb5kbc:Bundesland ;
@@ -32440,6 +32844,7 @@ data:bundesland_eec0c902 a bb5kbc:Bundesland ;
         <https://www.openstreetmap.org/relation/62366>,
         wd:Q1205 ;
     bb5kbc:inLand data:land_3c2f8b8c ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Thüringen' -> 'Thüringen'"^^xsd:string ;
     skos:prefLabel "Thüringen"@de .
 
 data:entdeckungsart_4d59fcb4 a bb5kbc:EntdeckungsartType ;
@@ -32453,6 +32858,7 @@ data:gemeinde_87523d5e a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/2709064>,
         wd:Q2467328 ;
     bb5kbc:inKreis data:kreis_4759b8ea ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Gmina Głogów' -> 'Gmina Głogów'"^^xsd:string ;
     skos:prefLabel "Gmina Głogów"@de .
 
 data:gemeinde_af614e64 a bb5kbc:Gemeinde ;
@@ -32461,6 +32867,7 @@ data:gemeinde_af614e64 a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/343261>,
         wd:Q557824 ;
     bb5kbc:inKreis data:kreis_44302f2d ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Gmina Kołbaskowo' -> 'Gmina Kołbaskowo'"^^xsd:string ;
     skos:prefLabel "Gmina Kołbaskowo"@de .
 
 data:gemeinde_ef3c98d9 a bb5kbc:Gemeinde ;
@@ -32469,6 +32876,7 @@ data:gemeinde_ef3c98d9 a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/1342247>,
         wd:Q585632 ;
     bb5kbc:inKreis data:kreis_d4d0a03b ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Friesack' -> 'Friesack'"^^xsd:string ;
     skos:prefLabel "Friesack"@de .
 
 data:gemeinde_f8e717c1 a bb5kbc:Gemeinde ;
@@ -32477,6 +32885,7 @@ data:gemeinde_f8e717c1 a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/2635295>,
         wd:Q2149918 ;
     bb5kbc:inKreis data:kreis_d26f6fb5 ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Gmina Pakość' -> 'Gmina Pakość'"^^xsd:string ;
     skos:prefLabel "Gmina Pakość"@de .
 
 data:kreis_fa49171f a bb5kbc:Kreis ;
@@ -32485,6 +32894,7 @@ data:kreis_fa49171f a bb5kbc:Kreis ;
         <https://www.openstreetmap.org/relation/2616205>,
         wd:Q774833 ;
     bb5kbc:inBundesland data:bundesland_333d842b ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Powiat Włocławski' -> 'powiat włocławski'"^^xsd:string ;
     skos:prefLabel "pow. Włocławski"@de .
 
 data:quellentyp_6d2d546f a fsl:SourceType ;
@@ -32503,10 +32913,10 @@ prov:Activity a owl:Class ;
     rdfs:label "Activity"@en ;
     rdfs:isDefinedBy prov: .
 
-<https://example.org/bb-5kbc-sites/run/2026-04-27T13-58-01Z> a prov:Activity ;
-    rdfs:label "CSV enrichment pipeline run 2026-04-27T13-58-01Z" ;
-    prov:endedAtTime "2026-04-27T13:58:08+00:00"^^xsd:dateTime ;
-    prov:startedAtTime "2026-04-27T13:58:01+00:00"^^xsd:dateTime ;
+<https://example.org/bb-5kbc-sites/run/2026-04-27T18-56-13Z> a prov:Activity ;
+    rdfs:label "CSV enrichment pipeline run 2026-04-27T18-56-13Z" ;
+    prov:endedAtTime "2026-04-27T19:07:26+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-04-27T18:56:13+00:00"^^xsd:dateTime ;
     prov:used ns1:fst_standortanalysen_ref_csv,
         ns1:fst_wgs84_comma_csv,
         ns1:repo_version ;
@@ -32520,6 +32930,7 @@ data:gemeinde_b2684065 a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/342936>,
         wd:Q557090 ;
     bb5kbc:inKreis data:kreis_44302f2d ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Gmina Dobra' -> 'Gmina Dobra'"^^xsd:string ;
     skos:prefLabel "Gmina Dobra"@de .
 
 data:kreis_be942c19 a bb5kbc:Kreis ;
@@ -32529,6 +32940,7 @@ data:kreis_be942c19 a bb5kbc:Kreis ;
         <https://www.openstreetmap.org/relation/318248>,
         wd:Q6181 ;
     bb5kbc:inBundesland data:bundesland_2ddb2d82 ;
+    bb5kbc:wikidataMatchDescription "Exact match via skos:altLabel [global index] | 'Märkisch-Oderland' -> 'Märkisch-Oderland'"^^xsd:string ;
     skos:prefLabel "Märkisch-Oderland"@de .
 
 bb5kbc:externalIdentifierType a owl:Class ;
@@ -32546,6 +32958,7 @@ data:kreis_d26f6fb5 a bb5kbc:Kreis ;
         <https://www.openstreetmap.org/relation/1286782>,
         wd:Q773314 ;
     bb5kbc:inBundesland data:bundesland_333d842b ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Powiat Inowrocławski' -> 'powiat inowrocławski'"^^xsd:string ;
     skos:prefLabel "pow. Inowrocławski"@de .
 
 wd:Q173387 bb5kbc:hasExternalIdentifierType bb5kbc:ExternalIdentifier_Wikidata .
@@ -32556,6 +32969,7 @@ data:bundesland_3dfdb305 a bb5kbc:Bundesland ;
         <https://www.openstreetmap.org/relation/224457>,
         wd:Q54150 ;
     bb5kbc:inLand data:land_c5d7f540 ;
+    bb5kbc:wikidataMatchDescription "Exact match via skos:altLabel [global index] | 'Dolnośląskie' -> 'Dolnośląskie' | [normalised: stripped -> 'Dolnośląskie']"^^xsd:string ;
     skos:prefLabel "Woj. Dolnośląskie"@de .
 
 data:gemeinde_7aa1556f a bb5kbc:Gemeinde ;
@@ -32563,6 +32977,7 @@ data:gemeinde_7aa1556f a bb5kbc:Gemeinde ;
     bb5kbc:hasExternalIdentifier <https://www.openstreetmap.org/relation/4471830>,
         wd:Q889041 ;
     bb5kbc:inKreis data:kreis_f18982f6 ;
+    bb5kbc:wikidataMatchDescription "Transitive P131+ exact match | 'Bochow' -> 'Bochow'"^^xsd:string ;
     skos:prefLabel "Bochow"@de .
 
 data:pub_21405e20 a bb5kbc:Publikation ;
@@ -32577,6 +32992,7 @@ data:bundesland_26b09cd0 a bb5kbc:Bundesland ;
         <https://www.openstreetmap.org/relation/62607>,
         wd:Q1206 ;
     bb5kbc:inLand data:land_3c2f8b8c ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Sachsen-Anhalt' -> 'Sachsen-Anhalt'"^^xsd:string ;
     skos:prefLabel "Sachsen-Anhalt"@de .
 
 data:bundesland_333d842b a bb5kbc:Bundesland ;
@@ -32585,6 +33001,7 @@ data:bundesland_333d842b a bb5kbc:Bundesland ;
         <https://www.openstreetmap.org/relation/223407>,
         wd:Q54153 ;
     bb5kbc:inLand data:land_c5d7f540 ;
+    bb5kbc:wikidataMatchDescription "Exact match via skos:altLabel [global index] | 'Kujawsko-Pomorskie' -> 'kujawsko-pomorskie' | [normalised: stripped -> 'Kujawsko-Pomorskie']"^^xsd:string ;
     skos:prefLabel "Woj. Kujawsko-Pomorskie"@de .
 
 data:bundesland_af35ac58 a bb5kbc:Bundesland ;
@@ -32593,6 +33010,7 @@ data:bundesland_af35ac58 a bb5kbc:Bundesland ;
         <https://www.openstreetmap.org/relation/130969>,
         wd:Q54157 ;
     bb5kbc:inLand data:land_c5d7f540 ;
+    bb5kbc:wikidataMatchDescription "Exact match via skos:altLabel [global index] | 'Lubuskie' -> 'lubuskie' | [normalised: stripped -> 'Lubuskie']"^^xsd:string ;
     skos:prefLabel "Woj. Lubuskie"@de .
 
 data:gemeinde_d5404511 a bb5kbc:Gemeinde ;
@@ -32600,6 +33018,7 @@ data:gemeinde_d5404511 a bb5kbc:Gemeinde ;
     bb5kbc:hasExternalIdentifier gn:2852458,
         wd:Q32233930 ;
     bb5kbc:inKreis data:kreis_d5404511 ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Potsdam' -> 'Potsdam'"^^xsd:string ;
     skos:prefLabel "Potsdam"@de .
 
 data:kreis_0a6e4d3b a bb5kbc:Kreis ;
@@ -32609,6 +33028,7 @@ data:kreis_0a6e4d3b a bb5kbc:Kreis ;
         <https://www.openstreetmap.org/relation/62628>,
         wd:Q6178 ;
     bb5kbc:inBundesland data:bundesland_2ddb2d82 ;
+    bb5kbc:wikidataMatchDescription "Exact match via skos:altLabel [global index] | 'Oder-Spree' -> 'Oder-Spree'"^^xsd:string ;
     skos:prefLabel "Oder-Spree"@de .
 
 data:land_c5d7f540 a bb5kbc:Land ;
@@ -32618,6 +33038,7 @@ data:land_c5d7f540 a bb5kbc:Land ;
         gn:798544,
         <https://www.openstreetmap.org/relation/49715>,
         wd:Q36 ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Polen' -> 'Polen'"^^xsd:string ;
     skos:prefLabel "Polen"@de .
 
 bb5kbc:ExternalIdentifier_iDAI a bb5kbc:externalIdentifierType,
@@ -32656,6 +33077,7 @@ data:kreis_06458fa6 a bb5kbc:Kreis ;
         <https://www.openstreetmap.org/relation/62488>,
         wd:Q6119 ;
     bb5kbc:inBundesland data:bundesland_2ddb2d82 ;
+    bb5kbc:wikidataMatchDescription "Exact match via skos:altLabel [global index] | 'Oberhavel' -> 'Oberhavel'"^^xsd:string ;
     skos:prefLabel "Oberhavel"@de .
 
 data:pub_b7c68a6f a bb5kbc:Publikation ;
@@ -32707,12 +33129,14 @@ data:kreis_2783ecb9 a bb5kbc:Kreis ;
         <https://www.openstreetmap.org/relation/62574>,
         wd:Q6125 ;
     bb5kbc:inBundesland data:bundesland_2ddb2d82 ;
+    bb5kbc:wikidataMatchDescription "Exact match via skos:altLabel [global index] | 'Ostprignitz-Ruppin' -> 'Ostprignitz-Ruppin'"^^xsd:string ;
     skos:prefLabel "Ostprignitz-Ruppin"@de .
 
 data:kreis_2b31d535 a bb5kbc:Kreis ;
     rdfs:label "Prignitz"@de ;
     bb5kbc:hasExternalIdentifier wd:Q6132 ;
     bb5kbc:inBundesland data:bundesland_2ddb2d82 ;
+    bb5kbc:wikidataMatchDescription "Direct override | 'Prignitz' -> QID=Q6132 | [override -> QID=Q6132]"^^xsd:string ;
     skos:prefLabel "Prignitz"@de .
 
 wd:Q139304616 bb5kbc:hasExternalIdentifierType bb5kbc:ExternalIdentifier_Wikidata .
@@ -32725,6 +33149,7 @@ data:bundesland_2ddb2d82 a bb5kbc:Bundesland ;
         <https://www.openstreetmap.org/relation/62504>,
         wd:Q1208 ;
     bb5kbc:inLand data:land_3c2f8b8c ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Brandenburg' -> 'Brandenburg'"^^xsd:string ;
     skos:prefLabel "Brandenburg"@de .
 
 data:gemeinde_91c3fb1f a bb5kbc:Gemeinde ;
@@ -32733,12 +33158,14 @@ data:gemeinde_91c3fb1f a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/2635584>,
         wd:Q618178 ;
     bb5kbc:inKreis data:kreis_d3e4767f ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Gmina Osięciny' -> 'Gmina Osięciny'"^^xsd:string ;
     skos:prefLabel "Gmina Osięciny"@de .
 
 data:kreis_f18982f6 a bb5kbc:Kreis ;
     rdfs:label "Teltow-Fläming"@de ;
     bb5kbc:hasExternalIdentifier wd:Q6146 ;
     bb5kbc:inBundesland data:bundesland_2ddb2d82 ;
+    bb5kbc:wikidataMatchDescription "Direct override | 'Teltow-Fläming' -> QID=Q6146 | [override -> QID=Q6146]"^^xsd:string ;
     skos:prefLabel "Teltow-Fläming"@de .
 
 bb5kbc:Bundesland a owl:Class ;
@@ -32754,6 +33181,7 @@ data:kreis_484c68b5 a bb5kbc:Kreis ;
         <https://www.openstreetmap.org/relation/62353>,
         wd:Q6142 ;
     bb5kbc:inBundesland data:bundesland_2ddb2d82 ;
+    bb5kbc:wikidataMatchDescription "Exact match via skos:altLabel [global index] | 'Potsdam-Mittelmark' -> 'Potsdam-Mittelmark'"^^xsd:string ;
     skos:prefLabel "Potsdam-Mittelmark"@de .
 
 data:pub_aab60e84 a bb5kbc:Publikation ;
@@ -32767,6 +33195,7 @@ data:kreis_0b003b3b a bb5kbc:Kreis ;
         <https://www.openstreetmap.org/relation/62376>,
         wd:Q6173 ;
     bb5kbc:inBundesland data:bundesland_2ddb2d82 ;
+    bb5kbc:wikidataMatchDescription "Exact match via skos:altLabel [global index] | 'Dahme-Spreewald' -> 'Dahme-Spreewald'"^^xsd:string ;
     skos:prefLabel "Dahme-Spreewald"@de .
 
 data:gemeinde_8d17a3ac a bb5kbc:Gemeinde ;
@@ -32775,6 +33204,7 @@ data:gemeinde_8d17a3ac a bb5kbc:Gemeinde ;
         <https://www.openstreetmap.org/relation/2635744>,
         wd:Q2463096 ;
     bb5kbc:inKreis data:kreis_fa49171f ;
+    bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Gmina Brześć Kujawski' -> 'Gmina Brześć Kujawski'"^^xsd:string ;
     skos:prefLabel "Gmina Brześć Kujawski"@de .
 
 data:kultur_341c441b a bb5kbc:Kulturgruppe ;
@@ -32784,6 +33214,7 @@ data:kreis_d4d0a03b a bb5kbc:Kreis ;
     rdfs:label "Havelland"@de ;
     bb5kbc:hasExternalIdentifier wd:Q6139 ;
     bb5kbc:inBundesland data:bundesland_2ddb2d82 ;
+    bb5kbc:wikidataMatchDescription "Direct override | 'Havelland' -> QID=Q6139 | [override -> QID=Q6139]"^^xsd:string ;
     skos:prefLabel "Havelland"@de .
 
 data:pub_c5110572 a bb5kbc:Publikation ;
@@ -32824,6 +33255,7 @@ data:kreis_0a22f293 a bb5kbc:Kreis ;
     rdfs:label "Uckermark"@de ;
     bb5kbc:hasExternalIdentifier wd:Q6109 ;
     bb5kbc:inBundesland data:bundesland_2ddb2d82 ;
+    bb5kbc:wikidataMatchDescription "Direct override | 'Uckermark' -> QID=Q6109 | [override -> QID=Q6109]"^^xsd:string ;
     skos:prefLabel "Uckermark"@de .
 
 wd:Q139304642 bb5kbc:hasExternalIdentifierType bb5kbc:ExternalIdentifier_Wikidata .

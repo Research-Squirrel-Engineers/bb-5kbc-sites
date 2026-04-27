@@ -1,6 +1,6 @@
 # bb5kbc LOD — Validation Report
 
-- Bundle: `bb5kbc-bundle.ttl` (28099 triples)
+- Bundle: `bb5kbc-bundle.ttl` (28528 triples)
 - CSV: `fst_wgs84.csv` (540 rows × 64 cols)
 - Doku: `bb5kbc-csv-mapping.md`
 
@@ -50,7 +50,7 @@ Pro CSV-Spalte: Anzahl nicht-leerer Werte vs. Anzahl korrespondierender Tripel i
 | 11 | `GEMEINDE_OSM_Relation` | 330 (in 172 dist. gemeinde) | je 1 `hasExternalIdentifier` (relation) | 172 | ✅ **PASS** |
 | 12 | `GEMEINDE_matchLabel` | 540 | 0 Tripel (audit-only, nicht im RDF) | — (Skript erzeugt nichts) | ✅ **PASS** |
 | 13 | `GEMEINDE_matchScore` | 540 | 0 Tripel (audit-only, nicht im RDF) | — (Skript erzeugt nichts) | ✅ **PASS** |
-| 14 | `GEMEINDE_matchReason` | 540 | 0 Tripel (audit-only, nicht im RDF) | — (Skript erzeugt nichts) | ✅ **PASS** |
+| 14 | `GEMEINDE_matchReason` | 540 | 1 Literal `bb5kbc:wikidataMatchDescription` je distinktem Type-Knoten der Ebene | — (siehe Sektion 3) | ✅ **PASS** |
 | 15 | `kreis` | 540 | (skip) indirect: site → gemeinde → kreis | — | — **SKIP** |
 | 16 | `KREIS_QID` | 540 (in 82 dist. kreis) | je 1 `hasExternalIdentifier` (entity) | 82 | ✅ **PASS** |
 | 17 | `KREIS_GeoNames` | 327 (in 55 dist. kreis) | je 1 `hasExternalIdentifier` (www.geonames.org) | 55 | ✅ **PASS** |
@@ -59,7 +59,7 @@ Pro CSV-Spalte: Anzahl nicht-leerer Werte vs. Anzahl korrespondierender Tripel i
 | 20 | `KREIS_OSM_Relation` | 327 (in 55 dist. kreis) | je 1 `hasExternalIdentifier` (relation) | 55 | ✅ **PASS** |
 | 21 | `KREIS_matchLabel` | 540 | 0 Tripel (audit-only, nicht im RDF) | — (Skript erzeugt nichts) | ✅ **PASS** |
 | 22 | `KREIS_matchScore` | 540 | 0 Tripel (audit-only, nicht im RDF) | — (Skript erzeugt nichts) | ✅ **PASS** |
-| 23 | `KREIS_matchReason` | 540 | 0 Tripel (audit-only, nicht im RDF) | — (Skript erzeugt nichts) | ✅ **PASS** |
+| 23 | `KREIS_matchReason` | 540 | 1 Literal `bb5kbc:wikidataMatchDescription` je distinktem Type-Knoten der Ebene | — (siehe Sektion 3) | ✅ **PASS** |
 | 24 | `bundesland` | 540 | (skip) indirect: ... → kreis → bundesland | — | — **SKIP** |
 | 25 | `BUNDESLAND_QID` | 540 (in 15 dist. bundesland) | je 1 `hasExternalIdentifier` (entity) | 15 | ✅ **PASS** |
 | 26 | `BUNDESLAND_GeoNames` | 540 (in 15 dist. bundesland) | je 1 `hasExternalIdentifier` (www.geonames.org) | 15 | ✅ **PASS** |
@@ -68,7 +68,7 @@ Pro CSV-Spalte: Anzahl nicht-leerer Werte vs. Anzahl korrespondierender Tripel i
 | 29 | `BUNDESLAND_OSM_Relation` | 540 (in 15 dist. bundesland) | je 1 `hasExternalIdentifier` (relation) | 15 | ✅ **PASS** |
 | 30 | `BUNDESLAND_matchLabel` | 540 | 0 Tripel (audit-only, nicht im RDF) | — (Skript erzeugt nichts) | ✅ **PASS** |
 | 31 | `BUNDESLAND_matchScore` | 540 | 0 Tripel (audit-only, nicht im RDF) | — (Skript erzeugt nichts) | ✅ **PASS** |
-| 32 | `BUNDESLAND_matchReason` | 540 | 0 Tripel (audit-only, nicht im RDF) | — (Skript erzeugt nichts) | ✅ **PASS** |
+| 32 | `BUNDESLAND_matchReason` | 540 | 1 Literal `bb5kbc:wikidataMatchDescription` je distinktem Type-Knoten der Ebene | — (siehe Sektion 3) | ✅ **PASS** |
 | 33 | `land` | 528 | (skip) indirect: ... → bundesland → land | — | — **SKIP** |
 | 34 | `LAND_QID` | 540 (in 2 dist. land) | je 1 `hasExternalIdentifier` (entity) | 2 | ✅ **PASS** |
 | 35 | `LAND_GeoNames` | 540 (in 2 dist. land) | je 1 `hasExternalIdentifier` (www.geonames.org) | 2 | ✅ **PASS** |
@@ -77,7 +77,7 @@ Pro CSV-Spalte: Anzahl nicht-leerer Werte vs. Anzahl korrespondierender Tripel i
 | 38 | `LAND_OSM_Relation` | 540 (in 2 dist. land) | je 1 `hasExternalIdentifier` (relation) | 2 | ✅ **PASS** |
 | 39 | `LAND_matchLabel` | 540 | 0 Tripel (audit-only, nicht im RDF) | — (Skript erzeugt nichts) | ✅ **PASS** |
 | 40 | `LAND_matchScore` | 540 | 0 Tripel (audit-only, nicht im RDF) | — (Skript erzeugt nichts) | ✅ **PASS** |
-| 41 | `LAND_matchReason` | 540 | 0 Tripel (audit-only, nicht im RDF) | — (Skript erzeugt nichts) | ✅ **PASS** |
+| 41 | `LAND_matchReason` | 540 | 1 Literal `bb5kbc:wikidataMatchDescription` je distinktem Type-Knoten der Ebene | — (siehe Sektion 3) | ✅ **PASS** |
 | 42 | `kultur` | 540 | je 1 `bb5kbc:hatKulturelleZuordnung` von Fundstelle | 540 | ✅ **PASS** |
 | 43 | `entdeckung` | 432 | je 1 `bb5kbc:wurdeEntdecktDurch` von Fundstelle | 432 | ✅ **PASS** |
 | 44 | `QID_entdeckung` | 382 | (skip) ext-id on EntdeckungsartType (deduplicated) | — | — **SKIP** |
@@ -115,7 +115,7 @@ Nimmt alle Klassen und Properties, die im Datengraph *verwendet* werden, und pr�
 
 ### Properties
 
-- Verwendet: **25**, deklariert: **25**
+- Verwendet: **26**, deklariert: **26**
 - ✅ **PASS** Jede in den Daten verwendete `bb5kbc:`-Property ist in der Ontologie deklariert.
 
 ---
