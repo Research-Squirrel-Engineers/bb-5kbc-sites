@@ -82,9 +82,40 @@ QID_PUBLIKATION = {
     # --- Aus QuickStatements_2.htm ---
     "Dziewanowski 2019":         "Q139304679",
     "Umbreit 1939":              "Q139304632",
-    # --- Noch nicht aufgelöst (Sophie prüft) ---
-    # "Pyzel 2019"               -> kein direktes Match in HTML
-    # "Umbreit 1940"             -> kein Eintrag in HTML
+    # --- Pending: warten auf Sophies Review (Stand: April 2026) -----------
+    # Hinweis: Die folgenden Publikationen tauchen in der CSV in Spalte
+    # `publikation_arch` auf, sind aber (noch) nicht eindeutig auf ein
+    # Wikidata-Item gemappt. Per Projektregel werden hier keine QIDs
+    # geraten — entweder Sophie liefert die QID nach, oder die Zelle
+    # bleibt leer.
+    #
+    # "Pyzel 2019"        FID 548, 549 (Ludwinowo 7, SBK, Polen)
+    #                     In QID_QUELLE_GEOREF als Q139460445 hinterlegt;
+    #                     Sophie muss bestätigen, ob dasselbe Werk gemeint ist.
+    # "Umbreit 1940"      FID 244 (Lietzow-Buddelin/Saiser 1)
+    #                     In QID_QUELLE_GEOREF als Q139459720 hinterlegt;
+    #                     Sophie muss bestätigen, ob dasselbe Werk gemeint ist.
+    # "Schier et al. 2023" FID 8 (Quedlinburg KGA 1)
+    #                     Mehrdeutig: Schiers 2023-Hauptpublikation ist die
+    #                     Ippesheim-Endmonografie (BAF 22, Rahden/Westf. 2023);
+    #                     Quedlinburg ist eine andere Anlage. Sophie klärt
+    #                     welches Werk gemeint ist.
+    # "Raddatz 1956"      FID 94 (Kaaso/Kozów, SBK, Polen, Woj. Lubuskie)
+    #                     Achtung: in QID_QUELLE_GEOREF unten als Q139304631
+    #                     hinterlegt — das ist aber das QID für "Raddatz 1959"
+    #                     (siehe oben). Sophie muss klären: ist das ein Tippfehler
+    #                     in der CSV (1956 → 1959), oder existiert eine separate
+    #                     Raddatz-1956-Publikation, die noch ein eigenes
+    #                     Wikidata-Item braucht?
+    # "Wetzel/Babieel 2016" FID 257 (Dyrotz 37, Rössener Kultur, Havelland)
+    #                     Eindeutig identifiziert als:
+    #                       Wetzel, G. / Babiel, K.: Der Rössener Brunnen von
+    #                       Dyrotz 37, Lkr. Havelland, und sein Umfeld. In:
+    #                       Veröff. brandenb. Landesarchäologie 47 (2016),
+    #                       79–108.
+    #                     CSV-Tippfehler: Co-Autor heißt Babiel, nicht Babieel.
+    #                     Wikidata-Item existiert (Stand April 2026) noch nicht.
+    # ---------------------------------------------------------------------
 }
 
 # ---------------------------------------------------------------------------
