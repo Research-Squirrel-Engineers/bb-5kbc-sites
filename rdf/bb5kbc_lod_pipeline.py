@@ -1,17 +1,19 @@
 """
 bb5kbc_lod_pipeline.py — Brandenburg 5000 BC Sites: CSV to Linked Open Data.
 
-Reads `fst_wgs84_comma.csv` (the Schmidt 2026 site catalogue), applies the
-modelling rules defined in `bb5kbc-modelling-rules.md`, and writes a single
-Turtle file `bb5kbc-data.ttl` with all triples generated from the data. The
-output is then validated against auto-generated SHACL shapes derived from
+Reads `fst_wgs84.csv` (the Schmidt 2026 site catalogue, enriched with authority
+identifiers — Wikidata QIDs, GeoNames, TGN, iDAI.gazetteer, OSM relations — for
+all four administrative levels via the upstream csv_enrichment.py pipeline),
+applies the modelling rules defined in `bb5kbc-modelling-rules.md`, and writes
+a single Turtle file `bb5kbc-data.ttl` with all triples generated from the data.
+The output is then validated against auto-generated SHACL shapes derived from
 `bb5kbc-ontology.ttl`; the validation report is written separately, and the
 pipeline does NOT abort on shape violations (warning-only mode).
 
 Project layout (relative to repository root):
     rdf/        ← this script + bb5kbc-shapes.ttl + readme
     ontology/   ← bb5kbc-ontology.ttl
-    data/       ← fst_wgs84_comma.csv  (read-only)
+    data/       ← fst_wgs84.csv  (read-only, output of csv_enrichment.py)
     dist/       ← generated output (bb5kbc-data.ttl, shacl-report.ttl, report.log)
 
 Run from the rdf/ directory:
@@ -70,6 +72,7 @@ ORCID = Namespace("https://orcid.org/")
 TGN = Namespace("http://vocab.getty.edu/tgn/")
 IDAI = Namespace("http://gazetteer.dainst.org/place/")
 OSM = Namespace("https://www.openstreetmap.org/relation/")
+GN = Namespace("https://www.geonames.org/")
 
 
 # ---------------------------------------------------------------------------
@@ -94,6 +97,7 @@ EXT_ID_TYPES = {
     "idai":      BB5KBC["ExternalIdentifier_iDAI"],
     "osm":       BB5KBC["ExternalIdentifier_OSM"],
     "periodo":   BB5KBC["ExternalIdentifier_PerioDo"],
+    "geonames":  BB5KBC["ExternalIdentifier_GeoNames"],
 }
 
 # Multi-valued fundstellenart values that get split into multiple type nodes.
@@ -106,16 +110,13 @@ COMPOUND_FUNDSTELLENART = {
     "Siedlung, Kreisgrabenanlage":    [("Siedlung", "Q486972"), ("Kreisgrabenanlage", "Q1787688")],
 }
 
-# CSV-row-level data quality fixes. Applied during processing with a warning
-# logged; the CSV file itself is never modified. Hopefully resolved upstream
-# before final production runs.
-DATING_END_FIXES = {
-    "31":  "-4750",   # Eythra:    "+4750" → "-4750"  (typo, missing minus sign)
-    "257": "-4344",   # Dyrotz 37: "+4344" → "-4344"
-}
-
-# CSV columns that are not yet populated but are part of the schema
-# (for these we never attempt to read; documented for transparency)
+# CSV columns that are present in the schema but currently fully unpopulated.
+# We don't read them for triple generation; documented for transparency.
+# - perio.do (Kulturgruppe-level Perio.do URI): Sophie removed it in the
+#   reviewed CSV (see bb5kbc-csv-issues.md, issue 8/empty-columns); the column
+#   header is still present but every row is empty.
+# - QID_publikation: filled by enrich_qids.py downstream (Pyzel 2019 and
+#   Umbreit 1940 still pending Sophie's review).
 EMPTY_COLUMNS = {"perio.do", "QID_publikation"}
 
 
@@ -249,6 +250,7 @@ def _bind_namespaces(g: Graph) -> None:
     g.bind("foaf", FOAF)
     g.bind("skos", SKOS)
     g.bind("dcterms", DCTERMS)
+    g.bind("gn", GN)
 
 
 # ---------------------------------------------------------------------------
@@ -260,12 +262,12 @@ def _bind_namespaces(g: Graph) -> None:
 
 def _admin_node(g: Graph, label: str, klass: URIRef, prefix: str,
                 tgn_id: str = "", idai_id: str = "", osm_id: str = "",
-                wikidata_qid: str = "") -> URIRef:
+                geonames_id: str = "", wikidata_qid: str = "") -> URIRef:
     """Create or reuse an administrative-area node with optional external IDs.
 
     Used for Land, Bundesland, Kreis, Gemeinde — they all share the same
-    pattern: hash-URI deduplicated by label, with up to four external
-    identifiers attached.
+    pattern: hash-URI deduplicated by label, with up to five external
+    identifiers attached (Wikidata, GeoNames, TGN, iDAI, OSM).
     """
     uri = DATA[f"{prefix}_{_hash8(label)}"]
 
@@ -289,6 +291,11 @@ def _admin_node(g: Graph, label: str, klass: URIRef, prefix: str,
         g.add((uri, BB5KBC.hasExternalIdentifier, ext))
         g.add((ext, BB5KBC.hasExternalIdentifierType, EXT_ID_TYPES["osm"]))
 
+    if geonames_id and not _empty(geonames_id):
+        ext = GN[str(geonames_id).strip()]
+        g.add((uri, BB5KBC.hasExternalIdentifier, ext))
+        g.add((ext, BB5KBC.hasExternalIdentifierType, EXT_ID_TYPES["geonames"]))
+
     if wikidata_qid and not _empty(wikidata_qid):
         ext = WD[str(wikidata_qid).strip()]
         g.add((uri, BB5KBC.hasExternalIdentifier, ext))
@@ -307,6 +314,8 @@ def add_land_triples(g, row, uri_dict):
         tgn_id=row.get("LAND_TGN", ""),
         idai_id=row.get("LAND_IDAI", ""),
         osm_id=row.get("LAND_OSM_Relation", ""),
+        geonames_id=row.get("LAND_GeoNames", ""),
+        wikidata_qid=row.get("LAND_QID", ""),
     )
     return [uri]
 
@@ -318,9 +327,11 @@ def add_bundesland_triples(g, row, uri_dict):
         return []
     uri = _admin_node(
         g, label, BB5KBC.Bundesland, "bundesland",
-        tgn_id=row.get("BL_TGN", ""),
-        idai_id=row.get("BL_IDAI", ""),
-        osm_id=row.get("BL_OSM_RELATION", ""),
+        tgn_id=row.get("BUNDESLAND_TGN", ""),
+        idai_id=row.get("BUNDESLAND_IDAI", ""),
+        osm_id=row.get("BUNDESLAND_OSM_Relation", ""),
+        geonames_id=row.get("BUNDESLAND_GeoNames", ""),
+        wikidata_qid=row.get("BUNDESLAND_QID", ""),
     )
     for land_uri in uri_dict.get("Land", []):
         g.add((uri, BB5KBC.inLand, land_uri))
@@ -336,7 +347,9 @@ def add_kreis_triples(g, row, uri_dict):
         g, label, BB5KBC.Kreis, "kreis",
         tgn_id=row.get("KREIS_TGN", ""),
         idai_id=row.get("KREIS_IDAI", ""),
-        osm_id=row.get("KREIS_OSM_RELATION", ""),
+        osm_id=row.get("KREIS_OSM_Relation", ""),
+        geonames_id=row.get("KREIS_GeoNames", ""),
+        wikidata_qid=row.get("KREIS_QID", ""),
     )
     for bl_uri in uri_dict.get("Bundesland", []):
         g.add((uri, BB5KBC.inBundesland, bl_uri))
@@ -350,9 +363,11 @@ def add_gemeinde_triples(g, row, uri_dict):
         return []
     uri = _admin_node(
         g, label, BB5KBC.Gemeinde, "gemeinde",
-        tgn_id=row.get("GEM_TGN", ""),
-        idai_id=row.get("GEM_IDAI", ""),
-        osm_id=row.get("GEM_OSM_RELATION", ""),
+        tgn_id=row.get("GEMEINDE_TGN", ""),
+        idai_id=row.get("GEMEINDE_IDAI", ""),
+        osm_id=row.get("GEMEINDE_OSM_Relation", ""),
+        geonames_id=row.get("GEMEINDE_GeoNames", ""),
+        wikidata_qid=row.get("GEMEINDE_QID", ""),
     )
     for kreis_uri in uri_dict.get("Kreis", []):
         g.add((uri, BB5KBC.inKreis, kreis_uri))
@@ -422,7 +437,16 @@ def _typed_node(g: Graph, label: str, prefix: str, klass: URIRef,
 
 
 def add_fundstellenart_triples(g, row, uri_dict, log):
-    """Site type. Multi-valued strings (e.g. 'Siedlung und Grab') are split."""
+    """Site type. Multi-valued strings (e.g. 'Siedlung und Grab') are split.
+
+    For values containing '?' (e.g. 'Grab?'), a dedicated, non-deduplicated
+    type node is created per site, with fsl:certaintyDesc "uncertain"@en
+    attached. The uncertainty is a statement about *this* assignment, not
+    about the type itself, so attaching it to the deduplicated type node
+    would propagate to all sites with the same type — which is wrong.
+    Per Sophie's review (bb5kbc-csv-issues.md, issue 3), this is the agreed
+    modelling for question-mark values.
+    """
     label = _norm_str(row.get("fundstellenart"))
     qid = _norm_str(row.get("QID_fundstellenart"))
     if not label:
@@ -445,7 +469,28 @@ def add_fundstellenart_triples(g, row, uri_dict, log):
                  f"{len(type_uris)} components")
         return type_uris
 
-    # Single-valued: one type node, label = original CSV value (preserves '?')
+    # Uncertainty case ('Grab?', etc.) — dedicated node per site, with certaintyDesc.
+    # URI is salted with the FID so it does not collide with the deduplicated
+    # certain version of the same type (if any).
+    if "?" in label:
+        fid = _norm_str(row.get("FID"))
+        salt = f"{label}_uncertain_{fid}"
+        t_uri = DATA[f"fundstellenart_{_hash8(salt)}"]
+        g.add((t_uri, RDF.type, BB5KBC.FundstellenartType))
+        g.add((t_uri, RDFS.label, Literal(label, lang="de")))
+        g.add((t_uri, SKOS.prefLabel, Literal(label, lang="de")))
+        g.add((t_uri, FSL.certaintyDesc, Literal("uncertain", lang="en")))
+        if qid:
+            ext = WD[qid]
+            g.add((t_uri, BB5KBC.hasExternalIdentifier, ext))
+            g.add((ext, BB5KBC.hasExternalIdentifierType, EXT_ID_TYPES["wikidata"]))
+        for site in sites:
+            g.add((site, BB5KBC.hatFundstellenart, t_uri))
+        log.info(f"Row FID={fid}: fundstellenart '{label}' marked as uncertain "
+                 f"(fsl:certaintyDesc).")
+        return [t_uri]
+
+    # Single-valued, certain: one deduplicated type node
     t_uri = _typed_node(g, label, "fundstellenart",
                         BB5KBC.FundstellenartType, qid)
     for site in sites:
@@ -506,6 +551,12 @@ def add_kulturelle_zuordnung_triples(g, row, uri_dict):
     URI strategy: culture_{hash} where hash is the kultur-value hash. This
     means all sites with the same Kulturgruppe share the same KulturelleZuordnung
     *for the dataset as a whole* — which is the intended deduplication.
+
+    For uncertain assignments (kultur ending in '?', e.g. 'SBK?'), the
+    fsl:certaintyDesc "uncertain"@en is attached to the KulturelleZuordnung
+    (not to the Kulturgruppe itself) — the uncertainty concerns *the
+    assignment*, not the cultural group as a concept. Per Sophie's review
+    (bb5kbc-csv-issues.md, issue 8).
     """
     kultur = _norm_str(row.get("kultur"))
     sites = uri_dict.get("Fundstelle", [])
@@ -516,7 +567,8 @@ def add_kulturelle_zuordnung_triples(g, row, uri_dict):
     g.add((kultur_uri, RDF.type, BB5KBC.Kulturgruppe))
     g.add((kultur_uri, RDFS.label, Literal(kultur, lang="de")))
 
-    # Kulturgruppe-level perio.do is empty in current CSV (column = "perio.do")
+    # Kulturgruppe-level perio.do is empty in current CSV (column = "perio.do");
+    # left in for forward compatibility — emits no triples while empty.
     if "perio.do" in row.index and not _empty(row.get("perio.do")):
         ext = URIRef(_norm_str(row["perio.do"]))
         g.add((kultur_uri, BB5KBC.hasExternalIdentifier, ext))
@@ -525,6 +577,9 @@ def add_kulturelle_zuordnung_triples(g, row, uri_dict):
     zuordnung_uri = DATA[f"culture_{_hash8(kultur)}"]
     g.add((zuordnung_uri, RDF.type, BB5KBC.KulturelleZuordnung))
     g.add((zuordnung_uri, BB5KBC.hatKulturgruppe, kultur_uri))
+
+    if "?" in kultur:
+        g.add((zuordnung_uri, FSL.certaintyDesc, Literal("uncertain", lang="en")))
 
     for site in sites:
         g.add((site, BB5KBC.hatKulturelleZuordnung, zuordnung_uri))
@@ -535,9 +590,10 @@ def add_kulturelle_zuordnung_triples(g, row, uri_dict):
 def add_datierung_triples(g, row, uri_dict, log):
     """Per-site dating node, attached to the kulturelle Zuordnung.
 
-    Hard-coded fixes for known data errors in dating_end (FID 31, 257) — these
-    are applied with a logged warning and should be removed once the CSV is
-    corrected upstream.
+    Note: previous versions of this script applied hard-coded fixes for
+    dating_end typos at FID 31 and 257 (positive value where negative was
+    intended). These were corrected by Sophie in the reviewed CSV
+    (bb5kbc-csv-issues.md, issue 1) and the runtime fix has been removed.
     """
     zuordnung = uri_dict.get("KulturelleZuordnung", [])
     if not zuordnung:
@@ -551,17 +607,8 @@ def add_datierung_triples(g, row, uri_dict, log):
     # Dual anchoring (CRM E52 + OWL Time Interval) flows from the ontology;
     # we only add the bb5kbc:Datierung type here.
 
-    # Apply known dating_end fixes
-    raw_end = _norm_str(row.get("dating_end"))
-    if fid in DATING_END_FIXES and raw_end == DATING_END_FIXES[fid].lstrip("-"):
-        # Original value is the positive variant; replace with the corrected one
-        log.warning(f"Row FID={fid}: dating_end '{raw_end}' looks like a typo "
-                    f"(missing minus sign). Corrected to '{DATING_END_FIXES[fid]}'. "
-                    f"Please fix in the CSV.")
-        raw_end = DATING_END_FIXES[fid]
-
     start_lex = _lex_integer(row.get("dating_start"))
-    end_lex = _lex_integer(raw_end)
+    end_lex = _lex_integer(row.get("dating_end"))
     if start_lex is not None:
         g.add((d_uri, BB5KBC.datierungStart, Literal(start_lex, datatype=XSD.integer)))
     if end_lex is not None:
@@ -828,7 +875,7 @@ def generate_shacl_shapes(ontology_path: Path) -> Graph:
 def parse_args():
     p = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
     p.add_argument("--csv", default=None,
-                   help="Path to CSV file (default: ../data/fst_wgs84_comma.csv)")
+                   help="Path to CSV file (default: ../data/fst_wgs84.csv)")
     p.add_argument("--ontology", default=None,
                    help="Path to bb5kbc ontology .ttl (default: ../ontology/bb5kbc-ontology.ttl)")
     p.add_argument("--out-dir", default=None,
@@ -849,7 +896,7 @@ def main():
     script_dir = Path(__file__).resolve().parent
     root = script_dir.parent
 
-    csv_path = Path(args.csv) if args.csv else root / "data" / "fst_wgs84_comma.csv"
+    csv_path = Path(args.csv) if args.csv else root / "data" / "fst_wgs84.csv"
     ontology_path = Path(args.ontology) if args.ontology else root / "ontology" / "bb5kbc-ontology.ttl"
     out_dir = Path(args.out_dir) if args.out_dir else root / "dist"
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -880,7 +927,11 @@ def main():
     if not csv_path.exists():
         log.error(f"CSV not found: {csv_path}")
         return 1
-    df = pd.read_csv(csv_path, dtype=str, keep_default_na=False, na_values=[])
+    # The enriched CSV (output of csv_enrichment.py) is written with a UTF-8
+    # BOM by project convention. utf-8-sig strips the BOM transparently and is
+    # backwards-compatible with plain UTF-8 files.
+    df = pd.read_csv(csv_path, dtype=str, keep_default_na=False,
+                     na_values=[], encoding="utf-8-sig")
     log.info(f"Loaded CSV: {len(df)} rows, {len(df.columns)} columns")
 
     if args.limit is not None:

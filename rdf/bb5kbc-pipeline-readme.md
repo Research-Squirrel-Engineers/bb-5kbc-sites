@@ -5,7 +5,7 @@
 > `bb5kbc-modelling-rules.md` und validiert das Ergebnis automatisch gegen
 > SHACL-Shapes, die aus der Ontologie generiert werden.
 >
-> **Skript:** `bb5kbc_lod_pipeline.py` · **Stand:** Ontologie v0.9
+> **Skript:** `bb5kbc_lod_pipeline.py` · **Stand:** Ontologie v0.10
 > · **Lizenz:** CC BY 4.0
 
 ---
@@ -38,7 +38,7 @@ root/
 ├── ontology/
 │   └── bb5kbc-ontology.ttl           ← Anwendungsontologie
 ├── data/
-│   └── fst_wgs84_comma.csv           ← Eingabe (read-only)
+│   └── fst_wgs84.csv                 ← Eingabe (Output von csv_enrichment.py, read-only)
 └── dist/
     ├── bb5kbc-data.ttl               ← konvertierte Daten
     ├── bb5kbc-bundle.ttl             ← Daten + Ontologie (selbst-genügsam)
@@ -51,6 +51,12 @@ Das Skript wird aus `rdf/` heraus aufgerufen. Eingabe-CSV und Ontologie
 werden nie verändert. Alle generierten Artefakte landen in `dist/`, mit der
 einen Ausnahme: `bb5kbc-shapes.ttl` liegt bei `rdf/`, weil sie konzeptionell
 zum Schema gehören (versionsverwaltet, durchsuchbar, wiederverwendbar).
+
+Die Eingabe-CSV `fst_wgs84.csv` ist der angereicherte Output der vorgelagerten
+`csv_enrichment.py`-Pipeline (540 Zeilen, 65 Spalten — die ursprünglichen 33
+Spalten plus je 8 Authority-ID-Spalten für LAND, BUNDESLAND, KREIS, GEMEINDE:
+Wikidata QID, GeoNames, TGN, iDAI.gazetteer, OSM Relation und drei Match-
+Metadatenspalten).
 
 ---
 
@@ -79,21 +85,21 @@ Erwartete Ausgabe (gekürzt):
 
 ```
 [INFO] bb5kbc LOD pipeline — start
-[INFO] Loaded CSV: 540 rows, 33 columns
+[INFO] Loaded CSV: 540 rows, 65 columns
 [INFO] Processing rows ...
 [INFO] Row 30: split fundstellenart 'Kreisgrabenanlage und Siedlung' into 2 components
-[WARNING] Row FID=31: dating_end '4750' looks like a typo (missing minus sign). Corrected to '-4750'. Please fix in the CSV.
+[INFO] Row FID=54: fundstellenart 'Grab?' marked as uncertain (fsl:certaintyDesc).
 [INFO] Row FID=35: dating_perio.do present but no match level specified — defaulting to skos:relatedMatch.
 [INFO] Processed: 540 rows, skipped: 0
-[INFO] Generated graph: 19254 triples
-[INFO] Wrote data graph: ../dist/bb5kbc-data.ttl (19261 triples)
+[INFO] Generated graph: 21657 triples
+[INFO] Wrote data graph: ../dist/bb5kbc-data.ttl (21664 triples)
 [INFO] Wrote shapes: ./bb5kbc-shapes.ttl (152 triples)
 [INFO] SHACL validation: PASS (0 validation results)
 [INFO] bb5kbc LOD pipeline — done
 ```
 
-Laufzeit: ca. 10 Sekunden auf einem normalen Laptop, davon ~7 Sekunden SHACL-
-Validierung.
+Laufzeit: ca. 20 Sekunden auf einem normalen Laptop, davon ~16 Sekunden SHACL-
+Validierung (zwei Durchläufe: Daten-Graph + Bundle-Graph).
 
 ---
 
@@ -181,7 +187,7 @@ Die konvertierten Daten als Turtle. Enthält **keine Ontologie-Triples** —
 zum Lesen oder Abfragen sollte sie zusammen mit `bb5kbc-ontology.ttl`
 geladen werden.
 
-Typische Größe für 540 Zeilen: ca. 19 200 Triples in 1.6 MB.
+Typische Größe für 540 Zeilen: ca. 21 650 Triples in 1.8 MB.
 
 ### `dist/bb5kbc-bundle.ttl`
 
@@ -189,7 +195,7 @@ Typische Größe für 540 Zeilen: ca. 19 200 Triples in 1.6 MB.
 in Triplestores oder zum Teilen mit Dritten. Enthält dieselben Daten-Triples
 wie `bb5kbc-data.ttl` plus die kompletten Ontologie-Definitionen.
 
-Typische Größe: ca. 19 900 Triples (~600 mehr als `bb5kbc-data.ttl`).
+Typische Größe: ca. 22 280 Triples (~620 mehr als `bb5kbc-data.ttl`).
 
 ### `dist/shacl-report.ttl` und `dist/shacl-report-bundle.ttl`
 
@@ -230,7 +236,7 @@ python bb5kbc_lod_pipeline.py [OPTIONS]
 
 | Option | Default | Wirkung |
 |---|---|---|
-| `--csv PATH` | `../data/fst_wgs84_comma.csv` | andere CSV-Datei verwenden |
+| `--csv PATH` | `../data/fst_wgs84.csv` | andere CSV-Datei verwenden |
 | `--ontology PATH` | `../ontology/bb5kbc-ontology.ttl` | andere Ontologie verwenden |
 | `--out-dir PATH` | `../dist` | anderes Output-Verzeichnis |
 | `--limit N` | unbegrenzt | nur die ersten N Zeilen verarbeiten (Tests) |
@@ -303,17 +309,26 @@ Das Skript wendet diese **bewussten Anpassungen** an:
 
 | Eintrag | Was passiert | Wo dokumentiert |
 |---|---|---|
-| `dating_end = "4750"` (FID=31) | korrigiert zu `-4750`, Warnung im Log | `DATING_END_FIXES`-Dict im Skript |
-| `dating_end = "4344"` (FID=257) | korrigiert zu `-4344`, Warnung im Log | dito |
 | `fundstellenart` mit "und" / "," | aufgesplittet in mehrere Type-Knoten | `COMPOUND_FUNDSTELLENART`-Dict im Skript |
+| `fundstellenart` endet auf `?` (z.B. `Grab?`) | eigener, nicht-deduplizierter Type-Knoten pro Site mit `fsl:certaintyDesc "uncertain"@en` | `add_fundstellenart_triples`, Sophies Issue 3 |
+| `kultur` endet auf `?` (z.B. `SBK?`) | `fsl:certaintyDesc "uncertain"@en` an der `KulturelleZuordnung` (nicht an der Kulturgruppe selbst) | `add_kulturelle_zuordnung_triples`, Sophies Issue 8 |
 | `entdeckung` ohne QID | Knoten erstellt, aber kein `hatEntdeckungsart` | Modellierungsentscheidung |
 | `dating_perio.do` ohne Match-Level | Default `skos:relatedMatch` | Info im Log |
 | `wgs84 = (0,0)` | kein `sf:Point`, certainty `Q113 dubious` | Modellierungsregel |
 | Leere CSV-Felder | kein Triple erzeugt (kein `""`-Literal) | Modellierungsregel |
 
-Falls Sophie eine der Korrekturen rückgängig machen möchte: die Tabellen
-oben verweisen auf die genauen Stellen im Skript, alle sind als Konstanten
-oben deklariert.
+**Authority-Identifier** werden für alle vier Verwaltungsebenen (LAND,
+BUNDESLAND, KREIS, GEMEINDE) gelesen und als `bb5kbc:hasExternalIdentifier`
+modelliert. Unterstützte Authorities: Wikidata (Spalte `<EBENE>_QID`),
+GeoNames (`<EBENE>_GeoNames`), Getty TGN (`<EBENE>_TGN`), iDAI.gazetteer
+(`<EBENE>_IDAI`), OSM Relation (`<EBENE>_OSM_Relation`). Zusätzlich zu
+diesen fünf Authority-Spalten enthält die Eingabe-CSV pro Ebene drei Match-
+Metadatenspalten (`matchLabel`, `matchScore`, `matchReason`), die das Skript
+**nicht** in den RDF-Graph übernimmt — sie sind Audit-Information aus dem
+vorgelagerten `csv_enrichment.py`-Lauf.
+
+Falls Sophie eine der Korrekturen rückgängig machen möchte: die Tabelle
+oben verweist auf die genauen Stellen im Skript.
 
 ---
 
@@ -328,7 +343,7 @@ pip install rdflib pandas pyshacl
 ### "CSV not found"
 
 Pfade prüfen — das Skript erwartet die Datei standardmäßig unter
-`../data/fst_wgs84_comma.csv` relativ zu seiner eigenen Position. Mit
+`../data/fst_wgs84.csv` relativ zu seiner eigenen Position. Mit
 `--csv PATH` lässt sich ein anderer Pfad angeben.
 
 ### SHACL meldet hunderte Verstöße
