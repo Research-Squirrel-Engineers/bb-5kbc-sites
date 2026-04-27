@@ -1,0 +1,70 @@
+Data and Ontology License
+=========================
+
+The data and ontology artefacts produced by this repository — including
+but not limited to:
+
+  * data/fst_wgs84_comma.csv
+  * data/fst_wgs84.csv
+  * data/enrichment/mapping_admin_regions/fst_standortanalysen_ref*.csv
+  * ontology/bb5kbc-ontology.ttl
+  * ontology/bb5kbc-classes.mmd
+  * dist/bb5kbc-data.ttl
+  * dist/bb5kbc-bundle.ttl
+
+— are licensed under the
+
+    Creative Commons Attribution 4.0 International License (CC BY 4.0)
+
+SPDX-License-Identifier: CC-BY-4.0
+
+You are free to:
+
+  * Share — copy and redistribute the material in any medium or format
+  * Adapt — remix, transform, and build upon the material for any
+    purpose, even commercially.
+
+Under the following terms:
+
+  * Attribution — You must give appropriate credit, provide a link to
+    the license, and indicate if changes were made. You may do so in any
+    reasonable manner, but not in any way that suggests the licensor
+    endorses you or your use.
+
+  * No additional restrictions — You may not apply legal terms or
+    technological measures that legally restrict others from doing
+    anything the license permits.
+
+
+Recommended citation
+--------------------
+
+  Schmidt, Sophie C. & Thiery, Florian (2026).
+  bb-5kbc-sites: Linked Open Data zu archäologischen Fundstellen
+  (~5000 BC) in Brandenburg, Ostdeutschland und Westpolen.
+  Research Squirrel Engineers. CC BY 4.0.
+  https://github.com/Research-Squirrel-Engineers/bb-5kbc-sites
+
+
+Full license text
+-----------------
+
+The full legal code of CC BY 4.0 is available at:
+
+  https://creativecommons.org/licenses/by/4.0/legalcode.en
+
+A human-readable summary ("Deed") is available at:
+
+  https://creativecommons.org/licenses/by/4.0/
+
+
+Note on software vs. data
+-------------------------
+
+The software components of this repository (Python scripts, pipeline
+code, validators, tooling) are licensed separately under the MIT License
+— see the LICENSE file at the repository root.
+
+Third-party identifiers referenced from the data (Wikidata QIDs,
+GeoNames IDs, Getty TGN IDs, iDAI.gazetteer URIs, OSM Relation IDs,
+Perio.do URIs) remain under their respective publishers' terms.
