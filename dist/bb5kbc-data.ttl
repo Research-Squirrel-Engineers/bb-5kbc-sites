@@ -19,13 +19,13 @@ data:bb5kbc_bundle_ttl a prov:Entity ;
     rdfs:label "bb5kbc-bundle.ttl (data + ontology, self-contained)"@en ;
     prov:atLocation <file:///C:/git/bb-5kbc-sites/dist/bb5kbc-bundle.ttl> ;
     prov:wasDerivedFrom ns1:fst_wgs84_csv ;
-    prov:wasGeneratedBy data:pipeline_run_2026-04-27T10-24-51Z .
+    prov:wasGeneratedBy data:pipeline_run_2026-04-27T13-59-02Z .
 
 data:bb5kbc_data_ttl a prov:Entity ;
     rdfs:label "bb5kbc-data.ttl (LOD-converted site data)"@en ;
     prov:atLocation <file:///C:/git/bb-5kbc-sites/dist/bb5kbc-data.ttl> ;
     prov:wasDerivedFrom ns1:fst_wgs84_csv ;
-    prov:wasGeneratedBy data:pipeline_run_2026-04-27T10-24-51Z .
+    prov:wasGeneratedBy data:pipeline_run_2026-04-27T13-59-02Z .
 
 data:site_1 a bb5kbc:Fundstelle ;
     rdfs:label "Tüngeda"@de ;
@@ -2861,7 +2861,7 @@ data:site_257 a bb5kbc:Fundstelle ;
     bb5kbc:hatGenauigkeit 0.0 ;
     bb5kbc:hatKatalognummer "12418" ;
     bb5kbc:hatKulturelleZuordnung data:site_257_culture ;
-    bb5kbc:hatPublikation data:pub_b359cdf6 ;
+    bb5kbc:hatPublikation data:pub_23e2b3b3 ;
     bb5kbc:inGemeinde data:gemeinde_0f80183e ;
     bb5kbc:wurdeEntdecktDurch data:site_257_discovery ;
     bb5kbc:wurdeGeoreferenziertDurch data:site_257_activity ;
@@ -9040,7 +9040,7 @@ data:site_586 a bb5kbc:Fundstelle ;
     bb5kbc:hatGenauigkeit 0.0 ;
     bb5kbc:hatKatalognummer "18010" ;
     bb5kbc:hatKulturelleZuordnung data:site_586_culture ;
-    bb5kbc:hatPublikation data:pub_805202e9 ;
+    bb5kbc:hatPublikation data:pub_f5ff5579 ;
     bb5kbc:inGemeinde data:gemeinde_e743046d ;
     bb5kbc:wurdeEntdecktDurch data:site_586_discovery ;
     bb5kbc:wurdeGeoreferenziertDurch data:site_586_activity ;
@@ -9875,24 +9875,30 @@ data:site_99 a bb5kbc:Fundstelle ;
 
 ns1:fst_standortanalysen_ref_report_csv a prov:Entity ;
     rdfs:label "Per-row QA report for geo mapping" ;
-    prov:atLocation <file:///C:/git/bb-5kbc-sites/data/enrichment/mapping_admin_regions/fst_standortanalysen_ref_report.csv> ;
-    prov:wasDerivedFrom ns1:fst_standortanalysen_ref_csv ;
-    prov:wasGeneratedBy <https://example.org/bb-5kbc-sites/run/2026-04-27T08-21-21Z/stage2_geo> .
+    prov:atLocation <file:///C:/git/bb-5kbc-sites/data/enrichment/mapping_admin_regions/fst_standortanalysen_ref_report.csv> .
 
 ns1:geo_log a prov:Entity ;
     rdfs:label "Geo stage full stdout log" ;
-    prov:atLocation <file:///C:/git/bb-5kbc-sites/data/csv_enrichment_geo.log> ;
-    prov:wasGeneratedBy <https://example.org/bb-5kbc-sites/run/2026-04-27T08-21-21Z/stage2_geo> .
+    prov:atLocation <file:///C:/git/bb-5kbc-sites/data/csv_enrichment_geo.log> .
 
 ns1:lit_log a prov:Entity ;
     rdfs:label "Literature stage warning log" ;
     prov:atLocation <file:///C:/git/bb-5kbc-sites/data/csv_enrichment_literature.log> ;
-    prov:wasGeneratedBy <https://example.org/bb-5kbc-sites/run/2026-04-27T08-21-21Z/stage1_literature> .
+    prov:wasGeneratedBy <https://example.org/bb-5kbc-sites/run/2026-04-27T13-58-01Z/stage1_literature> .
+
+<https://example.org/bb-5kbc-sites/run/2026-04-27T13-58-01Z/stage2_geo> a prov:Activity ;
+    rdfs:label "Stage 2 — geo SPARQL mapping (Wikidata)" ;
+    prov:used ns1:fst_standortanalysen_ref_csv,
+        ns1:fst_standortanalysen_ref_mapped_csv ;
+    prov:wasAssociatedWith ns1:wikidata_map_py ;
+    prov:wasInformedBy <https://example.org/bb-5kbc-sites/run/2026-04-27T13-58-01Z> ;
+    ns1:reusedFromMTime "2026-04-27T08:29:10+00:00"^^xsd:dateTime ;
+    ns1:stageStatus "skipped" .
 
 ns1:run_log a prov:Entity ;
     rdfs:label "Full pipeline run log (all stages, teed from stdout)" ;
     prov:atLocation <file:///C:/git/bb-5kbc-sites/data/csv_enrichment_run.log> ;
-    prov:wasGeneratedBy <https://example.org/bb-5kbc-sites/run/2026-04-27T08-21-21Z> .
+    prov:wasGeneratedBy <https://example.org/bb-5kbc-sites/run/2026-04-27T13-58-01Z> .
 
 <http://gazetteer.dainst.org/place/2044274> bb5kbc:hasExternalIdentifierType bb5kbc:ExternalIdentifier_iDAI .
 
@@ -12089,11 +12095,16 @@ data:pub_0b536e9d a bb5kbc:Publikation ;
     bb5kbc:hasExternalIdentifier wd:Q139304613 .
 
 data:pub_0bced945 a bb5kbc:Publikation ;
-    rdfs:label "Umbreit 1940"@de .
+    rdfs:label "Umbreit 1940"@de ;
+    bb5kbc:hasExternalIdentifier wd:Q139459720 .
 
 data:pub_115d399f a bb5kbc:Publikation ;
     rdfs:label "Schmiederer 1997"@de ;
     bb5kbc:hasExternalIdentifier wd:Q139304643 .
+
+data:pub_23e2b3b3 a bb5kbc:Publikation ;
+    rdfs:label "Wetzel/Babiel 2016"@de ;
+    bb5kbc:hasExternalIdentifier wd:Q139555259 .
 
 data:pub_25823239 a bb5kbc:Publikation ;
     rdfs:label "Czerniak et al 2020"@de ;
@@ -12104,7 +12115,8 @@ data:pub_28d0e362 a bb5kbc:Publikation ;
     bb5kbc:hasExternalIdentifier wd:Q139304622 .
 
 data:pub_3f8665d8 a bb5kbc:Publikation ;
-    rdfs:label "Raddatz 1956"@de .
+    rdfs:label "Raddatz 1956"@de ;
+    bb5kbc:hasExternalIdentifier wd:Q139304631 .
 
 data:pub_4151a647 a bb5kbc:Publikation ;
     rdfs:label "Beran 2012 b"@de ;
@@ -12119,7 +12131,8 @@ data:pub_6e2b44a1 a bb5kbc:Publikation ;
     bb5kbc:hasExternalIdentifier wd:Q139304618 .
 
 data:pub_75c7a1cf a bb5kbc:Publikation ;
-    rdfs:label "Schier et al. 2023"@de .
+    rdfs:label "Schier et al. 2023"@de ;
+    bb5kbc:hasExternalIdentifier wd:Q139555255 .
 
 data:pub_76224a7a a bb5kbc:Publikation ;
     rdfs:label "Wetzel 1973"@de ;
@@ -12132,10 +12145,6 @@ data:pub_7d001871 a bb5kbc:Publikation ;
 data:pub_7f2f6697 a bb5kbc:Publikation ;
     rdfs:label "Lehmphul 2015"@de ;
     bb5kbc:hasExternalIdentifier wd:Q139304610 .
-
-data:pub_805202e9 a bb5kbc:Publikation ;
-    rdfs:label "Raddatz 1959"@de ;
-    bb5kbc:hasExternalIdentifier wd:Q139304631 .
 
 data:pub_87c3d133 a bb5kbc:Publikation ;
     rdfs:label "Czerniak et al. 2020"@de ;
@@ -12156,9 +12165,6 @@ data:pub_a8377c99 a bb5kbc:Publikation ;
 data:pub_b1c8f989 a bb5kbc:Publikation ;
     rdfs:label "Czerniak/Pyzel 2016"@de ;
     bb5kbc:hasExternalIdentifier wd:Q139304607 .
-
-data:pub_b359cdf6 a bb5kbc:Publikation ;
-    rdfs:label "Wetzel/Babieel 2016"@de .
 
 data:pub_b9d66f04 a bb5kbc:Publikation ;
     rdfs:label "Sprockhoff 1926"@de ;
@@ -12183,6 +12189,10 @@ data:pub_d0a84231 a bb5kbc:Publikation ;
 data:pub_d0e4fb80 a bb5kbc:Publikation ;
     rdfs:label "Jentsch 1885"@de ;
     bb5kbc:hasExternalIdentifier wd:Q139304636 .
+
+data:pub_f5ff5579 a bb5kbc:Publikation ;
+    rdfs:label "Raddatz 1958"@de ;
+    bb5kbc:hasExternalIdentifier wd:Q139570571 .
 
 data:sherd_02807cc2 a bb5kbc:Scherbe ;
     bb5kbc:hasExternalIdentifier wd:Q139477253 .
@@ -15211,7 +15221,8 @@ data:site_227_activity a bb5kbc:GeoreferenzierungsAktivitaet ;
     rdfs:label "Georeferenzierung von Fundstelle 227"@de ;
     fsl:activityDesc "die Gemeinde wurde in digitalen Kartenwerken nachgeschlagen und der ungefähre Mittelpunkt der Gemeinde ausgelesen" ;
     fsl:georeferencingBy orcid:0000-0003-4696-2101 ;
-    fsl:hasReference "Czerniak" ;
+    fsl:hasReference wd:Q11753457,
+        "Czerniak" ;
     fsl:hasSourceType data:quellentyp_e6dc730e ;
     fsl:hasSourceTypeDetail data:quellentyp_e6dc730e ;
     fsl:methodUsed data:methode_b1c767a2 ;
@@ -25867,7 +25878,8 @@ data:site_6_activity a bb5kbc:GeoreferenzierungsAktivitaet ;
     rdfs:label "Georeferenzierung von Fundstelle 6"@de ;
     fsl:activityDesc "Koordinaten von Kollegen erhalten" ;
     fsl:georeferencingBy orcid:0000-0003-4696-2101 ;
-    fsl:hasReference "W. Schier persönl. Kommunikation" ;
+    fsl:hasReference wd:Q15445052,
+        "W. Schier persönl. Kommunikation" ;
     fsl:hasSourceType data:quellentyp_6d2d546f ;
     fsl:hasSourceTypeDetail data:quellentyp_6d2d546f ;
     fsl:methodUsed data:methode_b57e2231 ;
@@ -26450,7 +26462,8 @@ data:site_8_activity a bb5kbc:GeoreferenzierungsAktivitaet ;
     rdfs:label "Georeferenzierung von Fundstelle 8"@de ;
     fsl:activityDesc "Koordinaten von Kollegen erhalten" ;
     fsl:georeferencingBy orcid:0000-0003-4696-2101 ;
-    fsl:hasReference "W. Schier persönl. Kommunikation" ;
+    fsl:hasReference wd:Q15445052,
+        "W. Schier persönl. Kommunikation" ;
     fsl:hasSourceType data:quellentyp_6d2d546f ;
     fsl:hasSourceTypeDetail data:quellentyp_6d2d546f ;
     fsl:methodUsed data:methode_b57e2231 ;
@@ -26763,22 +26776,22 @@ ns1:fst_wgs84_lit_enriched_csv a prov:Entity ;
     rdfs:label "Literature-enriched intermediate dataset" ;
     prov:atLocation <file:///C:/git/bb-5kbc-sites/data/fst_wgs84_lit_enriched.csv> ;
     prov:wasDerivedFrom ns1:fst_wgs84_comma_csv ;
-    prov:wasGeneratedBy <https://example.org/bb-5kbc-sites/run/2026-04-27T08-21-21Z/stage1_literature> .
+    prov:wasGeneratedBy <https://example.org/bb-5kbc-sites/run/2026-04-27T13-58-01Z/stage1_literature> .
 
 ns1:repo_version a prov:Entity ;
     rdfs:label "Repository state at run time" ;
     ns1:gitBranch "main" ;
-    ns1:gitCommit "c6d67f6ad4fbe03136a181eeb222216c3c0fc302" ;
+    ns1:gitCommit "c996fbf4ac682f0e3455b32f7763c5a21b71ce0e" ;
     ns1:gitDirty true .
 
-<https://example.org/bb-5kbc-sites/run/2026-04-27T08-21-21Z/stage3_merge> a prov:Activity ;
+<https://example.org/bb-5kbc-sites/run/2026-04-27T13-58-01Z/stage3_merge> a prov:Activity ;
     rdfs:label "Stage 3 — merge geo IDs into literature-enriched CSV" ;
     prov:used ns1:fst_standortanalysen_ref_mapped_csv,
         ns1:fst_wgs84_lit_enriched_csv ;
     prov:wasAssociatedWith ns1:enrich_fst_py ;
-    prov:wasInformedBy <https://example.org/bb-5kbc-sites/run/2026-04-27T08-21-21Z> ;
-    ns1:columnCount 65 ;
-    ns1:durationSeconds 0.10 ;
+    prov:wasInformedBy <https://example.org/bb-5kbc-sites/run/2026-04-27T13-58-01Z> ;
+    ns1:columnCount 64 ;
+    ns1:durationSeconds 0.07 ;
     ns1:rowCount 540 .
 
 ns1:wikidata_map_py a prov:Plan,
@@ -27845,6 +27858,12 @@ wd:Q139480083 bb5kbc:hasExternalIdentifierType bb5kbc:ExternalIdentifier_Wikidat
 wd:Q139480156 bb5kbc:hasExternalIdentifierType bb5kbc:ExternalIdentifier_Wikidata .
 
 wd:Q139480236 bb5kbc:hasExternalIdentifierType bb5kbc:ExternalIdentifier_Wikidata .
+
+wd:Q139555255 bb5kbc:hasExternalIdentifierType bb5kbc:ExternalIdentifier_Wikidata .
+
+wd:Q139555259 bb5kbc:hasExternalIdentifierType bb5kbc:ExternalIdentifier_Wikidata .
+
+wd:Q139570571 bb5kbc:hasExternalIdentifierType bb5kbc:ExternalIdentifier_Wikidata .
 
 wd:Q1411599 bb5kbc:hasExternalIdentifierType bb5kbc:ExternalIdentifier_Wikidata .
 
@@ -29066,19 +29085,19 @@ data:kreis_d2918bbf a bb5kbc:Kreis ;
         data:bundesland_af35ac58 ;
     skos:prefLabel "pow. Strzelecko-Drezdenecki"@de .
 
-data:pipeline_run_2026-04-27T10-24-51Z a prov:Activity ;
-    rdfs:label "bb5kbc CSV-to-RDF pipeline run 2026-04-27T10-24-51Z"@en ;
-    data:dataTripleCount 27440 ;
+data:pipeline_run_2026-04-27T13-59-02Z a prov:Activity ;
+    rdfs:label "bb5kbc CSV-to-RDF pipeline run 2026-04-27T13-59-02Z"@en ;
+    data:dataTripleCount 27450 ;
     data:rowCount 540 ;
-    prov:endedAtTime "2026-04-27T10:24:53.392550+00:00"^^xsd:dateTime ;
-    prov:startedAtTime "2026-04-27T10:24:51.802253+00:00"^^xsd:dateTime ;
+    prov:endedAtTime "2026-04-27T13:59:03.495536+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-04-27T13:59:02.271193+00:00"^^xsd:dateTime ;
     prov:used <file:///C:/git/bb-5kbc-sites/data/fst_wgs84.csv>,
         <file:///C:/git/bb-5kbc-sites/ontology/bb5kbc-ontology.ttl>,
         ns1:fst_wgs84_csv ;
     prov:wasAssociatedWith data:bb5kbc_lod_pipeline_py,
         orcid:0000-0002-3246-3531,
         orcid:0000-0003-4696-2101 ;
-    prov:wasInformedBy <https://example.org/bb-5kbc-sites/run/2026-04-27T08-21-21Z> .
+    prov:wasInformedBy <https://example.org/bb-5kbc-sites/run/2026-04-27T13-58-01Z> .
 
 data:pub_72ab46f0 a bb5kbc:Publikation ;
     rdfs:label "Rybicka/Wysocki 2004"@de ;
@@ -29089,7 +29108,8 @@ data:pub_7aa848bc a bb5kbc:Publikation ;
     bb5kbc:hasExternalIdentifier wd:Q139304644 .
 
 data:pub_aa96c11a a bb5kbc:Publikation ;
-    rdfs:label "Pyzel 2019"@de .
+    rdfs:label "Pyzel 2019"@de ;
+    bb5kbc:hasExternalIdentifier wd:Q139460445 .
 
 data:pub_b505d72d a bb5kbc:Publikation ;
     rdfs:label "Czerniak et al. 2016"@de ;
@@ -31013,7 +31033,7 @@ data:site_562_geom a sf:Point ;
 
 data:site_563_geom a sf:Point ;
     fsl:hasPointType fslwb:Q126 ;
-    geo:asWKT "POINT(52.10 13.89)"^^geo:wktLiteral .
+    geo:asWKT "POINT(13.89 52.1)"^^geo:wktLiteral .
 
 data:site_564_geom a sf:Point ;
     fsl:hasPointType fslwb:Q126 ;
@@ -31121,11 +31141,11 @@ data:site_66_geom a sf:Point ;
 
 data:site_67_geom a sf:Point ;
     fsl:hasPointType fslwb:Q126 ;
-    geo:asWKT "POINT(14.01 53.00)"^^geo:wktLiteral .
+    geo:asWKT "POINT(14.01 53)"^^geo:wktLiteral .
 
 data:site_68_geom a sf:Point ;
     fsl:hasPointType fslwb:Q126 ;
-    geo:asWKT "POINT(14.02 53.00)"^^geo:wktLiteral .
+    geo:asWKT "POINT(14.02 53)"^^geo:wktLiteral .
 
 data:site_69_geom a sf:Point ;
     fsl:hasPointType fslwb:Q126 ;
@@ -31259,21 +31279,19 @@ data:site_9_geom a sf:Point ;
     fsl:hasPointType fslwb:Q126 ;
     geo:asWKT "POINT(11.29 51.82)"^^geo:wktLiteral .
 
-ns1:fst_standortanalysen_ref_mapped_csv a prov:Entity ;
-    rdfs:label "Geo reference table with Wikidata authority IDs" ;
-    prov:atLocation <file:///C:/git/bb-5kbc-sites/data/enrichment/mapping_admin_regions/fst_standortanalysen_ref_mapped.csv> ;
-    prov:wasDerivedFrom ns1:fst_standortanalysen_ref_csv ;
-    prov:wasGeneratedBy <https://example.org/bb-5kbc-sites/run/2026-04-27T08-21-21Z/stage2_geo> .
+ns1:fst_standortanalysen_ref_csv a prov:Entity ;
+    rdfs:label "Geo reference table (input)" ;
+    prov:atLocation <file:///C:/git/bb-5kbc-sites/data/enrichment/mapping_admin_regions/fst_standortanalysen_ref.csv> .
 
-<https://example.org/bb-5kbc-sites/run/2026-04-27T08-21-21Z/stage1_literature> a prov:Activity ;
+<https://example.org/bb-5kbc-sites/run/2026-04-27T13-58-01Z/stage1_literature> a prov:Activity ;
     rdfs:label "Stage 1 — literature QID enrichment" ;
     prov:used ns1:fst_wgs84_comma_csv ;
     prov:wasAssociatedWith ns1:enrich_qids_py ;
-    prov:wasInformedBy <https://example.org/bb-5kbc-sites/run/2026-04-27T08-21-21Z> ;
-    ns1:durationSeconds 0.15 ;
-    ns1:qidsFilledGeoref 202 ;
-    ns1:qidsFilledPublication 265 ;
-    ns1:warningsLogged 9 .
+    prov:wasInformedBy <https://example.org/bb-5kbc-sites/run/2026-04-27T13-58-01Z> ;
+    ns1:durationSeconds 0.06 ;
+    ns1:qidsFilledGeoref 205 ;
+    ns1:qidsFilledPublication 269 ;
+    ns1:warningsLogged 0 .
 
 gn:2921231 bb5kbc:hasExternalIdentifierType bb5kbc:ExternalIdentifier_GeoNames .
 
@@ -31304,6 +31322,8 @@ wd:Q139304640 bb5kbc:hasExternalIdentifierType bb5kbc:ExternalIdentifier_Wikidat
 wd:Q139304647 bb5kbc:hasExternalIdentifierType bb5kbc:ExternalIdentifier_Wikidata .
 
 wd:Q139304648 bb5kbc:hasExternalIdentifierType bb5kbc:ExternalIdentifier_Wikidata .
+
+wd:Q139459720 bb5kbc:hasExternalIdentifierType bb5kbc:ExternalIdentifier_Wikidata .
 
 wd:Q16064 bb5kbc:hasExternalIdentifierType bb5kbc:ExternalIdentifier_Wikidata .
 
@@ -31527,26 +31547,25 @@ data:kreis_d5404511 a bb5kbc:Kreis ;
     bb5kbc:inBundesland data:bundesland_2ddb2d82 ;
     skos:prefLabel "Potsdam"@de .
 
+ns1:fst_standortanalysen_ref_mapped_csv a prov:Entity ;
+    rdfs:label "Geo reference table with Wikidata authority IDs" ;
+    prov:atLocation <file:///C:/git/bb-5kbc-sites/data/enrichment/mapping_admin_regions/fst_standortanalysen_ref_mapped.csv> .
+
 ns1:fst_wgs84_csv a prov:Entity ;
     rdfs:label "Final enriched dataset (LOD-ready)" ;
     prov:atLocation <file:///C:/git/bb-5kbc-sites/data/fst_wgs84.csv> ;
     prov:wasDerivedFrom ns1:fst_standortanalysen_ref_mapped_csv,
         ns1:fst_wgs84_comma_csv ;
-    prov:wasGeneratedBy <https://example.org/bb-5kbc-sites/run/2026-04-27T08-21-21Z>,
-        <https://example.org/bb-5kbc-sites/run/2026-04-27T08-21-21Z/stage3_merge> .
-
-<https://example.org/bb-5kbc-sites/run/2026-04-27T08-21-21Z/stage2_geo> a prov:Activity ;
-    rdfs:label "Stage 2 — geo SPARQL mapping (Wikidata)" ;
-    prov:used ns1:fst_standortanalysen_ref_csv ;
-    prov:wasAssociatedWith ns1:wikidata_map_py ;
-    prov:wasInformedBy <https://example.org/bb-5kbc-sites/run/2026-04-27T08-21-21Z> ;
-    ns1:durationSeconds 467.44 .
+    prov:wasGeneratedBy <https://example.org/bb-5kbc-sites/run/2026-04-27T13-58-01Z>,
+        <https://example.org/bb-5kbc-sites/run/2026-04-27T13-58-01Z/stage3_merge> .
 
 gn:7532846 bb5kbc:hasExternalIdentifierType bb5kbc:ExternalIdentifier_GeoNames .
 
 <https://www.openstreetmap.org/relation/2635731> bb5kbc:hasExternalIdentifierType bb5kbc:ExternalIdentifier_OSM .
 
 wd:Q139304641 bb5kbc:hasExternalIdentifierType bb5kbc:ExternalIdentifier_Wikidata .
+
+wd:Q139460445 bb5kbc:hasExternalIdentifierType bb5kbc:ExternalIdentifier_Wikidata .
 
 wd:Q3931 bb5kbc:hasExternalIdentifierType bb5kbc:ExternalIdentifier_Wikidata .
 
@@ -31664,10 +31683,6 @@ data:kultur_7a001224 a bb5kbc:Kulturgruppe ;
 data:pub_67ee6ee4 a bb5kbc:Publikation ;
     rdfs:label "Czerniak 2007"@de ;
     bb5kbc:hasExternalIdentifier wd:Q139304629 .
-
-ns1:fst_standortanalysen_ref_csv a prov:Entity ;
-    rdfs:label "Geo reference table (input)" ;
-    prov:atLocation <file:///C:/git/bb-5kbc-sites/data/enrichment/mapping_admin_regions/fst_standortanalysen_ref.csv> .
 
 ns1:fst_wgs84_comma_csv a prov:Entity ;
     rdfs:label "Original location dataset (input)" ;
@@ -31830,10 +31845,10 @@ data:kreis_fa49171f a bb5kbc:Kreis ;
 data:quellentyp_6d2d546f a fsl:SourceType ;
     rdfs:label "Expertenwissen"@de .
 
-<https://example.org/bb-5kbc-sites/run/2026-04-27T08-21-21Z> a prov:Activity ;
-    rdfs:label "CSV enrichment pipeline run 2026-04-27T08-21-21Z" ;
-    prov:endedAtTime "2026-04-27T08:29:11+00:00"^^xsd:dateTime ;
-    prov:startedAtTime "2026-04-27T08:21:21+00:00"^^xsd:dateTime ;
+<https://example.org/bb-5kbc-sites/run/2026-04-27T13-58-01Z> a prov:Activity ;
+    rdfs:label "CSV enrichment pipeline run 2026-04-27T13-58-01Z" ;
+    prov:endedAtTime "2026-04-27T13:58:08+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-04-27T13:58:01+00:00"^^xsd:dateTime ;
     prov:used ns1:fst_standortanalysen_ref_csv,
         ns1:fst_wgs84_comma_csv,
         ns1:repo_version ;

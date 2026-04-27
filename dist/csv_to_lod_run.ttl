@@ -10,13 +10,13 @@ data:bb5kbc_bundle_ttl a prov:Entity ;
     rdfs:label "bb5kbc-bundle.ttl (data + ontology, self-contained)"@en ;
     prov:atLocation <file:///C:/git/bb-5kbc-sites/dist/bb5kbc-bundle.ttl> ;
     prov:wasDerivedFrom <https://example.org/bb-5kbc-sites/fst_wgs84_csv> ;
-    prov:wasGeneratedBy data:pipeline_run_2026-04-27T10-24-51Z .
+    prov:wasGeneratedBy data:pipeline_run_2026-04-27T13-59-02Z .
 
 data:bb5kbc_data_ttl a prov:Entity ;
     rdfs:label "bb5kbc-data.ttl (LOD-converted site data)"@en ;
     prov:atLocation <file:///C:/git/bb-5kbc-sites/dist/bb5kbc-data.ttl> ;
     prov:wasDerivedFrom <https://example.org/bb-5kbc-sites/fst_wgs84_csv> ;
-    prov:wasGeneratedBy data:pipeline_run_2026-04-27T10-24-51Z .
+    prov:wasGeneratedBy data:pipeline_run_2026-04-27T13-59-02Z .
 
 data:bb5kbc_lod_pipeline_py a prov:Plan,
         prov:SoftwareAgent ;
@@ -27,17 +27,17 @@ orcid:0000-0003-4696-2101 a foaf:Person ;
     rdfs:label "Sophie C. Schmidt" ;
     skos:prefLabel "Sophie C. Schmidt" .
 
-data:pipeline_run_2026-04-27T10-24-51Z a prov:Activity ;
-    rdfs:label "bb5kbc CSV-to-RDF pipeline run 2026-04-27T10-24-51Z"@en ;
-    data:dataTripleCount 27440 ;
+data:pipeline_run_2026-04-27T13-59-02Z a prov:Activity ;
+    rdfs:label "bb5kbc CSV-to-RDF pipeline run 2026-04-27T13-59-02Z"@en ;
+    data:dataTripleCount 27450 ;
     data:rowCount 540 ;
-    prov:endedAtTime "2026-04-27T10:24:53.392550+00:00"^^xsd:dateTime ;
-    prov:startedAtTime "2026-04-27T10:24:51.802253+00:00"^^xsd:dateTime ;
+    prov:endedAtTime "2026-04-27T13:59:03.495536+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-04-27T13:59:02.271193+00:00"^^xsd:dateTime ;
     prov:used <file:///C:/git/bb-5kbc-sites/data/fst_wgs84.csv>,
         <file:///C:/git/bb-5kbc-sites/ontology/bb5kbc-ontology.ttl>,
         <https://example.org/bb-5kbc-sites/fst_wgs84_csv> ;
     prov:wasAssociatedWith data:bb5kbc_lod_pipeline_py,
         orcid:0000-0002-3246-3531,
         orcid:0000-0003-4696-2101 ;
-    prov:wasInformedBy <https://example.org/bb-5kbc-sites/run/2026-04-27T08-21-21Z> .
+    prov:wasInformedBy <https://example.org/bb-5kbc-sites/run/2026-04-27T13-58-01Z> .
 

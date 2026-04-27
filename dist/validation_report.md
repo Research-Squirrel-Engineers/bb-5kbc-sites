@@ -1,7 +1,7 @@
 # bb5kbc LOD — Validation Report
 
-- Bundle: `bb5kbc-bundle.ttl` (28089 triples)
-- CSV: `fst_wgs84.csv` (540 rows × 65 cols)
+- Bundle: `bb5kbc-bundle.ttl` (28099 triples)
+- CSV: `fst_wgs84.csv` (540 rows × 64 cols)
 - Doku: `bb5kbc-csv-mapping.md`
 
 **Layers checked**
@@ -38,7 +38,7 @@ Pro CSV-Spalte: Anzahl nicht-leerer Werte vs. Anzahl korrespondierender Tripel i
 | # | CSV-Spalte | Nicht-leer | Erwartung | Gefunden | Status |
 |---|---|---|---|---|---|
 | 1 | `quelle_georef` | 540 | (skip) fsl:hasReference Literal on Activity | — | — **SKIP** |
-| 2 | `QID_quelle_georef` | 537 | (skip) fsl:hasReference URI on Activity | — | — **SKIP** |
+| 2 | `QID_quelle_georef` | 540 | (skip) fsl:hasReference URI on Activity | — | — **SKIP** |
 | 3 | `katalognr` | 488 | je 1 Literal `bb5kbc:hatKatalognummer` an Fundstelle | 488 | ✅ **PASS** |
 | 4 | `fst_id` | 540 | je 1 Literal `bb5kbc:hatFundstellenID` an Fundstelle | 540 | ✅ **PASS** |
 | 5 | `fst_name` | 540 | je 1 Literal `rdfs:label` an Fundstelle | 540 | ✅ **PASS** |
@@ -69,7 +69,7 @@ Pro CSV-Spalte: Anzahl nicht-leerer Werte vs. Anzahl korrespondierender Tripel i
 | 30 | `BUNDESLAND_matchLabel` | 540 | 0 Tripel (audit-only, nicht im RDF) | — (Skript erzeugt nichts) | ✅ **PASS** |
 | 31 | `BUNDESLAND_matchScore` | 540 | 0 Tripel (audit-only, nicht im RDF) | — (Skript erzeugt nichts) | ✅ **PASS** |
 | 32 | `BUNDESLAND_matchReason` | 540 | 0 Tripel (audit-only, nicht im RDF) | — (Skript erzeugt nichts) | ✅ **PASS** |
-| 33 | `land` | 526 | (skip) indirect: ... → bundesland → land | — | — **SKIP** |
+| 33 | `land` | 528 | (skip) indirect: ... → bundesland → land | — | — **SKIP** |
 | 34 | `LAND_QID` | 540 (in 2 dist. land) | je 1 `hasExternalIdentifier` (entity) | 2 | ✅ **PASS** |
 | 35 | `LAND_GeoNames` | 540 (in 2 dist. land) | je 1 `hasExternalIdentifier` (www.geonames.org) | 2 | ✅ **PASS** |
 | 36 | `LAND_TGN` | 540 (in 2 dist. land) | je 1 `hasExternalIdentifier` (tgn) | 2 | ✅ **PASS** |
@@ -78,30 +78,29 @@ Pro CSV-Spalte: Anzahl nicht-leerer Werte vs. Anzahl korrespondierender Tripel i
 | 39 | `LAND_matchLabel` | 540 | 0 Tripel (audit-only, nicht im RDF) | — (Skript erzeugt nichts) | ✅ **PASS** |
 | 40 | `LAND_matchScore` | 540 | 0 Tripel (audit-only, nicht im RDF) | — (Skript erzeugt nichts) | ✅ **PASS** |
 | 41 | `LAND_matchReason` | 540 | 0 Tripel (audit-only, nicht im RDF) | — (Skript erzeugt nichts) | ✅ **PASS** |
-| 42 | `perio.do` | 0 | (skip) 0/540 filled — empty by design in current CSV | — | — **SKIP** |
-| 43 | `kultur` | 540 | je 1 `bb5kbc:hatKulturelleZuordnung` von Fundstelle | 540 | ✅ **PASS** |
-| 44 | `entdeckung` | 432 | je 1 `bb5kbc:wurdeEntdecktDurch` von Fundstelle | 432 | ✅ **PASS** |
-| 45 | `QID_entdeckung` | 382 | (skip) ext-id on EntdeckungsartType (deduplicated) | — | — **SKIP** |
-| 46 | `publikation_arch` | 271 | je 1 `bb5kbc:hatPublikation` von Fundstelle | 271 | ✅ **PASS** |
-| 47 | `QID_publikation` | 265 | (skip) ext-id on Publikation (one per non-empty cell) | — | — **SKIP** |
-| 48 | `fundstellenart` | 540 | (skip) 1+ triples per site (compound + uncertainty splits) | — | — **SKIP** |
-| 49 | `QID_fundstellenart` | 540 | (skip) ext-id on FundstellenartType (deduplicated) | — | — **SKIP** |
-| 50 | `genauigkeit_m` | 540 | je 1 Literal `bb5kbc:hatGenauigkeit` an Fundstelle | 540 | ✅ **PASS** |
-| 51 | `FID` | 540 | je 1 Literal `bb5kbc:hatFID` an Fundstelle | 540 | ✅ **PASS** |
-| 52 | `methode` | 540 | (skip) fsl:methodUsed → fsl:MethodType (deduplicated) | — | — **SKIP** |
-| 53 | `quellen_typ` | 540 | (skip) fsl:hasSourceType → fsl:SourceType (deduplicated) | — | — **SKIP** |
-| 54 | `methodenbeschr` | 540 | (skip) fsl:activityDesc literal on Activity | — | — **SKIP** |
-| 55 | `wgs84_x` | 540 | (skip) WKT POINT(x y) on sf:Point — combined with wgs84_y | — | — **SKIP** |
-| 56 | `wgs84_y` | 540 | (skip) see wgs84_x | — | — **SKIP** |
-| 57 | `dating_start` | 540 | je 1 Literal `bb5kbc:datierungStart` an Datierung | 540 | ✅ **PASS** |
-| 58 | `dating_certainty_start` | 540 | je 1 Literal `bb5kbc:datierungSicherheitStart` an Datierung | 540 | ✅ **PASS** |
-| 59 | `dating_end` | 540 | je 1 Literal `bb5kbc:datierungEnd` an Datierung | 540 | ✅ **PASS** |
-| 60 | `dating_certainty_end` | 540 | je 1 Literal `bb5kbc:datierungSicherheitEnd` an Datierung | 540 | ✅ **PASS** |
-| 61 | `dating_method` | 472 | (skip) Wikidata QID on DatierungsMethodeType (deduplicated) | — | — **SKIP** |
-| 62 | `dating_certainty_range` | 540 | je 1 Literal `bb5kbc:datierungSicherheitRange` an Datierung | 540 | ✅ **PASS** |
-| 63 | `dating_perio.do` | 501 | (skip) skos:{exact|close|related}Match on Datierung | — | — **SKIP** |
-| 64 | `dating_perio.do_match` | 501 | (skip) controls predicate, no own triple | — | — **SKIP** |
-| 65 | `sherd` | 4 | (skip) 0..n bb5kbc:hatScherbe per site | — | — **SKIP** |
+| 42 | `kultur` | 540 | je 1 `bb5kbc:hatKulturelleZuordnung` von Fundstelle | 540 | ✅ **PASS** |
+| 43 | `entdeckung` | 432 | je 1 `bb5kbc:wurdeEntdecktDurch` von Fundstelle | 432 | ✅ **PASS** |
+| 44 | `QID_entdeckung` | 382 | (skip) ext-id on EntdeckungsartType (deduplicated) | — | — **SKIP** |
+| 45 | `publikation_arch` | 271 | je 1 `bb5kbc:hatPublikation` von Fundstelle | 271 | ✅ **PASS** |
+| 46 | `QID_publikation` | 271 | (skip) ext-id on Publikation (one per non-empty cell) | — | — **SKIP** |
+| 47 | `fundstellenart` | 540 | (skip) 1+ triples per site (compound + uncertainty splits) | — | — **SKIP** |
+| 48 | `QID_fundstellenart` | 540 | (skip) ext-id on FundstellenartType (deduplicated) | — | — **SKIP** |
+| 49 | `genauigkeit_m` | 540 | je 1 Literal `bb5kbc:hatGenauigkeit` an Fundstelle | 540 | ✅ **PASS** |
+| 50 | `FID` | 540 | je 1 Literal `bb5kbc:hatFID` an Fundstelle | 540 | ✅ **PASS** |
+| 51 | `methode` | 540 | (skip) fsl:methodUsed → fsl:MethodType (deduplicated) | — | — **SKIP** |
+| 52 | `quellen_typ` | 540 | (skip) fsl:hasSourceType → fsl:SourceType (deduplicated) | — | — **SKIP** |
+| 53 | `methodenbeschr` | 540 | (skip) fsl:activityDesc literal on Activity | — | — **SKIP** |
+| 54 | `wgs84_x` | 540 | (skip) WKT POINT(x y) on sf:Point — combined with wgs84_y | — | — **SKIP** |
+| 55 | `wgs84_y` | 540 | (skip) see wgs84_x | — | — **SKIP** |
+| 56 | `dating_start` | 540 | je 1 Literal `bb5kbc:datierungStart` an Datierung | 540 | ✅ **PASS** |
+| 57 | `dating_certainty_start` | 540 | je 1 Literal `bb5kbc:datierungSicherheitStart` an Datierung | 540 | ✅ **PASS** |
+| 58 | `dating_end` | 540 | je 1 Literal `bb5kbc:datierungEnd` an Datierung | 540 | ✅ **PASS** |
+| 59 | `dating_certainty_end` | 540 | je 1 Literal `bb5kbc:datierungSicherheitEnd` an Datierung | 540 | ✅ **PASS** |
+| 60 | `dating_method` | 472 | (skip) Wikidata QID on DatierungsMethodeType (deduplicated) | — | — **SKIP** |
+| 61 | `dating_certainty_range` | 540 | je 1 Literal `bb5kbc:datierungSicherheitRange` an Datierung | 540 | ✅ **PASS** |
+| 62 | `dating_perio.do` | 501 | (skip) skos:{exact|close|related}Match on Datierung | — | — **SKIP** |
+| 63 | `dating_perio.do_match` | 501 | (skip) controls predicate, no own triple | — | — **SKIP** |
+| 64 | `sherd` | 4 | (skip) 0..n bb5kbc:hatScherbe per site | — | — **SKIP** |
 
 ---
 

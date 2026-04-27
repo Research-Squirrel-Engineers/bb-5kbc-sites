@@ -97,8 +97,29 @@ PROV_BASE = "https://example.org/bb-5kbc-sites/"
 
 
 # ---------------------------------------------------------------------------
+# Pipeline mode
+# ---------------------------------------------------------------------------
+# Controls which stages run versus reuse their previous outputs.
+#
+#   "full"        -- Stage 1 (literature) + Stage 2 (geo SPARQL) + Stage 3 (merge)
+#   "literature"  -- Stage 1 only fresh; Stage 2 reused from disk; Stage 3 re-merges
+#   "geo"         -- Stage 2 only fresh; Stage 1 reused from disk; Stage 3 re-merges
+#   "merge"       -- Stage 1 and Stage 2 both reused; Stage 3 re-merges only
+#
+# Stage 3 (merge) always runs because it is cheap and recomposes the final CSV
+# from whatever the upstream stages produced (fresh or reused).
+#
+# Skip-mode safety: if a stage is skipped but its expected output file is
+# missing, the pipeline aborts before doing any work (see _preflight).
+PIPELINE_MODE = "literature"
+
+_VALID_MODES = ("full", "literature", "geo", "merge")
+
+
+# ---------------------------------------------------------------------------
 # Module loader
 # ---------------------------------------------------------------------------
+
 
 def _load_module(name: str, path: Path) -> ModuleType:
     """Load a Python module from a file path."""
@@ -116,6 +137,7 @@ def _load_module(name: str, path: Path) -> ModuleType:
 # ---------------------------------------------------------------------------
 # Run-level tee logger
 # ---------------------------------------------------------------------------
+
 
 class _RunLogger:
     """Mirror everything written to sys.stdout into a run-level log file.
@@ -156,6 +178,7 @@ class _RunLogger:
 # Git info helpers (for PROV-O agent provenance)
 # ---------------------------------------------------------------------------
 
+
 def _git(*args: str, cwd: Path) -> str | None:
     """Run a git command; return stripped stdout or None on failure."""
     try:
@@ -168,7 +191,11 @@ def _git(*args: str, cwd: Path) -> str | None:
             check=True,
         )
         return r.stdout.strip() or None
-    except (subprocess.CalledProcessError, FileNotFoundError, subprocess.TimeoutExpired):
+    except (
+        subprocess.CalledProcessError,
+        FileNotFoundError,
+        subprocess.TimeoutExpired,
+    ):
         return None
 
 
@@ -189,6 +216,7 @@ def _git_info(repo_dir: Path) -> dict:
 # Pipeline stages
 # ---------------------------------------------------------------------------
 
+
 def stage_literature() -> dict:
     """Stage 1: enrich literature QID columns.
 
@@ -198,9 +226,7 @@ def stage_literature() -> dict:
     print("[1/4]  LITERATURE ENRICHMENT")
     print("=" * 78)
 
-    enrich_qids = _load_module(
-        "enrich_qids", LITERATURE_DIR / "enrich_qids.py"
-    )
+    enrich_qids = _load_module("enrich_qids", LITERATURE_DIR / "enrich_qids.py")
 
     t0 = time.perf_counter()
     summary = enrich_qids.run(
@@ -211,7 +237,22 @@ def stage_literature() -> dict:
     dt = time.perf_counter() - t0
     print(f"  [stage 1/4] done in {dt:.2f}s")
     summary["duration_s"] = dt
+    summary["skipped"] = False
     return summary
+
+
+def stage_literature_skipped() -> dict:
+    """Stage 1 skip path: report on existing LIT_ENRICHED_CSV without running."""
+    print("\n" + "=" * 78)
+    print("[1/4]  LITERATURE ENRICHMENT — SKIPPED (reusing existing output)")
+    print("=" * 78)
+    p = LIT_ENRICHED_CSV
+    mtime = datetime.fromtimestamp(p.stat().st_mtime, tz=timezone.utc).isoformat(
+        timespec="seconds"
+    )
+    print(f"  Reusing: {p.name}")
+    print(f"  Last modified: {mtime}")
+    return {"skipped": True, "reused_path": str(p), "reused_mtime": mtime}
 
 
 def stage_geo_mapping() -> dict:
@@ -226,9 +267,7 @@ def stage_geo_mapping() -> dict:
     print("[2/4]  GEO REFERENCE MAPPING (SPARQL — this takes a few minutes)")
     print("=" * 78)
 
-    wikidata_map = _load_module(
-        "wikidata_map", GEO_DIR / "wikidata_map.py"
-    )
+    wikidata_map = _load_module("wikidata_map", GEO_DIR / "wikidata_map.py")
 
     t0 = time.perf_counter()
     wikidata_map.run(
@@ -239,7 +278,21 @@ def stage_geo_mapping() -> dict:
     )
     dt = time.perf_counter() - t0
     print(f"  [stage 2/4] done in {dt:.2f}s")
-    return {"duration_s": dt}
+    return {"duration_s": dt, "skipped": False}
+
+
+def stage_geo_mapping_skipped() -> dict:
+    """Stage 2 skip path: report on existing GEO_MAPPED_CSV without running."""
+    print("\n" + "=" * 78)
+    print("[2/4]  GEO REFERENCE MAPPING — SKIPPED (reusing existing output)")
+    print("=" * 78)
+    p = GEO_MAPPED_CSV
+    mtime = datetime.fromtimestamp(p.stat().st_mtime, tz=timezone.utc).isoformat(
+        timespec="seconds"
+    )
+    print(f"  Reusing: {p.name}")
+    print(f"  Last modified: {mtime}")
+    return {"skipped": True, "reused_path": str(p), "reused_mtime": mtime}
 
 
 def stage_geo_merge() -> dict:
@@ -251,9 +304,7 @@ def stage_geo_merge() -> dict:
     print("[3/4]  GEO MERGE")
     print("=" * 78)
 
-    enrich_fst = _load_module(
-        "enrich_fst", GEO_DIR / "enrich_fst.py"
-    )
+    enrich_fst = _load_module("enrich_fst", GEO_DIR / "enrich_fst.py")
 
     t0 = time.perf_counter()
     summary = enrich_fst.run(
@@ -352,14 +403,16 @@ def write_prov_manifest(
 
     parts.append("# === Software agents (scripts) ===")
     for local, p in plans.items():
-        parts.append(_stanza(
-            f"ex:{local}",
-            [
-                ("a", "prov:SoftwareAgent, prov:Plan"),
-                ("rdfs:label", f'"{_ttl_str(p.name)}"'),
-                ("prov:atLocation", f"<{_file_uri(p)}>"),
-            ],
-        ))
+        parts.append(
+            _stanza(
+                f"ex:{local}",
+                [
+                    ("a", "prov:SoftwareAgent, prov:Plan"),
+                    ("rdfs:label", f'"{_ttl_str(p.name)}"'),
+                    ("prov:atLocation", f"<{_file_uri(p)}>"),
+                ],
+            )
+        )
 
     # ---- Repository version (one node referenced from the top-level run) ---
     if git.get("commit"):
@@ -372,8 +425,7 @@ def write_prov_manifest(
             repo_preds.append(("ex:gitBranch", f'"{_ttl_str(git["branch"])}"'))
         if git.get("dirty") is not None:
             repo_preds.append(
-                ("ex:gitDirty",
-                 f'"{"true" if git["dirty"] else "false"}"^^xsd:boolean')
+                ("ex:gitDirty", f'"{"true" if git["dirty"] else "false"}"^^xsd:boolean')
             )
         parts.append("# === Source code version (git) ===")
         parts.append(_stanza("ex:repo_version", repo_preds))
@@ -405,14 +457,16 @@ def write_prov_manifest(
 
     parts.append("# === Entities (data files and logs) ===")
     for local, (p, label) in entities.items():
-        parts.append(_stanza(
-            f"ex:{local}",
-            [
-                ("a", "prov:Entity"),
-                ("rdfs:label", f'"{_ttl_str(label)}"'),
-                ("prov:atLocation", f"<{_file_uri(p)}>"),
-            ],
-        ))
+        parts.append(
+            _stanza(
+                f"ex:{local}",
+                [
+                    ("a", "prov:Entity"),
+                    ("rdfs:label", f'"{_ttl_str(label)}"'),
+                    ("prov:atLocation", f"<{_file_uri(p)}>"),
+                ],
+            )
+        )
 
     # ---- Top-level activity ------------------------------------------------
     started_iso = _iso(started_at)
@@ -434,23 +488,28 @@ def write_prov_manifest(
     parts.append(_stanza(run_iri, top_preds))
 
     # Final-output derivation, attributed to the top-level run
-    parts.append(_stanza(
-        "ex:fst_wgs84_csv",
-        [
-            ("prov:wasGeneratedBy", run_iri),
-            ("prov:wasDerivedFrom", "ex:fst_wgs84_comma_csv"),
-            ("prov:wasDerivedFrom", "ex:fst_standortanalysen_ref_mapped_csv"),
-        ],
-    ))
+    parts.append(
+        _stanza(
+            "ex:fst_wgs84_csv",
+            [
+                ("prov:wasGeneratedBy", run_iri),
+                ("prov:wasDerivedFrom", "ex:fst_wgs84_comma_csv"),
+                ("prov:wasDerivedFrom", "ex:fst_standortanalysen_ref_mapped_csv"),
+            ],
+        )
+    )
 
     # The run log is generated by the top-level run (it captures *everything*,
     # including the orchestrator output that no sub-stage produces).
-    parts.append(_stanza(
-        "ex:run_log",
-        [("prov:wasGeneratedBy", run_iri)],
-    ))
+    parts.append(
+        _stanza(
+            "ex:run_log",
+            [("prov:wasGeneratedBy", run_iri)],
+        )
+    )
 
     # ---- Stage 1: literature ----------------------------------------------
+    stage1_skipped = bool(lit_summary.get("skipped"))
     stage1_preds: list[tuple[str, str]] = [
         ("a", "prov:Activity"),
         ("rdfs:label", '"Stage 1 — literature QID enrichment"'),
@@ -458,42 +517,67 @@ def write_prov_manifest(
         ("prov:used", "ex:fst_wgs84_comma_csv"),
         ("prov:wasAssociatedWith", "ex:enrich_qids_py"),
     ]
-    if "duration_s" in lit_summary:
-        stage1_preds.append(
-            ("ex:durationSeconds",
-             f'"{lit_summary["duration_s"]:.2f}"^^xsd:decimal')
-        )
-    if "filled_georef" in lit_summary:
-        stage1_preds.append(
-            ("ex:qidsFilledGeoref",
-             f'"{lit_summary["filled_georef"]}"^^xsd:integer')
-        )
-    if "filled_pub" in lit_summary:
-        stage1_preds.append(
-            ("ex:qidsFilledPublication",
-             f'"{lit_summary["filled_pub"]}"^^xsd:integer')
-        )
-    if "n_missing" in lit_summary:
-        stage1_preds.append(
-            ("ex:warningsLogged",
-             f'"{lit_summary["n_missing"]}"^^xsd:integer')
-        )
+    if stage1_skipped:
+        # Skip-Modus: Stage hat nichts neu erzeugt, sondern bestehende Datei wiederverwendet.
+        stage1_preds.append(("ex:stageStatus", '"skipped"'))
+        if lit_summary.get("reused_mtime"):
+            stage1_preds.append(
+                (
+                    "ex:reusedFromMTime",
+                    f'"{_ttl_str(lit_summary["reused_mtime"])}"^^xsd:dateTime',
+                )
+            )
+        # Wiederverwendete Eingabe wird per prov:used referenziert
+        stage1_preds.append(("prov:used", "ex:fst_wgs84_lit_enriched_csv"))
+    else:
+        if "duration_s" in lit_summary:
+            stage1_preds.append(
+                (
+                    "ex:durationSeconds",
+                    f'"{lit_summary["duration_s"]:.2f}"^^xsd:decimal',
+                )
+            )
+        if "filled_georef" in lit_summary:
+            stage1_preds.append(
+                (
+                    "ex:qidsFilledGeoref",
+                    f'"{lit_summary["filled_georef"]}"^^xsd:integer',
+                )
+            )
+        if "filled_pub" in lit_summary:
+            stage1_preds.append(
+                (
+                    "ex:qidsFilledPublication",
+                    f'"{lit_summary["filled_pub"]}"^^xsd:integer',
+                )
+            )
+        if "n_missing" in lit_summary:
+            stage1_preds.append(
+                ("ex:warningsLogged", f'"{lit_summary["n_missing"]}"^^xsd:integer')
+            )
 
     parts.append("# === Stage 1: literature ===")
     parts.append(_stanza(stage1_iri, stage1_preds))
-    parts.append(_stanza(
-        "ex:fst_wgs84_lit_enriched_csv",
-        [
-            ("prov:wasGeneratedBy", stage1_iri),
-            ("prov:wasDerivedFrom", "ex:fst_wgs84_comma_csv"),
-        ],
-    ))
-    parts.append(_stanza(
-        "ex:lit_log",
-        [("prov:wasGeneratedBy", stage1_iri)],
-    ))
+    if not stage1_skipped:
+        # Output und Log werden nur dann von DIESEM Lauf erzeugt, wenn Stage 1 lief.
+        parts.append(
+            _stanza(
+                "ex:fst_wgs84_lit_enriched_csv",
+                [
+                    ("prov:wasGeneratedBy", stage1_iri),
+                    ("prov:wasDerivedFrom", "ex:fst_wgs84_comma_csv"),
+                ],
+            )
+        )
+        parts.append(
+            _stanza(
+                "ex:lit_log",
+                [("prov:wasGeneratedBy", stage1_iri)],
+            )
+        )
 
     # ---- Stage 2: geo SPARQL ----------------------------------------------
+    stage2_skipped = bool(geo_summary.get("skipped"))
     stage2_preds: list[tuple[str, str]] = [
         ("a", "prov:Activity"),
         ("rdfs:label", '"Stage 2 — geo SPARQL mapping (Wikidata)"'),
@@ -501,38 +585,57 @@ def write_prov_manifest(
         ("prov:used", "ex:fst_standortanalysen_ref_csv"),
         ("prov:wasAssociatedWith", "ex:wikidata_map_py"),
     ]
-    if "duration_s" in geo_summary:
-        stage2_preds.append(
-            ("ex:durationSeconds",
-             f'"{geo_summary["duration_s"]:.2f}"^^xsd:decimal')
-        )
+    if stage2_skipped:
+        stage2_preds.append(("ex:stageStatus", '"skipped"'))
+        if geo_summary.get("reused_mtime"):
+            stage2_preds.append(
+                (
+                    "ex:reusedFromMTime",
+                    f'"{_ttl_str(geo_summary["reused_mtime"])}"^^xsd:dateTime',
+                )
+            )
+        stage2_preds.append(("prov:used", "ex:fst_standortanalysen_ref_mapped_csv"))
+    else:
+        if "duration_s" in geo_summary:
+            stage2_preds.append(
+                (
+                    "ex:durationSeconds",
+                    f'"{geo_summary["duration_s"]:.2f}"^^xsd:decimal',
+                )
+            )
 
     parts.append("# === Stage 2: geo SPARQL mapping ===")
     parts.append(_stanza(stage2_iri, stage2_preds))
-    parts.append(_stanza(
-        "ex:fst_standortanalysen_ref_mapped_csv",
-        [
-            ("prov:wasGeneratedBy", stage2_iri),
-            ("prov:wasDerivedFrom", "ex:fst_standortanalysen_ref_csv"),
-        ],
-    ))
-    parts.append(_stanza(
-        "ex:fst_standortanalysen_ref_report_csv",
-        [
-            ("prov:wasGeneratedBy", stage2_iri),
-            ("prov:wasDerivedFrom", "ex:fst_standortanalysen_ref_csv"),
-        ],
-    ))
-    parts.append(_stanza(
-        "ex:geo_log",
-        [("prov:wasGeneratedBy", stage2_iri)],
-    ))
+    if not stage2_skipped:
+        parts.append(
+            _stanza(
+                "ex:fst_standortanalysen_ref_mapped_csv",
+                [
+                    ("prov:wasGeneratedBy", stage2_iri),
+                    ("prov:wasDerivedFrom", "ex:fst_standortanalysen_ref_csv"),
+                ],
+            )
+        )
+        parts.append(
+            _stanza(
+                "ex:fst_standortanalysen_ref_report_csv",
+                [
+                    ("prov:wasGeneratedBy", stage2_iri),
+                    ("prov:wasDerivedFrom", "ex:fst_standortanalysen_ref_csv"),
+                ],
+            )
+        )
+        parts.append(
+            _stanza(
+                "ex:geo_log",
+                [("prov:wasGeneratedBy", stage2_iri)],
+            )
+        )
 
     # ---- Stage 3: merge ---------------------------------------------------
     stage3_preds: list[tuple[str, str]] = [
         ("a", "prov:Activity"),
-        ("rdfs:label",
-         '"Stage 3 — merge geo IDs into literature-enriched CSV"'),
+        ("rdfs:label", '"Stage 3 — merge geo IDs into literature-enriched CSV"'),
         ("prov:wasInformedBy", run_iri),
         ("prov:used", "ex:fst_wgs84_lit_enriched_csv"),
         ("prov:used", "ex:fst_standortanalysen_ref_mapped_csv"),
@@ -540,8 +643,7 @@ def write_prov_manifest(
     ]
     if "duration_s" in merge_summary:
         stage3_preds.append(
-            ("ex:durationSeconds",
-             f'"{merge_summary["duration_s"]:.2f}"^^xsd:decimal')
+            ("ex:durationSeconds", f'"{merge_summary["duration_s"]:.2f}"^^xsd:decimal')
         )
     if "n_rows" in merge_summary:
         stage3_preds.append(
@@ -557,10 +659,12 @@ def write_prov_manifest(
     # The final CSV is generated by stage 3, but we ALSO assert it on the
     # top-level run above (prov:wasGeneratedBy is allowed to have multiple
     # values). This dual link makes both views queryable.
-    parts.append(_stanza(
-        "ex:fst_wgs84_csv",
-        [("prov:wasGeneratedBy", stage3_iri)],
-    ))
+    parts.append(
+        _stanza(
+            "ex:fst_wgs84_csv",
+            [("prov:wasGeneratedBy", stage3_iri)],
+        )
+    )
 
     # ---- Write file --------------------------------------------------------
     manifest_path.write_text("\n".join(parts), encoding="utf-8")
@@ -571,33 +675,87 @@ def write_prov_manifest(
 # Pre-flight checks
 # ---------------------------------------------------------------------------
 
-def _preflight() -> None:
-    """Verify that all required inputs exist before any work starts."""
-    required_inputs = {
-        "Original CSV": ORIGINAL_CSV,
-        "Geo reference CSV": GEO_REF_CSV,
-    }
-    required_modules = {
-        "Literature script": LITERATURE_DIR / "enrich_qids.py",
-        "Geo mapping script": GEO_DIR / "wikidata_map.py",
-        "Geo merge script": GEO_DIR / "enrich_fst.py",
+
+def _stages_active() -> dict:
+    """Return which stages run fresh vs. reuse existing outputs, per PIPELINE_MODE.
+
+    Stage 3 (merge) is always active — it is cheap and produces the final CSV
+    from upstream outputs (fresh or reused).
+    """
+    if PIPELINE_MODE not in _VALID_MODES:
+        raise ValueError(
+            f"Invalid PIPELINE_MODE={PIPELINE_MODE!r}. "
+            f"Must be one of {_VALID_MODES}."
+        )
+    return {
+        "literature": PIPELINE_MODE in ("full", "literature"),
+        "geo": PIPELINE_MODE in ("full", "geo"),
+        "merge": True,  # always runs
     }
 
+
+def _preflight() -> None:
+    """Verify that all required inputs exist before any work starts.
+
+    The check depends on PIPELINE_MODE: stages that are *active* need their
+    inputs and module file; stages that are *skipped* need their previous
+    output file on disk (otherwise stage 3 has nothing to merge).
+    """
+    active = _stages_active()
+
+    # Modules are only needed for stages we will actually run.
+    required_modules: dict[str, Path] = {}
+    if active["literature"]:
+        required_modules["Literature script"] = LITERATURE_DIR / "enrich_qids.py"
+    if active["geo"]:
+        required_modules["Geo mapping script"] = GEO_DIR / "wikidata_map.py"
+    if active["merge"]:
+        required_modules["Geo merge script"] = GEO_DIR / "enrich_fst.py"
+
+    # Inputs are needed for any active stage that reads them.
+    required_inputs: dict[str, Path] = {}
+    if active["literature"]:
+        required_inputs["Original CSV"] = ORIGINAL_CSV
+    if active["geo"]:
+        required_inputs["Geo reference CSV"] = GEO_REF_CSV
+
+    # For *skipped* stages, the corresponding intermediate outputs must already
+    # exist — otherwise stage 3 has nothing to merge from.
+    reused_outputs: dict[str, Path] = {}
+    if not active["literature"]:
+        reused_outputs[
+            "Literature-enriched CSV (skipped stage 1, reusing existing)"
+        ] = LIT_ENRICHED_CSV
+    if not active["geo"]:
+        reused_outputs[
+            "Geo-mapped reference CSV (skipped stage 2, reusing existing)"
+        ] = GEO_MAPPED_CSV
+
     missing = []
-    for label, path in {**required_inputs, **required_modules}.items():
+    for label, path in {
+        **required_inputs,
+        **required_modules,
+        **reused_outputs,
+    }.items():
         if not path.exists():
             missing.append(f"  - {label}: {path}")
 
     if missing:
         print("ERROR: required files not found:")
+        print(f"  (PIPELINE_MODE = {PIPELINE_MODE!r})")
         for m in missing:
             print(m)
+        if reused_outputs and any(not p.exists() for p in reused_outputs.values()):
+            print()
+            print("  Hint: run with PIPELINE_MODE = 'full' first to generate the")
+            print("  intermediate outputs, then switch back.")
         sys.exit(1)
 
 
 # ---------------------------------------------------------------------------
 # Main
 # ---------------------------------------------------------------------------
+
 
 def main() -> None:
     """Entry point.  Wraps the actual pipeline in a tee logger so that all
@@ -621,6 +779,7 @@ def main() -> None:
             print(f"PIPELINE ABORTED: {type(exc).__name__}: {exc}")
             print("=" * 78)
             import traceback
+
             traceback.print_exc(file=tee)
             raise
         finally:
@@ -630,12 +789,18 @@ def main() -> None:
 def _main_impl() -> None:
     """Run the full pipeline. All stdout here is teed by the surrounding
     _RunLogger context in main()."""
+    active = _stages_active()
+
     print("=" * 78)
     print("CSV ENRICHMENT PIPELINE")
     print("=" * 78)
     print(f"  Data dir: {DATA_DIR}")
     print(f"  Original: {ORIGINAL_CSV.name}")
     print(f"  Final:    {FINAL_CSV.name}")
+    print(f"  Mode:     {PIPELINE_MODE!r}")
+    skipped_stages = [k for k, v in active.items() if not v]
+    if skipped_stages:
+        print(f"  Skipping: {', '.join(skipped_stages)} " f"(reusing existing output)")
 
     # Capture run identity up front
     started_at = time.time()
@@ -655,8 +820,11 @@ def _main_impl() -> None:
 
     t_total = time.perf_counter()
 
-    lit_summary = stage_literature()
-    geo_summary = stage_geo_mapping()
+    # Dispatch each stage based on PIPELINE_MODE
+    lit_summary = (
+        stage_literature() if active["literature"] else stage_literature_skipped()
+    )
+    geo_summary = stage_geo_mapping() if active["geo"] else stage_geo_mapping_skipped()
     merge_summary = stage_geo_merge()
 
     dt_total = time.perf_counter() - t_total
@@ -680,18 +848,30 @@ def _main_impl() -> None:
     print("\n" + "=" * 78)
     print("PIPELINE COMPLETE")
     print("=" * 78)
+    print(f"  Mode:             {PIPELINE_MODE!r}")
     print(f"  Total time:       {dt_total:.2f}s")
-    print(f"  Literature QIDs:  {lit_summary['filled_georef']} georef + "
-          f"{lit_summary['filled_pub']} pub  "
-          f"({lit_summary['n_missing']} missing in {LIT_LOG.name})")
+    if lit_summary.get("skipped"):
+        print(f"  Literature:       skipped (reused {LIT_ENRICHED_CSV.name})")
+    else:
+        print(
+            f"  Literature QIDs:  {lit_summary['filled_georef']} georef + "
+            f"{lit_summary['filled_pub']} pub  "
+            f"({lit_summary['n_missing']} missing in {LIT_LOG.name})"
+        )
+    if geo_summary.get("skipped"):
+        print(f"  Geo SPARQL:       skipped (reused {GEO_MAPPED_CSV.name})")
     print(f"  Final CSV:        {FINAL_CSV}")
-    print(f"                    {merge_summary['n_rows']} rows x "
-          f"{merge_summary['n_cols']} columns")
+    print(
+        f"                    {merge_summary['n_rows']} rows x "
+        f"{merge_summary['n_cols']} columns"
+    )
     print(f"  Provenance:       {RUN_MANIFEST.name}")
     print(f"  Run log:          {RUN_LOG.name}")
-    if merge_summary['missing_enrich_cols']:
-        print(f"  WARN: missing enrichment columns: "
-              f"{merge_summary['missing_enrich_cols']}")
+    if merge_summary["missing_enrich_cols"]:
+        print(
+            f"  WARN: missing enrichment columns: "
+            f"{merge_summary['missing_enrich_cols']}"
+        )
     print()
 
 

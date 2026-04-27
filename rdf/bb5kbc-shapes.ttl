@@ -21,23 +21,23 @@ shape:BundeslandShape a sh:NodeShape ;
 
 shape:DatierungShape a sh:NodeShape ;
     rdfs:label "Shape for bb5kbc:Datierung"@en ;
-    sh:property [ sh:datatype xsd:integer ;
-            sh:path bb5kbc:datierungStart ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:path bb5kbc:datierungSicherheitStart ;
+            sh:severity sh:Warning ],
+        [ sh:class bb5kbc:DatierungsMethodeType ;
+            sh:path bb5kbc:datierungMethode ;
             sh:severity sh:Warning ],
         [ sh:datatype xsd:integer ;
             sh:path bb5kbc:datierungEnd ;
             sh:severity sh:Warning ],
         [ sh:datatype xsd:string ;
-            sh:path bb5kbc:datierungSicherheitRange ;
-            sh:severity sh:Warning ],
-        [ sh:datatype xsd:string ;
             sh:path bb5kbc:datierungSicherheitEnd ;
             sh:severity sh:Warning ],
-        [ sh:class bb5kbc:DatierungsMethodeType ;
-            sh:path bb5kbc:datierungMethode ;
+        [ sh:datatype xsd:integer ;
+            sh:path bb5kbc:datierungStart ;
             sh:severity sh:Warning ],
         [ sh:datatype xsd:string ;
-            sh:path bb5kbc:datierungSicherheitStart ;
+            sh:path bb5kbc:datierungSicherheitRange ;
             sh:severity sh:Warning ] ;
     sh:targetClass bb5kbc:Datierung .
 
@@ -58,8 +58,23 @@ shape:EntdeckungsartTypeShape a sh:NodeShape ;
 
 shape:FundstelleShape a sh:NodeShape ;
     rdfs:label "Shape for bb5kbc:Fundstelle"@en ;
-    sh:property [ sh:class bb5kbc:GeoreferenzierungsAktivitaet ;
+    sh:property [ sh:datatype xsd:integer ;
+            sh:path bb5kbc:hatFID ;
+            sh:severity sh:Warning ],
+        [ sh:class bb5kbc:GeoreferenzierungsAktivitaet ;
             sh:path bb5kbc:wurdeGeoreferenziertDurch ;
+            sh:severity sh:Warning ],
+        [ sh:datatype xsd:string ;
+            sh:path bb5kbc:hatKatalognummer ;
+            sh:severity sh:Warning ],
+        [ sh:class bb5kbc:KulturelleZuordnung ;
+            sh:path bb5kbc:hatKulturelleZuordnung ;
+            sh:severity sh:Warning ],
+        [ sh:class bb5kbc:Publikation ;
+            sh:path bb5kbc:hatPublikation ;
+            sh:severity sh:Warning ],
+        [ sh:class bb5kbc:Scherbe ;
+            sh:path bb5kbc:hatScherbe ;
             sh:severity sh:Warning ],
         [ sh:class bb5kbc:FundstellenartType ;
             sh:path bb5kbc:hatFundstellenart ;
@@ -67,29 +82,14 @@ shape:FundstelleShape a sh:NodeShape ;
         [ sh:datatype xsd:string ;
             sh:path bb5kbc:hatFundstellenID ;
             sh:severity sh:Warning ],
-        [ sh:datatype xsd:integer ;
-            sh:path bb5kbc:hatFID ;
-            sh:severity sh:Warning ],
-        [ sh:class bb5kbc:KulturelleZuordnung ;
-            sh:path bb5kbc:hatKulturelleZuordnung ;
+        [ sh:class bb5kbc:Entdeckung ;
+            sh:path bb5kbc:wurdeEntdecktDurch ;
             sh:severity sh:Warning ],
         [ sh:datatype xsd:decimal ;
             sh:path bb5kbc:hatGenauigkeit ;
             sh:severity sh:Warning ],
-        [ sh:class bb5kbc:Scherbe ;
-            sh:path bb5kbc:hatScherbe ;
-            sh:severity sh:Warning ],
         [ sh:class bb5kbc:Gemeinde ;
             sh:path bb5kbc:inGemeinde ;
-            sh:severity sh:Warning ],
-        [ sh:class bb5kbc:Publikation ;
-            sh:path bb5kbc:hatPublikation ;
-            sh:severity sh:Warning ],
-        [ sh:class bb5kbc:Entdeckung ;
-            sh:path bb5kbc:wurdeEntdecktDurch ;
-            sh:severity sh:Warning ],
-        [ sh:datatype xsd:string ;
-            sh:path bb5kbc:hatKatalognummer ;
             sh:severity sh:Warning ],
         shape:FundstelleShape_hatFID_required ;
     sh:targetClass bb5kbc:Fundstelle .

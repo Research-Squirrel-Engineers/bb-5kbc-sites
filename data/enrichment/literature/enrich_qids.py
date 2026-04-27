@@ -5,8 +5,18 @@
 #   - Spalte "QID_quelle_georef"  (Lookup-Key: "quelle_georef")
 #   - Spalte "QID_publikation"    (Lookup-Key: "publikation_arch")
 #
-# QID-Mappings wurden aus den QuickStatements-HTML-Seiten extrahiert.
-# Fehlende Matches werden in eine Log-Datei geschrieben.
+# QID-Mappings stammen aus zwei Quellen:
+#   1. Den QuickStatements-HTML-Seiten (Initial-Import)
+#   2. Manuellen Korrekturen / Sophies Reviews (laufend gepflegt im Code)
+#
+# Authoritäts-Modell (Stand: April 2026):
+#   Die Code-Dictionaries QID_PUBLIKATION und QID_QUELLE_GEOREF gelten als
+#   "Single Source of Truth". Wenn das Mapping einen QID liefert, überschreibt
+#   das Skript den Wert in der CSV-Zelle — auch dann, wenn dort schon ein
+#   anderer QID stand. Konflikte (alter ≠ neuer QID) werden im Log
+#   protokolliert, sodass nachträgliche Audits möglich sind.
+#
+# Fehlende Matches und Konflikte werden in eine Log-Datei geschrieben.
 #
 # Verwendung:
 #   - Als Modul (vom Orchestrator):
@@ -62,7 +72,8 @@ QID_PUBLIKATION = {
     "Kulczycka-Leciejewiczowa 1993": "Q139304628",
     "Czerniak 2007":             "Q139304629",
     "Smoczyńska 1952":           "Q139304630",
-    "Raddatz 1959":              "Q139304631",
+    "Raddatz 1956":              "Q139304631",
+    "Raddatz 1958":              "Q139570571",
     "Umbreit 1937":              "Q139304632",
     "Wetzel/Beran 2023":         "Q139304633",
     "von Richthofen 1930":       "Q139304635",
@@ -82,39 +93,27 @@ QID_PUBLIKATION = {
     # --- Aus QuickStatements_2.htm ---
     "Dziewanowski 2019":         "Q139304679",
     "Umbreit 1939":              "Q139304632",
-    # --- Pending: warten auf Sophies Review (Stand: April 2026) -----------
-    # Hinweis: Die folgenden Publikationen tauchen in der CSV in Spalte
-    # `publikation_arch` auf, sind aber (noch) nicht eindeutig auf ein
-    # Wikidata-Item gemappt. Per Projektregel werden hier keine QIDs
-    # geraten — entweder Sophie liefert die QID nach, oder die Zelle
-    # bleibt leer.
+    # --- Nachgereicht: Sophies Review (April 2026) ------------------------
+    "Pyzel 2019":                "Q139460445",
+    "Umbreit 1940":              "Q139459720",
+    "Schier et al. 2023":        "Q139555255",
+    "Wetzel/Babiel 2016":        "Q139555259",
+    # ---------------------------------------------------------------------
+    # Zur Historie der oben genannten Einträge (Stand: April 2026):
     #
-    # "Pyzel 2019"        FID 548, 549 (Ludwinowo 7, SBK, Polen)
-    #                     In QID_QUELLE_GEOREF als Q139460445 hinterlegt;
-    #                     Sophie muss bestätigen, ob dasselbe Werk gemeint ist. --> stimmt
-    # "Umbreit 1940"      FID 244 (Lietzow-Buddelin/Saiser 1)
-    #                     In QID_QUELLE_GEOREF als Q139459720 hinterlegt;
-    #                     Sophie muss bestätigen, ob dasselbe Werk gemeint ist. --> stimmt
-    # "Schier et al. 2023" FID 8 (Quedlinburg KGA 1)
-    #                     Mehrdeutig: Schiers 2023-Hauptpublikation ist die
-    #                     Ippesheim-Endmonografie (BAF 22, Rahden/Westf. 2023);
-    #                     Quedlinburg ist eine andere Anlage. Sophie klärt
-    #                     welches Werk gemeint ist. --> Q139555255
-    # "Raddatz 1956"      FID 94 (Kaaso/Kozów, SBK, Polen, Woj. Lubuskie)
-    #                     Achtung: in QID_QUELLE_GEOREF unten als Q139304631
-    #                     hinterlegt — das ist aber das QID für "Raddatz 1959"
-    #                     (siehe oben). Sophie muss klären: ist das ein Tippfehler
-    #                     in der CSV (1956 → 1959), oder existiert eine separate
-    #                     Raddatz-1956-Publikation, die noch ein eigenes
-    #                     Wikidata-Item braucht? --> Raddatz 1956 = Q139304631, Raddatz 1958 (das war ein tippfehler '59 war falsch) -> Q139570571
-    # "Wetzel/Babieel 2016" FID 257 (Dyrotz 37, Rössener Kultur, Havelland)
-    #                     Eindeutig identifiziert als:
-    #                       Wetzel, G. / Babiel, K.: Der Rössener Brunnen von
-    #                       Dyrotz 37, Lkr. Havelland, und sein Umfeld. In:
-    #                       Veröff. brandenb. Landesarchäologie 47 (2016),
-    #                       79–108.
-    #                     CSV-Tippfehler: Co-Autor heißt Babiel, nicht Babieel.
-    #                     Wikidata-Item existiert (Stand April 2026) noch nicht. --> Tippfehler korrigiert, QID ist Q139555259
+    # - Pyzel 2019 (FID 548, 549): Sophie hat bestätigt, dass dasselbe Werk
+    #   wie in QID_QUELLE_GEOREF gemeint ist (Q139460445).
+    # - Umbreit 1940 (FID 244):    Sophie hat bestätigt, Q139459720.
+    # - Schier et al. 2023 (FID 8): Sophie hat geklärt, dass es sich nicht
+    #   um die Ippesheim-Endmonografie handelt — eigene QID Q139555255.
+    # - Wetzel/Babiel 2016 (FID 257): CSV-Tippfehler "Babieel" wurde in der
+    #   CSV korrigiert zu "Babiel". QID Q139555259 von Sophie nachgereicht.
+    # - Raddatz 1956 / Raddatz 1958: Der frühere Code-Eintrag "Raddatz 1959"
+    #   war eine Falsch-Zuordnung — laut Sophie war "1959" ein Tippfehler,
+    #   gemeint war "Raddatz 1958" (Q139570571). "Raddatz 1956" ist eine
+    #   eigenständige Publikation (Q139304631). Beide stehen jetzt mit
+    #   ihrer korrekten QID im Mapping; der alte "1959"-Eintrag wurde
+    #   entfernt.
     # ---------------------------------------------------------------------
 }
 
@@ -141,10 +140,17 @@ QID_QUELLE_GEOREF = {
     "Kulczycka-Leciejewiczowa 1993, Karte 1, Berlekamp 1966":                            "Q139304628",
     "Kulczycka-Leciejewiczowa 1993, Karte 1, von Richthofen 1930, Karte 2 Nr 35":        "Q139304628",
     "Raddatz 1956":                          "Q139304631",
+    "Raddatz 1958":                          "Q139570571",
     "Ciesielski/Goczyca 2013":               "Q139304640",
     "Dziewanowski 2023":                     "Q139460420",
     "Swieder 2009, Kulczycka-Leciejewiczowa 1993, Karte 1 Nr. 23": "Q139304628",
-    # Institutionelle Quellen (von Sophie nachgereicht):
+    # Sonstige Quellen-Entitäten (Sophies Review).
+    # Anmerkung: Diese QIDs sind nicht in jedem Fall publizierte Werke — sie
+    # umfassen auch Institutionen (z. B. BLDAM, LfDA Sachsen-Anhalt) und
+    # Personen (Wolfram Schier für persönl. Kommunikation; Lech Czerniak als
+    # Sammelreferenz). Werden in Spalte `quelle_georef` semantisch wie Werke
+    # behandelt; eine eventuelle Type-Differenzierung (Werk vs. Agent) erfolgt
+    # ggf. nachgelagert in der LOD-Pipeline.
     "LfDA Sachsen-Anhalt":                   "Q1802049",
     "BLDAM 2021":                            "Q897952",
     "BLDAM 2024":                            "Q897952",
@@ -154,9 +160,9 @@ QID_QUELLE_GEOREF = {
     "Museum Angermünde":                     "Q76632599",
     "Museum Szczecin":                       "Q2802195",
     "Zabytek.pl":                            "Q43301933",
-    "W. Schier persönl. Kommunikation":      None,
+    "W. Schier persönl. Kommunikation":      "Q15445052",
     "Berlekamp 1966, Liste 9":               "Q139304613",
-    "Czerniak":                              None,
+    "Czerniak":                              "Q11753457",
 }
 
 
@@ -252,8 +258,9 @@ def run(input_csv: Path, output_csv: Path, log_path: Path) -> dict:
     -------
     dict
         Summary with keys:
-        ``filled_georef``, ``filled_pub``, ``skipped_georef``,
-        ``skipped_pub``, ``n_missing``, ``n_rows``.
+        ``filled_georef``, ``filled_pub``, ``confirmed_georef``,
+        ``confirmed_pub``, ``overwritten_georef``, ``overwritten_pub``,
+        ``n_missing``, ``n_rows``.
     """
     input_csv = Path(input_csv)
     output_csv = Path(output_csv)
@@ -269,36 +276,53 @@ def run(input_csv: Path, output_csv: Path, log_path: Path) -> dict:
     n_rows = len(df)
     print(f"  [enrich_qids]   {n_rows} rows, {len(df.columns)} columns")
 
-    # Counter
-    filled_georef = 0
+    # Counter (Modus A: Mapping ist Single Source of Truth)
+    filled_georef = 0     # leere Zelle gefuellt
     filled_pub = 0
-    skipped_georef = 0
-    skipped_pub = 0
+    confirmed_georef = 0  # Zelle hatte bereits korrekten QID
+    confirmed_pub = 0
+    overwritten_georef = 0  # Zelle hatte anderen QID, ueberschrieben
+    overwritten_pub = 0
+
+    def _apply(col_qid, col_label, mapping, row, i):
+        """Apply Modus-A logic for one cell. Returns ('filled'|'confirmed'|'overwritten'|'noop')."""
+        new_qid = _lookup_qid(row.get(col_label), mapping, col_label, i, log)
+        if not new_qid:
+            return "noop"  # miss oder None — Lookup-Helper hat bereits geloggt
+
+        current = str(row.get(col_qid, "")).strip()
+        if current in ("", "nan"):
+            df.at[i, col_qid] = new_qid
+            return "filled"
+        if current == new_qid:
+            return "confirmed"
+        # Konflikt: alter QID != neuer QID
+        log.warning(
+            "Konflikt: CSV-Zelle ueberschrieben | Zeile %d | Spalte: %s | "
+            "Label %r | alter QID: %s -> neuer QID: %s",
+            i + 2, col_qid, str(row.get(col_label, "")).strip(), current, new_qid,
+        )
+        df.at[i, col_qid] = new_qid
+        return "overwritten"
 
     for i, row in df.iterrows():
         # -- QID_quelle_georef --
-        current_georef_qid = str(row.get("QID_quelle_georef", "")).strip()
-        if current_georef_qid in ("", "nan"):
-            new_qid = _lookup_qid(
-                row.get("quelle_georef"), QID_QUELLE_GEOREF, "quelle_georef", i, log
-            )
-            if new_qid:
-                df.at[i, "QID_quelle_georef"] = new_qid
-                filled_georef += 1
-        else:
-            skipped_georef += 1
+        result = _apply("QID_quelle_georef", "quelle_georef", QID_QUELLE_GEOREF, row, i)
+        if result == "filled":
+            filled_georef += 1
+        elif result == "confirmed":
+            confirmed_georef += 1
+        elif result == "overwritten":
+            overwritten_georef += 1
 
         # -- QID_publikation --
-        current_pub_qid = str(row.get("QID_publikation", "")).strip()
-        if current_pub_qid in ("", "nan"):
-            new_qid = _lookup_qid(
-                row.get("publikation_arch"), QID_PUBLIKATION, "publikation_arch", i, log
-            )
-            if new_qid:
-                df.at[i, "QID_publikation"] = new_qid
-                filled_pub += 1
-        else:
-            skipped_pub += 1
+        result = _apply("QID_publikation", "publikation_arch", QID_PUBLIKATION, row, i)
+        if result == "filled":
+            filled_pub += 1
+        elif result == "confirmed":
+            confirmed_pub += 1
+        elif result == "overwritten":
+            overwritten_pub += 1
 
     # Flush log handler so the file is fully written before we count lines
     for h in log.handlers:
@@ -318,22 +342,26 @@ def run(input_csv: Path, output_csv: Path, log_path: Path) -> dict:
         "n_rows": n_rows,
         "filled_georef": filled_georef,
         "filled_pub": filled_pub,
-        "skipped_georef": skipped_georef,
-        "skipped_pub": skipped_pub,
+        "confirmed_georef": confirmed_georef,
+        "confirmed_pub": confirmed_pub,
+        "overwritten_georef": overwritten_georef,
+        "overwritten_pub": overwritten_pub,
         "n_missing": n_missing,
         "log_path": str(log_path),
     }
 
     print(
-        f"  [enrich_qids] QID_quelle_georef: {filled_georef} new, {skipped_georef} pre-existing"
+        f"  [enrich_qids] QID_quelle_georef: {filled_georef} filled, "
+        f"{confirmed_georef} confirmed, {overwritten_georef} overwritten"
     )
     print(
-        f"  [enrich_qids] QID_publikation:   {filled_pub} new, {skipped_pub} pre-existing"
+        f"  [enrich_qids] QID_publikation:   {filled_pub} filled, "
+        f"{confirmed_pub} confirmed, {overwritten_pub} overwritten"
     )
     if n_missing == 0:
-        print("  [enrich_qids] No missing matches.")
+        print("  [enrich_qids] No missing matches, no conflicts.")
     else:
-        print(f"  [enrich_qids] {n_missing} missing/empty entries -> {log_path}")
+        print(f"  [enrich_qids] {n_missing} log entries (misses + conflicts) -> {log_path}")
 
     return summary
 
