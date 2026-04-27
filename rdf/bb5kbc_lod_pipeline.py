@@ -8,34 +8,33 @@ applies the modelling rules defined in `bb5kbc-modelling-rules.md`, and writes
 a single Turtle file `bb5kbc-data.ttl` with all triples generated from the data.
 The output is then validated against auto-generated SHACL shapes derived from
 `bb5kbc-ontology.ttl`; the validation report is written separately, and the
-pipeline does NOT abort on shape violations (warning-only mode).
+pipeline does NOT abort on shape violations (warning-only mode by default).
 
 Project layout (relative to repository root):
     rdf/        ← this script + bb5kbc-shapes.ttl + readme
     ontology/   ← bb5kbc-ontology.ttl
     data/       ← fst_wgs84.csv  (read-only, output of csv_enrichment.py)
-    dist/       ← generated output (bb5kbc-data.ttl, shacl-report.ttl, report.log)
+                 csv_enrichment_run.ttl  (upstream PROV manifest, auto-discovered)
+    dist/       ← generated output (bb5kbc-data.ttl, csv_to_lod_run.ttl,
+                 shacl-report.ttl, report.log)
 
-Run from the rdf/ directory:
-    python bb5kbc_lod_pipeline.py
-
-Optional CLI flags:
-    --strict        treat SHACL violations as errors (exit non-zero)
-    --no-shacl      skip SHACL validation entirely
-    --csv PATH      use a different CSV file
-    --limit N       only process the first N rows (for testing)
+Usage:
+    Just run the script directly (e.g. F5 in VS Code, or python from the
+    rdf/ directory). All settings are constants at the top of the file —
+    look for the "Run settings" block in Section 2 and edit values there
+    when you want non-default behaviour. No command-line arguments needed.
 
 Inspired by the structure of `Poseidon2LOD.py` (Mattis Schmidt, ArNO project),
 adapted to bb5kbc's modelling rules: MD5-based hash URIs, FID-based site URIs,
 British English comments, deterministic output, no per-row PROV activities
-(one global pipeline activity instead).
+(one global pipeline activity instead, chained to the upstream CSV-enrichment
+activity via prov:wasInformedBy).
 
 Authors: Sophie C. Schmidt, Florian Thiery · Licence: CC BY 4.0
 """
 
 from __future__ import annotations
 
-import argparse
 import datetime
 import hashlib
 import logging
@@ -118,6 +117,30 @@ COMPOUND_FUNDSTELLENART = {
 # - QID_publikation: filled by enrich_qids.py downstream (Pyzel 2019 and
 #   Umbreit 1940 still pending Sophie's review).
 EMPTY_COLUMNS = {"perio.do", "QID_publikation"}
+
+
+# ---------------------------------------------------------------------------
+# Run settings (formerly CLI flags — now plain constants).
+# Edit these directly when you want a non-default behaviour. Each setting is
+# applied unconditionally on every run; no command-line invocation needed.
+# ---------------------------------------------------------------------------
+
+# Process only the first N rows (None = process the entire CSV).
+# Useful for smoke-testing changes without waiting for the full 540-row run.
+RUN_LIMIT: int | None = None
+
+# Treat SHACL violations as errors (return code 1 on violations).
+# When False, the pipeline always exits cleanly; violations are only logged.
+RUN_STRICT: bool = False
+
+# Skip SHACL validation entirely (saves ~16 seconds).
+# When True, no shacl-report*.ttl files are produced.
+RUN_SKIP_SHACL: bool = False
+
+# Optional override for the upstream PROV manifest. When None, the pipeline
+# auto-discovers ../data/csv_enrichment_run.ttl. Set to a Path object (or a
+# string path) to point at a different manifest, e.g. an archived copy.
+RUN_PROV_CSV_ENRICHMENT_OVERRIDE: Path | None = None
 
 
 # ---------------------------------------------------------------------------
@@ -750,6 +773,163 @@ def add_fixed_individuals(g):
 
 
 # ---------------------------------------------------------------------------
+# SECTION 4b: PROV-O chaining
+# ---------------------------------------------------------------------------
+# These helpers connect the LOD pipeline's provenance to the upstream CSV
+# enrichment pipeline. The upstream produces a manifest file (typically
+# csv_enrichment_run.ttl) describing the multi-stage CSV-enrichment activity
+# that built fst_wgs84.csv. We embed that manifest's triples into our output
+# graphs, identify its top-level activity, and chain to it via wasInformedBy.
+
+def find_top_level_prov_activity(g: Graph) -> URIRef | None:
+    """Identify the top-level prov:Activity in a manifest graph.
+
+    The "top-level" activity is the one that no other activity in the same
+    graph wasInformedBy. In the csv_enrichment manifest, stage activities
+    declare wasInformedBy ?top, so the top-level run is the activity that
+    appears as a wasInformedBy *target* but never as a *source*.
+
+    Falls back to: any activity that has prov:startedAtTime but no
+    wasInformedBy. Returns None if the graph contains no activities.
+    """
+    activities = set(g.subjects(RDF.type, PROV.Activity))
+    if not activities:
+        return None
+
+    # Activities that are themselves informedBy something else are sub-stages
+    informed = {s for s in activities if list(g.objects(s, PROV.wasInformedBy))}
+    candidates = activities - informed
+
+    if len(candidates) == 1:
+        return next(iter(candidates))
+    if len(candidates) > 1:
+        # Prefer the one with the earliest startedAtTime (the run that started
+        # the chain). If still ambiguous, return any deterministic pick.
+        with_start = [(s, list(g.objects(s, PROV.startedAtTime)))
+                      for s in candidates]
+        with_start = [(s, t[0]) for s, t in with_start if t]
+        if with_start:
+            with_start.sort(key=lambda x: str(x[1]))
+            return with_start[0][0]
+        return sorted(candidates, key=str)[0]
+    # No candidate without wasInformedBy: graph is malformed, return None
+    return None
+
+
+def add_lod_pipeline_provenance(g: Graph, *,
+                                 csv_path: Path,
+                                 ontology_path: Path,
+                                 script_path: Path,
+                                 out_data: Path,
+                                 out_bundle: Path,
+                                 csv_enrichment_top: URIRef | None,
+                                 csv_enrichment_output: URIRef | None,
+                                 started_at: datetime.datetime,
+                                 ended_at: datetime.datetime,
+                                 row_count: int,
+                                 triple_count: int) -> URIRef:
+    """Add the LOD pipeline's PROV-O activity to graph `g` and return its URI.
+
+    The activity URI uses the same scheme as the rest of the bb5kbc LOD data
+    namespace (`data:pipeline_run_<timestamp>`), with the timestamp formatted
+    so colons become dashes — that yields a URI-safe form analogous to the
+    csv_enrichment convention (e.g. `2026-04-27T08-21-21Z`) while keeping the
+    LOD's own w3id-based namespace.
+
+    Cross-namespace chaining (csv_enrichment lives in example.org) is done
+    via `prov:wasInformedBy`. Output entities (`bb5kbc_data_ttl`,
+    `bb5kbc_bundle_ttl`) are declared with `prov:wasGeneratedBy` (this
+    activity) and `prov:wasDerivedFrom` (the upstream output entity).
+    """
+    # URI-safe timestamp: 2026-04-27T08:30:15Z → 2026-04-27T08-30-15Z
+    ts = started_at.strftime("%Y-%m-%dT%H-%M-%SZ")
+    activity = DATA[f"pipeline_run_{ts}"]
+
+    # --- Software agent (the script itself) -------------------------------
+    script_agent = DATA["bb5kbc_lod_pipeline_py"]
+    g.add((script_agent, RDF.type, PROV.SoftwareAgent))
+    g.add((script_agent, RDF.type, PROV.Plan))
+    g.add((script_agent, RDFS.label, Literal("bb5kbc_lod_pipeline.py")))
+    g.add((script_agent, PROV.atLocation,
+           URIRef(script_path.resolve().as_uri())))
+
+    # --- Activity ----------------------------------------------------------
+    g.add((activity, RDF.type, PROV.Activity))
+    g.add((activity, RDFS.label,
+           Literal(f"bb5kbc CSV-to-RDF pipeline run {ts}", lang="en")))
+    g.add((activity, PROV.startedAtTime,
+           Literal(started_at.isoformat().replace("+00:00", "Z"),
+                   datatype=XSD.dateTime)))
+    g.add((activity, PROV.endedAtTime,
+           Literal(ended_at.isoformat().replace("+00:00", "Z"),
+                   datatype=XSD.dateTime)))
+    g.add((activity, PROV.wasAssociatedWith, SOPHIE_ORCID))
+    g.add((activity, PROV.wasAssociatedWith, ORCID["0000-0002-3246-3531"]))
+    g.add((activity, PROV.wasAssociatedWith, script_agent))
+
+    # --- Inputs (used) -----------------------------------------------------
+    # Path.as_uri() produces RFC-compliant file:// URIs on every OS,
+    # including Windows (file:///C:/...). Plain f"file://{path}" breaks on
+    # Windows because backslashes and the drive-letter colon are not valid
+    # URI characters.
+    csv_uri = URIRef(csv_path.resolve().as_uri())
+    g.add((activity, PROV.used, csv_uri))
+    g.add((activity, PROV.used, URIRef(ontology_path.resolve().as_uri())))
+
+    # If we know the upstream's output-entity URI for fst_wgs84.csv, prefer
+    # it (cross-namespace identity) — this lets a triplestore see that the
+    # file we used IS the one csv_enrichment generated.
+    if csv_enrichment_output is not None:
+        g.add((activity, PROV.used, csv_enrichment_output))
+
+    # --- Cross-pipeline chaining ------------------------------------------
+    if csv_enrichment_top is not None:
+        g.add((activity, PROV.wasInformedBy, csv_enrichment_top))
+
+    # --- Output entities --------------------------------------------------
+    # Two outputs: the slim data graph and the self-contained bundle. Both
+    # are derived from the (upstream) fst_wgs84.csv — we declare the chain
+    # explicitly so a SPARQL query can walk from any LOD triple back to the
+    # source CSV, and from there into the csv_enrichment provenance.
+    data_entity = DATA["bb5kbc_data_ttl"]
+    g.add((data_entity, RDF.type, PROV.Entity))
+    g.add((data_entity, RDFS.label,
+           Literal("bb5kbc-data.ttl (LOD-converted site data)", lang="en")))
+    g.add((data_entity, PROV.atLocation,
+           URIRef(out_data.resolve().as_uri())))
+    g.add((data_entity, PROV.wasGeneratedBy, activity))
+    if csv_enrichment_output is not None:
+        g.add((data_entity, PROV.wasDerivedFrom, csv_enrichment_output))
+    else:
+        g.add((data_entity, PROV.wasDerivedFrom, csv_uri))
+
+    bundle_entity = DATA["bb5kbc_bundle_ttl"]
+    g.add((bundle_entity, RDF.type, PROV.Entity))
+    g.add((bundle_entity, RDFS.label,
+           Literal("bb5kbc-bundle.ttl (data + ontology, self-contained)",
+                   lang="en")))
+    g.add((bundle_entity, PROV.atLocation,
+           URIRef(out_bundle.resolve().as_uri())))
+    g.add((bundle_entity, PROV.wasGeneratedBy, activity))
+    if csv_enrichment_output is not None:
+        g.add((bundle_entity, PROV.wasDerivedFrom, csv_enrichment_output))
+    else:
+        g.add((bundle_entity, PROV.wasDerivedFrom, csv_uri))
+
+    # --- Run statistics (custom predicates, kept under DATA namespace) ----
+    # rowCount: CSV rows successfully processed (one row per Fundstelle).
+    # dataTripleCount: triples in g at the moment this activity is recorded —
+    # i.e. data triples + embedded upstream PROV, but NOT yet this activity's
+    # own triples. The final on-disk file is slightly larger because of the
+    # ~20 PROV triples added below.
+    g.add((activity, DATA.rowCount, Literal(row_count, datatype=XSD.integer)))
+    g.add((activity, DATA.dataTripleCount,
+           Literal(triple_count, datatype=XSD.integer)))
+
+    return activity
+
+
+# ---------------------------------------------------------------------------
 # SECTION 5: SHACL shapes generator
 # ---------------------------------------------------------------------------
 
@@ -872,33 +1052,14 @@ def generate_shacl_shapes(ontology_path: Path) -> Graph:
 # SECTION 6: Main orchestrator
 # ---------------------------------------------------------------------------
 
-def parse_args():
-    p = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
-    p.add_argument("--csv", default=None,
-                   help="Path to CSV file (default: ../data/fst_wgs84.csv)")
-    p.add_argument("--ontology", default=None,
-                   help="Path to bb5kbc ontology .ttl (default: ../ontology/bb5kbc-ontology.ttl)")
-    p.add_argument("--out-dir", default=None,
-                   help="Output directory (default: ../dist)")
-    p.add_argument("--limit", type=int, default=None,
-                   help="Process only the first N CSV rows (debugging)")
-    p.add_argument("--strict", action="store_true",
-                   help="Fail on SHACL violations (default: warn only)")
-    p.add_argument("--no-shacl", action="store_true",
-                   help="Skip SHACL validation entirely")
-    return p.parse_args()
-
-
 def main():
-    args = parse_args()
-
     # ----- Path setup --------------------------------------------------------
     script_dir = Path(__file__).resolve().parent
     root = script_dir.parent
 
-    csv_path = Path(args.csv) if args.csv else root / "data" / "fst_wgs84.csv"
-    ontology_path = Path(args.ontology) if args.ontology else root / "ontology" / "bb5kbc-ontology.ttl"
-    out_dir = Path(args.out_dir) if args.out_dir else root / "dist"
+    csv_path = root / "data" / "fst_wgs84.csv"
+    ontology_path = root / "ontology" / "bb5kbc-ontology.ttl"
+    out_dir = root / "dist"
     out_dir.mkdir(parents=True, exist_ok=True)
 
     out_data = out_dir / "bb5kbc-data.ttl"
@@ -907,6 +1068,18 @@ def main():
     out_report = out_dir / "shacl-report.ttl"
     out_report_bundle = out_dir / "shacl-report-bundle.ttl"
     out_log = out_dir / "report.log"
+    out_prov = out_dir / "csv_to_lod_run.ttl"        # this run's PROV manifest
+
+    # Resolve csv_enrichment_run.ttl: explicit override (set in run settings
+    # at the top of this file) wins over auto-discovery. Auto-discovery looks
+    # at ../data/csv_enrichment_run.ttl — the natural sibling file produced
+    # by the upstream pipeline. If neither is present, the LOD run still
+    # works, but writes its own provenance without the upstream chain.
+    if RUN_PROV_CSV_ENRICHMENT_OVERRIDE is not None:
+        prov_csv_enrichment_path = Path(RUN_PROV_CSV_ENRICHMENT_OVERRIDE)
+    else:
+        candidate = root / "data" / "csv_enrichment_run.ttl"
+        prov_csv_enrichment_path = candidate if candidate.exists() else None
 
     # ----- Logger ------------------------------------------------------------
     log = setup_logger(out_log)
@@ -920,6 +1093,11 @@ def main():
     log.info(f"SHACL shapes:     {out_shapes}")
     log.info(f"SHACL report:     {out_report}")
     log.info(f"Bundle report:    {out_report_bundle}")
+    log.info(f"PROV manifest:    {out_prov}")
+    if prov_csv_enrichment_path is not None:
+        log.info(f"Upstream PROV:    {prov_csv_enrichment_path}")
+    else:
+        log.info("Upstream PROV:    (none found — running standalone)")
     log.info(f"Log file:         {out_log}")
     log.info("")
 
@@ -934,15 +1112,19 @@ def main():
                      na_values=[], encoding="utf-8-sig")
     log.info(f"Loaded CSV: {len(df)} rows, {len(df.columns)} columns")
 
-    if args.limit is not None:
-        df = df.head(args.limit)
-        log.info(f"Limited to first {len(df)} rows (--limit)")
+    if RUN_LIMIT is not None:
+        df = df.head(RUN_LIMIT)
+        log.info(f"Limited to first {len(df)} rows (RUN_LIMIT)")
 
     # ----- Build data graph --------------------------------------------------
     g = Graph()
     _bind_namespaces(g)
 
     add_fixed_individuals(g)
+
+    # Capture start time before row processing — the activity spans the full
+    # row-processing loop, not just the provenance-writing step.
+    pipeline_started_at = datetime.datetime.now(datetime.timezone.utc)
 
     log.info("Processing rows ...")
     rows_processed = 0
@@ -979,24 +1161,75 @@ def main():
     log.info(f"Processed: {rows_processed} rows, skipped: {rows_skipped}")
     log.info(f"Generated graph: {len(g)} triples")
 
-    # ----- Pipeline-level provenance (one activity per run, not per row) ----
-    now = datetime.datetime.now(datetime.timezone.utc)
-    pipeline_activity = DATA[f"pipeline_run_{now.strftime('%Y%m%dT%H%M%SZ')}"]
-    g.add((pipeline_activity, RDF.type, PROV.Activity))
-    g.add((pipeline_activity, RDFS.label,
-           Literal("bb5kbc CSV-to-RDF pipeline run", lang="en")))
-    g.add((pipeline_activity, PROV.wasAssociatedWith, SOPHIE_ORCID))
-    g.add((pipeline_activity, PROV.wasAssociatedWith,
-           ORCID["0000-0002-3246-3531"]))   # Florian
-    g.add((pipeline_activity, PROV.startedAtTime,
-           Literal(now.isoformat().replace("+00:00", "Z"),
-                   datatype=XSD.dateTime)))
-    # Path.as_uri() produces RFC-compliant file:// URIs on every OS,
-    # including Windows (file:///C:/...). Plain f"file://{path}" breaks on
-    # Windows because backslashes and the drive-letter colon are not valid
-    # URI characters.
-    g.add((pipeline_activity, PROV.used, URIRef(csv_path.resolve().as_uri())))
-    g.add((pipeline_activity, PROV.used, URIRef(ontology_path.resolve().as_uri())))
+    # ----- Capture run timing for PROV ---------------------------------------
+    pipeline_ended_at = datetime.datetime.now(datetime.timezone.utc)
+
+    # ----- Load + embed upstream PROV (csv_enrichment_run.ttl) --------------
+    # If the upstream manifest is available, parse it to a dedicated graph,
+    # find its top-level activity, locate the entity that represents the CSV
+    # we just consumed, and merge the manifest's triples into our data graph.
+    # The same triples are also added to the bundle below — this gives a
+    # cross-pipeline chain that lives inside both LOD outputs.
+    csv_enrichment_top: URIRef | None = None
+    csv_enrichment_output: URIRef | None = None
+    upstream_graph = Graph()
+    if prov_csv_enrichment_path is not None and prov_csv_enrichment_path.exists():
+        try:
+            upstream_graph.parse(str(prov_csv_enrichment_path), format="turtle")
+            csv_enrichment_top = find_top_level_prov_activity(upstream_graph)
+            log.info(f"Loaded upstream PROV: "
+                     f"{len(upstream_graph)} triples, "
+                     f"top-level activity: {csv_enrichment_top}")
+
+            # Find the upstream entity for fst_wgs84.csv: any prov:Entity whose
+            # prov:atLocation matches the file we read. Falls back to None if
+            # nothing matches — the chain still works via wasInformedBy alone.
+            csv_uri_local = URIRef(csv_path.resolve().as_uri())
+            for ent in upstream_graph.subjects(RDF.type, PROV.Entity):
+                locs = list(upstream_graph.objects(ent, PROV.atLocation))
+                # Match on filename (the upstream paths are typically Windows
+                # absolute paths that won't equal our local resolved path).
+                for loc in locs:
+                    if str(loc).endswith("/" + csv_path.name):
+                        csv_enrichment_output = ent
+                        break
+                if csv_enrichment_output is not None:
+                    break
+            if csv_enrichment_output is not None:
+                log.info(f"Identified upstream entity for {csv_path.name}: "
+                         f"{csv_enrichment_output}")
+            else:
+                log.info(f"No upstream entity matched filename {csv_path.name} — "
+                         f"chaining via wasInformedBy only.")
+        except Exception as exc:
+            log.warning(f"Could not parse upstream PROV manifest "
+                        f"{prov_csv_enrichment_path}: {exc}")
+            upstream_graph = Graph()
+
+    # Embed upstream triples directly into the data graph. Using `+=` is
+    # idempotent — duplicate triples (e.g. namespace bindings) are simply
+    # not stored twice.
+    if len(upstream_graph) > 0:
+        g += upstream_graph
+        log.info(f"Embedded upstream PROV into data graph "
+                 f"(+{len(upstream_graph)} triples)")
+
+    # ----- LOD pipeline provenance (one activity per run, not per row) -----
+    pipeline_activity = add_lod_pipeline_provenance(
+        g,
+        csv_path=csv_path,
+        ontology_path=ontology_path,
+        script_path=Path(__file__),
+        out_data=out_data,
+        out_bundle=out_bundle,
+        csv_enrichment_top=csv_enrichment_top,
+        csv_enrichment_output=csv_enrichment_output,
+        started_at=pipeline_started_at,
+        ended_at=pipeline_ended_at,
+        row_count=rows_processed,
+        triple_count=len(g),
+    )
+    log.info(f"PROV activity: {pipeline_activity}")
 
     # ----- Write data graph --------------------------------------------------
     g.serialize(destination=str(out_data), format="turtle")
@@ -1009,10 +1242,32 @@ def main():
     log.info("Building bundle graph (data + ontology) ...")
     bundle = Graph()
     _bind_namespaces(bundle)
-    bundle += g                                         # data triples
+    bundle += g                                         # data triples + PROV
     bundle += Graph().parse(str(ontology_path), format="turtle")  # ontology triples
     bundle.serialize(destination=str(out_bundle), format="turtle")
     log.info(f"Wrote bundle graph: {out_bundle} ({len(bundle)} triples)")
+
+    # ----- Write standalone PROV manifest for this LOD run ------------------
+    # Only the LOD-side activity triples (no upstream embedding here — the
+    # upstream manifest already exists as its own file). The bundle above
+    # has both, the data graph has both, and this file has just our own.
+    prov_only = Graph()
+    _bind_namespaces(prov_only)
+    # Subject filter: anything related to our pipeline_activity, the script
+    # agent, or the two output entities. We pull every triple that mentions
+    # them as subject.
+    prov_subjects = {pipeline_activity,
+                     DATA["bb5kbc_lod_pipeline_py"],
+                     DATA["bb5kbc_data_ttl"],
+                     DATA["bb5kbc_bundle_ttl"]}
+    for s in prov_subjects:
+        for p, o in g.predicate_objects(s):
+            prov_only.add((s, p, o))
+    # Plus the Sophie/Florian ORCID labels (one-line ones from add_fixed_individuals)
+    for p, o in g.predicate_objects(SOPHIE_ORCID):
+        prov_only.add((SOPHIE_ORCID, p, o))
+    prov_only.serialize(destination=str(out_prov), format="turtle")
+    log.info(f"Wrote LOD PROV manifest: {out_prov} ({len(prov_only)} triples)")
 
     # ----- Generate SHACL shapes --------------------------------------------
     log.info("Generating SHACL shapes from ontology ...")
@@ -1021,8 +1276,8 @@ def main():
     log.info(f"Wrote shapes: {out_shapes} ({len(shapes)} triples)")
 
     # ----- Validate ----------------------------------------------------------
-    if args.no_shacl:
-        log.info("Skipping SHACL validation (--no-shacl)")
+    if RUN_SKIP_SHACL:
+        log.info("Skipping SHACL validation (RUN_SKIP_SHACL=True)")
         return 0
 
     try:
@@ -1083,8 +1338,9 @@ def main():
                          f"path={path[0] if path else '?'} "
                          f"msg={msg[0] if msg else ''}")
 
-    if any_violations and args.strict:
-        log.error("Strict mode: SHACL violations are errors. Exiting with code 1.")
+    if any_violations and RUN_STRICT:
+        log.error("Strict mode (RUN_STRICT=True): SHACL violations are errors. "
+                  "Exiting with code 1.")
         return 1
 
     log.info("=" * 70)
