@@ -197,18 +197,35 @@ hängen zusammen; deshalb gibt es einen eigenen Knoten dafür:
 
 ```
 Fundstelle ─→ KulturelleZuordnung ─→ Kulturgruppe (geteilt!)
+   site_33     site_33_culture          kultur_a36e9d6d
                        │
                        └──────────→ Datierung (eigen pro Fundstelle)
+                                    site_33_dating
 ```
 
-- **Kulturgruppe** ist geteilt (alle SBK-Fundstellen zeigen auf den gleichen
-  SBK-Knoten — Regel 3).
-- **Datierung** ist *nicht* geteilt: jede Fundstelle hat ihre eigene
-  Datierung mit ihren eigenen Start/End-Werten und Sicherheits-Beschreibungen.
+- **Kulturgruppe** ist geteilt (alle FBG-Fundstellen zeigen auf den gleichen
+  `kultur_a36e9d6d`-Knoten — Regel 3). Das Konzept "FBG" ist ein einzelner
+  Knoten.
+- **KulturelleZuordnung** ist *pro Fundstelle* (URI: `site_{FID}_culture`).
+  Sie ist der Verknüpfungs-Zwischenknoten, der die jeweilige Site mit der
+  geteilten Kulturgruppe verbindet *und* die site-spezifische Datierung
+  trägt.
+- **Datierung** ist *pro Fundstelle* (URI: `site_{FID}_dating`). Jede
+  Fundstelle hat ihre eigenen Start/End-Werte und Sicherheits-Beschreibungen,
+  die unmissverständlich an *ihrem* Datierungs-Knoten landen.
 
 Die Datierung ist sowohl ein **CRM-Time-Span** als auch ein **OWL-Time-Intervall** —
 das gibt späteren Anfragen sowohl eine CRM-konforme als auch eine
 intervall-topologische Sicht (z.B. "Phase A endet bevor Phase B beginnt").
+
+**Warum site-spezifische Zuordnung trotz geteilter Kulturgruppe?** Weil die
+CSV pro Zeile eigene Datierungs- und Sicherheits-Werte hat (`dating_start`,
+`dating_end`, `dating_certainty_*`). Würden Zuordnung *und* Datierung pro
+Kulturgruppe dedupliziert (frühere Modellierung in v0.10), liefen alle 200
+SBK-Sites am selben Datierungs-Knoten zusammen und ihre individuellen Werte
+würden sich zu einem nicht mehr auflösbaren Multi-Set vermischen. Die
+End-to-End-Validierung (siehe `validate_lod.py`) deckte diese Daten-Verlust-
+Modellierung auf; ab v0.11 ist die Zuordnung site-spezifisch.
 
 **Warum 1:1?** Weil die CSV genau eine Datierung pro Zeile hat. Wenn später
 mehrere Phasen pro Fundstelle modelliert werden sollen (z.B. SBK-Phase
@@ -277,13 +294,13 @@ Alle URIs liegen unter dem Datennamespace `http://w3id.org/bb5kbc/`. Die
 | `site_{FID}` | Eine Fundstelle | `site_33` |
 | `site_{FID}_activity` | Die Georeferenzierung *dieser* Fundstelle | `site_33_activity` |
 | `site_{FID}_geom` | Der WGS84-Punkt *dieser* Fundstelle | `site_33_geom` |
+| `site_{FID}_culture` | Die Kulturelle Zuordnung *dieser* Fundstelle | `site_33_culture` |
+| `site_{FID}_dating` | Die Datierung *dieser* Fundstelle | `site_33_dating` |
 | `gemeinde_{hash}` | Eine Gemeinde (geteilt) | `gemeinde_ef3c98d9` (Friesack) |
 | `kreis_{hash}` | Ein Kreis (geteilt) | `kreis_d4d0a03b` (Havelland) |
 | `bundesland_{hash}` | Ein Bundesland (geteilt) | `bundesland_2ddb2d82` (Brandenburg) |
 | `land_{hash}` | Ein Land (geteilt) | `land_3c2f8b8c` (Deutschland) |
-| `kultur_{hash}` | Eine Kulturgruppe (geteilt) | `kultur_a36e9d6d` (FBG) |
-| `culture_{hash}` | Eine Kulturelle Zuordnung (geteilt pro Kulturgruppe) | `culture_a36e9d6d` |
-| `culture_{hash}_dating` | Die Datierung dieser Zuordnung | `culture_a36e9d6d_dating` |
+| `kultur_{hash}` | Eine Kulturgruppe (geteilt — Konzept-Knoten) | `kultur_a36e9d6d` (FBG) |
 | `entdeckung_{hash}` | Eine Entdeckung (geteilt) | `entdeckung_1f56a08c` |
 | `entdeckungsart_{hash}` | Eine Entdeckungsart (geteilt) | `entdeckungsart_2b73226f` |
 | `fundstellenart_{hash}` | Eine Fundstellenart (geteilt) | `fundstellenart_1972902b` |

@@ -47,8 +47,8 @@
 | `bb5kbc:Bundesland` | `http://w3id.org/bb5kbc/bundesland_{hash}` | `bundesland_eec0c902` ← `"Thüringen"` |
 | `bb5kbc:Land` | `http://w3id.org/bb5kbc/land_{hash}` | `land_3c2f8b8c` ← `"Deutschland"` |
 | `bb5kbc:Kulturgruppe` | `http://w3id.org/bb5kbc/kultur_{hash}` | `kultur_cc414e20` ← `"SBK"`, `kultur_7a001224` ← `"SBK?"` |
-| `bb5kbc:KulturelleZuordnung` | `http://w3id.org/bb5kbc/culture_{hash}` | `culture_{hash}` ← hash aus kultur-Wert |
-| `bb5kbc:Datierung` | `http://w3id.org/bb5kbc/culture_{hash}_dating` | `culture_cc414e20_dating` ← KulturelleZuordnung von `"SBK"` |
+| `bb5kbc:KulturelleZuordnung` | `http://w3id.org/bb5kbc/site_{FID}_culture` | `site_33_culture` ← Fundstelle FID=33 |
+| `bb5kbc:Datierung` | `http://w3id.org/bb5kbc/site_{FID}_dating` | `site_33_dating` ← Fundstelle FID=33 |
 | `bb5kbc:DatierungsMethodeType` | `http://w3id.org/bb5kbc/datmethode_{hash}` | `datmethode_{hash}` ← hash aus Wikidata-QID |
 | `bb5kbc:Scherbe` | `http://w3id.org/bb5kbc/sherd_{hash}` | `sherd_ddd27e7f` ← `"Q173387"` |
 | `bb5kbc:Entdeckung` | `http://w3id.org/bb5kbc/entdeckung_{hash}` | `entdeckung_{hash}` ← hash aus entdeckung-Text |
@@ -118,7 +118,7 @@
 
 | # | CSV-Spalte | Beispielwert | Art | bb5kbc-Klasse / Property | Hinweis |
 |---|---|---|---|---|---|
-| — | *(URI)* | `culture_{hash}_dating` | 🟦 | `bb5kbc:KulturelleZuordnung` ← `bb5kbc:hatDatierung` → `bb5kbc:Datierung` | 1 Node pro Fundstelle; URI abgeleitet aus KulturelleZuordnung-Hash |
+| — | *(URI)* | `site_{FID}_dating` | 🟦 | `bb5kbc:KulturelleZuordnung` ← `bb5kbc:hatDatierung` → `bb5kbc:Datierung` | 1 Node pro Fundstelle; URI FID-basiert (entkoppelt von Kulturgruppe) |
 | 57 | `dating_start` | `"-4550"` | 🟨 | `bb5kbc:Datierung` ← `bb5kbc:datierungStart` : `xsd:integer` | subPropertyOf `crm:P82a_begin_of_the_begin`; negativ = BCE |
 | 59 | `dating_end` | `"-3900"` | 🟨 | `bb5kbc:Datierung` ← `bb5kbc:datierungEnd` : `xsd:integer` | subPropertyOf `crm:P82b_end_of_the_end` |
 | 61 | `dating_method` | `"Q173412"` | 🟦🔗 | `bb5kbc:Datierung` ← `bb5kbc:datierungMethode` → `bb5kbc:DatierungsMethodeType` | hash-URI `datmethode_{MD5(QID)[:8]}`; nur 2 distinct (Q173412 14C, Q816829 stilistisch) |
@@ -216,29 +216,179 @@
 > `pleiades:Place` ist semantisch für antike Toponyme ohne sichere Geometrie gedacht
 > (Pleiades-Datenmodell, Samian-Ware-Use-Case in LADO/ArNO). Moderne Verwaltungsgebiete
 > haben klar definierte Grenzen — sie sind direkt `crm:E53_Place`.
-> `bb5kbc:Fundstelle` geht über `crm:E27_Site`, weil eine archäologische Fundstelle
-> ein physisches Stück Land ist (*„Constellation of matter on the surface"*, CRM E27).
+> `bb5kbc:Fundstelle` geht zusätzlich über `crm:E27_Site` (= "Constellation of matter
+> on the surface", CRM E27), parallel zu den FSL- und LADO-Spuren.
 
-| bb5kbc-Klasse | Vollständige Kette |
+Die Tabelle listet pro `bb5kbc:`-Klasse die **vollständige Vorfahren-Menge** als
+flache Liste (alle direkten Eltern + transitive Hülle). Darunter zeigt jeder
+Code-Block die Mehrfach-Vererbung als Baum, was die parallelen Spuren sichtbar
+macht. Die Liste in der Tabelle ist die Quelle für den automatischen Doku-Abgleich
+(`validate_lod.py`, Sektion 4b) — sie muss exakt der Ontologie entsprechen.
+
+### Übersicht (vollständige Vorfahren-Mengen)
+
+| bb5kbc-Klasse | Alle Vorfahren (transitiv) |
 |---|---|
-| `bb5kbc:Land` | `crm:E1` → `crm:E53_Place` → **`bb5kbc:Land`** |
-| `bb5kbc:Bundesland` | `crm:E1` → `crm:E53_Place` → **`bb5kbc:Bundesland`** |
-| `bb5kbc:Kreis` | `crm:E1` → `crm:E53_Place` → **`bb5kbc:Kreis`** |
-| `bb5kbc:Gemeinde` | `crm:E1` → `crm:E53_Place` → **`bb5kbc:Gemeinde`** |
-| `bb5kbc:Fundstelle` | `crm:E1` → `crm:E53_Place` → `crm:E27_Site` → `pleiades:Location` → `lado:Location` / `fsl:Site` → **`bb5kbc:Fundstelle`** |
-| `bb5kbc:GeoreferenzierungsAktivitaet` | `crm:E1` → `crm:E2_Temporal_Entity` → `crm:E4_Period` → `crm:E5_Event` → `crm:E7_Activity` → `prov:Activity` → **`bb5kbc:GeoreferenzierungsAktivitaet`** |
-| `bb5kbc:Entdeckung` | `crm:E1` → `crm:E13_Attribute_Assignment` → `crmsci:S4_Observation` → `crmsci:S19_Encounter_Event` → **`bb5kbc:Entdeckung`** |
-| `bb5kbc:EntdeckungsartType` | `crm:E1` → `crm:E55_Type` → **`bb5kbc:EntdeckungsartType`** |
-| `bb5kbc:FundstellenartType` | `crm:E1` → `crm:E55_Type` → `lado:PlaceType` → `fsl:SiteType` → **`bb5kbc:FundstellenartType`** |
-| `bb5kbc:KulturelleZuordnung` | `crm:E1` → `crm:E92_Spacetime_Volume` → `lado:SpaceTimeItem` → **`bb5kbc:KulturelleZuordnung`** |
-| `bb5kbc:Datierung` | `crm:E1` → `crm:E2_Temporal_Entity` → `crm:E52_Time-Span` → **`bb5kbc:Datierung`** (+ `time:Interval`) |
-| `bb5kbc:DatierungsMethodeType` | `crm:E1` → `crm:E55_Type` → **`bb5kbc:DatierungsMethodeType`** |
-| `bb5kbc:Scherbe` | `crm:E1` → `crm:E18_Physical_Thing` → `crm:E22_Human-Made_Object` → **`bb5kbc:Scherbe`** |
-| `bb5kbc:Kulturgruppe` | `crm:E1` → `crm:E2_Temporal_Entity` → `crm:E4_Period` → **`bb5kbc:Kulturgruppe`** |
-| `bb5kbc:GeoReferenz` | `crm:E1` → `crm:E90_Symbolic_Object` → `crm:E73_Information_Object` → `crm:E32_Authority_Document` → **`bb5kbc:GeoReferenz`** |
-| `bb5kbc:Publikation` | `crm:E1` → `crm:E90_Symbolic_Object` → `crm:E73_Information_Object` → `crm:E32_Authority_Document` → **`bb5kbc:Publikation`** |
-| `bb5kbc:externalIdentifierType` | `crm:E1` → `crm:E55_Type` → **`bb5kbc:externalIdentifierType`** |
-| `sf:Point` (Geometrie) | `crm:E1` → `crm:E90_Symbolic_Object` → `crm:E73_Information_Object` → `crmgeo:SP5_Geometric_Place_Expression` → `geosparql:Geometry` → **`sf:Point`** |
+| `bb5kbc:Land` | `crm:E1_CRM_Entity`, `crm:E53_Place` |
+| `bb5kbc:Bundesland` | `crm:E1_CRM_Entity`, `crm:E53_Place` |
+| `bb5kbc:Kreis` | `crm:E1_CRM_Entity`, `crm:E53_Place` |
+| `bb5kbc:Gemeinde` | `crm:E1_CRM_Entity`, `crm:E53_Place` |
+| `bb5kbc:Fundstelle` | `crm:E18_Physical_Thing`, `crm:E1_CRM_Entity`, `crm:E26_Physical_Feature`, `crm:E27_Site`, `crm:E53_Place`, `crm:E70_Thing`, `crm:E72_Legal_Object`, `fsl:Location`, `fsl:Site`, `geo:SpatialObject`, `lado:Location`, `pleiades:Location`, `prov:Location` |
+| `bb5kbc:GeoreferenzierungsAktivitaet` | `crm:E13_Attribute_Assignment`, `crm:E1_CRM_Entity`, `crm:E2_Temporal_Entity`, `crm:E4_Period`, `crm:E5_Event`, `crm:E7_Activity`, `prov:Activity` |
+| `bb5kbc:Entdeckung` | `crm:E13_Attribute_Assignment`, `crm:E1_CRM_Entity`, `crm:E2_Temporal_Entity`, `crm:E4_Period`, `crm:E5_Event`, `crm:E7_Activity`, `crmsci:S19_Encounter_Event`, `crmsci:S4_Observation` |
+| `bb5kbc:EntdeckungsartType` | `crm:E1_CRM_Entity`, `crm:E55_Type` |
+| `bb5kbc:FundstellenartType` | `crm:E1_CRM_Entity`, `crm:E55_Type`, `fsl:SiteType`, `fsl:Type`, `lado:PlaceType` |
+| `bb5kbc:KulturelleZuordnung` | `crm:E1_CRM_Entity`, `crm:E92_Spacetime_Volume`, `lado:SpaceTimeItem` |
+| `bb5kbc:Kulturgruppe` | `crm:E1_CRM_Entity`, `crm:E2_Temporal_Entity`, `crm:E4_Period` |
+| `bb5kbc:Datierung` | `crm:E1_CRM_Entity`, `crm:E52_Time-Span`, `time:Interval`, `time:TemporalEntity` |
+| `bb5kbc:DatierungsMethodeType` | `crm:E1_CRM_Entity`, `crm:E55_Type` |
+| `bb5kbc:Scherbe` | `crm:E18_Physical_Thing`, `crm:E1_CRM_Entity`, `crm:E22_Human-Made_Object`, `crm:E70_Thing`, `crm:E72_Legal_Object` |
+| `bb5kbc:Publikation` | `crm:E1_CRM_Entity`, `crm:E32_Authority_Document`, `crm:E70_Thing`, `crm:E73_Information_Object` |
+| `bb5kbc:externalIdentifierType` | `crm:E1_CRM_Entity`, `crm:E55_Type` |
+
+### Mehrfach-Vererbung als Baum
+
+Verwaltungsgebiete (Land/Bundesland/Kreis/Gemeinde) haben alle dieselbe einfache
+Spur über `crm:E53_Place`:
+
+```
+bb5kbc:Land           ┐
+bb5kbc:Bundesland     ├── alle: └── crm:E53_Place
+bb5kbc:Kreis          │             └── crm:E1_CRM_Entity
+bb5kbc:Gemeinde       ┘
+```
+
+`bb5kbc:Fundstelle` ist die komplexeste Klasse — drei parallele Eltern, einer mit
+weiterer Mehrfach-Vererbung:
+
+```
+bb5kbc:Fundstelle
+├── lado:Location
+│   └── pleiades:Location
+│       └── geo:SpatialObject
+├── fsl:Site
+│   └── fsl:Location
+│       └── prov:Location
+└── crm:E27_Site
+    ├── crm:E26_Physical_Feature
+    │   └── crm:E18_Physical_Thing
+    │       └── crm:E72_Legal_Object
+    │           └── crm:E70_Thing
+    │               └── crm:E1_CRM_Entity
+    └── crm:E53_Place
+        └── crm:E1_CRM_Entity
+```
+
+`bb5kbc:GeoreferenzierungsAktivitaet` ist parallel CRM-Activity und PROV-Activity:
+
+```
+bb5kbc:GeoreferenzierungsAktivitaet
+├── crm:E13_Attribute_Assignment
+│   └── crm:E7_Activity
+│       └── crm:E5_Event
+│           └── crm:E4_Period
+│               └── crm:E2_Temporal_Entity
+│                   └── crm:E1_CRM_Entity
+└── prov:Activity
+```
+
+`bb5kbc:Entdeckung` als CRMsci-Observation, mit voller CRM-Hierarchie:
+
+```
+bb5kbc:Entdeckung
+└── crmsci:S19_Encounter_Event
+    └── crmsci:S4_Observation
+        └── crm:E13_Attribute_Assignment
+            └── crm:E7_Activity
+                └── crm:E5_Event
+                    └── crm:E4_Period
+                        └── crm:E2_Temporal_Entity
+                            └── crm:E1_CRM_Entity
+```
+
+`bb5kbc:FundstellenartType` ist parallel LADO-Place-Type und FSL-SiteType:
+
+```
+bb5kbc:FundstellenartType
+├── lado:PlaceType
+│   └── crm:E55_Type
+│       └── crm:E1_CRM_Entity
+└── fsl:SiteType
+    └── fsl:Type
+```
+
+`bb5kbc:KulturelleZuordnung` als Spacetime-Volume:
+
+```
+bb5kbc:KulturelleZuordnung
+└── lado:SpaceTimeItem
+    └── crm:E92_Spacetime_Volume
+        └── crm:E1_CRM_Entity
+```
+
+`bb5kbc:Kulturgruppe` als Period:
+
+```
+bb5kbc:Kulturgruppe
+└── crm:E4_Period
+    └── crm:E2_Temporal_Entity
+        └── crm:E1_CRM_Entity
+```
+
+`bb5kbc:Datierung` ist parallel CRM-Time-Span und OWL-Time-Interval:
+
+```
+bb5kbc:Datierung
+├── crm:E52_Time-Span
+│   └── crm:E1_CRM_Entity
+└── time:Interval
+    └── time:TemporalEntity
+```
+
+Die übrigen Type-Klassen sind alle einfach `crm:E55_Type`-Subklassen:
+
+```
+bb5kbc:EntdeckungsartType         ┐
+bb5kbc:DatierungsMethodeType      ├── alle: └── crm:E55_Type
+bb5kbc:externalIdentifierType     ┘             └── crm:E1_CRM_Entity
+```
+
+`bb5kbc:Scherbe` als Human-Made-Object:
+
+```
+bb5kbc:Scherbe
+└── crm:E22_Human-Made_Object
+    └── crm:E18_Physical_Thing
+        └── crm:E72_Legal_Object
+            └── crm:E70_Thing
+                └── crm:E1_CRM_Entity
+```
+
+`bb5kbc:Publikation` als Authority-Document:
+
+```
+bb5kbc:Publikation
+└── crm:E32_Authority_Document
+    └── crm:E73_Information_Object
+        └── crm:E70_Thing
+            └── crm:E1_CRM_Entity
+```
+
+### Geometrie-Klassen (extern, nicht im `bb5kbc:`-Namespace)
+
+`sf:Point` aus dem Simple-Features-Vokabular wird vom LOD-Skript für die
+WGS84-Punkt-Geometrie verwendet. Die volle Vererbungskette ist hier zur Information
+dokumentiert, fließt aber **nicht** in den automatischen Doku-Abgleich ein
+(weil keine `bb5kbc:`-Klasse):
+
+```
+sf:Point
+└── geosparql:Geometry
+    └── crmgeo:SP5_Geometric_Place_Expression
+        └── crm:E73_Information_Object
+            └── crm:E90_Symbolic_Object
+                └── crm:E1_CRM_Entity
+```
 
 ---
 
@@ -280,8 +430,9 @@ Die neun CSV-Spalten zur Datierung (`dating_start`, `dating_end`, `dating_method
 `dating_perio.do`, `dating_perio.do_match`) werden gebündelt an einem
 **`bb5kbc:Datierung`**-Knoten modelliert. Pro Fundstelle gibt es genau einen
 Datierungs-Knoten, der über `bb5kbc:hatDatierung` an die `bb5kbc:KulturelleZuordnung`
-hängt. URI-Schema: `culture_{hash}_dating` — abgeleitet aus dem Hash der
-KulturelleZuordnung.
+hängt. URI-Schema: `site_{FID}_dating` — FID-basiert pro Fundstelle, damit
+site-spezifische Start/End/Sicherheits-Werte unmissverständlich an dem
+Knoten der jeweiligen Site landen.
 
 ### Doppel-Verankerung: CRM E52 + OWL Time Interval
 
@@ -313,7 +464,7 @@ auf dieselbe temporale Entität.
 ### Start- und Endpunkte als Integer
 
 ```turtle
-data:culture_<hash>_dating
+data:site_<FID>_dating
     bb5kbc:datierungStart "-4550"^^xsd:integer ;   # ⊂ crm:P82a_begin_of_the_begin
     bb5kbc:datierungEnd   "-3900"^^xsd:integer .   # ⊂ crm:P82b_end_of_the_end
 ```
@@ -364,7 +515,7 @@ auf eine `fsl:CertaintyType` (Q23/Q15/Q24) mappt. Das ist im aktuellen Mapping
 Knoten dedupliziert (URI: `datmethode_{MD5(QID)[:8]}`):
 
 ```turtle
-data:culture_<hash>_dating
+data:site_<FID>_dating
     bb5kbc:datierungMethode data:datmethode_98fc5e34 .   # ⊂ crm:P2_has_type
 
 data:datmethode_98fc5e34
@@ -385,7 +536,7 @@ SKOS-Property zwischen Datierung und Perio.do-URI gesetzt wird:
 
 ```turtle
 # dating_perio.do_match = "closeMatch"
-data:culture_<hash>_dating
+data:site_<FID>_dating
     skos:closeMatch <http://n2t.net/ark:/99152/p0wctqtnkjq> .
 ```
 
@@ -438,7 +589,7 @@ data:site_33
     # Publikation
     bb5kbc:hatPublikation     data:pub_c54b495e ;
     # Kulturelle Zuordnung
-    bb5kbc:hatKulturelleZuordnung data:culture_a36e9d6d ;
+    bb5kbc:hatKulturelleZuordnung data:site_33_culture ;
     # Georeferenzierung
     bb5kbc:wurdeGeoreferenziertDurch data:site_33_activity ;   # ⊂ prov:wasGeneratedBy
     # Geometrie
@@ -515,10 +666,10 @@ data:land_3c2f8b8c
 # KULTURELLE ZUORDNUNG + KULTURGRUPPE
 # =============================================================================
 
-data:culture_a36e9d6d
+data:site_33_culture
     a bb5kbc:KulturelleZuordnung ;
-    bb5kbc:hatKulturgruppe data:kultur_a36e9d6d ;
-    bb5kbc:hatDatierung    data:culture_a36e9d6d_dating .
+    bb5kbc:hatKulturgruppe data:kultur_a36e9d6d ;        # geteilt mit allen FBG-Sites
+    bb5kbc:hatDatierung    data:site_33_dating .         # FID-spezifisch
 
 data:kultur_a36e9d6d
     a bb5kbc:Kulturgruppe ;
@@ -529,7 +680,7 @@ data:kultur_a36e9d6d
 # DATIERUNG  (echte Werte aus CSV: -4550 bis -3900, 14C-Datierung)
 # =============================================================================
 
-data:culture_a36e9d6d_dating
+data:site_33_dating
     a bb5kbc:Datierung , time:Interval , crm:E52_Time-Span ;
     # Start / Ende als Integer (BCE = negativ)
     bb5kbc:datierungStart "-4550"^^xsd:integer ;
@@ -626,9 +777,9 @@ sich je nach Domäne:
 # --- SBK? (Kultur unsicher) — FID=81 ---
 data:site_81
     a bb5kbc:Fundstelle ;
-    bb5kbc:hatKulturelleZuordnung data:culture_7a001224 .
+    bb5kbc:hatKulturelleZuordnung data:site_81_culture .
 
-data:culture_7a001224
+data:site_81_culture
     a bb5kbc:KulturelleZuordnung ;
     fsl:certaintyDesc "uncertain"@en ;          # ← an der Verknüpfung
     bb5kbc:hatKulturgruppe data:kultur_7a001224 .

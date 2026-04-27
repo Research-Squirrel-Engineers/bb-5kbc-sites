@@ -327,9 +327,33 @@ def _admin_node(g: Graph, label: str, klass: URIRef, prefix: str,
     return uri
 
 
-def add_land_triples(g, row, uri_dict):
-    """Land (country) — only Deutschland and Polen in the dataset."""
+# Fallback mapping for empty `land` cells: derive label from LAND_QID.
+# Used when the CSV has authority IDs but the human-readable land label is
+# missing (14 such rows in the current CSV, all with LAND_QID=Q183 = Germany).
+# Sophie acknowledged the missing labels are a CSV oversight; this fallback
+# keeps LOD-generation robust without requiring re-running csv_enrichment.py.
+# See bb5kbc-csv-issues.md for the documented drift.
+LAND_QID_FALLBACK_LABELS = {
+    "Q183": "Deutschland",
+    "Q36":  "Polen",
+}
+
+
+def add_land_triples(g, row, uri_dict, log):
+    """Land (country) — only Deutschland and Polen in the dataset.
+
+    If the `land` cell is empty but `LAND_QID` is filled, the label is
+    derived from LAND_QID_FALLBACK_LABELS — this prevents losing 5
+    authority identifiers per affected row when the CSV's land label is
+    missing while the per-Land authority IDs are present.
+    """
     label = _norm_str(row.get("land"))
+    qid = _norm_str(row.get("LAND_QID"))
+    if not label and qid in LAND_QID_FALLBACK_LABELS:
+        label = LAND_QID_FALLBACK_LABELS[qid]
+        fid = _norm_str(row.get("FID"))
+        log.info(f"Row FID={fid}: empty `land` cell but LAND_QID={qid}; "
+                 f"using fallback label '{label}'.")
     if not label:
         return []
     uri = _admin_node(
@@ -571,9 +595,16 @@ def add_publikation_triples(g, row, uri_dict):
 def add_kulturelle_zuordnung_triples(g, row, uri_dict):
     """Cultural assignment node + the Kulturgruppe it points to.
 
-    URI strategy: culture_{hash} where hash is the kultur-value hash. This
-    means all sites with the same Kulturgruppe share the same KulturelleZuordnung
-    *for the dataset as a whole* — which is the intended deduplication.
+    Modelling decision (revised after end-to-end validation revealed the
+    previous approach lost site-specific dating information):
+
+    - The Kulturgruppe node (`kultur_{hash}`) is shared across all sites
+      that belong to the same cultural group. SBK as a *concept* is one node.
+    - The KulturelleZuordnung node (`site_{FID}_culture`) is **per site**.
+      It represents *this site's assignment to that culture* — a
+      site-specific connecting node between Site, Kulturgruppe and
+      Datierung. This makes per-site dating values (start/end/certainty)
+      unambiguously attachable downstream.
 
     For uncertain assignments (kultur ending in '?', e.g. 'SBK?'), the
     fsl:certaintyDesc "uncertain"@en is attached to the KulturelleZuordnung
@@ -586,6 +617,9 @@ def add_kulturelle_zuordnung_triples(g, row, uri_dict):
     if not kultur or not sites:
         return []
 
+    fid = _norm_str(row.get("FID"))
+
+    # Shared Kulturgruppe node (deduplicated by kultur-string hash)
     kultur_uri = DATA[f"kultur_{_hash8(kultur)}"]
     g.add((kultur_uri, RDF.type, BB5KBC.Kulturgruppe))
     g.add((kultur_uri, RDFS.label, Literal(kultur, lang="de")))
@@ -597,7 +631,8 @@ def add_kulturelle_zuordnung_triples(g, row, uri_dict):
         g.add((kultur_uri, BB5KBC.hasExternalIdentifier, ext))
         g.add((ext, BB5KBC.hasExternalIdentifierType, EXT_ID_TYPES["periodo"]))
 
-    zuordnung_uri = DATA[f"culture_{_hash8(kultur)}"]
+    # Per-site KulturelleZuordnung — site-specific connecting node
+    zuordnung_uri = DATA[f"site_{fid}_culture"]
     g.add((zuordnung_uri, RDF.type, BB5KBC.KulturelleZuordnung))
     g.add((zuordnung_uri, BB5KBC.hatKulturgruppe, kultur_uri))
 
@@ -613,6 +648,17 @@ def add_kulturelle_zuordnung_triples(g, row, uri_dict):
 def add_datierung_triples(g, row, uri_dict, log):
     """Per-site dating node, attached to the kulturelle Zuordnung.
 
+    Modelling decision (revised after end-to-end validation revealed the
+    previous URI scheme `culture_{hash}_dating` deduplicated by Kulturgruppe,
+    causing site-specific dating values from many rows to pile up at one
+    shared node as multi-sets):
+
+    The Datierung URI is now `site_{FID}_dating` — one node per site, with
+    its own start/end/certainty values. The shared Kulturgruppe is still
+    deduplicated; only the dating connector node is per site. This matches
+    the original modelling intent in `bb5kbc-csv-mapping.md` ("1 Node pro
+    Fundstelle").
+
     Note: previous versions of this script applied hard-coded fixes for
     dating_end typos at FID 31 and 257 (positive value where negative was
     intended). These were corrected by Sophie in the reviewed CSV
@@ -623,9 +669,8 @@ def add_datierung_triples(g, row, uri_dict, log):
         return []
 
     fid = _norm_str(row.get("FID"))
-    kultur = _norm_str(row.get("kultur"))
-    # URI follows mapping: derived from the KulturelleZuordnung hash + "_dating"
-    d_uri = DATA[f"culture_{_hash8(kultur)}_dating"]
+    # Per-site dating URI — site-specific, no longer deduplicated by Kulturgruppe
+    d_uri = DATA[f"site_{fid}_dating"]
     g.add((d_uri, RDF.type, BB5KBC.Datierung))
     # Dual anchoring (CRM E52 + OWL Time Interval) flows from the ontology;
     # we only add the bb5kbc:Datierung type here.
@@ -1138,7 +1183,7 @@ def main():
 
         uri_dict = {}
 
-        uri_dict["Land"] = add_land_triples(g, row, uri_dict)
+        uri_dict["Land"] = add_land_triples(g, row, uri_dict, log)
         uri_dict["Bundesland"] = add_bundesland_triples(g, row, uri_dict)
         uri_dict["Kreis"] = add_kreis_triples(g, row, uri_dict)
         uri_dict["Gemeinde"] = add_gemeinde_triples(g, row, uri_dict)

@@ -97,13 +97,13 @@ Erwartete Ausgabe (gekürzt):
 [INFO] Row FID=54: fundstellenart 'Grab?' marked as uncertain (fsl:certaintyDesc).
 [INFO] Row FID=35: dating_perio.do present but no match level specified — defaulting to skos:relatedMatch.
 [INFO] Processed: 540 rows, skipped: 0
-[INFO] Generated graph: 21657 triples
+[INFO] Generated graph: 27347 triples
 [INFO] Loaded upstream PROV: 93 triples, top-level activity: https://example.org/bb-5kbc-sites/run/2026-04-27T08-21-21Z
 [INFO] Identified upstream entity for fst_wgs84.csv: https://example.org/bb-5kbc-sites/fst_wgs84_csv
 [INFO] Embedded upstream PROV into data graph (+93 triples)
 [INFO] PROV activity: http://w3id.org/bb5kbc/pipeline_run_2026-04-27T...Z
-[INFO] Wrote data graph: ../dist/bb5kbc-data.ttl (21777 triples)
-[INFO] Wrote bundle graph: ../dist/bb5kbc-bundle.ttl (22399 triples)
+[INFO] Wrote data graph: ../dist/bb5kbc-data.ttl (27467 triples)
+[INFO] Wrote bundle graph: ../dist/bb5kbc-bundle.ttl (28089 triples)
 [INFO] Wrote LOD PROV manifest: ../dist/csv_to_lod_run.ttl (30 triples)
 [INFO] Wrote shapes: ./bb5kbc-shapes.ttl (152 triples)
 [INFO] SHACL validation: PASS (0 validation results)
