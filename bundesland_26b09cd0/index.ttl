@@ -2,6 +2,7 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix void: <http://rdfs.org/ns/void#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <http://w3id.org/bb5kbc/bundesland_26b09cd0> a ns1:Bundesland,
         <http://www.w3.org/ns/ldp#Resource>,
@@ -14,5 +15,6 @@
         <https://www.openstreetmap.org/relation/62607>,
         <https://www.wikidata.org/entity/Q1206> ;
     ns1:inLand <http://w3id.org/bb5kbc/land_3c2f8b8c> ;
+    ns1:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Sachsen-Anhalt' -> 'Sachsen-Anhalt'"^^xsd:string ;
     skos:prefLabel "Sachsen-Anhalt"@de .
 

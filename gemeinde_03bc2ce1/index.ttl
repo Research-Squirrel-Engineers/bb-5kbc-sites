@@ -2,6 +2,7 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix void: <http://rdfs.org/ns/void#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <http://w3id.org/bb5kbc/gemeinde_03bc2ce1> a ns1:Gemeinde,
         <http://www.w3.org/ns/ldp#Resource>,
@@ -11,5 +12,6 @@
     ns1:hasExternalIdentifier <https://www.openstreetmap.org/relation/2720275>,
         <https://www.wikidata.org/entity/Q1243275> ;
     ns1:inKreis <http://w3id.org/bb5kbc/kreis_aa8aad2b> ;
+    ns1:wikidataMatchDescription "Transitive P131+ exact match | 'Eichhorst' -> 'Eichhorst'"^^xsd:string ;
     skos:prefLabel "Eichhorst"@de .
 

@@ -7,5 +7,5 @@
         <https://www.iana.org/assignments/media-types/text/turtle#Resource> ;
     rdfs:label "Occurrences of vocabulary http://www.w3.org/2001/XMLSchema# in Brandenburg_5000_BC_Data" ;
     ns1:inDataset <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data> ;
-    ns1:occurrences 18 .
+    ns1:occurrences 20 .
 

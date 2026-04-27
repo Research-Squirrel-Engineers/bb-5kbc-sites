@@ -2,6 +2,7 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix void: <http://rdfs.org/ns/void#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <http://w3id.org/bb5kbc/kreis_4759b8ea> a ns1:Kreis,
         <http://www.w3.org/ns/ldp#Resource>,
@@ -12,5 +13,6 @@
         <https://www.openstreetmap.org/relation/451316>,
         <https://www.wikidata.org/entity/Q631754> ;
     ns1:inBundesland <http://w3id.org/bb5kbc/bundesland_3dfdb305> ;
+    ns1:wikidataMatchDescription "Fuzzy match (score=0.94) via rdfs:label [global index] | 'Powiat Głogówski' -> 'Powiat Głogowski'"^^xsd:string ;
     skos:prefLabel "pow. Głogówski"@de .
 

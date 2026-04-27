@@ -2,6 +2,7 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix void: <http://rdfs.org/ns/void#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <http://w3id.org/bb5kbc/gemeinde_8f27a091> a ns1:Gemeinde,
         <http://www.w3.org/ns/ldp#Resource>,
@@ -13,5 +14,6 @@
         <https://www.openstreetmap.org/relation/8081972>,
         <https://www.wikidata.org/entity/Q1701133> ;
     ns1:inKreis <http://w3id.org/bb5kbc/kreis_2783ecb9> ;
+    ns1:wikidataMatchDescription "Transitive P131+ exact match | 'Roddahn' -> 'Roddahn'"^^xsd:string ;
     skos:prefLabel "Roddahn"@de .
 

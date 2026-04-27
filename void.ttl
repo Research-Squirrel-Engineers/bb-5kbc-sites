@@ -200,7 +200,7 @@
     void:linkPredicate rdfs:range ;
     void:objectsTarget xsd: ;
     void:subjectsTarget <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data> ;
-    void:triples 9 .
+    void:triples 10 .
 
 <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_www.w3.org_2002_07_owl_> a void:Linkset ;
     rdfs:label "Linkset: Brandenburg_5000_BC_Data - Web Ontology Language 2 Vocabulary (owl:)"@en ;
@@ -209,7 +209,7 @@
     void:objectsTarget owl: ;
     void:subjectsTarget <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data> ;
     void:triples 1,
-        48 .
+        49 .
 
 <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_www.w3.org_2004_02_skos_core_> a void:Linkset ;
     rdfs:label "Linkset: Brandenburg_5000_BC_Data - skos:"@en ;
@@ -303,7 +303,7 @@
 <http://w3id.org/bb5kbc/owl_Brandenburg_5000_BC_Data_occ> a voaf:DatasetOccurrence ;
     rdfs:label "Occurrences of vocabulary http://www.w3.org/2002/07/owl# in Brandenburg_5000_BC_Data" ;
     voaf:inDataset <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data> ;
-    voaf:occurrences 98 .
+    voaf:occurrences 100 .
 
 <http://w3id.org/bb5kbc/prof_Brandenburg_5000_BC_Data_occ> a voaf:DatasetOccurrence ;
     rdfs:label "Occurrences of vocabulary http://www.w3.org/ns/dx/prof/ in Brandenburg_5000_BC_Data" ;
@@ -380,7 +380,7 @@
 <http://w3id.org/bb5kbc/xsd_Brandenburg_5000_BC_Data_occ> a voaf:DatasetOccurrence ;
     rdfs:label "Occurrences of vocabulary http://www.w3.org/2001/XMLSchema# in Brandenburg_5000_BC_Data" ;
     voaf:inDataset <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data> ;
-    voaf:occurrences 18 .
+    voaf:occurrences 20 .
 
 <https://github.com/Research-Squirrel-Engineers/bb-5kbc-sites> a adms:AssetRepository ;
     rdfs:label "Repository for Brandenburg_5000_BC_Data"@en ;
@@ -778,7 +778,7 @@ doap: a voaf:Vocabulary ;
 <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_comment> a void:Dataset ;
     rdfs:label "Property Partition: comment"@en ;
     void:property rdfs:comment ;
-    void:triples 31 .
+    void:triples 32 .
 
 <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_contributor> a void:Dataset ;
     rdfs:label "Property Partition: contributor"@en ;
@@ -833,12 +833,12 @@ doap: a voaf:Vocabulary ;
 <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_domain> a void:Dataset ;
     rdfs:label "Property Partition: domain"@en ;
     void:property rdfs:domain ;
-    void:triples 25 .
+    void:triples 29 .
 
 <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_durationSeconds> a void:Dataset ;
     rdfs:label "Property Partition: durationSeconds"@en ;
     void:property <https://example.org/bb-5kbc-sites/durationSeconds> ;
-    void:triples 2 .
+    void:triples 3 .
 
 <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_endedAtTime> a void:Dataset ;
     rdfs:label "Property Partition: endedAtTime"@en ;
@@ -1003,12 +1003,12 @@ doap: a voaf:Vocabulary ;
 <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_label> a void:Dataset ;
     rdfs:label "Property Partition: label"@en ;
     void:property rdfs:label ;
-    void:triples 2245 .
+    void:triples 2247 .
 
 <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_member> a void:Dataset ;
     rdfs:label "Property Partition: member"@en ;
     void:property rdfs:member ;
-    void:triples 3704 .
+    void:triples 3705 .
 
 <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_methodUsed> a void:Dataset ;
     rdfs:label "Property Partition: methodUsed"@en ;
@@ -1033,7 +1033,7 @@ doap: a voaf:Vocabulary ;
 <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_range> a void:Dataset ;
     rdfs:label "Property Partition: range"@en ;
     void:property rdfs:range ;
-    void:triples 25 .
+    void:triples 26 .
 
 <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_relatedMatch> a void:Dataset ;
     rdfs:label "Property Partition: relatedMatch"@en ;
@@ -1045,11 +1045,6 @@ doap: a voaf:Vocabulary ;
     void:property <http://fuzzy-sl.squirrel.link/ontology/representativeGeometry> ;
     void:triples 540 .
 
-<http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_reusedFromMTime> a void:Dataset ;
-    rdfs:label "Property Partition: reusedFromMTime"@en ;
-    void:property <https://example.org/bb-5kbc-sites/reusedFromMTime> ;
-    void:triples 1 .
-
 <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_rights> a void:Dataset ;
     rdfs:label "Property Partition: rights"@en ;
     void:property dc:rights ;
@@ -1059,11 +1054,6 @@ doap: a voaf:Vocabulary ;
     rdfs:label "Property Partition: rowCount"@en ;
     void:property <http://w3id.org/bb5kbc/rowCount>,
         <https://example.org/bb-5kbc-sites/rowCount> ;
-    void:triples 1 .
-
-<http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_stageStatus> a void:Dataset ;
-    rdfs:label "Property Partition: stageStatus"@en ;
-    void:property <https://example.org/bb-5kbc-sites/stageStatus> ;
     void:triples 1 .
 
 <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_startedAtTime> a void:Dataset ;
@@ -1094,12 +1084,12 @@ doap: a voaf:Vocabulary ;
 <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_type> a void:Dataset ;
     rdfs:label "Property Partition: type"@en ;
     void:property rdf:type ;
-    void:triples 3858 .
+    void:triples 3859 .
 
 <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_used> a void:Dataset ;
     rdfs:label "Property Partition: used"@en ;
     void:property prov:used ;
-    void:triples 11 .
+    void:triples 10 .
 
 <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_versionIRI> a void:Dataset ;
     rdfs:label "Property Partition: versionIRI"@en ;
@@ -1124,17 +1114,22 @@ doap: a voaf:Vocabulary ;
 <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_wasDerivedFrom> a void:Dataset ;
     rdfs:label "Property Partition: wasDerivedFrom"@en ;
     void:property prov:wasDerivedFrom ;
-    void:triples 5 .
+    void:triples 7 .
 
 <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_wasGeneratedBy> a void:Dataset ;
     rdfs:label "Property Partition: wasGeneratedBy"@en ;
     void:property prov:wasGeneratedBy ;
-    void:triples 7 .
+    void:triples 10 .
 
 <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_wasInformedBy> a void:Dataset ;
     rdfs:label "Property Partition: wasInformedBy"@en ;
     void:property prov:wasInformedBy ;
     void:triples 4 .
+
+<http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_wikidataMatchDescription> a void:Dataset ;
+    rdfs:label "Property Partition: wikidataMatchDescription"@en ;
+    void:property <http://w3id.org/bb5kbc/ont/wikidataMatchDescription> ;
+    void:triples 417 .
 
 <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_wurdeEntdecktDurch> a void:Dataset ;
     rdfs:label "Property Partition: wurdeEntdecktDurch"@en ;
@@ -1292,18 +1287,18 @@ foaf:Person rdfs:label "Person"@en .
         adms:Asset ;
     rdfs:label "Brandenburg_5000_BC_Data"@en ;
     vext:averageLiteralLength 0 ;
-    vext:averageObjectIRILength 33 ;
+    vext:averageObjectIRILength 34 ;
     vext:averagePropertyIRILength 44 ;
     vext:averageSubjectIRILength 37 ;
     vext:datatypes 0 ;
     vext:distinctBlankNodes 0 ;
-    vext:distinctIRIReferences 13015 ;
+    vext:distinctIRIReferences 13432 ;
     vext:distinctLiterals 0 ;
-    vext:distinctRDFNodes 13015 ;
+    vext:distinctRDFNodes 13432 ;
     vext:languages 0 ;
     vext:propertyClasses 0 ;
     dc:language <http://www.lexvo.org/page/iso639-1/en> ;
-    dcterms:modified "2026-04-27T18:43:52"^^xsd:dateTime ;
+    dcterms:modified "2026-04-27T19:13:17"^^xsd:dateTime ;
     dcterms:subject <http://dbpedia.org/resource/Location>,
         <http://dbpedia.org/resource/OGC_GeoSPARQL>,
         <http://dbpedia.org/resource/Time>,
@@ -1381,12 +1376,12 @@ foaf:Person rdfs:label "Person"@en .
         <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_externalIdentifierType> ;
     void:classes 71 ;
     void:dataDump <https://Research-Squirrel-Engineers.github.io/bb-5kbc-sites//index.ttl> ;
-    void:distinctObjects 8086 ;
-    void:distinctSubjects 4849 ;
-    void:entities 3726 ;
+    void:distinctObjects 8503 ;
+    void:distinctSubjects 4850 ;
+    void:entities 3727 ;
     void:feature <http://www.w3.org/ns/formats/RDFa>,
         <http://www.w3.org/ns/formats/Turtle> ;
-    void:properties 80 ;
+    void:properties 79 ;
     void:propertyPartition <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_activityDesc>,
         <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_asWKT>,
         <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_atLocation>,
@@ -1446,10 +1441,8 @@ foaf:Person rdfs:label "Person"@en .
         <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_range>,
         <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_relatedMatch>,
         <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_representativeGeometry>,
-        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_reusedFromMTime>,
         <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_rights>,
         <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_rowCount>,
-        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_stageStatus>,
         <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_startedAtTime>,
         <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_subClassOf>,
         <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_subPropertyOf>,
@@ -1464,9 +1457,10 @@ foaf:Person rdfs:label "Person"@en .
         <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_wasDerivedFrom>,
         <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_wasGeneratedBy>,
         <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_wasInformedBy>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_wikidataMatchDescription>,
         <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_wurdeEntdecktDurch>,
         <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_wurdeGeoreferenziertDurch> ;
-    void:triples 35587 ;
+    void:triples 36018 ;
     void:uriSpace "http://w3id.org/bb5kbc/"^^xsd:string ;
     void:vocabulary vext:,
         dcam:,

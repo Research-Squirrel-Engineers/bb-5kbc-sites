@@ -2,6 +2,7 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix void: <http://rdfs.org/ns/void#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <http://w3id.org/bb5kbc/kreis_c8b09c56> a ns1:Kreis,
         <http://www.w3.org/ns/ldp#Resource>,
@@ -12,5 +13,6 @@
         <https://www.openstreetmap.org/relation/1514927>,
         <https://www.wikidata.org/entity/Q1341090> ;
     ns1:inBundesland <http://w3id.org/bb5kbc/bundesland_076e84b3> ;
+    ns1:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Powiat Starogardzki' -> 'powiat starogardzki'"^^xsd:string ;
     skos:prefLabel "pow. Starogardzki"@de .
 

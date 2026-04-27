@@ -15,5 +15,6 @@
         <http://w3id.org/bb5kbc/ont/hatFID>,
         <http://w3id.org/bb5kbc/ont/hatFundstellenID>,
         <http://w3id.org/bb5kbc/ont/hatGenauigkeit>,
-        <http://w3id.org/bb5kbc/ont/hatKatalognummer> .
+        <http://w3id.org/bb5kbc/ont/hatKatalognummer>,
+        <http://w3id.org/bb5kbc/ont/wikidataMatchDescription> .
 

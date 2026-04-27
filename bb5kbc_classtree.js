@@ -123,16 +123,6 @@ var tree={
         }
       },
       {
-        "id": "https://example.org/bb-5kbc-sites/fst_standortanalysen_ref_csv",
-        "parent": "http://www.w3.org/ns/prov#Entity",
-        "type": "instance",
-        "text": " (ns1:fst_standortanalysen_ref_csv)",
-        "data": {
-          "from": {},
-          "to": {}
-        }
-      },
-      {
         "id": "https://example.org/bb-5kbc-sites/fst_standortanalysen_ref_mapped_csv",
         "parent": "http://www.w3.org/ns/prov#Entity",
         "type": "instance",
@@ -147,6 +137,16 @@ var tree={
         "parent": "http://www.w3.org/ns/prov#Entity",
         "type": "instance",
         "text": "Final enriched dataset (LOD-ready) (ns1:fst_wgs84_csv)",
+        "data": {
+          "from": {},
+          "to": {}
+        }
+      },
+      {
+        "id": "https://example.org/bb-5kbc-sites/fst_standortanalysen_ref_csv",
+        "parent": "http://www.w3.org/ns/prov#Entity",
+        "type": "instance",
+        "text": " (ns1:fst_standortanalysen_ref_csv)",
         "data": {
           "from": {},
           "to": {}
@@ -5785,6 +5785,9 @@ var tree={
             "http://w3id.org/bb5kbc/ont/hatGenauigkeit": {
               "instancecount": 540
             },
+            "http://w3id.org/bb5kbc/ont/hatKatalognummer": {
+              "instancecount": 488
+            },
             "http://w3id.org/bb5kbc/ont/hatKulturelleZuordnung": {
               "instancecount": 540,
               "http://w3id.org/bb5kbc/ont/KulturelleZuordnung": 540
@@ -5796,10 +5799,6 @@ var tree={
             "http://w3id.org/bb5kbc/ont/inGemeinde": {
               "instancecount": 540,
               "http://w3id.org/bb5kbc/ont/Gemeinde": 540
-            },
-            "http://w3id.org/bb5kbc/ont/wurdeEntdecktDurch": {
-              "instancecount": 432,
-              "http://w3id.org/bb5kbc/ont/Entdeckung": 432
             },
             "http://w3id.org/bb5kbc/ont/wurdeGeoreferenziertDurch": {
               "instancecount": 540,
@@ -5819,8 +5818,9 @@ var tree={
             "http://www.w3.org/2004/02/skos/core#prefLabel": {
               "instancecount": 540
             },
-            "http://w3id.org/bb5kbc/ont/hatKatalognummer": {
-              "instancecount": 488
+            "http://w3id.org/bb5kbc/ont/wurdeEntdecktDurch": {
+              "instancecount": 432,
+              "http://w3id.org/bb5kbc/ont/Entdeckung": 432
             },
             "http://w3id.org/bb5kbc/ont/hatScherbe": {
               "instancecount": 9,
@@ -5868,131 +5868,6 @@ var tree={
             "http://www.w3.org/2000/01/rdf-schema#subClassOf": {
               "instancecount": 3,
               "http://www.w3.org/2002/07/owl#Class": 3
-            }
-          }
-        }
-      },
-      {
-        "id": "https://example.org/bb-5kbc-sites/run/2026-04-27T13-58-01Z/stage2_geo",
-        "parent": "http://www.w3.org/ns/prov#Activity",
-        "type": "instance",
-        "text": " (stage2_geo)",
-        "data": {
-          "from": {},
-          "to": {}
-        }
-      },
-      {
-        "id": "https://example.org/bb-5kbc-sites/run/2026-04-27T13-58-01Z/stage3_merge",
-        "parent": "http://www.w3.org/ns/prov#Activity",
-        "type": "instance",
-        "text": " (stage3_merge)",
-        "data": {
-          "from": {},
-          "to": {}
-        }
-      },
-      {
-        "id": "http://w3id.org/bb5kbc/pipeline_run_2026-04-27T13-59-02Z",
-        "parent": "http://www.w3.org/ns/prov#Activity",
-        "type": "instance",
-        "text": "bb5kbc CSV-to-RDF pipeline run 2026-04-27T13-59-02Z (data:pipeline_run_2026-04-27T13-59-02Z)",
-        "data": {
-          "from": {},
-          "to": {}
-        }
-      },
-      {
-        "id": "https://example.org/bb-5kbc-sites/run/2026-04-27T13-58-01Z/stage1_literature",
-        "parent": "http://www.w3.org/ns/prov#Activity",
-        "type": "instance",
-        "text": " (stage1_literature)",
-        "data": {
-          "from": {},
-          "to": {}
-        }
-      },
-      {
-        "id": "http://w3id.org/bb5kbc/nonns_2026-04-27T13-58-01Z.html",
-        "parent": "http://www.w3.org/ns/prov#Activity",
-        "type": "instance",
-        "text": "CSV enrichment pipeline run 2026-04-27T13-58-01Z (2026-04-27T13-58-01Z)",
-        "data": {
-          "from": {},
-          "to": {}
-        }
-      },
-      {
-        "id": "http://w3id.org/bb5kbc/nonns_Activity.html",
-        "parent": "#",
-        "type": "class",
-        "instancecount": 1,
-        "text": "Activity (prov:Activity)",
-        "data": {
-          "from": {
-            "http://www.w3.org/2000/01/rdf-schema#member": {
-              "http://www.w3.org/2004/02/skos/core#Collection": 2
-            },
-            "http://www.w3.org/ns/prov#wasGeneratedBy": {
-              "http://www.w3.org/ns/prov#Entity": 2
-            },
-            "http://rdfs.org/ns/void#class": {
-              "http://rdfs.org/ns/void#Dataset": 1
-            },
-            "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": {
-              "http://w3id.org/bb5kbc/ont/GeoreferenzierungsAktivitaet": 540
-            },
-            "http://www.w3.org/2000/01/rdf-schema#range": {
-              "http://www.w3.org/2002/07/owl#ObjectProperty": 1
-            }
-          },
-          "to": {
-            "http://rdfs.org/ns/void#inDataset": {
-              "instancecount": 2,
-              "http://www.w3.org/ns/adms#Asset": 2,
-              "http://rdfs.org/ns/void#Dataset": 2
-            },
-            "http://w3id.org/bb5kbc/dataTripleCount": {
-              "instancecount": 1
-            },
-            "http://w3id.org/bb5kbc/rowCount": {
-              "instancecount": 1
-            },
-            "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": {
-              "instancecount": 2,
-              "http://www.w3.org/2002/07/owl#Class": 1
-            },
-            "http://www.w3.org/2000/01/rdf-schema#label": {
-              "instancecount": 3
-            },
-            "http://www.w3.org/ns/prov#endedAtTime": {
-              "instancecount": 1
-            },
-            "http://www.w3.org/ns/prov#startedAtTime": {
-              "instancecount": 1
-            },
-            "http://www.w3.org/ns/prov#used": {
-              "instancecount": 3,
-              "http://www.w3.org/ns/prov#Entity": 1
-            },
-            "http://www.w3.org/ns/prov#wasAssociatedWith": {
-              "instancecount": 3,
-              "http://www.w3.org/ns/prov#Plan": 1,
-              "http://www.w3.org/ns/prov#SoftwareAgent": 1,
-              "http://www.w3.org/2002/07/owl#NamedIndividual": 1,
-              "http://www.w3.org/ns/prov#Agent": 1,
-              "http://xmlns.com/foaf/0.1/Person": 1
-            },
-            "http://www.w3.org/ns/prov#wasInformedBy": {
-              "instancecount": 1,
-              "http://www.w3.org/ns/prov#Activity": 1
-            },
-            "http://www.w3.org/2000/01/rdf-schema#comment": {
-              "instancecount": 1
-            },
-            "http://www.w3.org/2000/01/rdf-schema#subClassOf": {
-              "instancecount": 2,
-              "http://www.w3.org/2002/07/owl#Class": 2
             }
           }
         }
@@ -6379,6 +6254,9 @@ var tree={
               "instancecount": 15,
               "http://w3id.org/bb5kbc/ont/Land": 15
             },
+            "http://w3id.org/bb5kbc/ont/wikidataMatchDescription": {
+              "instancecount": 15
+            },
             "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": {
               "instancecount": 15,
               "http://www.w3.org/2002/07/owl#Class": 15
@@ -6404,12 +6282,13 @@ var tree={
             },
             "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": {
               "http://w3id.org/bb5kbc/ont/Bundesland": 15,
+              "http://w3id.org/bb5kbc/ont/Gemeinde": 318,
               "http://w3id.org/bb5kbc/ont/Land": 2,
-              "http://w3id.org/bb5kbc/ont/Kreis": 82,
-              "http://w3id.org/bb5kbc/ont/Gemeinde": 318
+              "http://w3id.org/bb5kbc/ont/Kreis": 82
             },
             "http://www.w3.org/2000/01/rdf-schema#domain": {
-              "http://www.w3.org/2002/07/owl#ObjectProperty": 3
+              "http://www.w3.org/2002/07/owl#ObjectProperty": 3,
+              "http://www.w3.org/2002/07/owl#DatatypeProperty": 4
             },
             "http://www.w3.org/2000/01/rdf-schema#member": {
               "http://www.w3.org/2004/02/skos/core#Collection": 4
@@ -6733,9 +6612,6 @@ var tree={
             }
           },
           "to": {
-            "http://fuzzy-sl.squirrel.link/ontology/certaintyDesc": {
-              "instancecount": 7
-            },
             "http://rdfs.org/ns/void#inDataset": {
               "instancecount": 12,
               "http://www.w3.org/ns/adms#Asset": 12,
@@ -6753,6 +6629,9 @@ var tree={
             },
             "http://www.w3.org/2004/02/skos/core#prefLabel": {
               "instancecount": 12
+            },
+            "http://fuzzy-sl.squirrel.link/ontology/certaintyDesc": {
+              "instancecount": 7
             }
           }
         }
@@ -10007,6 +9886,9 @@ var tree={
               "instancecount": 320,
               "http://w3id.org/bb5kbc/ont/Kreis": 320
             },
+            "http://w3id.org/bb5kbc/ont/wikidataMatchDescription": {
+              "instancecount": 318
+            },
             "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": {
               "instancecount": 318,
               "http://www.w3.org/2002/07/owl#Class": 318
@@ -10867,6 +10749,9 @@ var tree={
             "http://w3id.org/bb5kbc/ont/inBundesland": {
               "instancecount": 85,
               "http://w3id.org/bb5kbc/ont/Bundesland": 85
+            },
+            "http://w3id.org/bb5kbc/ont/wikidataMatchDescription": {
+              "instancecount": 82
             },
             "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": {
               "instancecount": 82,
@@ -17190,6 +17075,80 @@ var tree={
               "http://www.w3.org/2002/07/owl#NamedIndividual": 540,
               "http://www.w3.org/ns/prov#Agent": 540,
               "http://xmlns.com/foaf/0.1/Person": 540
+            }
+          }
+        }
+      },
+      {
+        "id": "http://w3id.org/bb5kbc/nonns_Activity.html",
+        "parent": "#",
+        "type": "class",
+        "text": "Activity (prov:Activity)",
+        "data": {
+          "from": {
+            "http://rdfs.org/ns/void#class": {
+              "http://rdfs.org/ns/void#Dataset": 1
+            },
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": {
+              "http://w3id.org/bb5kbc/ont/GeoreferenzierungsAktivitaet": 540
+            },
+            "http://www.w3.org/2000/01/rdf-schema#member": {
+              "http://www.w3.org/2004/02/skos/core#Collection": 2
+            },
+            "http://www.w3.org/2000/01/rdf-schema#range": {
+              "http://www.w3.org/2002/07/owl#ObjectProperty": 1
+            },
+            "http://www.w3.org/ns/prov#wasGeneratedBy": {
+              "http://www.w3.org/ns/prov#Entity": 2
+            }
+          },
+          "to": {
+            "http://rdfs.org/ns/void#inDataset": {
+              "instancecount": 2,
+              "http://www.w3.org/ns/adms#Asset": 2,
+              "http://rdfs.org/ns/void#Dataset": 2
+            },
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": {
+              "instancecount": 2,
+              "http://www.w3.org/2002/07/owl#Class": 1
+            },
+            "http://www.w3.org/2000/01/rdf-schema#comment": {
+              "instancecount": 1
+            },
+            "http://www.w3.org/2000/01/rdf-schema#label": {
+              "instancecount": 3
+            },
+            "http://www.w3.org/2000/01/rdf-schema#subClassOf": {
+              "instancecount": 2,
+              "http://www.w3.org/2002/07/owl#Class": 2
+            },
+            "http://w3id.org/bb5kbc/dataTripleCount": {
+              "instancecount": 1
+            },
+            "http://w3id.org/bb5kbc/rowCount": {
+              "instancecount": 1
+            },
+            "http://www.w3.org/ns/prov#endedAtTime": {
+              "instancecount": 1
+            },
+            "http://www.w3.org/ns/prov#startedAtTime": {
+              "instancecount": 1
+            },
+            "http://www.w3.org/ns/prov#used": {
+              "instancecount": 3,
+              "http://www.w3.org/ns/prov#Entity": 1
+            },
+            "http://www.w3.org/ns/prov#wasAssociatedWith": {
+              "instancecount": 3,
+              "http://www.w3.org/ns/prov#Plan": 1,
+              "http://www.w3.org/ns/prov#SoftwareAgent": 1,
+              "http://www.w3.org/2002/07/owl#NamedIndividual": 1,
+              "http://www.w3.org/ns/prov#Agent": 1,
+              "http://xmlns.com/foaf/0.1/Person": 1
+            },
+            "http://www.w3.org/ns/prov#wasInformedBy": {
+              "instancecount": 1,
+              "http://www.w3.org/ns/prov#Activity": 1
             }
           }
         }
@@ -28122,14 +28081,14 @@ var tree={
               "instancecount": 540,
               "http://www.w3.org/2002/07/owl#Class": 540
             },
+            "http://www.w3.org/2004/02/skos/core#relatedMatch": {
+              "instancecount": 343
+            },
             "http://www.w3.org/2004/02/skos/core#exactMatch": {
               "instancecount": 107
             },
             "http://www.w3.org/2004/02/skos/core#closeMatch": {
               "instancecount": 51
-            },
-            "http://www.w3.org/2004/02/skos/core#relatedMatch": {
-              "instancecount": 343
             }
           }
         }
@@ -32578,6 +32537,56 @@ var tree={
               "http://www.w3.org/2002/07/owl#Class": 1
             }
           }
+        }
+      },
+      {
+        "id": "https://example.org/bb-5kbc-sites/run/2026-04-27T18-56-13Z/stage3_merge",
+        "parent": "http://www.w3.org/ns/prov#Activity",
+        "type": "instance",
+        "text": " (stage3_merge)",
+        "data": {
+          "from": {},
+          "to": {}
+        }
+      },
+      {
+        "id": "http://w3id.org/bb5kbc/pipeline_run_2026-04-27T19-10-14Z",
+        "parent": "http://www.w3.org/ns/prov#Activity",
+        "type": "instance",
+        "text": "bb5kbc CSV-to-RDF pipeline run 2026-04-27T19-10-14Z (data:pipeline_run_2026-04-27T19-10-14Z)",
+        "data": {
+          "from": {},
+          "to": {}
+        }
+      },
+      {
+        "id": "https://example.org/bb-5kbc-sites/run/2026-04-27T18-56-13Z/stage1_literature",
+        "parent": "http://www.w3.org/ns/prov#Activity",
+        "type": "instance",
+        "text": " (stage1_literature)",
+        "data": {
+          "from": {},
+          "to": {}
+        }
+      },
+      {
+        "id": "https://example.org/bb-5kbc-sites/run/2026-04-27T18-56-13Z/stage2_geo",
+        "parent": "http://www.w3.org/ns/prov#Activity",
+        "type": "instance",
+        "text": " (stage2_geo)",
+        "data": {
+          "from": {},
+          "to": {}
+        }
+      },
+      {
+        "id": "http://w3id.org/bb5kbc/nonns_2026-04-27T18-56-13Z.html",
+        "parent": "http://www.w3.org/ns/prov#Activity",
+        "type": "instance",
+        "text": "CSV enrichment pipeline run 2026-04-27T18-56-13Z (2026-04-27T18-56-13Z)",
+        "data": {
+          "from": {},
+          "to": {}
         }
       },
       {
@@ -38073,6 +38082,9 @@ var tree={
             "http://w3id.org/bb5kbc/ont/hasExternalIdentifier": {
               "instancecount": 10
             },
+            "http://w3id.org/bb5kbc/ont/wikidataMatchDescription": {
+              "instancecount": 2
+            },
             "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": {
               "instancecount": 2,
               "http://www.w3.org/2002/07/owl#Class": 2
@@ -38423,16 +38435,6 @@ var tree={
         }
       },
       {
-        "id": "http://w3id.org/bb5kbc/Activity_collection",
-        "parent": "http://www.w3.org/2004/02/skos/core#Collection",
-        "type": "instance",
-        "text": "Activity Instances Collection (data:Activity_collection)",
-        "data": {
-          "from": {},
-          "to": {}
-        }
-      },
-      {
         "id": "http://w3id.org/bb5kbc/Plan_collection",
         "parent": "http://www.w3.org/2004/02/skos/core#Collection",
         "type": "instance",
@@ -38573,6 +38575,16 @@ var tree={
         }
       },
       {
+        "id": "http://w3id.org/bb5kbc/Activity_collection",
+        "parent": "http://www.w3.org/2004/02/skos/core#Collection",
+        "type": "instance",
+        "text": "Activity Instances Collection (data:Activity_collection)",
+        "data": {
+          "from": {},
+          "to": {}
+        }
+      },
+      {
         "id": "http://w3id.org/bb5kbc/Land_collection",
         "parent": "http://www.w3.org/2004/02/skos/core#Collection",
         "type": "instance",
@@ -38633,33 +38645,33 @@ var tree={
               "instancecount": 26
             },
             "http://www.w3.org/2000/01/rdf-schema#member": {
-              "instancecount": 2624,
-              "http://fuzzy-sl.squirrel.link/ontology/MethodType": 3,
+              "instancecount": 2625,
               "http://w3id.org/bb5kbc/ont/Kreis": 82,
-              "http://w3id.org/bb5kbc/ont/Publikation": 45,
-              "http://w3id.org/bb5kbc/ont/FundstellenartType": 12,
+              "http://w3id.org/bb5kbc/ont/DatierungsMethodeType": 2,
+              "http://www.w3.org/ns/prov#Activity": 1,
+              "http://w3id.org/bb5kbc/ont/Scherbe": 9,
+              "http://w3id.org/bb5kbc/ont/EntdeckungsartType": 12,
+              "http://www.w3.org/ns/prov#Entity": 2,
               "http://www.w3.org/ns/prov#Plan": 2,
               "http://www.w3.org/ns/prov#SoftwareAgent": 2,
-              "http://www.w3.org/2002/07/owl#DatatypeProperty": 9,
-              "http://w3id.org/bb5kbc/ont/EntdeckungsartType": 12,
-              "http://www.w3.org/ns/prov#Activity": 1,
-              "http://www.w3.org/2002/07/owl#Class": 16,
-              "http://w3id.org/bb5kbc/ont/GeoreferenzierungsAktivitaet": 540,
-              "http://www.w3.org/2002/07/owl#Ontology": 1,
-              "http://w3id.org/bb5kbc/ont/DatierungsMethodeType": 2,
+              "http://fuzzy-sl.squirrel.link/ontology/MethodType": 3,
               "http://w3id.org/bb5kbc/ont/Kulturgruppe": 9,
+              "http://www.w3.org/2002/07/owl#Ontology": 1,
+              "http://www.w3.org/2002/07/owl#ObjectProperty": 16,
+              "http://w3id.org/bb5kbc/ont/Datierung": 540,
+              "http://w3id.org/bb5kbc/ont/Entdeckung": 432,
               "http://w3id.org/bb5kbc/ont/externalIdentifierType": 12,
               "http://www.w3.org/2002/07/owl#NamedIndividual": 12,
-              "http://fuzzy-sl.squirrel.link/ontology/SourceType": 4,
-              "http://w3id.org/bb5kbc/ont/Scherbe": 9,
-              "http://w3id.org/bb5kbc/ont/Entdeckung": 432,
-              "http://www.w3.org/2002/07/owl#ObjectProperty": 16,
-              "http://w3id.org/bb5kbc/ont/Land": 2,
-              "http://w3id.org/bb5kbc/ont/Datierung": 540,
-              "http://w3id.org/bb5kbc/ont/Bundesland": 15,
+              "http://w3id.org/bb5kbc/ont/GeoreferenzierungsAktivitaet": 540,
+              "http://w3id.org/bb5kbc/ont/Publikation": 45,
+              "http://w3id.org/bb5kbc/ont/Gemeinde": 318,
               "http://w3id.org/bb5kbc/ont/KulturelleZuordnung": 540,
-              "http://www.w3.org/ns/prov#Entity": 2,
-              "http://w3id.org/bb5kbc/ont/Gemeinde": 318
+              "http://w3id.org/bb5kbc/ont/FundstellenartType": 12,
+              "http://fuzzy-sl.squirrel.link/ontology/SourceType": 4,
+              "http://w3id.org/bb5kbc/ont/Land": 2,
+              "http://www.w3.org/2002/07/owl#Class": 16,
+              "http://www.w3.org/2002/07/owl#DatatypeProperty": 10,
+              "http://w3id.org/bb5kbc/ont/Bundesland": 15
             }
           }
         }

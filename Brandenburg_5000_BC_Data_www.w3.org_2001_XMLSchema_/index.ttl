@@ -9,5 +9,5 @@
     void:linkPredicate rdfs:range ;
     void:objectsTarget xsd: ;
     void:subjectsTarget <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data> ;
-    void:triples 9 .
+    void:triples 10 .
 

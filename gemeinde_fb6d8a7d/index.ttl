@@ -2,6 +2,7 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix void: <http://rdfs.org/ns/void#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <http://w3id.org/bb5kbc/gemeinde_fb6d8a7d> a ns1:Gemeinde,
         <http://www.w3.org/ns/ldp#Resource>,
@@ -12,5 +13,6 @@
         <https://www.openstreetmap.org/relation/2090553>,
         <https://www.wikidata.org/entity/Q1796771> ;
     ns1:inKreis <http://w3id.org/bb5kbc/kreis_a9d8c52e> ;
+    ns1:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Köthen' -> 'Köthen'"^^xsd:string ;
     skos:prefLabel "Köthen"@de .
 

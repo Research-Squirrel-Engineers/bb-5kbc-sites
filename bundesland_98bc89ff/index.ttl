@@ -2,6 +2,7 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix void: <http://rdfs.org/ns/void#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <http://w3id.org/bb5kbc/bundesland_98bc89ff> a ns1:Bundesland,
         <http://www.w3.org/ns/ldp#Resource>,
@@ -12,5 +13,6 @@
         <https://www.openstreetmap.org/relation/224462>,
         <https://www.wikidata.org/entity/Q54181> ;
     ns1:inLand <http://w3id.org/bb5kbc/land_c5d7f540> ;
+    ns1:wikidataMatchDescription "Direct override | 'Woj. Śląskie' -> QID=Q54181 | [stripped -> 'Śląskie'; override -> QID=Q54181]"^^xsd:string ;
     skos:prefLabel "Woj. Śląskie"@de .
 

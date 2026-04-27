@@ -2,6 +2,7 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix void: <http://rdfs.org/ns/void#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <http://w3id.org/bb5kbc/gemeinde_04edad38> a ns1:Gemeinde,
         <http://www.w3.org/ns/ldp#Resource>,
@@ -10,5 +11,6 @@
     void:inDataset <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data> ;
     ns1:hasExternalIdentifier <https://www.wikidata.org/entity/Q25302> ;
     ns1:inKreis <http://w3id.org/bb5kbc/kreis_3e64d70d> ;
+    ns1:wikidataMatchDescription "Direct override | 'Gmina Raciborz' -> QID=Q25302 | [override -> QID=Q25302]"^^xsd:string ;
     skos:prefLabel "Gmina Raciborz"@de .
 

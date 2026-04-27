@@ -2,6 +2,7 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix void: <http://rdfs.org/ns/void#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <http://w3id.org/bb5kbc/gemeinde_1d1e9123> a ns1:Gemeinde,
         <http://www.w3.org/ns/ldp#Resource>,
@@ -11,5 +12,6 @@
     ns1:hasExternalIdentifier <https://www.openstreetmap.org/relation/3877259>,
         <https://www.wikidata.org/entity/Q1774345> ;
     ns1:inKreis <http://w3id.org/bb5kbc/kreis_f18982f6> ;
+    ns1:wikidataMatchDescription "Transitive P131+ exact match | 'Kliestow' -> 'Kliestow'"^^xsd:string ;
     skos:prefLabel "Kliestow"@de .
 

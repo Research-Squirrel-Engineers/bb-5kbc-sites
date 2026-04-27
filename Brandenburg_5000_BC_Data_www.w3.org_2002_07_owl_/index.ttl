@@ -13,5 +13,5 @@
     void:objectsTarget owl: ;
     void:subjectsTarget <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data> ;
     void:triples 1,
-        48 .
+        49 .
 
