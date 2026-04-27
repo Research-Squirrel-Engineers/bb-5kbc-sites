@@ -4,8 +4,8 @@ CSV ENRICHMENT PIPELINE
   Data dir: c:\git\bb-5kbc-sites\data
   Original: fst_wgs84_comma.csv
   Final:    fst_wgs84.csv
-  Git:      59fec483 on main (dirty)
-  Run ID:   2026-04-27T08-01-49Z
+  Git:      c6d67f6a on main (dirty)
+  Run ID:   2026-04-27T08-21-21Z
   Run log:  c:\git\bb-5kbc-sites\data\csv_enrichment_run.log
 
 ==============================================================================
@@ -17,7 +17,7 @@ CSV ENRICHMENT PIPELINE
   [enrich_qids] QID_quelle_georef: 202 new, 335 pre-existing
   [enrich_qids] QID_publikation:   265 new, 0 pre-existing
   [enrich_qids] 9 missing/empty entries -> c:\git\bb-5kbc-sites\data\csv_enrichment_literature.log
-  [stage 1/4] done in 0.16s
+  [stage 1/4] done in 0.15s
 
 ==============================================================================
 [2/4]  GEO REFERENCE MAPPING (SPARQL — this takes a few minutes)
@@ -104,13 +104,13 @@ Matching 82 unique KREIS value(s) across 15 Bundesland group(s) (threshold=0.75)
   [Woj. Dolnośląskie / Q54150]  querying Wikidata...
     1122 entries retrieved.
     [OK      ] 'pow. Głogówski'                     QID=Q631754     GeoNames=7530806       score=0.94  matched='Powiat Głogowski'
-    [OK      ] 'pow. Jaworski'                      QID=Q637105     GeoNames=7530815       score=1.00  matched='Powiat Jaworski'
+    [OK      ] 'pow. Jaworski'                      QID=Q637105     GeoNames=7530815       score=1.00  matched='powiat jaworski'
     [OK      ] 'pow. Lubiński'                      QID=Q687839     GeoNames=7530831       score=1.00  matched='powiat lubiński'
-    [OK      ] 'pow. Gorẃski'                       QID=Q637105     GeoNames=7530815       score=0.83  matched='Powiat Jaworski'
+    [OK      ] 'pow. Gorẃski'                       QID=Q636757     GeoNames=None          score=1.00  matched='Powiat Górowski'
     [OK      ] 'pow. Wołowski'                      QID=Q715925     GeoNames=7530849       score=1.00  matched='powiat wołowski'
     [OK      ] 'pow. Ząbkowicki'                    QID=Q716143     GeoNames=7530851       score=1.00  matched='Powiat Ząbkowicki'
     [OK      ] 'pow. Wrocławski'                    QID=Q715974     GeoNames=7530850       score=1.00  matched='powiat wrocławski'
-    [OK      ] 'pow. Oławski'                       QID=Q715475     GeoNames=7530835       score=1.00  matched='Powiat Oławski'
+    [OK      ] 'pow. Oławski'                       QID=Q715475     GeoNames=7530835       score=1.00  matched='powiat oławski'
     [OK      ] 'pow. Strzeliński'                   QID=Q179986     GeoNames=7530837       score=1.00  matched='powiat strzeliński'
   [Woj. Kujawsko-Pomorskie / Q54153]  querying Wikidata...
     570 entries retrieved.
@@ -340,11 +340,11 @@ Matching 318 unique GEMEINDE value(s) across 82 Kreis group(s)...
     149 index entries.
     [OK      ] 'Angermünde'                              QID=Q490066       score=1.00  matched='Angermünde'
     [OK      ] 'Herzsprung'                              QID=Q33198119     score=1.00  matched='Herzsprung'
-    [OK      ] 'Gramzow'                                 QID=Q636566       score=1.00  matched='Gramzow'
+    [OK      ] 'Gramzow'                                 QID=Q458313       score=1.00  matched='Gramzow'
     [OK      ] 'Grünow bei Schönermark'                  QID=Q624125       score=1.00  matched='Grünow bei Schönermark'
     [OK      ] 'Berkholz zu Berkholz-Meyenburg'          QID=Q621916       score=1.00  matched='Berkholz zu Berkholz-Meyenburg'
     [OK      ] 'Gartz'                                   QID=Q571998       score=1.00  matched='Gartz'
-    [OK      ] 'Brüssow'                                 QID=Q537852       score=1.00  matched='Brüssow'
+    [OK      ] 'Brüssow'                                 QID=Q455368       score=1.00  matched='Brüssow'
     [OK      ] 'Prenzlau'                                QID=Q537214       score=1.00  matched='Prenzlau'
     [OK      ] 'Schönfeld bei Prenzlau'                  QID=Q623861       score=1.00  matched='Schönfeld bei Prenzlau'
     [OK      ] 'Schenkenberg'                            QID=Q429574       score=1.00  matched='Schenkenberg'
@@ -589,10 +589,9 @@ Matching 318 unique GEMEINDE value(s) across 82 Kreis group(s)...
     [OK      ] 'Gmina Żukowice'                          QID=Q2326629      score=1.00  matched='Gmina Żukowice'
     [OK      ] 'Gmina Głogów'                            QID=Q2467328      score=1.00  matched='Gmina Głogów'
     [OK      ] 'Gmina Pęcław'                            QID=Q2100627      score=1.00  matched='Gmina Pęcław'
-  [pow. Gorẃski / Q637105]  Stage 1: fetching index...
-    40 index entries.
-    Stage 2: 1 item(s) not matched — trying transitive P131+ lookup...
-    [NO MATCH] 'Gmina Góra'                              QID=None          score=n/a  matched='None'
+  [pow. Gorẃski / Q636757]  Stage 1: fetching index...
+    33 index entries.
+    [OK      ] 'Gmina Góra'                              QID=Q2617476      score=1.00  matched='Gmina Góra'
   [pow. Jaworski / Q637105]  Stage 1: fetching index...
     40 index entries.
     [OK      ] 'Gmina Jawor'                             QID=Q731805       score=1.00  matched='Gmina Jawor'
@@ -674,9 +673,9 @@ Matching 318 unique GEMEINDE value(s) across 82 Kreis group(s)...
     116 index entries.
     [OK      ] 'Gmina Dobre'                             QID=Q2051728      score=1.00  matched='Gmina Dobre'
 
-  Stage 1 matches: 199
+  Stage 1 matches: 200
   Stage 2 matches: 118
-  Total matched:   317 / 318
+  Total matched:   318 / 318
 
 [1/2] Mapped CSV:  c:\git\bb-5kbc-sites\data\enrichment\mapping_admin_regions\fst_standortanalysen_ref_mapped.csv
 [2/2] Report CSV:  c:\git\bb-5kbc-sites\data\enrichment\mapping_admin_regions\fst_standortanalysen_ref_report.csv
@@ -694,10 +693,10 @@ Rows: 540
                 total       15       15         0         15       8       5      15
 
   KREIS         DE          37       37         0         17      13       1      17
-                PL          45       45         0         39       0       0      39
-                total       82       82         0         56      13       1      56
+                PL          45       45         0         38       0       0      38
+                total       82       82         0         55      13       1      55
 
-  [stage 2/4] done in 620.34s
+  [stage 2/4] done in 467.44s
 
 ==============================================================================
 [3/4]  GEO MERGE
@@ -708,7 +707,7 @@ Rows: 540
   [enrich_fst]   540 rows, 46 columns
   [enrich_fst] Wrote: c:\git\bb-5kbc-sites\data\fst_wgs84.csv
   [enrich_fst]   Rows: 540  |  Columns: 65
-  [stage 3/4] done in 0.12s
+  [stage 3/4] done in 0.10s
 
 ==============================================================================
 [4/4]  PROVENANCE MANIFEST
@@ -718,7 +717,7 @@ Rows: 540
 ==============================================================================
 PIPELINE COMPLETE
 ==============================================================================
-  Total time:       622.18s
+  Total time:       468.86s
   Literature QIDs:  202 georef + 265 pub  (9 missing in csv_enrichment_literature.log)
   Final CSV:        c:\git\bb-5kbc-sites\data\fst_wgs84.csv
                     540 rows x 65 columns

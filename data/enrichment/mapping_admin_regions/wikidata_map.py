@@ -226,6 +226,17 @@ KREIS_OVERRIDES: dict[str, dict] = {
         "label": "Powiat Górowski",
         "source": "override",
     },
+    # Encoding artefact variant of the same powiat (source data has 'ẃ' instead
+    # of 'ów' due to a character encoding issue). The KREIS_ALIASES entry
+    # 'pow. gorẃski' does not catch this because the pow.→Powiat substitution
+    # in normalise_kreis() runs before the alias lookup, so the value reaching
+    # the alias dictionary is already 'Powiat Gorẃski'. A direct override for
+    # the post-substitution form bypasses fuzzy matching deterministically.
+    "powiat gorẃski": {
+        "qid": "Q636757",
+        "label": "Powiat Górowski",
+        "source": "override",
+    },
     "powiat kościański": {
         "qid": "Q133188",
         "label": "Powiat Kościański",
