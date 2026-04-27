@@ -1,0 +1,28 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: bb-5k-bc | Linked Open Data
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: Sophie C.
+    family-names: Schmidt
+    orcid: 'https://orcid.org/0000-0003-4696-2101'
+    affiliation: FU Berlin
+  - given-names: Florian
+    family-names: Thiery
+    affiliation: Research Squirrel Engineers Network
+    orcid: 'https://orcid.org/0000-0002-3246-3531'
+repository-code: >-
+  https://github.com/Research-Squirrel-Engineers/bb-5kbc-sites/
+abstract: >-
+  Linked Open Data zu archäologischen Fundstellen (~5000 BC)
+  in Brandenburg, Ostdeutschland und Westpolen — als
+  RDF-Datensatz, anwendungsspezifischer Ontologie und
+  reproduzierbarem CSV-zu-RDF-Pipeline.
+license: MIT
+version: v0.9
+date-released: '2026-04-27'
