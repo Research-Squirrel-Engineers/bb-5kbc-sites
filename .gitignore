@@ -58,6 +58,9 @@ cover/
 *.log
 !fst_standortanalysen_ref_run.log
 !dist/report.log
+!csv_enrichment_geo.log
+!csv_enrichment_literature.log
+!csv_enrichment_run.log
 local_settings.py
 db.sqlite3
 db.sqlite3-journal

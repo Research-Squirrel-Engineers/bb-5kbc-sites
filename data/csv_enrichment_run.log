@@ -1,0 +1,727 @@
+==============================================================================
+CSV ENRICHMENT PIPELINE
+==============================================================================
+  Data dir: c:\git\bb-5kbc-sites\data
+  Original: fst_wgs84_comma.csv
+  Final:    fst_wgs84.csv
+  Git:      59fec483 on main (dirty)
+  Run ID:   2026-04-27T08-01-49Z
+  Run log:  c:\git\bb-5kbc-sites\data\csv_enrichment_run.log
+
+==============================================================================
+[1/4]  LITERATURE ENRICHMENT
+==============================================================================
+  [enrich_qids] Reading: c:\git\bb-5kbc-sites\data\fst_wgs84_comma.csv
+  [enrich_qids]   540 rows, 33 columns
+  [enrich_qids] Wrote:   c:\git\bb-5kbc-sites\data\fst_wgs84_lit_enriched.csv
+  [enrich_qids] QID_quelle_georef: 202 new, 335 pre-existing
+  [enrich_qids] QID_publikation:   265 new, 0 pre-existing
+  [enrich_qids] 9 missing/empty entries -> c:\git\bb-5kbc-sites\data\csv_enrichment_literature.log
+  [stage 1/4] done in 0.16s
+
+==============================================================================
+[2/4]  GEO REFERENCE MAPPING (SPARQL — this takes a few minutes)
+==============================================================================
+Run log: c:\git\bb-5kbc-sites\data\csv_enrichment_geo.log
+
+Fetching country index...
+  4210 entries.
+
+Matching 2 unique LAND value(s) (threshold=0.85)...
+
+  [OK      ] 'Deutschland'                        QID=Q183        GeoNames=2921044       score=1.00  matched='Deutschland'
+  [OK      ] 'Polen'                              QID=Q36         GeoNames=798544        score=1.00  matched='Polen'
+Fetching Bundesland/Voivodeship index...
+  598 entries.
+
+Matching 15 unique BUNDESLAND value(s) (threshold=0.85)...
+
+  [OK      ] 'Thüringen'                          QID=Q1205       GeoNames=2822542       score=1.00  matched='Thüringen'
+  [OK      ] 'Sachsen-Anhalt'                     QID=Q1206       GeoNames=2842565       score=1.00  matched='Sachsen-Anhalt'
+  [OK      ] 'Sachsen'                            QID=Q1202       GeoNames=2842566       score=1.00  matched='Sachsen'
+  [OK      ] 'Brandenburg'                        QID=Q1208       GeoNames=2945356       score=1.00  matched='Brandenburg'
+  [OK      ] 'Woj. Lubuskie'                      QID=Q54157      GeoNames=3337494       score=1.00  matched='lubuskie'
+  [OK      ] 'Woj. Zachodniopomorskie'            QID=Q54188      GeoNames=3337499       score=1.00  matched='zachodniopomorskie'
+  [OK      ] 'Woj. Wielkopolskie'                 QID=Q54187      GeoNames=3337498       score=1.00  matched='wielkopolskie'
+  [OK      ] 'Woj. Dolnośląskie'                  QID=Q54150      GeoNames=3337492       score=1.00  matched='Dolnośląskie'
+  [OK      ] 'Woj. Opolskie'                      QID=Q54171      GeoNames=3337495       score=1.00  matched='opolskie'
+  [OK      ] 'Woj. Małopolskie'                   QID=Q54159      GeoNames=858786        score=1.00  matched='małopolskie'
+  [OK      ] 'Woj. Śląskie'                       QID=Q54181      GeoNames=3337497       score=1.00  matched='śląskie'
+  [OK      ] 'Woj. Kujawsko-Pomorskie'            QID=Q54153      GeoNames=3337500       score=1.00  matched='kujawsko-pomorskie'
+  [OK      ] 'Woj. Pomorskie'                     QID=Q54180      GeoNames=3337496       score=1.00  matched='pomorskie'
+  [OK      ] 'Woj. Warmińsko-Mazurskie'           QID=Q54184      GeoNames=858791        score=1.00  matched='warmińsko-mazurskie'
+  [OK      ] 'MVP'                                QID=Q1196       GeoNames=2872567       score=1.00  matched='Mecklenburg-Vorpommern'
+
+Matching 82 unique KREIS value(s) across 15 Bundesland group(s) (threshold=0.75)...
+
+  [MVP / Q1196]  querying Wikidata...
+    2196 entries retrieved.
+    [OK      ] 'Kreis Rügen'                        QID=Q2909       GeoNames=None          score=1.00  matched='Vorpommern-Rügen'
+  [Sachsen / Q1202]  querying Wikidata...
+    7086 entries retrieved.
+    [OK      ] 'Leipzig-Land'                       QID=Q1323208    GeoNames=None          score=1.00  matched='Landkreis Leipzig-Land'
+    [OK      ] 'Hoyerswerda'                        QID=Q571947     GeoNames=None          score=1.00  matched='Landkreis Hoyerswerda'
+    [OK      ] 'Görlitz'                            QID=Q6317       GeoNames=None          score=1.00  matched='Landkreis Görlitz'
+  [Thüringen / Q1205]  querying Wikidata...
+    3502 entries retrieved.
+    [OK      ] 'Wartburgkreis'                      QID=Q7866       GeoNames=6547388       score=1.00  matched='Wartburgkreis'
+    [OK      ] 'Gotha'                              QID=Q7869       GeoNames=None          score=1.00  matched='Landkreis Gotha'
+    [OK      ] 'Unstrut-Hainich-Kreis'              QID=Q7864       GeoNames=6547389       score=1.00  matched='Unstrut-Hainich-Kreis'
+    [OK      ] 'Sommerda'                           QID=Q7865       GeoNames=None          score=1.00  matched='Landkreis Sömmerda'
+    [OK      ] 'Weimarer Land'                      QID=Q7879       GeoNames=None          score=1.00  matched='Weimarer Land'
+    [OK      ] 'Gera'                               QID=Q706112     GeoNames=2921231       score=1.00  matched='Gera'
+  [Sachsen-Anhalt / Q1206]  querying Wikidata...
+    3686 entries retrieved.
+    [OK      ] 'Landkreis Harz'                     QID=Q6087       GeoNames=None          score=1.00  matched='Landkreis Harz'
+    [OK      ] 'Salzlandkreis'                      QID=Q6081       GeoNames=2950072       score=1.00  matched='Salzlandkreis'
+    [OK      ] 'Burgenlandkreis'                    QID=Q6102       GeoNames=None          score=1.00  matched='Burgenlandkreis'
+    [OK      ] 'Mansfeld-Südharz'                   QID=Q6092       GeoNames=None          score=1.00  matched='Landkreis Mansfeld-Südharz'
+    [OK      ] 'Landkreis Börde'                    QID=Q6064       GeoNames=None          score=1.00  matched='Landkreis Börde'
+    [OK      ] 'Magdeburg'                          QID=Q1733       GeoNames=2874544       score=1.00  matched='Magdeburg'
+    [OK      ] 'Jerichower Land'                    QID=Q6068       GeoNames=3302158       score=1.00  matched='Jerichower Land'
+    [OK      ] 'Saalekreis'                         QID=Q6098       GeoNames=2842671       score=1.00  matched='Saalekreis'
+    [OK      ] 'Anhalt-Bitterfeld'                  QID=Q6071       GeoNames=None          score=1.00  matched='Landkreis Anhalt-Bitterfeld'
+    [OK      ] 'Jessen'                             QID=Q6075       GeoNames=None          score=1.00  matched='Landkreis Jessen'
+  [Brandenburg / Q1208]  querying Wikidata...
+    3907 entries retrieved.
+    [OK      ] 'Havelland'                          QID=Q6139       GeoNames=None          score=1.00  matched='Havelland'
+    [OK      ] 'Teltow-Fläming'                     QID=Q6146       GeoNames=None          score=1.00  matched='Landkreis Teltow-Fläming'
+    [OK      ] 'Dahme-Spreewald'                    QID=Q6173       GeoNames=3249080       score=1.00  matched='Dahme-Spreewald'
+    [OK      ] 'Uckermark'                          QID=Q6109       GeoNames=None          score=1.00  matched='Uckermark'
+    [OK      ] 'Oder-Spree'                         QID=Q6178       GeoNames=3249086       score=1.00  matched='Oder-Spree'
+    [OK      ] 'Märkisch-Oderland'                  QID=Q6181       GeoNames=3249083       score=1.00  matched='Märkisch-Oderland'
+    [OK      ] 'Spree-Neiße'                        QID=Q6165       GeoNames=3249089       score=1.00  matched='Spree-Neiße'
+    [OK      ] 'Frankfurt (Oder)'                   QID=Q4024       GeoNames=2925535       score=1.00  matched='Frankfurt (Oder)'
+    [OK      ] 'Potsdam-Mittelmark'                 QID=Q6142       GeoNames=2852456       score=1.00  matched='Potsdam-Mittelmark'
+    [OK      ] 'Ostprignitz-Ruppin'                 QID=Q6125       GeoNames=3249087       score=1.00  matched='Ostprignitz-Ruppin'
+    [OK      ] 'Potsdam'                            QID=Q1711       GeoNames=7602560       score=1.00  matched='Potsdam'
+    [OK      ] 'Brandenburg (Havel)'                QID=Q3931       GeoNames=None          score=1.00  matched='Brandenburg an der Havel'
+    [OK      ] 'Elbe-Elster'                        QID=Q6152       GeoNames=None          score=1.00  matched='Elbe-Elster'
+    [OK      ] 'Oberhavel'                          QID=Q6119       GeoNames=3249084       score=1.00  matched='Oberhavel'
+    [OK      ] 'Barnim'                             QID=Q6115       GeoNames=None          score=1.00  matched='Barnim'
+    [OK      ] 'Oberspreewald-Lausitz'              QID=Q6156       GeoNames=3249085       score=1.00  matched='Oberspreewald-Lausitz'
+    [OK      ] 'Prignitz'                           QID=Q6132       GeoNames=None          score=1.00  matched='Prignitz'
+  [Woj. Dolnośląskie / Q54150]  querying Wikidata...
+    1122 entries retrieved.
+    [OK      ] 'pow. Głogówski'                     QID=Q631754     GeoNames=7530806       score=0.94  matched='Powiat Głogowski'
+    [OK      ] 'pow. Jaworski'                      QID=Q637105     GeoNames=7530815       score=1.00  matched='Powiat Jaworski'
+    [OK      ] 'pow. Lubiński'                      QID=Q687839     GeoNames=7530831       score=1.00  matched='powiat lubiński'
+    [OK      ] 'pow. Gorẃski'                       QID=Q637105     GeoNames=7530815       score=0.83  matched='Powiat Jaworski'
+    [OK      ] 'pow. Wołowski'                      QID=Q715925     GeoNames=7530849       score=1.00  matched='powiat wołowski'
+    [OK      ] 'pow. Ząbkowicki'                    QID=Q716143     GeoNames=7530851       score=1.00  matched='Powiat Ząbkowicki'
+    [OK      ] 'pow. Wrocławski'                    QID=Q715974     GeoNames=7530850       score=1.00  matched='powiat wrocławski'
+    [OK      ] 'pow. Oławski'                       QID=Q715475     GeoNames=7530835       score=1.00  matched='Powiat Oławski'
+    [OK      ] 'pow. Strzeliński'                   QID=Q179986     GeoNames=7530837       score=1.00  matched='powiat strzeliński'
+  [Woj. Kujawsko-Pomorskie / Q54153]  querying Wikidata...
+    570 entries retrieved.
+    [OK      ] 'pow. Świecki'                       QID=Q774944     GeoNames=7530917       score=1.00  matched='Powiat Świecki'
+    [OK      ] 'pow. Toruński'                      QID=Q650180     GeoNames=7530918       score=1.00  matched='Powiat Toruński'
+    [OK      ] 'pow. Radziejowski'                  QID=Q687625     GeoNames=7530914       score=1.00  matched='powiat radziejowski'
+    [OK      ] 'pow. Aleksandrowski'                QID=Q750491     GeoNames=7530904       score=1.00  matched='powiat aleksandrowski'
+    [OK      ] 'pow. Włocławski'                    QID=Q774833     GeoNames=7530921       score=1.00  matched='powiat włocławski'
+    [OK      ] 'pow. Mogileński'                    QID=Q604053     GeoNames=7530912       score=1.00  matched='Powiat Mogileński'
+    [OK      ] 'pow. Inowrocławski'                 QID=Q773314     GeoNames=7530910       score=1.00  matched='powiat inowrocławski'
+    [OK      ] 'pow. Żniński'                       QID=Q577199     GeoNames=7530922       score=1.00  matched='powiat żniński'
+    [OK      ] 'pow. Miński'                        QID=Q947536     GeoNames=None          score=1.00  matched='Powiat Miński'
+    [OK      ] 'pow. Nakielski'                     QID=Q583446     GeoNames=7530913       score=1.00  matched='powiat nakielski'
+  [Woj. Lubuskie / Q54157]  querying Wikidata...
+    536 entries retrieved.
+    [OK      ] 'pow. Gryfiński'                     QID=Q326895     GeoNames=None          score=1.00  matched='Powiat Gryfiński'
+    [OK      ] 'pow. Krośnieński'                   QID=Q317835     GeoNames=7531030       score=1.00  matched='powiat krośnieński'
+    [OK      ] 'pow. Żarski'                        QID=Q318459     GeoNames=7530731       score=1.00  matched='powiat żarski'
+    [OK      ] 'pow. Krosno Odrzańskie'             QID=Q317835     GeoNames=None          score=1.00  matched='Powiat Krośnieński'
+    [OK      ] 'pow. Sulęciński'                    QID=Q318002     GeoNames=7530987       score=1.00  matched='Powiat Sulęciński'
+    [OK      ] 'pow. Zielonogórski'                 QID=Q318384     GeoNames=7531003       score=1.00  matched='Powiat Zielonogórski'
+    [OK      ] 'pow. Strzelecko-Drezdenecki'        QID=Q317976     GeoNames=7530981       score=1.00  matched='Powiat Strzelecko-Drezdenecki'
+    [OK      ] 'pow. Nowosolski'                    QID=Q317943     GeoNames=7530855       score=1.00  matched='powiat nowosolski'
+    [OK      ] 'pow. Wschowski'                     QID=Q318376     GeoNames=7530812       score=1.00  matched='powiat wschowski'
+    [OK      ] 'pow. Międzyrzecki'                  QID=Q317917     GeoNames=7530979       score=1.00  matched='powiat międzyrzecki'
+  [Woj. Małopolskie / Q54159]  querying Wikidata...
+    663 entries retrieved.
+    [OK      ] 'pow. Słupecki'                      QID=Q133257     GeoNames=None          score=1.00  matched='Powiat Słupecki'
+  [Woj. Opolskie / Q54171]  querying Wikidata...
+    370 entries retrieved.
+    [OK      ] 'pow. Nyski'                         QID=Q461537     GeoNames=7530734       score=1.00  matched='powiat nyski'
+    [OK      ] 'pow. Głubczycki'                    QID=Q461252     GeoNames=7531046       score=1.00  matched='powiat głubczycki'
+    [OK      ] 'pow. Prudnicki'                     QID=Q462130     GeoNames=7531047       score=1.00  matched='powiat prudnicki'
+  [Woj. Pomorskie / Q54180]  querying Wikidata...
+    657 entries retrieved.
+    [OK      ] 'pow. Starogardzki'                  QID=Q1341090    GeoNames=7530934       score=1.00  matched='powiat starogardzki'
+    [OK      ] 'pow. Tczewski'                      QID=Q1341069    GeoNames=7530935       score=1.00  matched='powiat tczewski'
+  [Woj. Śląskie / Q54181]  querying Wikidata...
+    1128 entries retrieved.
+    [OK      ] 'pow. Raciborski'                    QID=Q554313     GeoNames=7531054       score=1.00  matched='Powiat Raciborski'
+  [Woj. Warmińsko-Mazurskie / Q54184]  querying Wikidata...
+    751 entries retrieved.
+    [OK      ] 'pow. Kętrzyński'                    QID=Q1135341    GeoNames=7530860       score=1.00  matched='powiat kętrzyński'
+  [Woj. Wielkopolskie / Q54187]  querying Wikidata...
+    736 entries retrieved.
+    [OK      ] 'pow. Gorzów Wielkopolski'           QID=Q104731     GeoNames=None          score=1.00  matched='Gorzów Wielkopolski'
+    [OK      ] 'pow. Kościan'                       QID=Q133188     GeoNames=7531076       score=0.84  matched='powiat kościański'
+    [OK      ] 'pow. Poznanski'                     QID=Q101575     GeoNames=7530994       score=0.94  matched='powiat poznański'
+  [Woj. Zachodniopomorskie / Q54188]  querying Wikidata...
+    694 entries retrieved.
+    [OK      ] 'pow. Szczecińska'                   QID=Q558408     GeoNames=None          score=1.00  matched='Powiat Szczecinecki'
+    [OK      ] 'pow. Pyrzycki'                      QID=Q1411599    GeoNames=7530845       score=1.00  matched='powiat pyrzycki'
+    [OK      ] 'pow. Stargardzki'                   QID=Q1340630    GeoNames=7530793       score=1.00  matched='powiat stargardzki'
+    [OK      ] 'pow. Myśliborski'                   QID=Q558403     GeoNames=7531005       score=1.00  matched='Powiat myśliborski'
+    [OK      ] 'pow. Policki'                       QID=Q558696     GeoNames=7530844       score=1.00  matched='powiat policki'
+
+Matching 318 unique GEMEINDE value(s) across 82 Kreis group(s)...
+
+  [pow. Poznanski / Q101575]  Stage 1: fetching index...
+    128 index entries.
+    [OK      ] 'Gmina Poznań'                            QID=Q268          score=1.00  matched='Poznań'
+  [pow. Gorzów Wielkopolski / Q104731]  Stage 1: fetching index...
+    645 index entries.
+    [OK      ] 'Gmina Kłodawa'                           QID=Q1532938      score=1.00  matched='Gmina Kłodawa'
+  [pow. Kętrzyński / Q1135341]  Stage 1: fetching index...
+    55 index entries.
+    [OK      ] 'Korsze'                                  QID=Q554998       score=1.00  matched='Korsze'
+  [Leipzig-Land / Q1323208]  Stage 1: fetching index...
+    0 index entries.
+    0 entries — widening to Bundesland Q1202...
+    6595 entries after widening.
+    [OK      ] 'Zwenkau'                                 QID=Q10779        score=1.00  matched='Zwenkau'
+  [pow. Kościan / Q133188]  Stage 1: fetching index...
+    55 index entries.
+    [OK      ] 'Gmina Kościan'                           QID=Q556749       score=1.00  matched='Gmina Kościan'
+  [pow. Słupecki / Q133257]  Stage 1: fetching index...
+    28 index entries.
+    [OK      ] 'Gmina Słubca'                            QID=Q554765       score=0.92  matched='Gmina Słupca'
+  [pow. Stargardzki / Q1340630]  Stage 1: fetching index...
+    66 index entries.
+    [OK      ] 'Gmina Dolice'                            QID=Q557687       score=1.00  matched='Gmina Dolice'
+  [pow. Tczewski / Q1341069]  Stage 1: fetching index...
+    43 index entries.
+    [OK      ] 'Pelplin'                                 QID=Q550734       score=1.00  matched='Pelplin'
+  [pow. Starogardzki / Q1341090]  Stage 1: fetching index...
+    63 index entries.
+    [OK      ] 'Skórcz'                                  QID=Q550720       score=1.00  matched='Skórcz'
+  [pow. Pyrzycki / Q1411599]  Stage 1: fetching index...
+    43 index entries.
+    [OK      ] 'Gmina Kozielice'                         QID=Q558805       score=1.00  matched='Gmina Kozielice'
+    [OK      ] 'Gmina Pyrzyce'                           QID=Q557594       score=1.00  matched='Gmina Pyrzyce'
+    [OK      ] 'Gmina Przelewice'                        QID=Q557756       score=1.00  matched='gmina Przelewice'
+  [Potsdam / Q1711]  Stage 1: fetching index...
+    2730 index entries.
+    [OK      ] 'Bornim'                                  QID=Q893995       score=1.00  matched='Bornim'
+    [OK      ] 'Potsdam'                                 QID=Q32233930     score=1.00  matched='Potsdam'
+    [OK      ] 'Grube'                                   QID=Q23759940     score=1.00  matched='Grube'
+  [Magdeburg / Q1733]  Stage 1: fetching index...
+    7527 index entries.
+    [OK      ] 'Magdeburg'                               QID=Q32116077     score=1.00  matched='Magdeburg'
+  [pow. Strzeliński / Q179986]  Stage 1: fetching index...
+    47 index entries.
+    [OK      ] 'Gmina Wiązów'                            QID=Q2192626      score=1.00  matched='Gmina Wiązów'
+  [Kreis Rügen / Q2909]  Stage 1: fetching index...
+    264 index entries.
+    Stage 2: 1 item(s) not matched — trying transitive P131+ lookup...
+    [OK      ] 'Lietzow'                                 QID=Q339009       score=1.00  matched='Lietzow'
+  [pow. Krosno Odrzańskie / Q317835]  Stage 1: fetching index...
+    42 index entries.
+    [OK      ] 'Gmina Gubin'                             QID=Q1951800      score=1.00  matched='Gmina Gubin'
+  [pow. Krośnieński / Q317835]  Stage 1: fetching index...
+    42 index entries.
+  [pow. Międzyrzecki / Q317917]  Stage 1: fetching index...
+    35 index entries.
+    [OK      ] 'Gmina Międzyrzecz'                       QID=Q2181160      score=1.00  matched='Gmina Międzyrzecz'
+  [pow. Nowosolski / Q317943]  Stage 1: fetching index...
+    38 index entries.
+    [OK      ] 'Gmina Bytom Odrzański'                   QID=Q2248472      score=1.00  matched='Gmina Bytom Odrzański'
+  [pow. Strzelecko-Drezdenecki / Q317976]  Stage 1: fetching index...
+    14 index entries.
+    [OK      ] 'Gmina Zwierzyn'                          QID=Q244653       score=1.00  matched='gmina Zwierzyn'
+    [OK      ] 'Gmina Drezdenko'                         QID=Q2491540      score=1.00  matched='Gmina Drezdenko'
+  [pow. Sulęciński / Q318002]  Stage 1: fetching index...
+    29 index entries.
+    [OK      ] 'Gmina Lubniewice'                        QID=Q2460579      score=1.00  matched='Gmina Lubniewice'
+  [pow. Wschowski / Q318376]  Stage 1: fetching index...
+    18 index entries.
+    [OK      ] 'Gmina Szlichtyngowa'                     QID=Q2216341      score=1.00  matched='gmina Szlichtyngowa'
+  [pow. Zielonogórski / Q318384]  Stage 1: fetching index...
+    46 index entries.
+    [OK      ] 'Sulechów'                                QID=Q1974958      score=1.00  matched='Sulechów'
+    [OK      ] 'Gmina Sulechów'                          QID=Q1974958      score=1.00  matched='Gmina Sulechów'
+  [pow. Żarski / Q318459]  Stage 1: fetching index...
+    59 index entries.
+    [OK      ] 'Gmina Brody'                             QID=Q2241673      score=1.00  matched='Gmina Brody'
+  [pow. Gryfiński / Q326895]  Stage 1: fetching index...
+    55 index entries.
+    [OK      ] 'Moryń'                                   QID=Q557304       score=1.00  matched='Moryń'
+  [Brandenburg (Havel) / Q3931]  Stage 1: fetching index...
+    2356 index entries.
+    [OK      ] 'Kirchmöser'                              QID=Q1670205      score=1.00  matched='Kirchmöser'
+    [OK      ] 'Neuendorf'                               QID=Q30039482     score=1.00  matched='Neuendorf'
+    [OK      ] 'Brandenburg-Altstadt'                    QID=Q3931         score=1.00  matched='Brandenburg an der Havel'
+    [OK      ] 'Brandenburg-Neustadt'                    QID=Q3931         score=1.00  matched='Brandenburg an der Havel'
+  [Frankfurt (Oder) / Q4024]  Stage 1: fetching index...
+    1983 index entries.
+    [OK      ] 'Booßen'                                  QID=Q893226       score=1.00  matched='Booßen'
+    [OK      ] 'Frankfurt (Oder)'                        QID=Q445993       score=1.00  matched='Frankfurt (Oder) city'
+    [OK      ] 'Frankfurt'                               QID=Q4024         score=1.00  matched='Frankfurt (Oder)'
+  [pow. Głubczycki / Q461252]  Stage 1: fetching index...
+    47 index entries.
+    [OK      ] 'Gmina Branice'                           QID=Q2127384      score=1.00  matched='Gmina Branice'
+  [pow. Nyski / Q461537]  Stage 1: fetching index...
+    90 index entries.
+    [OK      ] 'Gmina Paczków'                           QID=Q923169       score=1.00  matched='Gmina Paczków'
+  [pow. Prudnicki / Q462130]  Stage 1: fetching index...
+    158 index entries.
+    [OK      ] 'Gmina Głogówek'                          QID=Q2204843      score=1.00  matched='gmina Głogówek'
+  [pow. Raciborski / Q554313]  Stage 1: fetching index...
+    75 index entries.
+    [OK      ] 'Gmina Raciborz'                          QID=Q25302        score=1.00  matched='Gmina Racibórz'
+  [pow. Myśliborski / Q558403]  Stage 1: fetching index...
+    40 index entries.
+    [OK      ] 'Gmina Nowogródek Pomorski'               QID=Q557815       score=1.00  matched='Gmina Nowogródek Pomorski'
+  [pow. Szczecińska / Q558408]  Stage 1: fetching index...
+    45 index entries.
+    [OK      ] 'Szczecin'                                QID=Q848999       score=1.00  matched='Szczecin'
+  [pow. Policki / Q558696]  Stage 1: fetching index...
+    17 index entries.
+    [OK      ] 'Gmina Dobra'                             QID=Q557090       score=1.00  matched='Gmina Dobra'
+    [OK      ] 'Gmina Kołbaskowo'                        QID=Q557824       score=1.00  matched='Gmina Kołbaskowo'
+  [Hoyerswerda / Q571947]  Stage 1: fetching index...
+    455 index entries.
+    [OK      ] 'Merzdorf'                                QID=Q160419       score=1.00  matched='Merzdorf'
+  [pow. Żniński / Q577199]  Stage 1: fetching index...
+    44 index entries.
+    [OK      ] 'Gmina Gąsawa'                            QID=Q1941675      score=1.00  matched='Gmina Gąsawa'
+    [OK      ] 'Gmina Żnin'                              QID=Q2204247      score=1.00  matched='Gmina Żnin'
+  [pow. Nakielski / Q583446]  Stage 1: fetching index...
+    13 index entries.
+    [OK      ] 'Gmina Kcynia'                            QID=Q2461196      score=1.00  matched='gmina Kcynia'
+  [pow. Mogileński / Q604053]  Stage 1: fetching index...
+    40 index entries.
+    [OK      ] 'Gmina Dąbrowa'                           QID=Q2461528      score=1.00  matched='Gmina Dąbrowa'
+    [OK      ] 'Gmina Mogilno'                           QID=Q2182076      score=1.00  matched='Gmina Mogilno'
+    [OK      ] 'Gmina Strzelno'                          QID=Q2347468      score=1.00  matched='Gmina Strzelno'
+    [OK      ] 'Gmin Strzelno'                           QID=Q2347468      score=1.00  matched='Gmina Strzelno'
+  [Landkreis Börde / Q6064]  Stage 1: fetching index...
+    159 index entries.
+    [OK      ] 'Niedere Börde'                           QID=Q554720       score=1.00  matched='Niedere Börde'
+    [OK      ] 'Barleben'                                QID=Q550241       score=1.00  matched='Barleben'
+  [Jerichower Land / Q6068]  Stage 1: fetching index...
+    125 index entries.
+    [OK      ] 'Gommern'                                 QID=Q50880        score=1.00  matched='Gommern'
+  [Anhalt-Bitterfeld / Q6071]  Stage 1: fetching index...
+    189 index entries.
+    [OK      ] 'Köthen'                                  QID=Q1796771      score=1.00  matched='Köthen'
+    [OK      ] 'Zörbig'                                  QID=Q247868       score=1.00  matched='Zörbig'
+  [Jessen / Q6075]  Stage 1: fetching index...
+    152 index entries.
+    [OK      ] 'Prettin'                                 QID=Q573500       score=1.00  matched='Prettin'
+  [Salzlandkreis / Q6081]  Stage 1: fetching index...
+    139 index entries.
+    [OK      ] 'Seeland'                                 QID=Q50856        score=1.00  matched='Seeland'
+    [OK      ] 'Staßfurt'                                QID=Q525409       score=1.00  matched='Staßfurt'
+    [OK      ] 'Bernburg'                                QID=Q14938        score=1.00  matched='Bernburg'
+    [OK      ] 'Calbe'                                   QID=Q505176       score=1.00  matched='Calbe'
+  [Landkreis Harz / Q6087]  Stage 1: fetching index...
+    331 index entries.
+    [OK      ] 'Halberstadt'                             QID=Q7072         score=1.00  matched='Halberstadt'
+    [OK      ] 'Quedlinburg'                             QID=Q40623        score=1.00  matched='Quedlinburg'
+  [Mansfeld-Südharz / Q6092]  Stage 1: fetching index...
+    188 index entries.
+    [OK      ] 'Lutherstadt Eilsleben'                   QID=Q484870       score=1.00  matched='Lutherstadt Eisleben'
+  [Saalekreis / Q6098]  Stage 1: fetching index...
+    206 index entries.
+    [OK      ] 'Petersburg'                              QID=Q635001       score=1.00  matched='Petersberg'
+    [OK      ] 'Schkopau'                                QID=Q526388       score=1.00  matched='Schkopau'
+  [Burgenlandkreis / Q6102]  Stage 1: fetching index...
+    164 index entries.
+    [OK      ] 'Lanitz-Hasseltal'                        QID=Q701298       score=1.00  matched='Lanitz-Hasseltal'
+    [OK      ] 'Teuchern'                                QID=Q534715       score=1.00  matched='Teuchern'
+    [OK      ] 'Kretzschau'                              QID=Q635076       score=1.00  matched='Kretzschau'
+    Stage 2: 1 item(s) not matched — trying transitive P131+ lookup...
+    [OK      ] 'Kaiserpfalz'                             QID=Q706307       score=1.00  matched='Kaiserpfalz'
+  [Uckermark / Q6109]  Stage 1: fetching index...
+    149 index entries.
+    [OK      ] 'Angermünde'                              QID=Q490066       score=1.00  matched='Angermünde'
+    [OK      ] 'Herzsprung'                              QID=Q33198119     score=1.00  matched='Herzsprung'
+    [OK      ] 'Gramzow'                                 QID=Q636566       score=1.00  matched='Gramzow'
+    [OK      ] 'Grünow bei Schönermark'                  QID=Q624125       score=1.00  matched='Grünow bei Schönermark'
+    [OK      ] 'Berkholz zu Berkholz-Meyenburg'          QID=Q621916       score=1.00  matched='Berkholz zu Berkholz-Meyenburg'
+    [OK      ] 'Gartz'                                   QID=Q571998       score=1.00  matched='Gartz'
+    [OK      ] 'Brüssow'                                 QID=Q537852       score=1.00  matched='Brüssow'
+    [OK      ] 'Prenzlau'                                QID=Q537214       score=1.00  matched='Prenzlau'
+    [OK      ] 'Schönfeld bei Prenzlau'                  QID=Q623861       score=1.00  matched='Schönfeld bei Prenzlau'
+    [OK      ] 'Schenkenberg'                            QID=Q429574       score=1.00  matched='Schenkenberg'
+    [OK      ] 'Schwedt'                                 QID=Q16008        score=1.00  matched='Schwedt'
+    [OK      ] 'Knehden'                                 QID=Q519157       score=1.00  matched='Knehden'
+    [OK      ] 'Petersdorf'                              QID=Q623967       score=1.00  matched='Petersdorf'
+    [OK      ] 'Templin'                                 QID=Q519157       score=1.00  matched='Templin'
+    [OK      ] 'Lychen'                                  QID=Q635901       score=1.00  matched='Lychen'
+    [OK      ] 'Zichow'                                  QID=Q198395       score=1.00  matched='Zichow'
+    [OK      ] 'Carmzow'                                 QID=Q622491       score=1.00  matched='Carmzow'
+    [OK      ] 'Zollchow'                                QID=Q61745376     score=1.00  matched='Zollchow'
+    [OK      ] 'Grünow bei Prenzlau'                     QID=Q624125       score=1.00  matched='Grünow bei Prenzlau'
+    [OK      ] 'Schwaneberg'                             QID=Q62448579     score=1.00  matched='Schwaneberg'
+    Stage 2: 28 item(s) not matched — trying transitive P131+ lookup...
+    [OK      ] 'Meichow'                                 QID=Q20828909     score=1.00  matched='Meichow'
+    [OK      ] 'Kerkow'                                  QID=Q69417727     score=1.00  matched='Kerkow'
+    [OK      ] 'Flemsdorf'                               QID=Q66363175     score=1.00  matched='Flemsdorf'
+    [OK      ] 'Blankenburg'                             QID=Q881576       score=1.00  matched='Blankenburg'
+    [OK      ] 'Niederlandin'                            QID=Q92038664     score=1.00  matched='Niederlandin'
+    [OK      ] 'Biesenbrow'                              QID=Q858117       score=1.00  matched='Biesenbrow'
+    [OK      ] 'Dobberzin'                               QID=Q1233133      score=1.00  matched='Dobberzin'
+    [OK      ] 'Felchow'                                 QID=Q66363229     score=1.00  matched='Felchow'
+    [OK      ] 'Gellmersdorf'                            QID=Q87413285     score=1.00  matched='Gellmersdorf'
+    [OK      ] 'Görlsdorf'                               QID=Q87411342     score=1.00  matched='Görlsdorf'
+    [OK      ] 'Günterberg'                              QID=Q87433829     score=1.00  matched='Günterberg'
+    [OK      ] 'Hohenlandin'                             QID=Q92039304     score=1.00  matched='Hohenlandin'
+    [OK      ] 'Schmargendorf'                           QID=Q585981       score=1.00  matched='Schmargendorf'
+    [OK      ] 'Schönermark'                             QID=Q61686732     score=1.00  matched='Schönermark'
+    [OK      ] 'Staffelde'                               QID=Q9341289      score=1.00  matched='Staffelde'
+    [OK      ] 'Wartin'                                  QID=Q2550009      score=1.00  matched='Wartin'
+    [OK      ] 'Fürstenwerder'                           QID=Q1483538      score=1.00  matched='Fürstenwerder'
+    [OK      ] 'Gollmitz'                                QID=Q87722176     score=1.00  matched='Gollmitz'
+    [OK      ] 'Wollschow'                               QID=Q105597560    score=1.00  matched='Wollschow'
+    [OK      ] 'Kreuzkrug'                               QID=Q51248699     score=1.00  matched='Kreuzkrug'
+    [OK      ] 'Herzfelde'                               QID=Q1615128      score=1.00  matched='Herzfelde'
+    [OK      ] 'Bandelow'                                QID=Q106473106    score=1.00  matched='Bandelow'
+    [OK      ] 'Grünberg'                                QID=Q106526549    score=1.00  matched='Grünberg'
+    [OK      ] 'Groß Dölln'                              QID=Q1547891      score=1.00  matched='Groß Dölln'
+    [OK      ] 'Crussow'                                 QID=Q1142097      score=1.00  matched='Crussow'
+    [OK      ] 'Klinkow'                                 QID=Q1416179      score=1.00  matched='Klinkow'
+    [OK      ] 'Bietikow'                                QID=Q105946872    score=1.00  matched='Bietikow'
+    [OK      ] 'Potzlow'                                 QID=Q2106643      score=1.00  matched='Potzlow'
+  [Barnim / Q6115]  Stage 1: fetching index...
+    158 index entries.
+    [OK      ] 'Hohenfinow'                              QID=Q587133       score=1.00  matched='Hohenfinow'
+    Stage 2: 1 item(s) not matched — trying transitive P131+ lookup...
+    [OK      ] 'Eichhorst'                               QID=Q1243275      score=1.00  matched='Eichhorst'
+  [Oberhavel / Q6119]  Stage 1: fetching index...
+    127 index entries.
+    [OK      ] 'Zehdenick'                               QID=Q184481       score=1.00  matched='Zehdenick'
+    [OK      ] 'Birkenwerder'                            QID=Q587077       score=1.00  matched='Birkenwerder'
+    [OK      ] 'Oranienburg'                             QID=Q14808        score=1.00  matched='Oranienburg'
+    Stage 2: 8 item(s) not matched — trying transitive P131+ lookup...
+    [OK      ] 'Flatow'                                  QID=Q47446677     score=1.00  matched='Flatow'
+    [OK      ] 'Krewelin'                                QID=Q87325014     score=1.00  matched='Krewelin'
+    [OK      ] 'Badingen'                                QID=Q799036       score=1.00  matched='Badingen'
+    [OK      ] 'Sommerfeld'                              QID=Q14947358     score=1.00  matched='Sommerfeld'
+    [OK      ] 'Teschendorf'                             QID=Q21039506     score=1.00  matched='Teschendorf'
+    [OK      ] 'Burgwall'                                QID=Q1016140      score=1.00  matched='Burgwall'
+    [OK      ] 'Germendorf'                              QID=Q1514257      score=1.00  matched='Germendorf'
+    [OK      ] 'Kappe'                                   QID=Q25158548     score=1.00  matched='Kappe'
+  [Ostprignitz-Ruppin / Q6125]  Stage 1: fetching index...
+    107 index entries.
+    [OK      ] 'Wusterhausen (Dosse)'                    QID=Q35639864     score=1.00  matched='Wusterhausen (Dosse)'
+    [OK      ] 'Dreetz'                                  QID=Q621912       score=1.00  matched='Dreetz'
+    [OK      ] 'Kyritz'                                  QID=Q505160       score=1.00  matched='Kyritz'
+    [OK      ] 'Lohm'                                    QID=Q88216510     score=1.00  matched='Lohm'
+    [OK      ] 'Herzberg'                                QID=Q529841       score=1.00  matched='Herzberg'
+    [OK      ] 'Wildberg'                                QID=Q94645248     score=1.00  matched='Wildberg'
+    [OK      ] 'Zechliner Hütte'                         QID=Q184162       score=1.00  matched='Zechliner Hütte'
+    [OK      ] 'Wulkow bei Alt Ruppin'                   QID=Q1295001      score=1.00  matched='Wulkow bei Alt Ruppin'
+    Stage 2: 7 item(s) not matched — trying transitive P131+ lookup...
+    [OK      ] 'Altfriesack'                             QID=Q2595469      score=0.90  matched='Wustrau-Altfriesack'
+    [OK      ] 'Kötzlin'                                 QID=Q116995126    score=1.00  matched='Kötzlin'
+    [OK      ] 'Roddahn'                                 QID=Q1701133      score=1.00  matched='Roddahn'
+    [OK      ] 'Alt Ruppin'                              QID=Q433253       score=1.00  matched='Alt Ruppin'
+    [OK      ] 'Langen'                                  QID=Q916311       score=1.00  matched='Langen'
+    [OK      ] 'Lüchfeld'                                QID=Q109815104    score=1.00  matched='Lüchfeld'
+    [OK      ] 'Königshorst'                             QID=Q1796386      score=1.00  matched='Königshorst'
+  [Prignitz / Q6132]  Stage 1: fetching index...
+    91 index entries.
+    [OK      ] 'Pirow'                                   QID=Q628458       score=1.00  matched='Pirow'
+    [OK      ] 'Putlitz'                                 QID=Q565732       score=1.00  matched='Putlitz'
+    [OK      ] 'Lenzen'                                  QID=Q625768       score=1.00  matched='Lenzen'
+    [OK      ] 'Semlin'                                  QID=Q627161       score=1.00  matched='Semlin'
+    [OK      ] 'Perleberg'                               QID=Q498540       score=1.00  matched='Perleberg'
+    [OK      ] 'Kleeste'                                 QID=Q636945       score=1.00  matched='Kleeste'
+    Stage 2: 9 item(s) not matched — trying transitive P131+ lookup...
+    [OK      ] 'Neuhausen'                               QID=Q101555304    score=1.00  matched='Neuhausen'
+    [OK      ] 'Kleinow'                                 QID=Q101436943    score=1.00  matched='Kleinow'
+    [OK      ] 'Sadenbeck'                               QID=Q56197823     score=1.00  matched='Sadenbeck'
+    [OK      ] 'Babekuhl'                                QID=Q22691266     score=1.00  matched='Babekuhl'
+    [OK      ] 'Premslin'                                QID=Q101522422    score=1.00  matched='Premslin'
+    [OK      ] 'Groß Linde'                              QID=Q1547935      score=1.00  matched='Groß Linde'
+    [OK      ] 'Tacken'                                  QID=Q23787861     score=1.00  matched='Tacken'
+    [OK      ] 'Hinzdorf'                                QID=Q20828694     score=1.00  matched='Hinzdorf'
+    [OK      ] 'Wustrow'                                 QID=Q22694685     score=1.00  matched='Wustrow'
+  [Havelland / Q6139]  Stage 1: fetching index...
+    104 index entries.
+    [OK      ] 'Stadt Rathenow'                          QID=Q525425       score=1.00  matched='Rathenow'
+    [OK      ] 'Friesack'                                QID=Q585632       score=1.00  matched='Friesack'
+    [OK      ] 'Nauen'                                   QID=Q581994       score=1.00  matched='Nauen'
+    [OK      ] 'Ribbeck'                                 QID=Q2148516      score=1.00  matched='Ribbeck'
+    [OK      ] 'Wustermark'                              QID=Q581938       score=1.00  matched='Wustermark'
+    [OK      ] 'Zeestow'                                 QID=Q582671       score=1.00  matched='Zeestow'
+    [OK      ] 'Döberitz bei Premnitz'                   QID=Q583555       score=1.00  matched='Döberitz bei Premnitz'
+    [OK      ] 'Ketzin'                                  QID=Q583450       score=1.00  matched='Ketzin'
+    [OK      ] 'Schönwalde'                              QID=Q581715       score=1.00  matched='Schönwalde'
+    [OK      ] 'Rathenow'                                QID=Q525425       score=1.00  matched='Rathenow'
+    [OK      ] 'Rathenow-Neue Schleuse'                  QID=Q525425       score=1.00  matched='Rathenow-Neue Schleuse'
+    [OK      ] 'Buckow'                                  QID=Q29019815     score=1.00  matched='Buckow'
+    [OK      ] 'Rhinow'                                  QID=Q532037       score=1.00  matched='Rhinow'
+    [OK      ] 'Kietz'                                   QID=Q532037       score=1.00  matched='Kietz'
+    Stage 2: 14 item(s) not matched — trying transitive P131+ lookup...
+    [OK      ] 'Dyrotz'                                  QID=Q99646888     score=1.00  matched='Dyrotz'
+    [OK      ] 'Wachow'                                  QID=Q1297555      score=1.00  matched='Wachow'
+    [OK      ] 'Bredow'                                  QID=Q55816238     score=1.00  matched='Bredow'
+    [OK      ] 'Gohlitz'                                 QID=Q1534380      score=1.00  matched='Gohlitz'
+    [OK      ] 'Hoppenrade'                              QID=Q104757864    score=1.00  matched='Hoppenrade'
+    [OK      ] 'Niebede'                                 QID=Q989775       score=1.00  matched='Niebede'
+    [OK      ] 'Hertefeld'                               QID=Q113182090    score=1.00  matched='Hertefeld'
+    [OK      ] 'Vietznitz'                               QID=Q2523873      score=1.00  matched='Vietznitz'
+    [OK      ] 'Wagenitz'                                QID=Q1989221      score=1.00  matched='Wagenitz'
+    [OK      ] 'Friedrichsbruch'                         QID=Q88181595     score=1.00  matched='Friedrichsbruch'
+    [OK      ] 'Strodehne'                               QID=Q51682527     score=1.00  matched='Strodehne'
+    [OK      ] 'Wansdorf'                                QID=Q2548510      score=1.00  matched='Wansdorf'
+    [OK      ] 'Rübehorst'                               QID=Q110987406    score=1.00  matched='Rübehorst'
+    [OK      ] 'Kienberg'                                QID=Q96198777     score=1.00  matched='Kienberg'
+  [Potsdam-Mittelmark / Q6142]  Stage 1: fetching index...
+    239 index entries.
+    [OK      ] 'Groß Kreutz (Havel)'                     QID=Q625962       score=1.00  matched='Groß Kreutz (Havel)'
+    [OK      ] 'Treuenbrietzen'                          QID=Q625078       score=1.00  matched='Treuenbrietzen'
+    [OK      ] 'Satzkorn'                                QID=Q131931       score=1.00  matched='Satzkorn'
+    [OK      ] 'Emstal'                                  QID=Q15110344     score=1.00  matched='Emstal'
+    [OK      ] 'Geltow'                                  QID=Q1499843      score=1.00  matched='Geltow'
+    [OK      ] 'Krampnitz'                               QID=Q88458729     score=1.00  matched='Krampnitz'
+    [OK      ] 'Marquardt'                               QID=Q896887       score=1.00  matched='Marquardt'
+    [OK      ] 'Kleinmachnow'                            QID=Q104192       score=1.00  matched='Kleinmachnow'
+    [OK      ] 'Beelitz'                                 QID=Q544439       score=1.00  matched='Beelitz'
+    [OK      ] 'Woltersdorf'                             QID=Q139380043    score=1.00  matched='Woltersdorf'
+    Stage 2: 9 item(s) not matched — trying transitive P131+ lookup...
+    [OK      ] 'Mötzow'                                  QID=Q17124832     score=1.00  matched='Mötzow'
+    [OK      ] 'Hohenferchesar'                          QID=Q15115053     score=1.00  matched='Hohenferchesar'
+    [OK      ] 'Alt Töplitz'                             QID=Q15106405     score=1.00  matched='Alt Töplitz'
+    [OK      ] 'Bergholz-Rehbrücke'                      QID=Q819776       score=1.00  matched='Bergholz-Rehbrücke'
+    [OK      ] 'Plötzin'                                 QID=Q2099924      score=1.00  matched='Plötzin'
+    [OK      ] 'Gollwitz'                                QID=Q17321986     score=1.00  matched='Gollwitz'
+    [OK      ] 'Philippsthal'                            QID=Q1382796      score=1.00  matched='Philippsthal'
+    [OK      ] 'Ferch'                                   QID=Q507824       score=1.00  matched='Ferch'
+    [OK      ] 'Wildenbruch'                             QID=Q1522443      score=1.00  matched='Wildenbruch'
+  [Teltow-Fläming / Q6146]  Stage 1: fetching index...
+    185 index entries.
+    [OK      ] 'Jüterbog'                                QID=Q486541       score=1.00  matched='Jüterbog'
+    [OK      ] 'Blankensee'                              QID=Q881612       score=1.00  matched='Blankensee'
+    [OK      ] 'Ahrensdorf bei Ludwigsfelde'             QID=Q327744       score=1.00  matched='Ahrensdorf bei Ludwigsfelde'
+    [OK      ] 'Kummersdorf'                             QID=Q1718490      score=1.00  matched='Kummersdorf'
+    [OK      ] 'Mellensee'                               QID=Q1919518      score=1.00  matched='Mellensee'
+    [OK      ] 'Zesch'                                   QID=Q196797       score=1.00  matched='Zesch'
+    [OK      ] 'Zossen'                                  QID=Q226884       score=1.00  matched='Zossen'
+    [OK      ] 'Trebbin'                                 QID=Q570114       score=1.00  matched='Trebbin'
+    Stage 2: 9 item(s) not matched — trying transitive P131+ lookup...
+    [OK      ] 'Rohrbeck'                                QID=Q22693663     score=1.00  matched='Rohrbeck'
+    [OK      ] 'Bochow'                                  QID=Q889041       score=1.00  matched='Bochow'
+    [OK      ] 'Schiaß'                                  QID=Q1747721      score=1.00  matched='Schiaß'
+    [OK      ] 'Groß Kienitz'                            QID=Q25158450     score=1.00  matched='Groß Kienitz'
+    [OK      ] 'Blankenfelde'                            QID=Q3640862      score=1.00  matched='Blankenfelde'
+    [OK      ] 'Gröben'                                  QID=Q884062       score=1.00  matched='Gröben'
+    [OK      ] 'Sperenberg'                              QID=Q882100       score=1.00  matched='Sperenberg'
+    [OK      ] 'Klein Kienitz'                           QID=Q1553107      score=1.00  matched='Klein Kienitz'
+    [OK      ] 'Kliestow'                                QID=Q1774345      score=1.00  matched='Kliestow'
+  [Elbe-Elster / Q6152]  Stage 1: fetching index...
+    221 index entries.
+    [OK      ] 'Elsterwerda'                             QID=Q584473       score=1.00  matched='Elsterwerda'
+    Stage 2: 2 item(s) not matched — trying transitive P131+ lookup...
+    [OK      ] 'Schmielsdorf'                            QID=Q97991381     score=1.00  matched='Schmielsdorf'
+    [OK      ] 'Buchhain'                                QID=Q998407       score=1.00  matched='Buchhain'
+  [Oberspreewald-Lausitz / Q6156]  Stage 1: fetching index...
+    162 index entries.
+    [OK      ] 'Lübbenau'                                QID=Q147895       score=1.00  matched='Lübbenau'
+    Stage 2: 1 item(s) not matched — trying transitive P131+ lookup...
+    [OK      ] 'Leipe'                                   QID=Q144915       score=1.00  matched='Leipe'
+  [Spree-Neiße / Q6165]  Stage 1: fetching index...
+    214 index entries.
+    [OK      ] 'Heinersbrück'                            QID=Q574750       score=1.00  matched='Heinersbrück'
+    [OK      ] 'Drebkau'                                 QID=Q572518       score=1.00  matched='Drebkau'
+    Stage 2: 2 item(s) not matched — trying transitive P131+ lookup...
+    [OK      ] 'Grötsch'                                 QID=Q30112712     score=1.00  matched='Grötsch'
+    [OK      ] 'Raakow'                                  QID=Q26271484     score=1.00  matched='Raakow'
+  [Dahme-Spreewald / Q6173]  Stage 1: fetching index...
+    279 index entries.
+    [OK      ] 'Lübben'                                  QID=Q584815       score=1.00  matched='Lübben'
+    [OK      ] 'Mittenwalde'                             QID=Q574811       score=1.00  matched='Mittenwalde'
+    [OK      ] 'Schulzendorf'                            QID=Q581119       score=1.00  matched='Schulzendorf'
+    [OK      ] 'Reichwalde'                              QID=Q160235       score=1.00  matched='Reichwalde'
+    [OK      ] 'Waltersdorf bei Kö.Wusterhausen'         QID=Q896028       score=1.00  matched='Waltersdorf'
+    [OK      ] 'Deutsch Wusterhausen'                    QID=Q16013        score=1.00  matched='Königs Wusterhausen'
+    [OK      ] 'Groß Köris'                              QID=Q548429       score=1.00  matched='Groß Köris'
+    Stage 2: 15 item(s) not matched — trying transitive P131+ lookup...
+    [OK      ] 'Selchow'                                 QID=Q653055       score=1.00  matched='Selchow'
+    [OK      ] 'Gallun'                                  QID=Q188338       score=1.00  matched='Gallun'
+    [OK      ] 'Zöllmersdorf'                            QID=Q28972179     score=1.00  matched='Zöllmersdorf'
+    [OK      ] 'Kaden'                                   QID=Q16832339     score=1.00  matched='Kaden'
+    [OK      ] 'Neuendorf am See'                        QID=Q1979994      score=1.00  matched='Neuendorf am See'
+    [OK      ] 'Hohenbrück'                              QID=Q1623655      score=1.00  matched='Hohenbrück'
+    [OK      ] 'Steinkirchen'                            QID=Q28901331     score=1.00  matched='Steinkirchen'
+    [OK      ] 'Wernsdorf'                               QID=Q2563228      score=1.00  matched='Wernsdorf'
+    [OK      ] 'Gräbendorf'                              QID=Q669289       score=1.00  matched='Gräbendorf'
+    [OK      ] 'Zaue'                                    QID=Q42297036     score=1.00  matched='Zaue'
+    [OK      ] 'Krausnick'                               QID=Q18628312     score=1.00  matched='Krausnick'
+    [OK      ] 'Töpchin'                                 QID=Q1760458      score=1.00  matched='Töpchin'
+    [OK      ] 'Teurow'                                  QID=Q56426202     score=1.00  matched='Teurow'
+    [OK      ] 'Speichrow'                               QID=Q19309298     score=1.00  matched='Speichrow'
+    [OK      ] 'Leibsch'                                 QID=Q181223       score=1.00  matched='Leibsch'
+  [Oder-Spree / Q6178]  Stage 1: fetching index...
+    168 index entries.
+    [OK      ] 'Rietz-Neuendorf'                         QID=Q637911       score=1.00  matched='Rietz-Neuendorf'
+    [OK      ] 'Beeskow'                                 QID=Q572615       score=1.00  matched='Beeskow'
+    [OK      ] 'Fürstenwalde'                            QID=Q16064        score=1.00  matched='Fürstenwalde'
+    [OK      ] 'Fürstenwalde-Süd'                        QID=Q16064        score=1.00  matched='Fürstenwalde-Süd'
+    Stage 2: 6 item(s) not matched — trying transitive P131+ lookup...
+    [OK      ] 'Sabrodt'                                 QID=Q78498958     score=1.00  matched='Sabrodt'
+    [OK      ] 'Kossenblatt'                             QID=Q1785108      score=1.00  matched='Kossenblatt'
+    [OK      ] 'Rieplos'                                 QID=Q2152289      score=1.00  matched='Rieplos'
+    [OK      ] 'Tempelberg'                              QID=Q2402703      score=1.00  matched='Tempelberg'
+    [OK      ] 'Schwerin'                                QID=Q1615217      score=1.00  matched='Schwerin'
+    [OK      ] 'Trebus'                                  QID=Q14912355     score=1.00  matched='Trebus'
+  [Märkisch-Oderland / Q6181]  Stage 1: fetching index...
+    224 index entries.
+    [OK      ] 'Gusow-Platkow'                           QID=Q585301       score=1.00  matched='Gusow-Platkow'
+    [OK      ] 'Seelow'                                  QID=Q587069       score=1.00  matched='Seelow'
+    [OK      ] 'Bad Freienwalde'                         QID=Q427655       score=1.00  matched='Bad Freienwalde'
+    Stage 2: 4 item(s) not matched — trying transitive P131+ lookup...
+    [OK      ] 'Niederjesar'                             QID=Q1987896      score=1.00  matched='Niederjesar'
+    [OK      ] 'Altranft'                                QID=Q444837       score=1.00  matched='Altranft'
+    [OK      ] 'Münchehofe'                              QID=Q2781495      score=1.00  matched='Münchehofe'
+    [OK      ] 'Friedersdorf'                            QID=Q1457140      score=1.00  matched='Friedersdorf'
+  [Görlitz / Q6317]  Stage 1: fetching index...
+    432 index entries.
+    [OK      ] 'Boxberg/O.L.'                            QID=Q544833       score=1.00  matched='Boxberg/O.L.'
+  [pow. Głogówski / Q631754]  Stage 1: fetching index...
+    42 index entries.
+    [OK      ] 'Gmina Żukowice'                          QID=Q2326629      score=1.00  matched='Gmina Żukowice'
+    [OK      ] 'Gmina Głogów'                            QID=Q2467328      score=1.00  matched='Gmina Głogów'
+    [OK      ] 'Gmina Pęcław'                            QID=Q2100627      score=1.00  matched='Gmina Pęcław'
+  [pow. Gorẃski / Q637105]  Stage 1: fetching index...
+    40 index entries.
+    Stage 2: 1 item(s) not matched — trying transitive P131+ lookup...
+    [NO MATCH] 'Gmina Góra'                              QID=None          score=n/a  matched='None'
+  [pow. Jaworski / Q637105]  Stage 1: fetching index...
+    40 index entries.
+    [OK      ] 'Gmina Jawor'                             QID=Q731805       score=1.00  matched='Gmina Jawor'
+    [OK      ] 'Gmina Wądroże Wielkie'                   QID=Q2458456      score=1.00  matched='Gmina Wądroże Wielkie'
+  [pow. Toruński / Q650180]  Stage 1: fetching index...
+    73 index entries.
+    [OK      ] 'Gmina Chełmża'                           QID=Q2461605      score=1.00  matched='Gmina Chełmża'
+  [pow. Radziejowski / Q687625]  Stage 1: fetching index...
+    22 index entries.
+    [OK      ] 'Gmina Osięciny'                          QID=Q618178       score=1.00  matched='Gmina Osięciny'
+  [pow. Lubiński / Q687839]  Stage 1: fetching index...
+    36 index entries.
+    [OK      ] 'Gmina Ścinawa'                           QID=Q2376267      score=1.00  matched='Gmina Ścinawa'
+    [OK      ] 'Gmina Rudna'                             QID=Q776885       score=1.00  matched='Gmina Rudna'
+  [Gera / Q706112]  Stage 1: fetching index...
+    0 index entries.
+    0 entries — widening to Bundesland Q1205...
+    2935 entries after widening.
+    [OK      ] 'Gera'                                    QID=Q706112       score=1.00  matched='Gera'
+  [pow. Oławski / Q715475]  Stage 1: fetching index...
+    40 index entries.
+    [OK      ] 'Gmina Oława'                             QID=Q2120688      score=1.00  matched='Gmina Oława'
+  [pow. Wołowski / Q715925]  Stage 1: fetching index...
+    48 index entries.
+    [OK      ] 'Gmina Brzeg Dolny'                       QID=Q2462934      score=1.00  matched='Gmina Brzeg Dolny'
+  [pow. Wrocławski / Q715974]  Stage 1: fetching index...
+    68 index entries.
+    [OK      ] 'Gmina Sobótka'                           QID=Q2182816      score=1.00  matched='Gmina Sobótka'
+    [OK      ] 'Gmina Kąty Wrocławskie'                  QID=Q2460985      score=1.00  matched='Gmina Kąty Wrocławskie'
+    [OK      ] 'Gmina Jordanów Śląski'                   QID=Q2191877      score=1.00  matched='Gmina Jordanów Śląski'
+    [OK      ] 'Gmina Kobierzyce'                        QID=Q1922902      score=1.00  matched='Gmina Kobierzyce'
+    [OK      ] 'Gmina Wrocław'                           QID=Q1799         score=1.00  matched='Wrocław'
+  [pow. Ząbkowicki / Q716143]  Stage 1: fetching index...
+    53 index entries.
+    [OK      ] 'Gmina Ząbkowice Śląskie'                 QID=Q2458293      score=1.00  matched='Gmina Ząbkowice Śląskie'
+  [pow. Aleksandrowski / Q750491]  Stage 1: fetching index...
+    40 index entries.
+    [OK      ] 'Gmina Zakrzewo'                          QID=Q2317830      score=1.00  matched='Gmina Zakrzewo'
+    [OK      ] 'Gmina Ciechocinek'                       QID=Q985659       score=1.00  matched='Gmina Ciechocinek'
+  [pow. Inowrocławski / Q773314]  Stage 1: fetching index...
+    61 index entries.
+    [OK      ] 'Gmina Inowrocław'                        QID=Q618429       score=1.00  matched='Gmina Inowrocław'
+    [OK      ] 'Gmina Dąbrowa Biskupia'                  QID=Q618405       score=1.00  matched='Gmina Dąbrowa Biskupia'
+    [OK      ] 'Gmina Inwowrocław'                       QID=Q618429       score=0.97  matched='Gmina Inowrocław'
+    [OK      ] 'Gmina Pakość'                            QID=Q2149918      score=1.00  matched='Gmina Pakość'
+    [OK      ] 'Gmina Kruszwica'                         QID=Q7764069      score=1.00  matched='Gmina Kruszwica'
+    [OK      ] 'Gmina Zlotniki Kuj.'                     QID=Q618437       score=1.00  matched='Gmina Złotniki Kujawskie'
+    [OK      ] 'Gmina Złotniki Kuj.'                     QID=Q618437       score=1.00  matched='Gmina Złotniki Kuj.'
+    [OK      ] 'Gmina Janikowo'                          QID=Q428194       score=1.00  matched='Gmina Janikowo'
+  [pow. Włocławski / Q774833]  Stage 1: fetching index...
+    92 index entries.
+    [OK      ] 'Gmina Brześć Kujawski'                   QID=Q2463096      score=1.00  matched='Gmina Brześć Kujawski'
+    [OK      ] 'Gmina Włocławek'                         QID=Q749271       score=1.00  matched='Gmina Włocławek'
+    [OK      ] 'Włocławek'                               QID=Q749271       score=1.00  matched='Włocławek'
+    [OK      ] 'Gmina Lubraniec'                         QID=Q2605893      score=1.00  matched='Gmina Lubraniec'
+    [OK      ] 'Gmina Izbica Kuj.'                       QID=Q2461294      score=1.00  matched='Gmina Izbica Kuj.'
+    [OK      ] 'Gmina Wocławek'                          QID=Q749271       score=0.97  matched='Gmina Włocławek'
+  [pow. Świecki / Q774944]  Stage 1: fetching index...
+    62 index entries.
+    [OK      ] 'Gmina Bukowiec'                          QID=Q2463043      score=1.00  matched='Gmina Bukowiec'
+  [Unstrut-Hainich-Kreis / Q7864]  Stage 1: fetching index...
+    67 index entries.
+    [OK      ] 'Nottertal-Heilinger Höhen'               QID=Q71166816     score=1.00  matched='Nottertal-Heilinger Höhen'
+  [Sommerda / Q7865]  Stage 1: fetching index...
+    91 index entries.
+    [OK      ] 'Knidelbrück'                             QID=Q530154       score=0.91  matched='Kindelbrück'
+  [Wartburgkreis / Q7866]  Stage 1: fetching index...
+    171 index entries.
+    Stage 2: 1 item(s) not matched — trying transitive P131+ lookup...
+    [OK      ] 'Behringen'                               QID=Q704400       score=1.00  matched='Behringen'
+  [Gotha / Q7869]  Stage 1: fetching index...
+    86 index entries.
+    [OK      ] 'Nessetal'                                QID=Q59775089     score=1.00  matched='Nessetal'
+  [Weimarer Land / Q7879]  Stage 1: fetching index...
+    70 index entries.
+    [OK      ] 'Mellingen'                               QID=Q684601       score=1.00  matched='Mellingen'
+    [OK      ] 'Weimar'                                  QID=Q3955         score=1.00  matched='Weimar'
+  [pow. Miński / Q947536]  Stage 1: fetching index...
+    116 index entries.
+    [OK      ] 'Gmina Dobre'                             QID=Q2051728      score=1.00  matched='Gmina Dobre'
+
+  Stage 1 matches: 199
+  Stage 2 matches: 118
+  Total matched:   317 / 318
+
+[1/2] Mapped CSV:  c:\git\bb-5kbc-sites\data\enrichment\mapping_admin_regions\fst_standortanalysen_ref_mapped.csv
+[2/2] Report CSV:  c:\git\bb-5kbc-sites\data\enrichment\mapping_admin_regions\fst_standortanalysen_ref_report.csv
+
+Rows: 540
+
+  level         scope   unique  matched  no_match   GeoNames     TGN    IDAI     OSM
+  ----------------------------------------------------------------------------------
+  LAND          DE           1        1         0          1       1       1       1
+                PL           1        1         0          1       1       1       1
+                total        2        2         0          2       2       2       2
+
+  BUNDESLAND    DE           5        5         0          5       5       5       5
+                PL          10       10         0         10       3       0      10
+                total       15       15         0         15       8       5      15
+
+  KREIS         DE          37       37         0         17      13       1      17
+                PL          45       45         0         39       0       0      39
+                total       82       82         0         56      13       1      56
+
+  [stage 2/4] done in 620.34s
+
+==============================================================================
+[3/4]  GEO MERGE
+==============================================================================
+  [enrich_fst] Reading original: c:\git\bb-5kbc-sites\data\fst_wgs84_lit_enriched.csv
+  [enrich_fst]   540 rows, 33 columns
+  [enrich_fst] Reading mapped:   c:\git\bb-5kbc-sites\data\enrichment\mapping_admin_regions\fst_standortanalysen_ref_mapped.csv
+  [enrich_fst]   540 rows, 46 columns
+  [enrich_fst] Wrote: c:\git\bb-5kbc-sites\data\fst_wgs84.csv
+  [enrich_fst]   Rows: 540  |  Columns: 65
+  [stage 3/4] done in 0.12s
+
+==============================================================================
+[4/4]  PROVENANCE MANIFEST
+==============================================================================
+  [stage 4/4] manifest written to c:\git\bb-5kbc-sites\data\csv_enrichment_run.ttl
+
+==============================================================================
+PIPELINE COMPLETE
+==============================================================================
+  Total time:       622.18s
+  Literature QIDs:  202 georef + 265 pub  (9 missing in csv_enrichment_literature.log)
+  Final CSV:        c:\git\bb-5kbc-sites\data\fst_wgs84.csv
+                    540 rows x 65 columns
+  Provenance:       csv_enrichment_run.ttl
+  Run log:          csv_enrichment_run.log
+

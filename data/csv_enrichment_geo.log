@@ -1,7 +1,7 @@
-Run log: c:\git\bb-5kbc-sites\data\enrichment\mapping_admin_regions\fst_standortanalysen_ref_run.log
+Run log: c:\git\bb-5kbc-sites\data\csv_enrichment_geo.log
 
 Fetching country index...
-  4208 entries.
+  4210 entries.
 
 Matching 2 unique LAND value(s) (threshold=0.85)...
 
@@ -47,7 +47,7 @@ Matching 82 unique KREIS value(s) across 15 Bundesland group(s) (threshold=0.75)
     [OK      ] 'Weimarer Land'                      QID=Q7879       GeoNames=None          score=1.00  matched='Weimarer Land'
     [OK      ] 'Gera'                               QID=Q706112     GeoNames=2921231       score=1.00  matched='Gera'
   [Sachsen-Anhalt / Q1206]  querying Wikidata...
-    3687 entries retrieved.
+    3686 entries retrieved.
     [OK      ] 'Landkreis Harz'                     QID=Q6087       GeoNames=None          score=1.00  matched='Landkreis Harz'
     [OK      ] 'Salzlandkreis'                      QID=Q6081       GeoNames=2950072       score=1.00  matched='Salzlandkreis'
     [OK      ] 'Burgenlandkreis'                    QID=Q6102       GeoNames=None          score=1.00  matched='Burgenlandkreis'
@@ -59,7 +59,7 @@ Matching 82 unique KREIS value(s) across 15 Bundesland group(s) (threshold=0.75)
     [OK      ] 'Anhalt-Bitterfeld'                  QID=Q6071       GeoNames=None          score=1.00  matched='Landkreis Anhalt-Bitterfeld'
     [OK      ] 'Jessen'                             QID=Q6075       GeoNames=None          score=1.00  matched='Landkreis Jessen'
   [Brandenburg / Q1208]  querying Wikidata...
-    3905 entries retrieved.
+    3907 entries retrieved.
     [OK      ] 'Havelland'                          QID=Q6139       GeoNames=None          score=1.00  matched='Havelland'
     [OK      ] 'Teltow-Fläming'                     QID=Q6146       GeoNames=None          score=1.00  matched='Landkreis Teltow-Fläming'
     [OK      ] 'Dahme-Spreewald'                    QID=Q6173       GeoNames=3249080       score=1.00  matched='Dahme-Spreewald'
@@ -80,13 +80,13 @@ Matching 82 unique KREIS value(s) across 15 Bundesland group(s) (threshold=0.75)
   [Woj. Dolnośląskie / Q54150]  querying Wikidata...
     1122 entries retrieved.
     [OK      ] 'pow. Głogówski'                     QID=Q631754     GeoNames=7530806       score=0.94  matched='Powiat Głogowski'
-    [OK      ] 'pow. Jaworski'                      QID=Q637105     GeoNames=7530815       score=1.00  matched='powiat jaworski'
+    [OK      ] 'pow. Jaworski'                      QID=Q637105     GeoNames=7530815       score=1.00  matched='Powiat Jaworski'
     [OK      ] 'pow. Lubiński'                      QID=Q687839     GeoNames=7530831       score=1.00  matched='powiat lubiński'
-    [OK      ] 'pow. Gorẃski'                       QID=Q636757     GeoNames=7530807       score=0.83  matched='powiat górowski'
+    [OK      ] 'pow. Gorẃski'                       QID=Q637105     GeoNames=7530815       score=0.83  matched='Powiat Jaworski'
     [OK      ] 'pow. Wołowski'                      QID=Q715925     GeoNames=7530849       score=1.00  matched='powiat wołowski'
     [OK      ] 'pow. Ząbkowicki'                    QID=Q716143     GeoNames=7530851       score=1.00  matched='Powiat Ząbkowicki'
     [OK      ] 'pow. Wrocławski'                    QID=Q715974     GeoNames=7530850       score=1.00  matched='powiat wrocławski'
-    [OK      ] 'pow. Oławski'                       QID=Q715475     GeoNames=7530835       score=1.00  matched='powiat oławski'
+    [OK      ] 'pow. Oławski'                       QID=Q715475     GeoNames=7530835       score=1.00  matched='Powiat Oławski'
     [OK      ] 'pow. Strzeliński'                   QID=Q179986     GeoNames=7530837       score=1.00  matched='powiat strzeliński'
   [Woj. Kujawsko-Pomorskie / Q54153]  querying Wikidata...
     570 entries retrieved.
@@ -118,7 +118,7 @@ Matching 82 unique KREIS value(s) across 15 Bundesland group(s) (threshold=0.75)
   [Woj. Opolskie / Q54171]  querying Wikidata...
     370 entries retrieved.
     [OK      ] 'pow. Nyski'                         QID=Q461537     GeoNames=7530734       score=1.00  matched='powiat nyski'
-    [OK      ] 'pow. Głubczycki'                    QID=Q461252     GeoNames=7531046       score=1.00  matched='Powiat Głubczycki'
+    [OK      ] 'pow. Głubczycki'                    QID=Q461252     GeoNames=7531046       score=1.00  matched='powiat głubczycki'
     [OK      ] 'pow. Prudnicki'                     QID=Q462130     GeoNames=7531047       score=1.00  matched='powiat prudnicki'
   [Woj. Pomorskie / Q54180]  querying Wikidata...
     657 entries retrieved.
@@ -131,15 +131,15 @@ Matching 82 unique KREIS value(s) across 15 Bundesland group(s) (threshold=0.75)
     751 entries retrieved.
     [OK      ] 'pow. Kętrzyński'                    QID=Q1135341    GeoNames=7530860       score=1.00  matched='powiat kętrzyński'
   [Woj. Wielkopolskie / Q54187]  querying Wikidata...
-    743 entries retrieved.
+    736 entries retrieved.
     [OK      ] 'pow. Gorzów Wielkopolski'           QID=Q104731     GeoNames=None          score=1.00  matched='Gorzów Wielkopolski'
     [OK      ] 'pow. Kościan'                       QID=Q133188     GeoNames=7531076       score=0.84  matched='powiat kościański'
     [OK      ] 'pow. Poznanski'                     QID=Q101575     GeoNames=7530994       score=0.94  matched='powiat poznański'
   [Woj. Zachodniopomorskie / Q54188]  querying Wikidata...
     694 entries retrieved.
     [OK      ] 'pow. Szczecińska'                   QID=Q558408     GeoNames=None          score=1.00  matched='Powiat Szczecinecki'
-    [OK      ] 'pow. Pyrzycki'                      QID=Q1411599    GeoNames=7530845       score=1.00  matched='Powiat Pyrzycki'
-    [OK      ] 'pow. Stargardzki'                   QID=Q1340630    GeoNames=7530793       score=1.00  matched='Powiat Stargardzki'
+    [OK      ] 'pow. Pyrzycki'                      QID=Q1411599    GeoNames=7530845       score=1.00  matched='powiat pyrzycki'
+    [OK      ] 'pow. Stargardzki'                   QID=Q1340630    GeoNames=7530793       score=1.00  matched='powiat stargardzki'
     [OK      ] 'pow. Myśliborski'                   QID=Q558403     GeoNames=7531005       score=1.00  matched='Powiat myśliborski'
     [OK      ] 'pow. Policki'                       QID=Q558696     GeoNames=7530844       score=1.00  matched='powiat policki'
 
@@ -157,7 +157,7 @@ Matching 318 unique GEMEINDE value(s) across 82 Kreis group(s)...
   [Leipzig-Land / Q1323208]  Stage 1: fetching index...
     0 index entries.
     0 entries — widening to Bundesland Q1202...
-    6596 entries after widening.
+    6595 entries after widening.
     [OK      ] 'Zwenkau'                                 QID=Q10779        score=1.00  matched='Zwenkau'
   [pow. Kościan / Q133188]  Stage 1: fetching index...
     55 index entries.
@@ -166,7 +166,7 @@ Matching 318 unique GEMEINDE value(s) across 82 Kreis group(s)...
     28 index entries.
     [OK      ] 'Gmina Słubca'                            QID=Q554765       score=0.92  matched='Gmina Słupca'
   [pow. Stargardzki / Q1340630]  Stage 1: fetching index...
-    65 index entries.
+    66 index entries.
     [OK      ] 'Gmina Dolice'                            QID=Q557687       score=1.00  matched='Gmina Dolice'
   [pow. Tczewski / Q1341069]  Stage 1: fetching index...
     43 index entries.
@@ -180,7 +180,7 @@ Matching 318 unique GEMEINDE value(s) across 82 Kreis group(s)...
     [OK      ] 'Gmina Pyrzyce'                           QID=Q557594       score=1.00  matched='Gmina Pyrzyce'
     [OK      ] 'Gmina Przelewice'                        QID=Q557756       score=1.00  matched='gmina Przelewice'
   [Potsdam / Q1711]  Stage 1: fetching index...
-    2726 index entries.
+    2730 index entries.
     [OK      ] 'Bornim'                                  QID=Q893995       score=1.00  matched='Bornim'
     [OK      ] 'Potsdam'                                 QID=Q32233930     score=1.00  matched='Potsdam'
     [OK      ] 'Grube'                                   QID=Q23759940     score=1.00  matched='Grube'
@@ -279,7 +279,7 @@ Matching 318 unique GEMEINDE value(s) across 82 Kreis group(s)...
     [OK      ] 'Niedere Börde'                           QID=Q554720       score=1.00  matched='Niedere Börde'
     [OK      ] 'Barleben'                                QID=Q550241       score=1.00  matched='Barleben'
   [Jerichower Land / Q6068]  Stage 1: fetching index...
-    123 index entries.
+    125 index entries.
     [OK      ] 'Gommern'                                 QID=Q50880        score=1.00  matched='Gommern'
   [Anhalt-Bitterfeld / Q6071]  Stage 1: fetching index...
     189 index entries.
@@ -316,11 +316,11 @@ Matching 318 unique GEMEINDE value(s) across 82 Kreis group(s)...
     149 index entries.
     [OK      ] 'Angermünde'                              QID=Q490066       score=1.00  matched='Angermünde'
     [OK      ] 'Herzsprung'                              QID=Q33198119     score=1.00  matched='Herzsprung'
-    [OK      ] 'Gramzow'                                 QID=Q458313       score=1.00  matched='Gramzow'
+    [OK      ] 'Gramzow'                                 QID=Q636566       score=1.00  matched='Gramzow'
     [OK      ] 'Grünow bei Schönermark'                  QID=Q624125       score=1.00  matched='Grünow bei Schönermark'
     [OK      ] 'Berkholz zu Berkholz-Meyenburg'          QID=Q621916       score=1.00  matched='Berkholz zu Berkholz-Meyenburg'
     [OK      ] 'Gartz'                                   QID=Q571998       score=1.00  matched='Gartz'
-    [OK      ] 'Brüssow'                                 QID=Q455368       score=1.00  matched='Brüssow'
+    [OK      ] 'Brüssow'                                 QID=Q537852       score=1.00  matched='Brüssow'
     [OK      ] 'Prenzlau'                                QID=Q537214       score=1.00  matched='Prenzlau'
     [OK      ] 'Schönfeld bei Prenzlau'                  QID=Q623861       score=1.00  matched='Schönfeld bei Prenzlau'
     [OK      ] 'Schenkenberg'                            QID=Q429574       score=1.00  matched='Schenkenberg'
@@ -364,7 +364,7 @@ Matching 318 unique GEMEINDE value(s) across 82 Kreis group(s)...
     [OK      ] 'Bietikow'                                QID=Q105946872    score=1.00  matched='Bietikow'
     [OK      ] 'Potzlow'                                 QID=Q2106643      score=1.00  matched='Potzlow'
   [Barnim / Q6115]  Stage 1: fetching index...
-    159 index entries.
+    158 index entries.
     [OK      ] 'Hohenfinow'                              QID=Q587133       score=1.00  matched='Hohenfinow'
     Stage 2: 1 item(s) not matched — trying transitive P131+ lookup...
     [OK      ] 'Eichhorst'                               QID=Q1243275      score=1.00  matched='Eichhorst'
@@ -450,7 +450,7 @@ Matching 318 unique GEMEINDE value(s) across 82 Kreis group(s)...
     [OK      ] 'Rübehorst'                               QID=Q110987406    score=1.00  matched='Rübehorst'
     [OK      ] 'Kienberg'                                QID=Q96198777     score=1.00  matched='Kienberg'
   [Potsdam-Mittelmark / Q6142]  Stage 1: fetching index...
-    218 index entries.
+    239 index entries.
     [OK      ] 'Groß Kreutz (Havel)'                     QID=Q625962       score=1.00  matched='Groß Kreutz (Havel)'
     [OK      ] 'Treuenbrietzen'                          QID=Q625078       score=1.00  matched='Treuenbrietzen'
     [OK      ] 'Satzkorn'                                QID=Q131931       score=1.00  matched='Satzkorn'
@@ -503,14 +503,14 @@ Matching 318 unique GEMEINDE value(s) across 82 Kreis group(s)...
     Stage 2: 1 item(s) not matched — trying transitive P131+ lookup...
     [OK      ] 'Leipe'                                   QID=Q144915       score=1.00  matched='Leipe'
   [Spree-Neiße / Q6165]  Stage 1: fetching index...
-    212 index entries.
+    214 index entries.
     [OK      ] 'Heinersbrück'                            QID=Q574750       score=1.00  matched='Heinersbrück'
     [OK      ] 'Drebkau'                                 QID=Q572518       score=1.00  matched='Drebkau'
     Stage 2: 2 item(s) not matched — trying transitive P131+ lookup...
     [OK      ] 'Grötsch'                                 QID=Q30112712     score=1.00  matched='Grötsch'
     [OK      ] 'Raakow'                                  QID=Q26271484     score=1.00  matched='Raakow'
   [Dahme-Spreewald / Q6173]  Stage 1: fetching index...
-    277 index entries.
+    279 index entries.
     [OK      ] 'Lübben'                                  QID=Q584815       score=1.00  matched='Lübben'
     [OK      ] 'Mittenwalde'                             QID=Q574811       score=1.00  matched='Mittenwalde'
     [OK      ] 'Schulzendorf'                            QID=Q581119       score=1.00  matched='Schulzendorf'
@@ -565,9 +565,10 @@ Matching 318 unique GEMEINDE value(s) across 82 Kreis group(s)...
     [OK      ] 'Gmina Żukowice'                          QID=Q2326629      score=1.00  matched='Gmina Żukowice'
     [OK      ] 'Gmina Głogów'                            QID=Q2467328      score=1.00  matched='Gmina Głogów'
     [OK      ] 'Gmina Pęcław'                            QID=Q2100627      score=1.00  matched='Gmina Pęcław'
-  [pow. Gorẃski / Q636757]  Stage 1: fetching index...
-    33 index entries.
-    [OK      ] 'Gmina Góra'                              QID=Q2617476      score=1.00  matched='Gmina Góra'
+  [pow. Gorẃski / Q637105]  Stage 1: fetching index...
+    40 index entries.
+    Stage 2: 1 item(s) not matched — trying transitive P131+ lookup...
+    [NO MATCH] 'Gmina Góra'                              QID=None          score=n/a  matched='None'
   [pow. Jaworski / Q637105]  Stage 1: fetching index...
     40 index entries.
     [OK      ] 'Gmina Jawor'                             QID=Q731805       score=1.00  matched='Gmina Jawor'
@@ -618,8 +619,7 @@ Matching 318 unique GEMEINDE value(s) across 82 Kreis group(s)...
     [OK      ] 'Gmina Złotniki Kuj.'                     QID=Q618437       score=1.00  matched='Gmina Złotniki Kuj.'
     [OK      ] 'Gmina Janikowo'                          QID=Q428194       score=1.00  matched='Gmina Janikowo'
   [pow. Włocławski / Q774833]  Stage 1: fetching index...
-    [Timeout] retrying in 2s (attempt 1/3)...
-    91 index entries.
+    92 index entries.
     [OK      ] 'Gmina Brześć Kujawski'                   QID=Q2463096      score=1.00  matched='Gmina Brześć Kujawski'
     [OK      ] 'Gmina Włocławek'                         QID=Q749271       score=1.00  matched='Gmina Włocławek'
     [OK      ] 'Włocławek'                               QID=Q749271       score=1.00  matched='Włocławek'
@@ -636,7 +636,7 @@ Matching 318 unique GEMEINDE value(s) across 82 Kreis group(s)...
     91 index entries.
     [OK      ] 'Knidelbrück'                             QID=Q530154       score=0.91  matched='Kindelbrück'
   [Wartburgkreis / Q7866]  Stage 1: fetching index...
-    170 index entries.
+    171 index entries.
     Stage 2: 1 item(s) not matched — trying transitive P131+ lookup...
     [OK      ] 'Behringen'                               QID=Q704400       score=1.00  matched='Behringen'
   [Gotha / Q7869]  Stage 1: fetching index...
@@ -650,9 +650,9 @@ Matching 318 unique GEMEINDE value(s) across 82 Kreis group(s)...
     116 index entries.
     [OK      ] 'Gmina Dobre'                             QID=Q2051728      score=1.00  matched='Gmina Dobre'
 
-  Stage 1 matches: 200
+  Stage 1 matches: 199
   Stage 2 matches: 118
-  Total matched:   318 / 318
+  Total matched:   317 / 318
 
 [1/2] Mapped CSV:  c:\git\bb-5kbc-sites\data\enrichment\mapping_admin_regions\fst_standortanalysen_ref_mapped.csv
 [2/2] Report CSV:  c:\git\bb-5kbc-sites\data\enrichment\mapping_admin_regions\fst_standortanalysen_ref_report.csv
