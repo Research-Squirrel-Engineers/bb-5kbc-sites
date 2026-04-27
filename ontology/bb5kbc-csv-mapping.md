@@ -15,7 +15,16 @@
 | 🟦🔗 | **Knoten + ext. Link** — Named Node mit `rdfs:label` + mind. einem `bb5kbc:hasExternalIdentifier` |
 | 🟨 | **Literal** — CSV-Wert → Datenwert direkt an einem Node, kein eigener Node |
 | 🔗 | **Ext. URI** — CSV-Wert ist selbst eine externe ID → wird zu URI + `bb5kbc:hasExternalIdentifierType` |
+| ⚙ | **Audit-only** — Spalte aus dem CSV-Enrichment, wird vom LOD-Skript **nicht** in RDF übersetzt |
 | ⏳ | **Noch leer** — Spalte im Schema vorgesehen, Daten werden später ergänzt |
+
+> Die CSV `fst_wgs84.csv` (540 Zeilen, 65 Spalten) ist der angereicherte Output
+> der vorgelagerten `csv_enrichment.py`-Pipeline: ursprünglich 33 Spalten, plus
+> 32 neue Spalten mit Authority-IDs für die vier Verwaltungsebenen (LAND,
+> BUNDESLAND, KREIS, GEMEINDE) — pro Ebene jeweils 5 Authority-Spalten
+> (Wikidata QID, GeoNames, TGN, iDAI.gazetteer, OSM Relation) und 3 Audit-
+> Metadatenspalten (`matchLabel`, `matchScore`, `matchReason`), die nur zur
+> Nachvollziehbarkeit des Matchings dienen und nicht im RDF-Graph erscheinen.
 
 ---
 
@@ -56,56 +65,74 @@
 
 ## Mapping-Tabelle — GLM
 
+> Die Spaltennummern entsprechen der tatsächlichen Position in `fst_wgs84.csv`
+> (1-indiziert, 65 Spalten). Audit-only-Spalten (`*_matchLabel`, `*_matchScore`,
+> `*_matchReason`) stammen aus dem CSV-Enrichment-Lauf und werden vom LOD-Skript
+> nicht ins RDF übernommen — sie dienen der Nachvollziehbarkeit des Matchings
+> und stehen daher nicht in der Tabelle.
+
 | # | CSV-Spalte | Beispielwert | Art | bb5kbc-Klasse / Property | Hinweis |
 |---|---|---|---|---|---|
-| 22 | `FID` | `"1"` | 🟨 | `bb5kbc:Fundstelle` ← `bb5kbc:hatFID` : `xsd:integer` (subPropertyOf `dc:identifier` + `crm:P1_is_identified_by`) | PID, Basis aller FID-URIs |
+| 51 | `FID` | `"1"` | 🟨 | `bb5kbc:Fundstelle` ← `bb5kbc:hatFID` : `xsd:integer` (subPropertyOf `dc:identifier` + `crm:P1_is_identified_by`) | PID, Basis aller FID-URIs |
 | 4 | `fst_id` | `"444"` | 🟨 | `bb5kbc:Fundstelle` ← `bb5kbc:hatFundstellenID` : `xsd:string` | Interne ID, nicht immer eindeutig |
 | 3 | `katalognr` | `"55"` | 🟨 | `bb5kbc:Fundstelle` ← `bb5kbc:hatKatalognummer` : `xsd:string` | 52 leer |
 | 5 | `fst_name` | `"Tüngeda"` | 🟨 | `bb5kbc:Fundstelle` ← `rdfs:label` + `skos:prefLabel` : Literal `@de` | |
-| 6 | `gemeinde` | `"Behringen"` | 🟦🔗 | `bb5kbc:Fundstelle` ← `bb5kbc:inGemeinde` → `bb5kbc:Gemeinde` | + TGN + iDAI + OSM |
-| 7 | `GEM_TGN` | *(leer)* | 🔗 ⏳ | `bb5kbc:Gemeinde` ← `bb5kbc:hasExternalIdentifier` → `bb5kbc:ExternalIdentifier_TGN` | neue Spalte |
-| 8 | `GEM_IDAI` | *(leer)* | 🔗 ⏳ | `bb5kbc:Gemeinde` ← `bb5kbc:hasExternalIdentifier` → `bb5kbc:ExternalIdentifier_iDAI` | neue Spalte |
-| 9 | `GEM_OSM_RELATION` | *(leer)* | 🔗 ⏳ | `bb5kbc:Gemeinde` ← `bb5kbc:hasExternalIdentifier` → `bb5kbc:ExternalIdentifier_OSM` | neue Spalte |
-| 10 | `kreis` | `"Wartburgkreis"` | 🟦🔗 | `bb5kbc:Gemeinde` ← `bb5kbc:inKreis` → `bb5kbc:Kreis` | + TGN + iDAI + OSM |
-| 11 | `KREIS_TGN` | *(leer)* | 🔗 ⏳ | `bb5kbc:Kreis` ← `bb5kbc:hasExternalIdentifier` → `bb5kbc:ExternalIdentifier_TGN` | neue Spalte |
-| 12 | `KREIS_IDAI` | *(leer)* | 🔗 ⏳ | `bb5kbc:Kreis` ← `bb5kbc:hasExternalIdentifier` → `bb5kbc:ExternalIdentifier_iDAI` | neue Spalte |
-| 13 | `KREIS_OSM_RELATION` | *(leer)* | 🔗 ⏳ | `bb5kbc:Kreis` ← `bb5kbc:hasExternalIdentifier` → `bb5kbc:ExternalIdentifier_OSM` | neue Spalte |
-| 14 | `bundesland` | `"Thüringen"` | 🟦🔗 | `bb5kbc:Kreis` ← `bb5kbc:inBundesland` → `bb5kbc:Bundesland` | + TGN + iDAI + OSM; inkl. Wojewodschaften |
-| 15 | `BL_TGN` | *(leer)* | 🔗 ⏳ | `bb5kbc:Bundesland` ← `bb5kbc:hasExternalIdentifier` → `bb5kbc:ExternalIdentifier_TGN` | neue Spalte |
-| 16 | `BL_IDAI` | *(leer)* | 🔗 ⏳ | `bb5kbc:Bundesland` ← `bb5kbc:hasExternalIdentifier` → `bb5kbc:ExternalIdentifier_iDAI` | neue Spalte |
-| 17 | `BL_OSM_RELATION` | *(leer)* | 🔗 ⏳ | `bb5kbc:Bundesland` ← `bb5kbc:hasExternalIdentifier` → `bb5kbc:ExternalIdentifier_OSM` | neue Spalte |
-| 18 | `land` | `"Deutschland"` | 🟦🔗 | `bb5kbc:Bundesland` ← `bb5kbc:inLand` → `bb5kbc:Land` | + TGN + iDAI + OSM |
-| 19 | `LAND_TGN` | `"7000084"` | 🔗 | `bb5kbc:Land` ← `bb5kbc:hasExternalIdentifier` → `bb5kbc:ExternalIdentifier_TGN` | |
-| 20 | `LAND_IDAI` | `"2044274"` | 🔗 | `bb5kbc:Land` ← `bb5kbc:hasExternalIdentifier` → `bb5kbc:ExternalIdentifier_iDAI` | |
-| 21 | `LAND_OSM_Relation` | `"51477"` | 🔗 | `bb5kbc:Land` ← `bb5kbc:hasExternalIdentifier` → `bb5kbc:ExternalIdentifier_OSM` | |
-| 13 | `perio.do` | *(leer)* | 🔗 ⏳ | `bb5kbc:Kulturgruppe` ← `bb5kbc:hasExternalIdentifier` → `bb5kbc:ExternalIdentifier_PerioDo` | 0/540 gefüllt |
-| 14 | `kultur` | `"SBK"` | 🟦🔗 | `bb5kbc:KulturelleZuordnung` ← `bb5kbc:hatKulturgruppe` → `bb5kbc:Kulturgruppe` | + Perio.do (⏳); `SBK?`/`SRK?` eigene Nodes |
-| 15 | `entdeckung` | `"Ausgrabung Bersu"` | 🟦🔗 | `bb5kbc:Fundstelle` ← `bb5kbc:wurdeEntdecktDurch` → `bb5kbc:Entdeckung` | `rdfs:label` aus Text + `bb5kbc:hatEntdeckungsart` → `bb5kbc:EntdeckungsartType` |
-| 16 | `QID_entdeckung` | `"Q959782"` | 🔗 | `bb5kbc:EntdeckungsartType` ← `bb5kbc:hasExternalIdentifier` → Wikidata | nur 2 QIDs |
-| 17 | `publikation_arch` | `"Kaufmann 1976"` | 🟦🔗 | `bb5kbc:Fundstelle` ← `bb5kbc:hatPublikation` → `bb5kbc:Publikation` | + QID_publikation (⏳); 273 leer |
-| 18 | `QID_publikation` | *(leer)* | 🔗 ⏳ | `bb5kbc:Publikation` ← `bb5kbc:hasExternalIdentifier` → `bb5kbc:ExternalIdentifier_Wikidata` | 0/540 gefüllt |
-| 19 | `fundstellenart` | `"Siedlung und Grab"` | 🟦🔗 | `bb5kbc:Fundstelle` ← `bb5kbc:hatFundstellenart` → `bb5kbc:FundstellenartType` | subPropertyOf `crm:P2_has_type` + `fsl:siteType`; Kombi-Werte als ein Node |
-| 20 | `QID_fundstellenart` | `"Q173387"` | 🔗 | `bb5kbc:FundstellenartType` ← `bb5kbc:hasExternalIdentifier` → Wikidata | 4 QIDs |
+| 6 | `gemeinde` | `"Friesack"` | 🟦🔗 | `bb5kbc:Fundstelle` ← `bb5kbc:inGemeinde` → `bb5kbc:Gemeinde` | + bis zu 5 Authority-IDs (Spalten 7–11) |
+| 7 | `GEMEINDE_QID` | `"Q585632"` | 🔗 | `bb5kbc:Gemeinde` ← `bb5kbc:hasExternalIdentifier` → `bb5kbc:ExternalIdentifier_Wikidata` | |
+| 8 | `GEMEINDE_GeoNames` | `"6550607"` | 🔗 | `bb5kbc:Gemeinde` ← `bb5kbc:hasExternalIdentifier` → `bb5kbc:ExternalIdentifier_GeoNames` | |
+| 9 | `GEMEINDE_TGN` | *(meist leer)* | 🔗 | `bb5kbc:Gemeinde` ← `bb5kbc:hasExternalIdentifier` → `bb5kbc:ExternalIdentifier_TGN` | |
+| 10 | `GEMEINDE_IDAI` | *(meist leer)* | 🔗 | `bb5kbc:Gemeinde` ← `bb5kbc:hasExternalIdentifier` → `bb5kbc:ExternalIdentifier_iDAI` | |
+| 11 | `GEMEINDE_OSM_Relation` | `"1342247"` | 🔗 | `bb5kbc:Gemeinde` ← `bb5kbc:hasExternalIdentifier` → `bb5kbc:ExternalIdentifier_OSM` | |
+| 12–14 | `GEMEINDE_match*` | — | ⚙ | — | Audit-only, nicht im RDF |
+| 15 | `kreis` | `"Havelland"` | 🟦🔗 | `bb5kbc:Gemeinde` ← `bb5kbc:inKreis` → `bb5kbc:Kreis` | + bis zu 5 Authority-IDs (Spalten 16–20) |
+| 16 | `KREIS_QID` | `"Q6139"` | 🔗 | `bb5kbc:Kreis` ← `bb5kbc:hasExternalIdentifier` → `bb5kbc:ExternalIdentifier_Wikidata` | |
+| 17 | `KREIS_GeoNames` | *(häufig leer)* | 🔗 | `bb5kbc:Kreis` ← `bb5kbc:hasExternalIdentifier` → `bb5kbc:ExternalIdentifier_GeoNames` | |
+| 18 | `KREIS_TGN` | *(häufig leer)* | 🔗 | `bb5kbc:Kreis` ← `bb5kbc:hasExternalIdentifier` → `bb5kbc:ExternalIdentifier_TGN` | |
+| 19 | `KREIS_IDAI` | *(häufig leer)* | 🔗 | `bb5kbc:Kreis` ← `bb5kbc:hasExternalIdentifier` → `bb5kbc:ExternalIdentifier_iDAI` | |
+| 20 | `KREIS_OSM_Relation` | *(häufig leer)* | 🔗 | `bb5kbc:Kreis` ← `bb5kbc:hasExternalIdentifier` → `bb5kbc:ExternalIdentifier_OSM` | |
+| 21–23 | `KREIS_match*` | — | ⚙ | — | Audit-only, nicht im RDF |
+| 24 | `bundesland` | `"Brandenburg"` | 🟦🔗 | `bb5kbc:Kreis` ← `bb5kbc:inBundesland` → `bb5kbc:Bundesland` | + bis zu 5 Authority-IDs (Spalten 25–29); inkl. Wojewodschaften |
+| 25 | `BUNDESLAND_QID` | `"Q1208"` | 🔗 | `bb5kbc:Bundesland` ← `bb5kbc:hasExternalIdentifier` → `bb5kbc:ExternalIdentifier_Wikidata` | |
+| 26 | `BUNDESLAND_GeoNames` | `"2945356"` | 🔗 | `bb5kbc:Bundesland` ← `bb5kbc:hasExternalIdentifier` → `bb5kbc:ExternalIdentifier_GeoNames` | |
+| 27 | `BUNDESLAND_TGN` | `"7000096"` | 🔗 | `bb5kbc:Bundesland` ← `bb5kbc:hasExternalIdentifier` → `bb5kbc:ExternalIdentifier_TGN` | |
+| 28 | `BUNDESLAND_IDAI` | `"2048409"` | 🔗 | `bb5kbc:Bundesland` ← `bb5kbc:hasExternalIdentifier` → `bb5kbc:ExternalIdentifier_iDAI` | |
+| 29 | `BUNDESLAND_OSM_Relation` | `"62504"` | 🔗 | `bb5kbc:Bundesland` ← `bb5kbc:hasExternalIdentifier` → `bb5kbc:ExternalIdentifier_OSM` | |
+| 30–32 | `BUNDESLAND_match*` | — | ⚙ | — | Audit-only, nicht im RDF |
+| 33 | `land` | `"Deutschland"` | 🟦🔗 | `bb5kbc:Bundesland` ← `bb5kbc:inLand` → `bb5kbc:Land` | + 5 Authority-IDs (Spalten 34–38) |
+| 34 | `LAND_QID` | `"Q183"` | 🔗 | `bb5kbc:Land` ← `bb5kbc:hasExternalIdentifier` → `bb5kbc:ExternalIdentifier_Wikidata` | |
+| 35 | `LAND_GeoNames` | `"2921044"` | 🔗 | `bb5kbc:Land` ← `bb5kbc:hasExternalIdentifier` → `bb5kbc:ExternalIdentifier_GeoNames` | |
+| 36 | `LAND_TGN` | `"7000084"` | 🔗 | `bb5kbc:Land` ← `bb5kbc:hasExternalIdentifier` → `bb5kbc:ExternalIdentifier_TGN` | |
+| 37 | `LAND_IDAI` | `"2044274"` | 🔗 | `bb5kbc:Land` ← `bb5kbc:hasExternalIdentifier` → `bb5kbc:ExternalIdentifier_iDAI` | |
+| 38 | `LAND_OSM_Relation` | `"51477"` | 🔗 | `bb5kbc:Land` ← `bb5kbc:hasExternalIdentifier` → `bb5kbc:ExternalIdentifier_OSM` | |
+| 39–41 | `LAND_match*` | — | ⚙ | — | Audit-only, nicht im RDF |
+| 42 | `perio.do` | *(leer)* | 🔗 ⏳ | `bb5kbc:Kulturgruppe` ← `bb5kbc:hasExternalIdentifier` → `bb5kbc:ExternalIdentifier_PerioDo` | 0/540 gefüllt; Spalte verbleibt im Schema |
+| 43 | `kultur` | `"SBK"` / `"SBK?"` | 🟦🔗 | `bb5kbc:KulturelleZuordnung` ← `bb5kbc:hatKulturgruppe` → `bb5kbc:Kulturgruppe` | `?`-Werte: `fsl:certaintyDesc "uncertain"@en` an der `KulturelleZuordnung` |
+| 44 | `entdeckung` | `"Ausgrabung Bersu"` | 🟦🔗 | `bb5kbc:Fundstelle` ← `bb5kbc:wurdeEntdecktDurch` → `bb5kbc:Entdeckung` | `rdfs:label` aus Text + `bb5kbc:hatEntdeckungsart` → `bb5kbc:EntdeckungsartType` |
+| 45 | `QID_entdeckung` | `"Q959782"` | 🔗 | `bb5kbc:EntdeckungsartType` ← `bb5kbc:hasExternalIdentifier` → Wikidata | nur 2 QIDs |
+| 46 | `publikation_arch` | `"Kaufmann 1976"` | 🟦🔗 | `bb5kbc:Fundstelle` ← `bb5kbc:hatPublikation` → `bb5kbc:Publikation` | + `QID_publikation` (via `enrich_qids.py`); 273 leer |
+| 47 | `QID_publikation` | `"Q139304616"` | 🔗 | `bb5kbc:Publikation` ← `bb5kbc:hasExternalIdentifier` → `bb5kbc:ExternalIdentifier_Wikidata` | gefüllt durch `enrich_qids.py`; Pyzel 2019 / Umbreit 1940 noch offen |
+| 48 | `fundstellenart` | `"Siedlung und Grab"` / `"Grab?"` | 🟦🔗 | `bb5kbc:Fundstelle` ← `bb5kbc:hatFundstellenart` → `bb5kbc:FundstellenartType` | subPropertyOf `crm:P2_has_type` + `fsl:siteType`; Kombi-Werte als mehrere Type-Knoten; `?`-Werte: eigener Knoten pro Site mit `fsl:certaintyDesc "uncertain"@en` |
+| 49 | `QID_fundstellenart` | `"Q173387"` | 🔗 | `bb5kbc:FundstellenartType` ← `bb5kbc:hasExternalIdentifier` → Wikidata | 4 QIDs |
 
 ### Dating-Spalten
 
 | # | CSV-Spalte | Beispielwert | Art | bb5kbc-Klasse / Property | Hinweis |
 |---|---|---|---|---|---|
 | — | *(URI)* | `culture_{hash}_dating` | 🟦 | `bb5kbc:KulturelleZuordnung` ← `bb5kbc:hatDatierung` → `bb5kbc:Datierung` | 1 Node pro Fundstelle; URI abgeleitet aus KulturelleZuordnung-Hash |
-| 25 | `dating_start` | `"-4550"` | 🟨 | `bb5kbc:Datierung` ← `bb5kbc:datierungStart` : `xsd:integer` | subPropertyOf `crm:P82a_begin_of_the_begin`; negativ = BCE |
-| 27 | `dating_end` | `"-3900"` | 🟨 | `bb5kbc:Datierung` ← `bb5kbc:datierungEnd` : `xsd:integer` | subPropertyOf `crm:P82b_end_of_the_end`; ⚠ FID=31 und FID=257 mit positivem Wert |
-| 29 | `dating_method` | `"Q173412"` | 🟦🔗 | `bb5kbc:Datierung` ← `bb5kbc:datierungMethode` → `bb5kbc:DatierungsMethodeType` | hash-URI `datmethode_{MD5(QID)[:8]}`; nur 2 distinct (Q173412 14C, Q816829 stilistisch) |
-| 26 | `dating_certainty_start` | `"+ / - 100 years"` | 🟨 | `bb5kbc:Datierung` ← `bb5kbc:datierungSicherheitStart` : `xsd:string` | Freitext, Mischsprache (de/en) |
-| 28 | `dating_certainty_end` | `"+ / - 100 years"` | 🟨 | `bb5kbc:Datierung` ← `bb5kbc:datierungSicherheitEnd` : `xsd:string` | Freitext, Mischsprache (de/en) |
-| 30 | `dating_certainty_range` | `"medium certainty, some 14C dates available"` | 🟨 | `bb5kbc:Datierung` ← `bb5kbc:datierungSicherheitRange` : `xsd:string` | qualitative Bewertung der Gesamtdatierung; 14 distinct |
-| 31 | `dating_perio.do` | `"http://n2t.net/ark:/99152/p0wctqtnkjq"` | 🔗 | `bb5kbc:Datierung` ← `skos:{matchType}` → Perio.do-URI | nur 2 distinct URIs |
-| 32 | `dating_perio.do_match` | `"closeMatch"` | — | bestimmt Property: `skos:exactMatch` / `skos:closeMatch` / `skos:relatedMatch` | kein eigenes Triple — steuert welche SKOS-Property genutzt wird; leer → Default `relatedMatch` |
+| 57 | `dating_start` | `"-4550"` | 🟨 | `bb5kbc:Datierung` ← `bb5kbc:datierungStart` : `xsd:integer` | subPropertyOf `crm:P82a_begin_of_the_begin`; negativ = BCE |
+| 59 | `dating_end` | `"-3900"` | 🟨 | `bb5kbc:Datierung` ← `bb5kbc:datierungEnd` : `xsd:integer` | subPropertyOf `crm:P82b_end_of_the_end` |
+| 61 | `dating_method` | `"Q173412"` | 🟦🔗 | `bb5kbc:Datierung` ← `bb5kbc:datierungMethode` → `bb5kbc:DatierungsMethodeType` | hash-URI `datmethode_{MD5(QID)[:8]}`; nur 2 distinct (Q173412 14C, Q816829 stilistisch) |
+| 58 | `dating_certainty_start` | `"+/- 100 years"` | 🟨 | `bb5kbc:Datierung` ← `bb5kbc:datierungSicherheitStart` : `xsd:string` | Freitext, vereinheitlicht auf Englisch |
+| 60 | `dating_certainty_end` | `"+/- 100 years"` | 🟨 | `bb5kbc:Datierung` ← `bb5kbc:datierungSicherheitEnd` : `xsd:string` | Freitext, vereinheitlicht auf Englisch |
+| 62 | `dating_certainty_range` | `"medium certainty, some 14C dates available"` | 🟨 | `bb5kbc:Datierung` ← `bb5kbc:datierungSicherheitRange` : `xsd:string` | qualitative Bewertung der Gesamtdatierung; 14 distinct |
+| 63 | `dating_perio.do` | `"http://n2t.net/ark:/99152/p0wctqtnkjq"` | 🔗 | `bb5kbc:Datierung` ← `skos:{matchType}` → Perio.do-URI | nur wenige distinct URIs |
+| 64 | `dating_perio.do_match` | `"closeMatch"` | — | bestimmt Property: `skos:exactMatch` / `skos:closeMatch` / `skos:relatedMatch` | kein eigenes Triple — steuert welche SKOS-Property genutzt wird; leer → Default `relatedMatch` |
 
 ### Scherben-Spalte
 
 | # | CSV-Spalte | Beispielwert | Art | bb5kbc-Klasse / Property | Hinweis |
 |---|---|---|---|---|---|
-| 33 | `sherd` | `"Q139477253\|Q139477652"` | 🟦🔗 | `bb5kbc:Fundstelle` ← `bb5kbc:hatScherbe` → `bb5kbc:Scherbe` | 1-n Wikidata-QIDs, Delimiter `\|`; hash-URI `sherd_{MD5(QID)[:8]}`; Wikidata-URI via `bb5kbc:hasExternalIdentifier`; nur 4/540 gefüllt (FID 37, 41, 48, 80) |
+| 65 | `sherd` | `"Q139477253\|Q139477652"` | 🟦🔗 | `bb5kbc:Fundstelle` ← `bb5kbc:hatScherbe` → `bb5kbc:Scherbe` | 1-n Wikidata-QIDs, Delimiter `\|`; hash-URI `sherd_{MD5(QID)[:8]}`; Wikidata-URI via `bb5kbc:hasExternalIdentifier`; nur 4/540 gefüllt (FID 37, 41, 48, 80) |
 
 ---
 
@@ -114,17 +141,17 @@
 | # | CSV-Spalte | Beispielwert | Art | bb5kbc-Klasse / Property | FSL OWL | Wikibase | Hinweis |
 |---|---|---|---|---|---|---|---|
 | — | *(abgeleitet)* | `Q23 / Q15 / Q24 / Q113` | 🟦 | `bb5kbc:Fundstelle` ← `fsl:certaintyLevel` → `fsl:CertaintyType` | `fsl:certaintyLevel` | P5 | Aus `genauigkeit_m`: `<Q23>` high = 0m · `<Q15>` medium = 50–500m · `<Q24>` low = 800–5000m · `<Q113>` dubious = wgs84 0,0 (Koordinatenfehler) |
-| 24 | `quellen_typ` | `"Printpublikation"` | 🟦 | `bb5kbc:GeoreferenzierungsAktivitaet` ← `fsl:hasSourceType` → `fsl:SourceType` | `fsl:hasSourceType` | P6 | Named Node `quellentyp_{hash}`; 4 distinct |
-| 23 | `methode` | `"Übernahme aus externer Datenbank"` | 🟦 | `bb5kbc:GeoreferenzierungsAktivitaet` ← `fsl:methodUsed` → `fsl:MethodType` | `fsl:methodUsed` | P7 | Named Node `methode_{hash}`; 3 distinct |
-| 26+27 | `wgs84_x` + `wgs84_y` | `"10.58"` + `"51.03"` | 🟨 | `sf:Point` ← `geosparql:asWKT` : `"POINT(10.58 51.03)"^^geosparql:wktLiteral` via `fsl:representativeGeometry` + `geosparql:hasGeometry` | `geosparql:hasGeometry` | P4 | Komma als Dezimaltrenner in CSV (`"10,58"`) → Punkt im WKT; bei `0,0` kein `sf:Point`, `fsl:certaintyLevel` → `<Q113>` dubious |
-| 25 | `methodenbeschr` | `"Koordinaten wurden vom LdfA..."` | 🟨 | `bb5kbc:GeoreferenzierungsAktivitaet` ← `fsl:certaintyDesc` : `xsd:string` | `fsl:certaintyDesc` | P13 | Freitext; 22 distinct |
+| 53 | `quellen_typ` | `"Printpublikation"` | 🟦 | `bb5kbc:GeoreferenzierungsAktivitaet` ← `fsl:hasSourceType` → `fsl:SourceType` | `fsl:hasSourceType` | P6 | Named Node `quellentyp_{hash}`; 4 distinct |
+| 52 | `methode` | `"Übernahme aus externer Datenbank"` | 🟦 | `bb5kbc:GeoreferenzierungsAktivitaet` ← `fsl:methodUsed` → `fsl:MethodType` | `fsl:methodUsed` | P7 | Named Node `methode_{hash}`; 3 distinct |
+| 55+56 | `wgs84_x` + `wgs84_y` | `"10.58"` + `"51.03"` | 🟨 | `sf:Point` ← `geosparql:asWKT` : `"POINT(10.58 51.03)"^^geosparql:wktLiteral` via `fsl:representativeGeometry` + `geosparql:hasGeometry` | `geosparql:hasGeometry` | P4 | Komma als Dezimaltrenner in CSV (`"10,58"`) → Punkt im WKT; bei `0,0` kein `sf:Point`, `fsl:certaintyLevel` → `<Q113>` dubious |
+| 54 | `methodenbeschr` | `"Koordinaten wurden vom LdfA..."` | 🟨 | `bb5kbc:GeoreferenzierungsAktivitaet` ← `fsl:certaintyDesc` : `xsd:string` | `fsl:certaintyDesc` | P13 | Freitext; 22 distinct |
 | — | *(fest)* | `https://orcid.org/0000-0003-4696-2101` | 🟦 | `bb5kbc:GeoreferenzierungsAktivitaet` ← `fsl:georeferencingBy` → `foaf:Person` | `fsl:georeferencingBy` | P14 | Sophie C. Schmidt; auch `prov:wasAssociatedWith` |
-| 25 | `methodenbeschr` | `"Koordinaten wurden vom LdfA..."` | 🟨 | `bb5kbc:GeoreferenzierungsAktivitaet` ← `fsl:activityDesc` : `xsd:string` | `fsl:activityDesc` | P15 | Freitext; 22 distinct |
-| 24 | `quellen_typ` | `"Printpublikation"` | 🟦 | `bb5kbc:GeoreferenzierungsAktivitaet` ← `fsl:hasSourceTypeDetail` → `fsl:SourceType` | `fsl:hasSourceTypeDetail` | P16 | Gleiche Spalte wie P6, detail-Ebene |
-| 21 | `genauigkeit_m` | `"100"` | 🟨 | `bb5kbc:Fundstelle` ← `bb5kbc:hatGenauigkeit` : `xsd:decimal` | `fsl:precision` | P23 | subPropertyOf `fsl:precision` |
+| 54 | `methodenbeschr` | `"Koordinaten wurden vom LdfA..."` | 🟨 | `bb5kbc:GeoreferenzierungsAktivitaet` ← `fsl:activityDesc` : `xsd:string` | `fsl:activityDesc` | P15 | Freitext; 22 distinct |
+| 53 | `quellen_typ` | `"Printpublikation"` | 🟦 | `bb5kbc:GeoreferenzierungsAktivitaet` ← `fsl:hasSourceTypeDetail` → `fsl:SourceType` | `fsl:hasSourceTypeDetail` | P16 | Gleiche Spalte wie P6, detail-Ebene |
+| 50 | `genauigkeit_m` | `"100"` | 🟨 | `bb5kbc:Fundstelle` ← `bb5kbc:hatGenauigkeit` : `xsd:decimal` | `fsl:precision` | P23 | subPropertyOf `fsl:precision` |
 | — | *(fest)* | `https://fuzzy-sl.wikibase.cloud/entity/Q80` | 🟦 | `bb5kbc:Fundstelle` ← `fsl:hasLocationType` → `fsl:LocationType` | `fsl:hasLocationType` | P24 | Immer `<Q80>` Findspot |
 | 1 | `quelle_georef` | `"LfDA Sachsen-Anhalt"` | 🟨 | `bb5kbc:GeoreferenzierungsAktivitaet` ← `fsl:hasReference` : `xsd:string` | `fsl:hasReference` | P25 | Literal |
-| 2 | `QID_quelle_georef` | `"Q65631985"` | 🔗 ⏳ | `bb5kbc:GeoreferenzierungsAktivitaet` ← `fsl:hasReference` → Wikidata-URI | `fsl:hasReference` | P31 | 206 leer |
+| 2 | `QID_quelle_georef` | `"Q1802049"` | 🔗 | `bb5kbc:GeoreferenzierungsAktivitaet` ← `fsl:hasReference` → Wikidata-URI | `fsl:hasReference` | P31 | Gefüllt durch `enrich_qids.py`; einige institutionelle Quellen weiterhin offen |
 | — | *(fest)* | `https://fuzzy-sl.wikibase.cloud/entity/Q126` | 🟦 | `sf:Point` ← `fsl:hasPointType` → `fsl:PointType` | `fsl:hasPointType` | P33 | Immer `<Q126>` Representative Point |
 
 ---
@@ -387,6 +414,7 @@ der Sherd-Block beispielhaft für eine andere Fundstelle (FID=80, Seelow 20) gez
 @prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
 @prefix dc:      <http://purl.org/dc/elements/1.1/> .
 @prefix wd:      <https://www.wikidata.org/entity/> .
+@prefix gn:      <https://www.geonames.org/> .
 @prefix orcid:   <https://orcid.org/> .
 
 # =============================================================================
@@ -445,33 +473,43 @@ data:site_33_activity
     prov:wasAssociatedWith orcid:0000-0003-4696-2101 .
 
 # =============================================================================
-# VERWALTUNGSGEBIETE
+# VERWALTUNGSGEBIETE  (mit Authority-IDs aus dem CSV-Enrichment-Lauf)
 # =============================================================================
 
 data:gemeinde_ef3c98d9
     a bb5kbc:Gemeinde ;
     rdfs:label "Friesack"@de ;
+    bb5kbc:hasExternalIdentifier wd:Q585632 ,                              # GEMEINDE_QID
+                                  gn:6550607 ,                              # GEMEINDE_GeoNames
+                                  <https://www.openstreetmap.org/relation/1342247> ;  # GEMEINDE_OSM_Relation
     bb5kbc:inKreis data:kreis_d4d0a03b .
-    # GEM_TGN / GEM_IDAI / GEM_OSM_RELATION → noch leer ⏳
+    # GEMEINDE_TGN / GEMEINDE_IDAI für Friesack nicht in der CSV gefüllt
 
 data:kreis_d4d0a03b
     a bb5kbc:Kreis ;
     rdfs:label "Havelland"@de ;
+    bb5kbc:hasExternalIdentifier wd:Q6139 ;                                # KREIS_QID
     bb5kbc:inBundesland data:bundesland_2ddb2d82 .
-    # KREIS_TGN / KREIS_IDAI / KREIS_OSM_RELATION → noch leer ⏳
+    # KREIS_GeoNames / TGN / IDAI / OSM_Relation für Havelland nicht in der CSV gefüllt
 
 data:bundesland_2ddb2d82
     a bb5kbc:Bundesland ;
     rdfs:label "Brandenburg"@de ;
+    bb5kbc:hasExternalIdentifier wd:Q1208 ,                                # BUNDESLAND_QID
+                                  gn:2945356 ,                              # BUNDESLAND_GeoNames
+                                  <http://vocab.getty.edu/tgn/7000096> ,    # BUNDESLAND_TGN
+                                  <http://gazetteer.dainst.org/place/2048409> ,  # BUNDESLAND_IDAI
+                                  <https://www.openstreetmap.org/relation/62504> ;  # BUNDESLAND_OSM_Relation
     bb5kbc:inLand data:land_3c2f8b8c .
-    # BL_TGN / BL_IDAI / BL_OSM_RELATION → noch leer ⏳
 
 data:land_3c2f8b8c
     a bb5kbc:Land ;
     rdfs:label "Deutschland"@de ;
-    bb5kbc:hasExternalIdentifier <http://vocab.getty.edu/tgn/7000084> ,
-                                  <http://gazetteer.dainst.org/place/2044274> ,
-                                  <https://www.openstreetmap.org/relation/51477> .
+    bb5kbc:hasExternalIdentifier wd:Q183 ,                                 # LAND_QID
+                                  gn:2921044 ,                              # LAND_GeoNames
+                                  <http://vocab.getty.edu/tgn/7000084> ,    # LAND_TGN
+                                  <http://gazetteer.dainst.org/place/2044274> ,  # LAND_IDAI
+                                  <https://www.openstreetmap.org/relation/51477> .  # LAND_OSM_Relation
 
 # =============================================================================
 # KULTURELLE ZUORDNUNG + KULTURGRUPPE
@@ -539,8 +577,8 @@ data:fundstellenart_1972902b
 
 data:pub_c54b495e
     a bb5kbc:Publikation ;
-    rdfs:label "Wetzel/Beran 2023"@de .
-    # QID_publikation → noch leer ⏳
+    rdfs:label "Wetzel/Beran 2023"@de ;
+    bb5kbc:hasExternalIdentifier wd:Q139304633 .   # gefüllt durch enrich_qids.py
 
 # =============================================================================
 # GEOREFERENZIERUNGS-TYPEN (dedupliziert, geteilt mit anderen Fundstellen)
@@ -565,3 +603,51 @@ data:quellentyp_5ae20fe0
 #     a bb5kbc:Scherbe ;
 #     bb5kbc:hasExternalIdentifier wd:Q139477253 .
 ```
+
+---
+
+## Beispiel-TTL — Unsicherheits-Modellierung (`?`-Werte)
+
+Werte mit Fragezeichen — `kultur = "SBK?"`, `fundstellenart = "Grab?"` — werden
+mit `fsl:certaintyDesc "uncertain"@en` modelliert. Die Ankerstelle unterscheidet
+sich je nach Domäne:
+
+- **Kulturgruppe**: `certaintyDesc` an der **`KulturelleZuordnung`** (Verknüpfungs-
+  knoten zwischen Site und Kulturgruppe), nicht an der Kulturgruppe selbst.
+  Begründung: Die Kulturgruppe (`SBK?` als Konzept) ist ein eigener Knoten und
+  wird über alle Sites hinweg dedupliziert. Die Unsicherheit betrifft *diese
+  Zuweisung*, nicht das Konzept.
+- **Fundstellenart**: Eigener, **nicht-deduplizierter** Type-Knoten pro Site
+  (URI-Salt mit FID), `certaintyDesc` direkt am Type-Knoten. Begründung: Hier
+  gibt es keinen Verknüpfungs-Zwischenknoten, also wird die Unsicherheit nur
+  per FID-Salt-Trennung von der "sicheren" Variante getrennt.
+
+```turtle
+# --- SBK? (Kultur unsicher) — FID=81 ---
+data:site_81
+    a bb5kbc:Fundstelle ;
+    bb5kbc:hatKulturelleZuordnung data:culture_7a001224 .
+
+data:culture_7a001224
+    a bb5kbc:KulturelleZuordnung ;
+    fsl:certaintyDesc "uncertain"@en ;          # ← an der Verknüpfung
+    bb5kbc:hatKulturgruppe data:kultur_7a001224 .
+
+data:kultur_7a001224
+    a bb5kbc:Kulturgruppe ;
+    rdfs:label "SBK?"@de .                      # Label behält das `?`
+
+# --- Grab? (Fundstellenart unsicher) — FID=54 ---
+data:site_54
+    a bb5kbc:Fundstelle ;
+    bb5kbc:hatFundstellenart data:fundstellenart_e5b4c377 .   # FID-gesalzener Hash
+
+data:fundstellenart_e5b4c377
+    a bb5kbc:FundstellenartType ;
+    rdfs:label "Grab?"@de ;
+    fsl:certaintyDesc "uncertain"@en ;          # ← am Type-Knoten selbst
+    bb5kbc:hasExternalIdentifier wd:Q173387 .   # Q173387 = grave (gleiche QID wie für sicheres "Grab")
+```
+
+Der "sichere" `Grab`-Knoten (`data:fundstellenart_b635ceb0`) bleibt deduplizierter
+Sammelknoten für alle Sites mit `fundstellenart = "Grab"` — ohne `certaintyDesc`.

@@ -1,11 +1,11 @@
 # bb5kbc Modellierungs-Regeln
 
-> Wie die Daten von `fst_wgs84_comma.csv` als Linked Open Data abgebildet werden,
+> Wie die Daten von `fst_wgs84.csv` als Linked Open Data abgebildet werden,
 > in einer Sprache, die ohne CIDOC-CRM-Vorwissen lesbar ist. Das Dokument
 > beschreibt die *Spielregeln* der Modellierung — nicht die technische Umsetzung
 > (das macht das Pipeline-Skript `bb5kbc_lod_pipeline.py`).
 >
-> **Autoren:** Sophie C. Schmidt, Florian Thiery · **Stand:** Ontologie v0.9
+> **Autoren:** Sophie C. Schmidt, Florian Thiery · **Stand:** Ontologie v0.10
 > · **Lizenz:** CC BY 4.0
 
 ---
@@ -24,18 +24,25 @@
 
 ## Worum geht's
 
-Die CSV `fst_wgs84_comma.csv` hat 540 Zeilen — jede Zeile eine archäologische
-Fundstelle aus Brandenburg und Umgebung, ca. 5000 BC. Pro Zeile gibt es 33
-Spalten: Fundstellenname, Verwaltungsgebiete, Kulturgruppe, Datierung, Quelle
-der Georeferenzierung, Koordinaten, Wikidata-IDs für Publikation und
-Fundstellenart, etc.
+Die CSV `fst_wgs84.csv` hat 540 Zeilen — jede Zeile eine archäologische
+Fundstelle aus Brandenburg und Umgebung, ca. 5000 BC. Sie hat 65 Spalten:
+die ursprünglichen 33 Feld-Spalten der Erfassung (Fundstellenname, Verwaltungs-
+gebiete, Kulturgruppe, Datierung, Quelle der Georeferenzierung, Koordinaten,
+Wikidata-IDs für Publikation und Fundstellenart, etc.) plus 32 Authority-ID-
+Spalten, die durch die vorgelagerte `csv_enrichment.py`-Pipeline ergänzt wurden.
+
+Diese 32 zusätzlichen Spalten enthalten für jede der vier Verwaltungsebenen
+(Land, Bundesland, Kreis, Gemeinde) bis zu fünf externe Identifier (Wikidata
+QID, GeoNames, Getty TGN, iDAI.gazetteer, OSM Relation) plus drei Audit-
+Metadatenspalten zur Nachvollziehbarkeit des Matchings. Die Audit-Spalten
+gehen *nicht* ins RDF — sie sind nur für die Pipeline-Diagnose.
 
 Das Ziel der Modellierung ist es, **diese tabellarischen Daten so in RDF
 (Linked Open Data) zu übersetzen**, dass:
 
 - jede archäologisch bedeutsame Aussage einen eigenen, abfragbaren Knoten bekommt
 - die Daten an internationale Vokabulare anschließen (CIDOC CRM, Wikidata,
-  Getty TGN, Perio.do, iDAI.gazetteer, OpenStreetMap)
+  Getty TGN, GeoNames, Perio.do, iDAI.gazetteer, OpenStreetMap)
 - die Wiederverwendung effizient ist: "Brandenburg" ist genau **ein** Knoten,
   egal wie viele Fundstellen drinliegen
 - man mit SPARQL Fragen stellen kann wie "Welche SBK-Fundstellen liegen in
@@ -151,10 +158,21 @@ wird, die als Siedlung klassifiziert sind. Auf diesem Typ-Knoten hängt dann
 **Warum?** Damit Anfragen wie "Wie viele Siedlungen gibt es?" einfach
 funktionieren — man fragt einen Knoten, nicht 137 Strings.
 
-**Sonderfall Unsicherheit:** Werte wie `"SBK?"` und `"Grab?"` bekommen
-**eigene Knoten**, getrennt von `"SBK"` und `"Grab"`. Der Wert mit Fragezeichen
-ist *nicht* dasselbe wie der Wert ohne — die Unsicherheit ist Teil der
-Aussage. Beide tragen aber dieselbe Wikidata-QID.
+**Sonderfall Unsicherheit (`?`-Werte):** Werte wie `"SBK?"`, `"SRK?"` und `"Grab?"`
+werden mit `fsl:certaintyDesc "uncertain"@en` modelliert. Die *Ankerstelle* der
+`certaintyDesc`-Aussage hängt von der Domäne ab — und das ist absichtlich so:
+
+| Domäne | Ankerstelle | Begründung |
+|---|---|---|
+| Kulturgruppe (`SBK?`, `SRK?`) | an der **`KulturelleZuordnung`** (Verknüpfung Site↔Kultur) | Die Kulturgruppe ist ein eigenständiges Konzept, deduplizierter Knoten — die Unsicherheit betrifft *diese Zuweisung*, nicht das Konzept SBK an sich |
+| Fundstellenart (`Grab?`) | direkt am **`FundstellenartType`-Knoten**, mit FID-Salt im URI-Hash | Es gibt keinen Verknüpfungs-Zwischenknoten zwischen Site und Type; ein eigener, nicht-deduplizierter Type-Knoten ist die einzig saubere Stelle |
+
+Wichtig: in beiden Fällen ist der Wert mit Fragezeichen *nicht* dasselbe wie
+der Wert ohne — die Unsicherheit ist Teil der Aussage. Beide tragen aber
+dieselbe Wikidata-QID (z.B. `wd:Q173387` für sowohl `Grab` als auch `Grab?`).
+Das stellt sicher, dass `?`-Sites in QID-basierten Anfragen mitfinden, aber
+in Label-basierten Anfragen sauber getrennt sind. Praktisches Beispiel im
+Kochbuch unten.
 
 **Sonderfall Mehrwertige Fundstellenart:** Werte wie `"Siedlung und Grab"`
 oder `"Kreisgrabenanlage und Siedlung"` werden in **zwei separate Knoten**
@@ -290,6 +308,7 @@ PREFIX data:   <http://w3id.org/bb5kbc/>
 PREFIX rdfs:   <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX skos:   <http://www.w3.org/2004/02/skos/core#>
 PREFIX wd:     <https://www.wikidata.org/entity/>
+PREFIX gn:     <https://www.geonames.org/>
 PREFIX geo:    <http://www.opengis.net/ont/geosparql#>
 PREFIX xsd:    <http://www.w3.org/2001/XMLSchema#>
 ```
@@ -320,7 +339,32 @@ SELECT ?name WHERE {
 ```
 
 > Findet alle Fundstellen einer bestimmten Kulturgruppe. Beachte: `"SBK?"` mit
-> Fragezeichen findet diese Query *nicht* — das ist ein eigener Knoten (Regel 3).
+> Fragezeichen findet diese Query *nicht* — `SBK` und `SBK?` sind getrennte
+> Kulturgruppen-Knoten (Regel 3, Sonderfall Unsicherheit). Wer auch unsichere
+> Zuordnungen mitfangen will, fragt über die gemeinsame Wikidata-QID statt
+> über das Label — siehe nächstes Rezept.
+
+### 2b. Alle SBK-Fundstellen inkl. unsicherer Zuordnungen
+
+```sparql
+PREFIX fsl: <http://fuzzy-sl.squirrel.link/ontology/>
+
+SELECT ?name ?certaintyDesc WHERE {
+    # Beide Kulturgruppen-Knoten (SBK und SBK?) zeigen auf dieselbe QID — falls modelliert.
+    # Hier filtern wir per Label-Präfix, was alle SBK*-Varianten findet.
+    ?kultur a bb5kbc:Kulturgruppe ;
+            rdfs:label ?kulturLabel .
+    FILTER(STRSTARTS(STR(?kulturLabel), "SBK"))
+    ?zuordnung bb5kbc:hatKulturgruppe ?kultur .
+    ?site bb5kbc:hatKulturelleZuordnung ?zuordnung ;
+          rdfs:label ?name .
+    OPTIONAL { ?zuordnung fsl:certaintyDesc ?certaintyDesc }
+}
+```
+
+> Findet alle Fundstellen mit SBK-Bezug, egal ob sicher oder unsicher. Die
+> `certaintyDesc`-Spalte zeigt `"uncertain"@en` für `SBK?`-Zuordnungen und
+> ist sonst leer. Analog für andere Kulturgruppen.
 
 ### 3. Alle Fundstellen in Brandenburg (egal in welchem Kreis/welcher Gemeinde)
 
