@@ -97,13 +97,20 @@ drei Audit-Spalten angefügt:
 | `_TGN` | Getty Thesaurus of Geographic Names | P1667 |
 | `_IDAI` | iDAI.gazetteer (DAI) | P8217 |
 | `_OSM_Relation` | OpenStreetMap | P402 |
-| `_matchLabel` | Wikidata-Label des Treffers | (Audit) |
-| `_matchScore` | Fuzzy-Score 0.0–1.0 | (Audit) |
-| `_matchReason` | Diagnose-Text | (Audit) |
+| `_matchLabel` | Wikidata-Label des Treffers | (Audit, CSV-only) |
+| `_matchScore` | Fuzzy-Score 0.0–1.0 | (Audit, CSV-only) |
+| `_matchReason` | Diagnose-Text | (Audit, → RDF als `bb5kbc:wikidataMatchDescription`) |
 
-Die Audit-Spalten wandern nicht in den späteren RDF-Graph — sie dienen der
-Nachvollziehbarkeit beim manuellen Review. Wikidata wird zusätzlich als Hub
-benutzt: Alle anderen Identifikatoren werden in derselben SPARQL-Antwort
+Von den drei Audit-Spalten wird `_matchReason` in den späteren RDF-Graph als
+`bb5kbc:wikidataMatchDescription` an den jeweiligen Type-Knoten übernommen —
+ein einzelnes Klartext-Literal pro distinkter Verwaltungs-Entität, das Methode
+(exact / fuzzy / override / transitive P131+), Normalisierungsschritte,
+gesuchtes und gefundenes Label sowie den Score in einer Zeile zusammenfasst.
+Damit lassen sich später per SPARQL z. B. alle Gemeinden mit nicht-exakter
+Zuordnung zur Sophie-Review filtern. Die zwei verbleibenden Spalten
+`_matchLabel` und `_matchScore` bleiben CSV-only und dienen der Triage über
+`fst_standortanalysen_ref_report.csv`. Wikidata wird zusätzlich als Hub
+benutzt: Alle externen Identifikatoren werden in derselben SPARQL-Antwort
 mitgelesen.
 
 ### Wie das Fuzzy-Matching arbeitet

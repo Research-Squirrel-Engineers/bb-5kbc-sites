@@ -23,8 +23,11 @@
 > 32 neue Spalten mit Authority-IDs für die vier Verwaltungsebenen (LAND,
 > BUNDESLAND, KREIS, GEMEINDE) — pro Ebene jeweils 5 Authority-Spalten
 > (Wikidata QID, GeoNames, TGN, iDAI.gazetteer, OSM Relation) und 3 Audit-
-> Metadatenspalten (`matchLabel`, `matchScore`, `matchReason`), die nur zur
-> Nachvollziehbarkeit des Matchings dienen und nicht im RDF-Graph erscheinen.
+> Metadatenspalten (`matchLabel`, `matchScore`, `matchReason`). Davon wandert
+> nur `matchReason` als `bb5kbc:wikidataMatchDescription` in den RDF-Graph
+> (eine Klartext-Beschreibung pro distinktem Type-Knoten); `matchLabel` und
+> `matchScore` bleiben CSV-only und dienen der Triage über
+> `fst_standortanalysen_ref_report.csv`.
 
 ---
 
@@ -66,10 +69,14 @@
 ## Mapping-Tabelle — GLM
 
 > Die Spaltennummern entsprechen der tatsächlichen Position in `fst_wgs84.csv`
-> (1-indiziert, 65 Spalten). Audit-only-Spalten (`*_matchLabel`, `*_matchScore`,
-> `*_matchReason`) stammen aus dem CSV-Enrichment-Lauf und werden vom LOD-Skript
-> nicht ins RDF übernommen — sie dienen der Nachvollziehbarkeit des Matchings
-> und stehen daher nicht in der Tabelle.
+> (1-indiziert, 65 Spalten). Die Spalten `*_matchLabel` und `*_matchScore`
+> stammen aus dem CSV-Enrichment-Lauf und werden vom LOD-Skript nicht ins RDF
+> übernommen (CSV-only). Die Spalte `*_matchReason` wird hingegen als
+> `bb5kbc:wikidataMatchDescription` an den jeweiligen Verwaltungs-Type-Knoten
+> in den RDF-Graph übernommen (siehe Datatype-Properties-Tabelle weiter unten).
+> Aus Übersichtlichkeitsgründen sind alle Audit-Spalten (`*_matchLabel`,
+> `*_matchScore`, `*_matchReason`) trotzdem nicht in der folgenden Mapping-
+> Tabelle aufgeführt.
 
 | # | CSV-Spalte | Beispielwert | Art | bb5kbc-Klasse / Property | Hinweis |
 |---|---|---|---|---|---|
@@ -192,6 +199,7 @@
 | `bb5kbc:datierungSicherheitStart` | `bb5kbc:Datierung` | `xsd:string` | `fsl:certaintyDesc` | `fsl:certaintyDesc` |
 | `bb5kbc:datierungSicherheitEnd` | `bb5kbc:Datierung` | `xsd:string` | `fsl:certaintyDesc` | `fsl:certaintyDesc` |
 | `bb5kbc:datierungSicherheitRange` | `bb5kbc:Datierung` | `xsd:string` | `fsl:certaintyDesc` | `fsl:certaintyDesc` |
+| `bb5kbc:wikidataMatchDescription` | `bb5kbc:Land`, `bb5kbc:Bundesland`, `bb5kbc:Kreis`, `bb5kbc:Gemeinde` | `xsd:string` | — | — (Audit-Property) |
 
 ### Nachgenutzte Properties (kein bb5kbc-Wrapper)
 

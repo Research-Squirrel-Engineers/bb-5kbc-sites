@@ -285,12 +285,19 @@ def _bind_namespaces(g: Graph) -> None:
 
 def _admin_node(g: Graph, label: str, klass: URIRef, prefix: str,
                 tgn_id: str = "", idai_id: str = "", osm_id: str = "",
-                geonames_id: str = "", wikidata_qid: str = "") -> URIRef:
+                geonames_id: str = "", wikidata_qid: str = "",
+                match_reason: str = "") -> URIRef:
     """Create or reuse an administrative-area node with optional external IDs.
 
     Used for Land, Bundesland, Kreis, Gemeinde — they all share the same
     pattern: hash-URI deduplicated by label, with up to five external
     identifiers attached (Wikidata, GeoNames, TGN, iDAI, OSM).
+
+    If ``match_reason`` is given (i.e. the corresponding ``<LEVEL>_matchReason``
+    column from csv_enrichment), it is attached as
+    ``bb5kbc:wikidataMatchDescription``. The triple is added idempotently so
+    that deduplicated nodes referenced by multiple sites with identical
+    matchReason strings only carry one description.
     """
     uri = DATA[f"{prefix}_{_hash8(label)}"]
 
@@ -323,6 +330,13 @@ def _admin_node(g: Graph, label: str, klass: URIRef, prefix: str,
         ext = WD[str(wikidata_qid).strip()]
         g.add((uri, BB5KBC.hasExternalIdentifier, ext))
         g.add((ext, BB5KBC.hasExternalIdentifierType, EXT_ID_TYPES["wikidata"]))
+
+    if match_reason and not _empty(match_reason):
+        # Idempotent: rdflib silently no-ops on duplicate triples, so deduped
+        # admin nodes referenced by many sites will only carry the description
+        # once (assuming the CSV is consistent — same label → same matchReason).
+        g.add((uri, BB5KBC.wikidataMatchDescription,
+               Literal(str(match_reason).strip(), datatype=XSD.string)))
 
     return uri
 
@@ -363,6 +377,7 @@ def add_land_triples(g, row, uri_dict, log):
         osm_id=row.get("LAND_OSM_Relation", ""),
         geonames_id=row.get("LAND_GeoNames", ""),
         wikidata_qid=row.get("LAND_QID", ""),
+        match_reason=row.get("LAND_matchReason", ""),
     )
     return [uri]
 
@@ -379,6 +394,7 @@ def add_bundesland_triples(g, row, uri_dict):
         osm_id=row.get("BUNDESLAND_OSM_Relation", ""),
         geonames_id=row.get("BUNDESLAND_GeoNames", ""),
         wikidata_qid=row.get("BUNDESLAND_QID", ""),
+        match_reason=row.get("BUNDESLAND_matchReason", ""),
     )
     for land_uri in uri_dict.get("Land", []):
         g.add((uri, BB5KBC.inLand, land_uri))
@@ -397,6 +413,7 @@ def add_kreis_triples(g, row, uri_dict):
         osm_id=row.get("KREIS_OSM_Relation", ""),
         geonames_id=row.get("KREIS_GeoNames", ""),
         wikidata_qid=row.get("KREIS_QID", ""),
+        match_reason=row.get("KREIS_matchReason", ""),
     )
     for bl_uri in uri_dict.get("Bundesland", []):
         g.add((uri, BB5KBC.inBundesland, bl_uri))
@@ -415,6 +432,7 @@ def add_gemeinde_triples(g, row, uri_dict):
         osm_id=row.get("GEMEINDE_OSM_Relation", ""),
         geonames_id=row.get("GEMEINDE_GeoNames", ""),
         wikidata_qid=row.get("GEMEINDE_QID", ""),
+        match_reason=row.get("GEMEINDE_matchReason", ""),
     )
     for kreis_uri in uri_dict.get("Kreis", []):
         g.add((uri, BB5KBC.inKreis, kreis_uri))

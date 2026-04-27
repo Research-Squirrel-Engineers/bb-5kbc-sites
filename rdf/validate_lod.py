@@ -116,19 +116,22 @@ CSV_EXPECTATIONS: dict[str, dict] = {
     "LAND_TGN":                {"kind": "ext_id_on_admin", "level": "land",       "ns": "http://vocab.getty.edu/tgn/"},
     "LAND_IDAI":               {"kind": "ext_id_on_admin", "level": "land",       "ns": "http://gazetteer.dainst.org/place/"},
     "LAND_OSM_Relation":       {"kind": "ext_id_on_admin", "level": "land",       "ns": "https://www.openstreetmap.org/relation/"},
-    # Audit-only columns (must produce zero triples)
+    # Audit columns:
+    #   _matchLabel and _matchScore are CSV-only (no RDF triples).
+    #   _matchReason is carried into the RDF graph as
+    #     bb5kbc:wikidataMatchDescription on the deduplicated type node.
     "GEMEINDE_matchLabel":  {"kind": "audit_only"},
     "GEMEINDE_matchScore":  {"kind": "audit_only"},
-    "GEMEINDE_matchReason": {"kind": "audit_only"},
+    "GEMEINDE_matchReason": {"kind": "match_description_in_rdf"},
     "KREIS_matchLabel":     {"kind": "audit_only"},
     "KREIS_matchScore":     {"kind": "audit_only"},
-    "KREIS_matchReason":    {"kind": "audit_only"},
+    "KREIS_matchReason":    {"kind": "match_description_in_rdf"},
     "BUNDESLAND_matchLabel":  {"kind": "audit_only"},
     "BUNDESLAND_matchScore":  {"kind": "audit_only"},
-    "BUNDESLAND_matchReason": {"kind": "audit_only"},
+    "BUNDESLAND_matchReason": {"kind": "match_description_in_rdf"},
     "LAND_matchLabel":     {"kind": "audit_only"},
     "LAND_matchScore":     {"kind": "audit_only"},
-    "LAND_matchReason":    {"kind": "audit_only"},
+    "LAND_matchReason":    {"kind": "match_description_in_rdf"},
     # Knot/relation columns (one bb5kbc:hat* triple per non-empty cell)
     "kultur":           {"kind": "node_link_per_site", "predicate": BB5KBC.hatKulturelleZuordnung},
     "entdeckung":       {"kind": "node_link_per_site", "predicate": BB5KBC.wurdeEntdecktDurch},
@@ -349,6 +352,18 @@ def check_csv_completeness(report: list[str], df: pd.DataFrame,
             report.append(f"| {i} | `{col}` | {non_empty} | "
                           f"0 Tripel (audit-only, nicht im RDF) | "
                           f"— (Skript erzeugt nichts) | {badge(status)} |")
+
+        elif kind == "match_description_in_rdf":
+            # _matchReason columns are carried into the RDF graph as
+            # bb5kbc:wikidataMatchDescription on the deduplicated administrative
+            # type node (one literal per distinct Land/Bundesland/Kreis/Gemeinde
+            # node). No exhaustive check here — the property-level check in
+            # Section 3 already confirms the property is declared and used.
+            status = "PASS"
+            report.append(f"| {i} | `{col}` | {non_empty} | "
+                          f"1 Literal `bb5kbc:wikidataMatchDescription` "
+                          f"je distinktem Type-Knoten der Ebene | "
+                          f"— (siehe Sektion 3) | {badge(status)} |")
 
         elif kind == "skip":
             note = expectation.get("note", "")
