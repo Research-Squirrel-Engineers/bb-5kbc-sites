@@ -1,0 +1,9 @@
+@prefix ns1: <http://purl.org/vocommons/voaf#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://w3id.org/bb5kbc/dcam_Brandenburg_5000_BC_Data_occ> a ns1:DatasetOccurrence,
+        <http://www.w3.org/ns/ldp#Resource>,
+        <https://www.iana.org/assignments/media-types/text/turtle#Resource> ;
+    rdfs:label "Occurrences of vocabulary http://purl.org/dc/dcam/ in Brandenburg_5000_BC_Data" ;
+    ns1:inDataset <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data> .
+

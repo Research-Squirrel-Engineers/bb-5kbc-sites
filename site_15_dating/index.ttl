@@ -1,0 +1,17 @@
+@prefix ns1: <http://w3id.org/bb5kbc/ont/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://w3id.org/bb5kbc/site_15_dating> a ns1:Datierung,
+        <http://www.w3.org/ns/ldp#Resource>,
+        <https://www.iana.org/assignments/media-types/text/turtle#Resource> ;
+    void:inDataset <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data> ;
+    ns1:datierungEnd -4750 ;
+    ns1:datierungMethode <http://w3id.org/bb5kbc/datmethode_6dffc170> ;
+    ns1:datierungSicherheitEnd "+/- 100 years" ;
+    ns1:datierungSicherheitRange "low precision, as only stylistic dating" ;
+    ns1:datierungSicherheitStart "+/- 100 years" ;
+    ns1:datierungStart -4800 ;
+    skos:relatedMatch <http://n2t.net/ark:/99152/p0wctqtnkjq> .
+

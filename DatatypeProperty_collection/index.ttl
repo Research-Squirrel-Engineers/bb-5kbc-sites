@@ -1,0 +1,19 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+
+<http://w3id.org/bb5kbc/DatatypeProperty_collection> a skos:Collection,
+        <http://www.w3.org/ns/ldp#Resource>,
+        <https://www.iana.org/assignments/media-types/text/turtle#Resource> ;
+    rdfs:label "DatatypeProperty Instances Collection"@en ;
+    void:inDataset <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data> ;
+    rdfs:member <http://w3id.org/bb5kbc/ont/datierungEnd>,
+        <http://w3id.org/bb5kbc/ont/datierungSicherheitEnd>,
+        <http://w3id.org/bb5kbc/ont/datierungSicherheitRange>,
+        <http://w3id.org/bb5kbc/ont/datierungSicherheitStart>,
+        <http://w3id.org/bb5kbc/ont/datierungStart>,
+        <http://w3id.org/bb5kbc/ont/hatFID>,
+        <http://w3id.org/bb5kbc/ont/hatFundstellenID>,
+        <http://w3id.org/bb5kbc/ont/hatGenauigkeit>,
+        <http://w3id.org/bb5kbc/ont/hatKatalognummer> .
+

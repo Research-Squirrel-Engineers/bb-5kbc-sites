@@ -1,0 +1,15 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+
+<http://w3id.org/bb5kbc/ont/hatScherbe> a owl:ObjectProperty,
+        <http://www.w3.org/ns/ldp#Resource>,
+        <https://www.iana.org/assignments/media-types/text/turtle#Resource> ;
+    rdfs:label "hat Scherbe"@de,
+        "has sherd"@en ;
+    void:inDataset <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data> ;
+    rdfs:comment "Links a bb5kbc:Fundstelle to one or more bb5kbc:Scherbe instances (sherd column). SubPropertyOf crm:P46i_forms_part_of."@en ;
+    rdfs:domain <http://w3id.org/bb5kbc/ont/Fundstelle> ;
+    rdfs:range <http://w3id.org/bb5kbc/ont/Scherbe> ;
+    rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P46i_forms_part_of> .
+

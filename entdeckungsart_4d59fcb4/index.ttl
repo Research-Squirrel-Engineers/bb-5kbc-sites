@@ -1,0 +1,13 @@
+@prefix ns1: <http://w3id.org/bb5kbc/ont/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+
+<http://w3id.org/bb5kbc/entdeckungsart_4d59fcb4> a ns1:EntdeckungsartType,
+        <http://www.w3.org/ns/ldp#Resource>,
+        <https://www.iana.org/assignments/media-types/text/turtle#Resource> ;
+    rdfs:label "großflächige Ausgrabung"@de ;
+    void:inDataset <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data> ;
+    ns1:hasExternalIdentifier <https://www.wikidata.org/entity/Q959782> ;
+    skos:prefLabel "großflächige Ausgrabung"@de .
+

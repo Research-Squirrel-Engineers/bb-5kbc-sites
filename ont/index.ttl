@@ -1,0 +1,50 @@
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+
+<http://w3id.org/bb5kbc/ont/> a owl:Ontology,
+        <http://www.w3.org/ns/ldp#Resource>,
+        <https://www.iana.org/assignments/media-types/text/turtle#Resource> ;
+    dc:contributor "Florian Thiery",
+        "Sophie C. Schmidt" ;
+    dc:creator "Florian Thiery",
+        "Sophie C. Schmidt" ;
+    dc:rights "CC BY 4.0" ;
+    dc:subject "archaeology; Neolithic; Brandenburg; Linked Open Data; NFDI4Objects"@en ;
+    dc:title "Brandenburg 5000 BC Fundstellen-Ontologie"@de,
+        "Brandenburg 5000 BC Sites Ontology"@en ;
+    void:inDataset <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data> ;
+    rdfs:comment """Data namespace: http://w3id.org/bb5kbc/
+URI patterns (FID-based, per-site nodes):
+  site_{FID}           → bb5kbc:Fundstelle
+  site_{FID}_activity  → bb5kbc:GeoreferenzierungsAktivitaet
+  site_{FID}_geom      → sf:Point
+  site_{FID}_culture   → bb5kbc:KulturelleZuordnung (per-site connector to shared Kulturgruppe)
+  site_{FID}_dating    → bb5kbc:Datierung (per-site, with site-specific start/end/certainty)
+URI patterns (hash-based, MD5(label_utf8)[:8], deduplicated):
+  gemeinde_{hash}        → bb5kbc:Gemeinde
+  kreis_{hash}           → bb5kbc:Kreis
+  bundesland_{hash}      → bb5kbc:Bundesland
+  land_{hash}            → bb5kbc:Land
+  kultur_{hash}          → bb5kbc:Kulturgruppe (shared concept node)
+  entdeckung_{hash}      → bb5kbc:Entdeckung
+  entdeckungsart_{hash}  → bb5kbc:EntdeckungsartType
+  fundstellenart_{hash}  → bb5kbc:FundstellenartType
+  pub_{hash}             → bb5kbc:Publikation
+  methode_{hash}         → fsl:MethodType
+  quellentyp_{hash}      → fsl:SourceType
+  datmethode_{hash}      → bb5kbc:DatierungsMethodeType
+  sherd_{hash}           → bb5kbc:Scherbe (hash from Wikidata QID)
+External identifiers (TGN + iDAI + OSM) on all 4 administrative levels.
+CM Literals (on GeoreferenzierungsAktivitaet):
+  quelle_georef    → fsl:hasReference / fsl:activityDesc (P25) : xsd:string
+  QID_quelle_georef→ fsl:hasReference (P31) : Wikidata URI
+  methode          → fsl:method / fsl:methodUsed (P7) → fsl:MethodType Named Node
+  quellen_typ      → fsl:hasSourceType (P6) + fsl:hasSourceTypeDetail (P16) → fsl:SourceType Named Node
+  methodenbeschr   → fsl:activityDesc (P15) : xsd:string
+  genauigkeit_m    → fsl:precision (P23) : xsd:decimal (on bb5kbc:Fundstelle)
+  wgs84_x/y        → geosparql:asWKT on sf:Point (skip if both = 0,0)"""@en ;
+    owl:versionIRI <http://w3id.org/bb5kbc/ont/0.9> ;
+    owl:versionInfo "0.9" .
+

@@ -1,0 +1,12 @@
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+
+<http://w3id.org/bb5kbc/bb5kbc_lod_pipeline_py> a <http://www.w3.org/ns/ldp#Resource>,
+        prov:Plan,
+        prov:SoftwareAgent,
+        <https://www.iana.org/assignments/media-types/text/turtle#Resource> ;
+    rdfs:label "bb5kbc_lod_pipeline.py" ;
+    void:inDataset <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data> ;
+    prov:atLocation <file:///C:/git/bb-5kbc-sites/rdf/bb5kbc_lod_pipeline.py> .
+

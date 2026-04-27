@@ -1,0 +1,22 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+
+<http://w3id.org/bb5kbc/EntdeckungsartType_collection> a skos:Collection,
+        <http://www.w3.org/ns/ldp#Resource>,
+        <https://www.iana.org/assignments/media-types/text/turtle#Resource> ;
+    rdfs:label "EntdeckungsartType Instances Collection"@en ;
+    void:inDataset <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data> ;
+    rdfs:member <http://w3id.org/bb5kbc/entdeckungsart_1f56a08c>,
+        <http://w3id.org/bb5kbc/entdeckungsart_38d772d5>,
+        <http://w3id.org/bb5kbc/entdeckungsart_3f60287a>,
+        <http://w3id.org/bb5kbc/entdeckungsart_41a94108>,
+        <http://w3id.org/bb5kbc/entdeckungsart_4d59fcb4>,
+        <http://w3id.org/bb5kbc/entdeckungsart_6243da4f>,
+        <http://w3id.org/bb5kbc/entdeckungsart_aa5835d2>,
+        <http://w3id.org/bb5kbc/entdeckungsart_b4142fe0>,
+        <http://w3id.org/bb5kbc/entdeckungsart_d21f7694>,
+        <http://w3id.org/bb5kbc/entdeckungsart_ddbae54f>,
+        <http://w3id.org/bb5kbc/entdeckungsart_df0a6329>,
+        <http://w3id.org/bb5kbc/entdeckungsart_dfe70523> .
+

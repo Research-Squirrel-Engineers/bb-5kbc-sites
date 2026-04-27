@@ -1,0 +1,14 @@
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_file:___C:_git_bb-5kbc-sites_rdf_> a void:Linkset,
+        <http://www.w3.org/ns/ldp#Resource>,
+        <https://www.iana.org/assignments/media-types/text/turtle#Resource> ;
+    rdfs:label "Linkset: Brandenburg_5000_BC_Data - rdf"@en ;
+    void:linkPredicate prov:atLocation ;
+    void:objectsTarget <file:///C:/git/bb-5kbc-sites/rdf/> ;
+    void:subjectsTarget <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data> ;
+    void:triples 1 .
+

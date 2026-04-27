@@ -1,0 +1,11 @@
+@prefix ns1: <http://w3id.org/bb5kbc/ont/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+
+<http://w3id.org/bb5kbc/site_501_discovery> a ns1:Entdeckung,
+        <http://www.w3.org/ns/ldp#Resource>,
+        <https://www.iana.org/assignments/media-types/text/turtle#Resource> ;
+    rdfs:label "Einzelfund"@de ;
+    void:inDataset <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data> ;
+    ns1:hatEntdeckungsart <http://w3id.org/bb5kbc/entdeckungsart_aa5835d2> .
+

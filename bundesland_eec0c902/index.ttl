@@ -1,0 +1,18 @@
+@prefix ns1: <http://w3id.org/bb5kbc/ont/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+
+<http://w3id.org/bb5kbc/bundesland_eec0c902> a ns1:Bundesland,
+        <http://www.w3.org/ns/ldp#Resource>,
+        <https://www.iana.org/assignments/media-types/text/turtle#Resource> ;
+    rdfs:label "Thüringen"@de ;
+    void:inDataset <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data> ;
+    ns1:hasExternalIdentifier <http://gazetteer.dainst.org/place/2052949>,
+        <http://vocab.getty.edu/tgn/7003689>,
+        <https://www.geonames.org/2822542>,
+        <https://www.openstreetmap.org/relation/62366>,
+        <https://www.wikidata.org/entity/Q1205> ;
+    ns1:inLand <http://w3id.org/bb5kbc/land_3c2f8b8c> ;
+    skos:prefLabel "Thüringen"@de .
+

@@ -1,0 +1,9 @@
+@prefix ns1: <http://w3id.org/bb5kbc/ont/> .
+@prefix void: <http://rdfs.org/ns/void#> .
+
+<http://w3id.org/bb5kbc/sherd_7eb7e637> a ns1:Scherbe,
+        <http://www.w3.org/ns/ldp#Resource>,
+        <https://www.iana.org/assignments/media-types/text/turtle#Resource> ;
+    void:inDataset <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data> ;
+    ns1:hasExternalIdentifier <https://www.wikidata.org/entity/Q139479639> .
+

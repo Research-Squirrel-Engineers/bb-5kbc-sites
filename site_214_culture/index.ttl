@@ -1,0 +1,10 @@
+@prefix ns1: <http://w3id.org/bb5kbc/ont/> .
+@prefix void: <http://rdfs.org/ns/void#> .
+
+<http://w3id.org/bb5kbc/site_214_culture> a ns1:KulturelleZuordnung,
+        <http://www.w3.org/ns/ldp#Resource>,
+        <https://www.iana.org/assignments/media-types/text/turtle#Resource> ;
+    void:inDataset <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data> ;
+    ns1:hatDatierung <http://w3id.org/bb5kbc/site_214_dating> ;
+    ns1:hatKulturgruppe <http://w3id.org/bb5kbc/kultur_d4c087cb> .
+

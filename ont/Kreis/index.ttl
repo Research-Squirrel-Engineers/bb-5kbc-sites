@@ -1,0 +1,13 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+
+<http://w3id.org/bb5kbc/ont/Kreis> a owl:Class,
+        <http://www.w3.org/ns/ldp#Resource>,
+        <https://www.iana.org/assignments/media-types/text/turtle#Resource> ;
+    rdfs:label "Kreis / Powiat"@de,
+        "District"@en ;
+    void:inDataset <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data> ;
+    rdfs:comment "District (Landkreis / Powiat, NUTS-3/LAU-1). URI: kreis_{MD5(label)[:8]}. External identifiers via CSV columns KREIS_TGN, KREIS_IDAI, KREIS_OSM_RELATION."@en ;
+    rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/E53_Place> .
+

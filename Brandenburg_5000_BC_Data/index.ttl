@@ -1,0 +1,253 @@
+@prefix brick: <https://brickschema.org/schema/Brick#> .
+@prefix csvw: <http://www.w3.org/ns/csvw#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcam: <http://purl.org/dc/dcam/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix doap: <http://usefulinc.com/ns/doap#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix ns1: <http://ldf.fi/void-ext#> .
+@prefix odrl: <http://www.w3.org/ns/odrl/2/> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prof: <http://www.w3.org/ns/dx/prof/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qb: <http://purl.org/linked-data/cube#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix wgs: <https://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data> a void:Dataset,
+        <http://www.w3.org/ns/adms#Asset>,
+        <http://www.w3.org/ns/ldp#Resource>,
+        <https://www.iana.org/assignments/media-types/text/turtle#Resource> ;
+    rdfs:label "Brandenburg_5000_BC_Data"@en ;
+    ns1:averageLiteralLength 0 ;
+    ns1:averageObjectIRILength 33 ;
+    ns1:averagePropertyIRILength 44 ;
+    ns1:averageSubjectIRILength 37 ;
+    ns1:datatypes 0 ;
+    ns1:distinctBlankNodes 0 ;
+    ns1:distinctIRIReferences 13002 ;
+    ns1:distinctLiterals 0 ;
+    ns1:distinctRDFNodes 13002 ;
+    ns1:languages 0 ;
+    ns1:propertyClasses 0 ;
+    dc:language <http://www.lexvo.org/page/iso639-1/en> ;
+    dcterms:modified "2026-04-27T10:55:25"^^xsd:dateTime ;
+    dcterms:subject <http://dbpedia.org/resource/Location>,
+        <http://dbpedia.org/resource/OGC_GeoSPARQL>,
+        <http://dbpedia.org/resource/Time>,
+        <http://www.wikidata.org/entity/Q121810372>,
+        foaf:Person ;
+    dcterms:title "Brandenburg_5000_BC_Data"@en ;
+    vann:preferredNamespacePrefix "bb5kbc"^^xsd:string ;
+    vann:preferredNamespaceUri "http://w3id.org/bb5kbc/"^^xsd:anyURI ;
+    void:classPartition <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_Activity>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_Agent>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_Bundesland>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_CertaintyType>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_Collection>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_Concept>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_Datierung>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_DatierungsMethodeType>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_E13_Attribute_Assignment>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_E18_Physical_Thing>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_E1_CRM_Entity>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_E22_Human-Made_Object>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_E26_Physical_Feature>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_E27_Site>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_E2_Temporal_Entity>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_E32_Authority_Document>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_E4_Period>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_E52_Time-Span>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_E53_Place>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_E55_Type>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_E5_Event>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_E70_Thing>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_E72_Legal_Object>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_E73_Information_Object>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_E7_Activity>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_E92_Spacetime_Volume>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_Entdeckung>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_EntdeckungsartType>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_Entity>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_Event>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_FeatureCollection>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_Fundstelle>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_FundstellenartType>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_Gemeinde>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_Geometry>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_GeometryCollection>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_GeoreferenzierungsAktivitaet>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_Interval>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_Kreis>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_KulturelleZuordnung>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_Kulturgruppe>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_Land>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_Location>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_LocationType>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_MethodType>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_Person>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_Place>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_PlaceType>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_Plan>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_Point>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_PointType>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_Publikation>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_S19_Encounter_Event>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_S4_Observation>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_SP5_Geometric_Place_Expression>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_SP6_Declarative_Place>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_Scherbe>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_Site>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_SiteType>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_SoftwareAgent>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_SourceType>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_SpaceTimeItem>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_SpatialObject>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_SpatialObjectCollection>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_TemporalEntity>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_Type>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_externalIdentifierType> ;
+    void:classes 71 ;
+    void:dataDump <https://Research-Squirrel-Engineers.github.io/bb-5kbc-sites//index.ttl> ;
+    void:distinctObjects 8080 ;
+    void:distinctSubjects 4844 ;
+    void:entities 3726 ;
+    void:feature <http://www.w3.org/ns/formats/RDFa>,
+        <http://www.w3.org/ns/formats/Turtle> ;
+    void:properties 78 ;
+    void:propertyPartition <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_activityDesc>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_asWKT>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_atLocation>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_certaintyDesc>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_certaintyLevel>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_closeMatch>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_columnCount>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_comment>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_contributor>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_creator>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_dataTripleCount>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_datierungEnd>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_datierungMethode>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_datierungSicherheitEnd>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_datierungSicherheitRange>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_datierungSicherheitStart>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_datierungStart>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_domain>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_durationSeconds>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_endedAtTime>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_exactMatch>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_georeferencingBy>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_gitBranch>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_gitCommit>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_gitDirty>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_hasExternalIdentifier>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_hasExternalIdentifierType>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_hasGeometry>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_hasLocationType>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_hasPointType>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_hasReference>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_hasSourceType>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_hasSourceTypeDetail>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_hatDatierung>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_hatEntdeckungsart>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_hatFID>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_hatFundstellenID>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_hatFundstellenart>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_hatGenauigkeit>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_hatKatalognummer>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_hatKulturelleZuordnung>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_hatKulturgruppe>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_hatPublikation>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_hatScherbe>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_identifier>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_inBundesland>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_inGemeinde>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_inKreis>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_inLand>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_isDefinedBy>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_label>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_member>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_methodUsed>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_prefLabel>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_qidsFilledGeoref>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_qidsFilledPublication>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_range>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_relatedMatch>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_representativeGeometry>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_rights>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_rowCount>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_startedAtTime>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_subClassOf>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_subPropertyOf>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_subject>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_title>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_type>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_used>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_versionIRI>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_versionInfo>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_warningsLogged>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_wasAssociatedWith>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_wasDerivedFrom>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_wasGeneratedBy>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_wasInformedBy>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_wurdeEntdecktDurch>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_wurdeGeoreferenziertDurch> ;
+    void:triples 35577 ;
+    void:uriSpace "http://w3id.org/bb5kbc/"^^xsd:string ;
+    void:vocabulary ns1:,
+        dcam:,
+        dcmitype:,
+        dc:,
+        dcterms:,
+        qb:,
+        vann:,
+        <http://purl.org/vocommons/voaf#>,
+        void:,
+        doap:,
+        geo:,
+        rdf:,
+        rdfs:,
+        xsd:,
+        owl:,
+        skos:,
+        time:,
+        xml:,
+        <http://www.w3.org/ns/adms#>,
+        csvw:,
+        dcat:,
+        prof:,
+        odrl:,
+        org:,
+        prov:,
+        sh:,
+        sosa:,
+        ssn:,
+        foaf:,
+        brick:,
+        schema:,
+        wgs: ;
+    dcat:distribution <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_dist_ttl> ;
+    dcat:keyword "Location"@en,
+        "OGC GeoSPARQL"@en,
+        "Person"@en,
+        "Q121810372"@en,
+        "Time"@en ;
+    dcat:landingPage <https://Research-Squirrel-Engineers.github.io/bb-5kbc-sites/> ;
+    foaf:homepage <https://Research-Squirrel-Engineers.github.io/bb-5kbc-sites/> ;
+    foaf:page <https://Research-Squirrel-Engineers.github.io/bb-5kbc-sites//index.html> .
+

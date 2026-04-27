@@ -1,0 +1,19 @@
+@prefix ns1: <http://fuzzy-sl.squirrel.link/ontology/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+
+<http://w3id.org/bb5kbc/site_460_activity> a <http://w3id.org/bb5kbc/ont/GeoreferenzierungsAktivitaet>,
+        <http://www.w3.org/ns/ldp#Resource>,
+        <https://www.iana.org/assignments/media-types/text/turtle#Resource> ;
+    rdfs:label "Georeferenzierung von Fundstelle 460"@de ;
+    ns1:activityDesc "die Koordinaten wurden 2018 von Maha Ismail-Weber beim BLDAM angefragt und übernommen" ;
+    ns1:georeferencingBy <https://orcid.org/0000-0003-4696-2101> ;
+    ns1:hasReference <https://www.wikidata.org/entity/Q897952>,
+        "BLDAM / M. Ismail-Weber 2018" ;
+    ns1:hasSourceType <http://w3id.org/bb5kbc/quellentyp_5ae20fe0> ;
+    ns1:hasSourceTypeDetail <http://w3id.org/bb5kbc/quellentyp_5ae20fe0> ;
+    ns1:methodUsed <http://w3id.org/bb5kbc/methode_b57e2231> ;
+    void:inDataset <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data> ;
+    prov:wasAssociatedWith <https://orcid.org/0000-0003-4696-2101> .
+

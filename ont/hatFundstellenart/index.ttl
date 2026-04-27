@@ -1,0 +1,18 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+
+<http://w3id.org/bb5kbc/ont/hatFundstellenart> a owl:ObjectProperty,
+        <http://www.w3.org/ns/ldp#Resource>,
+        <https://www.iana.org/assignments/media-types/text/turtle#Resource> ;
+    rdfs:label "hat Fundstellenart"@de,
+        "has site type"@en ;
+    void:inDataset <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data> ;
+    rdfs:comment """Type of the archaeological site (Siedlung, Grab, KGA, etc.).
+Doubly anchored: subPropertyOf crm:P2_has_type (CRM type assignment) and
+fsl:siteType (FSL Wikibase site-type relation)."""@en ;
+    rdfs:domain <http://w3id.org/bb5kbc/ont/Fundstelle> ;
+    rdfs:range <http://w3id.org/bb5kbc/ont/FundstellenartType> ;
+    rdfs:subPropertyOf <http://fuzzy-sl.squirrel.link/ontology/siteType>,
+        <http://www.cidoc-crm.org/cidoc-crm/P2_has_type> .
+

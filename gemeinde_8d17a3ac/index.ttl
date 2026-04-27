@@ -1,0 +1,16 @@
+@prefix ns1: <http://w3id.org/bb5kbc/ont/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+
+<http://w3id.org/bb5kbc/gemeinde_8d17a3ac> a ns1:Gemeinde,
+        <http://www.w3.org/ns/ldp#Resource>,
+        <https://www.iana.org/assignments/media-types/text/turtle#Resource> ;
+    rdfs:label "Gmina Brześć Kujawski"@de ;
+    void:inDataset <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data> ;
+    ns1:hasExternalIdentifier <https://www.geonames.org/7533049>,
+        <https://www.openstreetmap.org/relation/2635744>,
+        <https://www.wikidata.org/entity/Q2463096> ;
+    ns1:inKreis <http://w3id.org/bb5kbc/kreis_fa49171f> ;
+    skos:prefLabel "Gmina Brześć Kujawski"@de .
+
