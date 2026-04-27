@@ -1,4 +1,4 @@
-# bb-5kbc-sites
+# bb-5k-bc | Linked Open Data
 
 > Linked Open Data zu archäologischen Fundstellen (~5000 BC) in Brandenburg,
 > Ostdeutschland und Westpolen — als RDF-Datensatz, anwendungsspezifischer
