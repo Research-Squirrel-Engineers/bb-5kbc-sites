@@ -1,0 +1,57 @@
+---
+config:
+  flowchart:
+    htmlLabels: false
+    curve: linear
+  theme: neutral
+  layout: elk
+---
+flowchart TD
+  CSV_IN["fst_wgs84_comma.csv<br/>540 rows × 32 cols"]:::input
+  REF_IN["fst_standortanalysen<br/>_ref.csv"]:::input
+  ONTO["bb5kbc-ontology.ttl<br/>15 classes"]:::input
+  subgraph ENRICH["CSV-Anreicherung (§3)"]
+    direction TB
+    S1["Stage 1: enrich_qids.py<br/>Literatur-Mappings<br/>(46 + 34 QIDs)"]:::enrich
+    S2["Stage 2: wikidata_map.py<br/>SPARQL Fuzzy-Match<br/>LAND/BL/KR/GE"]:::enrich
+    S3["Stage 3: enrich_fst.py<br/>Merge auf FID"]:::enrich
+    S1 --> S3
+    S2 --> S3
+  end
+
+  CSV_IN --> S1
+  REF_IN --> S2
+  S3 --> CSV_FINAL["fst_wgs84.csv<br/>540 rows × 65 cols"]:::artefact
+  S3 -.PROV.-> PROV_ENRICH["csv_enrichment_run.ttl"]:::prov
+  subgraph LOD["LOD-Transformation (§6)"]
+    direction TB
+    BUILD["bb5kbc_lod_pipeline.py<br/>12 Builder × 540 rows"]:::lod
+    SHAPES["SHACL-Shapes-Generierung<br/>aus Ontologie"]:::lod
+    SHACL_VAL["pyshacl.validate()"]:::lod
+    BUILD --> SHAPES --> SHACL_VAL
+  end
+
+  CSV_FINAL --> BUILD
+  ONTO --> BUILD
+  PROV_ENRICH -.wasInformedBy.-> BUILD
+
+  BUILD --> DATA_TTL["bb5kbc-data.ttl<br/>~21 700 triples"]:::artefact
+  BUILD --> BUNDLE_TTL["bb5kbc-bundle.ttl<br/>~22 400 triples"]:::artefact
+  BUILD -.PROV.-> PROV_LOD["csv_to_lod_run.ttl"]:::prov
+
+  SHACL_VAL --> SHACL_REP["shacl-report.ttl<br/>+ shacl-report-bundle.ttl"]:::artefact
+  VAL["validate_lod.py<br/>4 + 1 Sektionen"]:::validate
+  DATA_TTL --> VAL
+  BUNDLE_TTL --> VAL
+  CSV_FINAL --> VAL
+  ONTO --> VAL
+  SHACL_REP --> VAL
+  MAP_MD["csv-mapping.md<br/>(Vorfahren-Tabelle)"]:::input
+  MAP_MD --> VAL
+  VAL --> REPORT["validation_report.md"]:::artefact
+  classDef input    fill:#e8e8e8,stroke:#666,stroke-width:1px,color:#000
+  classDef enrich   fill:#cfe2f3,stroke:#1e4f8a,stroke-width:1.5px,color:#000
+  classDef lod      fill:#d9ead3,stroke:#3c763d,stroke-width:1.5px,color:#000
+  classDef validate fill:#fff2cc,stroke:#7f6000,stroke-width:1.5px,color:#000
+  classDef artefact fill:#fff,stroke:#000,stroke-width:1px,color:#000
+  classDef prov     fill:#fce5cd,stroke:#a86028,stroke-width:1px,color:#000,stroke-dasharray:3 3
