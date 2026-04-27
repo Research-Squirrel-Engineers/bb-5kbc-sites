@@ -1,89 +1,87 @@
 # =============================================================================
 # enrich_qids.py
 #
-# Reichert das CSV fst_wgs84_comma.csv mit Wikidata-QIDs für:
+# Reichert eine Eingabe-CSV mit Wikidata-QIDs an für:
 #   - Spalte "QID_quelle_georef"  (Lookup-Key: "quelle_georef")
 #   - Spalte "QID_publikation"    (Lookup-Key: "publikation_arch")
 #
 # QID-Mappings wurden aus den QuickStatements-HTML-Seiten extrahiert.
 # Fehlende Matches werden in eine Log-Datei geschrieben.
 #
-# Verwendung (VSCode Terminal / cmd):
-#   python enrich_qids.py
-#   Das CSV muss im gleichen Ordner wie das Script liegen.
+# Verwendung:
+#   - Als Modul (vom Orchestrator):
+#       from enrich_qids import run
+#       run(input_csv=Path(...), output_csv=Path(...), log_path=Path(...))
+#
+#   - Standalone (Default-Pfade relativ zum Skript):
+#       python enrich_qids.py
 # =============================================================================
 
-import pandas as pd
+import csv
+import io
 import logging
 import os
-from datetime import datetime
+from pathlib import Path
+
+import pandas as pd
 
 # ---------------------------------------------------------------------------
-# Konfiguration
+# Konfiguration (CSV-Format-Konstanten)
 # ---------------------------------------------------------------------------
 
-CSV_FILENAME = "fst_wgs84_comma.csv"
-LOG_FILENAME = "enrich_qids_missing.log"
-
-# Trennzeichen und Encoding des CSV anpassen falls nötig
 CSV_SEP = ","
-CSV_ENCODING = "utf-8"
+CSV_ENCODING_IN = "utf-8"
+CSV_ENCODING_OUT = "utf-8-sig"  # BOM, gemäss Projekt-Konvention
 
 # ---------------------------------------------------------------------------
 # QID-Mapping: publikation_arch -> QID
 # Quelle: QuickStatements_1.htm und QuickStatements_2.htm
-#
-# Schema: "Autor Jahr" (wie im CSV) -> "Q-ID" (wie in Wikidata angelegt)
-#
-# Autoren/Jahr wurden aus P2093 (Autor) und P577 (Jahr) der HTML-Einträge
-# abgeleitet und mit den CSV-Kurzreferenzen abgeglichen.
 # ---------------------------------------------------------------------------
 
 QID_PUBLIKATION = {
     # --- Aus QuickStatements_1.htm ---
-    "Sprockhoff 1926":           "Q139304606",  # Die Kulturen der jüngeren Steinzeit in der Mark Brandenburg
-    "Czerniak/Pyzel 2016":       "Q139304607",  # The Brześć Kujawski culture (Czerniak + Pyzel, 2019 pub.)
-    "Beran 2012 b":              "Q139304609",  # Spitzhauen, Schöningen und Swifterband (Jonas Beran, 2012)
-    "Lehmphul 2015":             "Q139304610",  # Durch Getreidekörner datiert (Ralf Lehmphul, 2015)
-    "Wetzel 2013":               "Q139304611",  # Die Brześć Kujawski-Gruppe in Brandenburg (Günter Wetzel, 2013)
-    "Eberhardt 2007":            "Q139304612",  # Jungsteinzeitliche Funde vom Nuthe-Oberlauf (Gisela Eberhardt, 2007)
-    "Berlekamp 1966,":           "Q139304613",  # Die Einflüsse des donauländischen Kulturkreises (Hansdieter Berlekamp, 1966)
-    "Meyer 2011":                "Q139304614",  # Die Nordperipherie - mittelneolithische Kreisgrabenanlagen (Michael Meyer, 2011)
-    "Marschallek 1944":          "Q139304615",  # Die Urgeschichte des Kreises Luckau (Karl Heinz Marschalleck, 1944)
-    "Kaufmann 1976":             "Q139304616",  # Wirtschaft und Kultur der Stichbandkeramiker (Dieter Kaufmann, 1976)
-    "Wetzel 1973":               "Q139304617",  # Ein Becher der Stichreihenkeramik von Prettin (Günter Wetzel, 1973)
-    "Kirsch 1993":               "Q139304618",  # Funde des Mittelneolithikums im Land Brandenburg (Eberhard Kirsch, 1993)
-    "Gramsch 1960":              "Q139304619",  # Ein neuer Fund von Rössener Keramik in der Uckermark (Bernhard Gramsch, 1960)
-    "Wetzel 1988":               "Q139304620",  # Neue frühneolithische Funde aus dem Bezirk Cottbus (Günter Wetzel, 1988)
-    "Beran 2011 a":              "Q139304621",  # Kulturkreise und Regionalgruppen in Mittel- und Ostdeutschland (Jonas Beran, 2011)
-    "Stark 2020":                "Q139304622",  # Vom Steinkreis des 5. Jahrtausends v. Chr. (Joachim Stark, 2020)
-    "Czerniak 1980":             "Q139304624",  # Rozwój społeczeństw kultury późnej ceramiki wstȩgowej (Lech Czerniak, 1980)
-    "Czerniak et al. 2016":      "Q139304625",  # House time: Neolithic settlement development at Racot (Czerniak et al., 2016)
-    "Völker 2002":               "Q139304626",  # Abschlussbericht Seelow 2 (Eberhard Völker, 2002)
-    "Kulczycka-Leciejewiczowa 1993": "Q139304628",  # Osadnictwo neolityczne w Polsce południowo-zachodniej (1993)
-    "Czerniak 2007":             "Q139304629",  # The North-East Frontier of the Post-LBK Cultures (Lech Czerniak, 2007)
-    "Smoczyńska 1952":           "Q139304630",  # Kultura ceramiki wstęgowej w Wielkopolsce (1952)
-    "Raddatz 1959":              "Q139304631",  # Ein Gefäß der Rössener Kultur aus der Uckermark (Klaus Raddatz) -- Hinweis: HTML hat 1956, CSV hat 1959
-    "Umbreit 1937":              "Q139304632",  # Neue Forschungen zur ostdeutschen Steinzeit (Carl Umbreit, 1937)
-    "Wetzel/Beran 2023":         "Q139304633",  # Friesack 4 (Wetzel + Beran, 2023)
-    "von Richthofen 1930":       "Q139304635",  # Zur bandkeramischen Besiedlung im Bereich der unteren Weichsel und Oder (1930)
-    "Jentsch 1885":              "Q139304636",  # Ein verziertes Beigefäss... Sitzung 18. April 1885 (H. Jentsch, 1885)
-    "Dziewanowski 2015":         "Q139304639",  # Obiekty kultur postlinearnych (Marcin Dziewanowski, 2015)
-    "Ciesielski/Goczyca 2013":   "Q139304640",  # Osada ludności późnej fazy... (Ciesielski + Gorzyca, 2013)
-    "Dorka 1939":                "Q139304641",  # Urgeschichte des Weizacker-Kreises Pyritz (Gertrud Dorka, 1939)
-    "Grygiel 2008":              "Q139304642",  # Neolit i początki epoki brązu w rejonie Brześcia Kujawskiego (Ryszard Grygiel, 2008)
-    "Schmiederer 1997":          "Q139304643",  # Ein Pferdchen in Ton geritzt (Wolfgang Schmiederer, 1997)
-    "Kunkel 1939":               "Q139304644",  # Urgeschichte, zugleich Bericht des Vertrauensmannes (Otto Kunkel, 1939)
-    "Rybicka/Wysocki 2004":      "Q139304645",  # Materiały kultury późnej ceramiki wstęgowej z Równiny Dolnej (2004)
-    "Stäuble/Veit 2016":         "Q139304647",  # Der bandkeramische Siedlungsplatz Eythra in Sachsen (Stäuble + Veit, 2016)
-    "Czerniak et al 2020":       "Q139304648",  # The Neolithic roundel and its social context (Czerniak et al., 2020)
-    "Czerniak et al. 2020":      "Q139304648",  # identisch, nur Schreibvariante mit Punkt
-    "Czerniak et al 2020":       "Q139304648",  # Schreibvariante ohne Punkt
-    "Ratajczyk 2007":            "Q139304649",  # Being at Home in the Early Chalcolithic – Hinweis: Ratajczyk nicht direkt in HTML; zugewiesen nach Kontext
-    "Schoknecht 1986":           "Q139304650",  # Kurze Fundberichte 1984 Bezirk Neubrandenburg (Ulrich Schoknecht, 1986)
+    "Sprockhoff 1926":           "Q139304606",
+    "Czerniak/Pyzel 2016":       "Q139304607",
+    "Beran 2012 b":              "Q139304609",
+    "Lehmphul 2015":             "Q139304610",
+    "Wetzel 2013":               "Q139304611",
+    "Eberhardt 2007":            "Q139304612",
+    "Berlekamp 1966,":           "Q139304613",
+    "Meyer 2011":                "Q139304614",
+    "Marschallek 1944":          "Q139304615",
+    "Kaufmann 1976":             "Q139304616",
+    "Wetzel 1973":               "Q139304617",
+    "Kirsch 1993":               "Q139304618",
+    "Gramsch 1960":              "Q139304619",
+    "Wetzel 1988":               "Q139304620",
+    "Beran 2011 a":              "Q139304621",
+    "Stark 2020":                "Q139304622",
+    "Czerniak 1980":             "Q139304624",
+    "Czerniak et al. 2016":      "Q139304625",
+    "Völker 2002":               "Q139304626",
+    "Kulczycka-Leciejewiczowa 1993": "Q139304628",
+    "Czerniak 2007":             "Q139304629",
+    "Smoczyńska 1952":           "Q139304630",
+    "Raddatz 1959":              "Q139304631",
+    "Umbreit 1937":              "Q139304632",
+    "Wetzel/Beran 2023":         "Q139304633",
+    "von Richthofen 1930":       "Q139304635",
+    "Jentsch 1885":              "Q139304636",
+    "Dziewanowski 2015":         "Q139304639",
+    "Ciesielski/Goczyca 2013":   "Q139304640",
+    "Dorka 1939":                "Q139304641",
+    "Grygiel 2008":              "Q139304642",
+    "Schmiederer 1997":          "Q139304643",
+    "Kunkel 1939":               "Q139304644",
+    "Rybicka/Wysocki 2004":      "Q139304645",
+    "Stäuble/Veit 2016":         "Q139304647",
+    "Czerniak et al 2020":       "Q139304648",
+    "Czerniak et al. 2020":      "Q139304648",
+    "Ratajczyk 2007":            "Q139304649",
+    "Schoknecht 1986":           "Q139304650",
     # --- Aus QuickStatements_2.htm ---
-    "Dziewanowski 2019":         "Q139304679",  # Niesformalizowany projekt badań mikroregionalnych (Marcin Dziewanowski, 2019)
-    "Umbreit 1939":              "Q139304632",  # manuell ergänzt (gleiche Publikation wie Umbreit 1937? -> von Sophie bestätigt)
+    "Dziewanowski 2019":         "Q139304679",
+    "Umbreit 1939":              "Q139304632",
     # --- Noch nicht aufgelöst (Sophie prüft) ---
     # "Pyzel 2019"               -> kein direktes Match in HTML
     # "Umbreit 1940"             -> kein Eintrag in HTML
@@ -91,35 +89,32 @@ QID_PUBLIKATION = {
 
 # ---------------------------------------------------------------------------
 # QID-Mapping: quelle_georef -> QID
-# Gleiche Quellen wie oben, aber als Georeferenz-Quelle zitiert.
-# Felder wie "Czerniak 1980L", "Czerniak 2007, Karte 1" etc. werden auf
-# denselben Basisartikel gemappt (Karte/Varianten-Suffixe werden ignoriert).
 # ---------------------------------------------------------------------------
 
 QID_QUELLE_GEOREF = {
     "Kaufmann 1976":                         "Q139304616",
     "Czerniak 1980":                         "Q139304624",
-    "Czerniak 1980L":                        "Q139304624",  # Variante mit Suffix
+    "Czerniak 1980L":                        "Q139304624",
     "Czerniak 2007":                         "Q139304629",
-    "Czerniak 2007, Karte 1":               "Q139304629",
+    "Czerniak 2007, Karte 1":                "Q139304629",
     "Dorka 1939":                            "Q139304641",
-    "Grygiel 2008, Karte 1":                "Q139304642",
+    "Grygiel 2008, Karte 1":                 "Q139304642",
     "Stäuble/Veit 2016":                     "Q139304647",
     "Wetzel 1988":                           "Q139304620",
-    "von Richthofen 1930, Karte 2":         "Q139304635",
-    "Pyzel 2019":                            "Q139460445",   # ersetzt
+    "von Richthofen 1930, Karte 2":          "Q139304635",
+    "Pyzel 2019":                            "Q139460445",
     "Umbreit 1937":                          "Q139304632",
-    "Umbreit 1940":                          "Q139459720",   # ersetzt
+    "Umbreit 1940":                          "Q139459720",
     "Kulczycka-Leciejewiczowa 1993, Karte 1":             "Q139304628",
     "Kulczycka-Leciejewiczowa 1993, Karte 1 Nr 5":        "Q139304628",
     "Kulczycka-Leciejewiczowa 1993, Karte 1, Berlekamp 1966":                            "Q139304628",
     "Kulczycka-Leciejewiczowa 1993, Karte 1, von Richthofen 1930, Karte 2 Nr 35":        "Q139304628",
     "Raddatz 1956":                          "Q139304631",
     "Ciesielski/Goczyca 2013":               "Q139304640",
-    "Dziewanowski 2023":                     "Q139460420",   # Dziewanowski 2023 nicht in HTML (dort 2015/2019)
+    "Dziewanowski 2023":                     "Q139460420",
     "Swieder 2009, Kulczycka-Leciejewiczowa 1993, Karte 1 Nr. 23": "Q139304628",
-    # Nicht in HTML (institutionelle / sonstige Quellen): --> nachgereicht von Sophie
-    "LfDA Sachsen-Anhalt":                   "Q897952",
+    # Institutionelle Quellen (von Sophie nachgereicht):
+    "LfDA Sachsen-Anhalt":                   "Q1802049",
     "BLDAM 2021":                            "Q897952",
     "BLDAM 2024":                            "Q897952",
     "BLDAM / M. Ismail-Weber 2018":          "Q897952",
@@ -130,50 +125,20 @@ QID_QUELLE_GEOREF = {
     "Zabytek.pl":                            "Q43301933",
     "W. Schier persönl. Kommunikation":      None,
     "Berlekamp 1966, Liste 9":               "Q139304613",
-    "Czerniak":                              None,   # zu unspezifisch für eindeutiges Mapping
+    "Czerniak":                              None,
 }
 
 
 # ---------------------------------------------------------------------------
-# Logging einrichten
+# Hilfsfunktion: Lookup mit Logging
 # ---------------------------------------------------------------------------
 
-script_dir = os.path.dirname(os.path.abspath(__file__))
-log_path = os.path.join(script_dir, LOG_FILENAME)
-
-logging.basicConfig(
-    filename=log_path,
-    filemode="w",
-    level=logging.WARNING,
-    format="%(asctime)s  %(levelname)s  %(message)s",
-    datefmt="%Y-%m-%d %H:%M:%S",
-    encoding="utf-8",
-)
-
-log = logging.getLogger(__name__)
-
-
-# ---------------------------------------------------------------------------
-# CSV laden
-# ---------------------------------------------------------------------------
-
-csv_path = os.path.join(script_dir, CSV_FILENAME)
-print(f"Lade CSV: {csv_path}")
-
-df = pd.read_csv(csv_path, sep=CSV_SEP, encoding=CSV_ENCODING, dtype=str)
-
-total_rows = len(df)
-print(f"  {total_rows} Zeilen geladen, {len(df.columns)} Spalten")
-
-
-# ---------------------------------------------------------------------------
-# Hilfsfunktion: Wert aus Mapping holen und fehlende Treffer loggen
-# ---------------------------------------------------------------------------
-
-def lookup_qid(value, mapping: dict, col_name: str, row_idx: int) -> str | None:
-    """Gibt QID zurück oder None; loggt fehlende/nicht gemappte Werte."""
+def _lookup_qid(
+    value, mapping: dict, col_name: str, row_idx: int, log: logging.Logger
+) -> str | None:
+    """Returns the QID for a value or None; logs misses and intentional empties."""
     if pd.isna(value) or str(value).strip() == "":
-        return None  # kein Wert -> kein Log-Eintrag, einfach leer lassen
+        return None
 
     key = str(value).strip()
 
@@ -189,8 +154,7 @@ def lookup_qid(value, mapping: dict, col_name: str, row_idx: int) -> str | None:
     qid = mapping[key]
     if qid is None:
         log.warning(
-            "Mapping vorhanden, aber QID bewusst leer (kein Wikidata-Item aus HTML) "
-            "| Zeile %d | Spalte: %s | Wert: %r",
+            "Mapping vorhanden, aber QID bewusst leer | Zeile %d | Spalte: %s | Wert: %r",
             row_idx + 2,
             col_name,
             key,
@@ -199,61 +163,162 @@ def lookup_qid(value, mapping: dict, col_name: str, row_idx: int) -> str | None:
 
 
 # ---------------------------------------------------------------------------
-# QIDs befüllen
+# Logger-Setup (modul-eigener Logger, jeder run()-Aufruf bekommt frischen Handler)
 # ---------------------------------------------------------------------------
 
-filled_georef = 0
-filled_pub = 0
-skipped_georef = 0
-skipped_pub = 0
+def _setup_logger(log_path: Path) -> logging.Logger:
+    """Configure a dedicated logger for this run; replaces any prior handlers."""
+    log = logging.getLogger("enrich_qids")
+    log.setLevel(logging.WARNING)
+    # Remove handlers from previous runs (important when imported as a module)
+    for h in list(log.handlers):
+        log.removeHandler(h)
+        h.close()
+    handler = logging.FileHandler(log_path, mode="w", encoding="utf-8")
+    handler.setFormatter(
+        logging.Formatter(
+            "%(asctime)s  %(levelname)s  %(message)s",
+            datefmt="%Y-%m-%d %H:%M:%S",
+        )
+    )
+    log.addHandler(handler)
+    log.propagate = False  # don't bubble up to root logger
+    return log
 
-for i, row in df.iterrows():
 
-    # -- QID_quelle_georef --
-    current_georef_qid = str(row.get("QID_quelle_georef", "")).strip()
-    if current_georef_qid in ("", "nan"):
-        new_qid = lookup_qid(row.get("quelle_georef"), QID_QUELLE_GEOREF, "quelle_georef", i)
-        if new_qid:
-            df.at[i, "QID_quelle_georef"] = new_qid
-            filled_georef += 1
+# ---------------------------------------------------------------------------
+# CSV-Writer (folgt Projekt-Konvention: QUOTE_ALL, na_rep="", UTF-8 BOM)
+# ---------------------------------------------------------------------------
+
+def _write_csv_quoted(df: pd.DataFrame, path: Path) -> None:
+    """Write CSV with all fields quoted, empty strings for NaN, UTF-8 BOM."""
+    buf = io.StringIO()
+    writer = csv.writer(buf, quoting=csv.QUOTE_ALL)
+    writer.writerow(df.columns.tolist())
+    for row in df.itertuples(index=False, name=None):
+        writer.writerow(["" if (v != v or v is None) else str(v) for v in row])
+    with open(path, "w", newline="", encoding=CSV_ENCODING_OUT) as f:
+        f.write(buf.getvalue())
+
+
+# ---------------------------------------------------------------------------
+# Hauptfunktion (vom Orchestrator aufgerufen)
+# ---------------------------------------------------------------------------
+
+def run(input_csv: Path, output_csv: Path, log_path: Path) -> dict:
+    """Enrich a CSV with QID columns from the embedded mappings.
+
+    Parameters
+    ----------
+    input_csv : Path
+        Source CSV (read-only). Must be comma-separated, UTF-8.
+    output_csv : Path
+        Destination CSV. Will be written with QUOTE_ALL and UTF-8 BOM.
+    log_path : Path
+        Where to write the per-row warning log (overwritten each run).
+
+    Returns
+    -------
+    dict
+        Summary with keys:
+        ``filled_georef``, ``filled_pub``, ``skipped_georef``,
+        ``skipped_pub``, ``n_missing``, ``n_rows``.
+    """
+    input_csv = Path(input_csv)
+    output_csv = Path(output_csv)
+    log_path = Path(log_path)
+
+    if not input_csv.exists():
+        raise FileNotFoundError(f"Input CSV not found: {input_csv}")
+
+    log = _setup_logger(log_path)
+
+    print(f"  [enrich_qids] Reading: {input_csv}")
+    df = pd.read_csv(input_csv, sep=CSV_SEP, encoding=CSV_ENCODING_IN, dtype=str)
+    n_rows = len(df)
+    print(f"  [enrich_qids]   {n_rows} rows, {len(df.columns)} columns")
+
+    # Counter
+    filled_georef = 0
+    filled_pub = 0
+    skipped_georef = 0
+    skipped_pub = 0
+
+    for i, row in df.iterrows():
+        # -- QID_quelle_georef --
+        current_georef_qid = str(row.get("QID_quelle_georef", "")).strip()
+        if current_georef_qid in ("", "nan"):
+            new_qid = _lookup_qid(
+                row.get("quelle_georef"), QID_QUELLE_GEOREF, "quelle_georef", i, log
+            )
+            if new_qid:
+                df.at[i, "QID_quelle_georef"] = new_qid
+                filled_georef += 1
+        else:
+            skipped_georef += 1
+
+        # -- QID_publikation --
+        current_pub_qid = str(row.get("QID_publikation", "")).strip()
+        if current_pub_qid in ("", "nan"):
+            new_qid = _lookup_qid(
+                row.get("publikation_arch"), QID_PUBLIKATION, "publikation_arch", i, log
+            )
+            if new_qid:
+                df.at[i, "QID_publikation"] = new_qid
+                filled_pub += 1
+        else:
+            skipped_pub += 1
+
+    # Flush log handler so the file is fully written before we count lines
+    for h in log.handlers:
+        h.flush()
+
+    # Output schreiben
+    _write_csv_quoted(df, output_csv)
+    print(f"  [enrich_qids] Wrote:   {output_csv}")
+
+    # Log-Einträge zählen
+    n_missing = 0
+    if log_path.exists():
+        with open(log_path, encoding="utf-8") as f:
+            n_missing = sum(1 for line in f if "WARNING" in line)
+
+    summary = {
+        "n_rows": n_rows,
+        "filled_georef": filled_georef,
+        "filled_pub": filled_pub,
+        "skipped_georef": skipped_georef,
+        "skipped_pub": skipped_pub,
+        "n_missing": n_missing,
+        "log_path": str(log_path),
+    }
+
+    print(
+        f"  [enrich_qids] QID_quelle_georef: {filled_georef} new, {skipped_georef} pre-existing"
+    )
+    print(
+        f"  [enrich_qids] QID_publikation:   {filled_pub} new, {skipped_pub} pre-existing"
+    )
+    if n_missing == 0:
+        print("  [enrich_qids] No missing matches.")
     else:
-        skipped_georef += 1  # bereits befüllt, nicht überschreiben
+        print(f"  [enrich_qids] {n_missing} missing/empty entries -> {log_path}")
 
-    # -- QID_publikation --
-    current_pub_qid = str(row.get("QID_publikation", "")).strip()
-    if current_pub_qid in ("", "nan"):
-        new_qid = lookup_qid(row.get("publikation_arch"), QID_PUBLIKATION, "publikation_arch", i)
-        if new_qid:
-            df.at[i, "QID_publikation"] = new_qid
-            filled_pub += 1
-    else:
-        skipped_pub += 1  # bereits befüllt, nicht überschreiben
+    return summary
 
 
 # ---------------------------------------------------------------------------
-# CSV zurückschreiben (direktes Überschreiben)
+# Standalone-Modus (Verhalten wie ursprünglich, mit Default-Pfaden)
 # ---------------------------------------------------------------------------
 
-df.to_csv(csv_path, sep=CSV_SEP, index=False, encoding=CSV_ENCODING)
-print(f"\nCSV gespeichert: {csv_path}")
+if __name__ == "__main__":
+    # Default-Pfade: alle relativ zum Skript-Ordner.
+    # Wenn du das Skript standalone laufen lässt, schreibt es output IN-PLACE,
+    # also unter dem gleichen Dateinamen wie früher.
+    here = Path(__file__).parent
+    default_input = here / "fst_wgs84_comma.csv"
+    default_output = here / "fst_wgs84_comma.csv"  # in-place wie vorher
+    default_log = here / "enrich_qids_missing.log"
 
-
-# ---------------------------------------------------------------------------
-# Zusammenfassung
-# ---------------------------------------------------------------------------
-
-print("\n--- Ergebnis ---")
-print(f"  QID_quelle_georef:  {filled_georef} neu befüllt, {skipped_georef} bereits vorhanden")
-print(f"  QID_publikation:    {filled_pub} neu befüllt, {skipped_pub} bereits vorhanden")
-print(f"\n  Log-Datei (fehlende Matches): {log_path}")
-
-# Zähle Log-Einträge
-with open(log_path, encoding="utf-8") as f:
-    log_lines = [l for l in f if "WARNING" in l]
-n_missing = len(log_lines)
-if n_missing == 0:
-    print("  Keine fehlenden Matches - alles aufgelöst!")
-else:
-    print(f"  {n_missing} fehlende oder bewusst leere Einträge im Log")
-
-print("\nFertig.")
+    run(input_csv=default_input, output_csv=default_output, log_path=default_log)
+    print("\nFertig.")

@@ -65,8 +65,8 @@ from rapidfuzz import fuzz, process
 class _TeeLogger:
     """Mirrors all stdout output to a log file simultaneously.
 
-    Usage (in main):
-        with _TeeLogger(HERE / LOG_FILE) as tee:
+    Usage (in run()):
+        with _TeeLogger(log_path) as tee:
             sys.stdout = tee
             ...  # all print() calls go to both terminal and file
             sys.stdout = tee.terminal
@@ -1558,21 +1558,53 @@ def _print_summary(
                 print()
 
 
-def main() -> None:
-    log_path = HERE / LOG_FILE
-    with _TeeLogger(log_path) as tee:
-        sys.stdout = tee
-        print(f"Run log: {log_path}\n")
-        _run()
+def run(
+    input_csv: pathlib.Path,
+    output_csv: pathlib.Path,
+    report_csv: pathlib.Path,
+    log_path: Optional[pathlib.Path] = None,
+) -> None:
+    """Run the full geographic enrichment pipeline.
+
+    Parameters
+    ----------
+    input_csv : Path
+        Pipe-delimited reference CSV with columns
+        FID, LAND, BUNDESLAND, KREIS, GEMEINDE.
+    output_csv : Path
+        Destination for the enriched CSV (comma-separated, QUOTE_ALL).
+    report_csv : Path
+        Destination for the per-row QA report (sorted by match score).
+    log_path : Path or None
+        If provided, mirror all stdout to this log file (Tee mode).
+        If None, prints go directly to stdout (useful when called from
+        an orchestrator that manages logging itself).
+    """
+    input_csv = pathlib.Path(input_csv)
+    output_csv = pathlib.Path(output_csv)
+    report_csv = pathlib.Path(report_csv)
+    log_path = pathlib.Path(log_path) if log_path is not None else None
+
+    if log_path is not None:
+        with _TeeLogger(log_path) as tee:
+            sys.stdout = tee
+            print(f"Run log: {log_path}\n")
+            _run_impl(input_csv, output_csv, report_csv)
+    else:
+        _run_impl(input_csv, output_csv, report_csv)
 
 
-def _run() -> None:
+def _run_impl(
+    input_csv: pathlib.Path,
+    output_csv: pathlib.Path,
+    report_csv: pathlib.Path,
+) -> None:
+    """Pipeline body: SPARQL fetches, matching, CSV writes. No path defaults."""
     # --- Load input ----------------------------------------------------------
-    input_path = HERE / INPUT_FILE
-    if not input_path.exists():
-        raise FileNotFoundError(f"Input file not found: {input_path}")
+    if not input_csv.exists():
+        raise FileNotFoundError(f"Input file not found: {input_csv}")
 
-    df = pd.read_csv(input_path, sep="|", dtype=str, quotechar='"', encoding="utf-8")
+    df = pd.read_csv(input_csv, sep="|", dtype=str, quotechar='"', encoding="utf-8")
     df.columns = df.columns.str.strip()
 
     for col in ("LAND", "BUNDESLAND", "KREIS"):
@@ -1644,27 +1676,41 @@ def _run() -> None:
     df = df[ordered_cols]
 
     # --- Write mapped CSV ----------------------------------------------------
-    out = HERE / OUTPUT_FILE
     df.to_csv(
-        out,
+        output_csv,
         sep=OUTPUT_SEP,
         index=False,
         quoting=csv.QUOTE_ALL,
         encoding="utf-8",
         na_rep="",
     )
-    print(f"\n[1/2] Mapped CSV:  {out}")
+    print(f"\n[1/2] Mapped CSV:  {output_csv}")
 
     # --- Write report CSV (sorted by score ascending for easy QA review) -----
-    rep = HERE / REPORT_FILE
     pd.DataFrame(all_report).sort_values(
         ["level", "matchScore"], ascending=[True, True], na_position="first"
-    ).to_csv(rep, sep=OUTPUT_SEP, index=False, quoting=csv.QUOTE_ALL, encoding="utf-8")
-    print(f"[2/2] Report CSV:  {rep}")
+    ).to_csv(
+        report_csv,
+        sep=OUTPUT_SEP,
+        index=False,
+        quoting=csv.QUOTE_ALL,
+        encoding="utf-8",
+    )
+    print(f"[2/2] Report CSV:  {report_csv}")
 
     # --- Coverage summary ----------------------------------------------------
     _print_summary(df, land_cache, bl_cache, kreis_cache, gemeinde_cache)
 
 
+# ---------------------------------------------------------------------------
+# Standalone-Modus: behält das ursprüngliche Verhalten (Tee-Logger,
+# Default-Pfade aus den Modul-Konstanten).
+# ---------------------------------------------------------------------------
+
 if __name__ == "__main__":
-    main()
+    run(
+        input_csv=HERE / INPUT_FILE,
+        output_csv=HERE / OUTPUT_FILE,
+        report_csv=HERE / REPORT_FILE,
+        log_path=HERE / LOG_FILE,
+    )

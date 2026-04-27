@@ -1,0 +1,154 @@
+@prefix prov:    <http://www.w3.org/ns/prov#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ex:      <https://example.org/bb-5kbc-sites/> .
+
+
+# === Software agents (scripts) ===
+ex:csv_enrichment_py
+    a prov:SoftwareAgent, prov:Plan ;
+    rdfs:label "csv_enrichment.py" ;
+    prov:atLocation <file:///C:/git/bb-5kbc-sites/data/csv_enrichment.py> .
+
+ex:enrich_qids_py
+    a prov:SoftwareAgent, prov:Plan ;
+    rdfs:label "enrich_qids.py" ;
+    prov:atLocation <file:///C:/git/bb-5kbc-sites/data/enrichment/literature/enrich_qids.py> .
+
+ex:wikidata_map_py
+    a prov:SoftwareAgent, prov:Plan ;
+    rdfs:label "wikidata_map.py" ;
+    prov:atLocation <file:///C:/git/bb-5kbc-sites/data/enrichment/mapping_admin_regions/wikidata_map.py> .
+
+ex:enrich_fst_py
+    a prov:SoftwareAgent, prov:Plan ;
+    rdfs:label "enrich_fst.py" ;
+    prov:atLocation <file:///C:/git/bb-5kbc-sites/data/enrichment/mapping_admin_regions/enrich_fst.py> .
+
+# === Source code version (git) ===
+ex:repo_version
+    a prov:Entity ;
+    rdfs:label "Repository state at run time" ;
+    ex:gitCommit "59fec483f28fdaca4528b633ab5390095e0473b0" ;
+    ex:gitBranch "main" ;
+    ex:gitDirty "true"^^xsd:boolean .
+
+# === Entities (data files and logs) ===
+ex:fst_wgs84_comma_csv
+    a prov:Entity ;
+    rdfs:label "Original location dataset (input)" ;
+    prov:atLocation <file:///C:/git/bb-5kbc-sites/data/fst_wgs84_comma.csv> .
+
+ex:fst_standortanalysen_ref_csv
+    a prov:Entity ;
+    rdfs:label "Geo reference table (input)" ;
+    prov:atLocation <file:///C:/git/bb-5kbc-sites/data/enrichment/mapping_admin_regions/fst_standortanalysen_ref.csv> .
+
+ex:fst_wgs84_lit_enriched_csv
+    a prov:Entity ;
+    rdfs:label "Literature-enriched intermediate dataset" ;
+    prov:atLocation <file:///C:/git/bb-5kbc-sites/data/fst_wgs84_lit_enriched.csv> .
+
+ex:fst_standortanalysen_ref_mapped_csv
+    a prov:Entity ;
+    rdfs:label "Geo reference table with Wikidata authority IDs" ;
+    prov:atLocation <file:///C:/git/bb-5kbc-sites/data/enrichment/mapping_admin_regions/fst_standortanalysen_ref_mapped.csv> .
+
+ex:fst_standortanalysen_ref_report_csv
+    a prov:Entity ;
+    rdfs:label "Per-row QA report for geo mapping" ;
+    prov:atLocation <file:///C:/git/bb-5kbc-sites/data/enrichment/mapping_admin_regions/fst_standortanalysen_ref_report.csv> .
+
+ex:fst_wgs84_csv
+    a prov:Entity ;
+    rdfs:label "Final enriched dataset (LOD-ready)" ;
+    prov:atLocation <file:///C:/git/bb-5kbc-sites/data/fst_wgs84.csv> .
+
+ex:lit_log
+    a prov:Entity ;
+    rdfs:label "Literature stage warning log" ;
+    prov:atLocation <file:///C:/git/bb-5kbc-sites/data/csv_enrichment_literature.log> .
+
+ex:geo_log
+    a prov:Entity ;
+    rdfs:label "Geo stage full stdout log" ;
+    prov:atLocation <file:///C:/git/bb-5kbc-sites/data/csv_enrichment_geo.log> .
+
+ex:run_log
+    a prov:Entity ;
+    rdfs:label "Full pipeline run log (all stages, teed from stdout)" ;
+    prov:atLocation <file:///C:/git/bb-5kbc-sites/data/csv_enrichment_run.log> .
+
+# === Top-level activity ===
+<https://example.org/bb-5kbc-sites/run/2026-04-27T08-01-49Z>
+    a prov:Activity ;
+    rdfs:label "CSV enrichment pipeline run 2026-04-27T08-01-49Z" ;
+    prov:startedAtTime "2026-04-27T08:01:49+00:00"^^xsd:dateTime ;
+    prov:endedAtTime "2026-04-27T08:12:12+00:00"^^xsd:dateTime ;
+    prov:used ex:fst_wgs84_comma_csv ;
+    prov:used ex:fst_standortanalysen_ref_csv ;
+    prov:used ex:repo_version ;
+    prov:wasAssociatedWith ex:csv_enrichment_py .
+
+ex:fst_wgs84_csv
+    prov:wasGeneratedBy <https://example.org/bb-5kbc-sites/run/2026-04-27T08-01-49Z> ;
+    prov:wasDerivedFrom ex:fst_wgs84_comma_csv ;
+    prov:wasDerivedFrom ex:fst_standortanalysen_ref_mapped_csv .
+
+ex:run_log
+    prov:wasGeneratedBy <https://example.org/bb-5kbc-sites/run/2026-04-27T08-01-49Z> .
+
+# === Stage 1: literature ===
+<https://example.org/bb-5kbc-sites/run/2026-04-27T08-01-49Z/stage1_literature>
+    a prov:Activity ;
+    rdfs:label "Stage 1 — literature QID enrichment" ;
+    prov:wasInformedBy <https://example.org/bb-5kbc-sites/run/2026-04-27T08-01-49Z> ;
+    prov:used ex:fst_wgs84_comma_csv ;
+    prov:wasAssociatedWith ex:enrich_qids_py ;
+    ex:durationSeconds "0.16"^^xsd:decimal ;
+    ex:qidsFilledGeoref "202"^^xsd:integer ;
+    ex:qidsFilledPublication "265"^^xsd:integer ;
+    ex:warningsLogged "9"^^xsd:integer .
+
+ex:fst_wgs84_lit_enriched_csv
+    prov:wasGeneratedBy <https://example.org/bb-5kbc-sites/run/2026-04-27T08-01-49Z/stage1_literature> ;
+    prov:wasDerivedFrom ex:fst_wgs84_comma_csv .
+
+ex:lit_log
+    prov:wasGeneratedBy <https://example.org/bb-5kbc-sites/run/2026-04-27T08-01-49Z/stage1_literature> .
+
+# === Stage 2: geo SPARQL mapping ===
+<https://example.org/bb-5kbc-sites/run/2026-04-27T08-01-49Z/stage2_geo>
+    a prov:Activity ;
+    rdfs:label "Stage 2 — geo SPARQL mapping (Wikidata)" ;
+    prov:wasInformedBy <https://example.org/bb-5kbc-sites/run/2026-04-27T08-01-49Z> ;
+    prov:used ex:fst_standortanalysen_ref_csv ;
+    prov:wasAssociatedWith ex:wikidata_map_py ;
+    ex:durationSeconds "620.34"^^xsd:decimal .
+
+ex:fst_standortanalysen_ref_mapped_csv
+    prov:wasGeneratedBy <https://example.org/bb-5kbc-sites/run/2026-04-27T08-01-49Z/stage2_geo> ;
+    prov:wasDerivedFrom ex:fst_standortanalysen_ref_csv .
+
+ex:fst_standortanalysen_ref_report_csv
+    prov:wasGeneratedBy <https://example.org/bb-5kbc-sites/run/2026-04-27T08-01-49Z/stage2_geo> ;
+    prov:wasDerivedFrom ex:fst_standortanalysen_ref_csv .
+
+ex:geo_log
+    prov:wasGeneratedBy <https://example.org/bb-5kbc-sites/run/2026-04-27T08-01-49Z/stage2_geo> .
+
+# === Stage 3: merge ===
+<https://example.org/bb-5kbc-sites/run/2026-04-27T08-01-49Z/stage3_merge>
+    a prov:Activity ;
+    rdfs:label "Stage 3 — merge geo IDs into literature-enriched CSV" ;
+    prov:wasInformedBy <https://example.org/bb-5kbc-sites/run/2026-04-27T08-01-49Z> ;
+    prov:used ex:fst_wgs84_lit_enriched_csv ;
+    prov:used ex:fst_standortanalysen_ref_mapped_csv ;
+    prov:wasAssociatedWith ex:enrich_fst_py ;
+    ex:durationSeconds "0.12"^^xsd:decimal ;
+    ex:rowCount "540"^^xsd:integer ;
+    ex:columnCount "65"^^xsd:integer .
+
+ex:fst_wgs84_csv
+    prov:wasGeneratedBy <https://example.org/bb-5kbc-sites/run/2026-04-27T08-01-49Z/stage3_merge> .
