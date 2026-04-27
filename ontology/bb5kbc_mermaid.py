@@ -193,15 +193,30 @@ def build_mermaid(g: Graph) -> str:
     blocks = []
     for c in classes:
         name = local_name(c)
-        # Stereotype = closest CRM ancestor (via any direct parent)
-        stereotype = None
-        for parent in g.objects(c, RDFS.subClassOf):
-            anc = find_crm_ancestor(g, parent)
-            if anc is not None:
-                stereotype = short(anc)
-                break
-        if stereotype is None:
-            stereotype = "owl:Class"  # fallback — should not happen
+        # Stereotype = closest CRM ancestor.
+        # With multi-inheritance (e.g. Fundstelle ⊑ lado:Location, fsl:Site,
+        # crm:E27_Site simultaneously), the order of g.objects(c, RDFS.subClassOf)
+        # is not guaranteed by rdflib. To get a deterministic stereotype:
+        #   1. Prefer a direct parent in the CRM family.
+        #   2. Otherwise, walk the first non-CRM parent's ancestry until a
+        #      CRM-family class is found.
+        direct_parents = sorted(g.objects(c, RDFS.subClassOf), key=str)
+        crm_direct = next(
+            (p for p in direct_parents
+             if any(str(p).startswith(ns) for ns in CRM_FAMILY)),
+            None,
+        )
+        if crm_direct is not None:
+            stereotype = short(crm_direct)
+        else:
+            stereotype = None
+            for parent in direct_parents:
+                anc = find_crm_ancestor(g, parent)
+                if anc is not None:
+                    stereotype = short(anc)
+                    break
+            if stereotype is None:
+                stereotype = "owl:Class"  # fallback — should not happen
         dt = get_datatype_props_for(g, c)
         blocks.append(class_block(name, stereotype, dt, name in CLASSES_WITH_EXTID))
 
