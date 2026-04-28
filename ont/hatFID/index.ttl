@@ -11,11 +11,14 @@
         "site PID"@en ;
     void:inDataset <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data> ;
     rdfs:comment """Primary identifier (PID) of the Fundstelle in the Schmidt 2026 catalogue (FID column).
-SubPropertyOf both crm:P1_is_identified_by and dcterms:identifier — appears as:
-  dcterms:identifier "1"^^xsd:integer  (explicit identifier statement)
-  URI basis: http://w3id.org/bb5kbc/site_{FID}
-             http://w3id.org/bb5kbc/site_{FID}_activity
-             http://w3id.org/bb5kbc/site_{FID}_geom"""@en ;
+
+SubPropertyOf both `crm:P1_is_identified_by` and `dcterms:identifier` — appears as `dcterms:identifier "1"^^xsd:integer` (explicit identifier statement).
+
+URI basis:
+
+* `http://w3id.org/bb5kbc/site_{FID}`
+* `http://w3id.org/bb5kbc/site_{FID}_activity`
+* `http://w3id.org/bb5kbc/site_{FID}_geom`"""@en ;
     rdfs:domain <http://w3id.org/bb5kbc/ont/Fundstelle> ;
     rdfs:range xsd:integer ;
     rdfs:subPropertyOf dcterms:identifier,

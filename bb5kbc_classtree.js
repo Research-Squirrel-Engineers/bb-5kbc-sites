@@ -303,9 +303,9 @@ var tree={
               "http://rdfs.org/ns/void#Dataset": 3
             },
             "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": {
+              "http://w3id.org/bb5kbc/ont/EntdeckungsartType": 12,
               "http://w3id.org/bb5kbc/ont/externalIdentifierType": 6,
               "http://www.w3.org/2002/07/owl#NamedIndividual": 6,
-              "http://w3id.org/bb5kbc/ont/EntdeckungsartType": 12,
               "http://w3id.org/bb5kbc/ont/DatierungsMethodeType": 2
             },
             "http://www.w3.org/2000/01/rdf-schema#member": {
@@ -6281,14 +6281,14 @@ var tree={
               "http://rdfs.org/ns/void#Dataset": 4
             },
             "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": {
+              "http://w3id.org/bb5kbc/ont/Gemeinde": 318,
               "http://w3id.org/bb5kbc/ont/Land": 2,
-              "http://w3id.org/bb5kbc/ont/Kreis": 82,
               "http://w3id.org/bb5kbc/ont/Bundesland": 15,
-              "http://w3id.org/bb5kbc/ont/Gemeinde": 318
+              "http://w3id.org/bb5kbc/ont/Kreis": 82
             },
             "http://www.w3.org/2000/01/rdf-schema#domain": {
-              "http://www.w3.org/2002/07/owl#DatatypeProperty": 4,
-              "http://www.w3.org/2002/07/owl#ObjectProperty": 3
+              "http://www.w3.org/2002/07/owl#ObjectProperty": 3,
+              "http://www.w3.org/2002/07/owl#DatatypeProperty": 4
             },
             "http://www.w3.org/2000/01/rdf-schema#member": {
               "http://www.w3.org/2004/02/skos/core#Collection": 4
@@ -28084,11 +28084,11 @@ var tree={
             "http://www.w3.org/2004/02/skos/core#relatedMatch": {
               "instancecount": 343
             },
-            "http://www.w3.org/2004/02/skos/core#closeMatch": {
-              "instancecount": 51
-            },
             "http://www.w3.org/2004/02/skos/core#exactMatch": {
               "instancecount": 107
+            },
+            "http://www.w3.org/2004/02/skos/core#closeMatch": {
+              "instancecount": 51
             }
           }
         }
@@ -32550,10 +32550,10 @@ var tree={
         }
       },
       {
-        "id": "http://w3id.org/bb5kbc/pipeline_run_2026-04-28T11-06-58Z",
+        "id": "http://w3id.org/bb5kbc/pipeline_run_2026-04-28T11-55-07Z",
         "parent": "http://www.w3.org/ns/prov#Activity",
         "type": "instance",
-        "text": "bb5kbc CSV-to-RDF pipeline run 2026-04-28T11-06-58Z (data:pipeline_run_2026-04-28T11-06-58Z)",
+        "text": "bb5kbc CSV-to-RDF pipeline run 2026-04-28T11-55-07Z (data:pipeline_run_2026-04-28T11-55-07Z)",
         "data": {
           "from": {},
           "to": {}
@@ -38646,32 +38646,32 @@ var tree={
             },
             "http://www.w3.org/2000/01/rdf-schema#member": {
               "instancecount": 2625,
-              "http://www.w3.org/ns/prov#Plan": 2,
-              "http://www.w3.org/ns/prov#SoftwareAgent": 2,
+              "http://w3id.org/bb5kbc/ont/Datierung": 540,
+              "http://www.w3.org/2002/07/owl#Ontology": 1,
+              "http://w3id.org/bb5kbc/ont/KulturelleZuordnung": 540,
               "http://w3id.org/bb5kbc/ont/EntdeckungsartType": 12,
               "http://w3id.org/bb5kbc/ont/externalIdentifierType": 12,
               "http://www.w3.org/2002/07/owl#NamedIndividual": 12,
-              "http://w3id.org/bb5kbc/ont/DatierungsMethodeType": 2,
-              "http://w3id.org/bb5kbc/ont/Entdeckung": 432,
-              "http://w3id.org/bb5kbc/ont/Gemeinde": 318,
-              "http://www.w3.org/2002/07/owl#Ontology": 1,
-              "http://fuzzy-sl.squirrel.link/ontology/SourceType": 4,
-              "http://w3id.org/bb5kbc/ont/Datierung": 540,
-              "http://www.w3.org/2002/07/owl#DatatypeProperty": 10,
-              "http://fuzzy-sl.squirrel.link/ontology/MethodType": 3,
-              "http://w3id.org/bb5kbc/ont/Kulturgruppe": 9,
-              "http://w3id.org/bb5kbc/ont/Publikation": 45,
-              "http://w3id.org/bb5kbc/ont/Scherbe": 9,
-              "http://w3id.org/bb5kbc/ont/Kreis": 82,
-              "http://w3id.org/bb5kbc/ont/FundstellenartType": 12,
               "http://www.w3.org/ns/prov#Entity": 2,
-              "http://w3id.org/bb5kbc/ont/Land": 2,
-              "http://www.w3.org/2002/07/owl#ObjectProperty": 16,
-              "http://w3id.org/bb5kbc/ont/GeoreferenzierungsAktivitaet": 540,
               "http://www.w3.org/2002/07/owl#Class": 16,
               "http://w3id.org/bb5kbc/ont/Bundesland": 15,
-              "http://w3id.org/bb5kbc/ont/KulturelleZuordnung": 540,
-              "http://www.w3.org/ns/prov#Activity": 1
+              "http://www.w3.org/ns/prov#Activity": 1,
+              "http://w3id.org/bb5kbc/ont/Gemeinde": 318,
+              "http://w3id.org/bb5kbc/ont/Kreis": 82,
+              "http://fuzzy-sl.squirrel.link/ontology/SourceType": 4,
+              "http://w3id.org/bb5kbc/ont/FundstellenartType": 12,
+              "http://www.w3.org/ns/prov#Plan": 2,
+              "http://www.w3.org/ns/prov#SoftwareAgent": 2,
+              "http://w3id.org/bb5kbc/ont/Land": 2,
+              "http://w3id.org/bb5kbc/ont/Kulturgruppe": 9,
+              "http://w3id.org/bb5kbc/ont/Scherbe": 9,
+              "http://www.w3.org/2002/07/owl#ObjectProperty": 16,
+              "http://fuzzy-sl.squirrel.link/ontology/MethodType": 3,
+              "http://w3id.org/bb5kbc/ont/GeoreferenzierungsAktivitaet": 540,
+              "http://w3id.org/bb5kbc/ont/Publikation": 45,
+              "http://w3id.org/bb5kbc/ont/DatierungsMethodeType": 2,
+              "http://www.w3.org/2002/07/owl#DatatypeProperty": 10,
+              "http://w3id.org/bb5kbc/ont/Entdeckung": 432
             }
           }
         }

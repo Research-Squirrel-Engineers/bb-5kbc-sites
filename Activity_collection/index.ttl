@@ -7,5 +7,5 @@
         <https://www.iana.org/assignments/media-types/text/turtle#Resource> ;
     rdfs:label "Activity Instances Collection"@en ;
     void:inDataset <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data> ;
-    rdfs:member <http://w3id.org/bb5kbc/pipeline_run_2026-04-28T11-06-58Z> .
+    rdfs:member <http://w3id.org/bb5kbc/pipeline_run_2026-04-28T11-55-07Z> .
 

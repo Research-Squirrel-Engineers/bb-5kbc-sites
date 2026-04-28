@@ -40,13 +40,13 @@
     ns1:averageSubjectIRILength 37 ;
     ns1:datatypes 0 ;
     ns1:distinctBlankNodes 0 ;
-    ns1:distinctIRIReferences 13436 ;
+    ns1:distinctIRIReferences 13438 ;
     ns1:distinctLiterals 0 ;
-    ns1:distinctRDFNodes 13436 ;
+    ns1:distinctRDFNodes 13438 ;
     ns1:languages 0 ;
     ns1:propertyClasses 0 ;
     dc:language <http://www.lexvo.org/page/iso639-1/en> ;
-    dcterms:modified "2026-04-28T11:16:50"^^xsd:dateTime ;
+    dcterms:modified "2026-04-28T11:56:37"^^xsd:dateTime ;
     dcterms:subject <http://dbpedia.org/resource/Location>,
         <http://dbpedia.org/resource/OGC_GeoSPARQL>,
         <http://dbpedia.org/resource/Time>,
@@ -124,12 +124,12 @@
         <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_externalIdentifierType> ;
     void:classes 71 ;
     void:dataDump <https://Research-Squirrel-Engineers.github.io/bb-5kbc-sites//index.ttl> ;
-    void:distinctObjects 8505 ;
+    void:distinctObjects 8506 ;
     void:distinctSubjects 4850 ;
     void:entities 3727 ;
     void:feature <http://www.w3.org/ns/formats/RDFa>,
         <http://www.w3.org/ns/formats/Turtle> ;
-    void:properties 81 ;
+    void:properties 82 ;
     void:propertyPartition <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_activityDesc>,
         <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_asWKT>,
         <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_atLocation>,
@@ -175,6 +175,7 @@
         <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_hatPublikation>,
         <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_hatScherbe>,
         <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_identifier>,
+        <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_image>,
         <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_inBundesland>,
         <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_inGemeinde>,
         <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_inKreis>,
@@ -210,7 +211,7 @@
         <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_wikidataMatchDescription>,
         <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_wurdeEntdecktDurch>,
         <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data_wurdeGeoreferenziertDurch> ;
-    void:triples 36020 ;
+    void:triples 36021 ;
     void:uriSpace "http://w3id.org/bb5kbc/"^^xsd:string ;
     void:vocabulary ns1:,
         dcam:,

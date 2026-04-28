@@ -1,6 +1,7 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
 @prefix void: <http://rdfs.org/ns/void#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
@@ -54,15 +55,14 @@ External identifiers (TGN + iDAI + OSM) on all 4 administrative levels.
 
 ## CM Literals (on `bb5kbc:GeoreferenzierungsAktivitaet`)
 
-| CSV column | FSL property | FSL CM ID | Range |
-|---|---|---|---|
-| `quelle_georef` | `fsl:hasReference` / `fsl:activityDesc` | P25 | `xsd:string` |
-| `QID_quelle_georef` | `fsl:hasReference` | P31 | Wikidata URI |
-| `methode` | `fsl:method` / `fsl:methodUsed` | P7 | `fsl:MethodType` Named Node |
-| `quellen_typ` | `fsl:hasSourceType` + `fsl:hasSourceTypeDetail` | P6 + P16 | `fsl:SourceType` Named Node |
-| `methodenbeschr` | `fsl:activityDesc` | P15 | `xsd:string` |
-| `genauigkeit_m` | `fsl:precision` | P23 | `xsd:decimal` (on `bb5kbc:Fundstelle`) |
-| `wgs84_x/y` | `geosparql:asWKT` | — | on `sf:Point` (skip if both = 0,0) |"""@en ;
+* `quelle_georef` (`fsl:hasReference` / `fsl:activityDesc`, **P25**) → `xsd:string`
+* `QID_quelle_georef` (`fsl:hasReference`, **P31**) → Wikidata URI
+* `methode` (`fsl:method` / `fsl:methodUsed`, **P7**) → `fsl:MethodType` Named Node
+* `quellen_typ` (`fsl:hasSourceType` + `fsl:hasSourceTypeDetail`, **P6 + P16**) → `fsl:SourceType` Named Node
+* `methodenbeschr` (`fsl:activityDesc`, **P15**) → `xsd:string`
+* `genauigkeit_m` (`fsl:precision`, **P23**) → `xsd:decimal` (on `bb5kbc:Fundstelle`)
+* `wgs84_x/y` (`geosparql:asWKT`) → on `sf:Point` (skip if both = 0,0)"""@en ;
     owl:versionIRI <http://w3id.org/bb5kbc/ont/0.9> ;
-    owl:versionInfo "0.9" .
+    owl:versionInfo "0.9" ;
+    schema:image <https://research-squirrel-engineers.github.io/bb-5kbc-sites/ontology/bb-5kbc-ontology.jpg> .
 

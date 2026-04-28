@@ -17141,7 +17141,7 @@ var vowlresult={
      {
       "identifier": "http://www.w3.org/2000/01/rdf-schema#comment",
       "language": "undefined",
-      "value": "Primary identifier (PID) of the Fundstelle in the Schmidt 2026 catalogue (FID column).\nSubPropertyOf both crm:P1_is_identified_by and dcterms:identifier \u2014 appears as:\n  dcterms:identifier \"1\"^^xsd:integer  (explicit identifier statement)\n  URI basis: http://w3id.org/bb5kbc/site_{FID}\n             http://w3id.org/bb5kbc/site_{FID}_activity\n             http://w3id.org/bb5kbc/site_{FID}_geom",
+      "value": "Primary identifier (PID) of the Fundstelle in the Schmidt 2026 catalogue (FID column).\n\nSubPropertyOf both `crm:P1_is_identified_by` and `dcterms:identifier` \u2014 appears as `dcterms:identifier \"1\"^^xsd:integer` (explicit identifier statement).\n\nURI basis:\n\n* `http://w3id.org/bb5kbc/site_{FID}`\n* `http://w3id.org/bb5kbc/site_{FID}_activity`\n* `http://w3id.org/bb5kbc/site_{FID}_geom`",
       "type": "label"
      }
     ],
@@ -18757,7 +18757,7 @@ var vowlresult={
      {
       "identifier": "http://www.w3.org/ns/prov#wasGeneratedBy",
       "language": "undefined",
-      "value": "http://w3id.org/bb5kbc/pipeline_run_2026-04-28T11-06-58Z",
+      "value": "http://w3id.org/bb5kbc/pipeline_run_2026-04-28T11-55-07Z",
       "type": "iri"
      }
     ]
@@ -18794,7 +18794,7 @@ var vowlresult={
      {
       "identifier": "http://www.w3.org/ns/prov#wasGeneratedBy",
       "language": "undefined",
-      "value": "http://w3id.org/bb5kbc/pipeline_run_2026-04-28T11-06-58Z",
+      "value": "http://w3id.org/bb5kbc/pipeline_run_2026-04-28T11-55-07Z",
       "type": "iri"
      }
     ]
@@ -19187,7 +19187,7 @@ var vowlresult={
      {
       "identifier": "http://www.w3.org/2000/01/rdf-schema#comment",
       "language": "undefined",
-      "value": "Application ontology for the Brandenburg 5000 BC sites dataset (Schmidt 2026).\n\n## Data namespace\n\n`http://w3id.org/bb5kbc/`\n\n## URI patterns\n\n**FID-based, per-site nodes:**\n\n* `site_{FID}` \u2192 `bb5kbc:Fundstelle`\n* `site_{FID}_activity` \u2192 `bb5kbc:GeoreferenzierungsAktivitaet`\n* `site_{FID}_geom` \u2192 `sf:Point`\n* `site_{FID}_culture` \u2192 `bb5kbc:KulturelleZuordnung` (per-site connector to shared Kulturgruppe)\n* `site_{FID}_dating` \u2192 `bb5kbc:Datierung` (per-site, with site-specific start/end/certainty)\n\n**Hash-based (`MD5(label_utf8)[:8]`), deduplicated:**\n\n* `gemeinde_{hash}` \u2192 `bb5kbc:Gemeinde`\n* `kreis_{hash}` \u2192 `bb5kbc:Kreis`\n* `bundesland_{hash}` \u2192 `bb5kbc:Bundesland`\n* `land_{hash}` \u2192 `bb5kbc:Land`\n* `kultur_{hash}` \u2192 `bb5kbc:Kulturgruppe` (shared concept node)\n* `entdeckung_{hash}` \u2192 `bb5kbc:Entdeckung`\n* `entdeckungsart_{hash}` \u2192 `bb5kbc:EntdeckungsartType`\n* `fundstellenart_{hash}` \u2192 `bb5kbc:FundstellenartType`\n* `pub_{hash}` \u2192 `bb5kbc:Publikation`\n* `methode_{hash}` \u2192 `fsl:MethodType`\n* `quellentyp_{hash}` \u2192 `fsl:SourceType`\n* `datmethode_{hash}` \u2192 `bb5kbc:DatierungsMethodeType`\n* `sherd_{hash}` \u2192 `bb5kbc:Scherbe` (hash from Wikidata QID)\n\nExternal identifiers (TGN + iDAI + OSM) on all 4 administrative levels.\n\n## CM Literals (on `bb5kbc:GeoreferenzierungsAktivitaet`)\n\n| CSV column | FSL property | FSL CM ID | Range |\n|---|---|---|---|\n| `quelle_georef` | `fsl:hasReference` / `fsl:activityDesc` | P25 | `xsd:string` |\n| `QID_quelle_georef` | `fsl:hasReference` | P31 | Wikidata URI |\n| `methode` | `fsl:method` / `fsl:methodUsed` | P7 | `fsl:MethodType` Named Node |\n| `quellen_typ` | `fsl:hasSourceType` + `fsl:hasSourceTypeDetail` | P6 + P16 | `fsl:SourceType` Named Node |\n| `methodenbeschr` | `fsl:activityDesc` | P15 | `xsd:string` |\n| `genauigkeit_m` | `fsl:precision` | P23 | `xsd:decimal` (on `bb5kbc:Fundstelle`) |\n| `wgs84_x/y` | `geosparql:asWKT` | \u2014 | on `sf:Point` (skip if both = 0,0) |",
+      "value": "Application ontology for the Brandenburg 5000 BC sites dataset (Schmidt 2026).\n\n## Data namespace\n\n`http://w3id.org/bb5kbc/`\n\n## URI patterns\n\n**FID-based, per-site nodes:**\n\n* `site_{FID}` \u2192 `bb5kbc:Fundstelle`\n* `site_{FID}_activity` \u2192 `bb5kbc:GeoreferenzierungsAktivitaet`\n* `site_{FID}_geom` \u2192 `sf:Point`\n* `site_{FID}_culture` \u2192 `bb5kbc:KulturelleZuordnung` (per-site connector to shared Kulturgruppe)\n* `site_{FID}_dating` \u2192 `bb5kbc:Datierung` (per-site, with site-specific start/end/certainty)\n\n**Hash-based (`MD5(label_utf8)[:8]`), deduplicated:**\n\n* `gemeinde_{hash}` \u2192 `bb5kbc:Gemeinde`\n* `kreis_{hash}` \u2192 `bb5kbc:Kreis`\n* `bundesland_{hash}` \u2192 `bb5kbc:Bundesland`\n* `land_{hash}` \u2192 `bb5kbc:Land`\n* `kultur_{hash}` \u2192 `bb5kbc:Kulturgruppe` (shared concept node)\n* `entdeckung_{hash}` \u2192 `bb5kbc:Entdeckung`\n* `entdeckungsart_{hash}` \u2192 `bb5kbc:EntdeckungsartType`\n* `fundstellenart_{hash}` \u2192 `bb5kbc:FundstellenartType`\n* `pub_{hash}` \u2192 `bb5kbc:Publikation`\n* `methode_{hash}` \u2192 `fsl:MethodType`\n* `quellentyp_{hash}` \u2192 `fsl:SourceType`\n* `datmethode_{hash}` \u2192 `bb5kbc:DatierungsMethodeType`\n* `sherd_{hash}` \u2192 `bb5kbc:Scherbe` (hash from Wikidata QID)\n\nExternal identifiers (TGN + iDAI + OSM) on all 4 administrative levels.\n\n## CM Literals (on `bb5kbc:GeoreferenzierungsAktivitaet`)\n\n* `quelle_georef` (`fsl:hasReference` / `fsl:activityDesc`, **P25**) \u2192 `xsd:string`\n* `QID_quelle_georef` (`fsl:hasReference`, **P31**) \u2192 Wikidata URI\n* `methode` (`fsl:method` / `fsl:methodUsed`, **P7**) \u2192 `fsl:MethodType` Named Node\n* `quellen_typ` (`fsl:hasSourceType` + `fsl:hasSourceTypeDetail`, **P6 + P16**) \u2192 `fsl:SourceType` Named Node\n* `methodenbeschr` (`fsl:activityDesc`, **P15**) \u2192 `xsd:string`\n* `genauigkeit_m` (`fsl:precision`, **P23**) \u2192 `xsd:decimal` (on `bb5kbc:Fundstelle`)\n* `wgs84_x/y` (`geosparql:asWKT`) \u2192 on `sf:Point` (skip if both = 0,0)",
       "type": "label"
      }
     ],
@@ -19205,6 +19205,14 @@ var vowlresult={
       "language": "undefined",
       "value": "0.9",
       "type": "label"
+     }
+    ],
+    "https://schema.org/image": [
+     {
+      "identifier": "https://schema.org/image",
+      "language": "undefined",
+      "value": "https://research-squirrel-engineers.github.io/bb-5kbc-sites/ontology/bb-5kbc-ontology.jpg",
+      "type": "iri"
      }
     ]
    },
@@ -213419,7 +213427,7 @@ var vowlresult={
    "iri": "https://example.org/bb-5kbc-sites/run/2026-04-27T18-56-13Z/stage3_merge",
    "baseIRI": "https://example.org/bb-5kbc-sites/run/2026-04-27T18-56-13Z",
    "instances": 0,
-   "label": "bb5kbc CSV-to-RDF pipeline run 2026-04-28T11-06-58Z",
+   "label": "bb5kbc CSV-to-RDF pipeline run 2026-04-28T11-55-07Z",
    "annotations": {
     "http://w3id.org/bb5kbc/dataTripleCount": [
      {
@@ -213441,7 +213449,7 @@ var vowlresult={
      {
       "identifier": "http://www.w3.org/ns/prov#endedAtTime",
       "language": "undefined",
-      "value": "2026-04-28T11:07:00.389153+00:00",
+      "value": "2026-04-28T11:55:09.035766+00:00",
       "type": "label"
      }
     ],
@@ -213449,7 +213457,7 @@ var vowlresult={
      {
       "identifier": "http://www.w3.org/ns/prov#startedAtTime",
       "language": "undefined",
-      "value": "2026-04-28T11:06:58.752210+00:00",
+      "value": "2026-04-28T11:55:07.613453+00:00",
       "type": "label"
      }
     ],
@@ -213485,7 +213493,7 @@ var vowlresult={
   },
   {
    "id": 3272,
-   "iri": "http://w3id.org/bb5kbc/pipeline_run_2026-04-28T11-06-58Z",
+   "iri": "http://w3id.org/bb5kbc/pipeline_run_2026-04-28T11-55-07Z",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
    "label": "Stage 1 \u2014 literature QID enrichment",
