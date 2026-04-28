@@ -1,0 +1,2019 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>csv-mapping</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css" />
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">csv-mapping</h1>
+</header>
+<h1 id="bb5kbc-csv-ontologie-mapping">bb5kbc CSV → Ontologie
+Mapping</h1>
+<h2 id="fsl-metadaten-struktur">FSL-Metadaten-Struktur</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>FSL-Schicht</th>
+<th>Bedeutung</th>
+<th>Hängt an</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>GLM</strong> — Geolocation Metadata</td>
+<td>Fundstelle als Entität: Name, Typ, Lage, Publikation, IDs,
+Kulturgruppe</td>
+<td><code>bb5kbc:Fundstelle</code></td>
+</tr>
+<tr class="even">
+<td><strong>CM</strong> — Coordinate Metadata</td>
+<td>Georeferenzierungsakt: Methode, Quelle, Genauigkeit,
+Koordinaten</td>
+<td><code>bb5kbc:GeoreferenzierungsAktivitaet</code> +
+<code>sf:Point</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="legende">Legende</h2>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Symbol</th>
+<th>Bedeutung</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>🟦</td>
+<td><strong>Knoten (einfach)</strong> — CSV-Wert → Named Node mit
+<code>rdfs:label</code>, URI = <code>{typ}_{hash}</code></td>
+</tr>
+<tr class="even">
+<td>🟦🔗</td>
+<td><strong>Knoten + ext. Link</strong> — Named Node mit
+<code>rdfs:label</code> + mind. einem
+<code>bb5kbc:hasExternalIdentifier</code></td>
+</tr>
+<tr class="odd">
+<td>🟨</td>
+<td><strong>Literal</strong> — CSV-Wert → Datenwert direkt an einem
+Node, kein eigener Node</td>
+</tr>
+<tr class="even">
+<td>🔗</td>
+<td><strong>Ext. URI</strong> — CSV-Wert ist selbst eine externe ID →
+wird zu URI + <code>bb5kbc:hasExternalIdentifierType</code></td>
+</tr>
+<tr class="odd">
+<td>⚙</td>
+<td><strong>Audit-only</strong> — Spalte aus dem CSV-Enrichment, wird
+vom LOD-Skript <strong>nicht</strong> in RDF übersetzt</td>
+</tr>
+<tr class="even">
+<td>⏳</td>
+<td><strong>Noch leer</strong> — Spalte im Schema vorgesehen, Daten
+werden später ergänzt</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Die CSV <code>fst_wgs84.csv</code> (540 Zeilen, 65 Spalten) ist der
+angereicherte Output der vorgelagerten
+<code>csv_enrichment.py</code>-Pipeline: ursprünglich 33 Spalten, plus
+32 neue Spalten mit Authority-IDs für die vier Verwaltungsebenen (LAND,
+BUNDESLAND, KREIS, GEMEINDE) — pro Ebene jeweils 5 Authority-Spalten
+(Wikidata QID, GeoNames, TGN, iDAI.gazetteer, OSM Relation) und 3 Audit-
+Metadatenspalten (<code>matchLabel</code>, <code>matchScore</code>,
+<code>matchReason</code>). Davon wandert nur <code>matchReason</code>
+als <code>bb5kbc:wikidataMatchDescription</code> in den RDF-Graph (eine
+Klartext-Beschreibung pro distinktem Type-Knoten);
+<code>matchLabel</code> und <code>matchScore</code> bleiben CSV-only und
+dienen der Triage über
+<code>fst_standortanalysen_ref_report.csv</code>.</p>
+</blockquote>
+<hr />
+<h2 id="uri-schema">URI-Schema</h2>
+<h3
+id="fid-basiert-einmalig-pro-fundstelle-direkte-site-attribute">FID-basiert
+(einmalig pro Fundstelle, direkte Site-Attribute)</h3>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Entität</th>
+<th>URI-Muster</th>
+<th>Beispiel (FID=1)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>bb5kbc:Fundstelle</code></td>
+<td><code>http://w3id.org/bb5kbc/site_{FID}</code></td>
+<td><code>http://w3id.org/bb5kbc/site_1</code></td>
+</tr>
+<tr class="even">
+<td><code>bb5kbc:GeoreferenzierungsAktivitaet</code></td>
+<td><code>http://w3id.org/bb5kbc/site_{FID}_activity</code></td>
+<td><code>http://w3id.org/bb5kbc/site_1_activity</code></td>
+</tr>
+<tr class="odd">
+<td><code>sf:Point</code></td>
+<td><code>http://w3id.org/bb5kbc/site_{FID}_geom</code></td>
+<td><code>http://w3id.org/bb5kbc/site_1_geom</code></td>
+</tr>
+</tbody>
+</table>
+<h3
+id="hash-basiert-dedupliziert-uri-md5-des-originalwerts-8-zeichen">Hash-basiert
+(dedupliziert, URI = MD5 des Originalwerts, 8 Zeichen)</h3>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Entität</th>
+<th>URI-Muster</th>
+<th>Beispiel</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>bb5kbc:Gemeinde</code></td>
+<td><code>http://w3id.org/bb5kbc/gemeinde_{hash}</code></td>
+<td><code>gemeinde_c672785b</code> ← <code>"Behringen"</code></td>
+</tr>
+<tr class="even">
+<td><code>bb5kbc:Kreis</code></td>
+<td><code>http://w3id.org/bb5kbc/kreis_{hash}</code></td>
+<td><code>kreis_09060b5f</code> ← <code>"Wartburgkreis"</code></td>
+</tr>
+<tr class="odd">
+<td><code>bb5kbc:Bundesland</code></td>
+<td><code>http://w3id.org/bb5kbc/bundesland_{hash}</code></td>
+<td><code>bundesland_eec0c902</code> ← <code>"Thüringen"</code></td>
+</tr>
+<tr class="even">
+<td><code>bb5kbc:Land</code></td>
+<td><code>http://w3id.org/bb5kbc/land_{hash}</code></td>
+<td><code>land_3c2f8b8c</code> ← <code>"Deutschland"</code></td>
+</tr>
+<tr class="odd">
+<td><code>bb5kbc:Kulturgruppe</code></td>
+<td><code>http://w3id.org/bb5kbc/kultur_{hash}</code></td>
+<td><code>kultur_cc414e20</code> ← <code>"SBK"</code>,
+<code>kultur_7a001224</code> ← <code>"SBK?"</code></td>
+</tr>
+<tr class="even">
+<td><code>bb5kbc:KulturelleZuordnung</code></td>
+<td><code>http://w3id.org/bb5kbc/site_{FID}_culture</code></td>
+<td><code>site_33_culture</code> ← Fundstelle FID=33</td>
+</tr>
+<tr class="odd">
+<td><code>bb5kbc:Datierung</code></td>
+<td><code>http://w3id.org/bb5kbc/site_{FID}_dating</code></td>
+<td><code>site_33_dating</code> ← Fundstelle FID=33</td>
+</tr>
+<tr class="even">
+<td><code>bb5kbc:DatierungsMethodeType</code></td>
+<td><code>http://w3id.org/bb5kbc/datmethode_{hash}</code></td>
+<td><code>datmethode_{hash}</code> ← hash aus Wikidata-QID</td>
+</tr>
+<tr class="odd">
+<td><code>bb5kbc:Scherbe</code></td>
+<td><code>http://w3id.org/bb5kbc/sherd_{hash}</code></td>
+<td><code>sherd_ddd27e7f</code> ← <code>"Q173387"</code></td>
+</tr>
+<tr class="even">
+<td><code>bb5kbc:Entdeckung</code></td>
+<td><code>http://w3id.org/bb5kbc/entdeckung_{hash}</code></td>
+<td><code>entdeckung_{hash}</code> ← hash aus entdeckung-Text</td>
+</tr>
+<tr class="odd">
+<td><code>bb5kbc:EntdeckungsartType</code></td>
+<td><code>http://w3id.org/bb5kbc/entdeckungsart_{hash}</code></td>
+<td><code>entdeckungsart_1f56a08c</code> ←
+<code>"Ausgrabung"</code></td>
+</tr>
+<tr class="even">
+<td><code>bb5kbc:FundstellenartType</code></td>
+<td><code>http://w3id.org/bb5kbc/fundstellenart_{hash}</code></td>
+<td><code>fundstellenart_1972902b</code> ← <code>"Siedlung"</code></td>
+</tr>
+<tr class="odd">
+<td><code>bb5kbc:Publikation</code></td>
+<td><code>http://w3id.org/bb5kbc/pub_{hash}</code></td>
+<td><code>pub_c5110572</code> ← <code>"Kaufmann 1976"</code></td>
+</tr>
+<tr class="even">
+<td><code>fsl:MethodType</code></td>
+<td><code>http://w3id.org/bb5kbc/methode_{hash}</code></td>
+<td><code>methode_b57e2231</code> ←
+<code>"Übernahme aus externer Datenbank"</code></td>
+</tr>
+<tr class="odd">
+<td><code>fsl:SourceType</code></td>
+<td><code>http://w3id.org/bb5kbc/quellentyp_{hash}</code></td>
+<td><code>quellentyp_e6dc730e</code> ←
+<code>"Printpublikation"</code></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Hash-Funktion:</strong>
+<code>MD5(originalwert_utf8)[:8]</code> — kollisionssicher auch bei
+Unicode-Varianten. <strong><code>_activity</code> und
+<code>_geom</code></strong> sind die einzigen site-spezifischen Suffixe.
+Alle anderen Entitäten werden global dedupliziert.</p>
+</blockquote>
+<hr />
+<h2 id="mapping-tabelle-glm">Mapping-Tabelle — GLM</h2>
+<blockquote>
+<p>Die Spaltennummern entsprechen der tatsächlichen Position in
+<code>fst_wgs84.csv</code> (1-indiziert, 65 Spalten). Die Spalten
+<code>*_matchLabel</code> und <code>*_matchScore</code> stammen aus dem
+CSV-Enrichment-Lauf und werden vom LOD-Skript nicht ins RDF übernommen
+(CSV-only). Die Spalte <code>*_matchReason</code> wird hingegen als
+<code>bb5kbc:wikidataMatchDescription</code> an den jeweiligen
+Verwaltungs-Type-Knoten in den RDF-Graph übernommen (siehe
+Datatype-Properties-Tabelle weiter unten). Aus Übersichtlichkeitsgründen
+sind alle Audit-Spalten (<code>*_matchLabel</code>,
+<code>*_matchScore</code>, <code>*_matchReason</code>) trotzdem nicht in
+der folgenden Mapping- Tabelle aufgeführt.</p>
+</blockquote>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>#</th>
+<th>CSV-Spalte</th>
+<th>Beispielwert</th>
+<th>Art</th>
+<th>bb5kbc-Klasse / Property</th>
+<th>Hinweis</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>51</td>
+<td><code>FID</code></td>
+<td><code>"1"</code></td>
+<td>🟨</td>
+<td><code>bb5kbc:Fundstelle</code> ← <code>bb5kbc:hatFID</code> :
+<code>xsd:integer</code> (subPropertyOf <code>dc:identifier</code> +
+<code>crm:P1_is_identified_by</code>)</td>
+<td>PID, Basis aller FID-URIs</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td><code>fst_id</code></td>
+<td><code>"444"</code></td>
+<td>🟨</td>
+<td><code>bb5kbc:Fundstelle</code> ←
+<code>bb5kbc:hatFundstellenID</code> : <code>xsd:string</code></td>
+<td>Interne ID, nicht immer eindeutig</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td><code>katalognr</code></td>
+<td><code>"55"</code></td>
+<td>🟨</td>
+<td><code>bb5kbc:Fundstelle</code> ←
+<code>bb5kbc:hatKatalognummer</code> : <code>xsd:string</code></td>
+<td>52 leer</td>
+</tr>
+<tr class="even">
+<td>5</td>
+<td><code>fst_name</code></td>
+<td><code>"Tüngeda"</code></td>
+<td>🟨</td>
+<td><code>bb5kbc:Fundstelle</code> ← <code>rdfs:label</code> +
+<code>skos:prefLabel</code> : Literal <code>@de</code></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>6</td>
+<td><code>gemeinde</code></td>
+<td><code>"Friesack"</code></td>
+<td>🟦🔗</td>
+<td><code>bb5kbc:Fundstelle</code> ← <code>bb5kbc:inGemeinde</code> →
+<code>bb5kbc:Gemeinde</code></td>
+<td>+ bis zu 5 Authority-IDs (Spalten 7–11)</td>
+</tr>
+<tr class="even">
+<td>7</td>
+<td><code>GEMEINDE_QID</code></td>
+<td><code>"Q585632"</code></td>
+<td>🔗</td>
+<td><code>bb5kbc:Gemeinde</code> ←
+<code>bb5kbc:hasExternalIdentifier</code> →
+<code>bb5kbc:ExternalIdentifier_Wikidata</code></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>8</td>
+<td><code>GEMEINDE_GeoNames</code></td>
+<td><code>"6550607"</code></td>
+<td>🔗</td>
+<td><code>bb5kbc:Gemeinde</code> ←
+<code>bb5kbc:hasExternalIdentifier</code> →
+<code>bb5kbc:ExternalIdentifier_GeoNames</code></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>9</td>
+<td><code>GEMEINDE_TGN</code></td>
+<td><em>(meist leer)</em></td>
+<td>🔗</td>
+<td><code>bb5kbc:Gemeinde</code> ←
+<code>bb5kbc:hasExternalIdentifier</code> →
+<code>bb5kbc:ExternalIdentifier_TGN</code></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>10</td>
+<td><code>GEMEINDE_IDAI</code></td>
+<td><em>(meist leer)</em></td>
+<td>🔗</td>
+<td><code>bb5kbc:Gemeinde</code> ←
+<code>bb5kbc:hasExternalIdentifier</code> →
+<code>bb5kbc:ExternalIdentifier_iDAI</code></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>11</td>
+<td><code>GEMEINDE_OSM_Relation</code></td>
+<td><code>"1342247"</code></td>
+<td>🔗</td>
+<td><code>bb5kbc:Gemeinde</code> ←
+<code>bb5kbc:hasExternalIdentifier</code> →
+<code>bb5kbc:ExternalIdentifier_OSM</code></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>12–14</td>
+<td><code>GEMEINDE_match*</code></td>
+<td>—</td>
+<td>⚙</td>
+<td>—</td>
+<td>Audit-only, nicht im RDF</td>
+</tr>
+<tr class="even">
+<td>15</td>
+<td><code>kreis</code></td>
+<td><code>"Havelland"</code></td>
+<td>🟦🔗</td>
+<td><code>bb5kbc:Gemeinde</code> ← <code>bb5kbc:inKreis</code> →
+<code>bb5kbc:Kreis</code></td>
+<td>+ bis zu 5 Authority-IDs (Spalten 16–20)</td>
+</tr>
+<tr class="odd">
+<td>16</td>
+<td><code>KREIS_QID</code></td>
+<td><code>"Q6139"</code></td>
+<td>🔗</td>
+<td><code>bb5kbc:Kreis</code> ←
+<code>bb5kbc:hasExternalIdentifier</code> →
+<code>bb5kbc:ExternalIdentifier_Wikidata</code></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>17</td>
+<td><code>KREIS_GeoNames</code></td>
+<td><em>(häufig leer)</em></td>
+<td>🔗</td>
+<td><code>bb5kbc:Kreis</code> ←
+<code>bb5kbc:hasExternalIdentifier</code> →
+<code>bb5kbc:ExternalIdentifier_GeoNames</code></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>18</td>
+<td><code>KREIS_TGN</code></td>
+<td><em>(häufig leer)</em></td>
+<td>🔗</td>
+<td><code>bb5kbc:Kreis</code> ←
+<code>bb5kbc:hasExternalIdentifier</code> →
+<code>bb5kbc:ExternalIdentifier_TGN</code></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>19</td>
+<td><code>KREIS_IDAI</code></td>
+<td><em>(häufig leer)</em></td>
+<td>🔗</td>
+<td><code>bb5kbc:Kreis</code> ←
+<code>bb5kbc:hasExternalIdentifier</code> →
+<code>bb5kbc:ExternalIdentifier_iDAI</code></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>20</td>
+<td><code>KREIS_OSM_Relation</code></td>
+<td><em>(häufig leer)</em></td>
+<td>🔗</td>
+<td><code>bb5kbc:Kreis</code> ←
+<code>bb5kbc:hasExternalIdentifier</code> →
+<code>bb5kbc:ExternalIdentifier_OSM</code></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>21–23</td>
+<td><code>KREIS_match*</code></td>
+<td>—</td>
+<td>⚙</td>
+<td>—</td>
+<td>Audit-only, nicht im RDF</td>
+</tr>
+<tr class="odd">
+<td>24</td>
+<td><code>bundesland</code></td>
+<td><code>"Brandenburg"</code></td>
+<td>🟦🔗</td>
+<td><code>bb5kbc:Kreis</code> ← <code>bb5kbc:inBundesland</code> →
+<code>bb5kbc:Bundesland</code></td>
+<td>+ bis zu 5 Authority-IDs (Spalten 25–29); inkl. Wojewodschaften</td>
+</tr>
+<tr class="even">
+<td>25</td>
+<td><code>BUNDESLAND_QID</code></td>
+<td><code>"Q1208"</code></td>
+<td>🔗</td>
+<td><code>bb5kbc:Bundesland</code> ←
+<code>bb5kbc:hasExternalIdentifier</code> →
+<code>bb5kbc:ExternalIdentifier_Wikidata</code></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>26</td>
+<td><code>BUNDESLAND_GeoNames</code></td>
+<td><code>"2945356"</code></td>
+<td>🔗</td>
+<td><code>bb5kbc:Bundesland</code> ←
+<code>bb5kbc:hasExternalIdentifier</code> →
+<code>bb5kbc:ExternalIdentifier_GeoNames</code></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>27</td>
+<td><code>BUNDESLAND_TGN</code></td>
+<td><code>"7000096"</code></td>
+<td>🔗</td>
+<td><code>bb5kbc:Bundesland</code> ←
+<code>bb5kbc:hasExternalIdentifier</code> →
+<code>bb5kbc:ExternalIdentifier_TGN</code></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>28</td>
+<td><code>BUNDESLAND_IDAI</code></td>
+<td><code>"2048409"</code></td>
+<td>🔗</td>
+<td><code>bb5kbc:Bundesland</code> ←
+<code>bb5kbc:hasExternalIdentifier</code> →
+<code>bb5kbc:ExternalIdentifier_iDAI</code></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>29</td>
+<td><code>BUNDESLAND_OSM_Relation</code></td>
+<td><code>"62504"</code></td>
+<td>🔗</td>
+<td><code>bb5kbc:Bundesland</code> ←
+<code>bb5kbc:hasExternalIdentifier</code> →
+<code>bb5kbc:ExternalIdentifier_OSM</code></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>30–32</td>
+<td><code>BUNDESLAND_match*</code></td>
+<td>—</td>
+<td>⚙</td>
+<td>—</td>
+<td>Audit-only, nicht im RDF</td>
+</tr>
+<tr class="even">
+<td>33</td>
+<td><code>land</code></td>
+<td><code>"Deutschland"</code></td>
+<td>🟦🔗</td>
+<td><code>bb5kbc:Bundesland</code> ← <code>bb5kbc:inLand</code> →
+<code>bb5kbc:Land</code></td>
+<td>+ 5 Authority-IDs (Spalten 34–38)</td>
+</tr>
+<tr class="odd">
+<td>34</td>
+<td><code>LAND_QID</code></td>
+<td><code>"Q183"</code></td>
+<td>🔗</td>
+<td><code>bb5kbc:Land</code> ← <code>bb5kbc:hasExternalIdentifier</code>
+→ <code>bb5kbc:ExternalIdentifier_Wikidata</code></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>35</td>
+<td><code>LAND_GeoNames</code></td>
+<td><code>"2921044"</code></td>
+<td>🔗</td>
+<td><code>bb5kbc:Land</code> ← <code>bb5kbc:hasExternalIdentifier</code>
+→ <code>bb5kbc:ExternalIdentifier_GeoNames</code></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>36</td>
+<td><code>LAND_TGN</code></td>
+<td><code>"7000084"</code></td>
+<td>🔗</td>
+<td><code>bb5kbc:Land</code> ← <code>bb5kbc:hasExternalIdentifier</code>
+→ <code>bb5kbc:ExternalIdentifier_TGN</code></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>37</td>
+<td><code>LAND_IDAI</code></td>
+<td><code>"2044274"</code></td>
+<td>🔗</td>
+<td><code>bb5kbc:Land</code> ← <code>bb5kbc:hasExternalIdentifier</code>
+→ <code>bb5kbc:ExternalIdentifier_iDAI</code></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>38</td>
+<td><code>LAND_OSM_Relation</code></td>
+<td><code>"51477"</code></td>
+<td>🔗</td>
+<td><code>bb5kbc:Land</code> ← <code>bb5kbc:hasExternalIdentifier</code>
+→ <code>bb5kbc:ExternalIdentifier_OSM</code></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>39–41</td>
+<td><code>LAND_match*</code></td>
+<td>—</td>
+<td>⚙</td>
+<td>—</td>
+<td>Audit-only, nicht im RDF</td>
+</tr>
+<tr class="odd">
+<td>42</td>
+<td><code>perio.do</code></td>
+<td><em>(leer)</em></td>
+<td>🔗 ⏳</td>
+<td><code>bb5kbc:Kulturgruppe</code> ←
+<code>bb5kbc:hasExternalIdentifier</code> →
+<code>bb5kbc:ExternalIdentifier_PerioDo</code></td>
+<td>0/540 gefüllt; Spalte verbleibt im Schema</td>
+</tr>
+<tr class="even">
+<td>43</td>
+<td><code>kultur</code></td>
+<td><code>"SBK"</code> / <code>"SBK?"</code></td>
+<td>🟦🔗</td>
+<td><code>bb5kbc:KulturelleZuordnung</code> ←
+<code>bb5kbc:hatKulturgruppe</code> →
+<code>bb5kbc:Kulturgruppe</code></td>
+<td><code>?</code>-Werte: <code>fsl:certaintyDesc "uncertain"@en</code>
+an der <code>KulturelleZuordnung</code></td>
+</tr>
+<tr class="odd">
+<td>44</td>
+<td><code>entdeckung</code></td>
+<td><code>"Ausgrabung Bersu"</code></td>
+<td>🟦🔗</td>
+<td><code>bb5kbc:Fundstelle</code> ←
+<code>bb5kbc:wurdeEntdecktDurch</code> →
+<code>bb5kbc:Entdeckung</code></td>
+<td><code>rdfs:label</code> aus Text +
+<code>bb5kbc:hatEntdeckungsart</code> →
+<code>bb5kbc:EntdeckungsartType</code></td>
+</tr>
+<tr class="even">
+<td>45</td>
+<td><code>QID_entdeckung</code></td>
+<td><code>"Q959782"</code></td>
+<td>🔗</td>
+<td><code>bb5kbc:EntdeckungsartType</code> ←
+<code>bb5kbc:hasExternalIdentifier</code> → Wikidata</td>
+<td>nur 2 QIDs</td>
+</tr>
+<tr class="odd">
+<td>46</td>
+<td><code>publikation_arch</code></td>
+<td><code>"Kaufmann 1976"</code></td>
+<td>🟦🔗</td>
+<td><code>bb5kbc:Fundstelle</code> ← <code>bb5kbc:hatPublikation</code>
+→ <code>bb5kbc:Publikation</code></td>
+<td>+ <code>QID_publikation</code> (via <code>enrich_qids.py</code>);
+273 leer</td>
+</tr>
+<tr class="even">
+<td>47</td>
+<td><code>QID_publikation</code></td>
+<td><code>"Q139304616"</code></td>
+<td>🔗</td>
+<td><code>bb5kbc:Publikation</code> ←
+<code>bb5kbc:hasExternalIdentifier</code> →
+<code>bb5kbc:ExternalIdentifier_Wikidata</code></td>
+<td>gefüllt durch <code>enrich_qids.py</code>; Pyzel 2019 / Umbreit 1940
+noch offen</td>
+</tr>
+<tr class="odd">
+<td>48</td>
+<td><code>fundstellenart</code></td>
+<td><code>"Siedlung und Grab"</code> / <code>"Grab?"</code></td>
+<td>🟦🔗</td>
+<td><code>bb5kbc:Fundstelle</code> ←
+<code>bb5kbc:hatFundstellenart</code> →
+<code>bb5kbc:FundstellenartType</code></td>
+<td>subPropertyOf <code>crm:P2_has_type</code> +
+<code>fsl:siteType</code>; Kombi-Werte als mehrere Type-Knoten;
+<code>?</code>-Werte: eigener Knoten pro Site mit
+<code>fsl:certaintyDesc "uncertain"@en</code></td>
+</tr>
+<tr class="even">
+<td>49</td>
+<td><code>QID_fundstellenart</code></td>
+<td><code>"Q173387"</code></td>
+<td>🔗</td>
+<td><code>bb5kbc:FundstellenartType</code> ←
+<code>bb5kbc:hasExternalIdentifier</code> → Wikidata</td>
+<td>4 QIDs</td>
+</tr>
+</tbody>
+</table>
+<h3 id="dating-spalten">Dating-Spalten</h3>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>#</th>
+<th>CSV-Spalte</th>
+<th>Beispielwert</th>
+<th>Art</th>
+<th>bb5kbc-Klasse / Property</th>
+<th>Hinweis</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>—</td>
+<td><em>(URI)</em></td>
+<td><code>site_{FID}_dating</code></td>
+<td>🟦</td>
+<td><code>bb5kbc:KulturelleZuordnung</code> ←
+<code>bb5kbc:hatDatierung</code> → <code>bb5kbc:Datierung</code></td>
+<td>1 Node pro Fundstelle; URI FID-basiert (entkoppelt von
+Kulturgruppe)</td>
+</tr>
+<tr class="even">
+<td>57</td>
+<td><code>dating_start</code></td>
+<td><code>"-4550"</code></td>
+<td>🟨</td>
+<td><code>bb5kbc:Datierung</code> ← <code>bb5kbc:datierungStart</code> :
+<code>xsd:integer</code></td>
+<td>subPropertyOf <code>crm:P82a_begin_of_the_begin</code>; negativ =
+BCE</td>
+</tr>
+<tr class="odd">
+<td>59</td>
+<td><code>dating_end</code></td>
+<td><code>"-3900"</code></td>
+<td>🟨</td>
+<td><code>bb5kbc:Datierung</code> ← <code>bb5kbc:datierungEnd</code> :
+<code>xsd:integer</code></td>
+<td>subPropertyOf <code>crm:P82b_end_of_the_end</code></td>
+</tr>
+<tr class="even">
+<td>61</td>
+<td><code>dating_method</code></td>
+<td><code>"Q173412"</code></td>
+<td>🟦🔗</td>
+<td><code>bb5kbc:Datierung</code> ← <code>bb5kbc:datierungMethode</code>
+→ <code>bb5kbc:DatierungsMethodeType</code></td>
+<td>hash-URI <code>datmethode_{MD5(QID)[:8]}</code>; nur 2 distinct
+(Q173412 14C, Q816829 stilistisch)</td>
+</tr>
+<tr class="odd">
+<td>58</td>
+<td><code>dating_certainty_start</code></td>
+<td><code>"+/- 100 years"</code></td>
+<td>🟨</td>
+<td><code>bb5kbc:Datierung</code> ←
+<code>bb5kbc:datierungSicherheitStart</code> :
+<code>xsd:string</code></td>
+<td>Freitext, vereinheitlicht auf Englisch</td>
+</tr>
+<tr class="even">
+<td>60</td>
+<td><code>dating_certainty_end</code></td>
+<td><code>"+/- 100 years"</code></td>
+<td>🟨</td>
+<td><code>bb5kbc:Datierung</code> ←
+<code>bb5kbc:datierungSicherheitEnd</code> :
+<code>xsd:string</code></td>
+<td>Freitext, vereinheitlicht auf Englisch</td>
+</tr>
+<tr class="odd">
+<td>62</td>
+<td><code>dating_certainty_range</code></td>
+<td><code>"medium certainty, some 14C dates available"</code></td>
+<td>🟨</td>
+<td><code>bb5kbc:Datierung</code> ←
+<code>bb5kbc:datierungSicherheitRange</code> :
+<code>xsd:string</code></td>
+<td>qualitative Bewertung der Gesamtdatierung; 14 distinct</td>
+</tr>
+<tr class="even">
+<td>63</td>
+<td><code>dating_perio.do</code></td>
+<td><code>"http://n2t.net/ark:/99152/p0wctqtnkjq"</code></td>
+<td>🔗</td>
+<td><code>bb5kbc:Datierung</code> ← <code>skos:{matchType}</code> →
+Perio.do-URI</td>
+<td>nur wenige distinct URIs</td>
+</tr>
+<tr class="odd">
+<td>64</td>
+<td><code>dating_perio.do_match</code></td>
+<td><code>"closeMatch"</code></td>
+<td>—</td>
+<td>bestimmt Property: <code>skos:exactMatch</code> /
+<code>skos:closeMatch</code> / <code>skos:relatedMatch</code></td>
+<td>kein eigenes Triple — steuert welche SKOS-Property genutzt wird;
+leer → Default <code>relatedMatch</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="scherben-spalte">Scherben-Spalte</h3>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>#</th>
+<th>CSV-Spalte</th>
+<th>Beispielwert</th>
+<th>Art</th>
+<th>bb5kbc-Klasse / Property</th>
+<th>Hinweis</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>65</td>
+<td><code>sherd</code></td>
+<td><code>"Q139477253\|Q139477652"</code></td>
+<td>🟦🔗</td>
+<td><code>bb5kbc:Fundstelle</code> ← <code>bb5kbc:hatScherbe</code> →
+<code>bb5kbc:Scherbe</code></td>
+<td>1-n Wikidata-QIDs, Delimiter <code>\|</code>; hash-URI
+<code>sherd_{MD5(QID)[:8]}</code>; Wikidata-URI via
+<code>bb5kbc:hasExternalIdentifier</code>; nur 4/540 gefüllt (FID 37,
+41, 48, 80)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="mapping-tabelle-cm">Mapping-Tabelle — CM</h2>
+<table>
+<colgroup>
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>#</th>
+<th>CSV-Spalte</th>
+<th>Beispielwert</th>
+<th>Art</th>
+<th>bb5kbc-Klasse / Property</th>
+<th>FSL OWL</th>
+<th>Wikibase</th>
+<th>Hinweis</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>—</td>
+<td><em>(abgeleitet)</em></td>
+<td><code>Q23 / Q15 / Q24 / Q113</code></td>
+<td>🟦</td>
+<td><code>bb5kbc:Fundstelle</code> ← <code>fsl:certaintyLevel</code> →
+<code>fsl:CertaintyType</code></td>
+<td><code>fsl:certaintyLevel</code></td>
+<td>P5</td>
+<td>Aus <code>genauigkeit_m</code>: <code>&lt;Q23&gt;</code> high = 0m ·
+<code>&lt;Q15&gt;</code> medium = 50–500m · <code>&lt;Q24&gt;</code> low
+= 800–5000m · <code>&lt;Q113&gt;</code> dubious = wgs84 0,0
+(Koordinatenfehler)</td>
+</tr>
+<tr class="even">
+<td>53</td>
+<td><code>quellen_typ</code></td>
+<td><code>"Printpublikation"</code></td>
+<td>🟦</td>
+<td><code>bb5kbc:GeoreferenzierungsAktivitaet</code> ←
+<code>fsl:hasSourceType</code> → <code>fsl:SourceType</code></td>
+<td><code>fsl:hasSourceType</code></td>
+<td>P6</td>
+<td>Named Node <code>quellentyp_{hash}</code>; 4 distinct</td>
+</tr>
+<tr class="odd">
+<td>52</td>
+<td><code>methode</code></td>
+<td><code>"Übernahme aus externer Datenbank"</code></td>
+<td>🟦</td>
+<td><code>bb5kbc:GeoreferenzierungsAktivitaet</code> ←
+<code>fsl:methodUsed</code> → <code>fsl:MethodType</code></td>
+<td><code>fsl:methodUsed</code></td>
+<td>P7</td>
+<td>Named Node <code>methode_{hash}</code>; 3 distinct</td>
+</tr>
+<tr class="even">
+<td>55+56</td>
+<td><code>wgs84_x</code> + <code>wgs84_y</code></td>
+<td><code>"10.58"</code> + <code>"51.03"</code></td>
+<td>🟨</td>
+<td><code>sf:Point</code> ← <code>geosparql:asWKT</code> :
+<code>"POINT(10.58 51.03)"^^geosparql:wktLiteral</code> via
+<code>fsl:representativeGeometry</code> +
+<code>geosparql:hasGeometry</code></td>
+<td><code>geosparql:hasGeometry</code></td>
+<td>P4</td>
+<td>Komma als Dezimaltrenner in CSV (<code>"10,58"</code>) → Punkt im
+WKT; bei <code>0,0</code> kein <code>sf:Point</code>,
+<code>fsl:certaintyLevel</code> → <code>&lt;Q113&gt;</code> dubious</td>
+</tr>
+<tr class="odd">
+<td>54</td>
+<td><code>methodenbeschr</code></td>
+<td><code>"Koordinaten wurden vom LdfA..."</code></td>
+<td>🟨</td>
+<td><code>bb5kbc:GeoreferenzierungsAktivitaet</code> ←
+<code>fsl:certaintyDesc</code> : <code>xsd:string</code></td>
+<td><code>fsl:certaintyDesc</code></td>
+<td>P13</td>
+<td>Freitext; 22 distinct</td>
+</tr>
+<tr class="even">
+<td>—</td>
+<td><em>(fest)</em></td>
+<td><code>https://orcid.org/0000-0003-4696-2101</code></td>
+<td>🟦</td>
+<td><code>bb5kbc:GeoreferenzierungsAktivitaet</code> ←
+<code>fsl:georeferencingBy</code> → <code>foaf:Person</code></td>
+<td><code>fsl:georeferencingBy</code></td>
+<td>P14</td>
+<td>Sophie C. Schmidt; auch <code>prov:wasAssociatedWith</code></td>
+</tr>
+<tr class="odd">
+<td>54</td>
+<td><code>methodenbeschr</code></td>
+<td><code>"Koordinaten wurden vom LdfA..."</code></td>
+<td>🟨</td>
+<td><code>bb5kbc:GeoreferenzierungsAktivitaet</code> ←
+<code>fsl:activityDesc</code> : <code>xsd:string</code></td>
+<td><code>fsl:activityDesc</code></td>
+<td>P15</td>
+<td>Freitext; 22 distinct</td>
+</tr>
+<tr class="even">
+<td>53</td>
+<td><code>quellen_typ</code></td>
+<td><code>"Printpublikation"</code></td>
+<td>🟦</td>
+<td><code>bb5kbc:GeoreferenzierungsAktivitaet</code> ←
+<code>fsl:hasSourceTypeDetail</code> → <code>fsl:SourceType</code></td>
+<td><code>fsl:hasSourceTypeDetail</code></td>
+<td>P16</td>
+<td>Gleiche Spalte wie P6, detail-Ebene</td>
+</tr>
+<tr class="odd">
+<td>50</td>
+<td><code>genauigkeit_m</code></td>
+<td><code>"100"</code></td>
+<td>🟨</td>
+<td><code>bb5kbc:Fundstelle</code> ← <code>bb5kbc:hatGenauigkeit</code>
+: <code>xsd:decimal</code></td>
+<td><code>fsl:precision</code></td>
+<td>P23</td>
+<td>subPropertyOf <code>fsl:precision</code></td>
+</tr>
+<tr class="even">
+<td>—</td>
+<td><em>(fest)</em></td>
+<td><code>https://fuzzy-sl.wikibase.cloud/entity/Q80</code></td>
+<td>🟦</td>
+<td><code>bb5kbc:Fundstelle</code> ← <code>fsl:hasLocationType</code> →
+<code>fsl:LocationType</code></td>
+<td><code>fsl:hasLocationType</code></td>
+<td>P24</td>
+<td>Immer <code>&lt;Q80&gt;</code> Findspot</td>
+</tr>
+<tr class="odd">
+<td>1</td>
+<td><code>quelle_georef</code></td>
+<td><code>"LfDA Sachsen-Anhalt"</code></td>
+<td>🟨</td>
+<td><code>bb5kbc:GeoreferenzierungsAktivitaet</code> ←
+<code>fsl:hasReference</code> : <code>xsd:string</code></td>
+<td><code>fsl:hasReference</code></td>
+<td>P25</td>
+<td>Literal</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td><code>QID_quelle_georef</code></td>
+<td><code>"Q1802049"</code></td>
+<td>🔗</td>
+<td><code>bb5kbc:GeoreferenzierungsAktivitaet</code> ←
+<code>fsl:hasReference</code> → Wikidata-URI</td>
+<td><code>fsl:hasReference</code></td>
+<td>P31</td>
+<td>Gefüllt durch <code>enrich_qids.py</code>; einige institutionelle
+Quellen weiterhin offen</td>
+</tr>
+<tr class="odd">
+<td>—</td>
+<td><em>(fest)</em></td>
+<td><code>https://fuzzy-sl.wikibase.cloud/entity/Q126</code></td>
+<td>🟦</td>
+<td><code>sf:Point</code> ← <code>fsl:hasPointType</code> →
+<code>fsl:PointType</code></td>
+<td><code>fsl:hasPointType</code></td>
+<td>P33</td>
+<td>Immer <code>&lt;Q126&gt;</code> Representative Point</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="properties">Properties</h2>
+<h3 id="bb5kbc-object-properties">bb5kbc Object Properties</h3>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Property</th>
+<th>Domäne</th>
+<th>Range</th>
+<th>subPropertyOf</th>
+<th>CRM-Top-Edge</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>bb5kbc:inGemeinde</code></td>
+<td><code>bb5kbc:Fundstelle</code></td>
+<td><code>bb5kbc:Gemeinde</code></td>
+<td><code>crm:P89_falls_within</code>,
+<code>fsl:locatedInAdministrativeEntity</code></td>
+<td><code>crm:P89_falls_within</code></td>
+</tr>
+<tr class="even">
+<td><code>bb5kbc:inKreis</code></td>
+<td><code>bb5kbc:Gemeinde</code></td>
+<td><code>bb5kbc:Kreis</code></td>
+<td><code>crm:P89_falls_within</code>,
+<code>fsl:locatedInAdministrativeEntity</code></td>
+<td><code>crm:P89_falls_within</code></td>
+</tr>
+<tr class="odd">
+<td><code>bb5kbc:inBundesland</code></td>
+<td><code>bb5kbc:Kreis</code></td>
+<td><code>bb5kbc:Bundesland</code></td>
+<td><code>crm:P89_falls_within</code>,
+<code>fsl:locatedInAdministrativeEntity</code></td>
+<td><code>crm:P89_falls_within</code></td>
+</tr>
+<tr class="even">
+<td><code>bb5kbc:inLand</code></td>
+<td><code>bb5kbc:Bundesland</code></td>
+<td><code>bb5kbc:Land</code></td>
+<td><code>crm:P89_falls_within</code>,
+<code>fsl:locatedInAdministrativeEntity</code></td>
+<td><code>crm:P89_falls_within</code></td>
+</tr>
+<tr class="odd">
+<td><code>bb5kbc:wurdeEntdecktDurch</code></td>
+<td><code>bb5kbc:Fundstelle</code></td>
+<td><code>bb5kbc:Entdeckung</code></td>
+<td><code>crm:P12i_was_present_at</code></td>
+<td><code>crm:P12i_was_present_at</code></td>
+</tr>
+<tr class="even">
+<td><code>bb5kbc:wurdeGeoreferenziertDurch</code></td>
+<td><code>bb5kbc:Fundstelle</code></td>
+<td><code>bb5kbc:GeoreferenzierungsAktivitaet</code></td>
+<td><code>prov:wasGeneratedBy</code></td>
+<td><code>prov:wasGeneratedBy</code></td>
+</tr>
+<tr class="odd">
+<td><code>bb5kbc:hatEntdeckungsart</code></td>
+<td><code>bb5kbc:Entdeckung</code></td>
+<td><code>bb5kbc:EntdeckungsartType</code></td>
+<td><code>crm:P2_has_type</code></td>
+<td><code>crm:P2_has_type</code></td>
+</tr>
+<tr class="even">
+<td><code>bb5kbc:hatFundstellenart</code></td>
+<td><code>bb5kbc:Fundstelle</code></td>
+<td><code>bb5kbc:FundstellenartType</code></td>
+<td><code>crm:P2_has_type</code>, <code>fsl:siteType</code></td>
+<td><code>crm:P2_has_type</code></td>
+</tr>
+<tr class="odd">
+<td><code>bb5kbc:hatKulturelleZuordnung</code></td>
+<td><code>bb5kbc:Fundstelle</code></td>
+<td><code>bb5kbc:KulturelleZuordnung</code></td>
+<td><code>crm:P10i_contains</code></td>
+<td><code>crm:P10i_contains</code></td>
+</tr>
+<tr class="even">
+<td><code>bb5kbc:hatKulturgruppe</code></td>
+<td><code>bb5kbc:KulturelleZuordnung</code></td>
+<td><code>bb5kbc:Kulturgruppe</code></td>
+<td><code>crm:P9i_forms_part_of</code></td>
+<td><code>crm:P9i_forms_part_of</code></td>
+</tr>
+<tr class="odd">
+<td><code>bb5kbc:hatPublikation</code></td>
+<td><code>bb5kbc:Fundstelle</code></td>
+<td><code>bb5kbc:Publikation</code></td>
+<td><code>crm:P70i_is_documented_in</code></td>
+<td><code>crm:P70i_is_documented_in</code></td>
+</tr>
+<tr class="even">
+<td><code>bb5kbc:hatDatierung</code></td>
+<td><code>bb5kbc:KulturelleZuordnung</code></td>
+<td><code>bb5kbc:Datierung</code></td>
+<td><code>crm:P4_has_time-span</code></td>
+<td><code>crm:P4_has_time-span</code></td>
+</tr>
+<tr class="odd">
+<td><code>bb5kbc:datierungMethode</code></td>
+<td><code>bb5kbc:Datierung</code></td>
+<td><code>bb5kbc:DatierungsMethodeType</code></td>
+<td><code>crm:P2_has_type</code></td>
+<td><code>crm:P2_has_type</code></td>
+</tr>
+<tr class="even">
+<td><code>bb5kbc:hatScherbe</code></td>
+<td><code>bb5kbc:Fundstelle</code></td>
+<td><code>bb5kbc:Scherbe</code></td>
+<td><code>crm:P46i_forms_part_of</code></td>
+<td><code>crm:P46i_forms_part_of</code></td>
+</tr>
+<tr class="odd">
+<td><code>bb5kbc:hasExternalIdentifier</code></td>
+<td><code>owl:Thing</code></td>
+<td><code>rdfs:Resource</code></td>
+<td><code>skos:closeMatch</code></td>
+<td><code>skos:closeMatch</code></td>
+</tr>
+<tr class="even">
+<td><code>bb5kbc:hasExternalIdentifierType</code></td>
+<td><code>rdfs:Resource</code></td>
+<td><code>bb5kbc:externalIdentifierType</code></td>
+<td>—</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<h3 id="bb5kbc-datatype-properties">bb5kbc Datatype Properties</h3>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Property</th>
+<th>Domäne</th>
+<th>Range</th>
+<th>subPropertyOf</th>
+<th>CRM-Top-Edge</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>bb5kbc:hatFID</code></td>
+<td><code>bb5kbc:Fundstelle</code></td>
+<td><code>xsd:integer</code></td>
+<td><code>crm:P1_is_identified_by</code>,
+<code>dc:identifier</code></td>
+<td><code>crm:P1_is_identified_by</code></td>
+</tr>
+<tr class="even">
+<td><code>bb5kbc:hatFundstellenID</code></td>
+<td><code>bb5kbc:Fundstelle</code></td>
+<td><code>xsd:string</code></td>
+<td><code>crm:P1_is_identified_by</code></td>
+<td><code>crm:P1_is_identified_by</code></td>
+</tr>
+<tr class="odd">
+<td><code>bb5kbc:hatKatalognummer</code></td>
+<td><code>bb5kbc:Fundstelle</code></td>
+<td><code>xsd:string</code></td>
+<td><code>crm:P1_is_identified_by</code></td>
+<td><code>crm:P1_is_identified_by</code></td>
+</tr>
+<tr class="even">
+<td><code>bb5kbc:hatGenauigkeit</code></td>
+<td><code>bb5kbc:Fundstelle</code></td>
+<td><code>xsd:decimal</code></td>
+<td><code>fsl:precision</code></td>
+<td><code>fsl:precision</code></td>
+</tr>
+<tr class="odd">
+<td><code>bb5kbc:datierungStart</code></td>
+<td><code>bb5kbc:Datierung</code></td>
+<td><code>xsd:integer</code></td>
+<td><code>crm:P82a_begin_of_the_begin</code></td>
+<td><code>crm:P82a_begin_of_the_begin</code></td>
+</tr>
+<tr class="even">
+<td><code>bb5kbc:datierungEnd</code></td>
+<td><code>bb5kbc:Datierung</code></td>
+<td><code>xsd:integer</code></td>
+<td><code>crm:P82b_end_of_the_end</code></td>
+<td><code>crm:P82b_end_of_the_end</code></td>
+</tr>
+<tr class="odd">
+<td><code>bb5kbc:datierungSicherheitStart</code></td>
+<td><code>bb5kbc:Datierung</code></td>
+<td><code>xsd:string</code></td>
+<td><code>fsl:certaintyDesc</code></td>
+<td><code>fsl:certaintyDesc</code></td>
+</tr>
+<tr class="even">
+<td><code>bb5kbc:datierungSicherheitEnd</code></td>
+<td><code>bb5kbc:Datierung</code></td>
+<td><code>xsd:string</code></td>
+<td><code>fsl:certaintyDesc</code></td>
+<td><code>fsl:certaintyDesc</code></td>
+</tr>
+<tr class="odd">
+<td><code>bb5kbc:datierungSicherheitRange</code></td>
+<td><code>bb5kbc:Datierung</code></td>
+<td><code>xsd:string</code></td>
+<td><code>fsl:certaintyDesc</code></td>
+<td><code>fsl:certaintyDesc</code></td>
+</tr>
+<tr class="even">
+<td><code>bb5kbc:wikidataMatchDescription</code></td>
+<td><code>bb5kbc:Land</code>, <code>bb5kbc:Bundesland</code>,
+<code>bb5kbc:Kreis</code>, <code>bb5kbc:Gemeinde</code></td>
+<td><code>xsd:string</code></td>
+<td>—</td>
+<td>— (Audit-Property)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="nachgenutzte-properties-kein-bb5kbc-wrapper">Nachgenutzte
+Properties (kein bb5kbc-Wrapper)</h3>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Property</th>
+<th>Ontologie</th>
+<th>Domäne</th>
+<th>Range</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>fsl:hasReference</code></td>
+<td>FSL</td>
+<td><code>bb5kbc:GeoreferenzierungsAktivitaet</code></td>
+<td><code>bb5kbc:GeoReferenz</code></td>
+</tr>
+<tr class="even">
+<td><code>fsl:method</code></td>
+<td>FSL</td>
+<td><code>bb5kbc:GeoreferenzierungsAktivitaet</code></td>
+<td><code>fsl:MethodType</code></td>
+</tr>
+<tr class="odd">
+<td><code>fsl:hasSourceType</code></td>
+<td>FSL</td>
+<td><code>bb5kbc:GeoreferenzierungsAktivitaet</code></td>
+<td><code>fsl:SourceType</code></td>
+</tr>
+<tr class="even">
+<td><code>fsl:activityDesc</code></td>
+<td>FSL</td>
+<td><code>bb5kbc:GeoreferenzierungsAktivitaet</code></td>
+<td><code>xsd:string</code></td>
+</tr>
+<tr class="odd">
+<td><code>fsl:precision</code></td>
+<td>FSL</td>
+<td><code>bb5kbc:Fundstelle</code></td>
+<td><code>xsd:decimal</code></td>
+</tr>
+<tr class="even">
+<td><code>fsl:representativeGeometry</code></td>
+<td>FSL</td>
+<td><code>bb5kbc:Fundstelle</code></td>
+<td><code>sf:Point</code></td>
+</tr>
+<tr class="odd">
+<td><code>prov:wasAssociatedWith</code></td>
+<td>PROV-O</td>
+<td><code>bb5kbc:GeoreferenzierungsAktivitaet</code></td>
+<td><code>foaf:Person</code></td>
+</tr>
+<tr class="even">
+<td><code>rdfs:label</code> / <code>skos:prefLabel</code></td>
+<td>RDFS / SKOS</td>
+<td>alle Klassen</td>
+<td>Literal <code>@de</code></td>
+</tr>
+<tr class="odd">
+<td><code>geosparql:hasGeometry</code></td>
+<td>GeoSPARQL</td>
+<td><code>bb5kbc:Fundstelle</code></td>
+<td><code>sf:Point</code></td>
+</tr>
+<tr class="even">
+<td><code>geosparql:asWKT</code></td>
+<td>GeoSPARQL</td>
+<td><code>sf:Point</code></td>
+<td><code>geosparql:wktLiteral</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="vererbungsketten-kurzreferenz">Vererbungsketten
+(Kurzreferenz)</h2>
+<blockquote>
+<p><strong>Warum <code>crm:E53_Place</code> direkt für
+Verwaltungsgebiete:</strong> <code>pleiades:Place</code> ist semantisch
+für antike Toponyme ohne sichere Geometrie gedacht
+(Pleiades-Datenmodell, Samian-Ware-Use-Case in LADO/ArNO). Moderne
+Verwaltungsgebiete haben klar definierte Grenzen — sie sind direkt
+<code>crm:E53_Place</code>. <code>bb5kbc:Fundstelle</code> geht
+zusätzlich über <code>crm:E27_Site</code> (= “Constellation of matter on
+the surface”, CRM E27), parallel zu den FSL- und LADO-Spuren.</p>
+</blockquote>
+<p>Die Tabelle listet pro <code>bb5kbc:</code>-Klasse die
+<strong>vollständige Vorfahren-Menge</strong> als flache Liste (alle
+direkten Eltern + transitive Hülle). Darunter zeigt jeder Code-Block die
+Mehrfach-Vererbung als Baum, was die parallelen Spuren sichtbar macht.
+Die Liste in der Tabelle ist die Quelle für den automatischen
+Doku-Abgleich (<code>validate_lod.py</code>, Sektion 4b) — sie muss
+exakt der Ontologie entsprechen.</p>
+<h3 id="übersicht-vollständige-vorfahren-mengen">Übersicht (vollständige
+Vorfahren-Mengen)</h3>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>bb5kbc-Klasse</th>
+<th>Alle Vorfahren (transitiv)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>bb5kbc:Land</code></td>
+<td><code>crm:E1_CRM_Entity</code>, <code>crm:E53_Place</code></td>
+</tr>
+<tr class="even">
+<td><code>bb5kbc:Bundesland</code></td>
+<td><code>crm:E1_CRM_Entity</code>, <code>crm:E53_Place</code></td>
+</tr>
+<tr class="odd">
+<td><code>bb5kbc:Kreis</code></td>
+<td><code>crm:E1_CRM_Entity</code>, <code>crm:E53_Place</code></td>
+</tr>
+<tr class="even">
+<td><code>bb5kbc:Gemeinde</code></td>
+<td><code>crm:E1_CRM_Entity</code>, <code>crm:E53_Place</code></td>
+</tr>
+<tr class="odd">
+<td><code>bb5kbc:Fundstelle</code></td>
+<td><code>crm:E18_Physical_Thing</code>, <code>crm:E1_CRM_Entity</code>,
+<code>crm:E26_Physical_Feature</code>, <code>crm:E27_Site</code>,
+<code>crm:E53_Place</code>, <code>crm:E70_Thing</code>,
+<code>crm:E72_Legal_Object</code>, <code>fsl:Location</code>,
+<code>fsl:Site</code>, <code>geo:SpatialObject</code>,
+<code>lado:Location</code>, <code>pleiades:Location</code>,
+<code>prov:Location</code></td>
+</tr>
+<tr class="even">
+<td><code>bb5kbc:GeoreferenzierungsAktivitaet</code></td>
+<td><code>crm:E13_Attribute_Assignment</code>,
+<code>crm:E1_CRM_Entity</code>, <code>crm:E2_Temporal_Entity</code>,
+<code>crm:E4_Period</code>, <code>crm:E5_Event</code>,
+<code>crm:E7_Activity</code>, <code>prov:Activity</code></td>
+</tr>
+<tr class="odd">
+<td><code>bb5kbc:Entdeckung</code></td>
+<td><code>crm:E13_Attribute_Assignment</code>,
+<code>crm:E1_CRM_Entity</code>, <code>crm:E2_Temporal_Entity</code>,
+<code>crm:E4_Period</code>, <code>crm:E5_Event</code>,
+<code>crm:E7_Activity</code>, <code>crmsci:S19_Encounter_Event</code>,
+<code>crmsci:S4_Observation</code></td>
+</tr>
+<tr class="even">
+<td><code>bb5kbc:EntdeckungsartType</code></td>
+<td><code>crm:E1_CRM_Entity</code>, <code>crm:E55_Type</code></td>
+</tr>
+<tr class="odd">
+<td><code>bb5kbc:FundstellenartType</code></td>
+<td><code>crm:E1_CRM_Entity</code>, <code>crm:E55_Type</code>,
+<code>fsl:SiteType</code>, <code>fsl:Type</code>,
+<code>lado:PlaceType</code></td>
+</tr>
+<tr class="even">
+<td><code>bb5kbc:KulturelleZuordnung</code></td>
+<td><code>crm:E1_CRM_Entity</code>,
+<code>crm:E92_Spacetime_Volume</code>,
+<code>lado:SpaceTimeItem</code></td>
+</tr>
+<tr class="odd">
+<td><code>bb5kbc:Kulturgruppe</code></td>
+<td><code>crm:E1_CRM_Entity</code>, <code>crm:E2_Temporal_Entity</code>,
+<code>crm:E4_Period</code></td>
+</tr>
+<tr class="even">
+<td><code>bb5kbc:Datierung</code></td>
+<td><code>crm:E1_CRM_Entity</code>, <code>crm:E52_Time-Span</code>,
+<code>time:Interval</code>, <code>time:TemporalEntity</code></td>
+</tr>
+<tr class="odd">
+<td><code>bb5kbc:DatierungsMethodeType</code></td>
+<td><code>crm:E1_CRM_Entity</code>, <code>crm:E55_Type</code></td>
+</tr>
+<tr class="even">
+<td><code>bb5kbc:Scherbe</code></td>
+<td><code>crm:E18_Physical_Thing</code>, <code>crm:E1_CRM_Entity</code>,
+<code>crm:E22_Human-Made_Object</code>, <code>crm:E70_Thing</code>,
+<code>crm:E72_Legal_Object</code></td>
+</tr>
+<tr class="odd">
+<td><code>bb5kbc:Publikation</code></td>
+<td><code>crm:E1_CRM_Entity</code>,
+<code>crm:E32_Authority_Document</code>, <code>crm:E70_Thing</code>,
+<code>crm:E73_Information_Object</code></td>
+</tr>
+<tr class="even">
+<td><code>bb5kbc:externalIdentifierType</code></td>
+<td><code>crm:E1_CRM_Entity</code>, <code>crm:E55_Type</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="mehrfach-vererbung-als-baum">Mehrfach-Vererbung als Baum</h3>
+<p>Verwaltungsgebiete (Land/Bundesland/Kreis/Gemeinde) haben alle
+dieselbe einfache Spur über <code>crm:E53_Place</code>:</p>
+<pre><code>bb5kbc:Land           ┐
+bb5kbc:Bundesland     ├── alle: └── crm:E53_Place
+bb5kbc:Kreis          │             └── crm:E1_CRM_Entity
+bb5kbc:Gemeinde       ┘</code></pre>
+<p><code>bb5kbc:Fundstelle</code> ist die komplexeste Klasse — drei
+parallele Eltern, einer mit weiterer Mehrfach-Vererbung:</p>
+<pre><code>bb5kbc:Fundstelle
+├── lado:Location
+│   └── pleiades:Location
+│       └── geo:SpatialObject
+├── fsl:Site
+│   └── fsl:Location
+│       └── prov:Location
+└── crm:E27_Site
+    ├── crm:E26_Physical_Feature
+    │   └── crm:E18_Physical_Thing
+    │       └── crm:E72_Legal_Object
+    │           └── crm:E70_Thing
+    │               └── crm:E1_CRM_Entity
+    └── crm:E53_Place
+        └── crm:E1_CRM_Entity</code></pre>
+<p><code>bb5kbc:GeoreferenzierungsAktivitaet</code> ist parallel
+CRM-Activity und PROV-Activity:</p>
+<pre><code>bb5kbc:GeoreferenzierungsAktivitaet
+├── crm:E13_Attribute_Assignment
+│   └── crm:E7_Activity
+│       └── crm:E5_Event
+│           └── crm:E4_Period
+│               └── crm:E2_Temporal_Entity
+│                   └── crm:E1_CRM_Entity
+└── prov:Activity</code></pre>
+<p><code>bb5kbc:Entdeckung</code> als CRMsci-Observation, mit voller
+CRM-Hierarchie:</p>
+<pre><code>bb5kbc:Entdeckung
+└── crmsci:S19_Encounter_Event
+    └── crmsci:S4_Observation
+        └── crm:E13_Attribute_Assignment
+            └── crm:E7_Activity
+                └── crm:E5_Event
+                    └── crm:E4_Period
+                        └── crm:E2_Temporal_Entity
+                            └── crm:E1_CRM_Entity</code></pre>
+<p><code>bb5kbc:FundstellenartType</code> ist parallel LADO-Place-Type
+und FSL-SiteType:</p>
+<pre><code>bb5kbc:FundstellenartType
+├── lado:PlaceType
+│   └── crm:E55_Type
+│       └── crm:E1_CRM_Entity
+└── fsl:SiteType
+    └── fsl:Type</code></pre>
+<p><code>bb5kbc:KulturelleZuordnung</code> als Spacetime-Volume:</p>
+<pre><code>bb5kbc:KulturelleZuordnung
+└── lado:SpaceTimeItem
+    └── crm:E92_Spacetime_Volume
+        └── crm:E1_CRM_Entity</code></pre>
+<p><code>bb5kbc:Kulturgruppe</code> als Period:</p>
+<pre><code>bb5kbc:Kulturgruppe
+└── crm:E4_Period
+    └── crm:E2_Temporal_Entity
+        └── crm:E1_CRM_Entity</code></pre>
+<p><code>bb5kbc:Datierung</code> ist parallel CRM-Time-Span und
+OWL-Time-Interval:</p>
+<pre><code>bb5kbc:Datierung
+├── crm:E52_Time-Span
+│   └── crm:E1_CRM_Entity
+└── time:Interval
+    └── time:TemporalEntity</code></pre>
+<p>Die übrigen Type-Klassen sind alle einfach
+<code>crm:E55_Type</code>-Subklassen:</p>
+<pre><code>bb5kbc:EntdeckungsartType         ┐
+bb5kbc:DatierungsMethodeType      ├── alle: └── crm:E55_Type
+bb5kbc:externalIdentifierType     ┘             └── crm:E1_CRM_Entity</code></pre>
+<p><code>bb5kbc:Scherbe</code> als Human-Made-Object:</p>
+<pre><code>bb5kbc:Scherbe
+└── crm:E22_Human-Made_Object
+    └── crm:E18_Physical_Thing
+        └── crm:E72_Legal_Object
+            └── crm:E70_Thing
+                └── crm:E1_CRM_Entity</code></pre>
+<p><code>bb5kbc:Publikation</code> als Authority-Document:</p>
+<pre><code>bb5kbc:Publikation
+└── crm:E32_Authority_Document
+    └── crm:E73_Information_Object
+        └── crm:E70_Thing
+            └── crm:E1_CRM_Entity</code></pre>
+<h3
+id="geometrie-klassen-extern-nicht-im-bb5kbc-namespace">Geometrie-Klassen
+(extern, nicht im <code>bb5kbc:</code>-Namespace)</h3>
+<p><code>sf:Point</code> aus dem Simple-Features-Vokabular wird vom
+LOD-Skript für die WGS84-Punkt-Geometrie verwendet. Die volle
+Vererbungskette ist hier zur Information dokumentiert, fließt aber
+<strong>nicht</strong> in den automatischen Doku-Abgleich ein (weil
+keine <code>bb5kbc:</code>-Klasse):</p>
+<pre><code>sf:Point
+└── geosparql:Geometry
+    └── crmgeo:SP5_Geometric_Place_Expression
+        └── crm:E73_Information_Object
+            └── crm:E90_Symbolic_Object
+                └── crm:E1_CRM_Entity</code></pre>
+<hr />
+<h2 id="ortsklassen-im-vergleich">Ortsklassen im Vergleich</h2>
+<pre><code>crm:E1_CRM_Entity
+  └── crm:E53_Place
+        │
+        ├── bb5kbc:Land          ← modernes Staatsgebiet (ISO 3166)
+        ├── bb5kbc:Bundesland    ← modernes Verwaltungsgebiet (NUTS-1)
+        ├── bb5kbc:Kreis         ← modernes Verwaltungsgebiet (NUTS-3)
+        ├── bb5kbc:Gemeinde      ← modernes Verwaltungsgebiet (LAU-2)
+        │
+        └── crm:E27_Site         ← physisches Stück Land
+              └── pleiades:Location
+                    ├── lado:Location
+                    └── fsl:Site
+                          └── bb5kbc:Fundstelle  ← archäolog. Fundstelle mit Koordinaten</code></pre>
+<hr />
+<h2 id="p5-certainty-level-ableitungslogik">P5 Certainty Level —
+Ableitungslogik</h2>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Bedingung</th>
+<th>Wikibase-Item</th>
+<th>Label</th>
+<th>Begründung</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>genauigkeit_m = 0</code></td>
+<td><code>fslwb:Q23</code></td>
+<td><strong>high</strong></td>
+<td>Exakte Koordinate direkt aus Datenbank übernommen</td>
+</tr>
+<tr class="even">
+<td><code>genauigkeit_m = 50–500</code></td>
+<td><code>fslwb:Q15</code></td>
+<td><strong>medium</strong></td>
+<td>Grobe Lokalisierung, eindeutig einer Flur/Gemeinde zuzuordnen</td>
+</tr>
+<tr class="odd">
+<td><code>genauigkeit_m = 800–5000</code></td>
+<td><code>fslwb:Q24</code></td>
+<td><strong>low</strong></td>
+<td>Nur auf Gemeindeebene verortet</td>
+</tr>
+<tr class="even">
+<td><code>wgs84_x = 0 AND wgs84_y = 0</code></td>
+<td><code>fslwb:Q113</code></td>
+<td><strong>dubious</strong></td>
+<td>Koordinatenfehler — kein <code>sf:Point</code> wird erzeugt</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="datierung-modellierungslogik">Datierung —
+Modellierungslogik</h2>
+<p>Die neun CSV-Spalten zur Datierung (<code>dating_start</code>,
+<code>dating_end</code>, <code>dating_method</code>,
+<code>dating_certainty_start</code>, <code>dating_certainty_end</code>,
+<code>dating_certainty_range</code>, <code>dating_perio.do</code>,
+<code>dating_perio.do_match</code>) werden gebündelt an einem
+<strong><code>bb5kbc:Datierung</code></strong>-Knoten modelliert. Pro
+Fundstelle gibt es genau einen Datierungs-Knoten, der über
+<code>bb5kbc:hatDatierung</code> an die
+<code>bb5kbc:KulturelleZuordnung</code> hängt. URI-Schema:
+<code>site_{FID}_dating</code> — FID-basiert pro Fundstelle, damit
+site-spezifische Start/End/Sicherheits-Werte unmissverständlich an dem
+Knoten der jeweiligen Site landen.</p>
+<h3
+id="doppel-verankerung-crm-e52-owl-time-interval">Doppel-Verankerung:
+CRM E52 + OWL Time Interval</h3>
+<p><code>bb5kbc:Datierung</code> ist Subklasse <strong>beider</strong>
+Oberklassen:</p>
+<pre class="turtle"><code>bb5kbc:Datierung
+    rdfs:subClassOf time:Interval ,           # OWL Time
+                    crm:E52_Time-Span .       # CIDOC CRM</code></pre>
+<p>Das ist absichtlich redundant. Der Grund:</p>
+<ul>
+<li><strong><code>crm:E52_Time-Span</code></strong> verbindet die
+Datierung mit dem CIDOC-Universum (über
+<code>bb5kbc:hatDatierung ⊂ crm:P4_has_time-span</code>). Damit ist
+sichergestellt, dass jeder CRM-konforme Reasoner und jede Edition Topic
+Maps die Datierung als Zeit-Span einer Periode/Activity erkennt.</li>
+<li><strong><code>time:Interval ⊂ time:TemporalEntity</code></strong>
+ist die OWL-Time-Sicht auf denselben Knoten. OWL Time bringt ein
+reicheres Vokabular für Intervall-Topologie mit (Allen-Relationen wie
+<code>time:before</code>, <code>time:after</code>,
+<code>time:intervalMeets</code>), das CRM nicht hat. Wenn später z.B.
+relative Datierungen modelliert werden sollen (“Phase B beginnt nachdem
+Phase A endet”), ist OWL Time dafür das passendere Werkzeug.</li>
+</ul>
+<p><strong>Kein Konflikt:</strong> Beide Oberklassen verlangen nichts,
+was die andere ausschließt. Der Knoten ist ein Zeit-Span <em>und</em>
+ein Intervall — zwei orthogonale Sichten auf dieselbe temporale
+Entität.</p>
+<h3 id="start--und-endpunkte-als-integer">Start- und Endpunkte als
+Integer</h3>
+<pre class="turtle"><code>data:site_&lt;FID&gt;_dating
+    bb5kbc:datierungStart &quot;-4550&quot;^^xsd:integer ;   # ⊂ crm:P82a_begin_of_the_begin
+    bb5kbc:datierungEnd   &quot;-3900&quot;^^xsd:integer .   # ⊂ crm:P82b_end_of_the_end</code></pre>
+<p>Die CSV liefert ganzzahlige Jahresangaben (negativ = BCE). Das mappt
+direkt auf <code>xsd:integer</code>, nicht auf <code>xsd:gYear</code>.
+Begründung:</p>
+<ul>
+<li><code>xsd:gYear</code> kennt zwar negative Jahre, in der Praxis ist
+die Tooling-Unterstützung in Triple-Stores aber inkonsistent (z.B. ist
+<code>-4550</code> als gYear nicht überall als reine Jahreszahl
+interpretierbar).</li>
+<li>Die CRM-Properties <code>P82a/P82b</code> haben keinen festen
+<code>rdfs:range</code> — Integer ist also kompatibel.</li>
+<li>Wer OWL-Time-konforme <code>time:hasBeginning</code> /
+<code>time:inXSDgYear</code>-Triples ableiten möchte, kann das im
+Pipeline-Script in einem zweiten Schritt erzeugen.</li>
+</ul>
+<h3 id="drei-unsicherheits-felder-drei-verschiedene-bedeutungen">Drei
+Unsicherheits-Felder — drei verschiedene Bedeutungen</h3>
+<p>Die CSV trennt drei Arten von Unsicherheit, die wir 1:1 als drei
+Datatype Properties auf den Datierungs-Knoten legen:</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>CSV-Spalte</th>
+<th>bb5kbc-Property</th>
+<th>Bedeutung</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>dating_certainty_start</code></td>
+<td><code>bb5kbc:datierungSicherheitStart</code></td>
+<td>numerische Toleranz auf den Anfangspunkt (z.B.
+<code>"+ / - 100 years"</code>)</td>
+</tr>
+<tr class="even">
+<td><code>dating_certainty_end</code></td>
+<td><code>bb5kbc:datierungSicherheitEnd</code></td>
+<td>numerische Toleranz auf den Endpunkt</td>
+</tr>
+<tr class="odd">
+<td><code>dating_certainty_range</code></td>
+<td><code>bb5kbc:datierungSicherheitRange</code></td>
+<td>qualitative Bewertung der gesamten Datierung (z.B.
+<code>"medium certainty, some 14C dates available"</code>)</td>
+</tr>
+</tbody>
+</table>
+<p>Alle drei sind als <strong><code>xsd:string</code></strong>
+modelliert, bewusst nicht als strukturierte Werte. Begründung:</p>
+<ul>
+<li>Die Werte sind heterogene Freitexte, teils deutsch
+(<code>"+ / - 50 Jahre"</code>), teils englisch
+(<code>"+ / - 100 years"</code>), mit Tippvarianten
+(<code>"+ / -100 years"</code>, <code>"+ /- 100 Jahre"</code>). Eine
+strukturierte Modellierung (z.B. als <code>time:Duration</code> mit
+<code>time:numericDuration</code>) würde Normalisierung erfordern, die
+nicht ohne Datenverlust geht.</li>
+<li>Die <code>_range</code>-Spalte ist explizit qualitativ — eine
+Mischung aus Vertrauensgrad und methodischer Begründung. Diese gehört
+strukturell <em>nicht</em> in dieselbe Schublade wie eine numerische
+Toleranz.</li>
+</ul>
+<p>Für eine spätere FSL-Wikibase-Integration (Property <code>P5</code>
+certaintyLevel) wäre ein separater Knoten denkbar, der
+<code>dating_certainty_range</code> interpretiert und auf eine
+<code>fsl:CertaintyType</code> (Q23/Q15/Q24) mappt. Das ist im aktuellen
+Mapping <strong>nicht</strong> vorgesehen — die Strings bleiben als
+nachvollziehbarer Audit-Trail.</p>
+<h3 id="datierungsmethode-als-eigene-klasse">Datierungsmethode als
+eigene Klasse</h3>
+<p><code>dating_method</code> enthält Wikidata-QIDs
+(<code>Q173412</code> Radiokarbondatierung, <code>Q816829</code>
+stilistische Datierung). Diese werden zu
+<strong><code>bb5kbc:DatierungsMethodeType</code></strong>- Knoten
+dedupliziert (URI: <code>datmethode_{MD5(QID)[:8]}</code>):</p>
+<pre class="turtle"><code>data:site_&lt;FID&gt;_dating
+    bb5kbc:datierungMethode data:datmethode_98fc5e34 .   # ⊂ crm:P2_has_type
+
+data:datmethode_98fc5e34
+    a bb5kbc:DatierungsMethodeType ;
+    rdfs:label &quot;Radiokarbondatierung&quot;@de ;
+    bb5kbc:hasExternalIdentifier wd:Q173412 .</code></pre>
+<p><code>bb5kbc:DatierungsMethodeType</code> ist Subklasse von
+<code>crm:E55_Type</code>, parallel zu
+<code>bb5kbc:EntdeckungsartType</code> und
+<code>bb5kbc:FundstellenartType</code>. Der Hash basiert auf der QID,
+nicht auf dem Label, weil die QID die stabilere Identität ist.</p>
+<h3 id="perio.do-verknüpfung-als-skos-match">Perio.do-Verknüpfung als
+SKOS-Match</h3>
+<p>Die Spalten <code>dating_perio.do</code> (URI) und
+<code>dating_perio.do_match</code> (<code>exactMatch</code> /
+<code>closeMatch</code> / <code>relatedMatch</code>) zusammen bestimmen,
+<strong>welche</strong> SKOS-Property zwischen Datierung und
+Perio.do-URI gesetzt wird:</p>
+<pre class="turtle"><code># dating_perio.do_match = &quot;closeMatch&quot;
+data:site_&lt;FID&gt;_dating
+    skos:closeMatch &lt;http://n2t.net/ark:/99152/p0wctqtnkjq&gt; .</code></pre>
+<p>Wenn <code>dating_perio.do_match</code> leer ist (1 Zeile in der
+CSV), wird per Default <code>skos:relatedMatch</code> verwendet — die
+schwächste der drei Match-Levels.</p>
+<h2
+id="beispiel-ttl-fid33-friesack-4-mit-echten-csv-werten">Beispiel-TTL
+(FID=33 — Friesack 4, mit echten CSV-Werten)</h2>
+<p>Das folgende Beispiel zeigt, wie eine vollständig ausgefüllte
+CSV-Zeile in RDF aussieht. Alle Werte stammen direkt aus der aktuellen
+CSV; FID=33 hat keinen Sherd, daher ist der Sherd-Block beispielhaft für
+eine andere Fundstelle (FID=80, Seelow 20) gezeigt.</p>
+<pre class="turtle"><code>@prefix bb5kbc:  &lt;http://w3id.org/bb5kbc/ont/&gt; .
+@prefix data:    &lt;http://w3id.org/bb5kbc/&gt; .
+@prefix crm:     &lt;http://www.cidoc-crm.org/cidoc-crm/&gt; .
+@prefix crmsci:  &lt;http://www.cidoc-crm.org/extensions/crmsci/&gt; .
+@prefix fsl:     &lt;http://fuzzy-sl.squirrel.link/ontology/&gt; .
+@prefix fslwb:   &lt;https://fuzzy-sl.wikibase.cloud/entity/&gt; .
+@prefix time:    &lt;http://www.w3.org/2006/time#&gt; .
+@prefix geo:     &lt;http://www.opengis.net/ont/geosparql#&gt; .
+@prefix sf:      &lt;http://www.opengis.net/ont/sf#&gt; .
+@prefix prov:    &lt;http://www.w3.org/ns/prov#&gt; .
+@prefix skos:    &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix rdfs:    &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix xsd:     &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+@prefix dc:      &lt;http://purl.org/dc/elements/1.1/&gt; .
+@prefix wd:      &lt;https://www.wikidata.org/entity/&gt; .
+@prefix gn:      &lt;https://www.geonames.org/&gt; .
+@prefix orcid:   &lt;https://orcid.org/&gt; .
+
+# =============================================================================
+# FUNDSTELLE
+# =============================================================================
+
+data:site_33
+    a bb5kbc:Fundstelle ;
+    dc:identifier &quot;33&quot;^^xsd:integer ;          # FID — auch URI-Basis
+    bb5kbc:hatFID &quot;33&quot;^^xsd:integer ;
+    bb5kbc:hatFundstellenID &quot;129&quot; ;
+    bb5kbc:hatKatalognummer &quot;12485&quot; ;
+    rdfs:label &quot;Friesack 4&quot;@de ;
+    skos:prefLabel &quot;Friesack 4&quot;@de ;
+    # Verwaltungsgebiete
+    bb5kbc:inGemeinde   data:gemeinde_ef3c98d9 ;
+    # Fundstellenart
+    bb5kbc:hatFundstellenart data:fundstellenart_1972902b ; # ⊂ crm:P2_has_type, ⊂ fsl:siteType
+    # Entdeckung
+    bb5kbc:wurdeEntdecktDurch data:entdeckung_1f56a08c ;
+    # Publikation
+    bb5kbc:hatPublikation     data:pub_c54b495e ;
+    # Kulturelle Zuordnung
+    bb5kbc:hatKulturelleZuordnung data:site_33_culture ;
+    # Georeferenzierung
+    bb5kbc:wurdeGeoreferenziertDurch data:site_33_activity ;   # ⊂ prov:wasGeneratedBy
+    # Geometrie
+    geo:hasGeometry     data:site_33_geom ;
+    # FSL CM properties (auf Site, nicht auf Activity)
+    bb5kbc:hatGenauigkeit &quot;0&quot;^^xsd:decimal ;    # P23 genauigkeit_m (= fsl:precision)
+    fsl:certaintyLevel  fslwb:Q23 ;             # P5 high (genauigkeit_m = 0)
+    fsl:hasLocationType fslwb:Q80 .             # P24 Findspot (fest)
+
+# =============================================================================
+# GEOMETRIE  (sf:Point)
+# =============================================================================
+
+data:site_33_geom
+    a sf:Point ;
+    geo:asWKT &quot;POINT(12.54 52.75)&quot;^^geo:wktLiteral ;
+    fsl:hasPointType fslwb:Q126 .               # P33 Representative Point (fest)
+
+# =============================================================================
+# GEOREFERENZIERUNGS-AKTIVITÄT
+# =============================================================================
+
+data:site_33_activity
+    a bb5kbc:GeoreferenzierungsAktivitaet ;
+    fsl:hasReference    &quot;Denkmaldaten / BLDAM 2021&quot; ;   # P25 quelle_georef
+    fsl:hasReference    wd:Q897952 ;                    # P31 QID_quelle_georef
+    fsl:methodUsed      data:methode_b57e2231 ;         # P7  methode
+    fsl:hasSourceType   data:quellentyp_5ae20fe0 ;      # P6  quellen_typ
+    fsl:hasSourceTypeDetail data:quellentyp_5ae20fe0 ;  # P16 quellen_typ (detail)
+    fsl:activityDesc    &quot;die Koordinaten wurden beim BLDAM angefragt und übernommen&quot; ; # P13+P15
+    fsl:georeferencingBy orcid:0000-0003-4696-2101 ;    # P14 acting person (fest)
+    prov:wasAssociatedWith orcid:0000-0003-4696-2101 .
+
+# =============================================================================
+# VERWALTUNGSGEBIETE  (mit Authority-IDs aus dem CSV-Enrichment-Lauf)
+# =============================================================================
+
+data:gemeinde_ef3c98d9
+    a bb5kbc:Gemeinde ;
+    rdfs:label &quot;Friesack&quot;@de ;
+    bb5kbc:hasExternalIdentifier wd:Q585632 ,                              # GEMEINDE_QID
+                                  gn:6550607 ,                              # GEMEINDE_GeoNames
+                                  &lt;https://www.openstreetmap.org/relation/1342247&gt; ;  # GEMEINDE_OSM_Relation
+    bb5kbc:inKreis data:kreis_d4d0a03b .
+    # GEMEINDE_TGN / GEMEINDE_IDAI für Friesack nicht in der CSV gefüllt
+
+data:kreis_d4d0a03b
+    a bb5kbc:Kreis ;
+    rdfs:label &quot;Havelland&quot;@de ;
+    bb5kbc:hasExternalIdentifier wd:Q6139 ;                                # KREIS_QID
+    bb5kbc:inBundesland data:bundesland_2ddb2d82 .
+    # KREIS_GeoNames / TGN / IDAI / OSM_Relation für Havelland nicht in der CSV gefüllt
+
+data:bundesland_2ddb2d82
+    a bb5kbc:Bundesland ;
+    rdfs:label &quot;Brandenburg&quot;@de ;
+    bb5kbc:hasExternalIdentifier wd:Q1208 ,                                # BUNDESLAND_QID
+                                  gn:2945356 ,                              # BUNDESLAND_GeoNames
+                                  &lt;http://vocab.getty.edu/tgn/7000096&gt; ,    # BUNDESLAND_TGN
+                                  &lt;http://gazetteer.dainst.org/place/2048409&gt; ,  # BUNDESLAND_IDAI
+                                  &lt;https://www.openstreetmap.org/relation/62504&gt; ;  # BUNDESLAND_OSM_Relation
+    bb5kbc:inLand data:land_3c2f8b8c .
+
+data:land_3c2f8b8c
+    a bb5kbc:Land ;
+    rdfs:label &quot;Deutschland&quot;@de ;
+    bb5kbc:hasExternalIdentifier wd:Q183 ,                                 # LAND_QID
+                                  gn:2921044 ,                              # LAND_GeoNames
+                                  &lt;http://vocab.getty.edu/tgn/7000084&gt; ,    # LAND_TGN
+                                  &lt;http://gazetteer.dainst.org/place/2044274&gt; ,  # LAND_IDAI
+                                  &lt;https://www.openstreetmap.org/relation/51477&gt; .  # LAND_OSM_Relation
+
+# =============================================================================
+# KULTURELLE ZUORDNUNG + KULTURGRUPPE
+# =============================================================================
+
+data:site_33_culture
+    a bb5kbc:KulturelleZuordnung ;
+    bb5kbc:hatKulturgruppe data:kultur_a36e9d6d ;        # geteilt mit allen FBG-Sites
+    bb5kbc:hatDatierung    data:site_33_dating .         # FID-spezifisch
+
+data:kultur_a36e9d6d
+    a bb5kbc:Kulturgruppe ;
+    rdfs:label &quot;FBG&quot;@de .
+    # perio.do (Kulturgruppe-Ebene) → noch leer ⏳
+
+# =============================================================================
+# DATIERUNG  (echte Werte aus CSV: -4550 bis -3900, 14C-Datierung)
+# =============================================================================
+
+data:site_33_dating
+    a bb5kbc:Datierung , time:Interval , crm:E52_Time-Span ;
+    # Start / Ende als Integer (BCE = negativ)
+    bb5kbc:datierungStart &quot;-4550&quot;^^xsd:integer ;
+    bb5kbc:datierungEnd   &quot;-3900&quot;^^xsd:integer ;
+    # Datierungsmethode → 14C (Q173412)
+    bb5kbc:datierungMethode data:datmethode_98fc5e34 ;
+    # Unsicherheits-Beschreibungen (Freitext)
+    bb5kbc:datierungSicherheitStart &quot;+ / - 100 years&quot; ;
+    bb5kbc:datierungSicherheitEnd   &quot;+ / - 100 years&quot; ;
+    bb5kbc:datierungSicherheitRange &quot;medium certainty, some 14C dates available&quot; .
+    # dating_perio.do für FID=33 leer; bei FID=1 z.B.:
+    #   skos:relatedMatch &lt;http://n2t.net/ark:/99152/p0wctqtnkjq&gt;
+
+data:datmethode_98fc5e34
+    a bb5kbc:DatierungsMethodeType ;
+    rdfs:label &quot;Radiokarbondatierung&quot;@de ;
+    bb5kbc:hasExternalIdentifier wd:Q173412 .
+
+# =============================================================================
+# ENTDECKUNG + ENTDECKUNGSART
+# =============================================================================
+
+data:entdeckung_1f56a08c
+    a bb5kbc:Entdeckung ;
+    rdfs:label &quot;Ausgrabung&quot;@de ;
+    bb5kbc:hatEntdeckungsart data:entdeckungsart_2b73226f .   # ⊂ crm:P2_has_type
+
+data:entdeckungsart_2b73226f
+    a bb5kbc:EntdeckungsartType ;
+    rdfs:label &quot;Ausgrabung&quot;@de ;
+    bb5kbc:hasExternalIdentifier wd:Q959782 .
+
+# =============================================================================
+# FUNDSTELLENART
+# =============================================================================
+
+data:fundstellenart_1972902b
+    a bb5kbc:FundstellenartType ;
+    rdfs:label &quot;Siedlung&quot;@de ;
+    bb5kbc:hasExternalIdentifier wd:Q486972 .
+
+# =============================================================================
+# PUBLIKATION
+# =============================================================================
+
+data:pub_c54b495e
+    a bb5kbc:Publikation ;
+    rdfs:label &quot;Wetzel/Beran 2023&quot;@de ;
+    bb5kbc:hasExternalIdentifier wd:Q139304633 .   # gefüllt durch enrich_qids.py
+
+# =============================================================================
+# GEOREFERENZIERUNGS-TYPEN (dedupliziert, geteilt mit anderen Fundstellen)
+# =============================================================================
+
+data:methode_b57e2231
+    a fsl:MethodType ;
+    rdfs:label &quot;Übernahme aus externer Datenbank&quot;@de .
+
+data:quellentyp_5ae20fe0
+    a fsl:SourceType ;
+    rdfs:label &quot;Strukturen des Landesdenkmalamts&quot;@de .
+
+# =============================================================================
+# SCHERBE  (FID=33 hat keine; Beispiel aus FID=80 Seelow 20)
+# =============================================================================
+
+# data:site_80
+#     bb5kbc:hatScherbe data:sherd_&lt;hash&gt; , data:sherd_&lt;hash&gt; .
+#
+# data:sherd_&lt;hash&gt;
+#     a bb5kbc:Scherbe ;
+#     bb5kbc:hasExternalIdentifier wd:Q139477253 .</code></pre>
+<hr />
+<h2 id="beispiel-ttl-unsicherheits-modellierung--werte">Beispiel-TTL —
+Unsicherheits-Modellierung (<code>?</code>-Werte)</h2>
+<p>Werte mit Fragezeichen — <code>kultur = "SBK?"</code>,
+<code>fundstellenart = "Grab?"</code> — werden mit
+<code>fsl:certaintyDesc "uncertain"@en</code> modelliert. Die
+Ankerstelle unterscheidet sich je nach Domäne:</p>
+<ul>
+<li><strong>Kulturgruppe</strong>: <code>certaintyDesc</code> an der
+<strong><code>KulturelleZuordnung</code></strong> (Verknüpfungs- knoten
+zwischen Site und Kulturgruppe), nicht an der Kulturgruppe selbst.
+Begründung: Die Kulturgruppe (<code>SBK?</code> als Konzept) ist ein
+eigener Knoten und wird über alle Sites hinweg dedupliziert. Die
+Unsicherheit betrifft <em>diese Zuweisung</em>, nicht das Konzept.</li>
+<li><strong>Fundstellenart</strong>: Eigener,
+<strong>nicht-deduplizierter</strong> Type-Knoten pro Site (URI-Salt mit
+FID), <code>certaintyDesc</code> direkt am Type-Knoten. Begründung: Hier
+gibt es keinen Verknüpfungs-Zwischenknoten, also wird die Unsicherheit
+nur per FID-Salt-Trennung von der “sicheren” Variante getrennt.</li>
+</ul>
+<pre class="turtle"><code># --- SBK? (Kultur unsicher) — FID=81 ---
+data:site_81
+    a bb5kbc:Fundstelle ;
+    bb5kbc:hatKulturelleZuordnung data:site_81_culture .
+
+data:site_81_culture
+    a bb5kbc:KulturelleZuordnung ;
+    fsl:certaintyDesc &quot;uncertain&quot;@en ;          # ← an der Verknüpfung
+    bb5kbc:hatKulturgruppe data:kultur_7a001224 .
+
+data:kultur_7a001224
+    a bb5kbc:Kulturgruppe ;
+    rdfs:label &quot;SBK?&quot;@de .                      # Label behält das `?`
+
+# --- Grab? (Fundstellenart unsicher) — FID=54 ---
+data:site_54
+    a bb5kbc:Fundstelle ;
+    bb5kbc:hatFundstellenart data:fundstellenart_e5b4c377 .   # FID-gesalzener Hash
+
+data:fundstellenart_e5b4c377
+    a bb5kbc:FundstellenartType ;
+    rdfs:label &quot;Grab?&quot;@de ;
+    fsl:certaintyDesc &quot;uncertain&quot;@en ;          # ← am Type-Knoten selbst
+    bb5kbc:hasExternalIdentifier wd:Q173387 .   # Q173387 = grave (gleiche QID wie für sicheres &quot;Grab&quot;)</code></pre>
+<p>Der “sichere” <code>Grab</code>-Knoten
+(<code>data:fundstellenart_b635ceb0</code>) bleibt deduplizierter
+Sammelknoten für alle Sites mit <code>fundstellenart = "Grab"</code> —
+ohne <code>certaintyDesc</code>.</p>
+</body>
+</html>

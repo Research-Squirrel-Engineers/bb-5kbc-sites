@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>validation_report</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css" />
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">validation_report</h1>
+</header>
+<h1 id="bb5kbc-lod-validation-report">bb5kbc LOD — Validation
+Report</h1>
+<ul>
+<li>Bundle: <code>bb5kbc-bundle.ttl</code> (28528 triples)</li>
+<li>CSV: <code>fst_wgs84.csv</code> (540 rows × 64 cols)</li>
+<li>Doku: <code>bb5kbc-csv-mapping.md</code></li>
+</ul>
+<p><strong>Layers checked</strong></p>
+<ol type="1">
+<li>Strukturelle Konsistenz (SHACL)</li>
+<li>CSV ↔︎ RDF Vollständigkeit</li>
+<li>Ontologie-Vollständigkeit</li>
+<li>CRM-Verankerung 4b. Doku-Abgleich (csv-mapping.md ↔︎ Ontologie)</li>
+</ol>
+<h2 id="zusammenfassung">Zusammenfassung</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Sektion</th>
+<th>Ergebnis</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1. Strukturelle Konsistenz (SHACL)</td>
+<td>✅ <strong>PASS</strong></td>
+</tr>
+<tr class="even">
+<td>2. CSV ↔︎ RDF Vollständigkeit</td>
+<td>✅ <strong>PASS</strong></td>
+</tr>
+<tr class="odd">
+<td>3. Ontologie-Vollständigkeit</td>
+<td>✅ <strong>PASS</strong></td>
+</tr>
+<tr class="even">
+<td>4. CRM-Verankerung</td>
+<td>✅ <strong>PASS</strong></td>
+</tr>
+<tr class="odd">
+<td>4b. Doku-Abgleich</td>
+<td>✅ <strong>PASS</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="strukturelle-konsistenz-shacl">1. Strukturelle Konsistenz
+(SHACL)</h2>
+<ul>
+<li>✅ <strong>PASS</strong> Daten-Graph: <code>sh:conforms true</code>,
+0 Validation Results.</li>
+<li>✅ <strong>PASS</strong> Bundle-Graph:
+<code>sh:conforms true</code>, 0 Validation Results.</li>
+</ul>
+<hr />
+<h2 id="csv-rdf-vollständigkeit">2. CSV ↔︎ RDF Vollständigkeit</h2>
+<p>Pro CSV-Spalte: Anzahl nicht-leerer Werte vs. Anzahl
+korrespondierender Tripel im Bundle. Kompound-Werte (Siedlung+Grab) und
+Sonderfälle stehen explizit als <em>skip</em> mit Erklärung — diese
+Spalten werden nicht automatisch gegengeprüft.</p>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>#</th>
+<th>CSV-Spalte</th>
+<th>Nicht-leer</th>
+<th>Erwartung</th>
+<th>Gefunden</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td><code>quelle_georef</code></td>
+<td>540</td>
+<td>(skip) fsl:hasReference Literal on Activity</td>
+<td>—</td>
+<td>— <strong>SKIP</strong></td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td><code>QID_quelle_georef</code></td>
+<td>540</td>
+<td>(skip) fsl:hasReference URI on Activity</td>
+<td>—</td>
+<td>— <strong>SKIP</strong></td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td><code>katalognr</code></td>
+<td>488</td>
+<td>je 1 Literal <code>bb5kbc:hatKatalognummer</code> an Fundstelle</td>
+<td>488</td>
+<td>✅ <strong>PASS</strong></td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td><code>fst_id</code></td>
+<td>540</td>
+<td>je 1 Literal <code>bb5kbc:hatFundstellenID</code> an Fundstelle</td>
+<td>540</td>
+<td>✅ <strong>PASS</strong></td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td><code>fst_name</code></td>
+<td>540</td>
+<td>je 1 Literal <code>rdfs:label</code> an Fundstelle</td>
+<td>540</td>
+<td>✅ <strong>PASS</strong></td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td><code>gemeinde</code></td>
+<td>540</td>
+<td>je 1 <code>bb5kbc:inGemeinde</code> von Fundstelle</td>
+<td>540</td>
+<td>✅ <strong>PASS</strong></td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td><code>GEMEINDE_QID</code></td>
+<td>540 (in 318 dist. gemeinde)</td>
+<td>je 1 <code>hasExternalIdentifier</code> (entity)</td>
+<td>318</td>
+<td>✅ <strong>PASS</strong></td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td><code>GEMEINDE_GeoNames</code></td>
+<td>327 (in 169 dist. gemeinde)</td>
+<td>je 1 <code>hasExternalIdentifier</code> (www.geonames.org)</td>
+<td>169</td>
+<td>✅ <strong>PASS</strong></td>
+</tr>
+<tr class="odd">
+<td>9</td>
+<td><code>GEMEINDE_TGN</code></td>
+<td>63 (in 42 dist. gemeinde)</td>
+<td>je 1 <code>hasExternalIdentifier</code> (tgn)</td>
+<td>42</td>
+<td>✅ <strong>PASS</strong></td>
+</tr>
+<tr class="even">
+<td>10</td>
+<td><code>GEMEINDE_IDAI</code></td>
+<td>2 (in 2 dist. gemeinde)</td>
+<td>je 1 <code>hasExternalIdentifier</code> (place)</td>
+<td>2</td>
+<td>✅ <strong>PASS</strong></td>
+</tr>
+<tr class="odd">
+<td>11</td>
+<td><code>GEMEINDE_OSM_Relation</code></td>
+<td>330 (in 172 dist. gemeinde)</td>
+<td>je 1 <code>hasExternalIdentifier</code> (relation)</td>
+<td>172</td>
+<td>✅ <strong>PASS</strong></td>
+</tr>
+<tr class="even">
+<td>12</td>
+<td><code>GEMEINDE_matchLabel</code></td>
+<td>540</td>
+<td>0 Tripel (audit-only, nicht im RDF)</td>
+<td>— (Skript erzeugt nichts)</td>
+<td>✅ <strong>PASS</strong></td>
+</tr>
+<tr class="odd">
+<td>13</td>
+<td><code>GEMEINDE_matchScore</code></td>
+<td>540</td>
+<td>0 Tripel (audit-only, nicht im RDF)</td>
+<td>— (Skript erzeugt nichts)</td>
+<td>✅ <strong>PASS</strong></td>
+</tr>
+<tr class="even">
+<td>14</td>
+<td><code>GEMEINDE_matchReason</code></td>
+<td>540</td>
+<td>1 Literal <code>bb5kbc:wikidataMatchDescription</code> je distinktem
+Type-Knoten der Ebene</td>
+<td>— (siehe Sektion 3)</td>
+<td>✅ <strong>PASS</strong></td>
+</tr>
+<tr class="odd">
+<td>15</td>
+<td><code>kreis</code></td>
+<td>540</td>
+<td>(skip) indirect: site → gemeinde → kreis</td>
+<td>—</td>
+<td>— <strong>SKIP</strong></td>
+</tr>
+<tr class="even">
+<td>16</td>
+<td><code>KREIS_QID</code></td>
+<td>540 (in 82 dist. kreis)</td>
+<td>je 1 <code>hasExternalIdentifier</code> (entity)</td>
+<td>82</td>
+<td>✅ <strong>PASS</strong></td>
+</tr>
+<tr class="odd">
+<td>17</td>
+<td><code>KREIS_GeoNames</code></td>
+<td>327 (in 55 dist. kreis)</td>
+<td>je 1 <code>hasExternalIdentifier</code> (www.geonames.org)</td>
+<td>55</td>
+<td>✅ <strong>PASS</strong></td>
+</tr>
+<tr class="even">
+<td>18</td>
+<td><code>KREIS_TGN</code></td>
+<td>153 (in 13 dist. kreis)</td>
+<td>je 1 <code>hasExternalIdentifier</code> (tgn)</td>
+<td>13</td>
+<td>✅ <strong>PASS</strong></td>
+</tr>
+<tr class="odd">
+<td>19</td>
+<td><code>KREIS_IDAI</code></td>
+<td>4 (in 1 dist. kreis)</td>
+<td>je 1 <code>hasExternalIdentifier</code> (place)</td>
+<td>1</td>
+<td>✅ <strong>PASS</strong></td>
+</tr>
+<tr class="even">
+<td>20</td>
+<td><code>KREIS_OSM_Relation</code></td>
+<td>327 (in 55 dist. kreis)</td>
+<td>je 1 <code>hasExternalIdentifier</code> (relation)</td>
+<td>55</td>
+<td>✅ <strong>PASS</strong></td>
+</tr>
+<tr class="odd">
+<td>21</td>
+<td><code>KREIS_matchLabel</code></td>
+<td>540</td>
+<td>0 Tripel (audit-only, nicht im RDF)</td>
+<td>— (Skript erzeugt nichts)</td>
+<td>✅ <strong>PASS</strong></td>
+</tr>
+<tr class="even">
+<td>22</td>
+<td><code>KREIS_matchScore</code></td>
+<td>540</td>
+<td>0 Tripel (audit-only, nicht im RDF)</td>
+<td>— (Skript erzeugt nichts)</td>
+<td>✅ <strong>PASS</strong></td>
+</tr>
+<tr class="odd">
+<td>23</td>
+<td><code>KREIS_matchReason</code></td>
+<td>540</td>
+<td>1 Literal <code>bb5kbc:wikidataMatchDescription</code> je distinktem
+Type-Knoten der Ebene</td>
+<td>— (siehe Sektion 3)</td>
+<td>✅ <strong>PASS</strong></td>
+</tr>
+<tr class="even">
+<td>24</td>
+<td><code>bundesland</code></td>
+<td>540</td>
+<td>(skip) indirect: … → kreis → bundesland</td>
+<td>—</td>
+<td>— <strong>SKIP</strong></td>
+</tr>
+<tr class="odd">
+<td>25</td>
+<td><code>BUNDESLAND_QID</code></td>
+<td>540 (in 15 dist. bundesland)</td>
+<td>je 1 <code>hasExternalIdentifier</code> (entity)</td>
+<td>15</td>
+<td>✅ <strong>PASS</strong></td>
+</tr>
+<tr class="even">
+<td>26</td>
+<td><code>BUNDESLAND_GeoNames</code></td>
+<td>540 (in 15 dist. bundesland)</td>
+<td>je 1 <code>hasExternalIdentifier</code> (www.geonames.org)</td>
+<td>15</td>
+<td>✅ <strong>PASS</strong></td>
+</tr>
+<tr class="odd">
+<td>27</td>
+<td><code>BUNDESLAND_TGN</code></td>
+<td>374 (in 8 dist. bundesland)</td>
+<td>je 1 <code>hasExternalIdentifier</code> (tgn)</td>
+<td>8</td>
+<td>✅ <strong>PASS</strong></td>
+</tr>
+<tr class="even">
+<td>28</td>
+<td><code>BUNDESLAND_IDAI</code></td>
+<td>362 (in 5 dist. bundesland)</td>
+<td>je 1 <code>hasExternalIdentifier</code> (place)</td>
+<td>5</td>
+<td>✅ <strong>PASS</strong></td>
+</tr>
+<tr class="odd">
+<td>29</td>
+<td><code>BUNDESLAND_OSM_Relation</code></td>
+<td>540 (in 15 dist. bundesland)</td>
+<td>je 1 <code>hasExternalIdentifier</code> (relation)</td>
+<td>15</td>
+<td>✅ <strong>PASS</strong></td>
+</tr>
+<tr class="even">
+<td>30</td>
+<td><code>BUNDESLAND_matchLabel</code></td>
+<td>540</td>
+<td>0 Tripel (audit-only, nicht im RDF)</td>
+<td>— (Skript erzeugt nichts)</td>
+<td>✅ <strong>PASS</strong></td>
+</tr>
+<tr class="odd">
+<td>31</td>
+<td><code>BUNDESLAND_matchScore</code></td>
+<td>540</td>
+<td>0 Tripel (audit-only, nicht im RDF)</td>
+<td>— (Skript erzeugt nichts)</td>
+<td>✅ <strong>PASS</strong></td>
+</tr>
+<tr class="even">
+<td>32</td>
+<td><code>BUNDESLAND_matchReason</code></td>
+<td>540</td>
+<td>1 Literal <code>bb5kbc:wikidataMatchDescription</code> je distinktem
+Type-Knoten der Ebene</td>
+<td>— (siehe Sektion 3)</td>
+<td>✅ <strong>PASS</strong></td>
+</tr>
+<tr class="odd">
+<td>33</td>
+<td><code>land</code></td>
+<td>528</td>
+<td>(skip) indirect: … → bundesland → land</td>
+<td>—</td>
+<td>— <strong>SKIP</strong></td>
+</tr>
+<tr class="even">
+<td>34</td>
+<td><code>LAND_QID</code></td>
+<td>540 (in 2 dist. land)</td>
+<td>je 1 <code>hasExternalIdentifier</code> (entity)</td>
+<td>2</td>
+<td>✅ <strong>PASS</strong></td>
+</tr>
+<tr class="odd">
+<td>35</td>
+<td><code>LAND_GeoNames</code></td>
+<td>540 (in 2 dist. land)</td>
+<td>je 1 <code>hasExternalIdentifier</code> (www.geonames.org)</td>
+<td>2</td>
+<td>✅ <strong>PASS</strong></td>
+</tr>
+<tr class="even">
+<td>36</td>
+<td><code>LAND_TGN</code></td>
+<td>540 (in 2 dist. land)</td>
+<td>je 1 <code>hasExternalIdentifier</code> (tgn)</td>
+<td>2</td>
+<td>✅ <strong>PASS</strong></td>
+</tr>
+<tr class="odd">
+<td>37</td>
+<td><code>LAND_IDAI</code></td>
+<td>540 (in 2 dist. land)</td>
+<td>je 1 <code>hasExternalIdentifier</code> (place)</td>
+<td>2</td>
+<td>✅ <strong>PASS</strong></td>
+</tr>
+<tr class="even">
+<td>38</td>
+<td><code>LAND_OSM_Relation</code></td>
+<td>540 (in 2 dist. land)</td>
+<td>je 1 <code>hasExternalIdentifier</code> (relation)</td>
+<td>2</td>
+<td>✅ <strong>PASS</strong></td>
+</tr>
+<tr class="odd">
+<td>39</td>
+<td><code>LAND_matchLabel</code></td>
+<td>540</td>
+<td>0 Tripel (audit-only, nicht im RDF)</td>
+<td>— (Skript erzeugt nichts)</td>
+<td>✅ <strong>PASS</strong></td>
+</tr>
+<tr class="even">
+<td>40</td>
+<td><code>LAND_matchScore</code></td>
+<td>540</td>
+<td>0 Tripel (audit-only, nicht im RDF)</td>
+<td>— (Skript erzeugt nichts)</td>
+<td>✅ <strong>PASS</strong></td>
+</tr>
+<tr class="odd">
+<td>41</td>
+<td><code>LAND_matchReason</code></td>
+<td>540</td>
+<td>1 Literal <code>bb5kbc:wikidataMatchDescription</code> je distinktem
+Type-Knoten der Ebene</td>
+<td>— (siehe Sektion 3)</td>
+<td>✅ <strong>PASS</strong></td>
+</tr>
+<tr class="even">
+<td>42</td>
+<td><code>kultur</code></td>
+<td>540</td>
+<td>je 1 <code>bb5kbc:hatKulturelleZuordnung</code> von Fundstelle</td>
+<td>540</td>
+<td>✅ <strong>PASS</strong></td>
+</tr>
+<tr class="odd">
+<td>43</td>
+<td><code>entdeckung</code></td>
+<td>432</td>
+<td>je 1 <code>bb5kbc:wurdeEntdecktDurch</code> von Fundstelle</td>
+<td>432</td>
+<td>✅ <strong>PASS</strong></td>
+</tr>
+<tr class="even">
+<td>44</td>
+<td><code>QID_entdeckung</code></td>
+<td>382</td>
+<td>(skip) ext-id on EntdeckungsartType (deduplicated)</td>
+<td>—</td>
+<td>— <strong>SKIP</strong></td>
+</tr>
+<tr class="odd">
+<td>45</td>
+<td><code>publikation_arch</code></td>
+<td>271</td>
+<td>je 1 <code>bb5kbc:hatPublikation</code> von Fundstelle</td>
+<td>271</td>
+<td>✅ <strong>PASS</strong></td>
+</tr>
+<tr class="even">
+<td>46</td>
+<td><code>QID_publikation</code></td>
+<td>271</td>
+<td>(skip) ext-id on Publikation (one per non-empty cell)</td>
+<td>—</td>
+<td>— <strong>SKIP</strong></td>
+</tr>
+<tr class="odd">
+<td>47</td>
+<td><code>fundstellenart</code></td>
+<td>540</td>
+<td>(skip) 1+ triples per site (compound + uncertainty splits)</td>
+<td>—</td>
+<td>— <strong>SKIP</strong></td>
+</tr>
+<tr class="even">
+<td>48</td>
+<td><code>QID_fundstellenart</code></td>
+<td>540</td>
+<td>(skip) ext-id on FundstellenartType (deduplicated)</td>
+<td>—</td>
+<td>— <strong>SKIP</strong></td>
+</tr>
+<tr class="odd">
+<td>49</td>
+<td><code>genauigkeit_m</code></td>
+<td>540</td>
+<td>je 1 Literal <code>bb5kbc:hatGenauigkeit</code> an Fundstelle</td>
+<td>540</td>
+<td>✅ <strong>PASS</strong></td>
+</tr>
+<tr class="even">
+<td>50</td>
+<td><code>FID</code></td>
+<td>540</td>
+<td>je 1 Literal <code>bb5kbc:hatFID</code> an Fundstelle</td>
+<td>540</td>
+<td>✅ <strong>PASS</strong></td>
+</tr>
+<tr class="odd">
+<td>51</td>
+<td><code>methode</code></td>
+<td>540</td>
+<td>(skip) fsl:methodUsed → fsl:MethodType (deduplicated)</td>
+<td>—</td>
+<td>— <strong>SKIP</strong></td>
+</tr>
+<tr class="even">
+<td>52</td>
+<td><code>quellen_typ</code></td>
+<td>540</td>
+<td>(skip) fsl:hasSourceType → fsl:SourceType (deduplicated)</td>
+<td>—</td>
+<td>— <strong>SKIP</strong></td>
+</tr>
+<tr class="odd">
+<td>53</td>
+<td><code>methodenbeschr</code></td>
+<td>540</td>
+<td>(skip) fsl:activityDesc literal on Activity</td>
+<td>—</td>
+<td>— <strong>SKIP</strong></td>
+</tr>
+<tr class="even">
+<td>54</td>
+<td><code>wgs84_x</code></td>
+<td>540</td>
+<td>(skip) WKT POINT(x y) on sf:Point — combined with wgs84_y</td>
+<td>—</td>
+<td>— <strong>SKIP</strong></td>
+</tr>
+<tr class="odd">
+<td>55</td>
+<td><code>wgs84_y</code></td>
+<td>540</td>
+<td>(skip) see wgs84_x</td>
+<td>—</td>
+<td>— <strong>SKIP</strong></td>
+</tr>
+<tr class="even">
+<td>56</td>
+<td><code>dating_start</code></td>
+<td>540</td>
+<td>je 1 Literal <code>bb5kbc:datierungStart</code> an Datierung</td>
+<td>540</td>
+<td>✅ <strong>PASS</strong></td>
+</tr>
+<tr class="odd">
+<td>57</td>
+<td><code>dating_certainty_start</code></td>
+<td>540</td>
+<td>je 1 Literal <code>bb5kbc:datierungSicherheitStart</code> an
+Datierung</td>
+<td>540</td>
+<td>✅ <strong>PASS</strong></td>
+</tr>
+<tr class="even">
+<td>58</td>
+<td><code>dating_end</code></td>
+<td>540</td>
+<td>je 1 Literal <code>bb5kbc:datierungEnd</code> an Datierung</td>
+<td>540</td>
+<td>✅ <strong>PASS</strong></td>
+</tr>
+<tr class="odd">
+<td>59</td>
+<td><code>dating_certainty_end</code></td>
+<td>540</td>
+<td>je 1 Literal <code>bb5kbc:datierungSicherheitEnd</code> an
+Datierung</td>
+<td>540</td>
+<td>✅ <strong>PASS</strong></td>
+</tr>
+<tr class="even">
+<td>60</td>
+<td><code>dating_method</code></td>
+<td>472</td>
+<td>(skip) Wikidata QID on DatierungsMethodeType (deduplicated)</td>
+<td>—</td>
+<td>— <strong>SKIP</strong></td>
+</tr>
+<tr class="odd">
+<td>61</td>
+<td><code>dating_certainty_range</code></td>
+<td>540</td>
+<td>je 1 Literal <code>bb5kbc:datierungSicherheitRange</code> an
+Datierung</td>
+<td>540</td>
+<td>✅ <strong>PASS</strong></td>
+</tr>
+<tr class="even">
+<td>62</td>
+<td><code>dating_perio.do</code></td>
+<td>501</td>
+<td>(skip) skos:{exact</td>
+<td>close</td>
+<td>related}Match on Datierung</td>
+</tr>
+<tr class="odd">
+<td>63</td>
+<td><code>dating_perio.do_match</code></td>
+<td>501</td>
+<td>(skip) controls predicate, no own triple</td>
+<td>—</td>
+<td>— <strong>SKIP</strong></td>
+</tr>
+<tr class="even">
+<td>64</td>
+<td><code>sherd</code></td>
+<td>4</td>
+<td>(skip) 0..n bb5kbc:hatScherbe per site</td>
+<td>—</td>
+<td>— <strong>SKIP</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="ontologie-vollständigkeit">3. Ontologie-Vollständigkeit</h2>
+<p>Nimmt alle Klassen und Properties, die im Datengraph
+<em>verwendet</em> werden, und prüft ob sie in der Ontologie
+<em>deklariert</em> sind. Externe Vokabulare (CRM, FSL, GeoSPARQL,
+PROV-O, SKOS, …) werden ausgeklammert — geprüft wird nur der
+<code>bb5kbc:</code>-Namespace.</p>
+<h3 id="klassen">Klassen</h3>
+<ul>
+<li>Verwendet: <strong>16</strong>, deklariert: <strong>16</strong></li>
+<li>✅ <strong>PASS</strong> Jede in den Daten verwendete
+<code>bb5kbc:</code>-Klasse ist in der Ontologie deklariert.</li>
+</ul>
+<h3 id="properties">Properties</h3>
+<ul>
+<li>Verwendet: <strong>26</strong>, deklariert: <strong>26</strong></li>
+<li>✅ <strong>PASS</strong> Jede in den Daten verwendete
+<code>bb5kbc:</code>-Property ist in der Ontologie deklariert.</li>
+</ul>
+<hr />
+<h2 id="crm-verankerung">4. CRM-Verankerung</h2>
+<p>Für jede <code>bb5kbc:</code>-Klasse: gibt es einen Pfad über
+<code>rdfs:subClassOf</code> zu einem <code>crm:</code>-Knoten? Die
+angezeigte Kette ist eine repräsentative Spur (BFS, CRM-bevorzugt) — bei
+Multi-Inheritance kann es weitere Eltern geben, die in Sektion 4b
+vollständig gegen die Doku verglichen werden.</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Klasse</th>
+<th>rdfs:subClassOf-Kette (eine Spur)</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>bb5kbc:Bundesland</code></td>
+<td>bb5kbc:Bundesland → crm:E53_Place → crm:E1_CRM_Entity</td>
+<td>✅ <strong>PASS</strong></td>
+</tr>
+<tr class="even">
+<td><code>bb5kbc:Datierung</code></td>
+<td>bb5kbc:Datierung → crm:E52_Time-Span → crm:E1_CRM_Entity</td>
+<td>✅ <strong>PASS</strong></td>
+</tr>
+<tr class="odd">
+<td><code>bb5kbc:DatierungsMethodeType</code></td>
+<td>bb5kbc:DatierungsMethodeType → crm:E55_Type → crm:E1_CRM_Entity</td>
+<td>✅ <strong>PASS</strong></td>
+</tr>
+<tr class="even">
+<td><code>bb5kbc:Entdeckung</code></td>
+<td>bb5kbc:Entdeckung → crmsci:S19_Encounter_Event →
+crmsci:S4_Observation → crm:E13_Attribute_Assignment → crm:E7_Activity →
+crm:E5_Event → crm:E4_Period → crm:E2_Temporal_Entity →
+crm:E1_CRM_Entity</td>
+<td>✅ <strong>PASS</strong></td>
+</tr>
+<tr class="odd">
+<td><code>bb5kbc:EntdeckungsartType</code></td>
+<td>bb5kbc:EntdeckungsartType → crm:E55_Type → crm:E1_CRM_Entity</td>
+<td>✅ <strong>PASS</strong></td>
+</tr>
+<tr class="even">
+<td><code>bb5kbc:Fundstelle</code></td>
+<td>bb5kbc:Fundstelle → crm:E27_Site → crm:E26_Physical_Feature →
+crm:E18_Physical_Thing → crm:E72_Legal_Object → crm:E70_Thing →
+crm:E1_CRM_Entity</td>
+<td>✅ <strong>PASS</strong></td>
+</tr>
+<tr class="odd">
+<td><code>bb5kbc:FundstellenartType</code></td>
+<td>bb5kbc:FundstellenartType → lado:PlaceType → crm:E55_Type →
+crm:E1_CRM_Entity</td>
+<td>✅ <strong>PASS</strong></td>
+</tr>
+<tr class="even">
+<td><code>bb5kbc:Gemeinde</code></td>
+<td>bb5kbc:Gemeinde → crm:E53_Place → crm:E1_CRM_Entity</td>
+<td>✅ <strong>PASS</strong></td>
+</tr>
+<tr class="odd">
+<td><code>bb5kbc:GeoreferenzierungsAktivitaet</code></td>
+<td>bb5kbc:GeoreferenzierungsAktivitaet → crm:E13_Attribute_Assignment →
+crm:E7_Activity → crm:E5_Event → crm:E4_Period → crm:E2_Temporal_Entity
+→ crm:E1_CRM_Entity</td>
+<td>✅ <strong>PASS</strong></td>
+</tr>
+<tr class="even">
+<td><code>bb5kbc:Kreis</code></td>
+<td>bb5kbc:Kreis → crm:E53_Place → crm:E1_CRM_Entity</td>
+<td>✅ <strong>PASS</strong></td>
+</tr>
+<tr class="odd">
+<td><code>bb5kbc:KulturelleZuordnung</code></td>
+<td>bb5kbc:KulturelleZuordnung → lado:SpaceTimeItem →
+crm:E92_Spacetime_Volume → crm:E1_CRM_Entity</td>
+<td>✅ <strong>PASS</strong></td>
+</tr>
+<tr class="even">
+<td><code>bb5kbc:Kulturgruppe</code></td>
+<td>bb5kbc:Kulturgruppe → crm:E4_Period → crm:E2_Temporal_Entity →
+crm:E1_CRM_Entity</td>
+<td>✅ <strong>PASS</strong></td>
+</tr>
+<tr class="odd">
+<td><code>bb5kbc:Land</code></td>
+<td>bb5kbc:Land → crm:E53_Place → crm:E1_CRM_Entity</td>
+<td>✅ <strong>PASS</strong></td>
+</tr>
+<tr class="even">
+<td><code>bb5kbc:Publikation</code></td>
+<td>bb5kbc:Publikation → crm:E32_Authority_Document →
+crm:E73_Information_Object → crm:E70_Thing → crm:E1_CRM_Entity</td>
+<td>✅ <strong>PASS</strong></td>
+</tr>
+<tr class="odd">
+<td><code>bb5kbc:Scherbe</code></td>
+<td>bb5kbc:Scherbe → crm:E22_Human-Made_Object → crm:E18_Physical_Thing
+→ crm:E72_Legal_Object → crm:E70_Thing → crm:E1_CRM_Entity</td>
+<td>✅ <strong>PASS</strong></td>
+</tr>
+<tr class="even">
+<td><code>bb5kbc:externalIdentifierType</code></td>
+<td>bb5kbc:externalIdentifierType → crm:E55_Type →
+crm:E1_CRM_Entity</td>
+<td>✅ <strong>PASS</strong></td>
+</tr>
+</tbody>
+</table>
+<p>✅ <strong>PASS</strong> Alle 16 <code>bb5kbc:</code>-Klassen sind
+über <code>rdfs:subClassOf</code> an einen CRM-Knoten verankert.</p>
+<hr />
+<h2 id="b.-doku-abgleich-csv-mapping.md-ontologie">4b. Doku-Abgleich
+(csv-mapping.md ↔︎ Ontologie)</h2>
+<p>Vergleicht die handschriftliche Vererbungsketten-Tabelle in
+<code>bb5kbc-csv-mapping.md</code> (Sektion <em>Vererbungsketten</em>)
+mit den aus der Ontologie berechneten <strong>vollständigen</strong>
+Vorfahren-Mengen (Multi-Inheritance: alle direkten Eltern und ihre
+transitive Hülle). Vergleichsmodus: Mengenvergleich, Reihenfolge
+irrelevant, <code>crm:E1</code> ≡ <code>crm:E1_CRM_Entity</code>. Drift
+bedeutet: Doku und Modellierung sind asynchron.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Klasse</th>
+<th>nur in Doku</th>
+<th>nur in Ontologie</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>bb5kbc:Bundesland</code></td>
+<td>—</td>
+<td>—</td>
+<td>✅ <strong>PASS</strong></td>
+</tr>
+<tr class="even">
+<td><code>bb5kbc:Datierung</code></td>
+<td>—</td>
+<td>—</td>
+<td>✅ <strong>PASS</strong></td>
+</tr>
+<tr class="odd">
+<td><code>bb5kbc:DatierungsMethodeType</code></td>
+<td>—</td>
+<td>—</td>
+<td>✅ <strong>PASS</strong></td>
+</tr>
+<tr class="even">
+<td><code>bb5kbc:Entdeckung</code></td>
+<td>—</td>
+<td>—</td>
+<td>✅ <strong>PASS</strong></td>
+</tr>
+<tr class="odd">
+<td><code>bb5kbc:EntdeckungsartType</code></td>
+<td>—</td>
+<td>—</td>
+<td>✅ <strong>PASS</strong></td>
+</tr>
+<tr class="even">
+<td><code>bb5kbc:Fundstelle</code></td>
+<td>—</td>
+<td>—</td>
+<td>✅ <strong>PASS</strong></td>
+</tr>
+<tr class="odd">
+<td><code>bb5kbc:FundstellenartType</code></td>
+<td>—</td>
+<td>—</td>
+<td>✅ <strong>PASS</strong></td>
+</tr>
+<tr class="even">
+<td><code>bb5kbc:Gemeinde</code></td>
+<td>—</td>
+<td>—</td>
+<td>✅ <strong>PASS</strong></td>
+</tr>
+<tr class="odd">
+<td><code>bb5kbc:GeoreferenzierungsAktivitaet</code></td>
+<td>—</td>
+<td>—</td>
+<td>✅ <strong>PASS</strong></td>
+</tr>
+<tr class="even">
+<td><code>bb5kbc:Kreis</code></td>
+<td>—</td>
+<td>—</td>
+<td>✅ <strong>PASS</strong></td>
+</tr>
+<tr class="odd">
+<td><code>bb5kbc:KulturelleZuordnung</code></td>
+<td>—</td>
+<td>—</td>
+<td>✅ <strong>PASS</strong></td>
+</tr>
+<tr class="even">
+<td><code>bb5kbc:Kulturgruppe</code></td>
+<td>—</td>
+<td>—</td>
+<td>✅ <strong>PASS</strong></td>
+</tr>
+<tr class="odd">
+<td><code>bb5kbc:Land</code></td>
+<td>—</td>
+<td>—</td>
+<td>✅ <strong>PASS</strong></td>
+</tr>
+<tr class="even">
+<td><code>bb5kbc:Publikation</code></td>
+<td>—</td>
+<td>—</td>
+<td>✅ <strong>PASS</strong></td>
+</tr>
+<tr class="odd">
+<td><code>bb5kbc:Scherbe</code></td>
+<td>—</td>
+<td>—</td>
+<td>✅ <strong>PASS</strong></td>
+</tr>
+<tr class="even">
+<td><code>bb5kbc:externalIdentifierType</code></td>
+<td>—</td>
+<td>—</td>
+<td>✅ <strong>PASS</strong></td>
+</tr>
+</tbody>
+</table>
+<p>✅ <strong>PASS</strong> Doku und Ontologie sind synchron.</p>
+</body>
+</html>

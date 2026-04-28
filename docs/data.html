@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>data</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css" />
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">data</h1>
+</header>
+<h1 id="bb-5kbc-sites">bb-5kbc-sites</h1>
+<p>Dieses Repositorium enthält Fundstelleninformationen aus der
+Dissertation von Sophie C. Schmidt.</p>
+<p>Die deutschsprachigen CIDOC CRM Begriffe wurden aus dem Referenzwerk
+der CIDOC CRM SIG 2010 übernommen
+(https://cidoc-crm.org/sites/default/files/cidoccrm_end.pdf)</p>
+<p>Die folgenden Informationen stehen zur Verfügung:</p>
+<table>
+<colgroup>
+<col style="width: 34%" />
+<col style="width: 37%" />
+<col style="width: 28%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Spaltenkopf</th>
+<th>Beschreibung</th>
+<th>CIDOC-CRM / Modellierungshinweis</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>quelle_georef</td>
+<td>Quelle für die Geoinformation</td>
+<td>E32 Referenzdokument</td>
+</tr>
+<tr class="even">
+<td>QID_quelle_georeff</td>
+<td>Wikidata ID für diese Quelle</td>
+<td>E42 Objektkennung</td>
+</tr>
+<tr class="odd">
+<td>katalognr</td>
+<td>Katalognummer für die Fundstelle in anderen Publikationen</td>
+<td>E42 Objektkennung</td>
+</tr>
+<tr class="even">
+<td>fst_ID</td>
+<td>ID pro Fst</td>
+<td>E42 Objektkennung</td>
+</tr>
+<tr class="odd">
+<td>fst_name</td>
+<td>Name der Fst</td>
+<td>E41 Benennung</td>
+</tr>
+<tr class="even">
+<td>gemeinde</td>
+<td>aktuelle Gemeinde, in der die Fst liegt</td>
+<td>P89 fällt in (enthält) E53 Ort</td>
+</tr>
+<tr class="odd">
+<td>kreis</td>
+<td>aktueller Land- oder Stadtkreis bzw. powiat, in dem die Fst. liegt
+(teilw. abweichend von älteren arch. Kataloginformationen)</td>
+<td>P89 fällt in (enthält) E53 Ort</td>
+</tr>
+<tr class="even">
+<td>bundesland</td>
+<td>aktuelles Bundesland oder Wojewodschaft, in dem die Fst. liegt
+(teilw. abweichend von älteren arch. Kataloginformationen)</td>
+<td>P89 fällt in (enthält) E53 Ort</td>
+</tr>
+<tr class="odd">
+<td>land</td>
+<td>aktuelles Land, in dem die Fst. liegt</td>
+<td>P89 fällt in (enthält) E53 Ort</td>
+</tr>
+<tr class="even">
+<td>kultur</td>
+<td>grobe Einordnung in Kulturgruppe, in die die Fst. datiert</td>
+<td>E49 Zeitbenennung</td>
+</tr>
+<tr class="odd">
+<td>entdeckung</td>
+<td>Beschreibung der Art der Entdeckung der Fst</td>
+<td>E55 Typus von S19 Begegnung (Encounter Event aus der
+Archaeo-Erweiterung des CIDOC CRM)</td>
+</tr>
+<tr class="even">
+<td>QID_entdeckung</td>
+<td>Kategorisierung der Art der Entdeckung der Fst: Ausgrabung, Lese-
+oder Einzelfund in Wikidata</td>
+<td>E42 Objektkennung von E55 Typus von S19 Begegnung (Encounter Event
+aus der Archaeo-Erweiterung des CIDOC CRM)</td>
+</tr>
+<tr class="odd">
+<td>publikation_arch</td>
+<td>relevante archäologische Publikation mit weiteren Informationen</td>
+<td>E32 Referenzdokument</td>
+</tr>
+<tr class="even">
+<td>QID_publikation</td>
+<td>Wikidata ID der relevantesten archäologische Publikation mit
+weiteren Informationen</td>
+<td>E42 Objektkennung von E32 Referenzdokument</td>
+</tr>
+<tr class="odd">
+<td>fundstellenart</td>
+<td>Art der Fundstelle: Siedlung, Grab, Kreisgrabenanlage oder
+unbek.</td>
+<td>E55 Typus von E53 Ort</td>
+</tr>
+<tr class="even">
+<td>QID_fundstellenart</td>
+<td>QID der Art der Fundstelle bei Wikidata</td>
+<td>E42 Objektkennung</td>
+</tr>
+<tr class="odd">
+<td>genauigkeit_m</td>
+<td>Genauigkeit der Georeferenzierung in Meter, Ungenauigkeiten der
+Quelle unbekannt</td>
+<td>E62 Zeichenkette , in Wikibase P23</td>
+</tr>
+<tr class="even">
+<td>FID</td>
+<td>ID pro Kulturgruppe der Fundstelle im Fundstellenkatalog Schmidt
+2026</td>
+<td>E92 Raumzeitvolumen (Spacetime Volume)</td>
+</tr>
+<tr class="odd">
+<td>methode</td>
+<td>Methode der Gewinnung der Lagekoordinaten</td>
+<td>E55 von P32 nutzt allgemeine Technik</td>
+</tr>
+<tr class="even">
+<td>quellen_typ</td>
+<td>Art der Quelle für die Geoinformation</td>
+<td>Typus E55 von E32 Referenzdokument</td>
+</tr>
+<tr class="odd">
+<td>methodenbeschr</td>
+<td>Beschreibung der Methode für die Georeferenzierung</td>
+<td>E62 Zeichenkette</td>
+</tr>
+<tr class="even">
+<td>wgs84_x</td>
+<td>X-koordinate im WGS84-Dezimalsystem</td>
+<td>E47 Raumkoordinaten</td>
+</tr>
+<tr class="odd">
+<td>wgs84_y</td>
+<td>Y-koordinate im WGS84-Dezimalsystem</td>
+<td>E47 Raumkoordinaten</td>
+</tr>
+<tr class="even">
+<td>dating_start</td>
+<td>Beginn der Datierungsspanne, CIDOC CRM modelliert begin of begin als
+dating_start - dating_certainty_start</td>
+<td>P82a begin of the begin</td>
+</tr>
+<tr class="odd">
+<td>dating_certainty_start</td>
+<td>Genauigkeit des Beginns der Datierung in +/- Jahren, meist eine
+Schätzung</td>
+<td>E62 Zeichenkette , in Wikibase P23</td>
+</tr>
+<tr class="even">
+<td>dating_end</td>
+<td>Ende der Datierungsspanne CIDOC CRM modelliert end of the end als
+dating_end + dating_certainty_end</td>
+<td>P82b end of the end</td>
+</tr>
+<tr class="odd">
+<td>dating_certainty_end</td>
+<td>Genauigkeit des Endes der Datierung in +/- Jahren, meist eine
+Schätzung</td>
+<td>E62 Zeichenkette , in Wikibase P23</td>
+</tr>
+<tr class="even">
+<td>dating_method</td>
+<td>Datierungsmethode (Typologie, 14C, etc als QID von Wikidata)</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>dating_certainty_range</td>
+<td>Beschreibung der Präzision der Datierung</td>
+<td>E62 Zeichenkette</td>
+</tr>
+<tr class="even">
+<td>perio.do</td>
+<td>Perio.do ID der Kulturgruppe / Periode, in die die Fst. datiert</td>
+<td>E32 Referenzdokument P71 listet E49 Zeitbenennung</td>
+</tr>
+<tr class="odd">
+<td>dating_perio.do_match</td>
+<td>Ausdruck der Zugehörigkeit der Fundstelle zu der Perio.do-Zuweisung:
+relatedMatch, closeMatch und exactMatch</td>
+<td>SKOS-Standard</td>
+</tr>
+<tr class="even">
+<td>sherd</td>
+<td>Liste von QIDs von Scherben, die an diesem Fundort gefunden wurden
+(pipe-seperiert)</td>
+<td>S19 (Entdeckung) O19 hat das Objekt gefunden</td>
+</tr>
+</tbody>
+</table>
+<p>Hinweise für Modellierung in Wikidata:</p>
+<ul>
+<li><p>Entdeckung von Lese- und Einzelfunden wurden als -&gt; Q1144458
+“archaeological field survey” kartiert, dies ist nicht in allen Fällen
+exakt, es kann sich auch um Zufallsfunde handeln</p></li>
+<li><p>Fragezeichen in Kulturgruppe oder Fundstellenartzuweiung sollten
+mit einem Qualifier, der Unsicherheit markiert, belegt werden</p></li>
+<li><p>wenn eine Information nicht bekannt, kann Q59496158 “not yet
+determined” vergeben werden, oder leer gelassen werden</p></li>
+</ul>
+</body>
+</html>
