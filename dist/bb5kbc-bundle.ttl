@@ -13,6 +13,7 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
 @prefix sf: <http://www.opengis.net/ont/sf#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix time: <http://www.w3.org/2006/time#> .
@@ -77,13 +78,13 @@ data:bb5kbc_bundle_ttl a prov:Entity ;
     rdfs:label "bb5kbc-bundle.ttl (data + ontology, self-contained)"@en ;
     prov:atLocation <file:///C:/git/bb-5kbc-sites/dist/bb5kbc-bundle.ttl> ;
     prov:wasDerivedFrom ns1:fst_wgs84_csv ;
-    prov:wasGeneratedBy data:pipeline_run_2026-04-28T11-06-58Z .
+    prov:wasGeneratedBy data:pipeline_run_2026-04-28T11-55-07Z .
 
 data:bb5kbc_data_ttl a prov:Entity ;
     rdfs:label "bb5kbc-data.ttl (LOD-converted site data)"@en ;
     prov:atLocation <file:///C:/git/bb-5kbc-sites/dist/bb5kbc-data.ttl> ;
     prov:wasDerivedFrom ns1:fst_wgs84_csv ;
-    prov:wasGeneratedBy data:pipeline_run_2026-04-28T11-06-58Z .
+    prov:wasGeneratedBy data:pipeline_run_2026-04-28T11-55-07Z .
 
 bb5kbc: a owl:Ontology ;
     dcterms:contributor "Florian Thiery",
@@ -132,17 +133,16 @@ External identifiers (TGN + iDAI + OSM) on all 4 administrative levels.
 
 ## CM Literals (on `bb5kbc:GeoreferenzierungsAktivitaet`)
 
-| CSV column | FSL property | FSL CM ID | Range |
-|---|---|---|---|
-| `quelle_georef` | `fsl:hasReference` / `fsl:activityDesc` | P25 | `xsd:string` |
-| `QID_quelle_georef` | `fsl:hasReference` | P31 | Wikidata URI |
-| `methode` | `fsl:method` / `fsl:methodUsed` | P7 | `fsl:MethodType` Named Node |
-| `quellen_typ` | `fsl:hasSourceType` + `fsl:hasSourceTypeDetail` | P6 + P16 | `fsl:SourceType` Named Node |
-| `methodenbeschr` | `fsl:activityDesc` | P15 | `xsd:string` |
-| `genauigkeit_m` | `fsl:precision` | P23 | `xsd:decimal` (on `bb5kbc:Fundstelle`) |
-| `wgs84_x/y` | `geosparql:asWKT` | — | on `sf:Point` (skip if both = 0,0) |"""@en ;
+* `quelle_georef` (`fsl:hasReference` / `fsl:activityDesc`, **P25**) → `xsd:string`
+* `QID_quelle_georef` (`fsl:hasReference`, **P31**) → Wikidata URI
+* `methode` (`fsl:method` / `fsl:methodUsed`, **P7**) → `fsl:MethodType` Named Node
+* `quellen_typ` (`fsl:hasSourceType` + `fsl:hasSourceTypeDetail`, **P6 + P16**) → `fsl:SourceType` Named Node
+* `methodenbeschr` (`fsl:activityDesc`, **P15**) → `xsd:string`
+* `genauigkeit_m` (`fsl:precision`, **P23**) → `xsd:decimal` (on `bb5kbc:Fundstelle`)
+* `wgs84_x/y` (`geosparql:asWKT`) → on `sf:Point` (skip if both = 0,0)"""@en ;
     owl:versionIRI bb5kbc:0.9 ;
-    owl:versionInfo "0.9" .
+    owl:versionInfo "0.9" ;
+    schema:image <https://research-squirrel-engineers.github.io/bb-5kbc-sites/ontology/bb-5kbc-ontology.jpg> .
 
 bb5kbc:ExternalIdentifier_PerioDo a bb5kbc:externalIdentifierType,
         owl:NamedIndividual ;
@@ -229,11 +229,14 @@ bb5kbc:hatFID a owl:DatatypeProperty ;
     rdfs:label "FID"@de,
         "site PID"@en ;
     rdfs:comment """Primary identifier (PID) of the Fundstelle in the Schmidt 2026 catalogue (FID column).
-SubPropertyOf both crm:P1_is_identified_by and dcterms:identifier — appears as:
-  dcterms:identifier "1"^^xsd:integer  (explicit identifier statement)
-  URI basis: http://w3id.org/bb5kbc/site_{FID}
-             http://w3id.org/bb5kbc/site_{FID}_activity
-             http://w3id.org/bb5kbc/site_{FID}_geom"""@en ;
+
+SubPropertyOf both `crm:P1_is_identified_by` and `dcterms:identifier` — appears as `dcterms:identifier "1"^^xsd:integer` (explicit identifier statement).
+
+URI basis:
+
+* `http://w3id.org/bb5kbc/site_{FID}`
+* `http://w3id.org/bb5kbc/site_{FID}_activity`
+* `http://w3id.org/bb5kbc/site_{FID}_geom`"""@en ;
     rdfs:domain bb5kbc:Fundstelle ;
     rdfs:range xsd:integer ;
     rdfs:subPropertyOf dcterms:identifier,
@@ -29996,12 +29999,12 @@ data:kreis_d2918bbf a bb5kbc:Kreis ;
     bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Powiat Strzelecko-Drezdenecki' -> 'Powiat Strzelecko-Drezdenecki'"^^xsd:string ;
     skos:prefLabel "pow. Strzelecko-Drezdenecki"@de .
 
-data:pipeline_run_2026-04-28T11-06-58Z a prov:Activity ;
-    rdfs:label "bb5kbc CSV-to-RDF pipeline run 2026-04-28T11-06-58Z"@en ;
+data:pipeline_run_2026-04-28T11-55-07Z a prov:Activity ;
+    rdfs:label "bb5kbc CSV-to-RDF pipeline run 2026-04-28T11-55-07Z"@en ;
     data:dataTripleCount 27870 ;
     data:rowCount 540 ;
-    prov:endedAtTime "2026-04-28T11:07:00.389153+00:00"^^xsd:dateTime ;
-    prov:startedAtTime "2026-04-28T11:06:58.752210+00:00"^^xsd:dateTime ;
+    prov:endedAtTime "2026-04-28T11:55:09.035766+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-04-28T11:55:07.613453+00:00"^^xsd:dateTime ;
     prov:used <file:///C:/git/bb-5kbc-sites/data/fst_wgs84.csv>,
         <file:///C:/git/bb-5kbc-sites/ontology/bb5kbc-ontology.ttl>,
         ns1:fst_wgs84_csv ;

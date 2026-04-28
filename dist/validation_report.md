@@ -1,6 +1,6 @@
 # bb5kbc LOD — Validation Report
 
-- Bundle: `bb5kbc-bundle.ttl` (28530 triples)
+- Bundle: `bb5kbc-bundle.ttl` (28531 triples)
 - CSV: `fst_wgs84.csv` (540 rows × 64 cols)
 - Doku: `bb5kbc-csv-mapping.md`
 

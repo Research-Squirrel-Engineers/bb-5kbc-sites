@@ -31,6 +31,8 @@ jobs:
           cd ont-output
           echo "Generating pyLODE documentation for bb5kbc ontology"
           pylode -i ../ontology/bb5kbc-ontology.ttl -o index.html
+          # Diagramm-Bild mitnehmen, damit pyLODE es relativ findet
+          cp ../ontology/bb-5kbc-ontology.jpg ./bb-5kbc-ontology.jpg
           ls -la
 
       - name: Deploy to gh-pages /ontology/
