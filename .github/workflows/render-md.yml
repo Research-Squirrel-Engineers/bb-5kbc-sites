@@ -35,6 +35,8 @@ jobs:
         run: |
           mkdir -p rendered-docs
           cd main-content/docs
+
+          # Alle MDs zu HTML rendern
           for f in *.md; do
             [ -e "$f" ] || continue
             outname="${f%.md}.html"
@@ -44,7 +46,37 @@ jobs:
               --css=https://cdn.jsdelivr.net/npm/water.css@2/out/water.css \
               -o "../../rendered-docs/$outname"
           done
-          ls -la ../../rendered-docs
+
+          # Index-Seite generieren
+          cd ../../rendered-docs
+
+          {
+            echo '<!DOCTYPE html>'
+            echo '<html lang="en">'
+            echo '<head>'
+            echo '  <meta charset="UTF-8">'
+            echo '  <title>Documentation Index — bb-5kbc-sites</title>'
+            echo '  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">'
+            echo '</head>'
+            echo '<body>'
+            echo '  <h1>Documentation</h1>'
+            echo '  <p>Markdown documentation for the Brandenburg 5000 BC Data project.</p>'
+            echo '  <ul>'
+            for html in *.html; do
+              [ "$html" = "index.html" ] && continue
+              name="${html%.html}"
+              # Kapitalisiere ersten Buchstaben für die Anzeige
+              display="$(echo "$name" | sed 's/_/ /g; s/-/ /g' | awk '{for(i=1;i<=NF;i++)$i=toupper(substr($i,1,1)) tolower(substr($i,2))}1')"
+              echo "    <li><a href=\"$html\">$display</a></li>"
+            done
+            echo '  </ul>'
+            echo "  <hr>"
+            echo "  <p><small>Generated automatically on $(date -u +'%Y-%m-%d %H:%M UTC') · <a href=\"../\">← Back to LOD documentation</a></small></p>"
+            echo '</body>'
+            echo '</html>'
+          } > index.html
+
+          ls -la
 
       # 4. gh-pages Branch auschecken
       - name: Checkout gh-pages branch
