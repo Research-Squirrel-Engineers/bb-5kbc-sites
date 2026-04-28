@@ -33,6 +33,8 @@ jobs:
           pylode -i ../ontology/bb5kbc-ontology.ttl -o index.html
           # Diagramm-Bild mitnehmen, damit pyLODE es relativ findet
           cp ../ontology/bb-5kbc-ontology.jpg ./bb-5kbc-ontology.jpg
+          # Post-process: Platzhalter "Pictures say 1,000 words" durch echtes Bild ersetzen
+          sed -i 's|<div style="width:500px; height:50px; background-color: lightgrey; border:solid 2px grey; padding:10px;margin-bottom:5px; text-align:center;">Pictures say 1,000 words</div>|<img src="bb-5kbc-ontology.jpg" alt="bb5kbc ontology overview" style="max-width:100%;height:auto;">|' index.html
           ls -la
 
       - name: Deploy to gh-pages /ontology/
