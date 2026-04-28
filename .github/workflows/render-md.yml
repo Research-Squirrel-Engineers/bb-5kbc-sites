@@ -1,0 +1,75 @@
+name: Render Markdown Docs to gh-pages
+
+on:
+  # Läuft nachdem der Unicorn-Workflow fertig ist
+  workflow_run:
+    workflows: ["SPARQL Unicorn Ontology Documentation CI"]
+    types:
+      - completed
+    branches: ["main"]
+  # Manueller Trigger für Tests
+  workflow_dispatch:
+
+jobs:
+  render-md:
+    # Nur laufen wenn der Unicorn-Workflow erfolgreich war
+    if: ${{ github.event.workflow_run.conclusion == 'success' || github.event_name == 'workflow_dispatch' }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      # 1. Main Branch auschecken (für die MD-Dateien)
+      - name: Checkout main branch
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          path: main-content
+
+      # 2. Pandoc installieren
+      - name: Install pandoc
+        run: sudo apt-get update && sudo apt-get install -y pandoc
+
+      # 3. MD zu HTML rendern
+      - name: Render Markdown files
+        run: |
+          mkdir -p rendered-docs
+          cd main-content/docs
+          for f in *.md; do
+            [ -e "$f" ] || continue
+            outname="${f%.md}.html"
+            pandoc "$f" \
+              --standalone \
+              --metadata title="${f%.md}" \
+              --css=https://cdn.jsdelivr.net/npm/water.css@2/out/water.css \
+              -o "../../rendered-docs/$outname"
+          done
+          ls -la ../../rendered-docs
+
+      # 4. gh-pages Branch auschecken
+      - name: Checkout gh-pages branch
+        uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+          path: gh-pages-content
+
+      # 5. Gerenderte HTMLs in gh-pages/docs/ kopieren
+      - name: Copy rendered files into gh-pages
+        run: |
+          mkdir -p gh-pages-content/docs
+          cp rendered-docs/*.html gh-pages-content/docs/
+          ls -la gh-pages-content/docs
+
+      # 6. Commit & Push auf gh-pages
+      - name: Commit and push
+        run: |
+          cd gh-pages-content
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Update rendered MD docs from main"
+            git push
+          fi
