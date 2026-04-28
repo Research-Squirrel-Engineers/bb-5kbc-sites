@@ -177,8 +177,8 @@ var tree={
           "to": {
             "http://rdfs.org/ns/void#inDataset": {
               "instancecount": 2,
-              "http://www.w3.org/ns/adms#Asset": 2,
-              "http://rdfs.org/ns/void#Dataset": 2
+              "http://rdfs.org/ns/void#Dataset": 2,
+              "http://www.w3.org/ns/adms#Asset": 2
             },
             "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": {
               "instancecount": 2,
@@ -276,8 +276,8 @@ var tree={
           "to": {
             "http://rdfs.org/ns/void#inDataset": {
               "instancecount": 6,
-              "http://www.w3.org/ns/adms#Asset": 6,
-              "http://rdfs.org/ns/void#Dataset": 6
+              "http://rdfs.org/ns/void#Dataset": 6,
+              "http://www.w3.org/ns/adms#Asset": 6
             },
             "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": {
               "instancecount": 12,
@@ -318,8 +318,8 @@ var tree={
           "to": {
             "http://rdfs.org/ns/void#inDataset": {
               "instancecount": 3,
-              "http://www.w3.org/ns/adms#Asset": 3,
-              "http://rdfs.org/ns/void#Dataset": 3
+              "http://rdfs.org/ns/void#Dataset": 3,
+              "http://www.w3.org/ns/adms#Asset": 3
             },
             "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": {
               "instancecount": 3
@@ -5769,8 +5769,8 @@ var tree={
             },
             "http://rdfs.org/ns/void#inDataset": {
               "instancecount": 540,
-              "http://www.w3.org/ns/adms#Asset": 540,
-              "http://rdfs.org/ns/void#Dataset": 540
+              "http://rdfs.org/ns/void#Dataset": 540,
+              "http://www.w3.org/ns/adms#Asset": 540
             },
             "http://w3id.org/bb5kbc/ont/hatFID": {
               "instancecount": 540
@@ -5853,8 +5853,8 @@ var tree={
           "to": {
             "http://rdfs.org/ns/void#inDataset": {
               "instancecount": 1,
-              "http://www.w3.org/ns/adms#Asset": 1,
-              "http://rdfs.org/ns/void#Dataset": 1
+              "http://rdfs.org/ns/void#Dataset": 1,
+              "http://www.w3.org/ns/adms#Asset": 1
             },
             "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": {
               "instancecount": 1
@@ -6061,8 +6061,8 @@ var tree={
           "to": {
             "http://rdfs.org/ns/void#inDataset": {
               "instancecount": 1,
-              "http://www.w3.org/ns/adms#Asset": 1,
-              "http://rdfs.org/ns/void#Dataset": 1
+              "http://rdfs.org/ns/void#Dataset": 1,
+              "http://www.w3.org/ns/adms#Asset": 1
             },
             "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": {
               "instancecount": 2
@@ -6244,8 +6244,8 @@ var tree={
           "to": {
             "http://rdfs.org/ns/void#inDataset": {
               "instancecount": 15,
-              "http://www.w3.org/ns/adms#Asset": 15,
-              "http://rdfs.org/ns/void#Dataset": 15
+              "http://rdfs.org/ns/void#Dataset": 15,
+              "http://www.w3.org/ns/adms#Asset": 15
             },
             "http://w3id.org/bb5kbc/ont/hasExternalIdentifier": {
               "instancecount": 58
@@ -6281,14 +6281,14 @@ var tree={
               "http://rdfs.org/ns/void#Dataset": 4
             },
             "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": {
-              "http://w3id.org/bb5kbc/ont/Gemeinde": 318,
-              "http://w3id.org/bb5kbc/ont/Bundesland": 15,
+              "http://w3id.org/bb5kbc/ont/Land": 2,
               "http://w3id.org/bb5kbc/ont/Kreis": 82,
-              "http://w3id.org/bb5kbc/ont/Land": 2
+              "http://w3id.org/bb5kbc/ont/Bundesland": 15,
+              "http://w3id.org/bb5kbc/ont/Gemeinde": 318
             },
             "http://www.w3.org/2000/01/rdf-schema#domain": {
-              "http://www.w3.org/2002/07/owl#ObjectProperty": 3,
-              "http://www.w3.org/2002/07/owl#DatatypeProperty": 4
+              "http://www.w3.org/2002/07/owl#DatatypeProperty": 4,
+              "http://www.w3.org/2002/07/owl#ObjectProperty": 3
             },
             "http://www.w3.org/2000/01/rdf-schema#member": {
               "http://www.w3.org/2004/02/skos/core#Collection": 4
@@ -6300,8 +6300,8 @@ var tree={
           "to": {
             "http://rdfs.org/ns/void#inDataset": {
               "instancecount": 4,
-              "http://www.w3.org/ns/adms#Asset": 4,
-              "http://rdfs.org/ns/void#Dataset": 4
+              "http://rdfs.org/ns/void#Dataset": 4,
+              "http://www.w3.org/ns/adms#Asset": 4
             },
             "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": {
               "instancecount": 4
@@ -6457,8 +6457,8 @@ var tree={
           "to": {
             "http://rdfs.org/ns/void#inDataset": {
               "instancecount": 12,
-              "http://www.w3.org/ns/adms#Asset": 12,
-              "http://rdfs.org/ns/void#Dataset": 12
+              "http://rdfs.org/ns/void#Dataset": 12,
+              "http://www.w3.org/ns/adms#Asset": 12
             },
             "http://w3id.org/bb5kbc/ont/hasExternalIdentifier": {
               "instancecount": 12
@@ -6612,10 +6612,13 @@ var tree={
             }
           },
           "to": {
+            "http://fuzzy-sl.squirrel.link/ontology/certaintyDesc": {
+              "instancecount": 7
+            },
             "http://rdfs.org/ns/void#inDataset": {
               "instancecount": 12,
-              "http://www.w3.org/ns/adms#Asset": 12,
-              "http://rdfs.org/ns/void#Dataset": 12
+              "http://rdfs.org/ns/void#Dataset": 12,
+              "http://www.w3.org/ns/adms#Asset": 12
             },
             "http://w3id.org/bb5kbc/ont/hasExternalIdentifier": {
               "instancecount": 12
@@ -6629,9 +6632,6 @@ var tree={
             },
             "http://www.w3.org/2004/02/skos/core#prefLabel": {
               "instancecount": 12
-            },
-            "http://fuzzy-sl.squirrel.link/ontology/certaintyDesc": {
-              "instancecount": 7
             }
           }
         }
@@ -6659,8 +6659,8 @@ var tree={
           "to": {
             "http://rdfs.org/ns/void#inDataset": {
               "instancecount": 1,
-              "http://www.w3.org/ns/adms#Asset": 1,
-              "http://rdfs.org/ns/void#Dataset": 1
+              "http://rdfs.org/ns/void#Dataset": 1,
+              "http://www.w3.org/ns/adms#Asset": 1
             },
             "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": {
               "instancecount": 1
@@ -9876,8 +9876,8 @@ var tree={
           "to": {
             "http://rdfs.org/ns/void#inDataset": {
               "instancecount": 318,
-              "http://www.w3.org/ns/adms#Asset": 318,
-              "http://rdfs.org/ns/void#Dataset": 318
+              "http://rdfs.org/ns/void#Dataset": 318,
+              "http://www.w3.org/ns/adms#Asset": 318
             },
             "http://w3id.org/bb5kbc/ont/hasExternalIdentifier": {
               "instancecount": 703
@@ -10740,8 +10740,8 @@ var tree={
           "to": {
             "http://rdfs.org/ns/void#inDataset": {
               "instancecount": 82,
-              "http://www.w3.org/ns/adms#Asset": 82,
-              "http://rdfs.org/ns/void#Dataset": 82
+              "http://rdfs.org/ns/void#Dataset": 82,
+              "http://www.w3.org/ns/adms#Asset": 82
             },
             "http://w3id.org/bb5kbc/ont/hasExternalIdentifier": {
               "instancecount": 206
@@ -10874,8 +10874,8 @@ var tree={
           "to": {
             "http://rdfs.org/ns/void#inDataset": {
               "instancecount": 9,
-              "http://www.w3.org/ns/adms#Asset": 9,
-              "http://rdfs.org/ns/void#Dataset": 9
+              "http://rdfs.org/ns/void#Dataset": 9,
+              "http://www.w3.org/ns/adms#Asset": 9
             },
             "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": {
               "instancecount": 9,
@@ -10910,8 +10910,8 @@ var tree={
           "to": {
             "http://rdfs.org/ns/void#inDataset": {
               "instancecount": 1,
-              "http://www.w3.org/ns/adms#Asset": 1,
-              "http://rdfs.org/ns/void#Dataset": 1
+              "http://rdfs.org/ns/void#Dataset": 1,
+              "http://www.w3.org/ns/adms#Asset": 1
             },
             "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": {
               "instancecount": 1
@@ -11397,8 +11397,8 @@ var tree={
           "to": {
             "http://rdfs.org/ns/void#inDataset": {
               "instancecount": 45,
-              "http://www.w3.org/ns/adms#Asset": 45,
-              "http://rdfs.org/ns/void#Dataset": 45
+              "http://rdfs.org/ns/void#Dataset": 45,
+              "http://www.w3.org/ns/adms#Asset": 45
             },
             "http://w3id.org/bb5kbc/ont/hasExternalIdentifier": {
               "instancecount": 45
@@ -11436,8 +11436,8 @@ var tree={
           "to": {
             "http://rdfs.org/ns/void#inDataset": {
               "instancecount": 1,
-              "http://www.w3.org/ns/adms#Asset": 1,
-              "http://rdfs.org/ns/void#Dataset": 1
+              "http://rdfs.org/ns/void#Dataset": 1,
+              "http://www.w3.org/ns/adms#Asset": 1
             },
             "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": {
               "instancecount": 1
@@ -11563,8 +11563,8 @@ var tree={
           "to": {
             "http://rdfs.org/ns/void#inDataset": {
               "instancecount": 9,
-              "http://www.w3.org/ns/adms#Asset": 9,
-              "http://rdfs.org/ns/void#Dataset": 9
+              "http://rdfs.org/ns/void#Dataset": 9,
+              "http://www.w3.org/ns/adms#Asset": 9
             },
             "http://w3id.org/bb5kbc/ont/hasExternalIdentifier": {
               "instancecount": 9
@@ -11599,8 +11599,8 @@ var tree={
           "to": {
             "http://rdfs.org/ns/void#inDataset": {
               "instancecount": 1,
-              "http://www.w3.org/ns/adms#Asset": 1,
-              "http://rdfs.org/ns/void#Dataset": 1
+              "http://rdfs.org/ns/void#Dataset": 1,
+              "http://www.w3.org/ns/adms#Asset": 1
             },
             "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": {
               "instancecount": 1
@@ -17060,8 +17060,8 @@ var tree={
             },
             "http://rdfs.org/ns/void#inDataset": {
               "instancecount": 540,
-              "http://www.w3.org/ns/adms#Asset": 540,
-              "http://rdfs.org/ns/void#Dataset": 540
+              "http://rdfs.org/ns/void#Dataset": 540,
+              "http://www.w3.org/ns/adms#Asset": 540
             },
             "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": {
               "instancecount": 540,
@@ -17086,47 +17086,40 @@ var tree={
         "text": "Activity (prov:Activity)",
         "data": {
           "from": {
+            "http://www.w3.org/2000/01/rdf-schema#member": {
+              "http://www.w3.org/2004/02/skos/core#Collection": 2
+            },
+            "http://www.w3.org/ns/prov#wasGeneratedBy": {
+              "http://www.w3.org/ns/prov#Entity": 2
+            },
             "http://rdfs.org/ns/void#class": {
               "http://rdfs.org/ns/void#Dataset": 1
             },
             "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": {
               "http://w3id.org/bb5kbc/ont/GeoreferenzierungsAktivitaet": 540
             },
-            "http://www.w3.org/2000/01/rdf-schema#member": {
-              "http://www.w3.org/2004/02/skos/core#Collection": 2
-            },
             "http://www.w3.org/2000/01/rdf-schema#range": {
               "http://www.w3.org/2002/07/owl#ObjectProperty": 1
-            },
-            "http://www.w3.org/ns/prov#wasGeneratedBy": {
-              "http://www.w3.org/ns/prov#Entity": 2
             }
           },
           "to": {
             "http://rdfs.org/ns/void#inDataset": {
               "instancecount": 2,
-              "http://www.w3.org/ns/adms#Asset": 2,
-              "http://rdfs.org/ns/void#Dataset": 2
-            },
-            "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": {
-              "instancecount": 2,
-              "http://www.w3.org/2002/07/owl#Class": 1
-            },
-            "http://www.w3.org/2000/01/rdf-schema#comment": {
-              "instancecount": 1
-            },
-            "http://www.w3.org/2000/01/rdf-schema#label": {
-              "instancecount": 3
-            },
-            "http://www.w3.org/2000/01/rdf-schema#subClassOf": {
-              "instancecount": 2,
-              "http://www.w3.org/2002/07/owl#Class": 2
+              "http://rdfs.org/ns/void#Dataset": 2,
+              "http://www.w3.org/ns/adms#Asset": 2
             },
             "http://w3id.org/bb5kbc/dataTripleCount": {
               "instancecount": 1
             },
             "http://w3id.org/bb5kbc/rowCount": {
               "instancecount": 1
+            },
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": {
+              "instancecount": 2,
+              "http://www.w3.org/2002/07/owl#Class": 1
+            },
+            "http://www.w3.org/2000/01/rdf-schema#label": {
+              "instancecount": 3
             },
             "http://www.w3.org/ns/prov#endedAtTime": {
               "instancecount": 1
@@ -17149,6 +17142,13 @@ var tree={
             "http://www.w3.org/ns/prov#wasInformedBy": {
               "instancecount": 1,
               "http://www.w3.org/ns/prov#Activity": 1
+            },
+            "http://www.w3.org/2000/01/rdf-schema#comment": {
+              "instancecount": 1
+            },
+            "http://www.w3.org/2000/01/rdf-schema#subClassOf": {
+              "instancecount": 2,
+              "http://www.w3.org/2002/07/owl#Class": 2
             }
           }
         }
@@ -22571,8 +22571,8 @@ var tree={
           "to": {
             "http://rdfs.org/ns/void#inDataset": {
               "instancecount": 540,
-              "http://www.w3.org/ns/adms#Asset": 540,
-              "http://rdfs.org/ns/void#Dataset": 540
+              "http://rdfs.org/ns/void#Dataset": 540,
+              "http://www.w3.org/ns/adms#Asset": 540
             },
             "http://w3id.org/bb5kbc/ont/hatDatierung": {
               "instancecount": 540,
@@ -22618,8 +22618,8 @@ var tree={
           "to": {
             "http://rdfs.org/ns/void#inDataset": {
               "instancecount": 1,
-              "http://www.w3.org/ns/adms#Asset": 1,
-              "http://rdfs.org/ns/void#Dataset": 1
+              "http://rdfs.org/ns/void#Dataset": 1,
+              "http://www.w3.org/ns/adms#Asset": 1
             },
             "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": {
               "instancecount": 1
@@ -28055,8 +28055,8 @@ var tree={
           "to": {
             "http://rdfs.org/ns/void#inDataset": {
               "instancecount": 540,
-              "http://www.w3.org/ns/adms#Asset": 540,
-              "http://rdfs.org/ns/void#Dataset": 540
+              "http://rdfs.org/ns/void#Dataset": 540,
+              "http://www.w3.org/ns/adms#Asset": 540
             },
             "http://w3id.org/bb5kbc/ont/datierungEnd": {
               "instancecount": 540
@@ -28120,8 +28120,8 @@ var tree={
           "to": {
             "http://rdfs.org/ns/void#inDataset": {
               "instancecount": 1,
-              "http://www.w3.org/ns/adms#Asset": 1,
-              "http://rdfs.org/ns/void#Dataset": 1
+              "http://rdfs.org/ns/void#Dataset": 1,
+              "http://www.w3.org/ns/adms#Asset": 1
             },
             "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": {
               "instancecount": 1
@@ -32477,8 +32477,12 @@ var tree={
           "to": {
             "http://rdfs.org/ns/void#inDataset": {
               "instancecount": 432,
-              "http://www.w3.org/ns/adms#Asset": 432,
-              "http://rdfs.org/ns/void#Dataset": 432
+              "http://rdfs.org/ns/void#Dataset": 432,
+              "http://www.w3.org/ns/adms#Asset": 432
+            },
+            "http://w3id.org/bb5kbc/ont/hatEntdeckungsart": {
+              "instancecount": 382,
+              "http://w3id.org/bb5kbc/ont/EntdeckungsartType": 382
             },
             "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": {
               "instancecount": 432,
@@ -32486,10 +32490,6 @@ var tree={
             },
             "http://www.w3.org/2000/01/rdf-schema#label": {
               "instancecount": 432
-            },
-            "http://w3id.org/bb5kbc/ont/hatEntdeckungsart": {
-              "instancecount": 382,
-              "http://w3id.org/bb5kbc/ont/EntdeckungsartType": 382
             }
           }
         }
@@ -32520,8 +32520,8 @@ var tree={
           "to": {
             "http://rdfs.org/ns/void#inDataset": {
               "instancecount": 1,
-              "http://www.w3.org/ns/adms#Asset": 1,
-              "http://rdfs.org/ns/void#Dataset": 1
+              "http://rdfs.org/ns/void#Dataset": 1,
+              "http://www.w3.org/ns/adms#Asset": 1
             },
             "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": {
               "instancecount": 1
@@ -38015,8 +38015,8 @@ var tree={
             },
             "http://rdfs.org/ns/void#inDataset": {
               "instancecount": 540,
-              "http://www.w3.org/ns/adms#Asset": 540,
-              "http://rdfs.org/ns/void#Dataset": 540
+              "http://rdfs.org/ns/void#Dataset": 540,
+              "http://www.w3.org/ns/adms#Asset": 540
             },
             "http://www.opengis.net/ont/geosparql#asWKT": {
               "instancecount": 540
@@ -38076,8 +38076,8 @@ var tree={
           "to": {
             "http://rdfs.org/ns/void#inDataset": {
               "instancecount": 2,
-              "http://www.w3.org/ns/adms#Asset": 2,
-              "http://rdfs.org/ns/void#Dataset": 2
+              "http://rdfs.org/ns/void#Dataset": 2,
+              "http://www.w3.org/ns/adms#Asset": 2
             },
             "http://w3id.org/bb5kbc/ont/hasExternalIdentifier": {
               "instancecount": 10
@@ -38159,8 +38159,8 @@ var tree={
           "to": {
             "http://rdfs.org/ns/void#inDataset": {
               "instancecount": 4,
-              "http://www.w3.org/ns/adms#Asset": 4,
-              "http://rdfs.org/ns/void#Dataset": 4
+              "http://rdfs.org/ns/void#Dataset": 4,
+              "http://www.w3.org/ns/adms#Asset": 4
             },
             "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": {
               "instancecount": 4,
@@ -38210,8 +38210,8 @@ var tree={
           "to": {
             "http://rdfs.org/ns/void#inDataset": {
               "instancecount": 2,
-              "http://www.w3.org/ns/adms#Asset": 2,
-              "http://rdfs.org/ns/void#Dataset": 2
+              "http://rdfs.org/ns/void#Dataset": 2,
+              "http://www.w3.org/ns/adms#Asset": 2
             },
             "http://w3id.org/bb5kbc/ont/hasExternalIdentifier": {
               "instancecount": 2
@@ -38271,8 +38271,8 @@ var tree={
           "to": {
             "http://rdfs.org/ns/void#inDataset": {
               "instancecount": 3,
-              "http://www.w3.org/ns/adms#Asset": 3,
-              "http://rdfs.org/ns/void#Dataset": 3
+              "http://rdfs.org/ns/void#Dataset": 3,
+              "http://www.w3.org/ns/adms#Asset": 3
             },
             "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": {
               "instancecount": 3,
@@ -38635,8 +38635,8 @@ var tree={
           "to": {
             "http://rdfs.org/ns/void#inDataset": {
               "instancecount": 26,
-              "http://www.w3.org/ns/adms#Asset": 26,
-              "http://rdfs.org/ns/void#Dataset": 26
+              "http://rdfs.org/ns/void#Dataset": 26,
+              "http://www.w3.org/ns/adms#Asset": 26
             },
             "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": {
               "instancecount": 26
@@ -38646,32 +38646,32 @@ var tree={
             },
             "http://www.w3.org/2000/01/rdf-schema#member": {
               "instancecount": 2625,
-              "http://w3id.org/bb5kbc/ont/Bundesland": 15,
-              "http://w3id.org/bb5kbc/ont/Gemeinde": 318,
-              "http://w3id.org/bb5kbc/ont/Entdeckung": 432,
               "http://www.w3.org/ns/prov#Plan": 2,
               "http://www.w3.org/ns/prov#SoftwareAgent": 2,
-              "http://www.w3.org/2002/07/owl#DatatypeProperty": 10,
-              "http://www.w3.org/2002/07/owl#ObjectProperty": 16,
-              "http://w3id.org/bb5kbc/ont/FundstellenartType": 12,
-              "http://www.w3.org/2002/07/owl#Ontology": 1,
-              "http://w3id.org/bb5kbc/ont/Datierung": 540,
-              "http://w3id.org/bb5kbc/ont/DatierungsMethodeType": 2,
+              "http://w3id.org/bb5kbc/ont/EntdeckungsartType": 12,
               "http://w3id.org/bb5kbc/ont/externalIdentifierType": 12,
               "http://www.w3.org/2002/07/owl#NamedIndividual": 12,
-              "http://fuzzy-sl.squirrel.link/ontology/MethodType": 3,
-              "http://w3id.org/bb5kbc/ont/KulturelleZuordnung": 540,
-              "http://www.w3.org/2002/07/owl#Class": 16,
-              "http://www.w3.org/ns/prov#Entity": 2,
-              "http://w3id.org/bb5kbc/ont/Publikation": 45,
-              "http://w3id.org/bb5kbc/ont/Land": 2,
+              "http://w3id.org/bb5kbc/ont/DatierungsMethodeType": 2,
+              "http://w3id.org/bb5kbc/ont/Entdeckung": 432,
+              "http://w3id.org/bb5kbc/ont/Gemeinde": 318,
+              "http://www.w3.org/2002/07/owl#Ontology": 1,
               "http://fuzzy-sl.squirrel.link/ontology/SourceType": 4,
-              "http://w3id.org/bb5kbc/ont/Kreis": 82,
-              "http://www.w3.org/ns/prov#Activity": 1,
-              "http://w3id.org/bb5kbc/ont/GeoreferenzierungsAktivitaet": 540,
-              "http://w3id.org/bb5kbc/ont/EntdeckungsartType": 12,
+              "http://w3id.org/bb5kbc/ont/Datierung": 540,
+              "http://www.w3.org/2002/07/owl#DatatypeProperty": 10,
+              "http://fuzzy-sl.squirrel.link/ontology/MethodType": 3,
               "http://w3id.org/bb5kbc/ont/Kulturgruppe": 9,
-              "http://w3id.org/bb5kbc/ont/Scherbe": 9
+              "http://w3id.org/bb5kbc/ont/Publikation": 45,
+              "http://w3id.org/bb5kbc/ont/Scherbe": 9,
+              "http://w3id.org/bb5kbc/ont/Kreis": 82,
+              "http://w3id.org/bb5kbc/ont/FundstellenartType": 12,
+              "http://www.w3.org/ns/prov#Entity": 2,
+              "http://w3id.org/bb5kbc/ont/Land": 2,
+              "http://www.w3.org/2002/07/owl#ObjectProperty": 16,
+              "http://w3id.org/bb5kbc/ont/GeoreferenzierungsAktivitaet": 540,
+              "http://www.w3.org/2002/07/owl#Class": 16,
+              "http://w3id.org/bb5kbc/ont/Bundesland": 15,
+              "http://w3id.org/bb5kbc/ont/KulturelleZuordnung": 540,
+              "http://www.w3.org/ns/prov#Activity": 1
             }
           }
         }
@@ -38697,8 +38697,8 @@ var tree={
           "to": {
             "http://rdfs.org/ns/void#inDataset": {
               "instancecount": 1,
-              "http://www.w3.org/ns/adms#Asset": 1,
-              "http://rdfs.org/ns/void#Dataset": 1
+              "http://rdfs.org/ns/void#Dataset": 1,
+              "http://www.w3.org/ns/adms#Asset": 1
             },
             "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": {
               "instancecount": 1
@@ -38744,8 +38744,8 @@ var tree={
           "to": {
             "http://rdfs.org/ns/void#inDataset": {
               "instancecount": 1,
-              "http://www.w3.org/ns/adms#Asset": 1,
-              "http://rdfs.org/ns/void#Dataset": 1
+              "http://rdfs.org/ns/void#Dataset": 1,
+              "http://www.w3.org/ns/adms#Asset": 1
             },
             "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": {
               "instancecount": 1
