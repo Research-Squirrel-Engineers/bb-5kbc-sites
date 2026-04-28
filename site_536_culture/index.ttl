@@ -1,12 +1,12 @@
-@prefix ns1: <http://fuzzy-sl.squirrel.link/ontology/> .
-@prefix ns2: <http://w3id.org/bb5kbc/ont/> .
+@prefix ns1: <http://w3id.org/bb5kbc/ont/> .
+@prefix ns2: <http://fuzzy-sl.squirrel.link/ontology/> .
 @prefix void: <http://rdfs.org/ns/void#> .
 
-<http://w3id.org/bb5kbc/site_536_culture> a ns2:KulturelleZuordnung,
+<http://w3id.org/bb5kbc/site_536_culture> a ns1:KulturelleZuordnung,
         <http://www.w3.org/ns/ldp#Resource>,
         <https://www.iana.org/assignments/media-types/text/turtle#Resource> ;
-    ns1:certaintyDesc "uncertain"@en ;
+    ns2:certaintyDesc "uncertain"@en ;
     void:inDataset <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data> ;
-    ns2:hatDatierung <http://w3id.org/bb5kbc/site_536_dating> ;
-    ns2:hatKulturgruppe <http://w3id.org/bb5kbc/kultur_7a001224> .
+    ns1:hatDatierung <http://w3id.org/bb5kbc/site_536_dating> ;
+    ns1:hatKulturgruppe <http://w3id.org/bb5kbc/kultur_7a001224> .
 
