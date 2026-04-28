@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>modelling-rules</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css" />
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">modelling-rules</h1>
+</header>
+<h1 id="bb5kbc-modellierungs-regeln">bb5kbc Modellierungs-Regeln</h1>
+<blockquote>
+<p>Wie die Daten von <code>fst_wgs84.csv</code> als Linked Open Data
+abgebildet werden, in einer Sprache, die ohne CIDOC-CRM-Vorwissen lesbar
+ist. Das Dokument beschreibt die <em>Spielregeln</em> der Modellierung —
+nicht die technische Umsetzung (das macht das Pipeline-Skript
+<code>bb5kbc_lod_pipeline.py</code>).</p>
+<p><strong>Autoren:</strong> Sophie C. Schmidt, Florian Thiery ·
+<strong>Stand:</strong> Ontologie v0.10 · <strong>Lizenz:</strong> CC BY
+4.0</p>
+</blockquote>
+<hr />
+<h2 id="inhalt">Inhalt</h2>
+<ol type="1">
+<li><a href="#worum-gehts">Worum geht’s</a></li>
+<li><a href="#das-mentalmodell-auf-einer-seite">Das Mentalmodell auf
+einer Seite</a></li>
+<li><a href="#sechs-modellierungsregeln">Sechs
+Modellierungsregeln</a></li>
+<li><a href="#uri-konventionen">URI-Konventionen</a></li>
+<li><a href="#sparql-kochbuch">SPARQL-Kochbuch</a></li>
+<li><a href="#was-die-modellierung-nicht-kann">Was die Modellierung
+<em>nicht</em> kann</a></li>
+<li><a href="#mini-glossar">Mini-Glossar</a></li>
+</ol>
+<hr />
+<h2 id="worum-gehts">Worum geht’s</h2>
+<p>Die CSV <code>fst_wgs84.csv</code> hat 540 Zeilen — jede Zeile eine
+archäologische Fundstelle aus Brandenburg und Umgebung, ca. 5000 BC. Sie
+hat 65 Spalten: die ursprünglichen 33 Feld-Spalten der Erfassung
+(Fundstellenname, Verwaltungs- gebiete, Kulturgruppe, Datierung, Quelle
+der Georeferenzierung, Koordinaten, Wikidata-IDs für Publikation und
+Fundstellenart, etc.) plus 32 Authority-ID- Spalten, die durch die
+vorgelagerte <code>csv_enrichment.py</code>-Pipeline ergänzt wurden.</p>
+<p>Diese 32 zusätzlichen Spalten enthalten für jede der vier
+Verwaltungsebenen (Land, Bundesland, Kreis, Gemeinde) bis zu fünf
+externe Identifier (Wikidata QID, GeoNames, Getty TGN, iDAI.gazetteer,
+OSM Relation) plus drei Audit- Metadatenspalten zur Nachvollziehbarkeit
+des Matchings. Die Audit-Spalten gehen <em>nicht</em> ins RDF — sie sind
+nur für die Pipeline-Diagnose.</p>
+<p>Das Ziel der Modellierung ist es, <strong>diese tabellarischen Daten
+so in RDF (Linked Open Data) zu übersetzen</strong>, dass:</p>
+<ul>
+<li>jede archäologisch bedeutsame Aussage einen eigenen, abfragbaren
+Knoten bekommt</li>
+<li>die Daten an internationale Vokabulare anschließen (CIDOC CRM,
+Wikidata, Getty TGN, GeoNames, Perio.do, iDAI.gazetteer,
+OpenStreetMap)</li>
+<li>die Wiederverwendung effizient ist: “Brandenburg” ist genau
+<strong>ein</strong> Knoten, egal wie viele Fundstellen drinliegen</li>
+<li>man mit SPARQL Fragen stellen kann wie “Welche SBK-Fundstellen
+liegen in Sachsen-Anhalt und sind 14C-datiert?” (siehe Kochbuch
+unten)</li>
+</ul>
+<p>Was hier <em>nicht</em> dokumentiert ist: - die genaue
+Implementierung des Pipeline-Skripts (separates Dokument) - der
+Vollständige CIDOC-CRM-Mapping (dafür siehe
+<code>bb5kbc-csv-mapping.md</code> und die Ontologie selbst)</p>
+<hr />
+<h2 id="das-mentalmodell-auf-einer-seite">Das Mentalmodell auf einer
+Seite</h2>
+<p>Eine Fundstelle steht im Zentrum. An ihr hängen sieben Arten von
+Beziehungen:</p>
+<pre><code>                     ┌─────────────────────┐
+                     │   Verwaltungsgebiet │
+                     │  (Land, Bundesland, │
+                     │   Kreis, Gemeinde)  │
+                     └──────────┬──────────┘
+                                │  liegt in
+                                │
+                                ▼
+       Datierung   ◀────  ┌──────────┐  ────▶  Fundstellenart
+       Kulturgruppe       │          │         (Siedlung, Grab, …)
+            ▲             │          │
+            │   gehört zu │ Fundstelle│  wurde entdeckt durch ▶ Entdeckung
+       Kulturelle ◀───────│          │                       (mit Entdeckungsart)
+       Zuordnung          │          │
+                          │          │  ────▶  Publikation
+                          │          │
+                          │          │  ────▶  Scherbe (1-n)
+                          │          │
+                          └────┬─────┘
+                               │  hat Geometrie / wurde georeferenziert von
+                               ▼
+                       ┌────────────────┐
+                       │  Punkt (WGS84) │
+                       │  + Aktivität   │
+                       │   die ihn      │
+                       │   erzeugt hat  │
+                       └────────────────┘</code></pre>
+<p>Für ein klickbares, vollständiges Klassendiagramm: siehe
+<code>bb5kbc-classes.mmd</code> (rendert in mermaid.live, GitHub, VS
+Code, Obsidian).</p>
+<hr />
+<h2 id="sechs-modellierungsregeln">Sechs Modellierungsregeln</h2>
+<p>Diese sechs Regeln entscheiden, <strong>welche Werte einen eigenen
+Knoten bekommen und welche als einfache Texte/Zahlen direkt an einem
+Knoten hängen</strong>.</p>
+<h3
+id="regel-1-eine-fundstelle-ist-ein-eigener-knoten-mit-einer-id-fid">Regel
+1: Eine Fundstelle ist ein eigener Knoten mit einer ID (FID)</h3>
+<p>Jede Zeile der CSV wird zu <strong>einem</strong> Fundstellen-Knoten.
+Der Identifier ist die FID (<code>fst_id</code> in der CSV). Die FID
+landet in der URI:</p>
+<pre><code>http://w3id.org/bb5kbc/site_33     ← Fundstelle mit FID=33 (Friesack 4)
+http://w3id.org/bb5kbc/site_1      ← Fundstelle mit FID=1</code></pre>
+<p>Direkt an der Fundstelle hängen nur die <strong>Eigenschaften, die
+nur diese eine Fundstelle betreffen</strong>: ihr Name, ihre
+Katalognummer, ihre interne ID, ihre räumliche Genauigkeit. Alles andere
+geht über Beziehungen (Regeln 2–6).</p>
+<p><strong>Warum?</strong> Eine FID ist garantiert eindeutig pro
+Fundstelle, sie ist stabil (ändert sich nicht), und sie ist im
+Quelldatensatz so vorgesehen.</p>
+<h3
+id="regel-2-verwaltungsebenen-werden-geteilt-ein-hash-knoten-pro-wert">Regel
+2: Verwaltungsebenen werden geteilt — ein Hash-Knoten pro Wert</h3>
+<p>“Friesack” als Gemeinde ist <strong>genau ein</strong> Knoten, egal
+ob 1 Fundstelle oder 50 Fundstellen darin liegen. Der Knoten hat eine
+URI, die aus dem Namen abgeleitet wird (MD5-Hash der ersten 8
+Zeichen):</p>
+<pre><code>http://w3id.org/bb5kbc/gemeinde_ef3c98d9     ← &quot;Friesack&quot;
+http://w3id.org/bb5kbc/kreis_d4d0a03b        ← &quot;Havelland&quot;
+http://w3id.org/bb5kbc/bundesland_2ddb2d82   ← &quot;Brandenburg&quot;
+http://w3id.org/bb5kbc/land_3c2f8b8c         ← &quot;Deutschland&quot;</code></pre>
+<p>Die vier Verwaltungsebenen bilden eine Kette: Fundstelle liegt in
+Gemeinde, Gemeinde liegt in Kreis, Kreis liegt in Bundesland, Bundesland
+liegt in Land. <strong>Jede dieser Ebenen kann zusätzlich eine
+Wikidata-QID, eine Getty-TGN-ID, eine iDAI-gazetteer-ID und eine
+OSM-Relation tragen</strong> — das sind externe Identifikatoren, die als
+zusätzliche Triples an den Verwaltungsknoten hängen (siehe Regel 5).</p>
+<p><strong>Warum?</strong> Wenn man später fragt “Welche Fundstellen
+liegen in Brandenburg?”, soll der Brandenburg-Knoten <em>einer</em>
+sein, nicht 100 Duplikate.</p>
+<h3
+id="regel-3-typen-werden-geteilt-auch-ein-hash-knoten-pro-wert">Regel 3:
+Typen werden geteilt — auch ein Hash-Knoten pro Wert</h3>
+<p>Genauso wie Verwaltungsebenen werden auch <strong>Typ-Werte
+dedupliziert</strong>:</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>CSV-Spalte</th>
+<th>Typ-Klasse</th>
+<th>Beispiel-URI</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>fundstellenart</code></td>
+<td>Fundstellenart-Typ</td>
+<td><code>fundstellenart_1972902b</code> (Siedlung)</td>
+</tr>
+<tr class="even">
+<td><code>entdeckung</code> (QID)</td>
+<td>Entdeckungs-Typ</td>
+<td><code>entdeckungsart_2b73226f</code> (Ausgrabung)</td>
+</tr>
+<tr class="odd">
+<td><code>kultur</code></td>
+<td>Kulturgruppe</td>
+<td><code>kultur_a36e9d6d</code> (FBG)</td>
+</tr>
+<tr class="even">
+<td><code>dating_method</code> (QID)</td>
+<td>Datierungsmethode</td>
+<td><code>datmethode_98fc5e34</code> (Radiokarbon)</td>
+</tr>
+</tbody>
+</table>
+<p>“Siedlung” wird zu <em>einem</em> Knoten, der von allen
+Fundstellen-Knoten geteilt wird, die als Siedlung klassifiziert sind.
+Auf diesem Typ-Knoten hängt dann <strong>einmal</strong> das
+<code>rdfs:label "Siedlung"@de</code> und <strong>einmal</strong> die
+Wikidata-QID <code>Q486972</code>.</p>
+<p><strong>Warum?</strong> Damit Anfragen wie “Wie viele Siedlungen gibt
+es?” einfach funktionieren — man fragt einen Knoten, nicht 137
+Strings.</p>
+<p><strong>Sonderfall Unsicherheit (<code>?</code>-Werte):</strong>
+Werte wie <code>"SBK?"</code>, <code>"SRK?"</code> und
+<code>"Grab?"</code> werden mit
+<code>fsl:certaintyDesc "uncertain"@en</code> modelliert. Die
+<em>Ankerstelle</em> der <code>certaintyDesc</code>-Aussage hängt von
+der Domäne ab — und das ist absichtlich so:</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Domäne</th>
+<th>Ankerstelle</th>
+<th>Begründung</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Kulturgruppe (<code>SBK?</code>, <code>SRK?</code>)</td>
+<td>an der <strong><code>KulturelleZuordnung</code></strong>
+(Verknüpfung Site↔︎Kultur)</td>
+<td>Die Kulturgruppe ist ein eigenständiges Konzept, deduplizierter
+Knoten — die Unsicherheit betrifft <em>diese Zuweisung</em>, nicht das
+Konzept SBK an sich</td>
+</tr>
+<tr class="even">
+<td>Fundstellenart (<code>Grab?</code>)</td>
+<td>direkt am <strong><code>FundstellenartType</code>-Knoten</strong>,
+mit FID-Salt im URI-Hash</td>
+<td>Es gibt keinen Verknüpfungs-Zwischenknoten zwischen Site und Type;
+ein eigener, nicht-deduplizierter Type-Knoten ist die einzig saubere
+Stelle</td>
+</tr>
+</tbody>
+</table>
+<p>Wichtig: in beiden Fällen ist der Wert mit Fragezeichen
+<em>nicht</em> dasselbe wie der Wert ohne — die Unsicherheit ist Teil
+der Aussage. Beide tragen aber dieselbe Wikidata-QID (z.B.
+<code>wd:Q173387</code> für sowohl <code>Grab</code> als auch
+<code>Grab?</code>). Das stellt sicher, dass <code>?</code>-Sites in
+QID-basierten Anfragen mitfinden, aber in Label-basierten Anfragen
+sauber getrennt sind. Praktisches Beispiel im Kochbuch unten.</p>
+<p><strong>Sonderfall Mehrwertige Fundstellenart:</strong> Werte wie
+<code>"Siedlung und Grab"</code> oder
+<code>"Kreisgrabenanlage und Siedlung"</code> werden in <strong>zwei
+separate Knoten</strong> aufgesplittet. An der Fundstelle hängen dann
+zwei <code>bb5kbc:hatFundstellenart</code>- Triples — eines pro
+Komponente. Beispiel:</p>
+<pre><code>data:site_X
+    bb5kbc:hatFundstellenart data:fundstellenart_&lt;hash_siedlung&gt; ;
+    bb5kbc:hatFundstellenart data:fundstellenart_&lt;hash_grab&gt; .</code></pre>
+<p>Damit geht keine Information verloren, und Anfragen wie “Welche
+Fundstellen sind sowohl Siedlung als auch Grab?” funktionieren ohne
+String-Matching.</p>
+<h3
+id="regel-4-kulturelle-zuordnung-trägt-eigene-datierung-11-zur-fundstelle">Regel
+4: Kulturelle Zuordnung trägt eigene Datierung — 1:1 zur Fundstelle</h3>
+<p>Eine Fundstelle hat genau <strong>eine</strong> kulturelle Zuordnung
+— das ist die Verbindung zwischen <em>dieser</em> Fundstelle,
+<em>einer</em> Kulturgruppe (z.B. FBG) und <em>einer</em> zeitlichen
+Datierung (z.B. -4550 bis -3900 BCE). Diese drei Dinge hängen zusammen;
+deshalb gibt es einen eigenen Knoten dafür:</p>
+<pre><code>Fundstelle ─→ KulturelleZuordnung ─→ Kulturgruppe (geteilt!)
+   site_33     site_33_culture          kultur_a36e9d6d
+                       │
+                       └──────────→ Datierung (eigen pro Fundstelle)
+                                    site_33_dating</code></pre>
+<ul>
+<li><strong>Kulturgruppe</strong> ist geteilt (alle FBG-Fundstellen
+zeigen auf den gleichen <code>kultur_a36e9d6d</code>-Knoten — Regel 3).
+Das Konzept “FBG” ist ein einzelner Knoten.</li>
+<li><strong>KulturelleZuordnung</strong> ist <em>pro Fundstelle</em>
+(URI: <code>site_{FID}_culture</code>). Sie ist der
+Verknüpfungs-Zwischenknoten, der die jeweilige Site mit der geteilten
+Kulturgruppe verbindet <em>und</em> die site-spezifische Datierung
+trägt.</li>
+<li><strong>Datierung</strong> ist <em>pro Fundstelle</em> (URI:
+<code>site_{FID}_dating</code>). Jede Fundstelle hat ihre eigenen
+Start/End-Werte und Sicherheits-Beschreibungen, die unmissverständlich
+an <em>ihrem</em> Datierungs-Knoten landen.</li>
+</ul>
+<p>Die Datierung ist sowohl ein <strong>CRM-Time-Span</strong> als auch
+ein <strong>OWL-Time-Intervall</strong> — das gibt späteren Anfragen
+sowohl eine CRM-konforme als auch eine intervall-topologische Sicht
+(z.B. “Phase A endet bevor Phase B beginnt”).</p>
+<p><strong>Warum site-spezifische Zuordnung trotz geteilter
+Kulturgruppe?</strong> Weil die CSV pro Zeile eigene Datierungs- und
+Sicherheits-Werte hat (<code>dating_start</code>,
+<code>dating_end</code>, <code>dating_certainty_*</code>). Würden
+Zuordnung <em>und</em> Datierung pro Kulturgruppe dedupliziert (frühere
+Modellierung in v0.10), liefen alle 200 SBK-Sites am selben
+Datierungs-Knoten zusammen und ihre individuellen Werte würden sich zu
+einem nicht mehr auflösbaren Multi-Set vermischen. Die
+End-to-End-Validierung (siehe <code>validate_lod.py</code>) deckte diese
+Daten-Verlust- Modellierung auf; ab v0.11 ist die Zuordnung
+site-spezifisch.</p>
+<p><strong>Warum 1:1?</strong> Weil die CSV genau eine Datierung pro
+Zeile hat. Wenn später mehrere Phasen pro Fundstelle modelliert werden
+sollen (z.B. SBK-Phase gefolgt von Rössen-Phase an derselben
+Fundstelle), braucht es ein Update der Modellierungsregel — siehe <a
+href="#was-die-modellierung-nicht-kann">Limits</a>.</p>
+<h3
+id="regel-5-externe-ids-hängen-direkt-am-knoten-eine-property-für-alle">Regel
+5: Externe IDs hängen direkt am Knoten — eine Property für alle</h3>
+<p>Wikidata-QIDs, Getty-TGN-IDs, iDAI-gazetteer-IDs, OSM-Relationen und
+Perio.do-URIs werden alle über <strong>eine einzige Property</strong>
+angehängt: <code>bb5kbc:hasExternalIdentifier</code>. Welcher
+Identifier-Typ es ist, sieht man am URI-Präfix:</p>
+<pre class="turtle"><code>data:land_3c2f8b8c
+    a bb5kbc:Land ;
+    rdfs:label &quot;Deutschland&quot;@de ;
+    bb5kbc:hasExternalIdentifier &lt;http://vocab.getty.edu/tgn/7000084&gt; ,
+                                 &lt;http://gazetteer.dainst.org/place/2044274&gt; ,
+                                 &lt;https://www.openstreetmap.org/relation/51477&gt; ,
+                                 &lt;https://www.wikidata.org/entity/Q183&gt; .</code></pre>
+<p><strong>Warum eine Property statt vier?</strong> Weil aus
+archäologischer Sicht alle vier das Gleiche tun (“dieser Knoten ist auch
+dort zu finden”), und weil eine einzige Property SPARQL-Anfragen stark
+vereinfacht — man muss nicht für jeden Identifier-Typ eine eigene Query
+schreiben.</p>
+<h3 id="regel-6-georeferenzierung-ist-ein-eigener-akt">Regel 6:
+Georeferenzierung ist ein eigener Akt</h3>
+<p>Eine Fundstelle ist <em>nicht</em> ihre Koordinate. Sie ist ein
+archäologischer Ort, der irgendwann von jemandem mit irgendeiner Methode
+irgendwo verortet wurde. Diese Verortung wird als <strong>eigene
+Aktivität</strong> modelliert:</p>
+<pre><code>Fundstelle ─wurdeGeoreferenziertDurch→ GeoreferenzierungsAktivitaet
+    │                                  │
+    │                                  ├─→ Methode (z.B. &quot;Übernahme aus DB&quot;)
+    │                                  ├─→ Quelle (&quot;BLDAM 2021&quot;)
+    │                                  ├─→ Genauigkeit (Beschreibung)
+    │                                  └─→ Person (ORCID)
+    │
+    └──hatGeometrie──→ Punkt (WGS84)</code></pre>
+<p>Damit sind drei Sichten möglich, die in der CSV vermischt sind: 1.
+<strong>Was die Fundstelle ist</strong> — räumlich, archäologisch,
+identifizierbar 2. <strong>Wie die Koordinate zustande kam</strong> —
+Provenienz-Information 3. <strong>Wo die Fundstelle ist</strong> — der
+eigentliche Punkt im WGS84-System</p>
+<p><strong>Warum so aufwendig?</strong> Weil wir wissen wollen, <em>wie
+verlässlich</em> eine Verortung ist. Eine Übernahme aus dem
+Landesdenkmalamt ist anders zu bewerten als eine
+Mittelpunkt-der-Gemeinde-Schätzung. Diese Information geht verloren,
+wenn man Koordinaten direkt an die Fundstelle hängt.</p>
+<hr />
+<h2 id="uri-konventionen">URI-Konventionen</h2>
+<p>Alle URIs liegen unter dem Datennamespace
+<code>http://w3id.org/bb5kbc/</code>. Die <strong>Ontologie
+selbst</strong> liegt unter <code>http://w3id.org/bb5kbc/ont/</code>
+(z.B. <code>http://w3id.org/bb5kbc/ont/Fundstelle</code> für die
+Klasse).</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>URI-Muster</th>
+<th>Bedeutung</th>
+<th>Beispiel</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>site_{FID}</code></td>
+<td>Eine Fundstelle</td>
+<td><code>site_33</code></td>
+</tr>
+<tr class="even">
+<td><code>site_{FID}_activity</code></td>
+<td>Die Georeferenzierung <em>dieser</em> Fundstelle</td>
+<td><code>site_33_activity</code></td>
+</tr>
+<tr class="odd">
+<td><code>site_{FID}_geom</code></td>
+<td>Der WGS84-Punkt <em>dieser</em> Fundstelle</td>
+<td><code>site_33_geom</code></td>
+</tr>
+<tr class="even">
+<td><code>site_{FID}_culture</code></td>
+<td>Die Kulturelle Zuordnung <em>dieser</em> Fundstelle</td>
+<td><code>site_33_culture</code></td>
+</tr>
+<tr class="odd">
+<td><code>site_{FID}_dating</code></td>
+<td>Die Datierung <em>dieser</em> Fundstelle</td>
+<td><code>site_33_dating</code></td>
+</tr>
+<tr class="even">
+<td><code>gemeinde_{hash}</code></td>
+<td>Eine Gemeinde (geteilt)</td>
+<td><code>gemeinde_ef3c98d9</code> (Friesack)</td>
+</tr>
+<tr class="odd">
+<td><code>kreis_{hash}</code></td>
+<td>Ein Kreis (geteilt)</td>
+<td><code>kreis_d4d0a03b</code> (Havelland)</td>
+</tr>
+<tr class="even">
+<td><code>bundesland_{hash}</code></td>
+<td>Ein Bundesland (geteilt)</td>
+<td><code>bundesland_2ddb2d82</code> (Brandenburg)</td>
+</tr>
+<tr class="odd">
+<td><code>land_{hash}</code></td>
+<td>Ein Land (geteilt)</td>
+<td><code>land_3c2f8b8c</code> (Deutschland)</td>
+</tr>
+<tr class="even">
+<td><code>kultur_{hash}</code></td>
+<td>Eine Kulturgruppe (geteilt — Konzept-Knoten)</td>
+<td><code>kultur_a36e9d6d</code> (FBG)</td>
+</tr>
+<tr class="odd">
+<td><code>entdeckung_{hash}</code></td>
+<td>Eine Entdeckung (geteilt)</td>
+<td><code>entdeckung_1f56a08c</code></td>
+</tr>
+<tr class="even">
+<td><code>entdeckungsart_{hash}</code></td>
+<td>Eine Entdeckungsart (geteilt)</td>
+<td><code>entdeckungsart_2b73226f</code></td>
+</tr>
+<tr class="odd">
+<td><code>fundstellenart_{hash}</code></td>
+<td>Eine Fundstellenart (geteilt)</td>
+<td><code>fundstellenart_1972902b</code></td>
+</tr>
+<tr class="even">
+<td><code>pub_{hash}</code></td>
+<td>Eine Publikation (geteilt)</td>
+<td><code>pub_c54b495e</code></td>
+</tr>
+<tr class="odd">
+<td><code>datmethode_{hash}</code></td>
+<td>Eine Datierungsmethode (geteilt)</td>
+<td><code>datmethode_98fc5e34</code> (14C)</td>
+</tr>
+<tr class="even">
+<td><code>sherd_{hash}</code></td>
+<td>Eine Scherbe (geteilt pro Wikidata-QID)</td>
+<td><code>sherd_02807cc2</code></td>
+</tr>
+</tbody>
+</table>
+<p><code>{hash}</code> ist immer die ersten 8 Zeichen eines MD5-Hashes
+über den ursprünglichen Wert (UTF-8). Das macht die URIs
+kollisionssicher (auch für Umlaute) und deterministisch — derselbe Wert
+ergibt immer dieselbe URI.</p>
+<hr />
+<h2 id="sparql-kochbuch">SPARQL-Kochbuch</h2>
+<p>Die Beispiele gehen davon aus, dass die Daten in einem
+SPARQL-Endpunkt liegen, mit folgenden Prefixen:</p>
+<pre class="sparql"><code>PREFIX bb5kbc: &lt;http://w3id.org/bb5kbc/ont/&gt;
+PREFIX data:   &lt;http://w3id.org/bb5kbc/&gt;
+PREFIX rdfs:   &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+PREFIX skos:   &lt;http://www.w3.org/2004/02/skos/core#&gt;
+PREFIX wd:     &lt;https://www.wikidata.org/entity/&gt;
+PREFIX gn:     &lt;https://www.geonames.org/&gt;
+PREFIX geo:    &lt;http://www.opengis.net/ont/geosparql#&gt;
+PREFIX xsd:    &lt;http://www.w3.org/2001/XMLSchema#&gt;</code></pre>
+<h3 id="alle-fundstellen-mit-namen-und-fid">1. Alle Fundstellen mit
+Namen und FID</h3>
+<pre class="sparql"><code>SELECT ?fid ?name WHERE {
+    ?site a bb5kbc:Fundstelle ;
+          bb5kbc:hatFID ?fid ;
+          rdfs:label ?name .
+}
+ORDER BY ?fid</code></pre>
+<blockquote>
+<p>Liefert alle 540 Fundstellen mit ihrer FID und ihrem Namen — der
+“Hello World” der Anfragen.</p>
+</blockquote>
+<h3 id="alle-sbk-fundstellen">2. Alle SBK-Fundstellen</h3>
+<pre class="sparql"><code>SELECT ?name WHERE {
+    ?kultur rdfs:label &quot;SBK&quot;@de .
+    ?zuordnung bb5kbc:hatKulturgruppe ?kultur .
+    ?site bb5kbc:hatKulturelleZuordnung ?zuordnung ;
+          rdfs:label ?name .
+}</code></pre>
+<blockquote>
+<p>Findet alle Fundstellen einer bestimmten Kulturgruppe. Beachte:
+<code>"SBK?"</code> mit Fragezeichen findet diese Query <em>nicht</em> —
+<code>SBK</code> und <code>SBK?</code> sind getrennte
+Kulturgruppen-Knoten (Regel 3, Sonderfall Unsicherheit). Wer auch
+unsichere Zuordnungen mitfangen will, fragt über die gemeinsame
+Wikidata-QID statt über das Label — siehe nächstes Rezept.</p>
+</blockquote>
+<h3 id="b.-alle-sbk-fundstellen-inkl.-unsicherer-zuordnungen">2b. Alle
+SBK-Fundstellen inkl. unsicherer Zuordnungen</h3>
+<pre class="sparql"><code>PREFIX fsl: &lt;http://fuzzy-sl.squirrel.link/ontology/&gt;
+
+SELECT ?name ?certaintyDesc WHERE {
+    # Beide Kulturgruppen-Knoten (SBK und SBK?) zeigen auf dieselbe QID — falls modelliert.
+    # Hier filtern wir per Label-Präfix, was alle SBK*-Varianten findet.
+    ?kultur a bb5kbc:Kulturgruppe ;
+            rdfs:label ?kulturLabel .
+    FILTER(STRSTARTS(STR(?kulturLabel), &quot;SBK&quot;))
+    ?zuordnung bb5kbc:hatKulturgruppe ?kultur .
+    ?site bb5kbc:hatKulturelleZuordnung ?zuordnung ;
+          rdfs:label ?name .
+    OPTIONAL { ?zuordnung fsl:certaintyDesc ?certaintyDesc }
+}</code></pre>
+<blockquote>
+<p>Findet alle Fundstellen mit SBK-Bezug, egal ob sicher oder unsicher.
+Die <code>certaintyDesc</code>-Spalte zeigt <code>"uncertain"@en</code>
+für <code>SBK?</code>-Zuordnungen und ist sonst leer. Analog für andere
+Kulturgruppen.</p>
+</blockquote>
+<h3
+id="alle-fundstellen-in-brandenburg-egal-in-welchem-kreiswelcher-gemeinde">3.
+Alle Fundstellen in Brandenburg (egal in welchem Kreis/welcher
+Gemeinde)</h3>
+<pre class="sparql"><code>SELECT ?name ?gemeinde_name WHERE {
+    ?bundesland rdfs:label &quot;Brandenburg&quot;@de .
+    ?kreis bb5kbc:inBundesland ?bundesland .
+    ?gemeinde bb5kbc:inKreis ?kreis ;
+              rdfs:label ?gemeinde_name .
+    ?site bb5kbc:inGemeinde ?gemeinde ;
+          rdfs:label ?name .
+}
+ORDER BY ?gemeinde_name ?name</code></pre>
+<blockquote>
+<p>Folgt der Verwaltungs-Kette nach oben (Regel 2). Wer eine kürzere
+Anfrage möchte: die Property <code>bb5kbc:inGemeinde</code>,
+<code>inKreis</code>, <code>inBundesland</code>, <code>inLand</code>
+sind alle Subproperties von <code>crm:P89_falls_within</code> — ein
+Reasoner kann daraus inferieren, dass eine Fundstelle direkt in einem
+Bundesland liegt.</p>
+</blockquote>
+<h3 id="alle-siedlungen-mit-wikidata-verknüpfung-der-fundstellenart">4.
+Alle Siedlungen mit Wikidata-Verknüpfung der Fundstellenart</h3>
+<pre class="sparql"><code>SELECT ?name ?wikidata_qid WHERE {
+    ?fundstellenart rdfs:label &quot;Siedlung&quot;@de ;
+                    bb5kbc:hasExternalIdentifier ?wikidata_qid .
+    FILTER(STRSTARTS(STR(?wikidata_qid), &quot;https://www.wikidata.org/&quot;))
+
+    ?site bb5kbc:hatFundstellenart ?fundstellenart ;
+          rdfs:label ?name .
+}</code></pre>
+<blockquote>
+<p>Zeigt, wie externe Identifier abgefragt werden (Regel 5): die
+<code>FILTER</code>-Zeile schränkt auf Wikidata-URIs ein. Für andere
+Authority Files (TGN, iDAI, OSM) nimmt man entsprechend andere
+Präfixe.</p>
+</blockquote>
+<h3 id="alle-fundstellen-die-jünger-als-4000-bce-datiert-sind">5. Alle
+Fundstellen, die jünger als 4000 BCE datiert sind</h3>
+<pre class="sparql"><code>SELECT ?name ?dating_start ?dating_end WHERE {
+    ?site a bb5kbc:Fundstelle ;
+          rdfs:label ?name ;
+          bb5kbc:hatKulturelleZuordnung ?zuordnung .
+    ?zuordnung bb5kbc:hatDatierung ?dating .
+    ?dating bb5kbc:datierungStart ?dating_start ;
+            bb5kbc:datierungEnd ?dating_end .
+
+    FILTER(?dating_end &gt; -4000)
+}
+ORDER BY ?dating_end</code></pre>
+<blockquote>
+<p>BCE-Jahre sind negative Integer (Regel 4). <code>-4000</code> (4000
+BCE) ist <em>früher</em> als <code>-3500</code> (3500 BCE). Die Query
+liefert Fundstellen, deren Ende nach 4000 BCE liegt — also Fundstellen,
+die teilweise in die jüngere Phase hineinreichen.</p>
+</blockquote>
+<h3 id="alle-14c-datierten-fundstellen">6. Alle 14C-datierten
+Fundstellen</h3>
+<pre class="sparql"><code>SELECT ?name WHERE {
+    ?dating bb5kbc:datierungMethode ?methode .
+    ?methode bb5kbc:hasExternalIdentifier wd:Q173412 .   # Q173412 = Radiokarbondatierung
+
+    ?zuordnung bb5kbc:hatDatierung ?dating .
+    ?site bb5kbc:hatKulturelleZuordnung ?zuordnung ;
+          rdfs:label ?name .
+}</code></pre>
+<blockquote>
+<p>Findet Fundstellen über die Wikidata-QID der Datierungsmethode.
+Q173412 ist die Wikidata-Entität für Radiokarbondatierung — egal wie die
+Methode in der CSV beschriftet war.</p>
+</blockquote>
+<h3 id="fundstellen-deren-perio.do-periode-bekannt-ist">7. Fundstellen,
+deren Perio.do-Periode bekannt ist</h3>
+<pre class="sparql"><code>SELECT ?name ?periodo_uri ?match_strength WHERE {
+    ?site a bb5kbc:Fundstelle ;
+          rdfs:label ?name ;
+          bb5kbc:hatKulturelleZuordnung ?zuordnung .
+    ?zuordnung bb5kbc:hatDatierung ?dating .
+
+    {
+        ?dating skos:exactMatch ?periodo_uri .
+        BIND(&quot;exact&quot; AS ?match_strength)
+    } UNION {
+        ?dating skos:closeMatch ?periodo_uri .
+        BIND(&quot;close&quot; AS ?match_strength)
+    } UNION {
+        ?dating skos:relatedMatch ?periodo_uri .
+        BIND(&quot;related&quot; AS ?match_strength)
+    }
+
+    FILTER(STRSTARTS(STR(?periodo_uri), &quot;http://n2t.net/ark:/99152/&quot;))
+}</code></pre>
+<blockquote>
+<p>Zeigt das SKOS-Match-Pattern (Regel 4): <code>exactMatch</code>,
+<code>closeMatch</code>, <code>relatedMatch</code> werden hier in eine
+einheitliche Variable gemerged, die Stärke des Matches kommt mit.</p>
+</blockquote>
+<h3 id="kreuztabelle-fundstellenart-kulturgruppe">8. Kreuztabelle:
+Fundstellenart × Kulturgruppe</h3>
+<pre class="sparql"><code>SELECT ?fundstellenart_label ?kultur_label (COUNT(?site) AS ?anzahl) WHERE {
+    ?site a bb5kbc:Fundstelle ;
+          bb5kbc:hatFundstellenart ?fundstellenart ;
+          bb5kbc:hatKulturelleZuordnung ?zuordnung .
+
+    ?fundstellenart rdfs:label ?fundstellenart_label .
+    ?zuordnung bb5kbc:hatKulturgruppe ?kultur .
+    ?kultur rdfs:label ?kultur_label .
+}
+GROUP BY ?fundstellenart_label ?kultur_label
+ORDER BY DESC(?anzahl)</code></pre>
+<blockquote>
+<p>Eine analytische Anfrage: wie viele Fundstellen gibt es pro
+Kombination Fundstellenart × Kulturgruppe? Zeigt den Wert der
+Knoten-Deduplizierung — ohne Regel 3 wäre <code>GROUP BY</code> über
+String-Werte unzuverlässig.</p>
+</blockquote>
+<h3 id="fundstellen-deren-koordinaten-vom-bldam-stammen">9. Fundstellen,
+deren Koordinaten vom BLDAM stammen</h3>
+<pre class="sparql"><code>SELECT ?name ?genauigkeit WHERE {
+    ?site a bb5kbc:Fundstelle ;
+          rdfs:label ?name ;
+          bb5kbc:hatGenauigkeit ?genauigkeit ;
+          bb5kbc:wurdeGeoreferenziertDurch ?activity .
+
+    ?activity ?p ?ref .
+    FILTER(CONTAINS(LCASE(STR(?ref)), &quot;bldam&quot;))
+}
+ORDER BY ?genauigkeit</code></pre>
+<blockquote>
+<p>Folgt der Provenance-Kette (Regel 6): von der Fundstelle über die
+Georeferenzierungs-Aktivität zur Quelle. Hier ist die Quelle als String
+hinterlegt — bei strikt typisierten Anfragen würde man stattdessen die
+Wikidata-QID <code>Q897952</code> (BLDAM) über
+<code>bb5kbc:hasExternalIdentifier</code> matchen.</p>
+</blockquote>
+<hr />
+<h2 id="was-die-modellierung-nicht-kann">Was die Modellierung
+<em>nicht</em> kann</h2>
+<p>Damit Sophie und andere fair einschätzen können, ob die Modellierung
+passt, hier die bewussten Entscheidungen, <strong>etwas
+wegzulassen</strong>:</p>
+<h3 id="mehrere-datierungen-pro-fundstelle">Mehrere Datierungen pro
+Fundstelle</h3>
+<p>Aktuell hat jede Fundstelle <strong>genau eine</strong>
+<code>bb5kbc:KulturelleZuordnung</code> mit <strong>genau einer</strong>
+<code>bb5kbc:Datierung</code>. Wenn an einer Fundstelle mehrere
+zeitliche Phasen sichtbar sind (z.B. SBK gefolgt von Rössen), lässt sich
+das mit der aktuellen Modellierung <em>nicht</em> abbilden — die CSV
+unterstützt es auch nicht.</p>
+<p><strong>Was zu tun wäre:</strong> Die CSV müsste pro Fundstelle
+mehrere Zeilen erlauben (eine pro Phase), und die Modellierungsregel 4
+würde von 1:1 auf 1:n geöffnet. Das ist ein moderater Eingriff.</p>
+<h3 id="mehrwertige-fundstellenarten">Mehrwertige Fundstellenarten</h3>
+<p>Werte wie <code>"Siedlung und Grab"</code> werden aktuell auf
+<strong>einen einzigen</strong> Fundstellenart-Typ gemappt (in dem Fall
+den Siedlungs-Knoten, mit dem Label
+<code>"Siedlung und Grab"@de</code>). Die zweite Komponente (Grab) geht
+verloren — sie wäre als zweites
+<code>bb5kbc:hatFundstellenart</code>-Triple modellierbar, aber das
+würde die Pipeline komplexer machen.</p>
+<p>Siehe <code>bb5kbc-csv-issues.md</code> für Sophies Entscheidung.</p>
+<h3 id="numerische-unsicherheits-toleranz">Numerische
+Unsicherheits-Toleranz</h3>
+<p>Die Werte <code>dating_certainty_start</code>
+(<code>"+ / - 100 years"</code> etc.) sind als
+<strong>Freitext-Strings</strong> modelliert, nicht als strukturierte
+Toleranzen. Wer Anfragen wie “Datierung mit Toleranz &lt; 50 Jahre”
+stellen will, müsste die Strings vorher parsen. Hintergrund: die
+CSV-Werte sind heterogen (deutsch/englisch, mit Tippvarianten — siehe
+<code>bb5kbc-csv-issues.md</code>).</p>
+<h3
+id="fundstellen-zu-fundstellen-beziehungen">Fundstellen-zu-Fundstellen-Beziehungen</h3>
+<p>Es gibt keine Modellierung für räumliche oder kulturelle Beziehungen
+<em>zwischen</em> Fundstellen (“Fundstelle A liegt in Sichtweite von
+Fundstelle B”, “Fundstelle C ist Vorgänger von Fundstelle D”). Das ist
+Forschungsoutput, nicht Quelldaten.</p>
+<h3 id="personen-institutionen-außer-sophie">Personen / Institutionen
+außer Sophie</h3>
+<p>Die einzige Person in der aktuellen Modellierung ist Sophie C.
+Schmidt als Akteurin der Georeferenzierung (über ORCID). Andere
+Forscher:innen (z.B. Bersu, Wysocki) tauchen <em>nur</em> als Teil von
+Entdeckungs-Labels auf (<code>"Ausgrabung Bersu"</code>) und werden
+nicht als eigene Entitäten modelliert.</p>
+<hr />
+<h2 id="mini-glossar">Mini-Glossar</h2>
+<p>Drei Begriffe, die unvermeidbar sind, wenn man mit RDF arbeitet:</p>
+<p><strong>Triple</strong> — Eine Aussage in der Form <em>Subjekt →
+Prädikat → Objekt</em>, wie ein Satz mit drei Worten. Beispiel:
+<em>Fundstelle 33 → hat Fundstellenart → Siedlung</em>. Alle Daten in
+RDF bestehen aus Triples; ein SPARQL-Endpunkt ist eine Datenbank
+dafür.</p>
+<p><strong>URI</strong> (Uniform Resource Identifier) — Ein global
+eindeutiger Bezeichner, der wie eine Web-Adresse aussieht.
+<code>http://w3id.org/bb5kbc/site_33</code> ist die URI der Fundstelle
+Friesack 4. Zwei URIs, die gleich aussehen, sind dieselbe Sache; zwei
+URIs, die anders aussehen, sind verschiedene Sachen — auch wenn sie das
+gleiche meinen sollen. Deshalb teilen wir Knoten (Regel 2 + 3): damit
+“Friesack” für alle Fundstellen <em>dieselbe</em> URI hat.</p>
+<p><strong>Prefix</strong> — Eine Abkürzung für einen URI-Anfang. Statt
+<code>&lt;http://w3id.org/bb5kbc/ont/Fundstelle&gt;</code> schreibt man
+<code>bb5kbc:Fundstelle</code>, wenn vorher
+<code>PREFIX bb5kbc: &lt;http://w3id.org/bb5kbc/ont/&gt;</code>
+deklariert ist. Macht Anfragen lesbar.</p>
+<hr />
+<p><em>Fragen, Korrekturen, Erweiterungen: Issues im Repository oder
+direkt an Sophie und Florian.</em></p>
+</body>
+</html>

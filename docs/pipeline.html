@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>pipeline</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css" />
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">pipeline</h1>
+</header>
+<h1 id="bb5kbc-lod-pipeline-readme">bb5kbc LOD Pipeline — README</h1>
+<blockquote>
+<p>Konvertiert die Brandenburg-5000-BC-Fundstellen-CSV in ein einziges
+Turtle-Dokument (<code>bb5kbc-data.ttl</code>) gemäß den
+Modellierungsregeln aus <code>bb5kbc-modelling-rules.md</code> und
+validiert das Ergebnis automatisch gegen SHACL-Shapes, die aus der
+Ontologie generiert werden.</p>
+<p><strong>Skript:</strong> <code>bb5kbc_lod_pipeline.py</code> ·
+<strong>Stand:</strong> Ontologie v0.10 · <strong>Lizenz:</strong> CC BY
+4.0</p>
+</blockquote>
+<hr />
+<h2 id="inhalt">Inhalt</h2>
+<ol type="1">
+<li><a href="#verzeichnisstruktur">Verzeichnisstruktur</a></li>
+<li><a href="#voraussetzungen">Voraussetzungen</a></li>
+<li><a href="#erster-lauf">Erster Lauf</a></li>
+<li><a href="#was-die-pipeline-tut">Was die Pipeline tut</a></li>
+<li><a href="#output-dateien">Output-Dateien</a></li>
+<li><a href="#run-settings">Run-Settings</a></li>
+<li><a href="#logging-und-warnungen">Logging und Warnungen</a></li>
+<li><a href="#shacl-validierung">SHACL-Validierung</a></li>
+<li><a href="#bekannte-verhaltensweisen">Bekannte
+Verhaltensweisen</a></li>
+<li><a href="#wenn-etwas-nicht-stimmt">Wenn etwas nicht stimmt</a></li>
+</ol>
+<hr />
+<h2 id="verzeichnisstruktur">Verzeichnisstruktur</h2>
+<p>Die Pipeline erwartet das Projekt in dieser Form (relative Pfade ab
+Skript):</p>
+<pre><code>root/
+├── rdf/
+│   ├── bb5kbc_lod_pipeline.py        ← dieses Skript
+│   ├── bb5kbc-shapes.ttl             ← auto-generiert beim Lauf
+│   └── bb5kbc-pipeline-readme.md     ← dieses Dokument
+├── ontology/
+│   └── bb5kbc-ontology.ttl           ← Anwendungsontologie
+├── data/
+│   ├── fst_wgs84.csv                 ← Eingabe (Output von csv_enrichment.py, read-only)
+│   └── csv_enrichment_run.ttl        ← Upstream-PROV-Manifest (wird auto-discovered)
+└── dist/
+    ├── bb5kbc-data.ttl               ← konvertierte Daten (mit eingebetteter PROV-Kette)
+    ├── bb5kbc-bundle.ttl             ← Daten + Ontologie (selbst-genügsam, mit PROV)
+    ├── csv_to_lod_run.ttl            ← Standalone-PROV-Manifest dieses Laufs
+    ├── shacl-report.ttl              ← Validierungsbericht (Daten-Graph)
+    ├── shacl-report-bundle.ttl       ← Validierungsbericht (Bundle-Graph)
+    └── report.log                    ← vollständiger Terminal-Output</code></pre>
+<p>Das Skript wird aus <code>rdf/</code> heraus aufgerufen. Eingabe-CSV
+und Ontologie werden nie verändert. Alle generierten Artefakte landen in
+<code>dist/</code>, mit der einen Ausnahme:
+<code>bb5kbc-shapes.ttl</code> liegt bei <code>rdf/</code>, weil sie
+konzeptionell zum Schema gehören (versionsverwaltet, durchsuchbar,
+wiederverwendbar).</p>
+<p>Die Eingabe-CSV <code>fst_wgs84.csv</code> ist der angereicherte
+Output der vorgelagerten <code>csv_enrichment.py</code>-Pipeline (540
+Zeilen, 65 Spalten — die ursprünglichen 33 Spalten plus je 8
+Authority-ID-Spalten für LAND, BUNDESLAND, KREIS, GEMEINDE: Wikidata
+QID, GeoNames, TGN, iDAI.gazetteer, OSM Relation und drei Match-
+Metadatenspalten).</p>
+<hr />
+<h2 id="voraussetzungen">Voraussetzungen</h2>
+<p>Python 3.10+ und drei Pakete:</p>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install rdflib pandas pyshacl</span></code></pre></div>
+<p><code>pyshacl</code> ist optional — ohne sie überspringt die Pipeline
+die Validierung mit einer Warnung statt mit einem Fehler.</p>
+<hr />
+<h2 id="erster-lauf">Erster Lauf</h2>
+<p>Das Skript hat keine Kommandozeilen-Argumente — alle Einstellungen
+sind Konstanten am Anfang des Skripts (Sektion 2, Block “Run settings”).
+Einfach das Skript in VS Code öffnen und mit <em>F5</em> (oder <em>Run
+Python File</em>) starten; oder aus dem <code>rdf/</code>-Verzeichnis
+heraus:</p>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> bb5kbc_lod_pipeline.py</span></code></pre></div>
+<p>Erwartete Ausgabe (gekürzt):</p>
+<pre><code>[INFO] bb5kbc LOD pipeline — start
+[INFO] Loaded CSV: 540 rows, 65 columns
+[INFO] Upstream PROV:    ../data/csv_enrichment_run.ttl
+[INFO] Processing rows ...
+[INFO] Row 30: split fundstellenart &#39;Kreisgrabenanlage und Siedlung&#39; into 2 components
+[INFO] Row FID=54: fundstellenart &#39;Grab?&#39; marked as uncertain (fsl:certaintyDesc).
+[INFO] Row FID=35: dating_perio.do present but no match level specified — defaulting to skos:relatedMatch.
+[INFO] Processed: 540 rows, skipped: 0
+[INFO] Generated graph: 27347 triples
+[INFO] Loaded upstream PROV: 93 triples, top-level activity: https://example.org/bb-5kbc-sites/run/2026-04-27T08-21-21Z
+[INFO] Identified upstream entity for fst_wgs84.csv: https://example.org/bb-5kbc-sites/fst_wgs84_csv
+[INFO] Embedded upstream PROV into data graph (+93 triples)
+[INFO] PROV activity: http://w3id.org/bb5kbc/pipeline_run_2026-04-27T...Z
+[INFO] Wrote data graph: ../dist/bb5kbc-data.ttl (27467 triples)
+[INFO] Wrote bundle graph: ../dist/bb5kbc-bundle.ttl (28089 triples)
+[INFO] Wrote LOD PROV manifest: ../dist/csv_to_lod_run.ttl (30 triples)
+[INFO] Wrote shapes: ./bb5kbc-shapes.ttl (152 triples)
+[INFO] SHACL validation: PASS (0 validation results)
+[INFO] bb5kbc LOD pipeline — done</code></pre>
+<p>Laufzeit: ca. 20 Sekunden auf einem normalen Laptop, davon ~16
+Sekunden SHACL- Validierung (zwei Durchläufe: Daten-Graph +
+Bundle-Graph).</p>
+<hr />
+<h2 id="was-die-pipeline-tut">Was die Pipeline tut</h2>
+<p>Sechs Schritte, in dieser Reihenfolge:</p>
+<h3 id="csv-einlesen">1. CSV einlesen</h3>
+<p>Mit
+<code>pandas.read_csv(..., dtype=str, keep_default_na=False)</code> —
+alle Werte bleiben als String erhalten, leere Felder als leerer String.
+Damit gibt es keine versteckte <code>NaN</code>-zu-Float-Konversion, die
+später zu <code>'nan'</code>-Triples führen könnte.</p>
+<h3 id="pro-zeile-triples-bauen">2. Pro Zeile Triples bauen</h3>
+<p>Für jede Zeile durchläuft das Skript zehn Builder-Funktionen, in
+dieser Reihenfolge (Reihenfolge ist relevant, weil spätere Builder
+Verweise auf URIs früherer Builder brauchen):</p>
+<pre><code>add_land_triples           ┐
+add_bundesland_triples     │ Verwaltungs-Containment
+add_kreis_triples          │ (von außen nach innen)
+add_gemeinde_triples       ┘
+add_fundstelle_triples       ← FID-basierte URI; ohne FID wird Zeile übersprungen
+add_fundstellenart_triples   ← Compound-Splitting falls &quot;und&quot;/&quot;,&quot;
+add_entdeckung_triples       ← Ohne QID kein hatEntdeckungsart
+add_publikation_triples
+add_kulturelle_zuordnung_triples
+add_datierung_triples        ← Mit dating_end-Korrekturen für FID 31/257
+add_scherbe_triples          ← Pipe-Splitting für mehrere QIDs
+add_georeferenzierung_triples ← Activity + sf:Point + alle FSL-Properties</code></pre>
+<p>Jede Builder-Funktion gibt die erzeugten URIs als Liste zurück, die
+im <code>uri_dict</code> gesammelt werden — damit kann z.B.
+<code>add_kulturelle_zuordnung_triples</code> auf die
+<code>Fundstelle</code>-URI zugreifen, die gerade erzeugt wurde.</p>
+<h3 id="pipeline-provenance-verkettung-zum-csv-enrichment">3.
+Pipeline-Provenance + Verkettung zum CSV-Enrichment</h3>
+<p>Eine <strong>einzelne</strong> <code>prov:Activity</code> für den
+ganzen Lauf wird angelegt (nicht eine pro Zeile, wie z.B. in
+Poseidon2LOD), mit:</p>
+<ul>
+<li>URI: <code>data:pipeline_run_&lt;ISO-Timestamp&gt;</code>
+(Doppelpunkte zu Bindestrichen, z.B.
+<code>pipeline_run_2026-04-27T09-22-28Z</code>)</li>
+<li><code>prov:wasAssociatedWith</code> Sophie und Florian (ORCID-URIs)
+sowie der Software-Agent <code>data:bb5kbc_lod_pipeline_py</code></li>
+<li><code>prov:startedAtTime</code> und <code>prov:endedAtTime</code>
+UTC-Zeitstempel</li>
+<li><code>prov:used</code> Eingabe-CSV und Ontologie-URI</li>
+</ul>
+<p>Zwei explizite <strong>Output-Entities</strong> werden ebenfalls
+angelegt:</p>
+<ul>
+<li><code>data:bb5kbc_data_ttl</code> (Daten-Graph) und
+<code>data:bb5kbc_bundle_ttl</code> (Bundle). Beide haben
+<code>prov:wasGeneratedBy</code> (diese Activity) und
+<code>prov:wasDerivedFrom</code> (die upstream-Entity für
+<code>fst_wgs84.csv</code>).</li>
+</ul>
+<p><strong>Verkettung zum CSV-Enrichment-Lauf:</strong> Wenn das Skript
+ein <code>csv_enrichment_run.ttl</code> findet — entweder per
+Auto-Discovery in <code>../data/csv_enrichment_run.ttl</code> oder per
+Override über die Konstante
+<code>RUN_PROV_CSV_ENRICHMENT_OVERRIDE</code> im Skript-Header —
+passieren drei Dinge:</p>
+<ol type="1">
+<li>Das Skript parst das Manifest und sucht die Top-Level-Activity (die
+keinen <code>prov:wasInformedBy</code>-Outlink hat).</li>
+<li>Die LOD-Activity bekommt
+<code>prov:wasInformedBy &lt;upstream-top-level&gt;</code> — eine
+Cross-Namespace-Verknüpfung, weil das Upstream-Manifest in
+<code>https://example.org/bb-5kbc-sites/</code> lebt und die
+LOD-Pipeline in <code>http://w3id.org/bb5kbc/</code>.</li>
+<li>Alle Tripel des Upstream-Manifests werden physisch in den
+Datengraphen eingebettet (≈ 90 Tripel) und damit auch ins Bundle. Jeder,
+der eines der LOD-Files lädt, sieht direkt die ganze Provenanz-Kette von
+der Original-CSV bis zum aktuellen Lauf.</li>
+</ol>
+<p>Wenn kein Manifest gefunden wird, läuft das Skript
+<strong>standalone</strong> weiter (ohne Verkettung), schreibt aber
+trotzdem seine eigene PROV-Activity in das Output.</p>
+<h3 id="daten-graph-schreiben">4. Daten-Graph schreiben</h3>
+<p>Serialisiert nach <code>dist/bb5kbc-data.ttl</code> (Turtle-Format).
+Enthält die Daten, die LOD-PROV-Activity und (falls vorhanden) die
+eingebetteten upstream-PROV- Tripel — <strong>keine</strong>
+Ontologie-Tripel, dadurch bleibt die Datei schlank und klar
+trennbar.</p>
+<p>Zusätzlich wird <code>dist/csv_to_lod_run.ttl</code> geschrieben —
+ein schlankes Standalone-Manifest mit <em>nur</em> den LOD-seitigen
+PROV-Tripeln (ca. 30 Tripel), analog zum
+<code>csv_enrichment_run.ttl</code> der vorgelagerten Pipeline. Das ist
+nützlich, wenn man die Provenanz-Kette ohne die Daten betrachten
+möchte.</p>
+<h3 id="shacl-shapes-generieren">5. SHACL-Shapes generieren</h3>
+<p>Das Skript liest die Ontologie ein und erzeugt automatisch
+SHACL-Shapes:</p>
+<ul>
+<li>Eine <code>sh:NodeShape</code> pro <code>bb5kbc:</code>-Klasse
+(Target via <code>sh:targetClass</code>)</li>
+<li>Pro Object Property mit Domain-Constraint: <code>sh:property</code>
+mit <code>sh:path</code> und <code>sh:class</code> (= Range)</li>
+<li>Pro Datatype Property analog mit <code>sh:datatype</code></li>
+<li><strong>Eine harte Regel:</strong> <code>bb5kbc:Fundstelle</code>
+muss exakt einen <code>bb5kbc:hatFID</code> haben
+(<code>sh:Violation</code>)</li>
+<li>Alle übrigen Constraints sind <code>sh:Warning</code>
+(Domain/Range-Hinweise, nicht blockierend)</li>
+</ul>
+<p>Das Ergebnis landet in <code>rdf/bb5kbc-shapes.ttl</code> und ist
+versionierbar.</p>
+<h3 id="validieren-und-bericht-schreiben">6. Validieren und Bericht
+schreiben</h3>
+<p><code>pyshacl.validate()</code> lädt die <strong>frisch
+geschriebene</strong> TTL-Datei (nicht den In-Memory-Graph), die Shapes
+und die Ontologie als Inferenz-Graph. Der Bericht wird nach
+<code>dist/shacl-report.ttl</code> geschrieben. Die ersten 10
+Validierungsergebnisse erscheinen zusätzlich im Log.</p>
+<p>Standard-Verhalten ist <strong>Warning-only</strong>: das Skript
+beendet sich mit Exit-Code 0, auch wenn es Validierungsfehler gibt. Mit
+<code>RUN_STRICT = True</code> im Skript-Header kann dieses Verhalten
+umgekehrt werden.</p>
+<hr />
+<h2 id="output-dateien">Output-Dateien</h2>
+<h3 id="distbb5kbc-data.ttl"><code>dist/bb5kbc-data.ttl</code></h3>
+<p>Die konvertierten Daten als Turtle. Enthält die Daten-Tripel, die
+LOD-PROV- Activity und (bei Verkettung mit dem CSV-Enrichment-Lauf) auch
+die eingebetteten upstream-PROV-Tripel — <strong>keine</strong>
+Ontologie-Tripel. Zum Lesen oder Abfragen sollte sie zusammen mit
+<code>bb5kbc-ontology.ttl</code> geladen werden.</p>
+<p>Typische Größe für 540 Zeilen: ca. 21 780 Triples in 1.8 MB (mit
+eingebetteter Verkettung) bzw. ca. 21 685 Triples ohne
+(Standalone-Lauf).</p>
+<h3 id="distbb5kbc-bundle.ttl"><code>dist/bb5kbc-bundle.ttl</code></h3>
+<p><strong>Daten + Ontologie + PROV in einer Datei</strong> —
+selbst-genügsam, ideal zum Hochladen in Triplestores oder zum Teilen mit
+Dritten. Enthält dieselben Daten- und PROV-Tripel wie
+<code>bb5kbc-data.ttl</code> plus die kompletten Ontologie-
+Definitionen.</p>
+<p>Typische Größe: ca. 22 400 Triples (~620 mehr als
+<code>bb5kbc-data.ttl</code>).</p>
+<h3
+id="distshacl-report.ttl-und-distshacl-report-bundle.ttl"><code>dist/shacl-report.ttl</code>
+und <code>dist/shacl-report-bundle.ttl</code></h3>
+<p>Der Validierungsbericht im SHACL-Standardformat. Bei einem sauberen
+Lauf enthält die Datei nur einen <code>sh:ValidationReport</code> mit
+<code>sh:conforms true</code>. Bei Fehlern listet sie pro Verstoß einen
+<code>sh:ValidationResult</code> mit <code>sh:focusNode</code> (welcher
+Knoten?), <code>sh:resultPath</code> (welche Property?) und
+<code>sh:resultMessage</code> (was war falsch?).</p>
+<p>Es gibt <strong>zwei separate Berichte</strong>: einen für
+<code>bb5kbc-data.ttl</code> (Daten-Graph allein) und einen für
+<code>bb5kbc-bundle.ttl</code> (Daten + Ontologie). Beide werden gegen
+dieselben SHACL-Shapes validiert, mit der Ontologie als Inferenz-Graph.
+Im Idealfall sind beide Reports identisch
+(<code>sh:conforms true</code>).</p>
+<p>Der Bericht ist selbst RDF und kann mit SPARQL abgefragt werden —
+siehe <code>bb5kbc-modelling-rules.md</code> für ein Beispiel.</p>
+<h3 id="distreport.log"><code>dist/report.log</code></h3>
+<p>Vollständiger Terminal-Output dieses Laufs, mit Zeitstempel pro
+Zeile. Hilfreich, um beim nächsten CSV-Update zu sehen, welche Daten-
+korrekturen die Pipeline angewendet hat.</p>
+<h3
+id="distcsv_to_lod_run.ttl"><code>dist/csv_to_lod_run.ttl</code></h3>
+<p>Schlankes Standalone-Manifest mit den PROV-O-Tripeln dieses
+LOD-Laufs: die Activity, die Software-Agent-Erklärung, die zwei
+Output-Entities und — falls upstream vorhanden — die Verkettungsangaben
+(<code>prov:wasInformedBy</code>, <code>prov:wasDerivedFrom</code>).
+Analog zum <code>csv_enrichment_run.ttl</code> der vorgelagerten
+Pipeline. Die <em>gleichen</em> Tripel sind auch in
+<code>bb5kbc-data.ttl</code> eingebettet — diese Datei ist nur die
+separate Sicht zum Auditieren.</p>
+<h3 id="rdfbb5kbc-shapes.ttl"><code>rdf/bb5kbc-shapes.ttl</code></h3>
+<p>Die SHACL-Shapes selbst. Beim nächsten Lauf werden sie überschrieben
+(immer in Sync mit der Ontologie). Keine manuelle Bearbeitung — falls
+ein Shape nicht passt, ändert sich entweder die Ontologie oder die
+Generator-Logik in Section 5 des Skripts.</p>
+<hr />
+<h2 id="run-settings">Run-Settings</h2>
+<p>Alle Einstellungen sind Konstanten am Anfang des Skripts (Sektion 2,
+Block “Run settings”). Ändere die Werte direkt im Code; es gibt keine
+Kommandozeilen-Argumente.</p>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># In bb5kbc_lod_pipeline.py, Section 2:</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>RUN_LIMIT: <span class="bu">int</span> <span class="op">|</span> <span class="va">None</span> <span class="op">=</span> <span class="va">None</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Process only the first N rows (None = process the entire CSV).</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Useful for smoke-testing changes without waiting for the full 540-row run.</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>RUN_STRICT: <span class="bu">bool</span> <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Treat SHACL violations as errors (return code 1 on violations).</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="co"># When False, the pipeline always exits cleanly; violations are only logged.</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>RUN_SKIP_SHACL: <span class="bu">bool</span> <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Skip SHACL validation entirely (saves ~16 seconds).</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="co"># When True, no shacl-report*.ttl files are produced.</span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>RUN_PROV_CSV_ENRICHMENT_OVERRIDE: Path <span class="op">|</span> <span class="va">None</span> <span class="op">=</span> <span class="va">None</span></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Optional override for the upstream PROV manifest. When None, the pipeline</span></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a><span class="co"># auto-discovers ../data/csv_enrichment_run.ttl. Set to a Path object (or a</span></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a><span class="co"># string path) to point at a different manifest, e.g. an archived copy.</span></span></code></pre></div>
+<p>Pfade für CSV, Ontologie und Output-Ordner sind ebenfalls fix
+verdrahtet (in <code>main()</code>):</p>
+<table>
+<thead>
+<tr class="header">
+<th>Was</th>
+<th>Pfad</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>CSV-Eingabe</td>
+<td><code>../data/fst_wgs84.csv</code></td>
+</tr>
+<tr class="even">
+<td>Ontologie</td>
+<td><code>../ontology/bb5kbc-ontology.ttl</code></td>
+</tr>
+<tr class="odd">
+<td>Output-Verzeichnis</td>
+<td><code>../dist</code></td>
+</tr>
+<tr class="even">
+<td>Upstream PROV (auto-discovered)</td>
+<td><code>../data/csv_enrichment_run.ttl</code></td>
+</tr>
+</tbody>
+</table>
+<p>Wenn du eine andere CSV oder Ontologie verwenden willst, änderst du
+das direkt in <code>main()</code> (oder kopierst das Skript). Für eine
+schnelle Smoke-Test-Iteration: <code>RUN_LIMIT = 5</code> und
+<code>RUN_SKIP_SHACL = True</code> setzen.</p>
+<hr />
+<h2 id="logging-und-warnungen">Logging und Warnungen</h2>
+<p>Drei Log-Levels werden verwendet:</p>
+<ul>
+<li><strong><code>INFO</code></strong> für normale Schritt-Meldungen und
+absichtliche Anpassungen (z.B. Compound-Splits,
+Default-Match-Level)</li>
+<li><strong><code>WARNING</code></strong> für Daten, die korrigiert
+wurden (z.B. dating_end-Tippfehler)</li>
+<li><strong><code>ERROR</code></strong> wird im Standardbetrieb nicht
+ausgelöst, nur bei fehlender CSV oder kaputter Ontologie</li>
+</ul>
+<p>Alle Meldungen erscheinen im Terminal <strong>und</strong> in
+<code>dist/report.log</code>. Damit ist der Lauf reproduzierbar
+nachvollziehbar.</p>
+<hr />
+<h2 id="shacl-validierung">SHACL-Validierung</h2>
+<p>Die generierten Shapes folgen einem konservativen Ansatz:</p>
+<ul>
+<li><strong>Strikte Regel</strong> (<code>sh:Violation</code>): jede
+<code>bb5kbc:Fundstelle</code> muss genau einen
+<code>bb5kbc:hatFID</code> haben. Wenn das fehlt, ist der Datensatz
+kaputt.</li>
+<li><strong>Hinweise</strong> (<code>sh:Warning</code>):
+Domain/Range-Constraints aus der Ontologie. Ein typischer Hinweis wäre
+“Property X erwartet Range Y, gefunden Z”. Diese sind oft
+False-Positives bei externen Identifiern (Wikidata-URIs haben keinen
+RDF-Typ in unseren Daten), deshalb sind sie warnend.</li>
+</ul>
+<p>Wenn der Bericht <strong><code>sh:conforms true</code></strong> sagt,
+ist die Daten-Modellierung mindestens strukturell konsistent.
+Inhaltliche Fragen (sind die Daten <em>richtig</em>?) beantwortet SHACL
+nicht — dazu gibt es <code>bb5kbc-csv-issues.md</code> und Sophies
+Review.</p>
+<h3 id="bericht-selbst-per-sparql-abfragen">Bericht selbst per SPARQL
+abfragen</h3>
+<pre class="sparql"><code>PREFIX sh: &lt;http://www.w3.org/ns/shacl#&gt;
+SELECT ?focus ?path ?msg WHERE {
+    ?result a sh:ValidationResult ;
+            sh:focusNode ?focus ;
+            sh:resultPath ?path ;
+            sh:resultMessage ?msg .
+}</code></pre>
+<hr />
+<h2 id="bekannte-verhaltensweisen">Bekannte Verhaltensweisen</h2>
+<p>Das Skript wendet diese <strong>bewussten Anpassungen</strong>
+an:</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Eintrag</th>
+<th>Was passiert</th>
+<th>Wo dokumentiert</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>fundstellenart</code> mit “und” / “,”</td>
+<td>aufgesplittet in mehrere Type-Knoten</td>
+<td><code>COMPOUND_FUNDSTELLENART</code>-Dict im Skript</td>
+</tr>
+<tr class="even">
+<td><code>fundstellenart</code> endet auf <code>?</code> (z.B.
+<code>Grab?</code>)</td>
+<td>eigener, nicht-deduplizierter Type-Knoten pro Site mit
+<code>fsl:certaintyDesc "uncertain"@en</code></td>
+<td><code>add_fundstellenart_triples</code>, Sophies Issue 3</td>
+</tr>
+<tr class="odd">
+<td><code>kultur</code> endet auf <code>?</code> (z.B.
+<code>SBK?</code>)</td>
+<td><code>fsl:certaintyDesc "uncertain"@en</code> an der
+<code>KulturelleZuordnung</code> (nicht an der Kulturgruppe selbst)</td>
+<td><code>add_kulturelle_zuordnung_triples</code>, Sophies Issue 8</td>
+</tr>
+<tr class="even">
+<td><code>entdeckung</code> ohne QID</td>
+<td>Knoten erstellt, aber kein <code>hatEntdeckungsart</code></td>
+<td>Modellierungsentscheidung</td>
+</tr>
+<tr class="odd">
+<td><code>dating_perio.do</code> ohne Match-Level</td>
+<td>Default <code>skos:relatedMatch</code></td>
+<td>Info im Log</td>
+</tr>
+<tr class="even">
+<td><code>wgs84 = (0,0)</code></td>
+<td>kein <code>sf:Point</code>, certainty <code>Q113 dubious</code></td>
+<td>Modellierungsregel</td>
+</tr>
+<tr class="odd">
+<td>Leere CSV-Felder</td>
+<td>kein Triple erzeugt (kein <code>""</code>-Literal)</td>
+<td>Modellierungsregel</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Authority-Identifier</strong> werden für alle vier
+Verwaltungsebenen (LAND, BUNDESLAND, KREIS, GEMEINDE) gelesen und als
+<code>bb5kbc:hasExternalIdentifier</code> modelliert. Unterstützte
+Authorities: Wikidata (Spalte <code>&lt;EBENE&gt;_QID</code>), GeoNames
+(<code>&lt;EBENE&gt;_GeoNames</code>), Getty TGN
+(<code>&lt;EBENE&gt;_TGN</code>), iDAI.gazetteer
+(<code>&lt;EBENE&gt;_IDAI</code>), OSM Relation
+(<code>&lt;EBENE&gt;_OSM_Relation</code>). Zusätzlich zu diesen fünf
+Authority-Spalten enthält die Eingabe-CSV pro Ebene drei Match-
+Metadatenspalten (<code>matchLabel</code>, <code>matchScore</code>,
+<code>matchReason</code>), die das Skript <strong>nicht</strong> in den
+RDF-Graph übernimmt — sie sind Audit-Information aus dem vorgelagerten
+<code>csv_enrichment.py</code>-Lauf.</p>
+<p>Falls Sophie eine der Korrekturen rückgängig machen möchte: die
+Tabelle oben verweist auf die genauen Stellen im Skript.</p>
+<hr />
+<h2 id="wenn-etwas-nicht-stimmt">Wenn etwas nicht stimmt</h2>
+<h3 id="importerror-no-module-named-rdflib">“ImportError: No module
+named rdflib”</h3>
+<div class="sourceCode" id="cb8"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install rdflib pandas pyshacl</span></code></pre></div>
+<h3 id="csv-not-found">“CSV not found”</h3>
+<p>Pfade prüfen — das Skript erwartet die Datei unter
+<code>../data/fst_wgs84.csv</code> relativ zu seiner eigenen Position.
+Wenn die CSV woanders liegt, im Skript direkt in <code>main()</code> den
+<code>csv_path</code> anpassen.</p>
+<h3 id="shacl-meldet-hunderte-verstöße">SHACL meldet hunderte
+Verstöße</h3>
+<p>Wahrscheinlich hat sich die Ontologie geändert, ohne dass die
+Datenstruktur mitgezogen ist. Tipp: zuerst
+<code>RUN_SKIP_SHACL = True</code> setzen und laufen lassen, dann den
+Daten-Graph manuell inspizieren, um zu sehen ob die Triples sinnvoll
+aussehen.</p>
+<h3
+id="pipeline-läuft-aber-bb5kbc-data.ttl-ist-leer-sehr-klein">Pipeline
+läuft, aber <code>bb5kbc-data.ttl</code> ist leer / sehr klein</h3>
+<p>CSV-Headerzeile prüfen — wenn die Spaltennamen nicht den erwarteten
+entsprechen (siehe <code>bb5kbc-csv-mapping.md</code>), generiert das
+Skript keine Triples, weil alle Felder als leer eingestuft werden.</p>
+<h3
+id="output-sieht-vernünftig-aus-aber-ich-vermute-modellierungsfehler">Output
+sieht “vernünftig” aus, aber ich vermute Modellierungsfehler</h3>
+<p>Das Beispiel-TTL für FID=33 in <code>bb5kbc-csv-mapping.md</code> ist
+der <strong>Goldstandard</strong>. Der entsprechende Block in
+<code>dist/bb5kbc-data.ttl</code> (suche nach <code>data:site_33</code>)
+sollte dieselben 75 Triples enthalten. Abweichungen sind ein Bug.</p>
+<hr />
+<p><em>Fragen, Korrekturen, Erweiterungen: Issues im Repository oder
+direkt an Sophie und Florian.</em></p>
+</body>
+</html>
