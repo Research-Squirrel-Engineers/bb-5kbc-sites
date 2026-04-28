@@ -1,0 +1,47 @@
+name: Render Ontology Documentation
+
+on:
+  # Läuft nachdem der Unicorn-Workflow fertig ist
+  workflow_run:
+    workflows: ["SPARQL Unicorn Ontology Documentation CI"]
+    types:
+      - completed
+    branches: ["main"]
+  # Manueller Trigger für Tests
+  workflow_dispatch:
+
+jobs:
+  render-ontology:
+    if: ${{ github.event.workflow_run.conclusion == 'success' || github.event_name == 'workflow_dispatch' }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout main branch
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y python3 python3-pip python3-venv gcc libpq-dev python3-dev python3-wheel
+          sudo pip3 install wheel pylode==2.13.2 rdflib
+
+      - name: Generate ontology documentation
+        run: |
+          mkdir -p ont-output
+          cd ont-output
+          echo "Generating pyLODE documentation for bb5kbc ontology"
+          pylode -i ../ontology/bb5kbc-ontology.ttl -o index.html
+          wget https://raw.githubusercontent.com/situx/widoco_classtree/refs/heads/master/classtreedoc.py
+          python3 classtreedoc.py -i index.html -o content.html -t "Brandenburg 5000 BC Ontology (bb5kbc)"
+          rm classtreedoc.py
+          ls -la
+
+      - name: Deploy to gh-pages /ont/
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: gh-pages
+          folder: ont-output
+          target-folder: ont
+          clean: false
+          commit-message: "Update ontology documentation"
