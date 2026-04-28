@@ -32,7 +32,7 @@ jobs:
           echo "Generating pyLODE documentation for bb5kbc ontology"
           pylode -i ../ontology/bb5kbc-ontology.ttl -o index.html
           wget https://raw.githubusercontent.com/situx/widoco_classtree/refs/heads/master/classtreedoc.py
-          python3 classtreedoc.py -i index.html -o content.html -t "Brandenburg 5000 BC Ontology (bb5kbc)"
+          python3 classtreedoc.py -i index.html -o ./content.html -t "Brandenburg 5000 BC Ontology (bb5kbc)"
           rm classtreedoc.py
           ls -la
 
