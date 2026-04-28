@@ -17141,7 +17141,7 @@ var vowlresult={
      {
       "identifier": "http://www.w3.org/2000/01/rdf-schema#comment",
       "language": "undefined",
-      "value": "Primary identifier (PID) of the Fundstelle in the Schmidt 2026 catalogue (FID column).\nSubPropertyOf both crm:P1_is_identified_by and dc:identifier \u2014 appears as:\n  dc:identifier \"1\"^^xsd:integer  (explicit identifier statement)\n  URI basis: http://w3id.org/bb5kbc/site_{FID}\n             http://w3id.org/bb5kbc/site_{FID}_activity\n             http://w3id.org/bb5kbc/site_{FID}_geom",
+      "value": "Primary identifier (PID) of the Fundstelle in the Schmidt 2026 catalogue (FID column).\nSubPropertyOf both crm:P1_is_identified_by and dcterms:identifier \u2014 appears as:\n  dcterms:identifier \"1\"^^xsd:integer  (explicit identifier statement)\n  URI basis: http://w3id.org/bb5kbc/site_{FID}\n             http://w3id.org/bb5kbc/site_{FID}_activity\n             http://w3id.org/bb5kbc/site_{FID}_geom",
       "type": "label"
      }
     ],
@@ -17405,7 +17405,7 @@ var vowlresult={
      {
       "identifier": "http://www.w3.org/2000/01/rdf-schema#isDefinedBy",
       "language": "undefined",
-      "value": "http://purl.org/dc/elements/1.1/",
+      "value": "http://purl.org/dc/terms/",
       "type": "iri"
      }
     ]
@@ -17419,8 +17419,8 @@ var vowlresult={
   },
   {
    "id": 80,
-   "iri": "http://purl.org/dc/elements/1.1/identifier",
-   "baseIRI": "http://purl.org/dc/elements/1.1",
+   "iri": "http://purl.org/dc/terms/identifier",
+   "baseIRI": "http://purl.org/dc/terms",
    "instances": 0,
    "label": "begin of the begin",
    "annotations": {
@@ -18757,7 +18757,7 @@ var vowlresult={
      {
       "identifier": "http://www.w3.org/ns/prov#wasGeneratedBy",
       "language": "undefined",
-      "value": "http://w3id.org/bb5kbc/pipeline_run_2026-04-27T19-10-14Z",
+      "value": "http://w3id.org/bb5kbc/pipeline_run_2026-04-28T11-06-58Z",
       "type": "iri"
      }
     ]
@@ -18794,7 +18794,7 @@ var vowlresult={
      {
       "identifier": "http://www.w3.org/ns/prov#wasGeneratedBy",
       "language": "undefined",
-      "value": "http://w3id.org/bb5kbc/pipeline_run_2026-04-27T19-10-14Z",
+      "value": "http://w3id.org/bb5kbc/pipeline_run_2026-04-28T11-06-58Z",
       "type": "iri"
      }
     ]
@@ -19127,41 +19127,57 @@ var vowlresult={
     "IRI-based": "fst_wgs84_comma_csv"
    },
    "annotations": {
-    "http://purl.org/dc/elements/1.1/contributor": [
+    "http://purl.org/dc/terms/contributor": [
      {
-      "identifier": "http://purl.org/dc/elements/1.1/contributor",
+      "identifier": "http://purl.org/dc/terms/contributor",
       "language": "undefined",
       "value": "Sophie C. Schmidt",
       "type": "label"
      }
     ],
-    "http://purl.org/dc/elements/1.1/creator": [
+    "http://purl.org/dc/terms/creator": [
      {
-      "identifier": "http://purl.org/dc/elements/1.1/creator",
+      "identifier": "http://purl.org/dc/terms/creator",
       "language": "undefined",
       "value": "Sophie C. Schmidt",
       "type": "label"
      }
     ],
-    "http://purl.org/dc/elements/1.1/rights": [
+    "http://purl.org/dc/terms/issued": [
      {
-      "identifier": "http://purl.org/dc/elements/1.1/rights",
+      "identifier": "http://purl.org/dc/terms/issued",
+      "language": "undefined",
+      "value": "2026-04-25",
+      "type": "label"
+     }
+    ],
+    "http://purl.org/dc/terms/modified": [
+     {
+      "identifier": "http://purl.org/dc/terms/modified",
+      "language": "undefined",
+      "value": "2026-04-28",
+      "type": "label"
+     }
+    ],
+    "http://purl.org/dc/terms/rights": [
+     {
+      "identifier": "http://purl.org/dc/terms/rights",
       "language": "undefined",
       "value": "CC BY 4.0",
       "type": "label"
      }
     ],
-    "http://purl.org/dc/elements/1.1/subject": [
+    "http://purl.org/dc/terms/subject": [
      {
-      "identifier": "http://purl.org/dc/elements/1.1/subject",
+      "identifier": "http://purl.org/dc/terms/subject",
       "language": "undefined",
       "value": "archaeology; Neolithic; Brandenburg; Linked Open Data; NFDI4Objects",
       "type": "label"
      }
     ],
-    "http://purl.org/dc/elements/1.1/title": [
+    "http://purl.org/dc/terms/title": [
      {
-      "identifier": "http://purl.org/dc/elements/1.1/title",
+      "identifier": "http://purl.org/dc/terms/title",
       "language": "undefined",
       "value": "Brandenburg 5000 BC Sites Ontology",
       "type": "label"
@@ -19171,7 +19187,7 @@ var vowlresult={
      {
       "identifier": "http://www.w3.org/2000/01/rdf-schema#comment",
       "language": "undefined",
-      "value": "Data namespace: http://w3id.org/bb5kbc/\nURI patterns (FID-based, per-site nodes):\n  site_{FID}           \u2192 bb5kbc:Fundstelle\n  site_{FID}_activity  \u2192 bb5kbc:GeoreferenzierungsAktivitaet\n  site_{FID}_geom      \u2192 sf:Point\n  site_{FID}_culture   \u2192 bb5kbc:KulturelleZuordnung (per-site connector to shared Kulturgruppe)\n  site_{FID}_dating    \u2192 bb5kbc:Datierung (per-site, with site-specific start/end/certainty)\nURI patterns (hash-based, MD5(label_utf8)[:8], deduplicated):\n  gemeinde_{hash}        \u2192 bb5kbc:Gemeinde\n  kreis_{hash}           \u2192 bb5kbc:Kreis\n  bundesland_{hash}      \u2192 bb5kbc:Bundesland\n  land_{hash}            \u2192 bb5kbc:Land\n  kultur_{hash}          \u2192 bb5kbc:Kulturgruppe (shared concept node)\n  entdeckung_{hash}      \u2192 bb5kbc:Entdeckung\n  entdeckungsart_{hash}  \u2192 bb5kbc:EntdeckungsartType\n  fundstellenart_{hash}  \u2192 bb5kbc:FundstellenartType\n  pub_{hash}             \u2192 bb5kbc:Publikation\n  methode_{hash}         \u2192 fsl:MethodType\n  quellentyp_{hash}      \u2192 fsl:SourceType\n  datmethode_{hash}      \u2192 bb5kbc:DatierungsMethodeType\n  sherd_{hash}           \u2192 bb5kbc:Scherbe (hash from Wikidata QID)\nExternal identifiers (TGN + iDAI + OSM) on all 4 administrative levels.\nCM Literals (on GeoreferenzierungsAktivitaet):\n  quelle_georef    \u2192 fsl:hasReference / fsl:activityDesc (P25) : xsd:string\n  QID_quelle_georef\u2192 fsl:hasReference (P31) : Wikidata URI\n  methode          \u2192 fsl:method / fsl:methodUsed (P7) \u2192 fsl:MethodType Named Node\n  quellen_typ      \u2192 fsl:hasSourceType (P6) + fsl:hasSourceTypeDetail (P16) \u2192 fsl:SourceType Named Node\n  methodenbeschr   \u2192 fsl:activityDesc (P15) : xsd:string\n  genauigkeit_m    \u2192 fsl:precision (P23) : xsd:decimal (on bb5kbc:Fundstelle)\n  wgs84_x/y        \u2192 geosparql:asWKT on sf:Point (skip if both = 0,0)",
+      "value": "Application ontology for the Brandenburg 5000 BC sites dataset (Schmidt 2026).\n\n## Data namespace\n\n`http://w3id.org/bb5kbc/`\n\n## URI patterns\n\n**FID-based, per-site nodes:**\n\n* `site_{FID}` \u2192 `bb5kbc:Fundstelle`\n* `site_{FID}_activity` \u2192 `bb5kbc:GeoreferenzierungsAktivitaet`\n* `site_{FID}_geom` \u2192 `sf:Point`\n* `site_{FID}_culture` \u2192 `bb5kbc:KulturelleZuordnung` (per-site connector to shared Kulturgruppe)\n* `site_{FID}_dating` \u2192 `bb5kbc:Datierung` (per-site, with site-specific start/end/certainty)\n\n**Hash-based (`MD5(label_utf8)[:8]`), deduplicated:**\n\n* `gemeinde_{hash}` \u2192 `bb5kbc:Gemeinde`\n* `kreis_{hash}` \u2192 `bb5kbc:Kreis`\n* `bundesland_{hash}` \u2192 `bb5kbc:Bundesland`\n* `land_{hash}` \u2192 `bb5kbc:Land`\n* `kultur_{hash}` \u2192 `bb5kbc:Kulturgruppe` (shared concept node)\n* `entdeckung_{hash}` \u2192 `bb5kbc:Entdeckung`\n* `entdeckungsart_{hash}` \u2192 `bb5kbc:EntdeckungsartType`\n* `fundstellenart_{hash}` \u2192 `bb5kbc:FundstellenartType`\n* `pub_{hash}` \u2192 `bb5kbc:Publikation`\n* `methode_{hash}` \u2192 `fsl:MethodType`\n* `quellentyp_{hash}` \u2192 `fsl:SourceType`\n* `datmethode_{hash}` \u2192 `bb5kbc:DatierungsMethodeType`\n* `sherd_{hash}` \u2192 `bb5kbc:Scherbe` (hash from Wikidata QID)\n\nExternal identifiers (TGN + iDAI + OSM) on all 4 administrative levels.\n\n## CM Literals (on `bb5kbc:GeoreferenzierungsAktivitaet`)\n\n| CSV column | FSL property | FSL CM ID | Range |\n|---|---|---|---|\n| `quelle_georef` | `fsl:hasReference` / `fsl:activityDesc` | P25 | `xsd:string` |\n| `QID_quelle_georef` | `fsl:hasReference` | P31 | Wikidata URI |\n| `methode` | `fsl:method` / `fsl:methodUsed` | P7 | `fsl:MethodType` Named Node |\n| `quellen_typ` | `fsl:hasSourceType` + `fsl:hasSourceTypeDetail` | P6 + P16 | `fsl:SourceType` Named Node |\n| `methodenbeschr` | `fsl:activityDesc` | P15 | `xsd:string` |\n| `genauigkeit_m` | `fsl:precision` | P23 | `xsd:decimal` (on `bb5kbc:Fundstelle`) |\n| `wgs84_x/y` | `geosparql:asWKT` | \u2014 | on `sf:Point` (skip if both = 0,0) |",
       "type": "label"
      }
     ],
@@ -213403,7 +213419,7 @@ var vowlresult={
    "iri": "https://example.org/bb-5kbc-sites/run/2026-04-27T18-56-13Z/stage3_merge",
    "baseIRI": "https://example.org/bb-5kbc-sites/run/2026-04-27T18-56-13Z",
    "instances": 0,
-   "label": "bb5kbc CSV-to-RDF pipeline run 2026-04-27T19-10-14Z",
+   "label": "bb5kbc CSV-to-RDF pipeline run 2026-04-28T11-06-58Z",
    "annotations": {
     "http://w3id.org/bb5kbc/dataTripleCount": [
      {
@@ -213425,7 +213441,7 @@ var vowlresult={
      {
       "identifier": "http://www.w3.org/ns/prov#endedAtTime",
       "language": "undefined",
-      "value": "2026-04-27T19:10:15.958957+00:00",
+      "value": "2026-04-28T11:07:00.389153+00:00",
       "type": "label"
      }
     ],
@@ -213433,7 +213449,7 @@ var vowlresult={
      {
       "identifier": "http://www.w3.org/ns/prov#startedAtTime",
       "language": "undefined",
-      "value": "2026-04-27T19:10:14.688969+00:00",
+      "value": "2026-04-28T11:06:58.752210+00:00",
       "type": "label"
      }
     ],
@@ -213469,7 +213485,7 @@ var vowlresult={
   },
   {
    "id": 3272,
-   "iri": "http://w3id.org/bb5kbc/pipeline_run_2026-04-27T19-10-14Z",
+   "iri": "http://w3id.org/bb5kbc/pipeline_run_2026-04-28T11-06-58Z",
    "baseIRI": "http://w3id.org/bb5kbc",
    "instances": 0,
    "label": "Stage 1 \u2014 literature QID enrichment",

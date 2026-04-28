@@ -631,7 +631,7 @@ owl:Ontology a owl:Class .
         <https://Research-Squirrel-Engineers.github.io/bb-5kbc-sites//settings/publicTypeIndex.ttl#nonns_SiteType.html>,
         <https://Research-Squirrel-Engineers.github.io/bb-5kbc-sites//settings/publicTypeIndex.ttl#nonns_SpaceTimeItem.html>,
         <https://Research-Squirrel-Engineers.github.io/bb-5kbc-sites//settings/publicTypeIndex.ttl#nonns_fst_wgs84_csv.html>,
-        <https://Research-Squirrel-Engineers.github.io/bb-5kbc-sites//settings/publicTypeIndex.ttl#pipeline_run_2026-04-27T19-10-14Z>,
+        <https://Research-Squirrel-Engineers.github.io/bb-5kbc-sites//settings/publicTypeIndex.ttl#pipeline_run_2026-04-28T11-06-58Z>,
         <https://Research-Squirrel-Engineers.github.io/bb-5kbc-sites//settings/publicTypeIndex.ttl#pub_05cf84ec>,
         <https://Research-Squirrel-Engineers.github.io/bb-5kbc-sites//settings/publicTypeIndex.ttl#pub_0b536e9d>,
         <https://Research-Squirrel-Engineers.github.io/bb-5kbc-sites//settings/publicTypeIndex.ttl#pub_0bced945>,
@@ -5615,8 +5615,8 @@ foaf:Person a owl:Class ;
 <https://Research-Squirrel-Engineers.github.io/bb-5kbc-sites//settings/publicTypeIndex.ttl#nonns_fst_wgs84_csv.html> ns1:forClass prov:Entity ;
     ns1:instance <https://Research-Squirrel-Engineers.github.io/bb-5kbc-sites//nonns_fst_wgs84_csv.html> .
 
-<https://Research-Squirrel-Engineers.github.io/bb-5kbc-sites//settings/publicTypeIndex.ttl#pipeline_run_2026-04-27T19-10-14Z> ns1:forClass prov:Activity ;
-    ns1:instance <https://Research-Squirrel-Engineers.github.io/bb-5kbc-sites//pipeline_run_2026-04-27T19-10-14Z> .
+<https://Research-Squirrel-Engineers.github.io/bb-5kbc-sites//settings/publicTypeIndex.ttl#pipeline_run_2026-04-28T11-06-58Z> ns1:forClass prov:Activity ;
+    ns1:instance <https://Research-Squirrel-Engineers.github.io/bb-5kbc-sites//pipeline_run_2026-04-28T11-06-58Z> .
 
 <https://Research-Squirrel-Engineers.github.io/bb-5kbc-sites//settings/publicTypeIndex.ttl#pub_05cf84ec> ns1:forClass <http://w3id.org/bb5kbc/ont/Publikation> ;
     ns1:instance <https://Research-Squirrel-Engineers.github.io/bb-5kbc-sites//pub_05cf84ec> .

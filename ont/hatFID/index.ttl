@@ -1,4 +1,4 @@
-@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix void: <http://rdfs.org/ns/void#> .
@@ -11,13 +11,13 @@
         "site PID"@en ;
     void:inDataset <http://w3id.org/bb5kbc/Brandenburg_5000_BC_Data> ;
     rdfs:comment """Primary identifier (PID) of the Fundstelle in the Schmidt 2026 catalogue (FID column).
-SubPropertyOf both crm:P1_is_identified_by and dc:identifier — appears as:
-  dc:identifier "1"^^xsd:integer  (explicit identifier statement)
+SubPropertyOf both crm:P1_is_identified_by and dcterms:identifier — appears as:
+  dcterms:identifier "1"^^xsd:integer  (explicit identifier statement)
   URI basis: http://w3id.org/bb5kbc/site_{FID}
              http://w3id.org/bb5kbc/site_{FID}_activity
              http://w3id.org/bb5kbc/site_{FID}_geom"""@en ;
     rdfs:domain <http://w3id.org/bb5kbc/ont/Fundstelle> ;
     rdfs:range xsd:integer ;
-    rdfs:subPropertyOf dc:identifier,
+    rdfs:subPropertyOf dcterms:identifier,
         <http://www.cidoc-crm.org/cidoc-crm/P1_is_identified_by> .
 

@@ -38,7 +38,7 @@ ns4:Activity_collection a skos:Collection,
         <http://www.w3.org/ns/ldp#Resource> ;
     rdfs:label "Activity Instances Collection"@en ;
     void:inDataset ns4:Brandenburg_5000_BC_Data ;
-    rdfs:member ns4:pipeline_run_2026-04-27T19-10-14Z .
+    rdfs:member ns4:pipeline_run_2026-04-28T11-06-58Z .
 
 ns4:Brandenburg_5000_BC_Data_archaeology.link_ontology_ a void:Linkset,
         <http://www.w3.org/ns/ldp#BasicContainer>,
@@ -174,13 +174,13 @@ ns4:Brandenburg_5000_BC_Data_orcid.org_ a void:Linkset,
     void:triples 540,
         542 .
 
-ns4:Brandenburg_5000_BC_Data_purl.org_dc_elements_1.1_ a void:Linkset,
+ns4:Brandenburg_5000_BC_Data_purl.org_dc_terms_ a void:Linkset,
         <http://www.w3.org/ns/ldp#BasicContainer>,
         <http://www.w3.org/ns/ldp#Container>,
         <http://www.w3.org/ns/ldp#Resource> ;
-    rdfs:label "Linkset: Brandenburg_5000_BC_Data - dce:"@en ;
+    rdfs:label "Linkset: Brandenburg_5000_BC_Data - terms:"@en ;
     void:linkPredicate rdfs:subPropertyOf ;
-    void:objectsTarget dc: ;
+    void:objectsTarget dcterms: ;
     void:subjectsTarget ns4:Brandenburg_5000_BC_Data ;
     void:triples 1 .
 
@@ -4298,7 +4298,7 @@ ns4:Brandenburg_5000_BC_Data_contributor a void:Dataset,
         <http://www.w3.org/ns/ldp#Container>,
         <http://www.w3.org/ns/ldp#Resource> ;
     rdfs:label "Property Partition: contributor"@en ;
-    void:property dc:contributor ;
+    void:property dcterms:contributor ;
     void:triples 2 .
 
 ns4:Brandenburg_5000_BC_Data_creator a void:Dataset,
@@ -4306,7 +4306,7 @@ ns4:Brandenburg_5000_BC_Data_creator a void:Dataset,
         <http://www.w3.org/ns/ldp#Container>,
         <http://www.w3.org/ns/ldp#Resource> ;
     rdfs:label "Property Partition: creator"@en ;
-    void:property dc:creator ;
+    void:property dcterms:creator ;
     void:triples 2 .
 
 ns4:Brandenburg_5000_BC_Data_dataTripleCount a void:Dataset,
@@ -4629,6 +4629,14 @@ ns4:Brandenburg_5000_BC_Data_isDefinedBy a void:Dataset,
     void:property rdfs:isDefinedBy ;
     void:triples 89 .
 
+ns4:Brandenburg_5000_BC_Data_issued a void:Dataset,
+        <http://www.w3.org/ns/ldp#BasicContainer>,
+        <http://www.w3.org/ns/ldp#Container>,
+        <http://www.w3.org/ns/ldp#Resource> ;
+    rdfs:label "Property Partition: issued"@en ;
+    void:property dcterms:issued ;
+    void:triples 1 .
+
 ns4:Brandenburg_5000_BC_Data_label a void:Dataset,
         <http://www.w3.org/ns/ldp#BasicContainer>,
         <http://www.w3.org/ns/ldp#Container>,
@@ -4652,6 +4660,14 @@ ns4:Brandenburg_5000_BC_Data_methodUsed a void:Dataset,
     rdfs:label "Property Partition: methodUsed"@en ;
     void:property ns2:methodUsed ;
     void:triples 540 .
+
+ns4:Brandenburg_5000_BC_Data_modified a void:Dataset,
+        <http://www.w3.org/ns/ldp#BasicContainer>,
+        <http://www.w3.org/ns/ldp#Container>,
+        <http://www.w3.org/ns/ldp#Resource> ;
+    rdfs:label "Property Partition: modified"@en ;
+    void:property dcterms:modified ;
+    void:triples 1 .
 
 ns4:Brandenburg_5000_BC_Data_prefLabel a void:Dataset,
         <http://www.w3.org/ns/ldp#BasicContainer>,
@@ -4706,7 +4722,7 @@ ns4:Brandenburg_5000_BC_Data_rights a void:Dataset,
         <http://www.w3.org/ns/ldp#Container>,
         <http://www.w3.org/ns/ldp#Resource> ;
     rdfs:label "Property Partition: rights"@en ;
-    void:property dc:rights ;
+    void:property dcterms:rights ;
     void:triples 1 .
 
 ns4:Brandenburg_5000_BC_Data_rowCount a void:Dataset,
@@ -4747,7 +4763,7 @@ ns4:Brandenburg_5000_BC_Data_subject a void:Dataset,
         <http://www.w3.org/ns/ldp#Container>,
         <http://www.w3.org/ns/ldp#Resource> ;
     rdfs:label "Property Partition: subject"@en ;
-    void:property dc:subject ;
+    void:property dcterms:subject ;
     void:triples 1 .
 
 ns4:Brandenburg_5000_BC_Data_title a void:Dataset,
@@ -4755,7 +4771,7 @@ ns4:Brandenburg_5000_BC_Data_title a void:Dataset,
         <http://www.w3.org/ns/ldp#Container>,
         <http://www.w3.org/ns/ldp#Resource> ;
     rdfs:label "Property Partition: title"@en ;
-    void:property dc:title ;
+    void:property dcterms:title ;
     void:triples 2 .
 
 ns4:Brandenburg_5000_BC_Data_type a void:Dataset,
@@ -4862,7 +4878,7 @@ ns4:bb5kbc_bundle_ttl a <http://www.w3.org/ns/ldp#BasicContainer>,
     void:inDataset ns4:Brandenburg_5000_BC_Data ;
     prov:atLocation <file:///C:/git/bb-5kbc-sites/dist/bb5kbc-bundle.ttl> ;
     prov:wasDerivedFrom <https://example.org/bb-5kbc-sites/fst_wgs84_csv> ;
-    prov:wasGeneratedBy ns4:pipeline_run_2026-04-27T19-10-14Z .
+    prov:wasGeneratedBy ns4:pipeline_run_2026-04-28T11-06-58Z .
 
 ns4:bb5kbc_data_ttl a <http://www.w3.org/ns/ldp#BasicContainer>,
         <http://www.w3.org/ns/ldp#Container>,
@@ -4872,51 +4888,68 @@ ns4:bb5kbc_data_ttl a <http://www.w3.org/ns/ldp#BasicContainer>,
     void:inDataset ns4:Brandenburg_5000_BC_Data ;
     prov:atLocation <file:///C:/git/bb-5kbc-sites/dist/bb5kbc-data.ttl> ;
     prov:wasDerivedFrom <https://example.org/bb-5kbc-sites/fst_wgs84_csv> ;
-    prov:wasGeneratedBy ns4:pipeline_run_2026-04-27T19-10-14Z .
+    prov:wasGeneratedBy ns4:pipeline_run_2026-04-28T11-06-58Z .
 
 ns1: a owl:Ontology,
         <http://www.w3.org/ns/ldp#BasicContainer>,
         <http://www.w3.org/ns/ldp#Container>,
         <http://www.w3.org/ns/ldp#Resource> ;
-    dc:contributor "Florian Thiery",
+    dcterms:contributor "Florian Thiery",
         "Sophie C. Schmidt" ;
-    dc:creator "Florian Thiery",
+    dcterms:creator "Florian Thiery",
         "Sophie C. Schmidt" ;
-    dc:rights "CC BY 4.0" ;
-    dc:subject "archaeology; Neolithic; Brandenburg; Linked Open Data; NFDI4Objects"@en ;
-    dc:title "Brandenburg 5000 BC Fundstellen-Ontologie"@de,
+    dcterms:issued "2026-04-25"^^xsd:date ;
+    dcterms:modified "2026-04-28"^^xsd:date ;
+    dcterms:rights "CC BY 4.0" ;
+    dcterms:subject "archaeology; Neolithic; Brandenburg; Linked Open Data; NFDI4Objects"@en ;
+    dcterms:title "Brandenburg 5000 BC Fundstellen-Ontologie"@de,
         "Brandenburg 5000 BC Sites Ontology"@en ;
     void:inDataset ns4:Brandenburg_5000_BC_Data ;
-    rdfs:comment """Data namespace: http://w3id.org/bb5kbc/
-URI patterns (FID-based, per-site nodes):
-  site_{FID}           → bb5kbc:Fundstelle
-  site_{FID}_activity  → bb5kbc:GeoreferenzierungsAktivitaet
-  site_{FID}_geom      → sf:Point
-  site_{FID}_culture   → bb5kbc:KulturelleZuordnung (per-site connector to shared Kulturgruppe)
-  site_{FID}_dating    → bb5kbc:Datierung (per-site, with site-specific start/end/certainty)
-URI patterns (hash-based, MD5(label_utf8)[:8], deduplicated):
-  gemeinde_{hash}        → bb5kbc:Gemeinde
-  kreis_{hash}           → bb5kbc:Kreis
-  bundesland_{hash}      → bb5kbc:Bundesland
-  land_{hash}            → bb5kbc:Land
-  kultur_{hash}          → bb5kbc:Kulturgruppe (shared concept node)
-  entdeckung_{hash}      → bb5kbc:Entdeckung
-  entdeckungsart_{hash}  → bb5kbc:EntdeckungsartType
-  fundstellenart_{hash}  → bb5kbc:FundstellenartType
-  pub_{hash}             → bb5kbc:Publikation
-  methode_{hash}         → fsl:MethodType
-  quellentyp_{hash}      → fsl:SourceType
-  datmethode_{hash}      → bb5kbc:DatierungsMethodeType
-  sherd_{hash}           → bb5kbc:Scherbe (hash from Wikidata QID)
+    rdfs:comment """Application ontology for the Brandenburg 5000 BC sites dataset (Schmidt 2026).
+
+## Data namespace
+
+`http://w3id.org/bb5kbc/`
+
+## URI patterns
+
+**FID-based, per-site nodes:**
+
+* `site_{FID}` → `bb5kbc:Fundstelle`
+* `site_{FID}_activity` → `bb5kbc:GeoreferenzierungsAktivitaet`
+* `site_{FID}_geom` → `sf:Point`
+* `site_{FID}_culture` → `bb5kbc:KulturelleZuordnung` (per-site connector to shared Kulturgruppe)
+* `site_{FID}_dating` → `bb5kbc:Datierung` (per-site, with site-specific start/end/certainty)
+
+**Hash-based (`MD5(label_utf8)[:8]`), deduplicated:**
+
+* `gemeinde_{hash}` → `bb5kbc:Gemeinde`
+* `kreis_{hash}` → `bb5kbc:Kreis`
+* `bundesland_{hash}` → `bb5kbc:Bundesland`
+* `land_{hash}` → `bb5kbc:Land`
+* `kultur_{hash}` → `bb5kbc:Kulturgruppe` (shared concept node)
+* `entdeckung_{hash}` → `bb5kbc:Entdeckung`
+* `entdeckungsart_{hash}` → `bb5kbc:EntdeckungsartType`
+* `fundstellenart_{hash}` → `bb5kbc:FundstellenartType`
+* `pub_{hash}` → `bb5kbc:Publikation`
+* `methode_{hash}` → `fsl:MethodType`
+* `quellentyp_{hash}` → `fsl:SourceType`
+* `datmethode_{hash}` → `bb5kbc:DatierungsMethodeType`
+* `sherd_{hash}` → `bb5kbc:Scherbe` (hash from Wikidata QID)
+
 External identifiers (TGN + iDAI + OSM) on all 4 administrative levels.
-CM Literals (on GeoreferenzierungsAktivitaet):
-  quelle_georef    → fsl:hasReference / fsl:activityDesc (P25) : xsd:string
-  QID_quelle_georef→ fsl:hasReference (P31) : Wikidata URI
-  methode          → fsl:method / fsl:methodUsed (P7) → fsl:MethodType Named Node
-  quellen_typ      → fsl:hasSourceType (P6) + fsl:hasSourceTypeDetail (P16) → fsl:SourceType Named Node
-  methodenbeschr   → fsl:activityDesc (P15) : xsd:string
-  genauigkeit_m    → fsl:precision (P23) : xsd:decimal (on bb5kbc:Fundstelle)
-  wgs84_x/y        → geosparql:asWKT on sf:Point (skip if both = 0,0)"""@en ;
+
+## CM Literals (on `bb5kbc:GeoreferenzierungsAktivitaet`)
+
+| CSV column | FSL property | FSL CM ID | Range |
+|---|---|---|---|
+| `quelle_georef` | `fsl:hasReference` / `fsl:activityDesc` | P25 | `xsd:string` |
+| `QID_quelle_georef` | `fsl:hasReference` | P31 | Wikidata URI |
+| `methode` | `fsl:method` / `fsl:methodUsed` | P7 | `fsl:MethodType` Named Node |
+| `quellen_typ` | `fsl:hasSourceType` + `fsl:hasSourceTypeDetail` | P6 + P16 | `fsl:SourceType` Named Node |
+| `methodenbeschr` | `fsl:activityDesc` | P15 | `xsd:string` |
+| `genauigkeit_m` | `fsl:precision` | P23 | `xsd:decimal` (on `bb5kbc:Fundstelle`) |
+| `wgs84_x/y` | `geosparql:asWKT` | — | on `sf:Point` (skip if both = 0,0) |"""@en ;
     owl:versionIRI ns1:0.9 ;
     owl:versionInfo "0.9" .
 
@@ -20548,14 +20581,14 @@ ns1:hatFID a owl:DatatypeProperty,
         "site PID"@en ;
     void:inDataset ns4:Brandenburg_5000_BC_Data ;
     rdfs:comment """Primary identifier (PID) of the Fundstelle in the Schmidt 2026 catalogue (FID column).
-SubPropertyOf both crm:P1_is_identified_by and dc:identifier — appears as:
-  dc:identifier "1"^^xsd:integer  (explicit identifier statement)
+SubPropertyOf both crm:P1_is_identified_by and dcterms:identifier — appears as:
+  dcterms:identifier "1"^^xsd:integer  (explicit identifier statement)
   URI basis: http://w3id.org/bb5kbc/site_{FID}
              http://w3id.org/bb5kbc/site_{FID}_activity
              http://w3id.org/bb5kbc/site_{FID}_geom"""@en ;
     rdfs:domain ns1:Fundstelle ;
     rdfs:range xsd:integer ;
-    rdfs:subPropertyOf dc:identifier,
+    rdfs:subPropertyOf dcterms:identifier,
         <http://www.cidoc-crm.org/cidoc-crm/P1_is_identified_by> .
 
 ns1:hatFundstellenID a owl:DatatypeProperty,
@@ -44623,16 +44656,16 @@ ns4:kreis_d2918bbf a ns1:Kreis,
     ns1:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Powiat Strzelecko-Drezdenecki' -> 'Powiat Strzelecko-Drezdenecki'"^^xsd:string ;
     skos:prefLabel "pow. Strzelecko-Drezdenecki"@de .
 
-ns4:pipeline_run_2026-04-27T19-10-14Z a <http://www.w3.org/ns/ldp#BasicContainer>,
+ns4:pipeline_run_2026-04-28T11-06-58Z a <http://www.w3.org/ns/ldp#BasicContainer>,
         <http://www.w3.org/ns/ldp#Container>,
         <http://www.w3.org/ns/ldp#Resource>,
         prov:Activity ;
-    rdfs:label "bb5kbc CSV-to-RDF pipeline run 2026-04-27T19-10-14Z"@en ;
+    rdfs:label "bb5kbc CSV-to-RDF pipeline run 2026-04-28T11-06-58Z"@en ;
     void:inDataset ns4:Brandenburg_5000_BC_Data ;
     ns4:dataTripleCount 27870 ;
     ns4:rowCount 540 ;
-    prov:endedAtTime "2026-04-27T19:10:15.958957+00:00"^^xsd:dateTime ;
-    prov:startedAtTime "2026-04-27T19:10:14.688969+00:00"^^xsd:dateTime ;
+    prov:endedAtTime "2026-04-28T11:07:00.389153+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-04-28T11:06:58.752210+00:00"^^xsd:dateTime ;
     prov:used <file:///C:/git/bb-5kbc-sites/data/fst_wgs84.csv>,
         <file:///C:/git/bb-5kbc-sites/ontology/bb5kbc-ontology.ttl>,
         <https://example.org/bb-5kbc-sites/fst_wgs84_csv> ;
@@ -50530,17 +50563,17 @@ ns4:Brandenburg_5000_BC_Data a void:Dataset,
     rdfs:label "Brandenburg_5000_BC_Data"@en ;
     ns3:averageLiteralLength 0 ;
     ns3:averageObjectIRILength 34 ;
-    ns3:averagePropertyIRILength 44 ;
+    ns3:averagePropertyIRILength 43 ;
     ns3:averageSubjectIRILength 37 ;
     ns3:datatypes 0 ;
     ns3:distinctBlankNodes 0 ;
-    ns3:distinctIRIReferences 13432 ;
+    ns3:distinctIRIReferences 13436 ;
     ns3:distinctLiterals 0 ;
-    ns3:distinctRDFNodes 13432 ;
+    ns3:distinctRDFNodes 13436 ;
     ns3:languages 0 ;
     ns3:propertyClasses 0 ;
     dc:language <http://www.lexvo.org/page/iso639-1/en> ;
-    dcterms:modified "2026-04-28T10:44:04"^^xsd:dateTime ;
+    dcterms:modified "2026-04-28T11:10:52"^^xsd:dateTime ;
     dcterms:subject <http://dbpedia.org/resource/Location>,
         <http://dbpedia.org/resource/OGC_GeoSPARQL>,
         <http://dbpedia.org/resource/Time>,
@@ -50618,12 +50651,12 @@ ns4:Brandenburg_5000_BC_Data a void:Dataset,
         ns4:Brandenburg_5000_BC_Data_externalIdentifierType ;
     void:classes 71 ;
     void:dataDump <https://Research-Squirrel-Engineers.github.io/bb-5kbc-sites//index.ttl> ;
-    void:distinctObjects 8503 ;
+    void:distinctObjects 8505 ;
     void:distinctSubjects 4850 ;
     void:entities 3727 ;
     void:feature <http://www.w3.org/ns/formats/RDFa>,
         <http://www.w3.org/ns/formats/Turtle> ;
-    void:properties 79 ;
+    void:properties 81 ;
     void:propertyPartition ns4:Brandenburg_5000_BC_Data_activityDesc,
         ns4:Brandenburg_5000_BC_Data_asWKT,
         ns4:Brandenburg_5000_BC_Data_atLocation,
@@ -50674,9 +50707,11 @@ ns4:Brandenburg_5000_BC_Data a void:Dataset,
         ns4:Brandenburg_5000_BC_Data_inKreis,
         ns4:Brandenburg_5000_BC_Data_inLand,
         ns4:Brandenburg_5000_BC_Data_isDefinedBy,
+        ns4:Brandenburg_5000_BC_Data_issued,
         ns4:Brandenburg_5000_BC_Data_label,
         ns4:Brandenburg_5000_BC_Data_member,
         ns4:Brandenburg_5000_BC_Data_methodUsed,
+        ns4:Brandenburg_5000_BC_Data_modified,
         ns4:Brandenburg_5000_BC_Data_prefLabel,
         ns4:Brandenburg_5000_BC_Data_qidsFilledGeoref,
         ns4:Brandenburg_5000_BC_Data_qidsFilledPublication,
@@ -50702,7 +50737,7 @@ ns4:Brandenburg_5000_BC_Data a void:Dataset,
         ns4:Brandenburg_5000_BC_Data_wikidataMatchDescription,
         ns4:Brandenburg_5000_BC_Data_wurdeEntdecktDurch,
         ns4:Brandenburg_5000_BC_Data_wurdeGeoreferenziertDurch ;
-    void:triples 36018 ;
+    void:triples 36020 ;
     void:uriSpace "http://w3id.org/bb5kbc/"^^xsd:string ;
     void:vocabulary ns3:,
         dcam:,
