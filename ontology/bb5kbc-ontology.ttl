@@ -20,7 +20,7 @@
 @prefix prov:     <http://www.w3.org/ns/prov#> .
 @prefix foaf:     <http://xmlns.com/foaf/0.1/> .
 @prefix skos:     <http://www.w3.org/2004/02/skos/core#> .
-@prefix dc:       <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms:  <http://purl.org/dc/terms/> .
 @prefix owl:      <http://www.w3.org/2002/07/owl#> .
 @prefix rdf:      <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs:     <http://www.w3.org/2000/01/rdf-schema#> .
@@ -32,43 +32,60 @@
 <http://w3id.org/bb5kbc/ont/>
     rdf:type owl:Ontology ;
     owl:versionIRI <http://w3id.org/bb5kbc/ont/0.9> ;
-    dc:title "Brandenburg 5000 BC Sites Ontology"@en ,
-             "Brandenburg 5000 BC Fundstellen-Ontologie"@de ;
-    dc:creator "Sophie C. Schmidt" , "Florian Thiery" ;
-    dc:contributor "Sophie C. Schmidt" , "Florian Thiery" ;
-    dc:rights "CC BY 4.0" ;
-    dc:subject "archaeology; Neolithic; Brandenburg; Linked Open Data; NFDI4Objects"@en ;
+    dcterms:title "Brandenburg 5000 BC Sites Ontology"@en ,
+                  "Brandenburg 5000 BC Fundstellen-Ontologie"@de ;
+    dcterms:creator "Sophie C. Schmidt" , "Florian Thiery" ;
+    dcterms:contributor "Sophie C. Schmidt" , "Florian Thiery" ;
+    dcterms:rights "CC BY 4.0" ;
+    dcterms:subject "archaeology; Neolithic; Brandenburg; Linked Open Data; NFDI4Objects"@en ;
+    dcterms:issued "2026-04-25"^^xsd:date ;
+    dcterms:modified "2026-04-28"^^xsd:date ;
     owl:versionInfo "0.9" ;
-    rdfs:comment """Data namespace: http://w3id.org/bb5kbc/
-URI patterns (FID-based, per-site nodes):
-  site_{FID}           → bb5kbc:Fundstelle
-  site_{FID}_activity  → bb5kbc:GeoreferenzierungsAktivitaet
-  site_{FID}_geom      → sf:Point
-  site_{FID}_culture   → bb5kbc:KulturelleZuordnung (per-site connector to shared Kulturgruppe)
-  site_{FID}_dating    → bb5kbc:Datierung (per-site, with site-specific start/end/certainty)
-URI patterns (hash-based, MD5(label_utf8)[:8], deduplicated):
-  gemeinde_{hash}        → bb5kbc:Gemeinde
-  kreis_{hash}           → bb5kbc:Kreis
-  bundesland_{hash}      → bb5kbc:Bundesland
-  land_{hash}            → bb5kbc:Land
-  kultur_{hash}          → bb5kbc:Kulturgruppe (shared concept node)
-  entdeckung_{hash}      → bb5kbc:Entdeckung
-  entdeckungsart_{hash}  → bb5kbc:EntdeckungsartType
-  fundstellenart_{hash}  → bb5kbc:FundstellenartType
-  pub_{hash}             → bb5kbc:Publikation
-  methode_{hash}         → fsl:MethodType
-  quellentyp_{hash}      → fsl:SourceType
-  datmethode_{hash}      → bb5kbc:DatierungsMethodeType
-  sherd_{hash}           → bb5kbc:Scherbe (hash from Wikidata QID)
+    rdfs:comment """Application ontology for the Brandenburg 5000 BC sites dataset (Schmidt 2026).
+
+## Data namespace
+
+`http://w3id.org/bb5kbc/`
+
+## URI patterns
+
+**FID-based, per-site nodes:**
+
+* `site_{FID}` → `bb5kbc:Fundstelle`
+* `site_{FID}_activity` → `bb5kbc:GeoreferenzierungsAktivitaet`
+* `site_{FID}_geom` → `sf:Point`
+* `site_{FID}_culture` → `bb5kbc:KulturelleZuordnung` (per-site connector to shared Kulturgruppe)
+* `site_{FID}_dating` → `bb5kbc:Datierung` (per-site, with site-specific start/end/certainty)
+
+**Hash-based (`MD5(label_utf8)[:8]`), deduplicated:**
+
+* `gemeinde_{hash}` → `bb5kbc:Gemeinde`
+* `kreis_{hash}` → `bb5kbc:Kreis`
+* `bundesland_{hash}` → `bb5kbc:Bundesland`
+* `land_{hash}` → `bb5kbc:Land`
+* `kultur_{hash}` → `bb5kbc:Kulturgruppe` (shared concept node)
+* `entdeckung_{hash}` → `bb5kbc:Entdeckung`
+* `entdeckungsart_{hash}` → `bb5kbc:EntdeckungsartType`
+* `fundstellenart_{hash}` → `bb5kbc:FundstellenartType`
+* `pub_{hash}` → `bb5kbc:Publikation`
+* `methode_{hash}` → `fsl:MethodType`
+* `quellentyp_{hash}` → `fsl:SourceType`
+* `datmethode_{hash}` → `bb5kbc:DatierungsMethodeType`
+* `sherd_{hash}` → `bb5kbc:Scherbe` (hash from Wikidata QID)
+
 External identifiers (TGN + iDAI + OSM) on all 4 administrative levels.
-CM Literals (on GeoreferenzierungsAktivitaet):
-  quelle_georef    → fsl:hasReference / fsl:activityDesc (P25) : xsd:string
-  QID_quelle_georef→ fsl:hasReference (P31) : Wikidata URI
-  methode          → fsl:method / fsl:methodUsed (P7) → fsl:MethodType Named Node
-  quellen_typ      → fsl:hasSourceType (P6) + fsl:hasSourceTypeDetail (P16) → fsl:SourceType Named Node
-  methodenbeschr   → fsl:activityDesc (P15) : xsd:string
-  genauigkeit_m    → fsl:precision (P23) : xsd:decimal (on bb5kbc:Fundstelle)
-  wgs84_x/y        → geosparql:asWKT on sf:Point (skip if both = 0,0)"""@en .
+
+## CM Literals (on `bb5kbc:GeoreferenzierungsAktivitaet`)
+
+| CSV column | FSL property | FSL CM ID | Range |
+|---|---|---|---|
+| `quelle_georef` | `fsl:hasReference` / `fsl:activityDesc` | P25 | `xsd:string` |
+| `QID_quelle_georef` | `fsl:hasReference` | P31 | Wikidata URI |
+| `methode` | `fsl:method` / `fsl:methodUsed` | P7 | `fsl:MethodType` Named Node |
+| `quellen_typ` | `fsl:hasSourceType` + `fsl:hasSourceTypeDetail` | P6 + P16 | `fsl:SourceType` Named Node |
+| `methodenbeschr` | `fsl:activityDesc` | P15 | `xsd:string` |
+| `genauigkeit_m` | `fsl:precision` | P23 | `xsd:decimal` (on `bb5kbc:Fundstelle`) |
+| `wgs84_x/y` | `geosparql:asWKT` | — | on `sf:Point` (skip if both = 0,0) |"""@en .
 
 # =============================================================================
 # EXTERNAL CLASS & PROPERTY HIERARCHY (locally declared, no owl:imports)
@@ -399,7 +416,7 @@ skos:closeMatch            rdf:type owl:ObjectProperty ;   rdfs:isDefinedBy <htt
 skos:relatedMatch          rdf:type owl:ObjectProperty ;   rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core#> ; rdfs:label "related match"@en .
 
 # Dublin Core
-dc:identifier              rdf:type owl:DatatypeProperty ; rdfs:isDefinedBy <http://purl.org/dc/elements/1.1/> ; rdfs:label "identifier"@en .
+dcterms:identifier         rdf:type owl:DatatypeProperty ; rdfs:isDefinedBy <http://purl.org/dc/terms/> ; rdfs:label "identifier"@en .
 
 # --- CLASSES -----------------------------------------------------------------
 
@@ -751,12 +768,12 @@ bb5kbc:hatKatalognummer
 bb5kbc:hatFID
     rdf:type owl:DatatypeProperty ;
     rdfs:subPropertyOf crm:P1_is_identified_by ,
-                       dc:identifier ;
+                       dcterms:identifier ;
     rdfs:domain bb5kbc:Fundstelle ;
     rdfs:range xsd:integer ;
     rdfs:comment """Primary identifier (PID) of the Fundstelle in the Schmidt 2026 catalogue (FID column).
-SubPropertyOf both crm:P1_is_identified_by and dc:identifier — appears as:
-  dc:identifier \"1\"^^xsd:integer  (explicit identifier statement)
+SubPropertyOf both crm:P1_is_identified_by and dcterms:identifier — appears as:
+  dcterms:identifier \"1\"^^xsd:integer  (explicit identifier statement)
   URI basis: http://w3id.org/bb5kbc/site_{FID}
              http://w3id.org/bb5kbc/site_{FID}_activity
              http://w3id.org/bb5kbc/site_{FID}_geom"""@en ;

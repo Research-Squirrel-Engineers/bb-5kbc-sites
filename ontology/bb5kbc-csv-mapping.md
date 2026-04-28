@@ -80,7 +80,7 @@
 
 | # | CSV-Spalte | Beispielwert | Art | bb5kbc-Klasse / Property | Hinweis |
 |---|---|---|---|---|---|
-| 51 | `FID` | `"1"` | 🟨 | `bb5kbc:Fundstelle` ← `bb5kbc:hatFID` : `xsd:integer` (subPropertyOf `dc:identifier` + `crm:P1_is_identified_by`) | PID, Basis aller FID-URIs |
+| 51 | `FID` | `"1"` | 🟨 | `bb5kbc:Fundstelle` ← `bb5kbc:hatFID` : `xsd:integer` (subPropertyOf `dcterms:identifier` + `crm:P1_is_identified_by`) | PID, Basis aller FID-URIs |
 | 4 | `fst_id` | `"444"` | 🟨 | `bb5kbc:Fundstelle` ← `bb5kbc:hatFundstellenID` : `xsd:string` | Interne ID, nicht immer eindeutig |
 | 3 | `katalognr` | `"55"` | 🟨 | `bb5kbc:Fundstelle` ← `bb5kbc:hatKatalognummer` : `xsd:string` | 52 leer |
 | 5 | `fst_name` | `"Tüngeda"` | 🟨 | `bb5kbc:Fundstelle` ← `rdfs:label` + `skos:prefLabel` : Literal `@de` | |
@@ -190,7 +190,7 @@
 
 | Property | Domäne | Range | subPropertyOf | CRM-Top-Edge |
 |---|---|---|---|---|
-| `bb5kbc:hatFID` | `bb5kbc:Fundstelle` | `xsd:integer` | `crm:P1_is_identified_by`, `dc:identifier` | `crm:P1_is_identified_by` |
+| `bb5kbc:hatFID` | `bb5kbc:Fundstelle` | `xsd:integer` | `crm:P1_is_identified_by`, `dcterms:identifier` | `crm:P1_is_identified_by` |
 | `bb5kbc:hatFundstellenID` | `bb5kbc:Fundstelle` | `xsd:string` | `crm:P1_is_identified_by` | `crm:P1_is_identified_by` |
 | `bb5kbc:hatKatalognummer` | `bb5kbc:Fundstelle` | `xsd:string` | `crm:P1_is_identified_by` | `crm:P1_is_identified_by` |
 | `bb5kbc:hatGenauigkeit` | `bb5kbc:Fundstelle` | `xsd:decimal` | `fsl:precision` | `fsl:precision` |
@@ -571,7 +571,7 @@ der Sherd-Block beispielhaft für eine andere Fundstelle (FID=80, Seelow 20) gez
 @prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
 @prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
-@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix wd:      <https://www.wikidata.org/entity/> .
 @prefix gn:      <https://www.geonames.org/> .
 @prefix orcid:   <https://orcid.org/> .
@@ -582,7 +582,7 @@ der Sherd-Block beispielhaft für eine andere Fundstelle (FID=80, Seelow 20) gez
 
 data:site_33
     a bb5kbc:Fundstelle ;
-    dc:identifier "33"^^xsd:integer ;          # FID — auch URI-Basis
+    dcterms:identifier "33"^^xsd:integer ;          # FID — auch URI-Basis
     bb5kbc:hatFID "33"^^xsd:integer ;
     bb5kbc:hatFundstellenID "129" ;
     bb5kbc:hatKatalognummer "12485" ;
