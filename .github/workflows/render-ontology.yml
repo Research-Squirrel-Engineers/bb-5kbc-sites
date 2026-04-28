@@ -33,12 +33,12 @@ jobs:
           pylode -i ../ontology/bb5kbc-ontology.ttl -o index.html
           ls -la
 
-      - name: Deploy to gh-pages /ont/
+      - name: Deploy to gh-pages /ontology/
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           branch: gh-pages
           folder: ont-output
-          target-folder: ont
+          target-folder: ontology
           clean: false
           commit-message: "Update ontology documentation"
