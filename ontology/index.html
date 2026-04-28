@@ -198,7 +198,7 @@ EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ
     ],
     "https://schema.org/description": [
       {
-        "@value": "<p>Application ontology for the Brandenburg 5000 BC sites dataset (Schmidt 2026).</p>\n<h2>Data namespace</h2>\n<p><code>http://w3id.org/bb5kbc/</code></p>\n<h2>URI patterns</h2>\n<p><strong>FID-based, per-site nodes:</strong></p>\n<ul>\n<li><code>site_{FID}</code> → <code>bb5kbc:Fundstelle</code></li>\n<li><code>site_{FID}_activity</code> → <code>bb5kbc:GeoreferenzierungsAktivitaet</code></li>\n<li><code>site_{FID}_geom</code> → <code>sf:Point</code></li>\n<li><code>site_{FID}_culture</code> → <code>bb5kbc:KulturelleZuordnung</code> (per-site connector to shared Kulturgruppe)</li>\n<li><code>site_{FID}_dating</code> → <code>bb5kbc:Datierung</code> (per-site, with site-specific start/end/certainty)</li>\n</ul>\n<p><strong>Hash-based (<code>MD5(label_utf8)[:8]</code>), deduplicated:</strong></p>\n<ul>\n<li><code>gemeinde_{hash}</code> → <code>bb5kbc:Gemeinde</code></li>\n<li><code>kreis_{hash}</code> → <code>bb5kbc:Kreis</code></li>\n<li><code>bundesland_{hash}</code> → <code>bb5kbc:Bundesland</code></li>\n<li><code>land_{hash}</code> → <code>bb5kbc:Land</code></li>\n<li><code>kultur_{hash}</code> → <code>bb5kbc:Kulturgruppe</code> (shared concept node)</li>\n<li><code>entdeckung_{hash}</code> → <code>bb5kbc:Entdeckung</code></li>\n<li><code>entdeckungsart_{hash}</code> → <code>bb5kbc:EntdeckungsartType</code></li>\n<li><code>fundstellenart_{hash}</code> → <code>bb5kbc:FundstellenartType</code></li>\n<li><code>pub_{hash}</code> → <code>bb5kbc:Publikation</code></li>\n<li><code>methode_{hash}</code> → <code>fsl:MethodType</code></li>\n<li><code>quellentyp_{hash}</code> → <code>fsl:SourceType</code></li>\n<li><code>datmethode_{hash}</code> → <code>bb5kbc:DatierungsMethodeType</code></li>\n<li><code>sherd_{hash}</code> → <code>bb5kbc:Scherbe</code> (hash from Wikidata QID)</li>\n</ul>\n<p>External identifiers (TGN + iDAI + OSM) on all 4 administrative levels.</p>\n<h2>CM Literals (on <code>bb5kbc:GeoreferenzierungsAktivitaet</code>)</h2>\n<p>| CSV column | FSL property | FSL CM ID | Range |\n|---|---|---|---|\n| <code>quelle_georef</code> | <code>fsl:hasReference</code> / <code>fsl:activityDesc</code> | P25 | <code>xsd:string</code> |\n| <code>QID_quelle_georef</code> | <code>fsl:hasReference</code> | P31 | Wikidata URI |\n| <code>methode</code> | <code>fsl:method</code> / <code>fsl:methodUsed</code> | P7 | <code>fsl:MethodType</code> Named Node |\n| <code>quellen_typ</code> | <code>fsl:hasSourceType</code> + <code>fsl:hasSourceTypeDetail</code> | P6 + P16 | <code>fsl:SourceType</code> Named Node |\n| <code>methodenbeschr</code> | <code>fsl:activityDesc</code> | P15 | <code>xsd:string</code> |\n| <code>genauigkeit_m</code> | <code>fsl:precision</code> | P23 | <code>xsd:decimal</code> (on <code>bb5kbc:Fundstelle</code>) |\n| <code>wgs84_x/y</code> | <code>geosparql:asWKT</code> | — | on <code>sf:Point</code> (skip if both = 0,0) |</p>"
+        "@value": "<p>Application ontology for the Brandenburg 5000 BC sites dataset (Schmidt 2026).</p>\n<h2>Data namespace</h2>\n<p><code>http://w3id.org/bb5kbc/</code></p>\n<h2>URI patterns</h2>\n<p><strong>FID-based, per-site nodes:</strong></p>\n<ul>\n<li><code>site_{FID}</code> → <code>bb5kbc:Fundstelle</code></li>\n<li><code>site_{FID}_activity</code> → <code>bb5kbc:GeoreferenzierungsAktivitaet</code></li>\n<li><code>site_{FID}_geom</code> → <code>sf:Point</code></li>\n<li><code>site_{FID}_culture</code> → <code>bb5kbc:KulturelleZuordnung</code> (per-site connector to shared Kulturgruppe)</li>\n<li><code>site_{FID}_dating</code> → <code>bb5kbc:Datierung</code> (per-site, with site-specific start/end/certainty)</li>\n</ul>\n<p><strong>Hash-based (<code>MD5(label_utf8)[:8]</code>), deduplicated:</strong></p>\n<ul>\n<li><code>gemeinde_{hash}</code> → <code>bb5kbc:Gemeinde</code></li>\n<li><code>kreis_{hash}</code> → <code>bb5kbc:Kreis</code></li>\n<li><code>bundesland_{hash}</code> → <code>bb5kbc:Bundesland</code></li>\n<li><code>land_{hash}</code> → <code>bb5kbc:Land</code></li>\n<li><code>kultur_{hash}</code> → <code>bb5kbc:Kulturgruppe</code> (shared concept node)</li>\n<li><code>entdeckung_{hash}</code> → <code>bb5kbc:Entdeckung</code></li>\n<li><code>entdeckungsart_{hash}</code> → <code>bb5kbc:EntdeckungsartType</code></li>\n<li><code>fundstellenart_{hash}</code> → <code>bb5kbc:FundstellenartType</code></li>\n<li><code>pub_{hash}</code> → <code>bb5kbc:Publikation</code></li>\n<li><code>methode_{hash}</code> → <code>fsl:MethodType</code></li>\n<li><code>quellentyp_{hash}</code> → <code>fsl:SourceType</code></li>\n<li><code>datmethode_{hash}</code> → <code>bb5kbc:DatierungsMethodeType</code></li>\n<li><code>sherd_{hash}</code> → <code>bb5kbc:Scherbe</code> (hash from Wikidata QID)</li>\n</ul>\n<p>External identifiers (TGN + iDAI + OSM) on all 4 administrative levels.</p>\n<h2>CM Literals (on <code>bb5kbc:GeoreferenzierungsAktivitaet</code>)</h2>\n<ul>\n<li><code>quelle_georef</code> (<code>fsl:hasReference</code> / <code>fsl:activityDesc</code>, <strong>P25</strong>) → <code>xsd:string</code></li>\n<li><code>QID_quelle_georef</code> (<code>fsl:hasReference</code>, <strong>P31</strong>) → Wikidata URI</li>\n<li><code>methode</code> (<code>fsl:method</code> / <code>fsl:methodUsed</code>, <strong>P7</strong>) → <code>fsl:MethodType</code> Named Node</li>\n<li><code>quellen_typ</code> (<code>fsl:hasSourceType</code> + <code>fsl:hasSourceTypeDetail</code>, <strong>P6 + P16</strong>) → <code>fsl:SourceType</code> Named Node</li>\n<li><code>methodenbeschr</code> (<code>fsl:activityDesc</code>, <strong>P15</strong>) → <code>xsd:string</code></li>\n<li><code>genauigkeit_m</code> (<code>fsl:precision</code>, <strong>P23</strong>) → <code>xsd:decimal</code> (on <code>bb5kbc:Fundstelle</code>)</li>\n<li><code>wgs84_x/y</code> (<code>geosparql:asWKT</code>) → on <code>sf:Point</code> (skip if both = 0,0)</li>\n</ul>"
       }
     ],
     "https://schema.org/name": [
@@ -281,15 +281,15 @@ EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ
 </ul>
 <p>External identifiers (TGN + iDAI + OSM) on all 4 administrative levels.</p>
 <h2>CM Literals (on <code>bb5kbc:GeoreferenzierungsAktivitaet</code>)</h2>
-<p>| CSV column | FSL property | FSL CM ID | Range |
-|---|---|---|---|
-| <code>quelle_georef</code> | <code>fsl:hasReference</code> / <code>fsl:activityDesc</code> | P25 | <code>xsd:string</code> |
-| <code>QID_quelle_georef</code> | <code>fsl:hasReference</code> | P31 | Wikidata URI |
-| <code>methode</code> | <code>fsl:method</code> / <code>fsl:methodUsed</code> | P7 | <code>fsl:MethodType</code> Named Node |
-| <code>quellen_typ</code> | <code>fsl:hasSourceType</code> + <code>fsl:hasSourceTypeDetail</code> | P6 + P16 | <code>fsl:SourceType</code> Named Node |
-| <code>methodenbeschr</code> | <code>fsl:activityDesc</code> | P15 | <code>xsd:string</code> |
-| <code>genauigkeit_m</code> | <code>fsl:precision</code> | P23 | <code>xsd:decimal</code> (on <code>bb5kbc:Fundstelle</code>) |
-| <code>wgs84_x/y</code> | <code>geosparql:asWKT</code> | — | on <code>sf:Point</code> (skip if both = 0,0) |</p>
+<ul>
+<li><code>quelle_georef</code> (<code>fsl:hasReference</code> / <code>fsl:activityDesc</code>, <strong>P25</strong>) → <code>xsd:string</code></li>
+<li><code>QID_quelle_georef</code> (<code>fsl:hasReference</code>, <strong>P31</strong>) → Wikidata URI</li>
+<li><code>methode</code> (<code>fsl:method</code> / <code>fsl:methodUsed</code>, <strong>P7</strong>) → <code>fsl:MethodType</code> Named Node</li>
+<li><code>quellen_typ</code> (<code>fsl:hasSourceType</code> + <code>fsl:hasSourceTypeDetail</code>, <strong>P6 + P16</strong>) → <code>fsl:SourceType</code> Named Node</li>
+<li><code>methodenbeschr</code> (<code>fsl:activityDesc</code>, <strong>P15</strong>) → <code>xsd:string</code></li>
+<li><code>genauigkeit_m</code> (<code>fsl:precision</code>, <strong>P23</strong>) → <code>xsd:decimal</code> (on <code>bb5kbc:Fundstelle</code>)</li>
+<li><code>wgs84_x/y</code> (<code>geosparql:asWKT</code>) → on <code>sf:Point</code> (skip if both = 0,0)</li>
+</ul>
     </div>
 </section>
 <section id="toc">
@@ -767,9 +767,9 @@ EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ
             <tr>
                 <th>Sub-classes</th>
                 <td>
-                    <a href="http://fuzzy-sl.squirrel.link/ontology/PointType">fsl:PointType</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://fuzzy-sl.squirrel.link/ontology/CertaintyType">fsl:CertaintyType</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://fuzzy-sl.squirrel.link/ontology/MethodType">fsl:MethodType</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://fuzzy-sl.squirrel.link/ontology/PointType">fsl:PointType</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://fuzzy-sl.squirrel.link/ontology/SiteType">fsl:SiteType</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://fuzzy-sl.squirrel.link/ontology/LocationType">fsl:LocationType</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://fuzzy-sl.squirrel.link/ontology/SourceType">fsl:SourceType</a><sup class="sup-c" title="class">c</sup><br/>
@@ -802,8 +802,8 @@ EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ
             <tr>
                 <th>In domain of</th>
                 <td>
-                    <a href="#Wikidatamatchdescription">Wikidata match description</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
                     <a href="#locatedincountry">located in country</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#Wikidatamatchdescription">Wikidata match description</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
                 </td>
             </tr>
             <tr>
@@ -853,10 +853,10 @@ Properties:
             <tr>
                 <th>In domain of</th>
                 <td>
-                    <a href="#certaintyend">certainty end</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
                     <a href="#datingend">dating end</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
-                    <a href="#datingstart">dating start</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
                     <a href="#certaintyrange">certainty range</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="#datingstart">dating start</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="#certaintyend">certainty end</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
                     <a href="#certaintystart">certainty start</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
                     <a href="#datingmethod">dating method</a><sup class="sup-op" title="object property">op</sup><br/>
                 </td>
@@ -999,25 +999,25 @@ PROV-O: prov:wasGeneratedBy → bb5kbc:GeoreferenzierungsAktivitaet
             <tr>
                 <th>Super-classes</th>
                 <td>
-                    <a href="http://www.cidoc-crm.org/cidoc-crm/E27_Site">crm:E27_Site</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://archaeology.link/ontology#Location">lado:Location</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://fuzzy-sl.squirrel.link/ontology/Site">fsl:Site</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://archaeology.link/ontology#Location">lado:Location</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.cidoc-crm.org/cidoc-crm/E27_Site">crm:E27_Site</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
             <tr>
                 <th>In domain of</th>
                 <td>
-                    <a href="#cataloguenumber">catalogue number</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
-                    <a href="#spatialaccuracy(m)">spatial accuracy (m)</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
-                    <a href="#wasdiscoveredthrough">was discovered through</a><sup class="sup-op" title="object property">op</sup><br/>
-                    <a href="#hasculturalassignment">has cultural assignment</a><sup class="sup-op" title="object property">op</sup><br/>
-                    <a href="#hassitetype">has site type</a><sup class="sup-op" title="object property">op</sup><br/>
-                    <a href="#hassherd">has sherd</a><sup class="sup-op" title="object property">op</sup><br/>
-                    <a href="#sitePID">site PID</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
                     <a href="#siteID">site ID</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
                     <a href="#haspublication">has publication</a><sup class="sup-op" title="object property">op</sup><br/>
-                    <a href="#wasgeoreferencedthrough">was georeferenced through</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#sitePID">site PID</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="#hassherd">has sherd</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#wasdiscoveredthrough">was discovered through</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#cataloguenumber">catalogue number</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="#hasculturalassignment">has cultural assignment</a><sup class="sup-op" title="object property">op</sup><br/>
                     <a href="#locatedinmunicipality">located in municipality</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#wasgeoreferencedthrough">was georeferenced through</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hassitetype">has site type</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#spatialaccuracy(m)">spatial accuracy (m)</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
                 </td>
             </tr>
         </table>
@@ -1197,8 +1197,8 @@ PROV-O: prov:wasGeneratedBy → bb5kbc:GeoreferenzierungsAktivitaet
             <tr>
                 <th>In domain of</th>
                 <td>
-                    <a href="#hasculturalgroup">has cultural group</a><sup class="sup-op" title="object property">op</sup><br/>
                     <a href="#hasdating">has dating</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasculturalgroup">has cultural group</a><sup class="sup-op" title="object property">op</sup><br/>
                 </td>
             </tr>
             <tr>
@@ -1375,11 +1375,11 @@ linked to its Wikidata entity via bb5kbc:hasExternalIdentifier.</p>
                 <th>Members</th>
                 <td>
                     <a href="http://w3id.org/bb5kbc/ont/ExternalIdentifier_Wikidata">bb5kbc:ExternalIdentifier_Wikidata</a><br/>
+                    <a href="http://w3id.org/bb5kbc/ont/ExternalIdentifier_GeoNames">bb5kbc:ExternalIdentifier_GeoNames</a><br/>
                     <a href="http://w3id.org/bb5kbc/ont/ExternalIdentifier_PerioDo">bb5kbc:ExternalIdentifier_PerioDo</a><br/>
                     <a href="http://w3id.org/bb5kbc/ont/ExternalIdentifier_TGN">bb5kbc:ExternalIdentifier_TGN</a><br/>
-                    <a href="http://w3id.org/bb5kbc/ont/ExternalIdentifier_GeoNames">bb5kbc:ExternalIdentifier_GeoNames</a><br/>
-                    <a href="http://w3id.org/bb5kbc/ont/ExternalIdentifier_iDAI">bb5kbc:ExternalIdentifier_iDAI</a><br/>
                     <a href="http://w3id.org/bb5kbc/ont/ExternalIdentifier_OSM">bb5kbc:ExternalIdentifier_OSM</a><br/>
+                    <a href="http://w3id.org/bb5kbc/ont/ExternalIdentifier_iDAI">bb5kbc:ExternalIdentifier_iDAI</a><br/>
                 </td>
             </tr>
         </table>
@@ -1409,8 +1409,8 @@ linked to its Wikidata entity via bb5kbc:hasExternalIdentifier.</p>
             <tr>
                 <th>Sub-classes</th>
                 <td>
-                    <a href="http://www.cidoc-crm.org/extensions/crmsci/S4_Observation">crmsci:S4_Observation</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="#GeoreferencingActivity">Georeferencing Activity</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.cidoc-crm.org/extensions/crmsci/S4_Observation">crmsci:S4_Observation</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
         </table>
@@ -1465,12 +1465,12 @@ linked to its Wikidata entity via bb5kbc:hasExternalIdentifier.</p>
             <tr>
                 <th>Sub-classes</th>
                 <td>
+                    <a href="http://www.cidoc-crm.org/cidoc-crm/E55_Type">crm:E55_Type</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://www.cidoc-crm.org/cidoc-crm/E52_Time-Span">crm:E52_Time-Span</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://www.cidoc-crm.org/cidoc-crm/E92_Spacetime_Volume">crm:E92_Spacetime_Volume</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://www.cidoc-crm.org/cidoc-crm/E2_Temporal_Entity">crm:E2_Temporal_Entity</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://www.cidoc-crm.org/cidoc-crm/E55_Type">crm:E55_Type</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://www.cidoc-crm.org/cidoc-crm/E53_Place">crm:E53_Place</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://www.cidoc-crm.org/cidoc-crm/E70_Thing">crm:E70_Thing</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.cidoc-crm.org/cidoc-crm/E2_Temporal_Entity">crm:E2_Temporal_Entity</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
         </table>
@@ -1651,8 +1651,8 @@ linked to its Wikidata entity via bb5kbc:hasExternalIdentifier.</p>
             <tr>
                 <th>Sub-classes</th>
                 <td>
-                    <a href="http://www.cidoc-crm.org/cidoc-crm/E5_Event">crm:E5_Event</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="#CulturalGroup">Cultural Group</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.cidoc-crm.org/cidoc-crm/E5_Event">crm:E5_Event</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
         </table>
@@ -1713,11 +1713,11 @@ linked to its Wikidata entity via bb5kbc:hasExternalIdentifier.</p>
                 <th>Sub-classes</th>
                 <td>
                     <a href="#Municipality">Municipality</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#District">District</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#Country">Country</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.cidoc-crm.org/cidoc-crm/E27_Site">crm:E27_Site</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="#FederalState">Federal State</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://www.cidoc-crm.org/extensions/crmgeo/SP6_Declarative_Place">crmgeo:SP6_Declarative_Place</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://www.cidoc-crm.org/cidoc-crm/E27_Site">crm:E27_Site</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="#Country">Country</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="#District">District</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
         </table>
@@ -1747,10 +1747,10 @@ linked to its Wikidata entity via bb5kbc:hasExternalIdentifier.</p>
             <tr>
                 <th>Sub-classes</th>
                 <td>
-                    <a href="#ExternalIdentifierType">External Identifier Type</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://archaeology.link/ontology#PlaceType">lado:PlaceType</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="#DatingMethod">Dating Method</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="#DiscoveryType">Discovery Type</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://archaeology.link/ontology#PlaceType">lado:PlaceType</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#ExternalIdentifierType">External Identifier Type</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
         </table>
@@ -1780,8 +1780,8 @@ linked to its Wikidata entity via bb5kbc:hasExternalIdentifier.</p>
             <tr>
                 <th>Sub-classes</th>
                 <td>
-                    <a href="http://archaeology.link/ontology#Event">lado:Event</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://www.cidoc-crm.org/cidoc-crm/E7_Activity">crm:E7_Activity</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://archaeology.link/ontology#Event">lado:Event</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
         </table>
@@ -1811,8 +1811,8 @@ linked to its Wikidata entity via bb5kbc:hasExternalIdentifier.</p>
             <tr>
                 <th>Sub-classes</th>
                 <td>
-                    <a href="http://www.cidoc-crm.org/cidoc-crm/E73_Information_Object">crm:E73_Information_Object</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://www.cidoc-crm.org/cidoc-crm/E72_Legal_Object">crm:E72_Legal_Object</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.cidoc-crm.org/cidoc-crm/E73_Information_Object">crm:E73_Information_Object</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
         </table>
@@ -1872,8 +1872,8 @@ linked to its Wikidata entity via bb5kbc:hasExternalIdentifier.</p>
             <tr>
                 <th>Sub-classes</th>
                 <td>
-                    <a href="http://www.cidoc-crm.org/cidoc-crm/E32_Authority_Document">crm:E32_Authority_Document</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://www.cidoc-crm.org/extensions/crmgeo/SP5_Geometric_Place_Expression">crmgeo:SP5_Geometric_Place_Expression</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.cidoc-crm.org/cidoc-crm/E32_Authority_Document">crm:E32_Authority_Document</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
         </table>
@@ -2095,8 +2095,8 @@ linked to its Wikidata entity via bb5kbc:hasExternalIdentifier.</p>
             <tr>
                 <th>Sub-classes</th>
                 <td>
-                    <a href="https://pleiades.stoa.org/places/vocab#Location">pleiades:Location</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://www.opengis.net/ont/geosparql#Geometry">geosparql:Geometry</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="https://pleiades.stoa.org/places/vocab#Location">pleiades:Location</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
         </table>
@@ -2827,8 +2827,8 @@ fsl:siteType (FSL Wikibase site-type relation).</p>
             <tr>
                 <th>Super-properties</th>
                 <td>
-                    <a href="http://www.cidoc-crm.org/cidoc-crm/P2_has_type">crm:P2_has_type</a><sup class="sup-op" title="object property">op</sup>
                     <a href="http://fuzzy-sl.squirrel.link/ontology/siteType">fsl:siteType</a><sup class="sup-op" title="object property">op</sup>
+                    <a href="http://www.cidoc-crm.org/cidoc-crm/P2_has_type">crm:P2_has_type</a><sup class="sup-op" title="object property">op</sup>
                 </td>
             </tr>
             <tr>
@@ -3009,8 +3009,8 @@ fsl:siteType (FSL Wikibase site-type relation).</p>
             <tr>
                 <th>Super-properties</th>
                 <td>
-                    <a href="http://www.cidoc-crm.org/cidoc-crm/P89_falls_within">crm:P89_falls_within</a><sup class="sup-op" title="object property">op</sup>
                     <a href="http://fuzzy-sl.squirrel.link/ontology/locatedInAdministrativeEntity">fsl:locatedInAdministrativeEntity</a><sup class="sup-op" title="object property">op</sup>
+                    <a href="http://www.cidoc-crm.org/cidoc-crm/P89_falls_within">crm:P89_falls_within</a><sup class="sup-op" title="object property">op</sup>
                 </td>
             </tr>
             <tr>
@@ -3039,8 +3039,8 @@ fsl:siteType (FSL Wikibase site-type relation).</p>
             <tr>
                 <th>Super-properties</th>
                 <td>
-                    <a href="http://fuzzy-sl.squirrel.link/ontology/locatedInAdministrativeEntity">fsl:locatedInAdministrativeEntity</a><sup class="sup-op" title="object property">op</sup>
                     <a href="http://www.cidoc-crm.org/cidoc-crm/P89_falls_within">crm:P89_falls_within</a><sup class="sup-op" title="object property">op</sup>
+                    <a href="http://fuzzy-sl.squirrel.link/ontology/locatedInAdministrativeEntity">fsl:locatedInAdministrativeEntity</a><sup class="sup-op" title="object property">op</sup>
                 </td>
             </tr>
             <tr>
@@ -3738,19 +3738,21 @@ fsl:siteType (FSL Wikibase site-type relation).</p>
             <tr>
                 <th>Description</th>
                 <td>
-                    <p>Primary identifier (PID) of the Fundstelle in the Schmidt 2026 catalogue (FID column).
-SubPropertyOf both crm:P1_is_identified_by and dcterms:identifier — appears as:
-  dcterms:identifier "1"^^xsd:integer  (explicit identifier statement)
-  URI basis: http://w3id.org/bb5kbc/site_{FID}
-             http://w3id.org/bb5kbc/site_{FID}<em>activity
-             http://w3id.org/bb5kbc/site</em>{FID}_geom</p>
+                    <p>Primary identifier (PID) of the Fundstelle in the Schmidt 2026 catalogue (FID column).</p>
+<p>SubPropertyOf both <code>crm:P1_is_identified_by</code> and <code>dcterms:identifier</code> — appears as <code>dcterms:identifier "1"^^xsd:integer</code> (explicit identifier statement).</p>
+<p>URI basis:</p>
+<ul>
+<li><code>http://w3id.org/bb5kbc/site_{FID}</code></li>
+<li><code>http://w3id.org/bb5kbc/site_{FID}_activity</code></li>
+<li><code>http://w3id.org/bb5kbc/site_{FID}_geom</code></li>
+</ul>
                 </td>
             </tr>
             <tr>
                 <th>Super-properties</th>
                 <td>
-                    <a href="http://www.cidoc-crm.org/cidoc-crm/P1_is_identified_by">crm:P1_is_identified_by</a><sup class="sup-dp" title="datatype property">dp</sup>
                     <a href="http://purl.org/dc/terms/identifier">dcterms:identifier</a><sup class="sup-dp" title="datatype property">dp</sup>
+                    <a href="http://www.cidoc-crm.org/cidoc-crm/P1_is_identified_by">crm:P1_is_identified_by</a><sup class="sup-dp" title="datatype property">dp</sup>
                 </td>
             </tr>
             <tr>
@@ -3879,10 +3881,10 @@ SubPropertyOf both crm:P1_is_identified_by and dcterms:identifier — appears as
             <tr>
                 <th>Domain(s)</th>
                 <td>
-                    <a href="#Country">Country</a><sup class="sup-c" title="class">c</sup>
                     <a href="#Municipality">Municipality</a><sup class="sup-c" title="class">c</sup>
-                    <a href="#FederalState">Federal State</a><sup class="sup-c" title="class">c</sup>
+                    <a href="#Country">Country</a><sup class="sup-c" title="class">c</sup>
                     <a href="#District">District</a><sup class="sup-c" title="class">c</sup>
+                    <a href="#FederalState">Federal State</a><sup class="sup-c" title="class">c</sup>
                 </td>
             </tr>
             <tr>
