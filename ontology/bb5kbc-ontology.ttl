@@ -426,25 +426,29 @@ bb5kbc:Land
     rdfs:comment """Sovereign state (ISO 3166). URI: land_{MD5(label)[:8]}.
 External identifiers: TGN, iDAI, OSM via bb5kbc:hasExternalIdentifier.
 Only 2 values in dataset: Deutschland, Polen."""@en ;
-    rdfs:label "Land"@de , "Country"@en .
+    rdfs:label "Land"@de ;
+    skos:altLabel "Country"@en .
 
 bb5kbc:Bundesland
     rdf:type owl:Class ;
     rdfs:subClassOf crm:E53_Place ;
     rdfs:comment "Federal state (Bundesland) or Voivodeship (NUTS-1). URI: bundesland_{MD5(label)[:8]}. External identifiers via CSV columns BL_TGN, BL_IDAI, BL_OSM_RELATION."@en ;
-    rdfs:label "Bundesland / Województwo"@de , "Federal State"@en .
+    rdfs:label "Bundesland / Województwo"@de ;
+    skos:altLabel "Federal State"@en .
 
 bb5kbc:Kreis
     rdf:type owl:Class ;
     rdfs:subClassOf crm:E53_Place ;
     rdfs:comment "District (Landkreis / Powiat, NUTS-3/LAU-1). URI: kreis_{MD5(label)[:8]}. External identifiers via CSV columns KREIS_TGN, KREIS_IDAI, KREIS_OSM_RELATION."@en ;
-    rdfs:label "Kreis / Powiat"@de , "District"@en .
+    rdfs:label "Kreis / Powiat"@de ;
+    skos:altLabel "District"@en .
 
 bb5kbc:Gemeinde
     rdf:type owl:Class ;
     rdfs:subClassOf crm:E53_Place ;
     rdfs:comment "Municipality (Gemeinde / Gmina, LAU-2). URI: gemeinde_{MD5(label)[:8]}. External identifiers via CSV columns GEM_TGN, GEM_IDAI, GEM_OSM_RELATION."@en ;
-    rdfs:label "Gemeinde / Gmina"@de , "Municipality"@en .
+    rdfs:label "Gemeinde / Gmina"@de ;
+    skos:altLabel "Municipality"@en .
 
 bb5kbc:Fundstelle
     rdf:type owl:Class ;
@@ -462,7 +466,8 @@ fsl:siteType, fsl:hasReference, geosparql:hasGeometry.
 PROV-O: prov:wasGeneratedBy → bb5kbc:GeoreferenzierungsAktivitaet
         (use bb5kbc:wurdeGeoreferenziertDurch as the typed subproperty);
         prov:wasAttributedTo → foaf:Person."""@en ;
-    rdfs:label "Fundstelle"@de , "Archaeological Site"@en .
+    rdfs:label "Fundstelle"@de ;
+    skos:altLabel "Archaeological Site"@en .
 
 bb5kbc:GeoreferenzierungsAktivitaet
     rdf:type owl:Class ;
@@ -483,13 +488,15 @@ bb5kbc:GeoreferenzierungsAktivitaet
   P24 fsl:hasLocationType    → <Q80> Findspot (fixed for all bb5kbc:Fundstelle)
   P25 fsl:hasReference       → xsd:string (quelle_georef)
   P33 fsl:hasPointType       → <Q126> Representative Point (fixed for all sf:Point)"""@en ;
-    rdfs:label "Georeferenzierungs-Aktivität"@de , "Georeferencing Activity"@en .
+    rdfs:label "Georeferenzierungs-Aktivität"@de ;
+    skos:altLabel "Georeferencing Activity"@en .
 
 bb5kbc:FundstellenartType
     rdf:type owl:Class ;
     rdfs:subClassOf lado:PlaceType , fsl:SiteType ;
     rdfs:comment "Site type (Siedlung, Grab, KGA, unbekannt). WD QID via bb5kbc:hasExternalIdentifier."@en ;
-    rdfs:label "Fundstellenart"@de , "Site Type"@en .
+    rdfs:label "Fundstellenart"@de ;
+    skos:altLabel "Site Type"@en .
 
 bb5kbc:Entdeckung
     rdf:type owl:Class ;
@@ -498,7 +505,8 @@ bb5kbc:Entdeckung
 entdeckung column → rdfs:label literal (free text, 15 heterogeneous values
 including proper names like 'Ausgrabung Bersu' — not a Named Node).
 QID_entdeckung → bb5kbc:hatEntdeckungsart → bb5kbc:EntdeckungsartType (Named Node)."""@en ;
-    rdfs:label "Entdeckung"@de , "Discovery / Encounter Event"@en .
+    rdfs:label "Entdeckung"@de ;
+    skos:altLabel "Discovery / Encounter Event"@en .
 # CRM chain: crm:E1 → crm:E13_Attribute_Assignment
 #            → crmsci:S4_Observation → crmsci:S19_Encounter_Event
 
@@ -508,14 +516,16 @@ bb5kbc:EntdeckungsartType
     rdfs:comment """Type of discovery/encounter (Ausgrabung, Lesefund, Einzelfund).
 crm:E55_Type as the type of a crmsci:S19_Encounter_Event — 'E55 Typus von
 S19 Begegnung' per Sophie's README. WD QID via bb5kbc:hasExternalIdentifier."""@en ;
-    rdfs:label "Entdeckungsart"@de , "Discovery Type"@en .
+    rdfs:label "Entdeckungsart"@de ;
+    skos:altLabel "Discovery Type"@en .
 # CRM chain: crm:E1 → crm:E55_Type → bb5kbc:EntdeckungsartType
 
 bb5kbc:KulturelleZuordnung
     rdf:type owl:Class ;
     rdfs:subClassOf lado:SpaceTimeItem ;
     rdfs:comment "Spacetime assignment combining Fundstelle + Kulturgruppe + temporal period. URI: culture_{hash}. Has bb5kbc:hatDatierung → bb5kbc:Datierung (URI: culture_{hash}_dating)."@en ;
-    rdfs:label "Kulturelle Zuordnung"@de , "Cultural Assignment"@en .
+    rdfs:label "Kulturelle Zuordnung"@de ;
+    skos:altLabel "Cultural Assignment"@en .
 
 bb5kbc:Kulturgruppe
     rdf:type owl:Class ;
@@ -525,13 +535,15 @@ bb5kbc:Kulturgruppe
 Mesolithikum, SBK?, SRK?). Uncertain assignments (SBK?, SRK?) get their own nodes.
 Perio.do URI (perio.do column, currently empty in CSV) will be added via
 bb5kbc:hasExternalIdentifier when available."""@en ;
-    rdfs:label "Kulturgruppe"@de , "Cultural Group"@en .
+    rdfs:label "Kulturgruppe"@de ;
+    skos:altLabel "Cultural Group"@en .
 
 bb5kbc:Publikation
     rdf:type owl:Class ;
     rdfs:subClassOf crm:E32_Authority_Document ;
     rdfs:comment "Archaeological publication (publikation_arch). WD QID via bb5kbc:hasExternalIdentifier."@en ;
-    rdfs:label "Archäologische Publikation"@de , "Archaeological Publication"@en .
+    rdfs:label "Archäologische Publikation"@de ;
+    skos:altLabel "Archaeological Publication"@en .
 
 # --- NAMED INDIVIDUALS: external identifier types ----------------------------
 
@@ -644,7 +656,8 @@ bb5kbc:wikidataMatchDescription
     rdfs:comment """Audit note in plain text describing how this administrative entity was matched against Wikidata: method (exact / fuzzy / override / transitive P131+), normalisation steps applied, search label and matched label, and the confidence score. Carried over verbatim from the matchReason field produced by wikidata_map.py during CSV enrichment.
 
 Multiple rdfs:domain triples are used (Land, Bundesland, Kreis, Gemeinde) rather than owl:unionOf, to keep auto-generated SHACL shapes simple — the auto-generator picks the first domain. The semantic restriction is: the property applies to any of the four administrative-area classes."""@en ;
-    rdfs:label "Wikidata match description"@en , "Wikidata-Match-Beschreibung"@de .
+    rdfs:label "Wikidata-Match-Beschreibung"@de ;
+    skos:altLabel "Wikidata match description"@en .
 
 # --- CRMgeo / GEOMETRY NOTE --------------------------------------------------
 # sf:Point / geosparql:Geometry corresponds to crmgeo:SP5_Geometric_Place_Expression
@@ -666,28 +679,32 @@ bb5kbc:inGemeinde
     rdfs:subPropertyOf crm:P89_falls_within , fsl:locatedInAdministrativeEntity ;
     rdfs:domain bb5kbc:Fundstelle ;
     rdfs:range  bb5kbc:Gemeinde ;
-    rdfs:label "liegt in Gemeinde"@de , "located in municipality"@en .
+    rdfs:label "liegt in Gemeinde"@de ;
+    skos:altLabel "located in municipality"@en .
 
 bb5kbc:inKreis
     rdf:type owl:ObjectProperty ;
     rdfs:subPropertyOf crm:P89_falls_within , fsl:locatedInAdministrativeEntity ;
     rdfs:domain bb5kbc:Gemeinde ;
     rdfs:range  bb5kbc:Kreis ;
-    rdfs:label "liegt in Kreis"@de , "located in district"@en .
+    rdfs:label "liegt in Kreis"@de ;
+    skos:altLabel "located in district"@en .
 
 bb5kbc:inBundesland
     rdf:type owl:ObjectProperty ;
     rdfs:subPropertyOf crm:P89_falls_within , fsl:locatedInAdministrativeEntity ;
     rdfs:domain bb5kbc:Kreis ;
     rdfs:range  bb5kbc:Bundesland ;
-    rdfs:label "liegt in Bundesland"@de , "located in federal state"@en .
+    rdfs:label "liegt in Bundesland"@de ;
+    skos:altLabel "located in federal state"@en .
 
 bb5kbc:inLand
     rdf:type owl:ObjectProperty ;
     rdfs:subPropertyOf crm:P89_falls_within , fsl:locatedInAdministrativeEntity ;
     rdfs:domain bb5kbc:Bundesland ;
     rdfs:range  bb5kbc:Land ;
-    rdfs:label "liegt in Land"@de , "located in country"@en .
+    rdfs:label "liegt in Land"@de ;
+    skos:altLabel "located in country"@en .
 
 # Discovery
 
@@ -696,7 +713,8 @@ bb5kbc:wurdeEntdecktDurch
     rdfs:subPropertyOf crm:P12i_was_present_at ;
     rdfs:domain bb5kbc:Fundstelle ;
     rdfs:range  bb5kbc:Entdeckung ;
-    rdfs:label "wurde entdeckt durch"@de , "was discovered through"@en .
+    rdfs:label "wurde entdeckt durch"@de ;
+    skos:altLabel "was discovered through"@en .
 
 bb5kbc:wurdeGeoreferenziertDurch
     rdf:type owl:ObjectProperty ;
@@ -704,7 +722,8 @@ bb5kbc:wurdeGeoreferenziertDurch
     rdfs:domain bb5kbc:Fundstelle ;
     rdfs:range  bb5kbc:GeoreferenzierungsAktivitaet ;
     rdfs:comment "Links a Fundstelle to the georeferencing activity that produced its coordinates. Subproperty of prov:wasGeneratedBy (PROV-O provenance)."@en ;
-    rdfs:label "wurde georeferenziert durch"@de , "was georeferenced through"@en .
+    rdfs:label "wurde georeferenziert durch"@de ;
+    skos:altLabel "was georeferenced through"@en .
 
 bb5kbc:hatEntdeckungsart
     rdf:type owl:ObjectProperty ;
@@ -712,7 +731,8 @@ bb5kbc:hatEntdeckungsart
     rdfs:domain bb5kbc:Entdeckung ;
     rdfs:range  bb5kbc:EntdeckungsartType ;
     rdfs:comment "Type of the discovery / encounter event (Ausgrabung, Lesefund, etc.). Subproperty of crm:P2_has_type."@en ;
-    rdfs:label "hat Entdeckungsart"@de , "has discovery type"@en .
+    rdfs:label "hat Entdeckungsart"@de ;
+    skos:altLabel "has discovery type"@en .
 
 # Site type
 
@@ -724,7 +744,8 @@ bb5kbc:hatFundstellenart
     rdfs:comment """Type of the archaeological site (Siedlung, Grab, KGA, etc.).
 Doubly anchored: subPropertyOf crm:P2_has_type (CRM type assignment) and
 fsl:siteType (FSL Wikibase site-type relation)."""@en ;
-    rdfs:label "hat Fundstellenart"@de , "has site type"@en .
+    rdfs:label "hat Fundstellenart"@de ;
+    skos:altLabel "has site type"@en .
 
 # Cultural assignment
 
@@ -733,14 +754,16 @@ bb5kbc:hatKulturelleZuordnung
     rdfs:subPropertyOf crm:P10i_contains ;
     rdfs:domain bb5kbc:Fundstelle ;
     rdfs:range  bb5kbc:KulturelleZuordnung ;
-    rdfs:label "hat kulturelle Zuordnung"@de , "has cultural assignment"@en .
+    rdfs:label "hat kulturelle Zuordnung"@de ;
+    skos:altLabel "has cultural assignment"@en .
 
 bb5kbc:hatKulturgruppe
     rdf:type owl:ObjectProperty ;
     rdfs:subPropertyOf crm:P9i_forms_part_of ;
     rdfs:domain bb5kbc:KulturelleZuordnung ;
     rdfs:range  bb5kbc:Kulturgruppe ;
-    rdfs:label "hat Kulturgruppe"@de , "has cultural group"@en .
+    rdfs:label "hat Kulturgruppe"@de ;
+    skos:altLabel "has cultural group"@en .
 
 # Publication
 
@@ -749,7 +772,8 @@ bb5kbc:hatPublikation
     rdfs:subPropertyOf crm:P70i_is_documented_in ;
     rdfs:domain bb5kbc:Fundstelle ;
     rdfs:range  bb5kbc:Publikation ;
-    rdfs:label "hat Publikation"@de , "has publication"@en .
+    rdfs:label "hat Publikation"@de ;
+    skos:altLabel "has publication"@en .
 
 # --- DATATYPE PROPERTIES -----------------------------------------------------
 
@@ -757,13 +781,15 @@ bb5kbc:hatFundstellenID
     rdf:type owl:DatatypeProperty ;
     rdfs:subPropertyOf crm:P1_is_identified_by ;
     rdfs:domain bb5kbc:Fundstelle ; rdfs:range xsd:string ;
-    rdfs:label "Fundstellen-ID"@de , "site ID"@en .
+    rdfs:label "Fundstellen-ID"@de ;
+    skos:altLabel "site ID"@en .
 
 bb5kbc:hatKatalognummer
     rdf:type owl:DatatypeProperty ;
     rdfs:subPropertyOf crm:P1_is_identified_by ;
     rdfs:domain bb5kbc:Fundstelle ; rdfs:range xsd:string ;
-    rdfs:label "Katalognummer"@de , "catalogue number"@en .
+    rdfs:label "Katalognummer"@de ;
+    skos:altLabel "catalogue number"@en .
 
 bb5kbc:hatFID
     rdf:type owl:DatatypeProperty ;
@@ -780,14 +806,16 @@ URI basis:
 * `http://w3id.org/bb5kbc/site_{FID}`
 * `http://w3id.org/bb5kbc/site_{FID}_activity`
 * `http://w3id.org/bb5kbc/site_{FID}_geom`"""@en ;
-    rdfs:label "FID"@de , "site PID"@en .
+    rdfs:label "FID"@de ;
+    skos:altLabel "site PID"@en .
 
 bb5kbc:hatGenauigkeit
     rdf:type owl:DatatypeProperty ;
     rdfs:subPropertyOf fsl:precision ;
     rdfs:domain bb5kbc:Fundstelle ; rdfs:range xsd:decimal ;
     rdfs:comment "Spatial accuracy in metres (genauigkeit_m). SubPropertyOf fsl:precision."@en ;
-    rdfs:label "Genauigkeit (m)"@de , "spatial accuracy (m)"@en .
+    rdfs:label "Genauigkeit (m)"@de ;
+    skos:altLabel "spatial accuracy (m)"@en .
 
 # --- DATING ------------------------------------------------------------------
 
@@ -808,7 +836,8 @@ Properties:
   bb5kbc:datierungSicherheitRange  xsd:string  (dating_certainty_range, e.g. 'ca.')
   skos:exactMatch / skos:closeMatch / skos:relatedMatch → Perio.do URI
     (dating_perio.do + dating_perio.do_match determine which SKOS property)"""@en ;
-    rdfs:label "Datierung"@de , "Dating"@en .
+    rdfs:label "Datierung"@de ;
+    skos:altLabel "Dating"@en .
 # CRM chain: crm:E1 → crm:E2_Temporal_Entity → crm:E52_Time-Span → bb5kbc:Datierung
 # OWL Time:  time:TemporalEntity → time:Interval → bb5kbc:Datierung
 
@@ -816,7 +845,8 @@ bb5kbc:DatierungsMethodeType
     rdf:type owl:Class ;
     rdfs:subClassOf crm:E55_Type ;
     rdfs:comment "Dating method type (e.g. C14, Literatur, Typology). URI: datmethode_{hash}. WD QID via bb5kbc:hasExternalIdentifier (dating_method column)."@en ;
-    rdfs:label "Datierungsmethode"@de , "Dating Method"@en .
+    rdfs:label "Datierungsmethode"@de ;
+    skos:altLabel "Dating Method"@en .
 
 # --- DATING PROPERTIES -------------------------------------------------------
 
@@ -826,14 +856,16 @@ bb5kbc:hatDatierung
     rdfs:domain bb5kbc:KulturelleZuordnung ;
     rdfs:range bb5kbc:Datierung ;
     rdfs:comment "Links a bb5kbc:KulturelleZuordnung to its bb5kbc:Datierung node. SubPropertyOf crm:P4_has_time-span."@en ;
-    rdfs:label "hat Datierung"@de , "has dating"@en .
+    rdfs:label "hat Datierung"@de ;
+    skos:altLabel "has dating"@en .
 
 bb5kbc:datierungMethode
     rdf:type owl:ObjectProperty ;
     rdfs:subPropertyOf crm:P2_has_type ;
     rdfs:domain bb5kbc:Datierung ;
     rdfs:range bb5kbc:DatierungsMethodeType ;
-    rdfs:label "Datierungsmethode"@de , "dating method"@en .
+    rdfs:label "Datierungsmethode"@de ;
+    skos:altLabel "dating method"@en .
 
 bb5kbc:datierungStart
     rdf:type owl:DatatypeProperty ;
@@ -841,7 +873,8 @@ bb5kbc:datierungStart
     rdfs:domain bb5kbc:Datierung ;
     rdfs:range xsd:integer ;
     rdfs:comment "Start of the dating range (dating_start). Integer year (negative = BCE). SubPropertyOf crm:P82a_begin_of_the_begin; use time:hasBeginning / time:inXSDgYear for OWL Time."@en ;
-    rdfs:label "Datierung Beginn"@de , "dating start"@en .
+    rdfs:label "Datierung Beginn"@de ;
+    skos:altLabel "dating start"@en .
 
 bb5kbc:datierungEnd
     rdf:type owl:DatatypeProperty ;
@@ -849,7 +882,8 @@ bb5kbc:datierungEnd
     rdfs:domain bb5kbc:Datierung ;
     rdfs:range xsd:integer ;
     rdfs:comment "End of the dating range (dating_end). Integer year (negative = BCE). SubPropertyOf crm:P82b_end_of_the_end."@en ;
-    rdfs:label "Datierung Ende"@de , "dating end"@en .
+    rdfs:label "Datierung Ende"@de ;
+    skos:altLabel "dating end"@en .
 
 bb5kbc:datierungSicherheitStart
     rdf:type owl:DatatypeProperty ;
@@ -857,7 +891,8 @@ bb5kbc:datierungSicherheitStart
     rdfs:domain bb5kbc:Datierung ;
     rdfs:range xsd:string ;
     rdfs:comment "Certainty qualifier for dating_start (dating_certainty_start). SubPropertyOf fsl:certaintyDesc."@en ;
-    rdfs:label "Sicherheit Beginn"@de , "certainty start"@en .
+    rdfs:label "Sicherheit Beginn"@de ;
+    skos:altLabel "certainty start"@en .
 
 bb5kbc:datierungSicherheitEnd
     rdf:type owl:DatatypeProperty ;
@@ -865,7 +900,8 @@ bb5kbc:datierungSicherheitEnd
     rdfs:domain bb5kbc:Datierung ;
     rdfs:range xsd:string ;
     rdfs:comment "Certainty qualifier for dating_end (dating_certainty_end). SubPropertyOf fsl:certaintyDesc."@en ;
-    rdfs:label "Sicherheit Ende"@de , "certainty end"@en .
+    rdfs:label "Sicherheit Ende"@de ;
+    skos:altLabel "certainty end"@en .
 
 bb5kbc:datierungSicherheitRange
     rdf:type owl:DatatypeProperty ;
@@ -873,7 +909,8 @@ bb5kbc:datierungSicherheitRange
     rdfs:domain bb5kbc:Datierung ;
     rdfs:range xsd:string ;
     rdfs:comment "Certainty qualifier for the overall range (dating_certainty_range, e.g. 'ca.'). SubPropertyOf fsl:certaintyDesc."@en ;
-    rdfs:label "Sicherheit Zeitraum"@de , "certainty range"@en .
+    rdfs:label "Sicherheit Zeitraum"@de ;
+    skos:altLabel "certainty range"@en .
 
 # --- SCHERBE -----------------------------------------------------------------
 
@@ -883,7 +920,8 @@ bb5kbc:Scherbe
     rdfs:comment """Ceramic sherd found at a Fundstelle (sherd column, 1-n Wikidata QIDs, delimiter |).
 URI: sherd_{MD5(QID)[:8]}. Each QID gets its own Named Node typed bb5kbc:Scherbe,
 linked to its Wikidata entity via bb5kbc:hasExternalIdentifier."""@en ;
-    rdfs:label "Scherbe"@de , "Sherd"@en .
+    rdfs:label "Scherbe"@de ;
+    skos:altLabel "Sherd"@en .
 # CRM chain: crm:E1 → crm:E18_Physical_Thing → crm:E22_Human-Made_Object → bb5kbc:Scherbe
 
 bb5kbc:hatScherbe
@@ -892,6 +930,7 @@ bb5kbc:hatScherbe
     rdfs:domain bb5kbc:Fundstelle ;
     rdfs:range bb5kbc:Scherbe ;
     rdfs:comment "Links a bb5kbc:Fundstelle to one or more bb5kbc:Scherbe instances (sherd column). SubPropertyOf crm:P46i_forms_part_of."@en ;
-    rdfs:label "hat Scherbe"@de , "has sherd"@en .
+    rdfs:label "hat Scherbe"@de ;
+    skos:altLabel "has sherd"@en .
 
 
