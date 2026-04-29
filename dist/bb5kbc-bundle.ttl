@@ -78,13 +78,13 @@ data:bb5kbc_bundle_ttl a prov:Entity ;
     rdfs:label "bb5kbc-bundle.ttl (data + ontology, self-contained)"@en ;
     prov:atLocation <file:///C:/git/bb-5kbc-sites/dist/bb5kbc-bundle.ttl> ;
     prov:wasDerivedFrom ns1:fst_wgs84_csv ;
-    prov:wasGeneratedBy data:pipeline_run_2026-04-28T11-55-07Z .
+    prov:wasGeneratedBy data:pipeline_run_2026-04-29T07-22-41Z .
 
 data:bb5kbc_data_ttl a prov:Entity ;
     rdfs:label "bb5kbc-data.ttl (LOD-converted site data)"@en ;
     prov:atLocation <file:///C:/git/bb-5kbc-sites/dist/bb5kbc-data.ttl> ;
     prov:wasDerivedFrom ns1:fst_wgs84_csv ;
-    prov:wasGeneratedBy data:pipeline_run_2026-04-28T11-55-07Z .
+    prov:wasGeneratedBy data:pipeline_run_2026-04-29T07-22-41Z .
 
 bb5kbc: a owl:Ontology ;
     dcterms:contributor "Florian Thiery",
@@ -29999,12 +29999,12 @@ data:kreis_d2918bbf a bb5kbc:Kreis ;
     bb5kbc:wikidataMatchDescription "Exact match via rdfs:label [global index] | 'Powiat Strzelecko-Drezdenecki' -> 'Powiat Strzelecko-Drezdenecki'"^^xsd:string ;
     skos:prefLabel "pow. Strzelecko-Drezdenecki"@de .
 
-data:pipeline_run_2026-04-28T11-55-07Z a prov:Activity ;
-    rdfs:label "bb5kbc CSV-to-RDF pipeline run 2026-04-28T11-55-07Z"@en ;
+data:pipeline_run_2026-04-29T07-22-41Z a prov:Activity ;
+    rdfs:label "bb5kbc CSV-to-RDF pipeline run 2026-04-29T07-22-41Z"@en ;
     data:dataTripleCount 27870 ;
     data:rowCount 540 ;
-    prov:endedAtTime "2026-04-28T11:55:09.035766+00:00"^^xsd:dateTime ;
-    prov:startedAtTime "2026-04-28T11:55:07.613453+00:00"^^xsd:dateTime ;
+    prov:endedAtTime "2026-04-29T07:22:43.073419+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-04-29T07:22:41.416405+00:00"^^xsd:dateTime ;
     prov:used <file:///C:/git/bb-5kbc-sites/data/fst_wgs84.csv>,
         <file:///C:/git/bb-5kbc-sites/ontology/bb5kbc-ontology.ttl>,
         ns1:fst_wgs84_csv ;

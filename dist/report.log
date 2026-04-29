@@ -1,63 +1,63 @@
-2026-04-28 13:55:07 [INFO] ======================================================================
-2026-04-28 13:55:07 [INFO] bb5kbc LOD pipeline — start
-2026-04-28 13:55:07 [INFO] ======================================================================
-2026-04-28 13:55:07 [INFO] CSV input:        C:\git\bb-5kbc-sites\data\fst_wgs84.csv
-2026-04-28 13:55:07 [INFO] Ontology input:   C:\git\bb-5kbc-sites\ontology\bb5kbc-ontology.ttl
-2026-04-28 13:55:07 [INFO] Data output:      C:\git\bb-5kbc-sites\dist\bb5kbc-data.ttl
-2026-04-28 13:55:07 [INFO] Bundle output:    C:\git\bb-5kbc-sites\dist\bb5kbc-bundle.ttl
-2026-04-28 13:55:07 [INFO] SHACL shapes:     C:\git\bb-5kbc-sites\rdf\bb5kbc-shapes.ttl
-2026-04-28 13:55:07 [INFO] SHACL report:     C:\git\bb-5kbc-sites\dist\shacl-report.ttl
-2026-04-28 13:55:07 [INFO] Bundle report:    C:\git\bb-5kbc-sites\dist\shacl-report-bundle.ttl
-2026-04-28 13:55:07 [INFO] PROV manifest:    C:\git\bb-5kbc-sites\dist\csv_to_lod_run.ttl
-2026-04-28 13:55:07 [INFO] Upstream PROV:    C:\git\bb-5kbc-sites\data\csv_enrichment_run.ttl
-2026-04-28 13:55:07 [INFO] Log file:         C:\git\bb-5kbc-sites\dist\report.log
-2026-04-28 13:55:07 [INFO] 
-2026-04-28 13:55:07 [INFO] Loaded CSV: 540 rows, 64 columns
-2026-04-28 13:55:07 [INFO] Processing rows ...
-2026-04-28 13:55:07 [INFO] Row 30: split fundstellenart 'Kreisgrabenanlage und Siedlung' into 2 components
-2026-04-28 13:55:07 [INFO] Row 39: split fundstellenart 'Siedlung, Kreisgrabenanlage' into 2 components
-2026-04-28 13:55:07 [INFO] Row FID=54: fundstellenart 'Grab?' marked as uncertain (fsl:certaintyDesc).
-2026-04-28 13:55:07 [INFO] Row FID=82: fundstellenart 'Grab?' marked as uncertain (fsl:certaintyDesc).
-2026-04-28 13:55:07 [INFO] Row FID=83: fundstellenart 'Grab?' marked as uncertain (fsl:certaintyDesc).
-2026-04-28 13:55:07 [INFO] Row FID=86: fundstellenart 'Grab?' marked as uncertain (fsl:certaintyDesc).
-2026-04-28 13:55:07 [INFO] Row 107: split fundstellenart 'Siedlung und Grab' into 2 components
-2026-04-28 13:55:07 [INFO] Row FID=169: fundstellenart 'Grab?' marked as uncertain (fsl:certaintyDesc).
-2026-04-28 13:55:08 [INFO] Row 185: split fundstellenart 'Siedlung und Grab' into 2 components
-2026-04-28 13:55:08 [INFO] Row 202: split fundstellenart 'Siedlung, Kreisgrabenanlage' into 2 components
-2026-04-28 13:55:08 [INFO] Row 228: split fundstellenart 'Siedlung, Brunnen' into 2 components
-2026-04-28 13:55:08 [INFO] Row FID=552: fundstellenart 'Grab?' marked as uncertain (fsl:certaintyDesc).
-2026-04-28 13:55:08 [INFO] Row FID=562: fundstellenart 'Grab?' marked as uncertain (fsl:certaintyDesc).
-2026-04-28 13:55:08 [INFO] Row FID=571: empty `land` cell but LAND_QID=Q183; using fallback label 'Deutschland'.
-2026-04-28 13:55:08 [INFO] Row FID=575: empty `land` cell but LAND_QID=Q183; using fallback label 'Deutschland'.
-2026-04-28 13:55:08 [INFO] Row FID=579: empty `land` cell but LAND_QID=Q183; using fallback label 'Deutschland'.
-2026-04-28 13:55:08 [INFO] Row FID=580: empty `land` cell but LAND_QID=Q183; using fallback label 'Deutschland'.
-2026-04-28 13:55:08 [INFO] Row FID=581: empty `land` cell but LAND_QID=Q183; using fallback label 'Deutschland'.
-2026-04-28 13:55:08 [INFO] Row FID=582: empty `land` cell but LAND_QID=Q183; using fallback label 'Deutschland'.
-2026-04-28 13:55:09 [INFO] Row FID=584: empty `land` cell but LAND_QID=Q183; using fallback label 'Deutschland'.
-2026-04-28 13:55:09 [INFO] Row FID=585: empty `land` cell but LAND_QID=Q183; using fallback label 'Deutschland'.
-2026-04-28 13:55:09 [INFO] Row FID=587: empty `land` cell but LAND_QID=Q183; using fallback label 'Deutschland'.
-2026-04-28 13:55:09 [INFO] Row FID=588: empty `land` cell but LAND_QID=Q183; using fallback label 'Deutschland'.
-2026-04-28 13:55:09 [INFO] Row FID=589: empty `land` cell but LAND_QID=Q183; using fallback label 'Deutschland'.
-2026-04-28 13:55:09 [INFO] Row FID=590: empty `land` cell but LAND_QID=Q183; using fallback label 'Deutschland'.
-2026-04-28 13:55:09 [INFO] Processed: 540 rows, skipped: 0
-2026-04-28 13:55:09 [INFO] Generated graph: 27777 triples
-2026-04-28 13:55:09 [INFO] Loaded upstream PROV: 93 triples, top-level activity: https://example.org/bb-5kbc-sites/run/2026-04-27T18-56-13Z
-2026-04-28 13:55:09 [INFO] Identified upstream entity for fst_wgs84.csv: https://example.org/bb-5kbc-sites/fst_wgs84_csv
-2026-04-28 13:55:09 [INFO] Embedded upstream PROV into data graph (+93 triples)
-2026-04-28 13:55:09 [INFO] PROV activity: http://w3id.org/bb5kbc/pipeline_run_2026-04-28T11-55-07Z
-2026-04-28 13:55:10 [INFO] Wrote data graph: C:\git\bb-5kbc-sites\dist\bb5kbc-data.ttl (27897 triples)
-2026-04-28 13:55:10 [INFO] Building bundle graph (data + ontology) ...
-2026-04-28 13:55:12 [INFO] Wrote bundle graph: C:\git\bb-5kbc-sites\dist\bb5kbc-bundle.ttl (28531 triples)
-2026-04-28 13:55:12 [INFO] Wrote LOD PROV manifest: C:\git\bb-5kbc-sites\dist\csv_to_lod_run.ttl (30 triples)
-2026-04-28 13:55:12 [INFO] Generating SHACL shapes from ontology ...
-2026-04-28 13:55:12 [INFO] Wrote shapes: C:\git\bb-5kbc-sites\rdf\bb5kbc-shapes.ttl (156 triples)
-2026-04-28 13:55:12 [INFO] Loading shapes for validation ...
-2026-04-28 13:55:12 [INFO] Validating data graph against shapes ...
-2026-04-28 13:55:35 [INFO] Wrote SHACL report (data graph): C:\git\bb-5kbc-sites\dist\shacl-report.ttl
-2026-04-28 13:55:35 [INFO] SHACL validation [data graph]: PASS (0 validation results)
-2026-04-28 13:55:35 [INFO] Validating bundle graph against shapes ...
-2026-04-28 13:55:52 [INFO] Wrote SHACL report (bundle graph): C:\git\bb-5kbc-sites\dist\shacl-report-bundle.ttl
-2026-04-28 13:55:52 [INFO] SHACL validation [bundle graph]: PASS (0 validation results)
-2026-04-28 13:55:52 [INFO] ======================================================================
-2026-04-28 13:55:52 [INFO] bb5kbc LOD pipeline — done
-2026-04-28 13:55:52 [INFO] ======================================================================
+2026-04-29 09:22:41 [INFO] ======================================================================
+2026-04-29 09:22:41 [INFO] bb5kbc LOD pipeline — start
+2026-04-29 09:22:41 [INFO] ======================================================================
+2026-04-29 09:22:41 [INFO] CSV input:        C:\git\bb-5kbc-sites\data\fst_wgs84.csv
+2026-04-29 09:22:41 [INFO] Ontology input:   C:\git\bb-5kbc-sites\ontology\bb5kbc-ontology.ttl
+2026-04-29 09:22:41 [INFO] Data output:      C:\git\bb-5kbc-sites\dist\bb5kbc-data.ttl
+2026-04-29 09:22:41 [INFO] Bundle output:    C:\git\bb-5kbc-sites\dist\bb5kbc-bundle.ttl
+2026-04-29 09:22:41 [INFO] SHACL shapes:     C:\git\bb-5kbc-sites\rdf\bb5kbc-shapes.ttl
+2026-04-29 09:22:41 [INFO] SHACL report:     C:\git\bb-5kbc-sites\dist\shacl-report.ttl
+2026-04-29 09:22:41 [INFO] Bundle report:    C:\git\bb-5kbc-sites\dist\shacl-report-bundle.ttl
+2026-04-29 09:22:41 [INFO] PROV manifest:    C:\git\bb-5kbc-sites\dist\csv_to_lod_run.ttl
+2026-04-29 09:22:41 [INFO] Upstream PROV:    C:\git\bb-5kbc-sites\data\csv_enrichment_run.ttl
+2026-04-29 09:22:41 [INFO] Log file:         C:\git\bb-5kbc-sites\dist\report.log
+2026-04-29 09:22:41 [INFO] 
+2026-04-29 09:22:41 [INFO] Loaded CSV: 540 rows, 64 columns
+2026-04-29 09:22:41 [INFO] Processing rows ...
+2026-04-29 09:22:41 [INFO] Row 30: split fundstellenart 'Kreisgrabenanlage und Siedlung' into 2 components
+2026-04-29 09:22:41 [INFO] Row 39: split fundstellenart 'Siedlung, Kreisgrabenanlage' into 2 components
+2026-04-29 09:22:41 [INFO] Row FID=54: fundstellenart 'Grab?' marked as uncertain (fsl:certaintyDesc).
+2026-04-29 09:22:41 [INFO] Row FID=82: fundstellenart 'Grab?' marked as uncertain (fsl:certaintyDesc).
+2026-04-29 09:22:41 [INFO] Row FID=83: fundstellenart 'Grab?' marked as uncertain (fsl:certaintyDesc).
+2026-04-29 09:22:41 [INFO] Row FID=86: fundstellenart 'Grab?' marked as uncertain (fsl:certaintyDesc).
+2026-04-29 09:22:41 [INFO] Row 107: split fundstellenart 'Siedlung und Grab' into 2 components
+2026-04-29 09:22:41 [INFO] Row FID=169: fundstellenart 'Grab?' marked as uncertain (fsl:certaintyDesc).
+2026-04-29 09:22:42 [INFO] Row 185: split fundstellenart 'Siedlung und Grab' into 2 components
+2026-04-29 09:22:42 [INFO] Row 202: split fundstellenart 'Siedlung, Kreisgrabenanlage' into 2 components
+2026-04-29 09:22:42 [INFO] Row 228: split fundstellenart 'Siedlung, Brunnen' into 2 components
+2026-04-29 09:22:42 [INFO] Row FID=552: fundstellenart 'Grab?' marked as uncertain (fsl:certaintyDesc).
+2026-04-29 09:22:42 [INFO] Row FID=562: fundstellenart 'Grab?' marked as uncertain (fsl:certaintyDesc).
+2026-04-29 09:22:43 [INFO] Row FID=571: empty `land` cell but LAND_QID=Q183; using fallback label 'Deutschland'.
+2026-04-29 09:22:43 [INFO] Row FID=575: empty `land` cell but LAND_QID=Q183; using fallback label 'Deutschland'.
+2026-04-29 09:22:43 [INFO] Row FID=579: empty `land` cell but LAND_QID=Q183; using fallback label 'Deutschland'.
+2026-04-29 09:22:43 [INFO] Row FID=580: empty `land` cell but LAND_QID=Q183; using fallback label 'Deutschland'.
+2026-04-29 09:22:43 [INFO] Row FID=581: empty `land` cell but LAND_QID=Q183; using fallback label 'Deutschland'.
+2026-04-29 09:22:43 [INFO] Row FID=582: empty `land` cell but LAND_QID=Q183; using fallback label 'Deutschland'.
+2026-04-29 09:22:43 [INFO] Row FID=584: empty `land` cell but LAND_QID=Q183; using fallback label 'Deutschland'.
+2026-04-29 09:22:43 [INFO] Row FID=585: empty `land` cell but LAND_QID=Q183; using fallback label 'Deutschland'.
+2026-04-29 09:22:43 [INFO] Row FID=587: empty `land` cell but LAND_QID=Q183; using fallback label 'Deutschland'.
+2026-04-29 09:22:43 [INFO] Row FID=588: empty `land` cell but LAND_QID=Q183; using fallback label 'Deutschland'.
+2026-04-29 09:22:43 [INFO] Row FID=589: empty `land` cell but LAND_QID=Q183; using fallback label 'Deutschland'.
+2026-04-29 09:22:43 [INFO] Row FID=590: empty `land` cell but LAND_QID=Q183; using fallback label 'Deutschland'.
+2026-04-29 09:22:43 [INFO] Processed: 540 rows, skipped: 0
+2026-04-29 09:22:43 [INFO] Generated graph: 27777 triples
+2026-04-29 09:22:43 [INFO] Loaded upstream PROV: 93 triples, top-level activity: https://example.org/bb-5kbc-sites/run/2026-04-27T18-56-13Z
+2026-04-29 09:22:43 [INFO] Identified upstream entity for fst_wgs84.csv: https://example.org/bb-5kbc-sites/fst_wgs84_csv
+2026-04-29 09:22:43 [INFO] Embedded upstream PROV into data graph (+93 triples)
+2026-04-29 09:22:43 [INFO] PROV activity: http://w3id.org/bb5kbc/pipeline_run_2026-04-29T07-22-41Z
+2026-04-29 09:22:44 [INFO] Wrote data graph: C:\git\bb-5kbc-sites\dist\bb5kbc-data.ttl (27897 triples)
+2026-04-29 09:22:44 [INFO] Building bundle graph (data + ontology) ...
+2026-04-29 09:22:46 [INFO] Wrote bundle graph: C:\git\bb-5kbc-sites\dist\bb5kbc-bundle.ttl (28531 triples)
+2026-04-29 09:22:46 [INFO] Wrote LOD PROV manifest: C:\git\bb-5kbc-sites\dist\csv_to_lod_run.ttl (30 triples)
+2026-04-29 09:22:46 [INFO] Generating SHACL shapes from ontology ...
+2026-04-29 09:22:46 [INFO] Wrote shapes: C:\git\bb-5kbc-sites\rdf\bb5kbc-shapes.ttl (156 triples)
+2026-04-29 09:22:47 [INFO] Loading shapes for validation ...
+2026-04-29 09:22:47 [INFO] Validating data graph against shapes ...
+2026-04-29 09:23:05 [INFO] Wrote SHACL report (data graph): C:\git\bb-5kbc-sites\dist\shacl-report.ttl
+2026-04-29 09:23:05 [INFO] SHACL validation [data graph]: PASS (0 validation results)
+2026-04-29 09:23:05 [INFO] Validating bundle graph against shapes ...
+2026-04-29 09:23:42 [INFO] Wrote SHACL report (bundle graph): C:\git\bb-5kbc-sites\dist\shacl-report-bundle.ttl
+2026-04-29 09:23:42 [INFO] SHACL validation [bundle graph]: PASS (0 validation results)
+2026-04-29 09:23:42 [INFO] ======================================================================
+2026-04-29 09:23:42 [INFO] bb5kbc LOD pipeline — done
+2026-04-29 09:23:42 [INFO] ======================================================================
